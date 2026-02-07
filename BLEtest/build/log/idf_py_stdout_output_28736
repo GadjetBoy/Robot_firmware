@@ -1,0 +1,67 @@
+[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\BLEtest\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/BLEtest/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/BLEtest/build/BLEtest.bin"
+BLEtest.bin binary size 0xc9f00 bytes. Smallest app partition is 0x100000 bytes. 0x36100 bytes (21%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\BLEtest\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/BLEtest/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5150 bytes. 0x2eb0 bytes (36%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.4 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.4_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.4/components/esptool_py/esptool/esptool.py;--chip;esp32c3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/BLEtest/build -P C:/Espressif/frameworks/esp-idf-v5.4/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32c3 -p COM11 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 BLEtest.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM11
+Connecting...
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE, Embedded Flash 4MB (XMC)
+Crystal is 40MHz
+MAC: ac:eb:e6:49:c9:84
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000d9fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20816 bytes to 13048...
+Writing at 0x00000000... (100 %)
+Wrote 20816 bytes (13048 compressed) at 0x00000000 in 0.2 seconds (effective 743.4 kbit/s)...
+Hash of data verified.
+Compressed 827136 bytes to 428318...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001d7e1... (7 %)
+Writing at 0x00029a54... (11 %)
+Writing at 0x00032468... (14 %)
+Writing at 0x0003952c... (18 %)
+Writing at 0x00041763... (22 %)
+Writing at 0x00048deb... (25 %)
+Writing at 0x00050640... (29 %)
+Writing at 0x000578c7... (33 %)
+Writing at 0x0005ec6f... (37 %)
+Writing at 0x00066cfc... (40 %)
+Writing at 0x0006e131... (44 %)
+Writing at 0x00076410... (48 %)
+Writing at 0x0007e40a... (51 %)
+Writing at 0x000853ed... (55 %)
+Writing at 0x0008ce40... (59 %)
+Writing at 0x00093d54... (62 %)
+Writing at 0x0009b3c8... (66 %)
+Writing at 0x000a304f... (70 %)
+Writing at 0x000a9d2e... (74 %)
+Writing at 0x000afd77... (77 %)
+Writing at 0x000b5e26... (81 %)
+Writing at 0x000be3df... (85 %)
+Writing at 0x000c4ebb... (88 %)
+Writing at 0x000cb58f... (92 %)
+Writing at 0x000d193c... (96 %)
+Writing at 0x000d8d19... (100 %)
+Wrote 827136 bytes (428318 compressed) at 0x00010000 in 3.4 seconds (effective 1955.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 236.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

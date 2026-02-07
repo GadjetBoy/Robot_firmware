@@ -1,0 +1,594 @@
+TER device Complete
+[0;32mI (511) I2C MASTER: setting up PCNT Count Print_Tasks[0m
+[0;32mI (515) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (516) I2C MASTER: setting up I2C Send_Tasks[0m
+[0;32mI (538) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (542) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (546) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (551) i2c.master: s_i2c_synchronous_transaction(918): I2C transaction failed[0m
+[0;32mI (543) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (558) i2c.master: i2c_master_multi_buffer_transmit(1180): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x400d6a2b
+file: "/IDF/Project_Code/i2c_v_1.1/i2c_master/main/i2c_master.c" line 135
+func: Send_data_Task
+expression: i2c_master_transmit(device_handle,DATA_TO_SEND,sizeof(byte_converter.byte_buf),-1)
+
+abort() was called at PC 0x40086583 on core 0
+
+
+Backtrace: 0x40081915:0x3ffb8db0 0x4008658d:0x3ffb8dd0 0x4008c5f1:0x3ffb8df0 0x40086583:0x3ffb8e60 0x400d6a2b:0x3ffb8e90 0x40086fd1:0x3ffb8ee0
+
+
+
+
+ELF file SHA256: 26fd4e673
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep  5 2025 16:23:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bebch ( 48828) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001bee4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bf08 vaddr=3ffb0000 size=023dch (  9180) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e2ec vaddr=40080000 size=01d2ch (  7468) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=174a4h ( 95396) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=000374cc vaddr=40081d2c size=0c000h ( 49152) load[0m
+[0;32mI (184) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (184) boot: Disabling RNG early entropy source...[0m
+[0;32mI (194) cpu_start: Multicore app[0m
+[0;32mI (203) cpu_start: Pro cpu start user code[0m
+[0;32mI (203) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (203) app_init: Application information:[0m
+[0;32mI (203) app_init: Project name:     i2c_master[0m
+[0;32mI (207) app_init: App version:      v5.4[0m
+[0;32mI (211) app_init: Compile time:     Sep  5 2025 16:23:32[0m
+[0;32mI (216) app_init: ELF file SHA256:  26fd4e673...[0m
+[0;32mI (220) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (224) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (227) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (231) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (236) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (247) heap_init: At 3FFB2D08 len 0002D2F8 (180 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (257) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 4008DD2C len 000122D4 (72 KiB): IRAM[0m
+[0;32mI (269) spi_flash: detected chip: generic[0m
+[0;32mI (272) spi_flash: flash io: dio[0m
+[0;32mI (275) main_task: Started on CPU0[0m
+[0;32mI (278) main_task: Calling app_main()[0m
+[0;32mI (280) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (285) PCNT: install pcnt unit1[0m
+[0;32mI (288) PCNT: set glitch filter for unit1[0m
+[0;32mI (291) PCNT: install pcnt channels of unit1[0m
+[0;32mI (296) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (301) PCNT: enable pcnt unit1[0m
+[0;32mI (304) PCNT: clear pcnt unit1[0m
+[0;32mI (307) PCNT: start pcnt unit1[0m
+[0;32mI (310) PCNT: install pcnt unit2[0m
+[0;32mI (313) PCNT: set glitch filter for unit2[0m
+[0;32mI (316) PCNT: install pcnt channels of unit2[0m
+[0;32mI (321) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (326) PCNT: enable pcnt unit2[0m
+[0;32mI (329) PCNT: clear pcnt unit2[0m
+[0;32mI (332) PCNT: start pcnt unit2[0m
+[0;32mI (335) PCNT: install pcnt unit3[0m
+[0;32mI (338) PCNT: set glitch filter for unit3[0m
+[0;32mI (342) PCNT: install pcnt channels of unit3[0m
+[0;32mI (346) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (352) PCNT: enable pcnt unit3[0m
+[0;32mI (354) PCNT: clear pcnt unit3[0m
+[0;32mI (357) PCNT: start pcnt unit3[0m
+[0;32mI (360) PCNT: install pcnt unit4[0m
+[0;32mI (363) PCNT: set glitch filter for unit4[0m
+[0;32mI (367) PCNT: install pcnt channels of unit4[0m
+[0;32mI (371) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (377) PCNT: enable pcnt unit4[0m
+[0;32mI (379) PCNT: clear pcnt unit4[0m
+[0;32mI (382) PCNT: start pcnt unit4[0m
+[0;32mI (385) PCNT: install pcnt unit5[0m
+[0;32mI (388) PCNT: set glitch filter for unit5[0m
+[0;32mI (392) PCNT: install pcnt channels of unit5[0m
+[0;32mI (396) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (402) PCNT: enable pcnt unit5[0m
+[0;32mI (405) PCNT: clear pcnt unit5[0m
+[0;32mI (407) PCNT: start pcnt unit5[0m
+[0;32mI (410) PCNT: install pcnt unit6[0m
+[0;32mI (413) PCNT: set glitch filter for unit6[0m
+[0;32mI (417) PCNT: install pcnt channels of unit6[0m
+[0;32mI (421) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (427) PCNT: enable pcnt unit6[0m
+[0;32mI (430) PCNT: clear pcnt unit6[0m
+[0;32mI (432) PCNT: start pcnt unit6[0m
+[0;32mI (435) PCNT: install pcnt unit7[0m
+[0;32mI (438) PCNT: set glitch filter for unit7[0m
+[0;32mI (442) PCNT: install pcnt channels of unit7[0m
+[0;32mI (446) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (452) PCNT: enable pcnt unit7[0m
+[0;32mI (455) PCNT: clear pcnt unit7[0m
+[0;32mI (458) PCNT: start pcnt unit7[0m
+[0;32mI (460) PCNT: install pcnt unit8[0m
+[0;32mI (463) PCNT: set glitch filter for unit8[0m
+[0;32mI (467) PCNT: install pcnt channels of unit8[0m
+[0;32mI (471) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (477) PCNT: enable pcnt unit8[0m
+[0;32mI (480) PCNT: clear pcnt unit8[0m
+[0;32mI (483) PCNT: start pcnt unit8[0m
+[0;32mI (485) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (490) PCNT: setting up   pcnt Que[0m
+[0;32mI (493) PCNT: setting up Tasks[0m
+[0;32mI (496) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (501) I2C MASTER: setting up I2C MASTER device[0m
+[0;32mI (506) I2C MASTER: setting up I2C MASTER device Complete[0m
+[0;32mI (511) I2C MASTER: setting up PCNT Count Print_Tasks[0m
+[0;32mI (515) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (516) I2C MASTER: setting up I2C Send_Tasks[0m
+[0;32mI (538) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (542) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (546) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (551) i2c.master: s_i2c_synchronous_transaction(918): I2C transaction failed[0m
+[0;32mI (543) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (558) i2c.master: i2c_master_multi_buffer_transmit(1180): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x400d6a2b
+file: "/IDF/Project_Code/i2c_v_1.1/i2c_master/main/i2c_master.c" line 135
+func: Send_data_Task
+expression: i2c_master_transmit(device_handle,DATA_TO_SEND,sizeof(byte_converter.byte_buf),-1)
+
+abort() was called at PC 0x40086583 on core 0
+
+
+Backtrace: 0x40081915:0x3ffb8db0 0x4008658d:0x3ffb8dd0 0x4008c5f1:0x3ffb8df0 0x40086583:0x3ffb8e60 0x400d6a2b:0x3ffb8e90 0x40086fd1:0x3ffb8ee0
+
+
+
+
+ELF file SHA256: 26fd4e673
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep  5 2025 16:23:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bebch ( 48828) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001bee4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bf08 vaddr=3ffb0000 size=023dch (  9180) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e2ec vaddr=40080000 size=01d2ch (  7468) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=174a4h ( 95396) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=000374cc vaddr=40081d2c size=0c000h ( 49152) load[0m
+[0;32mI (184) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (184) boot: Disabling RNG early entropy source...[0m
+[0;32mI (194) cpu_start: Multicore app[0m
+[0;32mI (203) cpu_start: Pro cpu start user code[0m
+[0;32mI (203) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (203) app_init: Application information:[0m
+[0;32mI (203) app_init: Project name:     i2c_master[0m
+[0;32mI (207) app_init: App version:      v5.4[0m
+[0;32mI (211) app_init: Compile time:     Sep  5 2025 16:23:32[0m
+[0;32mI (216) app_init: ELF file SHA256:  26fd4e673...[0m
+[0;32mI (220) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (224) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (227) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (231) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (236) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (247) heap_init: At 3FFB2D08 len 0002D2F8 (180 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (257) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 4008DD2C len 000122D4 (72 KiB): IRAM[0m
+[0;32mI (269) spi_flash: detected chip: generic[0m
+[0;32mI (272) spi_flash: flash io: dio[0m
+[0;32mI (275) main_task: Started on CPU0[0m
+[0;32mI (278) main_task: Calling app_main()[0m
+[0;32mI (280) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (285) PCNT: install pcnt unit1[0m
+[0;32mI (288) PCNT: set glitch filter for unit1[0m
+[0;32mI (291) PCNT: install pcnt channels of unit1[0m
+[0;32mI (296) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (301) PCNT: enable pcnt unit1[0m
+[0;32mI (304) PCNT: clear pcnt unit1[0m
+[0;32mI (307) PCNT: start pcnt unit1[0m
+[0;32mI (310) PCNT: install pcnt unit2[0m
+[0;32mI (313) PCNT: set glitch filter for unit2[0m
+[0;32mI (316) PCNT: install pcnt channels of unit2[0m
+[0;32mI (321) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (326) PCNT: enable pcnt unit2[0m
+[0;32mI (329) PCNT: clear pcnt unit2[0m
+[0;32mI (332) PCNT: start pcnt unit2[0m
+[0;32mI (335) PCNT: install pcnt unit3[0m
+[0;32mI (338) PCNT: set glitch filter for unit3[0m
+[0;32mI (342) PCNT: install pcnt channels of unit3[0m
+[0;32mI (346) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (352) PCNT: enable pcnt unit3[0m
+[0;32mI (354) PCNT: clear pcnt unit3[0m
+[0;32mI (357) PCNT: start pcnt unit3[0m
+[0;32mI (360) PCNT: install pcnt unit4[0m
+[0;32mI (363) PCNT: set glitch filter for unit4[0m
+[0;32mI (367) PCNT: install pcnt channels of unit4[0m
+[0;32mI (371) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (377) PCNT: enable pcnt unit4[0m
+[0;32mI (379) PCNT: clear pcnt unit4[0m
+[0;32mI (382) PCNT: start pcnt unit4[0m
+[0;32mI (385) PCNT: install pcnt unit5[0m
+[0;32mI (388) PCNT: set glitch filter for unit5[0m
+[0;32mI (392) PCNT: install pcnt channels of unit5[0m
+[0;32mI (396) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (402) PCNT: enable pcnt unit5[0m
+[0;32mI (405) PCNT: clear pcnt unit5[0m
+[0;32mI (407) PCNT: start pcnt unit5[0m
+[0;32mI (410) PCNT: install pcnt unit6[0m
+[0;32mI (413) PCNT: set glitch filter for unit6[0m
+[0;32mI (417) PCNT: install pcnt channels of unit6[0m
+[0;32mI (421) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (427) PCNT: enable pcnt unit6[0m
+[0;32mI (430) PCNT: clear pcnt unit6[0m
+[0;32mI (432) PCNT: start pcnt unit6[0m
+[0;32mI (435) PCNT: install pcnt unit7[0m
+[0;32mI (438) PCNT: set glitch filter for unit7[0m
+[0;32mI (442) PCNT: install pcnt channels of unit7[0m
+[0;32mI (446) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (452) PCNT: enable pcnt unit7[0m
+[0;32mI (455) PCNT: clear pcnt unit7[0m
+[0;32mI (458) PCNT: start pcnt unit7[0m
+[0;32mI (460) PCNT: install pcnt unit8[0m
+[0;32mI (463) PCNT: set glitch filter for unit8[0m
+[0;32mI (467) PCNT: install pcnt channels of unit8[0m
+[0;32mI (471) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (477) PCNT: enable pcnt unit8[0m
+[0;32mI (480) PCNT: clear pcnt unit8[0m
+[0;32mI (483) PCNT: start pcnt unit8[0m
+[0;32mI (485) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (490) PCNT: setting up   pcnt Que[0m
+[0;32mI (493) PCNT: setting up Tasks[0m
+[0;32mI (496) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (501) I2C MASTER: setting up I2C MASTER device[0m
+[0;32mI (506) I2C MASTER: setting up I2C MASTER device Complete[0m
+[0;32mI (511) I2C MASTER: setting up PCNT Count Print_Tasks[0m
+[0;32mI (515) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (516) I2C MASTER: setting up I2C Send_Tasks[0m
+[0;32mI (538) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (542) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (546) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (551) i2c.master: s_i2c_synchronous_transaction(918): I2C transaction failed[0m
+[0;32mI (543) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (558) i2c.master: i2c_master_multi_buffer_transmit(1180): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x400d6a2b
+file: "/IDF/Project_Code/i2c_v_1.1/i2c_master/main/i2c_master.c" line 135
+func: Send_data_Task
+expression: i2c_master_transmit(device_handle,DATA_TO_SEND,sizeof(byte_converter.byte_buf),-1)
+
+abort() was called at PC 0x40086583 on core 0
+
+
+Backtrace: 0x40081915:0x3ffb8db0 0x4008658d:0x3ffb8dd0 0x4008c5f1:0x3ffb8df0 0x40086583:0x3ffb8e60 0x400d6a2b:0x3ffb8e90 0x40086fd1:0x3ffb8ee0
+
+
+
+
+ELF file SHA256: 26fd4e673
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep  5 2025 16:23:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bebch ( 48828) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001bee4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bf08 vaddr=3ffb0000 size=023dch (  9180) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e2ec vaddr=40080000 size=01d2ch (  7468) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=174a4h ( 95396) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=000374cc vaddr=40081d2c size=0c000h ( 49152) load[0m
+[0;32mI (184) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (184) boot: Disabling RNG early entropy source...[0m
+[0;32mI (194) cpu_start: Multicore app[0m
+[0;32mI (203) cpu_start: Pro cpu start user code[0m
+[0;32mI (203) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (203) app_init: Application information:[0m
+[0;32mI (203) app_init: Project name:     i2c_master[0m
+[0;32mI (207) app_init: App version:      v5.4[0m
+[0;32mI (211) app_init: Compile time:     Sep  5 2025 16:23:32[0m
+[0;32mI (216) app_init: ELF file SHA256:  26fd4e673...[0m
+[0;32mI (220) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (224) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (227) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (231) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (236) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (247) heap_init: At 3FFB2D08 len 0002D2F8 (180 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (257) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 4008DD2C len 000122D4 (72 KiB): IRAM[0m
+[0;32mI (269) spi_flash: detected chip: generic[0m
+[0;32mI (272) spi_flash: flash io: dio[0m
+[0;32mI (275) main_task: Started on CPU0[0m
+[0;32mI (278) main_task: Calling app_main()[0m
+[0;32mI (280) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (285) PCNT: install pcnt unit1[0m
+[0;32mI (288) PCNT: set glitch filter for unit1[0m
+[0;32mI (291) PCNT: install pcnt channels of unit1[0m
+[0;32mI (296) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (301) PCNT: enable pcnt unit1[0m
+[0;32mI (304) PCNT: clear pcnt unit1[0m
+[0;32mI (307) PCNT: start pcnt unit1[0m
+[0;32mI (310) PCNT: install pcnt unit2[0m
+[0;32mI (313) PCNT: set glitch filter for unit2[0m
+[0;32mI (316) PCNT: install pcnt channels of unit2[0m
+[0;32mI (321) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (326) PCNT: enable pcnt unit2[0m
+[0;32mI (329) PCNT: clear pcnt unit2[0m
+[0;32mI (332) PCNT: start pcnt unit2[0m
+[0;32mI (335) PCNT: install pcnt unit3[0m
+[0;32mI (338) PCNT: set glitch filter for unit3[0m
+[0;32mI (342) PCNT: install pcnt channels of unit3[0m
+[0;32mI (346) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (352) PCNT: enable pcnt unit3[0m
+[0;32mI (354) PCNT: clear pcnt unit3[0m
+[0;32mI (357) PCNT: start pcnt unit3[0m
+[0;32mI (360) PCNT: install pcnt unit4[0m
+[0;32mI (363) PCNT: set glitch filter for unit4[0m
+[0;32mI (367) PCNT: install pcnt channels of unit4[0m
+[0;32mI (371) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (377) PCNT: enable pcnt unit4[0m
+[0;32mI (379) PCNT: clear pcnt unit4[0m
+[0;32mI (382) PCNT: start pcnt unit4[0m
+[0;32mI (385) PCNT: install pcnt unit5[0m
+[0;32mI (388) PCNT: set glitch filter for unit5[0m
+[0;32mI (392) PCNT: install pcnt channels of unit5[0m
+[0;32mI (396) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (402) PCNT: enable pcnt unit5[0m
+[0;32mI (405) PCNT: clear pcnt unit5[0m
+[0;32mI (407) PCNT: start pcnt unit5[0m
+[0;32mI (410) PCNT: install pcnt unit6[0m
+[0;32mI (413) PCNT: set glitch filter for unit6[0m
+[0;32mI (417) PCNT: install pcnt channels of unit6[0m
+[0;32mI (421) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (427) PCNT: enable pcnt unit6[0m
+[0;32mI (430) PCNT: clear pcnt unit6[0m
+[0;32mI (432) PCNT: start pcnt unit6[0m
+[0;32mI (435) PCNT: install pcnt unit7[0m
+[0;32mI (438) PCNT: set glitch filter for unit7[0m
+[0;32mI (442) PCNT: install pcnt channels of unit7[0m
+[0;32mI (446) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (452) PCNT: enable pcnt unit7[0m
+[0;32mI (455) PCNT: clear pcnt unit7[0m
+[0;32mI (458) PCNT: start pcnt unit7[0m
+[0;32mI (460) PCNT: install pcnt unit8[0m
+[0;32mI (463) PCNT: set glitch filter for unit8[0m
+[0;32mI (467) PCNT: install pcnt channels of unit8[0m
+[0;32mI (471) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (477) PCNT: enable pcnt unit8[0m
+[0;32mI (480) PCNT: clear pcnt unit8[0m
+[0;32mI (483) PCNT: start pcnt unit8[0m
+[0;32mI (485) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (490) PCNT: setting up   pcnt Que[0m
+[0;32mI (493) PCNT: setting up Tasks[0m
+[0;32mI (496) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (501) I2C MASTER: setting up I2C MASTER device[0m
+[0;32mI (506) I2C MASTER: setting up I2C MASTER device Complete[0m
+[0;32mI (511) I2C MASTER: setting up PCNT Count Print_Tasks[0m
+[0;32mI (515) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (516) I2C MASTER: setting up I2C Send_Tasks[0m
+[0;32mI (538) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (542) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (546) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (551) i2c.master: s_i2c_synchronous_transaction(918): I2C transaction failed[0m
+[0;32mI (543) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (558) i2c.master: i2c_master_multi_buffer_transmit(1180): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x400d6a2b
+file: "/IDF/Project_Code/i2c_v_1.1/i2c_master/main/i2c_master.c" line 135
+func: Send_data_Task
+expression: i2c_master_transmit(device_handle,DATA_TO_SEND,sizeof(byte_converter.byte_buf),-1)
+
+abort() was called at PC 0x40086583 on core 0
+
+
+Backtrace: 0x40081915:0x3ffb8db0 0x4008658d:0x3ffb8dd0 0x4008c5f1:0x3ffb8df0 0x40086583:0x3ffb8e60 0x400d6a2b:0x3ffb8e90 0x40086fd1:0x3ffb8ee0
+
+
+
+
+ELF file SHA256: 26fd4e673
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep  5 2025 16:23:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bebch ( 48828) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001bee4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bf08 vaddr=3ffb0000 size=023dch (  9180) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e2ec vaddr=40080000 size=01d2ch (  7468) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=174a4h ( 95396) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=000374cc vaddr=40081d2c size=0c000h ( 49152) load[0m
+[0;32mI (184) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (184) boot: Disabling RNG early entropy source...[0m
+[0;32mI (194) cpu_start: Multicore app[0m
+[0;32mI (203) cpu_start: Pro cpu start user code[0m
+[0;32mI (203) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (203) app_init: Application information:[0m
+[0;32mI (203) app_init: Project name:     i2c_master[0m
+[0;32mI (207) app_init: App version:      v5.4[0m
+[0;32mI (211) app_init: Compile time:     Sep  5 2025 16:23:32[0m
+[0;32mI (216) app_init: ELF file SHA256:  26fd4e673...[0m
+[0;32mI (220) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (224) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (227) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (231) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (236) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (247) heap_init: At 3FFB2D08 len 0002D2F8 (180 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (257) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 4008DD2C len 000122D4 (72 KiB): IRAM[0m
+[0;32mI (269) spi_flash: detected chip: generic[0m
+[0;32mI (272) spi_flash: flash io: dio[0m
+[0;32mI (275) main_task: Started on CPU0[0m
+[0;32mI (278) main_task: Calling app_main()[0m
+[0;32mI (280) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (285) PCNT: install pcnt unit1[0m
+[0;32mI (288) PCNT: set glitch filter for unit1[0m
+[0;32mI (291) PCNT: install pcnt channels of unit1[0m
+[0;32mI (296) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (301) PCNT: enable pcnt unit1[0m
+[0;32mI (304) PCNT: clear pcnt unit1[0m
+[0;32mI (307) PCNT: start pcnt unit1[0m
+[0;32mI (310) PCNT: install pcnt unit2[0m
+[0;32mI (313) PCNT: set glitch filter for unit2[0m
+[0;32mI (316) PCNT: install pcnt channels of unit2[0m
+[0;32mI (321) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (326) PCNT: enable pcnt unit2[0m

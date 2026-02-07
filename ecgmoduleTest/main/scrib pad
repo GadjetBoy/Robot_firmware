@@ -1,0 +1,281 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "driver/spi_master.h"
+#include "hal/spi_types.h"
+#include "driver/spi_common.h"
+#include "soc/gpio_struct.h"
+
+#include "freertos/FreeRTOS.h"
+#include "driver/gpio.h"
+#include "freertos/task.h"
+#include "sdkconfig.h"
+#include "driver/uart.h"
+
+#include <math.h>
+#include <inttypes.h>
+#include <stdbool.h>
+
+// ESP-IDF Core
+#include "esp_system.h"
+#include "esp_log.h"
+
+// ESP-IDF Drivers
+#include "driver/gpio.h"
+#include "esp_timer.h"
+#include "nvs_flash.h"
+
+#include "ads1292r.h"
+
+static const char *TAG = "ADS1292";
+
+volatile char SPI_D_Buff[9];
+volatile uint8_t  SPI_Dummy_Buff[30];
+unsigned char DataPacketHeader[16];
+volatile signed long s32DaqVals[8];
+uint8_t data_len = 8;
+volatile uint8_t SPI_RX_Buff[15] ;
+volatile static int SPI_RX_Buff_Count = 0;
+volatile char *SPI_RX_Buff_Ptr;
+volatile bool ads1292dataReceived =false;
+unsigned long uecgtemp = 0;
+signed long secgtemp=0;
+int i,j;
+
+spi_device_handle_t spi;
+
+
+void ads1292_Init(void)
+{
+    ESP_LOGI(TAG, "Initializing ADS1292 with FULL-DUPLEX SPI...");
+    
+    // Configure GPIOs
+    gpio_set_direction(ADS1292_DRDY_PIN, GPIO_MODE_INPUT);
+    //gpio_set_direction(ADS1292_CS_PIN, GPIO_MODE_OUTPUT);
+    gpio_set_direction(ADS1292_START_PIN, GPIO_MODE_OUTPUT);
+    gpio_set_direction(ADS1292_PWDN_PIN, GPIO_MODE_OUTPUT);
+    
+    //gpio_set_level(ADS1292_CS_PIN,LOW);
+    gpio_set_level(ADS1292_START_PIN,LOW);
+    gpio_set_level(ADS1292_PWDN_PIN,LOW);
+
+    vTaskDelay(1000 / portTICK_PERIOD_MS);  // Wait 1s as per datasheet
+    
+    // Configure SPI bus - FULL DUPLEX
+    spi_bus_config_t buscfg = {
+        .miso_io_num = PIN_NUM_MISO,
+        .mosi_io_num = PIN_NUM_MOSI,
+        .sclk_io_num = PIN_NUM_CLK,
+        .quadwp_io_num = -1,
+        .quadhd_io_num = -1,
+        .max_transfer_sz = 32,
+    };
+    
+    // CRITICAL: flags = 0 for FULL-DUPLEX (not SPI_DEVICE_HALFDUPLEX)
+    spi_device_interface_config_t devcfg = {
+        .clock_speed_hz = 500000,
+        .mode = SPI_MODE,                     // SPI mode 3
+        .spics_io_num = PIN_NUM_CS,           //CS pin
+        .queue_size = 7,
+    };
+    
+    ESP_ERROR_CHECK(spi_bus_initialize(ADS1292_HOST , &buscfg, SPI_DMA_CH_AUTO));
+    ESP_ERROR_CHECK(spi_bus_add_device(ADS1292_HOST , &devcfg, &spi));
+    
+    ESP_LOGI(TAG, "SPI initialized Complete");
+    
+    ads1292_Reset();
+
+    ads1292_Stop_Read_Data_Continuous(spi);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+    ads1292_Reg_Write(spi, ADS1292_REG_CONFIG2, 0b10100000);    //Lead-off comp off, test signal disabled
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+    ads1292_Reg_Write(spi, ADS1292_REG_CONFIG1, 0b00000010);      //Set sampling rate to 500 SPS
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+    ads1292_Reg_Write(spi, ADS1292_REG_CH2SET, 0b00000010); //Ch 2 enabled, gain 6, connected to electrode in  predata:0b01100000
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+    ads1292_Start_Read_Data_Continuous(spi);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+    gpio_set_level(ADS1292_START_PIN,HIGH);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+
+ 
+}
+
+void ads1292_Reset(void) {
+    // Hardware reset
+    gpio_set_level(ADS1292_PWDN_PIN, LOW);
+    vTaskDelay(100 / portTICK_PERIOD_MS);
+    gpio_set_level(ADS1292_PWDN_PIN, HIGH);
+    vTaskDelay(1000 / portTICK_PERIOD_MS);  // Wait 1 sec as per datasheet
+    
+    gpio_set_level(ADS1292_PWDN_PIN, LOW);
+    vTaskDelay(100 / portTICK_PERIOD_MS);
+    gpio_set_level(ADS1292_PWDN_PIN, HIGH);
+    vTaskDelay(20 / portTICK_PERIOD_MS);  // Wait 18 tCLK cycles (~35µs)
+}
+
+void ads1292_Start_Read_Data_Continuous (spi_device_handle_t spi)
+{
+    
+    uint8_t data_out=RDATAC;
+
+    spi_transaction_t t;
+    memset(&t, 0, sizeof(t));
+    t.length=8;
+    t.tx_buffer=&data_out;
+    t.flags=SPI_DEVICE_HALFDUPLEX;
+    t.user=(void*)1;
+
+    ESP_ERROR_CHECK(spi_device_transmit(spi, &t));                  //Send RDATAC to the ADS1x9x
+    vTaskDelay(2 / portTICK_PERIOD_MS);
+
+
+}
+
+void ads1292_Stop_Read_Data_Continuous (spi_device_handle_t spi){
+    uint8_t data_out=SDATAC;
+
+    spi_transaction_t t;
+    memset(&t, 0, sizeof(t));
+    t.length=8;
+    t.tx_buffer=&data_out;
+    t.user=(void*)0;
+    t.flags=0;
+
+    ESP_ERROR_CHECK(spi_device_transmit(spi, &t));        // Send SDATAC to the ADS1x9x
+    vTaskDelay(2 / portTICK_PERIOD_MS);
+}
+
+void ads1292_Reg_Write (spi_device_handle_t spi, unsigned char READ_WRITE_ADDRESS, unsigned char DATA)
+{
+    switch (READ_WRITE_ADDRESS)
+    {
+        case 1:
+          DATA = DATA & 0x87;
+            break;
+        case 2:
+                DATA = DATA & 0xFB;
+            DATA |= 0x80;
+            break;
+        case 3:
+            DATA = DATA & 0xFD;
+            DATA |= 0x10;
+            break;
+        case 7:
+            DATA = DATA & 0x3F;
+            break;
+        case 8:
+                DATA = DATA & 0x5F;
+            break;
+        case 9:
+            DATA |= 0x02;
+            break;
+        case 10:
+            DATA = DATA & 0x87;
+            DATA |= 0x01;
+            break;
+        case 11:
+            DATA = DATA & 0x0F;
+            break;
+        default:
+            break;
+    }
+
+ // now combine the register address and the command into one byte:
+    uint8_t dataToSend = READ_WRITE_ADDRESS | WREG;
+
+    uint8_t data_out=dataToSend;
+
+    spi_transaction_t t;
+    memset(&t, 0, sizeof(t));
+    t.length=8;
+    t.tx_buffer=&data_out;
+    t.user=(void*)3;
+    t.flags=0;
+
+    ESP_ERROR_CHECK(spi_device_transmit(spi, &t));        //sends 'dataToSend' to ads1292r
+
+    data_out=0x00;
+    ESP_ERROR_CHECK(spi_device_transmit(spi, &t));       //sends 0x00 to
+
+    data_out=DATA;
+    ESP_ERROR_CHECK(spi_device_transmit(spi, &t));  //Transmit!
+
+      vTaskDelay(2 / portTICK_PERIOD_MS);
+
+
+}
+
+static void ads1292r_read_task(void *pvParameters)
+{
+    uint8_t tx_buf[9] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+    
+    while (true) {
+        if(gpio_get_level(ADS1292_DRDY_PIN) == LOW) {
+            
+            spi_transaction_t t = {
+                .length = 72,      // 9 bytes * 8 bits
+                .tx_buffer = tx_buf,
+                .rx_buffer =(void*)SPI_D_Buff,
+                .rxlength = 72
+            };
+            
+            ESP_ERROR_CHECK(spi_device_transmit(spi, &t));
+            
+            ads1292dataReceived = true;
+        }
+
+
+       if(ads1292dataReceived == true)       // process the data
+       {
+           j=0;
+           for(i=0;i<6;i+=3)                  // data outputs is (24 status bits + 24 bits Respiration data +  24 bits ECG data)
+           {
+               uecgtemp = (unsigned long) (  ((unsigned long)SPI_D_Buff[i+3] << 16) | ( (unsigned long) SPI_D_Buff[i+4] << 8) |  (unsigned long)    SPI_D_Buff[i+5]);
+
+               uecgtemp = (unsigned long) (uecgtemp << 8);
+               secgtemp = (signed long) (uecgtemp);
+               secgtemp = (signed long) (secgtemp >> 8);
+
+               s32DaqVals[j++]=secgtemp;
+           }
+
+              int64_t timestamp = esp_timer_get_time();  // microseconds
+              printf("%lld,%ld,%ld\n", timestamp, s32DaqVals[1], s32DaqVals[0]);
+        }
+
+        ads1292dataReceived = false;
+        SPI_RX_Buff_Count = 0;
+    }
+}
+
+void app_main(void){
+
+    // Configure UART parameters
+    uart_config_t uart_config = {
+        .baud_rate = 115200,
+        .data_bits = UART_DATA_8_BITS,
+        .parity    = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
+    };
+
+    // Configure UART 0
+    uart_param_config(UART_NUM_0, &uart_config);
+    uart_set_baudrate(UART_NUM_0, 115200);
+    uart_driver_install(UART_NUM_0, 2048, 0, 0, NULL, 0);
+
+    ads1292_Init();
+
+	TaskHandle_t ads_read_task;
+    xTaskCreate(&ads1292r_read_task, "ads_read_task", 4096, NULL, 4, &ads_read_task);
+}
+
+

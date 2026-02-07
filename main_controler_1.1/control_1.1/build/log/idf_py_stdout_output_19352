@@ -1,0 +1,3364 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13ce4h ( 81124) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023d0c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023d30 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028b00 vaddr=40080000 size=07518h ( 29976) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75a00h (481792) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a5a28 vaddr=40087518 size=12120h ( 74016) load[0m
+[0;32mI (346) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (346) boot: Disabling RNG early entropy source...[0m
+[0;32mI (356) cpu_start: Multicore app[0m
+[0;32mI (365) cpu_start: Pro cpu start user code[0m
+[0;32mI (365) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (365) app_init: Application information:[0m
+[0;32mI (365) app_init: Project name:     control_1.1[0m
+[0;32mI (369) app_init: App version:      v5.4[0m
+[0;32mI (373) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (378) app_init: ELF file SHA256:  2611c2ecf...[0m
+[0;32mI (382) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (386) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (390) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (394) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (398) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (404) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (409) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (414) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (419) heap_init: At 3FFC48E0 len 0001B720 (109 KiB): DRAM[0m
+[0;32mI (424) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (435) heap_init: At 40099638 len 000069C8 (26 KiB): IRAM[0m
+[0;32mI (442) spi_flash: detected chip: generic[0m
+[0;32mI (444) spi_flash: flash io: dio[0m
+[0;32mI (448) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (452) main_task: Started on CPU0[0m
+[0;32mI (455) main_task: Calling app_main()[0m
+[0;32mI (458) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (466) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (470) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (476) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (494) I2C SLAVE: .............[0m
+
+[0;32mI (497) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (502) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (507) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (515) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (524) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (532) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (548) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (557) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (565) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (573) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (582) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (590) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (598) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (607) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (615) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (623) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (632) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (641) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (645) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (649) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (654) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (659) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (663) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (668) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (673) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (678) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (682) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (687) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (687) MOTOR_COMMANDS: Mode[1][0m
+[0;32mI (720) MOTOR_COMMANDS: crawl gate running[0m
+[0;32mI (733) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (735) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (738) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (739) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[1;31mE (745) PID: PWM=1023 [0m
+[0;32mI (782) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (783) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (783) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (786) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (791) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (796) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (800) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (805) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (795) PID: PWM=1023 [0m
+[0;33mW (819) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[1;31mE (845) PID: PWM=1023 [0m
+[1;31mE (895) PID: PWM=1023 [0m
+[0;32mI (910) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (910) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (911) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (914) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (919) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (923) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (928) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (933) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (945) PID: PWM=1023 [0m
+[1;31mE (995) PID: PWM=1023 [0m
+[0;32mI (997) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1006) I2C SLAVE: .............[0m
+
+[0;32mI (1037) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1037) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1038) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1041) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1046) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1051) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1055) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1060) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1045) PID: PWM=1023 [0m
+[1;31mE (1095) PID: PWM=1023 [0m
+[1;31mE (1145) PID: PWM=1023 [0m
+[0;32mI (1165) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1165) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1166) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1169) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1174) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1179) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1184) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1185) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1188) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1195) PID: PWM=1023 [0m
+[0;32mI (1192) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1172) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1210) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1214) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1218) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1226) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1231) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1234) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1241) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1243) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[1;31mE (1245) PID: PWM=1023 [0m
+[0;32mI (1252) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1255) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1258) main_task: Returned from app_main()[0m
+[1;31mE (1295) PID: PWM=1023 [0m
+[0;32mI (1296) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1296) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1296) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1301) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1306) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1311) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1315) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1320) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1345) PID: PWM=1023 [0m
+[1;31mE (1395) PID: PWM=1023 [0m
+[0;32mI (1425) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1425) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1426) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1429) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1434) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1439) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1443) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1445) PID: PWM=1023 [0m
+[0;32mI (1448) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1495) PID: PWM=1023 [0m
+[0;32mI (1509) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1516) I2C SLAVE: .............[0m
+
+[1;31mE (1545) PID: PWM=1023 [0m
+[0;32mI (1555) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1555) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1555) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1559) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1564) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1568) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1573) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1578) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1595) PID: PWM=1023 [0m
+[1;31mE (1645) PID: PWM=1023 [0m
+[0;32mI (1683) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1683) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1683) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1687) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1691) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1695) PID: PWM=1023 [0m
+[0;32mI (1697) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1703) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1708) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1745) PID: PWM=1023 [0m
+[1;31mE (1795) PID: PWM=1023 [0m
+[0;32mI (1813) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1813) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1813) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1817) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1822) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1826) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1831) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1836) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1845) PID: PWM=1023 [0m
+[1;31mE (1895) PID: PWM=1023 [0m
+[0;32mI (1941) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1941) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1941) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1945) PID: PWM=1023 [0m
+[0;32mI (1945) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1952) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1956) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1961) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1966) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1995) PID: PWM=1023 [0m
+[0;32mI (2019) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2026) I2C SLAVE: .............[0m
+
+[1;31mE (2045) PID: PWM=1023 [0m
+[0;32mI (2071) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2071) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2071) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2075) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2079) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2084) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2089) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2094) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2095) PID: PWM=1023 [0m
+[1;31mE (2145) PID: PWM=1023 [0m
+[1;31mE (2195) PID: PWM=1023 [0m
+[0;32mI (2198) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2198) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2198) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2203) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2208) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2213) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2217) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2222) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2245) PID: PWM=1023 [0m
+[1;31mE (2295) PID: PWM=1023 [0m
+[0;32mI (2327) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2327) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2327) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2331) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2335) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2340) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2345) PID: PWM=1023 [0m
+[0;32mI (2345) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2352) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2395) PID: PWM=1023 [0m
+[1;31mE (2445) PID: PWM=1023 [0m
+[0;32mI (2457) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2457) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2457) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2461) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2465) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2470) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2475) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2480) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2495) PID: PWM=1023 [0m
+[0;32mI (2524) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2525) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (2529) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2542) I2C SLAVE: .............[0m
+
+[1;31mE (2545) PID: PWM=1023 [0m
+[0;32mI (2585) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2585) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2585) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2589) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2594) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2595) PID: PWM=1023 [0m
+[0;32mI (2598) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2605) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2610) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2645) PID: PWM=1023 [0m
+[1;31mE (2695) PID: PWM=1023 [0m
+[0;32mI (2715) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2715) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2715) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2719) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2723) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2728) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2733) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2738) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2745) PID: PWM=1023 [0m
+[1;31mE (2795) PID: PWM=1023 [0m
+[0;32mI (2842) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2842) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2842) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2845) PID: PWM=1023 [0m
+[0;32mI (2846) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2853) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2857) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2862) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2867) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2895) PID: PWM=1023 [0m
+[1;31mE (2945) PID: PWM=1023 [0m
+[0;32mI (2972) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2972) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2972) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2976) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2980) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2985) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2990) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2995) PID: PWM=1023 [0m
+[0;32mI (2995) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3045) PID: PWM=1023 [0m
+[0;32mI (3045) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3054) I2C SLAVE: .............[0m
+
+[1;31mE (3095) PID: PWM=1023 [0m
+[0;32mI (3102) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3102) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3102) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3106) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3110) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3115) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3120) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3125) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3145) PID: PWM=1023 [0m
+[1;31mE (3195) PID: PWM=1023 [0m
+[0;32mI (3229) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3229) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3229) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3233) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3237) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3242) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3245) PID: PWM=1023 [0m
+[0;32mI (3247) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3254) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3295) PID: PWM=1023 [0m
+[1;31mE (3345) PID: PWM=1023 [0m
+[0;32mI (3359) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3359) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3359) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3363) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3368) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3372) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3377) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3382) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3395) PID: PWM=1023 [0m
+[1;31mE (3445) PID: PWM=1023 [0m
+[0;32mI (3487) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3487) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3487) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3491) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3495) PID: PWM=1023 [0m
+[0;32mI (3496) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3502) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3507) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3512) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3545) PID: PWM=1023 [0m
+[0;32mI (3557) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3564) I2C SLAVE: .............[0m
+
+[1;31mE (3595) PID: PWM=1023 [0m
+[0;32mI (3617) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3617) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3617) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3621) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3626) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3630) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3635) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3640) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3645) PID: PWM=1023 [0m
+[1;31mE (3695) PID: PWM=1023 [0m
+[1;31mE (3745) PID: PWM=1023 [0m
+[0;32mI (3745) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3745) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3746) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3751) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3756) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3761) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3765) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3770) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3795) PID: PWM=1023 [0m
+[1;31mE (3845) PID: PWM=1023 [0m
+[0;32mI (3875) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3875) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3875) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3879) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3883) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3888) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3893) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3895) PID: PWM=1023 [0m
+[0;32mI (3898) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3945) PID: PWM=1023 [0m
+[1;31mE (3995) PID: PWM=1023 [0m
+[0;32mI (4005) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4005) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4005) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4009) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4013) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4018) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4023) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4028) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4037) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (4037) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (4045) PID: PWM=1023 [0m
+[0;32mI (4067) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4074) I2C SLAVE: .............[0m
+
+[1;31mE (4095) PID: PWM=1023 [0m
+[0;32mI (4132) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4132) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4132) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4136) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4141) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4145) PID: PWM=1023 [0m
+[0;32mI (4146) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4152) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4157) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4195) PID: PWM=1023 [0m
+[1;31mE (4245) PID: PWM=1023 [0m
+[0;32mI (4262) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4262) CASCADE: M[1]: PosT=30000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4262) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4266) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4271) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4275) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4280) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4285) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4295) PID: PWM=1023 [0m
+[1;31mE (4345) PID: PWM=1023 [0m
+[0;32mI (4390) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4390) CASCADE: M[1]: PosT=30000.0 Pos=126.0| PWM=1023 Dir=1[0m
+[0;32mI (4390) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4394) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4395) PID: PWM=1023 [0m
+[0;32mI (4399) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4406) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4410) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4415) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4445) PID: PWM=1023 [0m
+[1;31mE (4495) PID: PWM=1023 [0m
+[0;32mI (4520) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4520) CASCADE: M[1]: PosT=30000.0 Pos=1884.0| PWM=1023 Dir=1[0m
+[0;32mI (4520) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4524) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4529) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4533) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4538) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4543) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4545) PID: PWM=1023 [0m
+[0;32mI (4577) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 3013
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4584) I2C SLAVE: .............[0m
+
+[1;31mE (4595) PID: PWM=1023 [0m
+[1;31mE (4645) PID: PWM=1023 [0m
+[0;32mI (4648) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4648) CASCADE: M[1]: PosT=30000.0 Pos=4036.0| PWM=1023 Dir=1[0m
+[0;32mI (4648) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4653) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4658) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4663) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4668) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4673) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4695) PID: PWM=1023 [0m
+[1;31mE (4745) PID: PWM=1023 [0m
+[0;32mI (4777) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4777) CASCADE: M[1]: PosT=30000.0 Pos=5632.0| PWM=1023 Dir=1[0m
+[0;32mI (4777) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4781) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4786) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4791) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4795) PID: PWM=1023 [0m
+[0;32mI (4796) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4802) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4845) PID: PWM=1023 [0m
+[1;31mE (4895) PID: PWM=1023 [0m
+[0;32mI (4907) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4907) CASCADE: M[1]: PosT=30000.0 Pos=7800.0| PWM=1023 Dir=1[0m
+[0;32mI (4907) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4911) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4916) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4921) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4925) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4930) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4945) PID: PWM=1023 [0m
+[1;31mE (4995) PID: PWM=1023 [0m
+[0;32mI (5035) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5035) CASCADE: M[1]: PosT=30000.0 Pos=9207.0| PWM=1023 Dir=1[0m
+[0;32mI (5035) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5039) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5044) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5045) PID: PWM=1023 [0m
+[0;32mI (5049) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5055) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5060) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5087) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 10351
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5094) I2C SLAVE: .............[0m
+
+[1;31mE (5095) PID: PWM=1023 [0m
+[1;31mE (5145) PID: PWM=1023 [0m
+[0;32mI (5165) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5165) CASCADE: M[1]: PosT=30000.0 Pos=11379.0| PWM=1023 Dir=1[0m
+[0;32mI (5165) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5169) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5174) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5179) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5183) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5188) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5195) PID: PWM=1023 [0m
+[1;31mE (5245) PID: PWM=1023 [0m
+[0;32mI (5293) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5293) CASCADE: M[1]: PosT=30000.0 Pos=12980.0| PWM=1023 Dir=1[0m
+[0;32mI (5293) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5295) PID: PWM=1023 [0m
+[0;32mI (5297) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5304) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5309) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5314) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5318) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5345) PID: PWM=1023 [0m
+[1;31mE (5395) PID: PWM=1023 [0m
+[0;32mI (5423) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5423) CASCADE: M[1]: PosT=30000.0 Pos=15153.0| PWM=1023 Dir=1[0m
+[0;32mI (5423) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5427) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5432) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5437) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5441) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5445) PID: PWM=1023 [0m
+[0;32mI (5446) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5495) PID: PWM=1023 [0m
+[1;31mE (5545) PID: PWM=1023 [0m
+[0;32mI (5553) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5553) CASCADE: M[1]: PosT=30000.0 Pos=17317.0| PWM=1023 Dir=1[0m
+[0;32mI (5553) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5557) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5562) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5566) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5570) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5572) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5576) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5581) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5595) PID: PWM=1023 [0m
+[0;32mI (5598) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 18153
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5612) I2C SLAVE: .............[0m
+
+[1;31mE (5645) PID: PWM=1023 [0m
+[0;32mI (5691) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5691) CASCADE: M[1]: PosT=30000.0 Pos=18725.0| PWM=1023 Dir=1[0m
+[0;32mI (5691) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5695) PID: PWM=1023 [0m
+[0;32mI (5695) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5702) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5707) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5712) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5716) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5745) PID: PWM=-1023 [0m
+[1;31mE (5795) PID: PWM=-1023 [0m
+[0;32mI (5821) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5821) CASCADE: M[1]: PosT=30000.0 Pos=20823.0| PWM=300 Dir=-1[0m
+[0;32mI (5821) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5825) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5830) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5835) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5839) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5844) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5845) PID: PWM=-1023 [0m
+[1;31mE (5895) PID: PWM=1023 [0m
+[1;31mE (5945) PID: PWM=-1023 [0m
+[0;32mI (5949) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5949) CASCADE: M[1]: PosT=30000.0 Pos=21725.0| PWM=300 Dir=-1[0m
+[0;32mI (5949) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5954) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5958) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5963) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5968) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5973) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5995) PID: PWM=-1023 [0m
+[1;31mE (6045) PID: PWM=-1023 [0m
+[0;32mI (6077) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6077) CASCADE: M[1]: PosT=30000.0 Pos=22741.0| PWM=300 Dir=-1[0m
+[0;32mI (6077) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6081) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6086) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6091) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6095) PID: PWM=390 [0m
+[0;32mI (6095) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6102) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6115) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23127
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6125) I2C SLAVE: .............[0m
+
+[1;31mE (6145) PID: PWM=-1023 [0m
+[1;31mE (6195) PID: PWM=-1023 [0m
+[0;32mI (6207) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6207) CASCADE: M[1]: PosT=30000.0 Pos=23373.0| PWM=300 Dir=-1[0m
+[0;32mI (6207) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6211) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6216) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6221) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6225) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6230) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6245) PID: PWM=-1023 [0m
+[1;31mE (6295) PID: PWM=1023 [0m
+[0;32mI (6335) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6335) CASCADE: M[1]: PosT=30000.0 Pos=23435.0| PWM=1023 Dir=1[0m
+[0;32mI (6335) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6339) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6344) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6345) PID: PWM=-1023 [0m
+[0;32mI (6349) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6356) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6360) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6395) PID: PWM=-1023 [0m
+[1;31mE (6445) PID: PWM=-1023 [0m
+[0;32mI (6465) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6465) CASCADE: M[1]: PosT=30000.0 Pos=24511.0| PWM=300 Dir=-1[0m
+[0;32mI (6465) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6469) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6474) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6478) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6483) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6488) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6495) PID: PWM=-1023 [0m
+[1;31mE (6545) PID: PWM=1023 [0m
+[0;32mI (6593) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6593) CASCADE: M[1]: PosT=30000.0 Pos=24855.0| PWM=1023 Dir=1[0m
+[0;32mI (6593) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6595) PID: PWM=-1023 [0m
+[0;32mI (6597) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6604) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6609) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6614) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6618) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6629) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 25583
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6641) I2C SLAVE: .............[0m
+
+[1;31mE (6645) PID: PWM=-1023 [0m
+[1;31mE (6695) PID: PWM=-1023 [0m
+[0;32mI (6723) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6723) CASCADE: M[1]: PosT=30000.0 Pos=26117.0| PWM=300 Dir=-1[0m
+[0;32mI (6723) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6727) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6732) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6737) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6741) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6745) PID: PWM=-1023 [0m
+[0;32mI (6747) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6795) PID: PWM=1023 [0m
+[1;31mE (6845) PID: PWM=-1023 [0m
+[0;32mI (6853) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6853) CASCADE: M[1]: PosT=30000.0 Pos=26795.0| PWM=300 Dir=-1[0m
+[0;32mI (6853) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6857) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6862) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6866) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6871) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6876) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6895) PID: PWM=-1023 [0m
+[1;31mE (6945) PID: PWM=-1023 [0m
+[0;32mI (6981) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6981) CASCADE: M[1]: PosT=30000.0 Pos=27605.0| PWM=300 Dir=-1[0m
+[0;32mI (6981) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6985) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6990) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6995) PID: PWM=-1023 [0m
+[0;32mI (6995) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7002) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7006) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7045) PID: PWM=451 [0m
+[0;32mI (7087) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (7087) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (7095) PID: PWM=-1023 [0m
+[0;32mI (7111) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7111) CASCADE: M[1]: PosT=30000.0 Pos=28060.0| PWM=300 Dir=-1[0m
+[0;32mI (7111) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7115) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7120) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7125) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7129) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7134) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7145) PID: PWM=-1023 [0m
+[0;32mI (7145) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28131
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7160) I2C SLAVE: .............[0m
+
+[1;31mE (7195) PID: PWM=-1023 [0m
+[0;32mI (7239) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7239) CASCADE: M[1]: PosT=30000.0 Pos=28163.0| PWM=300 Dir=-1[0m
+[0;32mI (7239) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7243) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7245) PID: PWM=-1023 [0m
+[0;32mI (7248) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7255) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7260) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7264) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7295) PID: PWM=1023 [0m
+[1;31mE (7345) PID: PWM=-1023 [0m
+[0;32mI (7369) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7369) CASCADE: M[1]: PosT=30000.0 Pos=28417.0| PWM=300 Dir=-1[0m
+[0;32mI (7369) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7373) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7378) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7382) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7387) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7392) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7395) PID: PWM=-1023 [0m
+[1;31mE (7445) PID: PWM=-1023 [0m
+[1;31mE (7495) PID: PWM=-1023 [0m
+[0;32mI (7497) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7497) CASCADE: M[1]: PosT=30000.0 Pos=29425.0| PWM=300 Dir=-1[0m
+[0;32mI (7497) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7501) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7506) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7511) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7516) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7520) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7545) PID: PWM=-1023 [0m
+[1;31mE (7595) PID: PWM=-472 [0m
+[0;32mI (7625) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7625) CASCADE: M[1]: PosT=30000.0 Pos=29601.0| PWM=300 Dir=-1[0m
+[0;32mI (7625) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7629) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7634) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7639) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7643) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7648) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7645) PID: PWM=271 [0m
+[0;32mI (7663) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7673) I2C SLAVE: .............[0m
+
+[1;31mE (7695) PID: PWM=-1023 [0m
+[1;31mE (7745) PID: PWM=-1023 [0m
+[0;32mI (7753) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7753) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (7753) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7757) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7762) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7766) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7771) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7776) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7795) PID: PWM=-1023 [0m
+[1;31mE (7845) PID: PWM=-1023 [0m
+[0;32mI (7881) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7881) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (7881) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7885) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7890) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7895) PID: PWM=-49 [0m
+[0;32mI (7895) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7901) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7906) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7945) PID: PWM=354 [0m
+[1;31mE (7995) PID: PWM=-1023 [0m
+[0;32mI (8011) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8011) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (8011) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8015) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8020) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8024) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8029) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8034) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8045) PID: PWM=-1023 [0m
+[1;31mE (8095) PID: PWM=-1023 [0m
+[0;32mI (8139) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8139) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (8139) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8143) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8145) PID: PWM=-1023 [0m
+[0;32mI (8148) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8155) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8160) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8164) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8177) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8187) I2C SLAVE: .............[0m
+
+[1;31mE (8195) PID: PWM=-49 [0m
+[1;31mE (8245) PID: PWM=354 [0m
+[0;32mI (8269) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8269) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (8269) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8273) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8278) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8282) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8287) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8292) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8295) PID: PWM=-1023 [0m
+[1;31mE (8345) PID: PWM=-1023 [0m
+[1;31mE (8395) PID: PWM=-1023 [0m
+[0;32mI (8397) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8397) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (8397) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8401) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8406) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8411) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8416) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8421) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8445) PID: PWM=-1023 [0m
+[1;31mE (8495) PID: PWM=-49 [0m
+[0;32mI (8525) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8525) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (8525) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8529) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8534) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8539) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8543) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8545) PID: PWM=354 [0m
+[0;32mI (8548) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8595) PID: PWM=-1023 [0m
+[0;32mI (8621) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8621) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (8645) PID: PWM=-1023 [0m
+[0;32mI (8655) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8655) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (8655) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8659) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8664) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8668) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8673) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8678) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8691) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (8695) PID: PWM=-1023 [0m
+[0;32mI (8701) I2C SLAVE: .............[0m
+
+[1;31mE (8745) PID: PWM=-1023 [0m
+[0;32mI (8783) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8783) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (8783) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8787) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8792) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8795) PID: PWM=-49 [0m
+[0;32mI (8797) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8803) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8808) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8845) PID: PWM=354 [0m
+[1;31mE (8895) PID: PWM=-1023 [0m
+[0;32mI (8913) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8913) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (8913) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8917) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8922) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8927) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8931) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8936) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8945) PID: PWM=-1023 [0m
+[1;31mE (8995) PID: PWM=-1023 [0m
+[0;32mI (9041) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9041) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (9041) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9045) PID: PWM=-1023 [0m
+[0;32mI (9045) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9052) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9057) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9062) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9066) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9095) PID: PWM=-49 [0m
+[1;31mE (9145) PID: PWM=354 [0m
+[0;32mI (9171) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9171) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (9171) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9175) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9180) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9184) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9189) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9194) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9195) PID: PWM=-1023 [0m
+[0;32mI (9207) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29606
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9219) I2C SLAVE: .............[0m
+
+[1;31mE (9245) PID: PWM=-1023 [0m
+[1;31mE (9295) PID: PWM=-1023 [0m
+[0;32mI (9299) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9299) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (9299) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9304) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9308) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9313) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9318) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9323) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9345) PID: PWM=-1023 [0m
+[1;31mE (9395) PID: PWM=-49 [0m
+[0;32mI (9428) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9428) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (9428) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9432) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9437) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9442) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9445) PID: PWM=354 [0m
+[0;32mI (9447) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9453) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9495) PID: PWM=-1023 [0m
+[1;31mE (9545) PID: PWM=-1023 [0m
+[0;32mI (9558) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9558) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (9558) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9562) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9567) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9572) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9576) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9581) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9595) PID: PWM=-1023 [0m
+[1;31mE (9645) PID: PWM=-1023 [0m
+[0;32mI (9686) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9686) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (9686) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9690) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9695) PID: PWM=-49 [0m
+[0;32mI (9695) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9702) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9706) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9711) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9723) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9734) I2C SLAVE: .............[0m
+
+[1;31mE (9745) PID: PWM=354 [0m
+[1;31mE (9795) PID: PWM=-1023 [0m
+[0;32mI (9816) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9816) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (9816) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9820) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9825) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9830) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9835) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9839) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9845) PID: PWM=-1023 [0m
+[1;31mE (9895) PID: PWM=-1023 [0m
+[0;32mI (9944) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9944) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[1;31mE (9945) PID: PWM=-1023 [0m
+[0;32mI (9945) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9951) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9955) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9960) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9965) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9970) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9995) PID: PWM=-49 [0m
+[1;31mE (10045) PID: PWM=354 [0m
+[0;32mI (10075) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10075) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (10075) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10079) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10084) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10089) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10094) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10095) PID: PWM=-1023 [0m
+[0;32mI (10099) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10138) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (10138) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (10145) PID: PWM=-1023 [0m
+[1;31mE (10195) PID: PWM=-1023 [0m
+[0;32mI (10206) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10206) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (10206) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10210) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10215) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10220) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10225) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10230) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10238) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (10245) PID: PWM=-1023 [0m
+[0;32mI (10253) I2C SLAVE: .............[0m
+
+[1;31mE (10295) PID: PWM=-49 [0m
+[0;32mI (10334) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10334) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (10334) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10338) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10343) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10345) PID: PWM=354 [0m
+[0;32mI (10348) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10355) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10360) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10395) PID: PWM=-1023 [0m
+[1;31mE (10445) PID: PWM=-1023 [0m
+[0;32mI (10465) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10465) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (10465) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10469) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10474) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10479) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10484) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10489) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10495) PID: PWM=-1023 [0m
+[1;31mE (10545) PID: PWM=-1023 [0m
+[0;32mI (10594) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10594) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (10594) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10595) PID: PWM=-49 [0m
+[0;32mI (10599) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10605) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10610) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10615) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10620) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10645) PID: PWM=354 [0m
+[1;31mE (10695) PID: PWM=-1023 [0m
+[0;32mI (10725) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10725) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (10725) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10729) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10734) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10739) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10744) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10745) PID: PWM=-1023 [0m
+[0;32mI (10749) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10758) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10774) I2C SLAVE: .............[0m
+
+[1;31mE (10795) PID: PWM=-1023 [0m
+[1;31mE (10845) PID: PWM=-1023 [0m
+[0;32mI (10856) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10856) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (10856) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10860) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10865) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10870) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10875) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10880) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10895) PID: PWM=-49 [0m
+[1;31mE (10945) PID: PWM=354 [0m
+[0;32mI (10985) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10985) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (10985) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10989) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10994) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10995) PID: PWM=-1023 [0m
+[0;32mI (10999) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11006) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11011) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11045) PID: PWM=-1023 [0m
+[1;31mE (11095) PID: PWM=-1023 [0m
+[0;32mI (11116) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11116) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (11117) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11120) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11125) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11130) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11135) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11140) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11145) PID: PWM=-1023 [0m
+[1;31mE (11195) PID: PWM=-49 [0m
+[1;31mE (11245) PID: PWM=354 [0m
+[0;32mI (11245) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11245) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (11247) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11251) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11256) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11261) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11266) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11271) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11278) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29606
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11294) I2C SLAVE: .............[0m
+
+[1;31mE (11295) PID: PWM=-1023 [0m
+[1;31mE (11345) PID: PWM=-1023 [0m
+[0;32mI (11376) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11376) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (11376) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11380) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11385) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11390) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11395) PID: PWM=-1023 [0m
+[0;32mI (11395) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11402) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11445) PID: PWM=-1023 [0m
+[1;31mE (11495) PID: PWM=-49 [0m
+[0;32mI (11507) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11507) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (11507) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11511) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11516) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11521) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11526) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11531) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11545) PID: PWM=354 [0m
+[1;31mE (11595) PID: PWM=-1023 [0m
+[0;32mI (11635) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11635) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (11635) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11639) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11644) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11645) PID: PWM=-1023 [0m
+[0;32mI (11649) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11656) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11661) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11689) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11689) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (11695) PID: PWM=-1023 [0m
+[1;31mE (11745) PID: PWM=-1023 [0m
+[0;32mI (11766) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11766) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (11766) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11770) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11775) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11780) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11785) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11790) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11795) PID: PWM=-49 [0m
+[0;32mI (11798) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11815) I2C SLAVE: .............[0m
+
+[1;31mE (11845) PID: PWM=354 [0m
+[1;31mE (11895) PID: PWM=-1023 [0m
+[0;32mI (11895) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11895) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (11897) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11902) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11907) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11911) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11916) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11921) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11945) PID: PWM=-1023 [0m
+[1;31mE (11995) PID: PWM=-1023 [0m
+[0;32mI (12026) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12026) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (12026) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12030) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12035) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12040) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12045) PID: PWM=-1023 [0m
+[0;32mI (12045) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12052) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12095) PID: PWM=-49 [0m
+[1;31mE (12145) PID: PWM=354 [0m
+[0;32mI (12157) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12157) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (12157) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12161) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12166) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12171) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12176) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12181) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12195) PID: PWM=-1023 [0m
+[1;31mE (12245) PID: PWM=-1023 [0m
+[0;32mI (12286) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12286) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (12286) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12290) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12295) PID: PWM=-1023 [0m
+[0;32mI (12296) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12302) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12307) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12312) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12318) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12335) I2C SLAVE: .............[0m
+
+[1;31mE (12345) PID: PWM=-1023 [0m
+[1;31mE (12395) PID: PWM=-49 [0m
+[0;32mI (12417) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12417) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (12418) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12422) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12427) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12432) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12436) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12441) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12445) PID: PWM=354 [0m
+[1;31mE (12495) PID: PWM=-1023 [0m
+[1;31mE (12545) PID: PWM=-1023 [0m
+[0;32mI (12546) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12546) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (12547) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12552) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12557) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12561) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12566) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12571) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12595) PID: PWM=-1023 [0m
+[1;31mE (12645) PID: PWM=-1023 [0m
+[0;32mI (12676) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12676) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (12676) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12680) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12685) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12690) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12695) PID: PWM=-49 [0m
+[0;32mI (12695) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12702) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12745) PID: PWM=354 [0m
+[1;31mE (12795) PID: PWM=-1023 [0m
+[0;32mI (12807) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12807) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (12807) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12811) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12816) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12821) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12826) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12831) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12839) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (12845) PID: PWM=-1023 [0m
+[0;32mI (12854) I2C SLAVE: .............[0m
+
+[1;31mE (12895) PID: PWM=-1023 [0m
+[0;32mI (12935) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12935) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (12935) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12939) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12944) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12945) PID: PWM=-1023 [0m
+[0;32mI (12949) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12956) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12961) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12995) PID: PWM=-49 [0m
+[1;31mE (13045) PID: PWM=354 [0m
+[0;32mI (13066) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13066) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (13066) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13070) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13075) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13080) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13085) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13090) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13095) PID: PWM=-1023 [0m
+[1;31mE (13145) PID: PWM=-1023 [0m
+[0;32mI (13194) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13194) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (13194) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13195) PID: PWM=-1023 [0m
+[0;32mI (13199) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13206) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13210) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13215) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13220) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13224) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (13230) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (13245) PID: PWM=-1023 [0m
+[1;31mE (13295) PID: PWM=-49 [0m
+[0;32mI (13325) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13325) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (13325) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13329) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13334) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13339) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13344) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13349) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13345) PID: PWM=354 [0m
+[0;32mI (13360) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13374) I2C SLAVE: .............[0m
+
+[1;31mE (13395) PID: PWM=-1023 [0m
+[1;31mE (13445) PID: PWM=-1023 [0m
+[0;32mI (13454) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13454) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (13454) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13458) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13463) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13468) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13473) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13478) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13495) PID: PWM=-1023 [0m
+[1;31mE (13545) PID: PWM=-1023 [0m
+[0;32mI (13582) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13582) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (13582) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13586) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13591) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13595) PID: PWM=-49 [0m
+[0;32mI (13596) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13603) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13608) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13645) PID: PWM=354 [0m
+[1;31mE (13695) PID: PWM=-1023 [0m
+[0;32mI (13713) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13713) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (13713) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13717) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13722) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13727) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13732) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13737) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13745) PID: PWM=-1023 [0m
+[1;31mE (13795) PID: PWM=-1023 [0m
+[0;32mI (13842) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13842) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (13843) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13845) PID: PWM=-1023 [0m
+[0;32mI (13847) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13854) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13858) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13863) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13868) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13878) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13891) I2C SLAVE: .............[0m
+
+[1;31mE (13895) PID: PWM=-49 [0m
+[1;31mE (13945) PID: PWM=354 [0m
+[0;32mI (13973) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13973) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (13973) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13977) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13982) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13987) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13992) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13995) PID: PWM=-1023 [0m
+[0;32mI (13997) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14045) PID: PWM=-1023 [0m
+[1;31mE (14095) PID: PWM=-1023 [0m
+[0;32mI (14104) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14104) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (14104) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14108) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14113) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14118) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14123) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14128) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14145) PID: PWM=-1023 [0m
+[1;31mE (14195) PID: PWM=-49 [0m
+[0;32mI (14233) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14233) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (14233) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14237) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14242) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14245) PID: PWM=354 [0m
+[0;32mI (14247) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14254) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14259) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14295) PID: PWM=-1023 [0m
+[1;31mE (14345) PID: PWM=-1023 [0m
+[0;32mI (14364) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14364) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (14364) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14368) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14373) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14378) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14383) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14388) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14395) PID: PWM=-1023 [0m
+[0;32mI (14395) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14413) I2C SLAVE: .............[0m
+
+[1;31mE (14445) PID: PWM=-1023 [0m
+[0;32mI (14492) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14492) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (14492) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14495) PID: PWM=-49 [0m
+[0;32mI (14497) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14503) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14508) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14513) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14518) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14545) PID: PWM=354 [0m
+[1;31mE (14595) PID: PWM=-1023 [0m
+[0;32mI (14623) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14623) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (14623) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14627) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14632) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14637) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14642) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14645) PID: PWM=-1023 [0m
+[0;32mI (14647) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14695) PID: PWM=-1023 [0m
+[1;31mE (14745) PID: PWM=-1023 [0m
+[0;32mI (14754) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14754) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (14754) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14758) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14763) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14768) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14773) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14777) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (14778) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14783) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (14795) PID: PWM=-49 [0m
+[1;31mE (14845) PID: PWM=354 [0m
+[0;32mI (14888) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14888) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (14888) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14892) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14895) PID: PWM=-1023 [0m
+[0;32mI (14897) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14904) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14909) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14914) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14917) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14937) I2C SLAVE: .............[0m
+
+[1;31mE (14945) PID: PWM=-1023 [0m
+[1;31mE (14995) PID: PWM=-1023 [0m
+[0;32mI (15019) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15019) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (15019) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15023) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15028) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15033) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15038) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15043) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15045) PID: PWM=-1023 [0m
+[1;31mE (15095) PID: PWM=-49 [0m
+[1;31mE (15145) PID: PWM=354 [0m
+[0;32mI (15147) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15147) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (15147) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15151) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15156) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15161) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15166) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15171) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15195) PID: PWM=-1023 [0m
+[1;31mE (15245) PID: PWM=-1023 [0m
+[0;32mI (15276) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15276) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (15276) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15280) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15285) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15290) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15295) PID: PWM=-1023 [0m
+[0;32mI (15295) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15302) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15345) PID: PWM=-1023 [0m
+[1;31mE (15395) PID: PWM=-49 [0m
+[0;32mI (15407) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15407) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (15407) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15411) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15416) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15421) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15426) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15431) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15440) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (15445) PID: PWM=354 [0m
+[0;32mI (15454) I2C SLAVE: .............[0m
+
+[1;31mE (15495) PID: PWM=-1023 [0m
+[0;32mI (15535) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15535) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (15535) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15539) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15544) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15545) PID: PWM=-1023 [0m
+[0;32mI (15549) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15556) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15561) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15595) PID: PWM=-1023 [0m
+[1;31mE (15645) PID: PWM=-1023 [0m
+[0;32mI (15666) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15666) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (15666) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15670) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15675) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15680) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15685) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15690) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15695) PID: PWM=-49 [0m
+[1;31mE (15745) PID: PWM=354 [0m
+[1;31mE (15795) PID: PWM=-1023 [0m
+[0;32mI (15795) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15795) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (15797) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15802) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15807) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15811) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15816) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15821) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15845) PID: PWM=-1023 [0m
+[1;31mE (15895) PID: PWM=-1023 [0m
+[0;32mI (15926) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15926) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (15926) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15930) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15935) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15940) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15945) PID: PWM=-1023 [0m
+[0;32mI (15945) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15952) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15959) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15975) I2C SLAVE: .............[0m
+
+[1;31mE (15995) PID: PWM=-49 [0m
+[1;31mE (16045) PID: PWM=354 [0m
+[0;32mI (16057) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16057) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (16057) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16061) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16066) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16071) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16076) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16081) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16095) PID: PWM=-1023 [0m
+[1;31mE (16145) PID: PWM=-1023 [0m
+[0;32mI (16186) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16186) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (16186) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16190) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16195) PID: PWM=-1023 [0m
+[0;32mI (16195) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16202) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16207) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16212) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16245) PID: PWM=-1023 [0m
+[1;31mE (16295) PID: PWM=-49 [0m
+[0;32mI (16312) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (16312) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (16317) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16317) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (16322) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16327) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16332) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16337) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16342) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16345) PID: PWM=354 [0m
+[0;32mI (16346) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16395) PID: PWM=-1023 [0m
+[1;31mE (16445) PID: PWM=-1023 [0m
+[0;32mI (16453) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16453) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (16453) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16457) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16462) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16467) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16472) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16477) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16479) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (16495) PID: PWM=-1023 [0m
+[0;32mI (16500) I2C SLAVE: .............[0m
+
+[1;31mE (16545) PID: PWM=-1023 [0m
+[0;32mI (16582) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16582) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (16582) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16586) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16591) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16595) PID: PWM=-49 [0m
+[0;32mI (16596) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16603) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16608) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16645) PID: PWM=354 [0m
+[1;31mE (16695) PID: PWM=-1023 [0m
+[0;32mI (16713) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16713) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (16713) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16717) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16722) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16727) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16732) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16737) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16745) PID: PWM=-1023 [0m
+[1;31mE (16795) PID: PWM=-1023 [0m
+[0;32mI (16841) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16841) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (16841) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16845) PID: PWM=-1023 [0m
+[0;32mI (16846) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16853) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16857) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16862) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16867) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16895) PID: PWM=-49 [0m
+[1;31mE (16945) PID: PWM=354 [0m
+[0;32mI (16972) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16972) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (16972) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16976) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16981) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16986) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16991) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16995) PID: PWM=-1023 [0m
+[0;32mI (16996) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17006) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29606
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17021) I2C SLAVE: .............[0m
+
+[1;31mE (17045) PID: PWM=-1023 [0m
+[1;31mE (17095) PID: PWM=-1023 [0m
+[0;32mI (17103) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17103) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (17103) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17107) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17112) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17117) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17122) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17127) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17145) PID: PWM=-1023 [0m
+[1;31mE (17195) PID: PWM=-49 [0m
+[0;32mI (17231) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17231) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (17231) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17235) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17240) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17245) PID: PWM=354 [0m
+[0;32mI (17245) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17252) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17257) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17295) PID: PWM=-1023 [0m
+[1;31mE (17345) PID: PWM=-1023 [0m
+[0;32mI (17362) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17362) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (17362) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17366) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17371) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17376) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17381) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17386) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17395) PID: PWM=-1023 [0m
+[1;31mE (17445) PID: PWM=-1023 [0m
+[0;32mI (17491) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17491) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (17491) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17495) PID: PWM=-49 [0m
+[0;32mI (17496) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17502) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17507) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17512) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17517) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17524) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17540) I2C SLAVE: .............[0m
+
+[1;31mE (17545) PID: PWM=354 [0m
+[1;31mE (17595) PID: PWM=-1023 [0m
+[0;32mI (17622) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17622) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (17622) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17626) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17631) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17636) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17641) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17645) PID: PWM=-1023 [0m
+[0;32mI (17646) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17695) PID: PWM=-1023 [0m
+[1;31mE (17745) PID: PWM=-1023 [0m
+[0;32mI (17753) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17753) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (17753) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17757) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17762) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17767) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17772) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17777) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17795) PID: PWM=-49 [0m
+[1;31mE (17845) PID: PWM=354 [0m
+[0;32mI (17865) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (17865) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (17881) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17881) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (17881) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17885) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17890) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17895) PID: PWM=-1023 [0m
+[0;32mI (17895) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17902) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17907) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17945) PID: PWM=-1023 [0m
+[1;31mE (17995) PID: PWM=-1023 [0m
+[0;32mI (18012) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18013) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (18013) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18017) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18022) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18027) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18031) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18036) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18043) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (18045) PID: PWM=-1023 [0m
+[0;32mI (18060) I2C SLAVE: .............[0m
+
+[1;31mE (18095) PID: PWM=-49 [0m
+[0;32mI (18141) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18141) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (18141) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18145) PID: PWM=354 [0m
+[0;32mI (18146) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18152) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18157) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18162) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18167) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18195) PID: PWM=-1023 [0m
+[1;31mE (18245) PID: PWM=-1023 [0m
+[0;32mI (18272) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18272) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (18272) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18276) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18281) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18286) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18291) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18295) PID: PWM=-1023 [0m
+[0;32mI (18296) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18345) PID: PWM=-1023 [0m
+[1;31mE (18395) PID: PWM=-49 [0m
+[0;32mI (18403) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18403) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (18403) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18407) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18412) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18417) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18422) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18427) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18445) PID: PWM=354 [0m
+[1;31mE (18495) PID: PWM=-1023 [0m
+[0;32mI (18531) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18531) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (18531) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18535) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18540) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18545) PID: PWM=-1023 [0m
+[0;32mI (18545) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18552) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18557) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18565) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18580) I2C SLAVE: .............[0m
+
+[1;31mE (18595) PID: PWM=-1023 [0m
+[1;31mE (18645) PID: PWM=-1023 [0m
+[0;32mI (18662) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18662) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (18662) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18666) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18671) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18676) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18681) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18686) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18695) PID: PWM=-49 [0m
+[1;31mE (18745) PID: PWM=354 [0m
+[0;32mI (18790) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18790) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (18790) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18794) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18795) PID: PWM=-1023 [0m
+[0;32mI (18799) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18806) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18811) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18816) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18845) PID: PWM=-1023 [0m
+[1;31mE (18895) PID: PWM=-1023 [0m
+[0;32mI (18921) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18921) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (18921) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18925) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18930) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18935) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18940) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18945) PID: PWM=-1023 [0m
+[0;32mI (18945) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18995) PID: PWM=-49 [0m
+[1;31mE (19045) PID: PWM=354 [0m
+[0;32mI (19052) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19052) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (19052) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19056) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19061) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19066) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19071) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19076) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19084) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29606
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (19095) PID: PWM=-1023 [0m
+[0;32mI (19099) I2C SLAVE: .............[0m
+
+[1;31mE (19145) PID: PWM=-1023 [0m
+[0;32mI (19180) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19180) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (19180) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19184) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19189) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19194) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19195) PID: PWM=-1023 [0m
+[0;32mI (19199) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19206) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19245) PID: PWM=-1023 [0m
+[1;31mE (19295) PID: PWM=-49 [0m
+[0;32mI (19311) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19311) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (19311) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19315) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19320) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19325) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19330) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19335) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19345) PID: PWM=354 [0m
+[1;31mE (19395) PID: PWM=-1023 [0m
+[0;32mI (19400) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (19400) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (19440) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19440) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (19440) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19444) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19445) PID: PWM=-1023 [0m
+[0;32mI (19449) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19456) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19461) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19466) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19495) PID: PWM=-1023 [0m
+[1;31mE (19545) PID: PWM=-1023 [0m
+[0;32mI (19571) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19571) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (19572) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19576) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19581) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19585) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19590) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19595) PID: PWM=-49 [0m
+[0;32mI (19595) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19604) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19620) I2C SLAVE: .............[0m
+
+[1;31mE (19645) PID: PWM=354 [0m
+[1;31mE (19695) PID: PWM=-1023 [0m
+[0;32mI (19702) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19702) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (19702) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19706) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19711) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19716) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19721) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19726) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19745) PID: PWM=-1023 [0m
+[1;31mE (19795) PID: PWM=-1023 [0m
+[0;32mI (19830) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19830) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (19830) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19834) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19839) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19844) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19845) PID: PWM=-1023 [0m
+[0;32mI (19849) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19856) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19895) PID: PWM=-49 [0m
+[1;31mE (19945) PID: PWM=354 [0m
+[0;32mI (19961) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19961) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (19961) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19965) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19970) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19975) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19980) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19985) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19995) PID: PWM=-1023 [0m
+[1;31mE (20045) PID: PWM=-1023 [0m
+[0;32mI (20089) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20089) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (20089) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20093) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20095) PID: PWM=-1023 [0m
+[0;32mI (20099) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20105) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20110) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20115) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20124) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20138) I2C SLAVE: .............[0m
+
+[1;31mE (20145) PID: PWM=-1023 [0m
+[1;31mE (20195) PID: PWM=-49 [0m
+[0;32mI (20220) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20220) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (20220) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20224) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20229) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20234) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20239) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20244) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20245) PID: PWM=354 [0m
+[1;31mE (20295) PID: PWM=-1023 [0m
+[1;31mE (20345) PID: PWM=-1023 [0m
+[0;32mI (20348) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20348) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (20348) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20354) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20359) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20364) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20369) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20373) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20395) PID: PWM=-1023 [0m
+[1;31mE (20445) PID: PWM=-1023 [0m
+[0;32mI (20478) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20478) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (20478) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20482) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20487) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20492) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20495) PID: PWM=-49 [0m
+[0;32mI (20497) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20504) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20545) PID: PWM=354 [0m
+[1;31mE (20595) PID: PWM=-1023 [0m
+[0;32mI (20609) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20609) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (20609) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20613) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20618) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20623) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20628) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20633) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20642) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (20645) PID: PWM=-1023 [0m
+[0;32mI (20656) I2C SLAVE: .............[0m
+
+[1;31mE (20695) PID: PWM=-1023 [0m
+[0;32mI (20738) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20738) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (20738) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20742) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20745) PID: PWM=-1023 [0m
+[0;32mI (20748) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20754) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20759) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20764) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20795) PID: PWM=-49 [0m
+[1;31mE (20845) PID: PWM=354 [0m
+[0;32mI (20869) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20869) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (20869) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20873) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20878) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20883) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20888) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20893) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (20895) PID: PWM=-1023 [0m
+[1;31mE (20945) PID: PWM=-1023 [0m
+[0;32mI (20953) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (20953) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (20995) PID: PWM=-1023 [0m
+[0;32mI (20998) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (20998) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (20998) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21004) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21009) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21014) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21019) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21023) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21045) PID: PWM=-1023 [0m
+[1;31mE (21095) PID: PWM=-49 [0m
+[0;32mI (21128) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21128) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (21128) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21132) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21137) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21142) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21145) PID: PWM=354 [0m
+[0;32mI (21147) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21154) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21162) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21177) I2C SLAVE: .............[0m
+
+[1;31mE (21195) PID: PWM=-1023 [0m
+[1;31mE (21245) PID: PWM=-1023 [0m
+[0;32mI (21259) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21259) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (21259) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21263) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21268) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21273) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21278) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21283) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21295) PID: PWM=-1023 [0m
+[1;31mE (21345) PID: PWM=-1023 [0m
+[0;32mI (21388) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21388) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (21389) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21393) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21395) PID: PWM=-49 [0m
+[0;32mI (21398) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21405) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21409) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21414) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21445) PID: PWM=354 [0m
+[1;31mE (21495) PID: PWM=-1023 [0m
+[0;32mI (21519) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21519) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (21519) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21523) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21528) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21533) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21538) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21543) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21545) PID: PWM=-1023 [0m
+[1;31mE (21595) PID: PWM=-1023 [0m
+[1;31mE (21645) PID: PWM=-1023 [0m
+[0;32mI (21647) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21647) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (21647) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21652) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21657) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21662) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21666) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21671) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21680) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21694) I2C SLAVE: .............[0m
+
+[1;31mE (21695) PID: PWM=-49 [0m
+[1;31mE (21745) PID: PWM=354 [0m
+[0;32mI (21776) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21776) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (21776) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21780) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21785) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21790) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21795) PID: PWM=-1023 [0m
+[0;32mI (21795) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21802) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21845) PID: PWM=-1023 [0m
+[1;31mE (21895) PID: PWM=-1023 [0m
+[0;32mI (21907) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21907) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (21907) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21911) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21916) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21921) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21926) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (21931) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (21945) PID: PWM=-1023 [0m
+[1;31mE (21995) PID: PWM=-49 [0m
+[0;32mI (22036) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22036) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (22036) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22040) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22045) PID: PWM=354 [0m
+[0;32mI (22046) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22052) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22057) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22062) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22095) PID: PWM=-1023 [0m
+[1;31mE (22145) PID: PWM=-1023 [0m
+[0;32mI (22167) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22167) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (22167) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22171) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22176) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22181) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22186) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22191) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22195) PID: PWM=-1023 [0m
+[0;32mI (22198) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22216) I2C SLAVE: .............[0m
+
+[1;31mE (22245) PID: PWM=-1023 [0m
+[1;31mE (22295) PID: PWM=-49 [0m
+[0;32mI (22296) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22296) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (22297) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22302) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22306) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22311) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22316) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22321) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22345) PID: PWM=354 [0m
+[1;31mE (22395) PID: PWM=-1023 [0m
+[0;32mI (22426) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22426) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (22426) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22430) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22435) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22440) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22445) PID: PWM=-1023 [0m
+[0;32mI (22445) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22452) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22488) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (22488) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (22495) PID: PWM=-1023 [0m
+[1;31mE (22545) PID: PWM=-1023 [0m
+[0;32mI (22557) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22557) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (22557) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22561) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22566) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22571) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22576) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22581) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22595) PID: PWM=-49 [0m
+[1;31mE (22645) PID: PWM=354 [0m
+[0;32mI (22685) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22685) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (22685) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22689) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22694) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22695) PID: PWM=-1023 [0m
+[0;32mI (22699) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22706) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22711) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22720) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29606
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22734) I2C SLAVE: .............[0m
+
+[1;31mE (22745) PID: PWM=-1023 [0m
+[1;31mE (22795) PID: PWM=-1023 [0m
+[0;32mI (22816) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22816) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (22816) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22820) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22825) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22830) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22835) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22840) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22845) PID: PWM=-1023 [0m
+[1;31mE (22895) PID: PWM=-49 [0m
+[1;31mE (22945) PID: PWM=354 [0m
+[0;32mI (22945) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22945) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (22947) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22951) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22956) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22961) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22966) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (22971) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (22995) PID: PWM=-1023 [0m
+[1;31mE (23045) PID: PWM=-1023 [0m
+[0;32mI (23076) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23076) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (23076) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23080) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23085) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23090) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23095) PID: PWM=-1023 [0m
+[0;32mI (23095) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23102) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23145) PID: PWM=-1023 [0m
+[1;31mE (23195) PID: PWM=-49 [0m
+[0;32mI (23207) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23207) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (23207) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23211) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23216) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23221) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23226) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23231) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23238) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23254) I2C SLAVE: .............[0m
+
+[1;31mE (23245) PID: PWM=354 [0m
+[1;31mE (23295) PID: PWM=-1023 [0m
+[0;32mI (23335) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23335) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (23335) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23339) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23344) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23345) PID: PWM=-1023 [0m
+[0;32mI (23349) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23356) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23361) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23395) PID: PWM=-1023 [0m
+[1;31mE (23445) PID: PWM=-1023 [0m
+[0;32mI (23466) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23466) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (23466) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23470) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23475) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23480) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23485) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23490) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23495) PID: PWM=-49 [0m
+[1;31mE (23545) PID: PWM=354 [0m
+[1;31mE (23595) PID: PWM=-1023 [0m
+[0;32mI (23595) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23595) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (23597) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23602) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23607) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23611) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23616) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23621) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23645) PID: PWM=-1023 [0m
+[1;31mE (23695) PID: PWM=-1023 [0m
+[0;32mI (23726) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23726) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (23726) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23730) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23735) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23740) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23745) PID: PWM=-1023 [0m
+[0;32mI (23745) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23752) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23757) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23775) I2C SLAVE: .............[0m
+
+[1;31mE (23795) PID: PWM=-49 [0m
+[1;31mE (23845) PID: PWM=354 [0m
+[0;32mI (23857) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23857) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (23857) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23861) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23866) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23871) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23876) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23881) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23895) PID: PWM=-1023 [0m
+[1;31mE (23945) PID: PWM=-1023 [0m
+[0;32mI (23985) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23985) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (23985) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23989) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (23994) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (23995) PID: PWM=-1023 [0m
+[0;32mI (23999) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24006) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24011) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24041) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (24041) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (24045) PID: PWM=-1023 [0m
+[1;31mE (24095) PID: PWM=-49 [0m
+[0;32mI (24116) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24116) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (24116) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24120) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24125) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24130) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24135) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24140) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24145) PID: PWM=354 [0m
+[1;31mE (24195) PID: PWM=-1023 [0m
+[1;31mE (24245) PID: PWM=-1023 [0m
+[0;32mI (24245) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24245) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (24247) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24252) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24257) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24261) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24266) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24271) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24279) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (24295) PID: PWM=-1023 [0m
+[0;32mI (24294) I2C SLAVE: .............[0m
+
+[1;31mE (24345) PID: PWM=-1023 [0m
+[0;32mI (24376) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24376) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (24376) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24380) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24385) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24390) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24395) PID: PWM=-49 [0m
+[0;32mI (24395) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24402) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24445) PID: PWM=354 [0m
+[1;31mE (24495) PID: PWM=-1023 [0m
+[0;32mI (24507) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24507) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (24507) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24511) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24516) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24521) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24526) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24531) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24545) PID: PWM=-1023 [0m
+[1;31mE (24595) PID: PWM=-1023 [0m
+[0;32mI (24635) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24635) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (24635) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24639) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24644) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24645) PID: PWM=-1023 [0m
+[0;32mI (24649) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24656) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24661) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24695) PID: PWM=-49 [0m
+[1;31mE (24745) PID: PWM=354 [0m
+[0;32mI (24766) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24766) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (24766) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24770) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24775) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24780) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24785) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24790) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24795) PID: PWM=-1023 [0m
+[0;32mI (24800) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24815) I2C SLAVE: .............[0m
+
+[1;31mE (24845) PID: PWM=-1023 [0m
+[1;31mE (24895) PID: PWM=-1023 [0m
+[0;32mI (24895) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24895) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (24897) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24902) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24907) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24911) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24916) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (24921) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (24945) PID: PWM=-1023 [0m
+[1;31mE (24995) PID: PWM=-49 [0m
+[0;32mI (25026) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25026) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (25026) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25030) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25035) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25040) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (25045) PID: PWM=354 [0m
+[0;32mI (25045) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25052) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (25095) PID: PWM=-1023 [0m
+[1;31mE (25145) PID: PWM=-1023 [0m
+[0;32mI (25157) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25157) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (25157) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25161) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25166) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25171) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25176) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25181) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (25195) PID: PWM=-1023 [0m
+[1;31mE (25245) PID: PWM=-1023 [0m
+[0;32mI (25285) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25285) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (25285) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25289) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25294) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25299) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (25295) PID: PWM=-49 [0m
+[0;32mI (25304) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25311) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25319) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (25334) I2C SLAVE: .............[0m
+
+[1;31mE (25345) PID: PWM=354 [0m
+[1;31mE (25395) PID: PWM=-1023 [0m
+[0;32mI (25416) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25416) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (25416) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25420) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25425) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25430) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25435) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25440) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (25445) PID: PWM=-1023 [0m
+[1;31mE (25495) PID: PWM=-1023 [0m
+[0;32mI (25544) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25544) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (25544) CASCADE: M[2]:kQ�0.0 Pos�Li�PWM?0 Dir=0[0m
+[1;31mE (25545) PI�SOKL��j[0m
+[0;32mI (25549) CASCADE:0M[3]: P��0�����0.0| PWM=0 Dir=0[0m�
+B�����CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0
+[0;32mI (25560) CASWADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25565) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (25570) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+I (2557J�I (36194) I2C SLAVE:  
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (36195) PID: PWM=-1023 [0m
+[0;32mI (36194) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36201) I2C SLAVE: .............[0m
+
+[0;32mI (36208) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (36217) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36222) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36227) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36232) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36237) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36242) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (36245) PID: PWM=-1023 [0m
+[1;31mE (36295) PID: PWM=-1023 [0m
+[1;31mE (36345) PID: PWM=-1023 [0m
+[0;32mI (36347) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36347) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (36347) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36352) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36357) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36361) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36366) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36371) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36375) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (36381) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (36395) PID: PWM=-49 [0m
+[1;31mE (36445) PID: PWM=354 [0m
+[0;32mI (36476) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36476) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (36476) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36480) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36485) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36490) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (36495) PID: PWM=-1023 [0m
+[0;32mI (36495) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36502) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (36545) PID: PWM=-1023 [0m
+[1;31mE (36595) PID: PWM=-1023 [0m
+[0;32mI (36607) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36607) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (36607) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36611) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36616) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36621) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36626) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36631) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (36645) PID: PWM=-1023 [0m
+[1;31mE (36695) PID: PWM=-49 [0m
+[0;32mI (36712) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36719) I2C SLAVE: .............[0m
+
+[0;32mI (36736) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36736) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (36736) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36740) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (36745) PID: PWM=354 [0m
+[0;32mI (36745) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36752) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36757) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36762) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (36795) PID: PWM=-1023 [0m
+[1;31mE (36845) PID: PWM=-1023 [0m
+[0;32mI (36867) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36867) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (36867) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36871) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36876) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36881) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36886) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36891) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (36895) PID: PWM=-1023 [0m
+[1;31mE (36945) PID: PWM=-1023 [0m
+[1;31mE (36995) PID: PWM=-49 [0m
+[0;32mI (36995) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (36995) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (36997) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37002) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37006) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37011) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37016) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37021) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37045) PID: PWM=354 [0m
+[1;31mE (37095) PID: PWM=-1023 [0m
+[0;32mI (37126) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37126) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (37126) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37130) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37135) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37140) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37145) PID: PWM=-1023 [0m
+[0;32mI (37145) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37152) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37195) PID: PWM=-1023 [0m
+[0;32mI (37222) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37229) I2C SLAVE: .............[0m
+
+[1;31mE (37245) PID: PWM=-1023 [0m
+[0;32mI (37257) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37257) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (37257) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37261) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37266) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37271) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37276) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37281) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37295) PID: PWM=-49 [0m
+[1;31mE (37345) PID: PWM=354 [0m
+[0;32mI (37385) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37385) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (37385) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37389) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37394) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37395) PID: PWM=-1023 [0m
+[0;32mI (37399) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37406) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37411) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37445) PID: PWM=-1023 [0m
+[1;31mE (37495) PID: PWM=-1023 [0m
+[0;32mI (37516) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37516) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (37516) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37520) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37525) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37530) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37535) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37540) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37545) PID: PWM=-1023 [0m
+[1;31mE (37595) PID: PWM=-49 [0m
+[1;31mE (37645) PID: PWM=354 [0m
+[0;32mI (37645) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37645) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (37647) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37651) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37656) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37661) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37666) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37671) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37695) PID: PWM=-1023 [0m
+[0;32mI (37732) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37739) I2C SLAVE: .............[0m
+
+[1;31mE (37745) PID: PWM=-1023 [0m
+[0;32mI (37776) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37776) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (37776) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37780) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37785) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37790) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37795) PID: PWM=-1023 [0m
+[0;32mI (37795) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37802) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (37845) PID: PWM=-1023 [0m
+[1;31mE (37895) PID: PWM=-49 [0m
+[0;32mI (37907) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37907) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (37907) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37911) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37916) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37921) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37926) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37928) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (37931) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (37936) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (37946) PID: PWM=354 [0m
+[1;31mE (37995) PID: PWM=-1023 [0m
+[0;32mI (38041) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38041) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (38041) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38045) PID: PWM=-1023 [0m
+[0;32mI (38046) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38053) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38057) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38062) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38067) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38095) PID: PWM=-1023 [0m
+[1;31mE (38145) PID: PWM=-1023 [0m
+[0;32mI (38172) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38172) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (38172) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38176) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38181) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38186) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38191) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38195) PID: PWM=-49 [0m
+[0;32mI (38196) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38242) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (38245) PID: PWM=354 [0m
+[0;32mI (38249) I2C SLAVE: .............[0m
+
+[1;31mE (38295) PID: PWM=-1023 [0m
+[0;32mI (38303) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38303) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (38303) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38307) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38312) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38317) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38322) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38327) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38345) PID: PWM=-1023 [0m
+[1;31mE (38395) PID: PWM=-1023 [0m
+[0;32mI (38431) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38431) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (38431) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38435) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38440) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38445) PID: PWM=-1023 [0m
+[0;32mI (38445) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38452) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38457) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38495) PID: PWM=-49 [0m
+[1;31mE (38545) PID: PWM=354 [0m
+[0;32mI (38562) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38562) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (38562) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38566) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38571) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38576) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38581) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38586) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38595) PID: PWM=-1023 [0m
+[1;31mE (38645) PID: PWM=-1023 [0m
+[0;32mI (38691) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38691) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (38691) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38695) PID: PWM=-1023 [0m
+[0;32mI (38696) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38703) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38707) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38712) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38717) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38745) PID: PWM=-1023 [0m
+[0;32mI (38755) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38762) I2C SLAVE: .............[0m
+
+[1;31mE (38795) PID: PWM=-49 [0m
+[0;32mI (38822) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38822) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (38822) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38826) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38831) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38836) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38841) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38845) PID: PWM=354 [0m
+[0;32mI (38846) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38895) PID: PWM=-1023 [0m
+[1;31mE (38945) PID: PWM=-1023 [0m
+[0;32mI (38953) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38953) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (38953) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38957) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38962) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38967) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38972) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (38977) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (38995) PID: PWM=-1023 [0m
+[1;31mE (39045) PID: PWM=-1023 [0m
+[0;32mI (39082) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39082) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (39082) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39086) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39091) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39095) PID: PWM=-49 [0m
+[0;32mI (39096) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39103) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39108) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39145) PID: PWM=354 [0m
+[1;31mE (39195) PID: PWM=-1023 [0m
+[0;32mI (39213) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39213) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (39213) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39217) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39222) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39227) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39232) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39237) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39245) PID: PWM=-1023 [0m
+[0;32mI (39265) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39272) I2C SLAVE: .............[0m
+
+[1;31mE (39295) PID: PWM=-1023 [0m
+[0;32mI (39342) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39342) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (39342) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39345) PID: PWM=-1023 [0m
+[0;32mI (39347) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39354) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39358) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39363) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39368) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39395) PID: PWM=-49 [0m
+[1;31mE (39445) PID: PWM=354 [0m
+[0;32mI (39473) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39473) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (39473) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39477) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39482) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (39482) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39487) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (39492) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39498) PID: PWM=-1023 [0m
+[0;32mI (39502) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39510) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39545) PID: PWM=-1023 [0m
+[1;31mE (39595) PID: PWM=-1023 [0m
+[0;32mI (39614) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39614) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (39614) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39618) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39623) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39628) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39633) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39638) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39645) PID: PWM=-1023 [0m
+[1;31mE (39695) PID: PWM=-49 [0m
+[0;32mI (39743) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39743) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (39743) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39745) PID: PWM=354 [0m
+[0;32mI (39748) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39754) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39759) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39764) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39769) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39775) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29606
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39792) I2C SLAVE: .............[0m
+
+[1;31mE (39795) PID: PWM=-1023 [0m
+[1;31mE (39845) PID: PWM=-1023 [0m
+[0;32mI (39874) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39874) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (39874) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39878) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39883) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39888) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (39893) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39895) PID: PWM=-1023 [0m
+[0;32mI (39898) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (39945) PID: PWM=-1023 [0m
+[1;31mE (39995) PID: PWM=-49 [0m
+[0;32mI (40005) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40005) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (40005) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40009) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40014) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40019) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40024) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40029) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40045) PID: PWM=354 [0m
+[1;31mE (40095) PID: PWM=-1023 [0m
+[0;32mI (40133) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40133) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (40133) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40137) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40142) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40145) PID: PWM=-1023 [0m
+[0;32mI (40147) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40154) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40159) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40195) PID: PWM=-1023 [0m
+[1;31mE (40245) PID: PWM=-1023 [0m
+[0;32mI (40264) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40264)j5� M[1]: PosT=30000.0 Pos=29605.0|����"���-1[0m
+[0;32mI (40264) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40268) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40273) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40278) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40283) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40288) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40295) PID: PWM=-49 [0m
+[0;32mI (40296) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40313) I2C SLAVE: .............[0m
+
+[1;31mE (40345) PID: PWM=354 [0m
+[0;32mI (40392) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40392) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (40392) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40395) PID: PWM=-1023 [0m
+[0;32mI (40397) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40403) CASCADE:�]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40408) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40413) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40418) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40445) PID: PWM=-1023 [0m
+[1;31mE (40495) PID: PWM=-1023 [0m
+[0;32mI (40523) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40523) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (40523) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40527) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40532) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40537) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40542) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40545) PID: PWM=-1023 [0m
+[0;32mI (40547) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40595) PID: PWM=-49 [0m
+[1;31mE (40645) PID: PWM=354 [0m
+[0;32mI (40654) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40654) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (40654) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40658) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40663) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40668) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40673) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40678) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40695) PID: PWM=-1023 [0m
+[1;31mE (40745) PID: PWM=-1023 [0m
+[0;32mI (40783) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40783) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (40783) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40787) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40792) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40795) PID: PWM=-1023 [0m
+[0;32mI (40797) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40804) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40809) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40816) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40832) I2C SLAVE: .............[0m
+
+[1;31mE (40845) PID: PWM=-1023 [0m
+[1;31mE (40895) PID: PWM=-49 [0m
+[0;32mI (40914) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40914) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (40914) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40918) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40923) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40928) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40933) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (40938) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (40945) PID: PWM=354 [0m
+[1;31mE (40995) PID: PWM=-1023 [0m
+[0;32mI (41017) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (41017) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (41042) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41042) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (41042) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41045) PID: PWM=-1023 [0m
+[0;32mI (41046) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41053) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41058) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41063) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41068) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41095) PID: PWM=-1023 [0m
+[1;31mE (41145) PID: PWM=-1023 [0m
+[0;32mI (41173) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41173) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (41173) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41177) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41182) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41187) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41192) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41195) PID: PWM=-49 [0m
+[0;32mI (41197) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41245) PID: PWM=354 [0m
+[1;31mE (41295) PID: PWM=-1023 [0m
+[0;32mI (41304) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41304) CASCADE: M[1]: PosT=30000.0 Pos=29606.0| PWM=300 Dir=-1[0m
+[0;32mI (41304) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41308) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41313) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41318) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41323) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41328) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41336) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (41345) PID: PWM=-1023 [0m
+[0;32mI (41351) I2C SLAVE: .............[0m
+
+[1;31mE (41395) PID: PWM=-1023 [0m
+[0;32mI (41432) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41432) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (41432) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41436) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41441) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41445) PID: PWM=-1023 [0m
+[0;32mI (41446) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41453) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41458) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41495) PID: PWM=-49 [0m
+[1;31mE (41545) PID: PWM=354 [0m
+[0;32mI (41563) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41563) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=353 Dir=1[0m
+[0;32mI (41563) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41567) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41572) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41577) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41582) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41587) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41595) PID: PWM=-1023 [0m
+[1;31mE (41645) PID: PWM=-1023 [0m
+[0;32mI (41691) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41691) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (41691) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41695) PID: PWM=-1023 [0m
+[0;32mI (41696) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41703) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41707) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41712) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41717) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41745) PID: PWM=-1023 [0m
+[1;31mE (41795) PID: PWM=-49 [0m
+[0;32mI (41822) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41822) CASCADE: M[1]: PosT=30000.0 Pos=29605.0| PWM=300 Dir=-1[0m
+[0;32mI (41822) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41826) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41831) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41836) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41841) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (41845) PID: PWM=354 [0m
+[0;32mI (41846) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (41857) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29605
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41871) I2C SLAVE: .............[0m
+
+[1;31mE (41895) PID: PWM=-1023 [0m
+[1;31mE (41945) PID: PWM=-1023 [0m
+[0;32mI (41953) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir

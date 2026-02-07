@@ -1,0 +1,71 @@
+d_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Feb  2 2026 22:26:00[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd1ch ( 48412) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd44 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bd68 vaddr=3ffb0000 size=02480h (  9344) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e1f0 vaddr=40080000 size=01e28h (  7720) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1784ch ( 96332) map[0m
+[0;32mI (159) esp_image: segment 5: paddr=00037874 vaddr=40081e28 size=0d574h ( 54644) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     ecgmoduleTest[0m
+[0;32mI (211) app_init: App version:      v5.4-dirty[0m
+[0;32mI (215) app_init: Compile time:     Feb  2 2026 22:25:52[0m
+[0;32mI (220) app_init: ELF file SHA256:  22d58adf1...[0m
+[0;32mI (224) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (232) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (236) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB2DB8 len 0002D248 (180 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (262) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (268) heap_init: At 4008F39C len 00010C64 (67 KiB): IRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (292) main_taI (302) ADS1292: Initializing ADS1292 with FULL-DUPLEX SPI...[0m
+[0;32mI (1302) ADS1292: SPI initialized Complete[0m
+ADS1292R ID = 0x00
+[1;31mE (8582) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (8582) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (8582) task_wdt: Tasks currently running:[0m
+[1;31mE (8582) task_wdt: CPU 0: ads_read_task[0m
+[1;31mE (8582) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (8582) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D98FE:0x3FFB1060 0x400D9CC0:0x3FFB1080 0x400830C1:0x3FFB10B0 0x400D7DCF:0x3FFB6C00 0x40087E85:0x3FFB6C60
+

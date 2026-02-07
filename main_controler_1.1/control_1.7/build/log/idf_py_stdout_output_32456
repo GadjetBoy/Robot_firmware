@@ -1,0 +1,833 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd44h ( 48452) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001bd6c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bd90 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e384 vaddr=40080000 size=01c94h (  7316) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=174d8h ( 95448) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037500 vaddr=40081c94 size=0d204h ( 53764) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (205) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (205) app_init: Application information:[0m
+[0;32mI (205) app_init: Project name:     control_1.7[0m
+[0;32mI (209) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  5c24d23a3...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (227) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (239) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (245) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (250) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (255) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (266) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (275) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[0;32mI (306) UART_SLAVE_DMA: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (320) UART_SLAVE_DMA: Setting up PWM and PID module[0m
+[0;32mI (320) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (320) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (329) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (337) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (345) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (354) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (370) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (379) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (395) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (404) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (412) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (420) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (428) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (437) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (445) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (564) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (574) MOTOR_SET: Starting PID application...[0m
+[0;32mI (574) MOTOR_SET: PID application started successfully[0m
+[0;32mI (574) UART_SLAVE_DMA: Slave initialization complete and ready to receive data[0m
+[0;32mI (575) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[1;31mE (579) RESET: CPU Reset reason: 1[0m
+[0;32mI (597) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (600) main_task: Returned from app_main()[0m
+[0;32mI (703) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (710) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (813) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (820) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (923) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (930) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1033) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1040) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1144) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1151) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1255) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1262) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1366) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1373) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1477) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1484) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1588) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1595) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1699) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1706) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1810) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1817) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1921) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (1928) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2032) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2039) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2143) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2150) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2254) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2261) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2365) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2372) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2476) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2483) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2587) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2594) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2698) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2705) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2809) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2816) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2920) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (2927) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3031) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3038) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3142) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3149) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3253) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3260) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3364) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3371) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3475) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3482) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3586) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3593) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3697) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3704) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3808) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3815) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3919) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (3926) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4030) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4037) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4141) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4148) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4252) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4259) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4363) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4370) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4474) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4481) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4585) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4592) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4696) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4703) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4807) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4814) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4918) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (4925) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5029) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5036) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5140) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5147) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5251) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5258) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5362) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5369) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5473) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5480) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5584) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5591) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5695) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5702) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5806) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5813) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5917) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (5924) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6028) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6035) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6139) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6146) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6250) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6257) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6361) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6368) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6472) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6479) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6583) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6590) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6694) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6701) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6805) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6812) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (6916) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (6923) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7027) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7034) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7138) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7145) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7249) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7256) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7360) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7367) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7471) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7478) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7582) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7589) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7693) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7700) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7804) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7811) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (7915) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: 0.00 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (7922) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (8026) UART_SLAVE_DMA: [0m
+PWM[1] READING: 0.00 
+PWM[2] READING: 0.00 
+PWM[3] READING: 0.00 
+PWM[4] READING: 0.00 
+PWM[5] READING: -nan 
+PWM[6] READING: 0.00 
+PWM[7] READING: 0.00 
+PWM[8] READING: 0.00
+[0;32mI (8033) UART_SLAVE_DMA: .............[0m
+

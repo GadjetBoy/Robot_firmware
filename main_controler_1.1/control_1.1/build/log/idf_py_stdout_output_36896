@@ -1,0 +1,3330 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=14094h ( 82068) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=000240bc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=000240e0 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028eb0 vaddr=40080000 size=07168h ( 29032) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=765a4h (484772) map[0m
+[0;32mI (306) esp_image: segment 5: paddr=000a65cc vaddr=40087168 size=124d0h ( 74960) load[0m
+[0;32mI (347) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (348) boot: Disabling RNG early entropy source...[0m
+[0;32mI (358) cpu_start: Multicore app[0m
+[0;32mI (366) cpu_start: Pro cpu start user code[0m
+[0;32mI (366) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (366) app_init: Application information:[0m
+[0;32mI (366) app_init: Project name:     control_1.1[0m
+[0;32mI (371) app_init: App version:      v5.4[0m
+[0;32mI (374) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (379) app_init: ELF file SHA256:  9d884ff08...[0m
+[0;32mI (384) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (387) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (391) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (395) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (399) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (405) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (410) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (416) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (421) heap_init: At 3FFC48E0 len 0001B720 (109 KiB): DRAM[0m
+[0;32mI (426) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (431) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (437) heap_init: At 40099638 len 000069C8 (26 KiB): IRAM[0m
+[0;32mI (444) spi_flash: detected chip: generic[0m
+[0;32mI (446) spi_flash: flash io: dio[0m
+[0;32mI (450) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (454) main_task: Started on CPU0[0m
+[0;32mI (457) main_task: Calling app_main()[0m
+[0;32mI (460) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (468) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (472) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (478) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (496) I2C SLAVE: .............[0m
+
+[0;32mI (499) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (504) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (509) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (517) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (534) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (542) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (559) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (567) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (575) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (584) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (592) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (600) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (609) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (617) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (625) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (634) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (643) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (647) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (651) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (651) MOTOR_COMMANDS: Mode[1][0m
+[0;32mI (686) MOTOR_COMMANDS: crawl gate running[0m
+[0;32mI (697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=0 | Dir=1 | State=2[0m
+[0;32mI (701) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (703) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (706) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (709) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=350 | Dir=1 | State=2[0m
+[0;33mW (788) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (798) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (999) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1010) I2C SLAVE: .............[0m
+
+[0;32mI (1047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (1097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (1140) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (1156) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1161) main_task: Returned from app_main()[0m
+[0;32mI (1162) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1163) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1168) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1172) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1180) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1184) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1188) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1195) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1196) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (1210) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1214) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (1297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (1347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (1397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (1447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=636 | Dir=1 | State=2[0m
+[0;32mI (1497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (1514) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1521) I2C SLAVE: .............[0m
+
+[0;32mI (1547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (1597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (1647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=710 | Dir=1 | State=2[0m
+[0;32mI (1697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (1747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (1797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=762 | Dir=1 | State=2[0m
+[0;32mI (1847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=778 | Dir=1 | State=2[0m
+[0;32mI (1897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (1947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (1997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (2024) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2031) I2C SLAVE: .............[0m
+
+[0;32mI (2047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (2097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=854 | Dir=1 | State=2[0m
+[0;32mI (2147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (2197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (2247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (2297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (2347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (2397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (2447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (2497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=949 | Dir=1 | State=2[0m
+[0;32mI (2534) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2541) I2C SLAVE: .............[0m
+
+[0;32mI (2547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (2582) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2582) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (2597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (2647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (2697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=983 | Dir=1 | State=2[0m
+[0;32mI (2747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (2797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (2847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (2897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1006 | Dir=1 | State=2[0m
+[0;32mI (2947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (2997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (3044) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (3051) I2C SLAVE: .............[0m
+
+[0;32mI (3097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1020 | Dir=1 | State=2[0m
+[0;32mI (3147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (3197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (3247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (3297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (3347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=1023 | Dir=1 | State=2[0m
+[0;32mI (3397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (3447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (3497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (3547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (3561) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3568) I2C SLAVE: .............[0m
+
+[0;32mI (3597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (3647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (3697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (3747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (3797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (3847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (3897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (3947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (3997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (4047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (4071) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4078) I2C SLAVE: .............[0m
+
+[0;32mI (4094) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (4094) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (4097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=636 | Dir=1 | State=2[0m
+[0;32mI (4147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (4197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (4247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (4297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=710 | Dir=1 | State=2[0m
+[0;32mI (4347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (4397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (4447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=762 | Dir=1 | State=2[0m
+[0;32mI (4497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=778 | Dir=1 | State=2[0m
+[0;32mI (4547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (4581) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4588) I2C SLAVE: .............[0m
+
+[0;32mI (4597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (4647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (4697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (4747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=854 | Dir=1 | State=2[0m
+[0;32mI (4797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (4847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (4897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (4947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (4997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=0.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (5047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=6.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (5091) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 191
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=296.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (5098) I2C SLAVE: .............[0m
+
+[0;32mI (5147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=548.0 | PWM=949 | Dir=1 | State=2[0m
+[0;32mI (5197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=1351.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (5247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=1861.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (5297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=2602.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (5347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=3322.0 | PWM=983 | Dir=1 | State=2[0m
+[0;32mI (5397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=4100.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (5447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=4834.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (5497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=5204.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (5547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=6208.0 | PWM=1006 | Dir=1 | State=2[0m
+[0;32mI (5597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=6959.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (5607) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5608) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5608) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 7148
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5625) I2C SLAVE: .............[0m
+
+[0;32mI (5647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=7597.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (5697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=8353.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (5747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=8921.0 | PWM=1020 | Dir=1 | State=2[0m
+[0;32mI (5797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=9754.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (5847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=10514.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (5897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=11348.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (5947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=11918.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (5997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=12488.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=13512.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=14274.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6128) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 14728
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6135) I2C SLAVE: .............[0m
+
+[0;32mI (6147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=14919.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=15681.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=16076.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=17088.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=17675.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (6397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18702.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (6447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19249.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (6497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19668.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (6547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19432.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (6597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19320.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (6638) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 19182
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6645) I2C SLAVE: .............[0m
+
+[0;32mI (6647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19170.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (6697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19162.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (6747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19162.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (6797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19162.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (6847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19162.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (6897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19162.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (6947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19162.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (6997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19162.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (7047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19178.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (7097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19212.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (7142) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (7142) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (7147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19383.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (7148) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 19383
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7167) I2C SLAVE: .............[0m
+
+[0;32mI (7197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19520.0 | PWM=636 | Dir=1 | State=2[0m
+[0;32mI (7247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19762.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (7297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20020.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (7347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20161.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (7397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20575.0 | PWM=710 | Dir=1 | State=2[0m
+[0;32mI (7447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20826.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (7497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=21312.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (7547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=21600.0 | PWM=762 | Dir=1 | State=2[0m
+[0;32mI (7597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22044.0 | PWM=778 | Dir=1 | State=2[0m
+[0;32mI (7647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22471.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (7670) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 22692
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7677) I2C SLAVE: .............[0m
+
+[0;32mI (7697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22692.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (7747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23318.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (7797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23736.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (7847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24025.0 | PWM=854 | Dir=1 | State=2[0m
+[0;32mI (7897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24479.0 | PWM=582 | Dir=1 | State=2[0m
+[0;32mI (7947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24854.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (7997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25510.0 | PWM=894 | Dir=-1 | State=2[0m
+[0;32mI (8047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25704.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (8097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25676.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (8147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26126.0 | PWM=503 | Dir=-1 | State=2[0m
+[0;32mI (8180) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 26262
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8187) I2C SLAVE: .............[0m
+
+[0;32mI (8197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26369.0 | PWM=897 | Dir=1 | State=2[0m
+[0;32mI (8247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26744.0 | PWM=636 | Dir=-1 | State=2[0m
+[0;32mI (8297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26998.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (8347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27007.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (8397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27180.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (8447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27806.0 | PWM=983 | Dir=-1 | State=2[0m
+[0;32mI (8497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28118.0 | PWM=990 | Dir=-1 | State=2[0m
+[0;32mI (8547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27944.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (8597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27460.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (8647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27892.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (8658) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8659) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8690) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28181
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28181.0 | PWM=1011 | Dir=-1 | State=2[0m
+[0;32mI (8697) I2C SLAVE: .............[0m
+
+[0;32mI (8747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27790.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (8797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27506.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (8847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27783.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (8897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28410.0 | PWM=1021 | Dir=-1 | State=2[0m
+[0;32mI (8947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28684.0 | PWM=1022 | Dir=-1 | State=2[0m
+[0;32mI (8997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28342.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (9047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27951.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (9097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28159.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (9147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28154.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (9197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27655.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (9208) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 27542
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9215) I2C SLAVE: .............[0m
+
+[0;32mI (9247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27277.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (9297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27156.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (9347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26996.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (9397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26989.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (9447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27019.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (9497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27087.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (9547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27204.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (9597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27344.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (9647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27425.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (9697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27679.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (9718) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 27731
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9725) I2C SLAVE: .............[0m
+
+[0;32mI (9747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27852.0 | PWM=404 | Dir=1 | State=2[0m
+[0;32mI (9797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27943.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (9847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28077.0 | PWM=581 | Dir=1 | State=2[0m
+[0;32mI (9897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28166.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (9947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28450.0 | PWM=674 | Dir=-1 | State=2[0m
+[0;32mI (9997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28574.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (10047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28486.0 | PWM=710 | Dir=1 | State=2[0m
+[0;32mI (10097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28532.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (10147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28690.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (10193) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (10193) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (10197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29074.0 | PWM=762 | Dir=-1 | State=2[0m
+[0;32mI (10228) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29170
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10235) I2C SLAVE: .............[0m
+
+[0;32mI (10247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29160.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (10297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28945.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (10347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28926.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (10397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29066.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (10447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29584.0 | PWM=840 | Dir=-1 | State=2[0m
+[0;32mI (10497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29725.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (10547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29444.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (10597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29202.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (10647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29582.0 | PWM=894 | Dir=-1 | State=2[0m
+[0;32mI (10697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29768.0 | PWM=906 | Dir=-1 | State=2[0m
+[0;32mI (10738) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29549
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10745) I2C SLAVE: .............[0m
+
+[0;32mI (10747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29549.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (10797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29180.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (10847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29472.0 | PWM=939 | Dir=-1 | State=2[0m
+[0;32mI (10897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29785.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (10947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29376.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (10997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29154.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (11047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29528.0 | PWM=975 | Dir=-1 | State=2[0m
+[0;32mI (11097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29802.0 | PWM=983 | Dir=-1 | State=2[0m
+[0;32mI (11147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29459.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (11197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29129.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (11247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29280.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (11249) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29280
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11262) I2C SLAVE: .............[0m
+
+[0;32mI (11297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30060.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (11347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30346.0 | PWM=1011 | Dir=-1 | State=2[0m
+[0;32mI (11397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=29991.0 | PWM=1023 | Dir=1 | State=3[0m
+[0;32mI (11447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=29584.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (11497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=29683.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (11547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=29795.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (11597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=29321.0 | PWM=371 | Dir=-1 | State=2[0m
+[0;32mI (11647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=28946.0 | PWM=392 | Dir=-1 | State=2[0m
+[0;32mI (11697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=28534.0 | PWM=413 | Dir=-1 | State=2[0m
+[0;32mI (11744) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11744) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=28248.0 | PWM=434 | Dir=-1 | State=2[0m
+[0;32mI (11765) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28036
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11772) I2C SLAVE: .............[0m
+
+[0;32mI (11797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=27782.0 | PWM=455 | Dir=-1 | State=2[0m
+[0;32mI (11847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=27531.0 | PWM=476 | Dir=-1 | State=2[0m
+[0;32mI (11897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=27179.0 | PWM=496 | Dir=-1 | State=2[0m
+[0;32mI (11947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=26871.0 | PWM=517 | Dir=-1 | State=2[0m
+[0;32mI (11997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=26712.0 | PWM=537 | Dir=-1 | State=2[0m
+[0;32mI (12047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=26295.0 | PWM=557 | Dir=-1 | State=2[0m
+[0;32mI (12097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=26064.0 | PWM=577 | Dir=-1 | State=2[0m
+[0;32mI (12147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=25715.0 | PWM=597 | Dir=-1 | State=2[0m
+[0;32mI (12197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=25396.0 | PWM=617 | Dir=-1 | State=2[0m
+[0;32mI (12247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=25227.0 | PWM=636 | Dir=-1 | State=2[0m
+[0;32mI (12275) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 24948
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12282) I2C SLAVE: .............[0m
+
+[0;32mI (12297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=24772.0 | PWM=655 | Dir=-1 | State=2[0m
+[0;32mI (12347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=24516.0 | PWM=674 | Dir=-1 | State=2[0m
+[0;32mI (12397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=24123.0 | PWM=692 | Dir=-1 | State=2[0m
+[0;32mI (12447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=23759.0 | PWM=710 | Dir=-1 | State=2[0m
+[0;32mI (12497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=23566.0 | PWM=728 | Dir=-1 | State=2[0m
+[0;32mI (12547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=23040.0 | PWM=745 | Dir=-1 | State=2[0m
+[0;32mI (12597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=22740.0 | PWM=762 | Dir=-1 | State=2[0m
+[0;32mI (12647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=22277.0 | PWM=778 | Dir=-1 | State=2[0m
+[0;32mI (12697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=21835.0 | PWM=795 | Dir=-1 | State=2[0m
+[0;32mI (12747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=21338.0 | PWM=810 | Dir=-1 | State=2[0m
+[0;32mI (12785) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 21104
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12792) I2C SLAVE: .............[0m
+
+[0;32mI (12797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=20976.0 | PWM=825 | Dir=-1 | State=2[0m
+[0;32mI (12847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=20612.0 | PWM=840 | Dir=-1 | State=2[0m
+[0;32mI (12897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=19918.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (12947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=19510.0 | PWM=868 | Dir=-1 | State=2[0m
+[0;32mI (12997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=18906.0 | PWM=881 | Dir=-1 | State=2[0m
+[0;32mI (13047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=18324.0 | PWM=894 | Dir=-1 | State=2[0m
+[0;32mI (13097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=17882.0 | PWM=906 | Dir=-1 | State=2[0m
+[0;32mI (13147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=17210.0 | PWM=918 | Dir=-1 | State=2[0m
+[0;32mI (13197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=16628.0 | PWM=929 | Dir=-1 | State=2[0m
+[0;32mI (13247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=16164.0 | PWM=939 | Dir=-1 | State=2[0m
+[0;32mI (13279) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (13279) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (13295) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 15585
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=15585.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (13302) I2C SLAVE: .............[0m
+
+[0;32mI (13347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=15286.0 | PWM=958 | Dir=-1 | State=2[0m
+[0;32mI (13397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=14418.0 | PWM=967 | Dir=-1 | State=2[0m
+[0;32mI (13447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=13736.0 | PWM=975 | Dir=-1 | State=2[0m
+[0;32mI (13497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=13149.0 | PWM=983 | Dir=-1 | State=2[0m
+[0;32mI (13547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=12419.0 | PWM=990 | Dir=-1 | State=2[0m
+[0;32mI (13597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=12054.0 | PWM=996 | Dir=-1 | State=2[0m
+[0;32mI (13647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=11043.0 | PWM=1001 | Dir=-1 | State=2[0m
+[0;32mI (13697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=10282.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (13747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=9460.0 | PWM=1011 | Dir=-1 | State=2[0m
+[0;32mI (13797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=8880.0 | PWM=1014 | Dir=-1 | State=2[0m
+[0;32mI (13813) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 8692
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13820) I2C SLAVE: .............[0m
+
+[0;32mI (13847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=8300.0 | PWM=1017 | Dir=-1 | State=2[0m
+[0;32mI (13897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=7283.0 | PWM=1020 | Dir=-1 | State=2[0m
+[0;32mI (13947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=6701.0 | PWM=1021 | Dir=-1 | State=2[0m
+[0;32mI (13997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=5871.0 | PWM=1022 | Dir=-1 | State=2[0m
+[0;32mI (14047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=5097.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=4716.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=3678.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=3092.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=2257.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=1479.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14323) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 1288
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14330) I2C SLAVE: .............[0m
+
+[0;32mI (14347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=1098.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=58.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-526.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-1359.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-2134.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-2515.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-3554.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-4141.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-4976.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-5752.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14831) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (14832) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (14833) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -6134
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-6588.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14850) I2C SLAVE: .............[0m
+
+[0;32mI (14897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-7176.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-7763.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (14997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-8792.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-9380.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-10218.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-10997.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-11394.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-12424.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-13204.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-13866.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15360) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -14057
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15367) I2C SLAVE: .............[0m
+
+[0;32mI (15397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-14630.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-15027.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-16070.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-16835.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-17497.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-18276.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-18849.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-19702.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-20481.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (15847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21318.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (15870) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -21523
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15877) I2C SLAVE: .............[0m
+
+[0;32mI (15897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21881.0 | PWM=1023 | Dir=1 | State=2[0m
+[0;32mI (15947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22286.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (15997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22056.0 | PWM=371 | Dir=-1 | State=2[0m
+[0;32mI (16047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21901.0 | PWM=392 | Dir=-1 | State=2[0m
+[0;32mI (16097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21804.0 | PWM=413 | Dir=-1 | State=2[0m
+[0;32mI (16147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21815.0 | PWM=434 | Dir=-1 | State=2[0m
+[0;32mI (16197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21833.0 | PWM=455 | Dir=-1 | State=2[0m
+[0;32mI (16247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21917.0 | PWM=476 | Dir=-1 | State=2[0m
+[0;32mI (16297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21985.0 | PWM=496 | Dir=-1 | State=2[0m
+[0;32mI (16347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22114.0 | PWM=517 | Dir=-1 | State=2[0m
+[0;32mI (16367) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (16368) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (16380) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -22182
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16388) I2C SLAVE: .............[0m
+
+[0;32mI (16397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22260.0 | PWM=537 | Dir=-1 | State=2[0m
+[0;32mI (16447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22340.0 | PWM=557 | Dir=-1 | State=2[0m
+[0;32mI (16497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22590.0 | PWM=577 | Dir=-1 | State=2[0m
+[0;32mI (16547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22746.0 | PWM=597 | Dir=-1 | State=2[0m
+[0;32mI (16597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23000.0 | PWM=617 | Dir=-1 | State=2[0m
+[0;32mI (16647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23257.0 | PWM=636 | Dir=-1 | State=2[0m
+[0;32mI (16697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23390.0 | PWM=655 | Dir=-1 | State=2[0m
+[0;32mI (16747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23782.0 | PWM=674 | Dir=-1 | State=2[0m
+[0;32mI (16797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-24020.0 | PWM=692 | Dir=-1 | State=2[0m
+[0;32mI (16847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-24379.0 | PWM=710 | Dir=-1 | State=2[0m
+[0;32mI (16891) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -24735
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-24735.0 | PWM=728 | Dir=-1 | State=2[0m
+[0;32mI (16898) I2C SLAVE: .............[0m
+
+[0;32mI (16947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-25148.0 | PWM=361 | Dir=-1 | State=2[0m
+[0;32mI (16997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-25428.0 | PWM=762 | Dir=-1 | State=2[0m
+[0;32mI (17047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-25702.0 | PWM=778 | Dir=-1 | State=2[0m
+[0;32mI (17097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26244.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (17147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26388.0 | PWM=810 | Dir=-1 | State=2[0m
+[0;32mI (17197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26382.0 | PWM=825 | Dir=-1 | State=2[0m
+[0;32mI (17247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26731.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (17297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26926.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (17347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27374.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (17397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27510.0 | PWM=858 | Dir=-1 | State=2[0m
+[0;32mI (17409) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -27510
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17416) I2C SLAVE: .............[0m
+
+[0;32mI (17447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27491.0 | PWM=894 | Dir=-1 | State=2[0m
+[0;32mI (17497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27886.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (17547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28090.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (17597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27847.0 | PWM=929 | Dir=-1 | State=2[0m
+[0;32mI (17647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27846.0 | PWM=939 | Dir=-1 | State=2[0m
+[0;32mI (17697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28235.0 | PWM=949 | Dir=1 | State=2[0m
+[0;32mI (17747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28566.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (17797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28427.0 | PWM=967 | Dir=-1 | State=2[0m
+[0;32mI (17847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27910.0 | PWM=975 | Dir=-1 | State=2[0m
+[0;32mI (17897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28280.0 | PWM=983 | Dir=1 | State=2[0m
+[0;32mI (17919) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28280
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17921) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (17926) I2C SLAVE: .............[0m
+
+[0;32mI (17931) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (17947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28595.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (17997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28251.0 | PWM=996 | Dir=-1 | State=2[0m
+[0;32mI (18047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27900.0 | PWM=1001 | Dir=-1 | State=2[0m
+[0;32mI (18097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28212.0 | PWM=596 | Dir=1 | State=2[0m
+[0;32mI (18147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28651.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (18197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28472.0 | PWM=1014 | Dir=-1 | State=2[0m
+[0;32mI (18247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28250.0 | PWM=1017 | Dir=-1 | State=2[0m
+[0;32mI (18297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28492.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (18347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29220.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (18397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29310.0 | PWM=637 | Dir=1 | State=2[0m
+[0;32mI (18434) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28980
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18441) I2C SLAVE: .............[0m
+
+[0;32mI (18447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28876.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (18497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28770.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (18547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28961.0 | PWM=1023 | Dir=1 | State=2[0m
+[0;32mI (18597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29164.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (18647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28844.0 | PWM=357 | Dir=-1 | State=2[0m
+[0;32mI (18697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28458.0 | PWM=392 | Dir=-1 | State=2[0m
+[0;32mI (18747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28263.0 | PWM=413 | Dir=-1 | State=2[0m
+[0;32mI (18797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28218.0 | PWM=434 | Dir=-1 | State=2[0m
+[0;32mI (18847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28216.0 | PWM=455 | Dir=-1 | State=2[0m
+[0;32mI (18897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28244.0 | PWM=476 | Dir=-1 | State=2[0m
+[0;32mI (18944) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28314
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28314.0 | PWM=496 | Dir=-1 | State=2[0m
+[0;32mI (18951) I2C SLAVE: .............[0m
+
+[0;32mI (18997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28407.0 | PWM=517 | Dir=-1 | State=2[0m
+[0;32mI (19047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28466.0 | PWM=537 | Dir=-1 | State=2[0m
+[0;32mI (19097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28659.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (19147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28772.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (19197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28856.0 | PWM=457 | Dir=-1 | State=2[0m
+[0;32mI (19247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28930.0 | PWM=498 | Dir=-1 | State=2[0m
+[0;32mI (19297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29040.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (19347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29132.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (19397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29220.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (19447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29375.0 | PWM=487 | Dir=1 | State=2[0m
+[0;32mI (19458) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (19458) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (19462) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -29402
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19476) I2C SLAVE: .............[0m
+
+[0;32mI (19497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29433.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (19547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29440.0 | PWM=708 | Dir=-1 | State=2[0m
+[0;32mI (19597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29539.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (19647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29639.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (19697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29770.0 | PWM=612 | Dir=1 | State=2[0m
+[0;32mI (19747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29734.0 | PWM=795 | Dir=-1 | State=2[0m
+[0;32mI (19797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29778.0 | PWM=354 | Dir=-1 | State=2[0m
+[0;32mI (19847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30051.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (19897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30151.0 | PWM=830 | Dir=1 | State=2[0m
+[0;32mI (19947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29792.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (19979) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -29586
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19986) I2C SLAVE: .............[0m
+
+[0;32mI (19997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29612.0 | PWM=868 | Dir=-1 | State=2[0m
+[0;32mI (20047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29893.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (20097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30134.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (20147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29903.0 | PWM=906 | Dir=-1 | State=2[0m
+[0;32mI (20197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29560.0 | PWM=918 | Dir=-1 | State=2[0m
+[0;32mI (20247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29910.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (20297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30154.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (20347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29859.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (20397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29543.0 | PWM=958 | Dir=-1 | State=2[0m
+[0;32mI (20447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29976.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (20489) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -30215
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20496) I2C SLAVE: .............[0m
+
+[0;32mI (20497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30215.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (20547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29796.0 | PWM=983 | Dir=-1 | State=2[0m
+[0;32mI (20597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29544.0 | PWM=990 | Dir=-1 | State=2[0m
+[0;32mI (20647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29722.0 | PWM=719 | Dir=1 | State=2[0m
+[0;32mI (20697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30244.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (20747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30073.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (20797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29728.0 | PWM=1011 | Dir=-1 | State=2[0m
+[0;32mI (20847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30162.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (20897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30423.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (20947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30086.0 | PWM=1020 | Dir=-1 | State=2[0m
+[0;32mI (20997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29753.0 | PWM=1021 | Dir=-1 | State=2[0m
+[0;32mI (21000) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -29753
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21012) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (21012) I2C SLAVE: .............[0m
+
+[0;32mI (21017) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (21047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30085.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (21097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30461.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (21147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30326.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (21197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29752.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (21247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29985.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (21297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30634.0 | PWM=1023 | Dir=1 | State=2[0m
+[0;32mI (21347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30971.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (21397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30654.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (21447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30438.0 | PWM=392 | Dir=-1 | State=2[0m
+[0;32mI (21497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30242.0 | PWM=413 | Dir=-1 | State=2[0m
+[0;32mI (21520) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -30118
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21527) I2C SLAVE: .............[0m
+
+[0;32mI (21547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30085.0 | PWM=434 | Dir=-1 | State=2[0m
+[0;32mI (21597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30085.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (21647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30120.0 | PWM=401 | Dir=1 | State=2[0m
+[0;32mI (21697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=383 | Dir=1 | State=2[0m
+[0;32mI (21747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (21797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (21847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (21897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (21947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (21997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (22030) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -30136
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22037) I2C SLAVE: .............[0m
+
+[0;32mI (22047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (22097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (22147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (22197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (22247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (22297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=353 | Dir=1 | State=2[0m
+[0;32mI (22347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=357 | Dir=1 | State=2[0m
+[0;32mI (22397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=362 | Dir=1 | State=2[0m
+[0;32mI (22447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=366 | Dir=1 | State=2[0m
+[0;32mI (22497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (22540) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -30136
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=376 | Dir=1 | State=2[0m
+[0;32mI (22548) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (22547) I2C SLAVE: .............[0m
+
+[0;32mI (22560) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (22597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=381 | Dir=1 | State=2[0m
+[0;32mI (22647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=386 | Dir=1 | State=2[0m
+[0;32mI (22697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (22747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=397 | Dir=1 | State=2[0m
+[0;32mI (22797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=404 | Dir=1 | State=2[0m
+[0;32mI (22847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=410 | Dir=1 | State=2[0m
+[0;32mI (22897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=416 | Dir=1 | State=2[0m
+[0;32mI (22947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=423 | Dir=1 | State=2[0m
+[0;32mI (22997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=430 | Dir=1 | State=2[0m
+[0;32mI (23047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=436 | Dir=1 | State=2[0m
+[0;32mI (23063) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -30136
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23070) I2C SLAVE: .............[0m
+
+[0;32mI (23097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=443 | Dir=1 | State=2[0m
+[0;32mI (23147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=450 | Dir=1 | State=2[0m
+[0;32mI (23197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=457 | Dir=1 | State=2[0m
+[0;32mI (23247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=465 | Dir=1 | State=2[0m
+[0;32mI (23297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=472 | Dir=1 | State=2[0m
+[0;32mI (23347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=479 | Dir=1 | State=2[0m
+[0;32mI (23397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=486 | Dir=1 | State=2[0m
+[0;32mI (23447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=493 | Dir=1 | State=2[0m
+[0;32mI (23497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=500 | Dir=1 | State=2[0m
+[0;32mI (23547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=507 | Dir=1 | State=2[0m
+[0;32mI (23573) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -30136
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23580) I2C SLAVE: .............[0m
+
+[0;32mI (23597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=513 | Dir=1 | State=2[0m
+[0;32mI (23647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30136.0 | PWM=521 | Dir=1 | State=2[0m
+[0;32mI (23697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30113.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (23747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-30036.0 | PWM=450 | Dir=-1 | State=2[0m
+[0;32mI (23797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29996.0 | PWM=0 | Dir=-1 | State=0[0m
+[0;32mI (23802) MOTOR_COMMANDS: Mode[1][0m
+[0;32mI (23802) MOTOR_COMMANDS: crawl gate running[0m
+[0;32mI (23847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-30000.0 | PWM=0 | Dir=1 | State=2[0m
+[0;32mI (23897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-30000.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (23947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29992.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (23997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29958.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (24047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29902.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (24083) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -29864
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24090) I2C SLAVE: .............[0m
+
+[0;32mI (24097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29864.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (24102) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (24106) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (24147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29734.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (24197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29608.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (24247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29481.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (24297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29313.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (24347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29216.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (24397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-28932.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (24447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-28699.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (24497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-28480.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (24547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-28202.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (24593) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28058
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-27984.0 | PWM=636 | Dir=1 | State=2[0m
+[0;32mI (24600) I2C SLAVE: .............[0m
+
+[0;32mI (24647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-27640.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (24697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-27305.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (24747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-26924.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (24797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-26645.0 | PWM=710 | Dir=1 | State=2[0m
+[0;32mI (24847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-26362.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (24897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-25824.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (24947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-25506.0 | PWM=762 | Dir=1 | State=2[0m
+[0;32mI (24997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-25035.0 | PWM=778 | Dir=1 | State=2[0m
+[0;32mI (25047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-24576.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (25097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-24335.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (25111) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -24052
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (25118) I2C SLAVE: .............[0m
+
+[0;32mI (25147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-23684.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (25197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-23297.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (25247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-22715.0 | PWM=854 | Dir=1 | State=2[0m
+[0;32mI (25297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-22172.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (25347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-21882.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (25397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-21093.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (25447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-20492.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (25497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-19956.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (25547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-19308.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (25597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-18983.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (25621) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -18410
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (25628) I2C SLAVE: .............[0m
+
+[0;32mI (25638) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (25638) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (25647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-18074.0 | PWM=949 | Dir=1 | State=2[0m
+[0;32mI (25697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-17561.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (25747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-16781.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (25797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-16052.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (25847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-15240.0 | PWM=983 | Dir=1 | State=2[0m
+[0;32mI (25897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-14686.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (25947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-14114.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (25997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-13091.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (26047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-12528.0 | PWM=1006 | Dir=1 | State=2[0m
+[0;32mI (26097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-11688.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (26131) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -11309
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26138) I2C SLAVE: .............[0m
+
+[0;32mI (26147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-10914.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (26197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-10532.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (26247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-9488.0 | PWM=1020 | Dir=1 | State=2[0m
+[0;32mI (26297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-8705.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (26347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-8054.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (26397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-7271.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-6886.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-5836.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-5050.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-4399.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26641) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -3615
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-3615.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26648) I2C SLAVE: .............[0m
+
+[0;32mI (26697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-3230.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-2181.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-1396.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-745.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=40.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=618.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (26997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=1478.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=2264.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=3108.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=3700.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27159) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 3893
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27166) I2C SLAVE: .............[0m
+
+[0;32mI (27191) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (27191) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (27197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=4278.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=5329.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=5906.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=6766.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=7552.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=7937.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=8990.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=9569.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=10430.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=11202.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27669) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 11410
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27676) I2C SLAVE: .............[0m
+
+[0;32mI (27697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=11602.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=12656.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=13234.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=14094.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=14880.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=15726.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (27997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=16320.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (28047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=16898.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (28097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=17952.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (28147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18546.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (28179) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 18739
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28186) I2C SLAVE: .............[0m
+
+[0;32mI (28197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19392.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (28247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20179.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (28297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20758.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (28347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=21620.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (28397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22371.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (28447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22696.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (28497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22480.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (28547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22370.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (28597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22209.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (28647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22206.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (28689) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 22239
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28696) I2C SLAVE: .............[0m
+
+[0;32mI (28697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22239.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (28726) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (28726) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (28747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22312.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (28797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22362.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (28847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22538.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (28897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22708.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (28947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22872.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (28997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23095.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (29047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23282.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (29097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23573.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (29147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23869.0 | PWM=636 | Dir=1 | State=2[0m
+[0;32mI (29197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24219.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (29199) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 24219
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29212) I2C SLAVE: .............[0m
+
+[0;32mI (29247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24554.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (29297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24736.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (29347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25232.0 | PWM=386 | Dir=-1 | State=2[0m
+[0;32mI (29397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25491.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (29447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25774.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (29497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26101.0 | PWM=424 | Dir=1 | State=2[0m
+[0;32mI (29547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26290.0 | PWM=778 | Dir=1 | State=2[0m
+[0;32mI (29597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26784.0 | PWM=795 | Dir=-1 | State=2[0m
+[0;32mI (29647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26974.0 | PWM=708 | Dir=1 | State=2[0m
+[0;32mI (29697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26898.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (29715) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 26981
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29722) I2C SLAVE: .............[0m
+
+[0;32mI (29747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27136.0 | PWM=735 | Dir=1 | State=2[0m
+[0;32mI (29797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27336.0 | PWM=653 | Dir=1 | State=2[0m
+[0;32mI (29847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27898.0 | PWM=868 | Dir=-1 | State=2[0m
+[0;32mI (29897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28105.0 | PWM=491 | Dir=-1 | State=2[0m
+[0;32mI (29947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27846.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (29997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27752.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (30047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28216.0 | PWM=918 | Dir=-1 | State=2[0m
+[0;32mI (30097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28442.0 | PWM=831 | Dir=-1 | State=2[0m
+[0;32mI (30147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28248.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (30197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27984.0 | PWM=949 | Dir=1 | State=2[0m
+[0;32mI (30225) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28174
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30232) I2C SLAVE: .............[0m
+
+[0;32mI (30247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28300.0 | PWM=813 | Dir=-1 | State=2[0m
+[0;32mI (30279) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (30279) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (30297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28678.0 | PWM=967 | Dir=-1 | State=2[0m
+[0;32mI (30347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28342.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (30397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28127.0 | PWM=983 | Dir=1 | State=2[0m
+[0;32mI (30447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28512.0 | PWM=990 | Dir=-1 | State=2[0m
+[0;32mI (30497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28805.0 | PWM=996 | Dir=-1 | State=2[0m
+[0;32mI (30547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28460.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (30597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28115.0 | PWM=1006 | Dir=1 | State=2[0m
+[0;32mI (30647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28258.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (30697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29096.0 | PWM=1014 | Dir=-1 | State=2[0m
+[0;32mI (30735) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29523
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30742) I2C SLAVE: .............[0m
+
+[0;32mI (30747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29548.0 | PWM=1017 | Dir=-1 | State=2[0m
+[0;32mI (30797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29278.0 | PWM=1020 | Dir=1 | State=2[0m
+[0;32mI (30847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28901.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (30897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29150.0 | PWM=821 | Dir=-1 | State=2[0m
+[0;32mI (30947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29647.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (30997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29365.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (31047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28732.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (31097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28268.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (31147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27739.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (31197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27004.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (31245) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 26777
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26777.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (31252) I2C SLAVE: .............[0m
+
+[0;32mI (31297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26603.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (31347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26568.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (31397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26580.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (31447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26664.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (31497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26744.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (31547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26896.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (31597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27074.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (31647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27176.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (31697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27481.0 | PWM=376 | Dir=-1 | State=2[0m
+[0;32mI (31747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27655.0 | PWM=456 | Dir=1 | State=2[0m
+[0;32mI (31763) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 27696
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31770) I2C SLAVE: .............[0m
+
+[0;32mI (31797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27816.0 | PWM=514 | Dir=1 | State=2[0m
+[0;32mI (31814) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (31814) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (31847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27981.0 | PWM=444 | Dir=1 | State=2[0m
+[0;32mI (31897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28076.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (31947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28354.0 | PWM=673 | Dir=-1 | State=2[0m
+[0;32mI (31997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28488.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (32047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28409.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (32097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28462.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (32147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28749.0 | PWM=762 | Dir=-1 | State=2[0m
+[0;32mI (32197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28852.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (32247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28730.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (32273) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28664
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32280) I2C SLAVE: .............[0m
+
+[0;32mI (32297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28760.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (32347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29005.0 | PWM=825 | Dir=-1 | State=2[0m
+[0;32mI (32397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29210.0 | PWM=840 | Dir=-1 | State=2[0m
+[0;32mI (32447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28888.0 | PWM=854 | Dir=1 | State=2[0m
+[0;32mI (32497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28734.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (32547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29083.0 | PWM=881 | Dir=-1 | State=2[0m
+[0;32mI (32597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29256.0 | PWM=862 | Dir=-1 | State=2[0m
+[0;32mI (32647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28968.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (32697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28772.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (32747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28930.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (32783) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29486
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32790) I2C SLAVE: .............[0m
+
+[0;32mI (32797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29612.0 | PWM=939 | Dir=-1 | State=2[0m
+[0;32mI (32847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29842.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (32897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29518.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (32947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29184.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (32997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29427.0 | PWM=975 | Dir=-1 | State=2[0m
+[0;32mI (33047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29857.0 | PWM=983 | Dir=-1 | State=2[0m
+[0;32mI (33097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29497.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (33147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29183.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (33197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29494.0 | PWM=1001 | Dir=-1 | State=2[0m
+[0;32mI (33247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29856.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (33293) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29588
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29446.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (33300) I2C SLAVE: .............[0m
+
+[0;32mI (33347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29171.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (33367) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (33367) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (33397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29580.0 | PWM=1017 | Dir=-1 | State=2[0m
+[0;32mI (33447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29884.0 | PWM=1020 | Dir=-1 | State=2[0m
+[0;32mI (33497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29721.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (33547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29196.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (33597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29480.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (33647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29907.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (33697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29676.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (33747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29525.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (33797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28757.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (33811) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28614
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33819) I2C SLAVE: .............[0m
+
+[0;32mI (33847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28366.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (33897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28036.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (33947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27884.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (33997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27854.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (34047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27882.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (34097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27933.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (34147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28046.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (34197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28189.0 | PWM=440 | Dir=1 | State=2[0m
+[0;32mI (34247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28380.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (34297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28497.0 | PWM=416 | Dir=1 | State=2[0m
+[0;32mI (34322) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28547
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34329) I2C SLAVE: .............[0m
+
+[0;32mI (34347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28570.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (34397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28732.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (34447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28837.0 | PWM=364 | Dir=1 | State=2[0m
+[0;32mI (34497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28924.0 | PWM=443 | Dir=1 | State=2[0m
+[0;32mI (34547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29019.0 | PWM=374 | Dir=1 | State=2[0m
+[0;32mI (34597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29075.0 | PWM=564 | Dir=1 | State=2[0m
+[0;32mI (34647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29255.0 | PWM=557 | Dir=-1 | State=2[0m
+[0;32mI (34697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29346.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (34747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29340.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (34797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29436.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (34832) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29558
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34839) I2C SLAVE: .............[0m
+
+[0;32mI (34847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29558.0 | PWM=402 | Dir=-1 | State=2[0m
+[0;32mI (34897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29852.0 | PWM=795 | Dir=-1 | State=2[0m
+[0;32mI (34902) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (34902) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (34947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29816.0 | PWM=659 | Dir=1 | State=2[0m
+[0;32mI (34997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29696.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (35047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29868.0 | PWM=840 | Dir=-1 | State=2[0m
+[0;32mI (35097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30028.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (35147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29720.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (35197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29492.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (35247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29864.0 | PWM=894 | Dir=-1 | State=2[0m
+[0;32mI (35297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30042.0 | PWM=906 | Dir=-1 | State=2[0m
+[0;32mI (35342) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29926
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29831.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (35349) I2C SLAVE: .............[0m
+
+[0;32mI (35397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29481.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (35447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29767.0 | PWM=939 | Dir=-1 | State=2[0m
+[0;32mI (35497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30062.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (35547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29660.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (35597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29449.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (35647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29826.0 | PWM=975 | Dir=-1 | State=2[0m
+[0;32mI (35697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30104.0 | PWM=983 | Dir=-1 | State=2[0m
+[0;32mI (35747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29739.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (35797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29430.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (35847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29586.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (35860) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29917
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35867) I2C SLAVE: .............[0m
+
+[0;32mI (35897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30295.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (35947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30446.0 | PWM=1011 | Dir=-1 | State=2[0m
+[0;32mI (35997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29975.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (36047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29562.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (36097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29677.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (36147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30448.0 | PWM=1021 | Dir=-1 | State=2[0m
+[0;32mI (36197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30778.0 | PWM=1022 | Dir=-1 | State=2[0m
+[0;32mI (36247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30457.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (36297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30031.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (36347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30261.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (36370) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 30309
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36377) I2C SLAVE: .............[0m
+
+[0;32mI (36397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30254.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (36447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29914.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (36455) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (36455) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (36497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29312.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (36547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29044.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (36597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28819.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (36647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28750.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (36697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28751.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (36747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28807.0 | PWM=454 | Dir=1 | State=2[0m
+[0;32mI (36797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28896.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (36847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28992.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (36880) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29081
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36887) I2C SLAVE: .............[0m
+
+[0;32mI (36897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29114.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (36947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29170.0 | PWM=390 | Dir=1 | State=2[0m
+[0;32mI (36997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29241.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (37047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29300.0 | PWM=386 | Dir=1 | State=2[0m
+[0;32mI (37097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29365.0 | PWM=352 | Dir=1 | State=2[0m
+[0;32mI (37147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29458.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (37197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29520.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (37247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29546.0 | PWM=513 | Dir=1 | State=2[0m
+[0;32mI (37297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29587.0 | PWM=438 | Dir=1 | State=2[0m
+[0;32mI (37347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29686.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (37390) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29750
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29750.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (37397) I2C SLAVE: .............[0m
+
+[0;32mI (37447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29772.0 | PWM=435 | Dir=1 | State=2[0m
+[0;32mI (37497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29834.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (37547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29892.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (37597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29955.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (37647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29942.0 | PWM=608 | Dir=1 | State=2[0m
+[0;32mI (37697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29942.0 | PWM=578 | Dir=1 | State=2[0m
+[0;32mI (37747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30076.0 | PWM=810 | Dir=-1 | State=2[0m
+[0;32mI (37797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30080.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (37847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29817.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (37897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29860.0 | PWM=539 | Dir=1 | State=2[0m
+[0;32mI (37908) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37915) I2C SLAVE: .............[0m
+
+[0;32mI (37947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30038.0 | PWM=906 | Dir=-1 | State=2[0m
+[0;32mI (37990) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (37991) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (37997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30304.0 | PWM=918 | Dir=-1 | State=2[0m
+[0;32mI (38047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30022.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (38097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29654.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (38147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=30003.0 | PWM=1023 | Dir=-1 | State=3[0m
+[0;32mI (38197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=30240.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (38247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=30029.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (38297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=29762.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (38347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=29107.0 | PWM=371 | Dir=-1 | State=2[0m
+[0;32mI (38397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=28528.0 | PWM=392 | Dir=-1 | State=2[0m
+[0;32mI (38418) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28394
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38425) I2C SLAVE: .............[0m
+
+[0;32mI (38447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=27952.0 | PWM=413 | Dir=-1 | State=2[0m
+[0;32mI (38497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=27594.0 | PWM=434 | Dir=-1 | State=2[0m
+[0;32mI (38547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=27248.0 | PWM=455 | Dir=-1 | State=2[0m
+[0;32mI (38597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=26682.0 | PWM=476 | Dir=-1 | State=2[0m
+[0;32mI (38647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=26376.0 | PWM=496 | Dir=-1 | State=2[0m
+[0;32mI (38697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=25947.0 | PWM=517 | Dir=-1 | State=2[0m
+[0;32mI (38747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=25574.0 | PWM=537 | Dir=-1 | State=2[0m
+[0;32mI (38797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=25382.0 | PWM=557 | Dir=-1 | State=2[0m
+[0;32mI (38847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=24883.0 | PWM=577 | Dir=-1 | State=2[0m
+[0;32mI (38897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=24518.0 | PWM=597 | Dir=-1 | State=2[0m
+[0;32mI (38928) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 24426
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38935) I2C SLAVE: .............[0m
+
+[0;32mI (38947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=24200.0 | PWM=617 | Dir=-1 | State=2[0m
+[0;32mI (38997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=23828.0 | PWM=636 | Dir=-1 | State=2[0m
+[0;32mI (39047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=23632.0 | PWM=655 | Dir=-1 | State=2[0m
+[0;32mI (39097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=23110.0 | PWM=674 | Dir=-1 | State=2[0m
+[0;32mI (39147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=22720.0 | PWM=692 | Dir=-1 | State=2[0m
+[0;32mI (39197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=22374.0 | PWM=710 | Dir=-1 | State=2[0m
+[0;32mI (39247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=21966.0 | PWM=728 | Dir=-1 | State=2[0m
+[0;32mI (39297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=21644.0 | PWM=745 | Dir=-1 | State=2[0m
+[0;32mI (39347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=21165.0 | PWM=762 | Dir=-1 | State=2[0m
+[0;32mI (39397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=20722.0 | PWM=778 | Dir=-1 | State=2[0m
+[0;32mI (39438) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 20326
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39445) I2C SLAVE: .............[0m
+
+[0;32mI (39447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=20210.0 | PWM=795 | Dir=-1 | State=2[0m
+[0;32mI (39497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=19845.0 | PWM=810 | Dir=-1 | State=2[0m
+[0;32mI (39543) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (39544) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (39547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=19480.0 | PWM=825 | Dir=-1 | State=2[0m
+[0;32mI (39597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=18787.0 | PWM=840 | Dir=-1 | State=2[0m
+[0;32mI (39647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=18391.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (39697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=17781.0 | PWM=868 | Dir=-1 | State=2[0m
+[0;32mI (39747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=17202.0 | PWM=881 | Dir=-1 | State=2[0m
+[0;32mI (39797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=16910.0 | PWM=894 | Dir=-1 | State=2[0m
+[0;32mI (39847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=16086.0 | PWM=906 | Dir=-1 | State=2[0m
+[0;32mI (39897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=15618.0 | PWM=918 | Dir=-1 | State=2[0m
+[0;32mI (39947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=14904.0 | PWM=929 | Dir=-1 | State=2[0m
+[0;32mI (39948) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 14904
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39962) I2C SLAVE: .............[0m
+
+[0;32mI (39997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=14230.0 | PWM=939 | Dir=-1 | State=2[0m
+[0;32mI (40047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=13893.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (40097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=12952.0 | PWM=958 | Dir=-1 | State=2[0m
+[0;32mI (40147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=12410.0 | PWM=967 | Dir=-1 | State=2[0m
+[0;32mI (40197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=11622.0 | PWM=975 | Dir=-1 | State=2[0m
+[0;32mI (40247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=10879.0 | PWM=983 | Dir=-1 | State=2[0m
+[0;32mI (40297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=10510.0 | PWM=990 | Dir=-1 | State=2[0m
+[0;32mI (40347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=9491.0 | PWM=996 | Dir=-1 | State=2[0m
+[0;32mI (40397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=8910.0 | PWM=1001 | Dir=-1 | State=2[0m
+[0;32mI (40447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=8078.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (40465) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 7696
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40472) I2C SLAVE: .............[0m
+
+[0;32mI (40497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=7299.0 | PWM=1011 | Dir=-1 | State=2[0m
+[0;32mI (40547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=6458.0 | PWM=1014 | Dir=-1 | State=2[0m
+[0;32mI (40597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=5867.0 | PWM=1017 | Dir=-1 | State=2[0m
+[0;32mI (40647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=5290.0 | PWM=1020 | Dir=-1 | State=2[0m
+[0;32mI (40697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=4237.0 | PWM=1021 | Dir=-1 | State=2[0m
+[0;32mI (40747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=3644.0 | PWM=1022 | Dir=-1 | State=2[0m
+[0;32mI (40797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=2798.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (40847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=2011.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (40897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=1418.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (40947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=573.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (40975) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 188
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40982) I2C SLAVE: .............[0m
+
+[0;32mI (40997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-213.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-866.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41078) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (41078) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (41097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-1652.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-2038.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-3092.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-3880.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-4532.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-5320.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-5898.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-6758.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41485) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -7352
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41492) I2C SLAVE: .............[0m
+
+[0;32mI (41497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-7545.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-8391.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-8985.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-9564.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-10618.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-11212.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-12058.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-12846.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-13247.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-14288.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (41995) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -14883
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-14883.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42002) I2C SLAVE: .............[0m
+
+[0;32mI (42047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-15746.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-16519.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-16920.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-17976.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-18555.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-19418.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-20207.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-20594.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (42447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-21652.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (42497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22221.0 | PWM=1023 | Dir=1 | State=2[0m
+[0;32mI (42513) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -22413
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (42520) I2C SLAVE: .............[0m
+
+[0;32mI (42547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22806.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (42597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22630.0 | PWM=371 | Dir=-1 | State=2[0m
+[0;32mI (42632) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (42632) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (42647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22422.0 | PWM=392 | Dir=-1 | State=2[0m
+[0;32mI (42697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22357.0 | PWM=413 | Dir=-1 | State=2[0m
+[0;32mI (42747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22347.0 | PWM=434 | Dir=-1 | State=2[0m
+[0;32mI (42797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22394.0 | PWM=455 | Dir=-1 | State=2[0m
+[0;32mI (42847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22450.0 | PWM=476 | Dir=-1 | State=2[0m
+[0;32mI (42897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22568.0 | PWM=496 | Dir=-1 | State=2[0m
+[0;32mI (42947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22714.0 | PWM=517 | Dir=-1 | State=2[0m
+[0;32mI (42997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-22798.0 | PWM=537 | Dir=-1 | State=2[0m
+[0;32mI (43023) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -22956
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43030) I2C SLAVE: .............[0m
+
+[0;32mI (43047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23065.0 | PWM=557 | Dir=-1 | State=2[0m
+[0;32mI (43097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23299.0 | PWM=577 | Dir=-1 | State=2[0m
+[0;32mI (43147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23515.0 | PWM=597 | Dir=-1 | State=2[0m
+[0;32mI (43197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23798.0 | PWM=617 | Dir=-1 | State=2[0m
+[0;32mI (43247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-23946.0 | PWM=636 | Dir=-1 | State=2[0m
+[0;32mI (43297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-24380.0 | PWM=655 | Dir=-1 | State=2[0m
+[0;32mI (43347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-24729.0 | PWM=674 | Dir=-1 | State=2[0m
+[0;32mI (43397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-25034.0 | PWM=692 | Dir=-1 | State=2[0m
+[0;32mI (43447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-25418.0 | PWM=421 | Dir=-1 | State=2[0m
+[0;32mI (43497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-25612.0 | PWM=728 | Dir=-1 | State=2[0m
+[0;32mI (43533) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -26033
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43540) I2C SLAVE: .............[0m
+
+[0;32mI (43547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26130.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (43597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26342.0 | PWM=762 | Dir=-1 | State=2[0m
+[0;32mI (43647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26318.0 | PWM=778 | Dir=-1 | State=2[0m
+[0;32mI (43697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26575.0 | PWM=795 | Dir=-1 | State=2[0m
+[0;32mI (43747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-26856.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (43797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27310.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (43847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27534.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (43897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27284.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (43947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27248.0 | PWM=868 | Dir=-1 | State=2[0m
+[0;32mI (43997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27494.0 | PWM=426 | Dir=-1 | State=2[0m
+[0;32mI (44043) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28011
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28126.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (44050) I2C SLAVE: .............[0m
+
+[0;32mI (44097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28304.0 | PWM=469 | Dir=1 | State=2[0m
+[0;32mI (44147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28013.0 | PWM=918 | Dir=-1 | State=2[0m
+[0;32mI (44168) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (44168) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (44197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-27987.0 | PWM=929 | Dir=-1 | State=2[0m
+[0;32mI (44247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28186.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (44297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28920.0 | PWM=949 | Dir=1 | State=2[0m
+[0;32mI (44347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29178.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (44397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28811.0 | PWM=967 | Dir=-1 | State=2[0m
+[0;32mI (44447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28490.0 | PWM=975 | Dir=-1 | State=2[0m
+[0;32mI (44497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28630.0 | PWM=825 | Dir=-1 | State=2[0m
+[0;32mI (44547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29382.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (44561) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -29528
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44568) I2C SLAVE: .............[0m
+
+[0;32mI (44597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29712.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (44647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29386.0 | PWM=1001 | Dir=-1 | State=2[0m
+[0;32mI (44697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28990.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (44747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29418.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (44797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29693.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (44847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29480.0 | PWM=1017 | Dir=-1 | State=2[0m
+[0;32mI (44897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28992.0 | PWM=1020 | Dir=-1 | State=2[0m
+[0;32mI (44947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29290.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (44997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29692.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (45047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29268.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (45071) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -29118
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (45078) I2C SLAVE: .............[0m
+
+[0;32mI (45097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29021.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (45147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29218.0 | PWM=1023 | Dir=1 | State=2[0m
+[0;32mI (45197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29142.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (45247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28746.0 | PWM=371 | Dir=-1 | State=2[0m
+[0;32mI (45297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28352.0 | PWM=392 | Dir=-1 | State=2[0m
+[0;32mI (45347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28222.0 | PWM=413 | Dir=-1 | State=2[0m
+[0;32mI (45397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28034.0 | PWM=434 | Dir=-1 | State=2[0m
+[0;32mI (45447) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28025.0 | PWM=455 | Dir=-1 | State=2[0m
+[0;32mI (45497) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28061.0 | PWM=476 | Dir=-1 | State=2[0m
+[0;32mI (45547) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28140.0 | PWM=496 | Dir=-1 | State=2[0m
+[0;32mI (45581) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28197
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (45588) I2C SLAVE: .............[0m
+
+[0;32mI (45597) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28197.0 | PWM=517 | Dir=-1 | State=2[0m
+[0;32mI (45647) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28392.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (45697) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28540.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (45722) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (45722) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (45747) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28614.0 | PWM=554 | Dir=-1 | State=2[0m
+[0;32mI (45797) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28721.0 | PWM=432 | Dir=-1 | State=2[0m
+[0;32mI (45847) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-28828.0 | PWM=384 | Dir=-1 | State=2[0m
+[0;32mI (45897) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29007.0 | PWM=432 | Dir=1 | State=2[0m
+[0;32mI (45947) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29148.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (45997) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29180.0 | PWM=597 | Dir=-1 | State=2[0m
+[0;32mI (46047) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29202.0 | PWM=692 | Dir=-1 | State=2[0m
+[0;32mI (46091) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -29251
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (46097) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29288.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (46099) I2C SLAVE: .............[0m
+
+[0;32mI (46147) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29578.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (46197) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29632.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (46247) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29451.0 | PWM=762 | Dir=-1 | State=2[0m
+[0;32mI (46297) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29456.0 | PWM=778 | Dir=-1 | State=2[0m
+[0;32mI (46347) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29585.0 | PWM=383 | Dir=1 | State=2[0m
+[0;32mI (46397) CONTROL: M[1]: T_Pos=-30000.0 | C_Pos=-29996.0 | PWM=1023 | Dir=1 | State=3[0m
+[0;32mI (46402) MOTOR_COMMANDS: Mode[1][0m
+[0;32mI (46402) MOTOR_COMMANDS: crawl gate running[0m
+[0;32mI (46447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-30011.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (46497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-29515.0 | PWM=1023 | Dir=1 | State=2[0m
+[0;32mI (46547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-28980.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (46597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-28633.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (46609) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28253
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (46616) I2C SLAVE: .............[0m
+
+[0;32mI (46647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-27796.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (46697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-27380.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (46747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-26807.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (46797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-26324.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (46847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-26098.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (46897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-25510.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (46947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-25201.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (46997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-24755.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (47047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-24356.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (47097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-23931.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (47119) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -23827
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (47126) I2C SLAVE: .............[0m
+
+[0;32mI (47147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-23634.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (47197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-23336.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (47247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-22810.0 | PWM=636 | Dir=1 | State=2[0m
+[0;32mI (47258) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (47258) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (47297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-22506.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (47347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-22058.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (47397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-21648.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (47447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-21432.0 | PWM=710 | Dir=1 | State=2[0m
+[0;32mI (47497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-20853.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (47547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-20417.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (47597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-20030.0 | PWM=762 | Dir=1 | State=2[0m
+[0;32mI (47629) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -19803
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (47636) I2C SLAVE: .............[0m
+
+[0;32mI (47647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-19563.0 | PWM=778 | Dir=1 | State=2[0m
+[0;32mI (47697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-19329.0 | PWM=795 | Dir=1 | State=2[0m
+[0;32mI (47747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-18670.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (47797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-18158.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (47847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-17719.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (47897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-17173.0 | PWM=854 | Dir=1 | State=2[0m
+[0;32mI (47947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-16759.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (47997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-16122.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (48047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-15520.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (48097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-15004.0 | PWM=906 | Dir=1 | State=2[0m
+[0;32mI (48139) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -14364
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (48146) I2C SLAVE: .............[0m
+
+[0;32mI (48147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-14364.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (48197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-13869.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (48247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-13146.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (48297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-12454.0 | PWM=949 | Dir=1 | State=2[0m
+[0;32mI (48347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-11676.0 | PWM=958 | Dir=1 | State=2[0m
+[0;32mI (48397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-11142.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (48447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-10587.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (48497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-9584.0 | PWM=983 | Dir=1 | State=2[0m
+[0;32mI (48547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-9028.0 | PWM=990 | Dir=1 | State=2[0m
+[0;32mI (48597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-8195.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (48647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-7426.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (48650) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -7426
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (48662) I2C SLAVE: .............[0m
+
+[0;32mI (48697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-7046.0 | PWM=1006 | Dir=1 | State=2[0m
+[0;32mI (48747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-6001.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (48797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-5424.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (48812) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (48812) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (48847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-4563.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (48897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-3773.0 | PWM=1020 | Dir=1 | State=2[0m
+[0;32mI (48947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-3384.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (48997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-2322.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (49047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-1737.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-868.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=-75.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49165) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 120
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (49172) I2C SLAVE: .............[0m
+
+[0;32mI (49197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=778.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=1376.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=2154.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=3021.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=3619.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=4473.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=5266.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=5656.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=6720.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=7513.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49675) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 7513
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (49682) I2C SLAVE: .............[0m
+
+[0;32mI (49697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=8172.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=8966.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=9355.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=10418.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=11198.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=11871.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (49997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=12665.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (50047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=13249.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (50097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=14118.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (50147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=14912.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (50185) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 15571
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (50192) I2C SLAVE: .............[0m
+
+[0;32mI (50197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=15766.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (50247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=16365.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (50297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=16949.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (50346) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (50347) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (50347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18012.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (50397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18590.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (50447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19042.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (50497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18821.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (50547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18716.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (50597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18570.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (50647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18568.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (50695) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 18607
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (50697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18607.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (50702) I2C SLAVE: .............[0m
+
+[0;32mI (50747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18682.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (50797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18733.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (50847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=18916.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (50897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19046.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (50947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19262.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (50997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19494.0 | PWM=577 | Dir=1 | State=2[0m
+[0;32mI (51047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19619.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (51097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=19992.0 | PWM=617 | Dir=1 | State=2[0m
+[0;32mI (51147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20223.0 | PWM=636 | Dir=1 | State=2[0m
+[0;32mI (51197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20574.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (51213) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 20750
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (51220) I2C SLAVE: .............[0m
+
+[0;32mI (51247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=20924.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (51297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=21331.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (51347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=21618.0 | PWM=710 | Dir=1 | State=2[0m
+[0;32mI (51397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=21923.0 | PWM=728 | Dir=1 | State=2[0m
+[0;32mI (51447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22491.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (51497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=22816.0 | PWM=762 | Dir=1 | State=2[0m
+[0;32mI (51547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23318.0 | PWM=778 | Dir=1 | State=2[0m
+[0;32mI (51597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=23787.0 | PWM=732 | Dir=1 | State=2[0m
+[0;32mI (51647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24036.0 | PWM=810 | Dir=1 | State=2[0m
+[0;32mI (51697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24699.0 | PWM=825 | Dir=-1 | State=2[0m
+[0;32mI (51723) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 24908
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (51730) I2C SLAVE: .............[0m
+
+[0;32mI (51747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24920.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (51797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=24932.0 | PWM=854 | Dir=1 | State=2[0m
+[0;32mI (51847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25295.0 | PWM=868 | Dir=1 | State=2[0m
+[0;32mI (51897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=25541.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (51899) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (51900) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (51947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26278.0 | PWM=894 | Dir=-1 | State=2[0m
+[0;32mI (51997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26598.0 | PWM=475 | Dir=-1 | State=2[0m
+[0;32mI (52047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26416.0 | PWM=918 | Dir=1 | State=2[0m
+[0;32mI (52097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26383.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (52147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26696.0 | PWM=468 | Dir=1 | State=2[0m
+[0;32mI (52197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27315.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (52233) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 27626
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (52240) I2C SLAVE: .............[0m
+
+[0;32mI (52247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27625.0 | PWM=958 | Dir=-1 | State=2[0m
+[0;32mI (52297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27189.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (52347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26946.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (52397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27166.0 | PWM=983 | Dir=1 | State=2[0m
+[0;32mI (52447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27997.0 | PWM=990 | Dir=-1 | State=2[0m
+[0;32mI (52497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28326.0 | PWM=996 | Dir=-1 | State=2[0m
+[0;32mI (52547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27986.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (52597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27718.0 | PWM=1006 | Dir=1 | State=2[0m
+[0;32mI (52647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27889.0 | PWM=1011 | Dir=1 | State=2[0m
+[0;32mI (52697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28747.0 | PWM=1014 | Dir=-1 | State=2[0m
+[0;32mI (52743) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29136
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (52747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29136.0 | PWM=1017 | Dir=-1 | State=2[0m
+[0;32mI (52750) I2C SLAVE: .............[0m
+
+[0;32mI (52797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28841.0 | PWM=1020 | Dir=1 | State=2[0m
+[0;32mI (52847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28518.0 | PWM=1021 | Dir=1 | State=2[0m
+[0;32mI (52897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28676.0 | PWM=599 | Dir=1 | State=2[0m
+[0;32mI (52947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29488.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (52997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29812.0 | PWM=1023 | Dir=-1 | State=1[0m
+[0;32mI (53047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29464.0 | PWM=1023 | Dir=1 | State=0[0m
+[0;32mI (53097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28840.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (53147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28546.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (53197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27612.0 | PWM=371 | Dir=1 | State=2[0m
+[0;32mI (53247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27157.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (53261) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 27049
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (53268) I2C SLAVE: .............[0m
+
+[0;32mI (53297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26776.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (53347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26594.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (53397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26534.0 | PWM=455 | Dir=1 | State=2[0m
+[0;32mI (53434) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (53435) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (53447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26553.0 | PWM=476 | Dir=1 | State=2[0m
+[0;32mI (53497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26596.0 | PWM=496 | Dir=1 | State=2[0m
+[0;32mI (53547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26729.0 | PWM=517 | Dir=1 | State=2[0m
+[0;32mI (53597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=26837.0 | PWM=537 | Dir=1 | State=2[0m
+[0;32mI (53647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27031.0 | PWM=557 | Dir=1 | State=2[0m
+[0;32mI (53697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27240.0 | PWM=495 | Dir=1 | State=2[0m
+[0;32mI (53747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27360.0 | PWM=597 | Dir=1 | State=2[0m
+[0;32mI (53771) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 27566
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (53778) I2C SLAVE: .............[0m
+
+[0;32mI (53797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27697.0 | PWM=616 | Dir=-1 | State=2[0m
+[0;32mI (53847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27841.0 | PWM=508 | Dir=1 | State=2[0m
+[0;32mI (53897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27838.0 | PWM=655 | Dir=1 | State=2[0m
+[0;32mI (53947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=27918.0 | PWM=674 | Dir=1 | State=2[0m
+[0;32mI (53997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28007.0 | PWM=692 | Dir=1 | State=2[0m
+[0;32mI (54047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28336.0 | PWM=710 | Dir=-1 | State=2[0m
+[0;32mI (54097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28473.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (54147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28381.0 | PWM=745 | Dir=1 | State=2[0m
+[0;32mI (54197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28424.0 | PWM=762 | Dir=1 | State=2[0m
+[0;32mI (54247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28619.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (54281) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 28892
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (54288) I2C SLAVE: .............[0m
+
+[0;32mI (54297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28965.0 | PWM=795 | Dir=-1 | State=2[0m
+[0;32mI (54347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29029.0 | PWM=387 | Dir=1 | State=2[0m
+[0;32mI (54397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28800.0 | PWM=825 | Dir=1 | State=2[0m
+[0;32mI (54447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28826.0 | PWM=840 | Dir=1 | State=2[0m
+[0;32mI (54497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29070.0 | PWM=854 | Dir=-1 | State=2[0m
+[0;32mI (54547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29366.0 | PWM=868 | Dir=-1 | State=2[0m
+[0;32mI (54597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29124.0 | PWM=881 | Dir=1 | State=2[0m
+[0;32mI (54647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28895.0 | PWM=894 | Dir=1 | State=2[0m
+[0;32mI (54697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29267.0 | PWM=906 | Dir=-1 | State=2[0m
+[0;32mI (54747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29448.0 | PWM=918 | Dir=-1 | State=2[0m
+[0;32mI (54791) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29194
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (54797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29075.0 | PWM=929 | Dir=1 | State=2[0m
+[0;32mI (54798) I2C SLAVE: .............[0m
+
+[0;32mI (54847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28838.0 | PWM=939 | Dir=1 | State=2[0m
+[0;32mI (54897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29200.0 | PWM=949 | Dir=-1 | State=2[0m
+[0;32mI (54947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29466.0 | PWM=958 | Dir=-1 | State=2[0m
+[0;32mI (54987) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (54988) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (54997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29314.0 | PWM=967 | Dir=1 | State=2[0m
+[0;32mI (55047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=28829.0 | PWM=975 | Dir=1 | State=2[0m
+[0;32mI (55097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29078.0 | PWM=612 | Dir=-1 | State=2[0m
+[0;32mI (55147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29556.0 | PWM=990 | Dir=-1 | State=2[0m
+[0;32mI (55197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29423.0 | PWM=996 | Dir=1 | State=2[0m
+[0;32mI (55247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29208.0 | PWM=1001 | Dir=1 | State=2[0m
+[0;32mI (55297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29558.0 | PWM=1006 | Dir=-1 | State=2[0m
+[0;32mI (55309) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29708
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (55316) I2C SLAVE: .............[0m
+
+[0;32mI (55347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29924.0 | PWM=1011 | Dir=-1 | State=2[0m
+[0;32mI (55397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29646.0 | PWM=1014 | Dir=1 | State=2[0m
+[0;32mI (55447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29240.0 | PWM=1017 | Dir=1 | State=2[0m
+[0;32mI (55497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29654.0 | PWM=1020 | Dir=-1 | State=2[0m
+[0;32mI (55547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29958.0 | PWM=1021 | Dir=-1 | State=2[0m
+[0;32mI (55597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29766.0 | PWM=1022 | Dir=1 | State=2[0m
+[0;32mI (55647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29266.0 | PWM=1023 | Dir=1 | State=1[0m
+[0;32mI (55697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29550.0 | PWM=1023 | Dir=-1 | State=0[0m
+[0;32mI (55747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30205.0 | PWM=1023 | Dir=-1 | State=2[0m
+[0;32mI (55797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30472.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (55819) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 30406
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (55826) I2C SLAVE: .............[0m
+
+[0;32mI (55847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=30328.0 | PWM=371 | Dir=-1 | State=2[0m
+[0;32mI (55897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29948.0 | PWM=392 | Dir=1 | State=2[0m
+[0;32mI (55947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29716.0 | PWM=413 | Dir=1 | State=2[0m
+[0;32mI (55997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29618.0 | PWM=434 | Dir=1 | State=2[0m
+[0;32mI (56047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29598.0 | PWM=416 | Dir=1 | State=2[0m
+[0;32mI (56097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29608.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (56147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29670.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (56197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29710.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (56247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29698.0 | PWM=373 | Dir=1 | State=2[0m
+[0;32mI (56297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29687.0 | PWM=400 | Dir=1 | State=2[0m
+[0;32mI (56329) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29696
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (56336) I2C SLAVE: .............[0m
+
+[0;32mI (56347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29703.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (56397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29752.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (56447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29794.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (56497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29777.0 | PWM=401 | Dir=1 | State=2[0m
+[0;32mI (56523) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (56523) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (56547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29774.0 | PWM=373 | Dir=1 | State=2[0m
+[0;32mI (56597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29794.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (56647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29863.0 | PWM=430 | Dir=-1 | State=2[0m
+[0;32mI (56697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29890.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (56747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29875.0 | PWM=380 | Dir=1 | State=2[0m
+[0;32mI (56797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29873.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (56839) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29880
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (56846) I2C SLAVE: .............[0m
+
+[0;32mI (56847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29888.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (56897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29949.0 | PWM=429 | Dir=-1 | State=2[0m
+[0;32mI (56947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29976.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (56997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29960.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=376 | Dir=1 | State=2[0m
+[0;32mI (57097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57350) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (57362) I2C SLAVE: .............[0m
+
+[0;32mI (57397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57865) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (57872) I2C SLAVE: .............[0m
+
+[0;32mI (57897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (57997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58076) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (58076) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (58097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=288 | Dir=1 | State=1[0m
+[0;32mI (58347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=288 | Dir=1 | State=0[0m
+[0;32mI (58375) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (58382) I2C SLAVE: .............[0m
+
+[0;32mI (58397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=288 | Dir=-1 | State=2[0m
+[0;32mI (58447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=350 | Dir=-1 | State=2[0m
+[0;32mI (58497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=371 | Dir=-1 | State=2[0m
+[0;32mI (58547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=352 | Dir=-1 | State=2[0m
+[0;32mI (58597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58885) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (58892) I2C SLAVE: .............[0m
+
+[0;32mI (58897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (58997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59395) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (59397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59402) I2C SLAVE: .............[0m
+
+[0;32mI (59447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59611) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (59611) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (59647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59913) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (59920) I2C SLAVE: .............[0m
+
+[0;32mI (59947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (59997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60423) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (60430) I2C SLAVE: .............[0m
+
+[0;32mI (60447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=350 | Dir=1 | State=2[0m
+[0;32mI (60933) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29947
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (60940) I2C SLAVE: .............[0m
+
+[0;32mI (60947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29947.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (60997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61164) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (61164) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (61197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61443) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (61447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61450) I2C SLAVE: .............[0m
+
+[0;32mI (61497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (61961) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (61968) I2C SLAVE: .............[0m
+
+[0;32mI (61997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62471) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (62478) I2C SLAVE: .............[0m
+
+[0;32mI (62497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62699) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (62699) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (62747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (62981) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (62988) I2C SLAVE: .............[0m
+
+[0;32mI (62997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63491) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (63497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63498) I2C SLAVE: .............[0m
+
+[0;32mI (63547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (63997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64009) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (64016) I2C SLAVE: .............[0m
+
+[0;32mI (64047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64252) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (64252) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (64297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64519) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (64526) I2C SLAVE: .............[0m
+
+[0;32mI (64547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (64997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65029) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (65036) I2C SLAVE: .............[0m
+
+[0;32mI (65047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65539) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (65546) I2C SLAVE: .............[0m
+
+[0;32mI (65547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65787) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (65787) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (65797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (65997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66050) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (66062) I2C SLAVE: .............[0m
+
+[0;32mI (66097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66565) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (66572) I2C SLAVE: .............[0m
+
+[0;32mI (66597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (66997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67075) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (67082) I2C SLAVE: .............[0m
+
+[0;32mI (67097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67340) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (67340) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (67347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67585) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (67592) I2C SLAVE: .............[0m
+
+[0;32mI (67597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (67997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68095) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (68097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68102) I2C SLAVE: .............[0m
+
+[0;32mI (68147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68613) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (68620) I2C SLAVE: .............[0m
+
+[0;32mI (68647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68875) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (68875) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (68897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (68997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69123) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (69130) I2C SLAVE: .............[0m
+
+[0;32mI (69147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69633) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (69640) I2C SLAVE: .............[0m
+
+[0;32mI (69647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (69997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70143) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (70147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70150) I2C SLAVE: .............[0m
+
+[0;32mI (70197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70428) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (70428) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (70447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70661) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (70668) I2C SLAVE: .............[0m
+
+[0;32mI (70697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (70997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71171) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (71178) I2C SLAVE: .............[0m
+
+[0;32mI (71197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71681) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (71688) I2C SLAVE: .............[0m
+
+[0;32mI (71697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (71963) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (71963) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (71997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72191) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (72197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72198) I2C SLAVE: .............[0m
+
+[0;32mI (72247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72597) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72647) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72697) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72709) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (72716) I2C SLAVE: .............[0m
+
+[0;32mI (72747) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72797) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72847) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72897) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72947) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (72997) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73047) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73097) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73147) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73197) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73219) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 29946
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (73226) I2C SLAVE: .............[0m
+
+[0;32mI (73247) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73297) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73347) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73397) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73447) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73497) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 | State=1[0m
+[0;32mI (73516) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (73516) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (73547) CONTROL: M[1]: T_Pos=30000.0 | C_Pos=29946.0 | PWM=176 | Dir=1 |0

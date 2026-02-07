@@ -1,0 +1,5464 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13d14h ( 81172) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023d3c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023d60 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028b30 vaddr=40080000 size=074e8h ( 29928) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75d64h (482660) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a5d8c vaddr=400874e8 size=11c54h ( 72788) load[0m
+[0;32mI (346) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (346) boot: Disabling RNG early entropy source...[0m
+[0;32mI (356) cpu_start: Multicore app[0m
+[0;32mI (365) cpu_start: Pro cpu start user code[0m
+[0;32mI (365) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (365) app_init: Application information:[0m
+[0;32mI (365) app_init: Project name:     control_1.1[0m
+[0;32mI (369) app_init: App version:      v5.4[0m
+[0;32mI (373) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (378) app_init: ELF file SHA256:  0906fbf27...[0m
+[0;32mI (382) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (386) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (389) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (393) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (398) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (404) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (409) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (414) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (419) heap_init: At 3FFC49C0 len 0001B640 (109 KiB): DRAM[0m
+[0;32mI (424) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (435) heap_init: At 4009913C len 00006EC4 (27 KiB): IRAM[0m
+[0;32mI (442) spi_flash: detected chip: generic[0m
+[0;32mI (444) spi_flash: flash io: dio[0m
+[0;32mI (448) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (452) main_task: Started on CPU0[0m
+[0;32mI (455) main_task: Calling app_main()[0m
+[0;32mI (458) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (466) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (470) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (476) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (494) I2C SLAVE: .............[0m
+
+[0;32mI (497) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (502) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (507) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (515) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (524) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (532) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (548) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (557) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (565) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (573) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (582) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (590) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (598) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (607) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (615) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (623) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (632) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (641) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (645) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (692) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (694) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (697) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (698) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (774) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (997) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1005) I2C SLAVE: .............[0m
+
+[0;32mI (1112) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1121) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1121) main_task: Returned from app_main()[0m
+[0;32mI (1135) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1148) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1149) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1149) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1156) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1160) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1164) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1168) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1172) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1179) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1182) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1508) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1515) I2C SLAVE: .............[0m
+
+[0;32mI (2018) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2025) I2C SLAVE: .............[0m
+
+[0;32mI (2469) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2469) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (2528) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2535) I2C SLAVE: .............[0m
+
+[0;32mI (3038) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3045) I2C SLAVE: .............[0m
+
+[0;32mI (3548) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3555) I2C SLAVE: .............[0m
+
+[0;32mI (4000) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (4000) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (4058) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4065) I2C SLAVE: .............[0m
+
+[0;32mI (4568) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4575) I2C SLAVE: .............[0m
+
+[0;32mI (5078) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5085) I2C SLAVE: .............[0m
+
+[0;32mI (5513) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5513) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5588) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5595) I2C SLAVE: .............[0m
+
+[0;32mI (6098) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6105) I2C SLAVE: .............[0m
+
+[0;32mI (6608) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6615) I2C SLAVE: .............[0m
+
+[0;32mI (7044) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (7045) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (7118) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7125) I2C SLAVE: .............[0m
+
+[0;32mI (7628) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7635) I2C SLAVE: .............[0m
+
+[0;32mI (8138) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8145) I2C SLAVE: .............[0m
+
+[0;32mI (8558) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8558) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8648) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8655) I2C SLAVE: .............[0m
+
+[0;32mI (9158) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9165) I2C SLAVE: .............[0m
+
+[0;32mI (9668) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9675) I2C SLAVE: .............[0m
+
+[0;32mI (9874) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 6c:96:c3:a2:95:56:, link_role 1[0m
+[0;32mI (10089) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (10089) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (10178) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10185) I2C SLAVE: .............[0m
+
+[0;32mI (10362) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (10689) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10696) I2C SLAVE: .............[0m
+
+[0;32mI (10721) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (11199) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11206) I2C SLAVE: .............[0m
+
+[0;32mI (11560) BLE UNIT: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (11619) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11619) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11709) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11716) I2C SLAVE: .............[0m
+
+[0;32mI (12219) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12226) I2C SLAVE: .............[0m
+
+[0;32mI (12729) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12736) I2C SLAVE: .............[0m
+
+[0;32mI (13168) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (13169) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (13239) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13246) I2C SLAVE: .............[0m
+
+[0;32mI (13594) BLE UNIT: GATT_WRITE_EVT, handle 45[0m
+[0;32mI (13595) BLE UNIT: CCCD Write: 0001[0m
+[0;32mI (13595) BLE UNIT: notify enable[0m
+[0;32mI (13749) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13756) I2C SLAVE: .............[0m
+
+[0;32mI (14259) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14266) I2C SLAVE: .............[0m
+
+[0;32mI (14700) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (14700) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (14769) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14776) I2C SLAVE: .............[0m
+
+[0;32mI (15279) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15286) I2C SLAVE: .............[0m
+
+[0;32mI (15789) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15796) I2C SLAVE: .............[0m
+
+[0;32mI (16250) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (16250) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (16299) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16306) I2C SLAVE: .............[0m
+
+[0;32mI (16809) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16816) I2C SLAVE: .............[0m
+
+[0;32mI (17319) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17326) I2C SLAVE: .............[0m
+
+[0;32mI (17782) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (17782) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (17829) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17836) I2C SLAVE: .............[0m
+
+[0;32mI (18339) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18346) I2C SLAVE: .............[0m
+
+[0;32mI (18678) BLE UNIT: ClIENT DISCONNECTED, conn_id 0, reason 8[0m
+[0;32mI (18679) BLE UNIT: CLIENT DISCONNECTED, resetting buffers[0m
+[0;32mI (18695) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (18849) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18856) I2C SLAVE: .............[0m
+
+[0;32mI (19332) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (19332) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (19359) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19366) I2C SLAVE: .............[0m
+
+[0;32mI (19869) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19876) I2C SLAVE: .............[0m
+
+[0;32mI (20379) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20386) I2C SLAVE: .............[0m
+
+[0;32mI (20863) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (20864) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (20889) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20896) I2C SLAVE: .............[0m
+
+[0;32mI (21399) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21406) I2C SLAVE: .............[0m
+
+[0;32mI (21909) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21916) I2C SLAVE: .............[0m
+
+[0;32mI (22413) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (22413) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (22419) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22431) I2C SLAVE: .............[0m
+
+[0;32mI (22934) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22941) I2C SLAVE: .............[0m
+
+[0;32mI (23444) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23451) I2C SLAVE: .............[0m
+
+[0;32mI (23945) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (23945) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (23954) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23963) I2C SLAVE: .............[0m
+
+[0;32mI (24466) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24473) I2C SLAVE: .............[0m
+
+[0;32mI (24976) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24983) I2C SLAVE: .............[0m
+
+[0;32mI (25486) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (25493) I2C SLAVE: .............[0m
+
+[0;32mI (25495) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (25501) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (25997) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26004) I2C SLAVE: .............[0m
+
+[0;32mI (26507) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26514) I2C SLAVE: .............[0m
+
+[0;32mI (26704) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 6c:96:c3:a2:95:56:, link_role 1[0m
+[0;32mI (26793) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (27017) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27024) I2C SLAVE: .............[0m
+
+[0;32mI (27027) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (27033) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (27146) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (27529) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27536) I2C SLAVE: .............[0m
+
+[0;32mI (27850) BLE UNIT: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (28039) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28046) I2C SLAVE: .............[0m
+
+[0;32mI (28377) BLE UNIT: GATT_WRITE_EVT, handle 45[0m
+[0;32mI (28377) BLE UNIT: CCCD Write: 0001[0m
+[0;32mI (28378) BLE UNIT: notify enable[0m
+[0;32mI (28443) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (28549) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28556) I2C SLAVE: .............[0m
+
+[0;32mI (28576) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (28576) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (29059) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29066) I2C SLAVE: .............[0m
+
+[0;32mI (29569) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29576) I2C SLAVE: .............[0m
+
+[0;32mI (30079) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30086) I2C SLAVE: .............[0m
+
+[0;32mI (30108) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (30108) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (30589) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30596) I2C SLAVE: .............[0m
+
+[0;32mI (31099) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31106) I2C SLAVE: .............[0m
+
+[0;32mI (31609) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31616) I2C SLAVE: .............[0m
+
+[0;32mI (31658) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (31658) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (31872) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31875) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (32119) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32126) I2C SLAVE: .............[0m
+
+[0;32mI (32172) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32175) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (32472) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32475) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (32629) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32636) I2C SLAVE: .............[0m
+
+[0;32mI (33139) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33146) I2C SLAVE: .............[0m
+
+[0;32mI (33190) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (33190) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (33192) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (33195) BLE UNIT: BLE data received complete[0m
+[0;32mI (33195) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (33198) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (33206) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (33552) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33555) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (33649) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33656) I2C SLAVE: .............[0m
+
+[0;32mI (33972) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33975) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (34159) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34166) I2C SLAVE: .............[0m
+
+[0;32mI (34512) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34515) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (34669) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34676) I2C SLAVE: .............[0m
+
+[0;32mI (34739) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (34740) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (34932) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (34935) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (34935) BLE UNIT: BLE data received complete[0m
+[0;33mW (34936) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (34940) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (35179) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35186) I2C SLAVE: .............[0m
+
+[0;32mI (35352) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35355) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (35652) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35655) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (35689) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35696) I2C SLAVE: .............[0m
+
+[0;32mI (36192) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36195) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (36199) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36211) I2C SLAVE: .............[0m
+
+[0;32mI (36271) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (36272) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (36492) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (36495) BLE UNIT: BLE data received complete[0m
+[0;32mI (36495) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;33mW (36495) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (36500) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (36672) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36675) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (36714) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36721) I2C SLAVE: .............[0m
+
+[0;32mI (36792) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36795) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (37224) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37231) I2C SLAVE: .............[0m
+
+[0;32mI (37452) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37455) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (37572) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (37575) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (37575) BLE UNIT: BLE data received complete[0m
+[0;33mW (37576) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (37580) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (37734) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37741) I2C SLAVE: .............[0m
+
+[0;32mI (37821) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (37821) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (37992) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37995) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (38244) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38251) I2C SLAVE: .............[0m
+
+[0;32mI (38412) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38415) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (38754) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38761) I2C SLAVE: .............[0m
+
+[0;32mI (38952) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38955) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (39252) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (39255) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (39255) BLE UNIT: BLE data received complete[0m
+[0;32mI (39255) BLE UNIT: Float[0] = 4000.00[0m
+[0;33mW (39256) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (39259) BLE UNIT: Float[1] = -4000.00[0m
+[1;31mE (39264) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (39267) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (39274) BLE UNIT: Float[3] = -4000.00[0m
+[0;32mI (39264) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39278) BLE UNIT: Float[4] = 8000.00[0m
+[0;32mI (39296) I2C SLAVE: .............[0m
+
+[0;32mI (39300) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (39307) BLE UNIT: Float[6] = 0.00[0m
+[0;32mI (39310) BLE UNIT: Float[7] = 8000.00[0m
+[0;32mI (39313) BLE UNIT: Float[8] = 4000.00[0m
+[0;32mI (39317) BLE UNIT: Float[9] = 8000.00[0m
+[0;32mI (39320) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (39324) BLE UNIT: Float[11] = 4000.00[0m
+[0;32mI (39327) BLE UNIT: Float[12] = -4000.00[0m
+[0;32mI (39331) BLE UNIT: Float[13] = 8000.00[0m
+[0;32mI (39334) BLE UNIT: Float[14] = -8000.00[0m
+[0;32mI (39338) BLE UNIT: Float[15] = 12000.00[0m
+[0;32mI (39353) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (39353) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (39432) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (39435) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (39792) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (39795) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (39803) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39811) I2C SLAVE: .............[0m
+
+[0;32mI (40315) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40322) I2C SLAVE: .............[0m
+
+[0;32mI (40632) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (40635) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (40752) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (40755) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (40755) BLE UNIT: BLE data received complete[0m
+[0;33mW (40756) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (40760) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (40825) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40832) I2C SLAVE: .............[0m
+
+[0;32mI (40903) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (40903) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (41052) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (41055) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (41335) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41342) I2C SLAVE: .............[0m
+
+[0;32mI (41845) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41852) I2C SLAVE: .............[0m
+
+[0;32mI (41952) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (41955) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (42355) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (42362) I2C SLAVE: .............[0m
+
+[0;32mI (42432) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (42435) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;33mW (42435) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (42435) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (42672) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (42675) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (42675) BLE UNIT: BLE data received complete[0m
+[0;33mW (42676) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (42680) BLE UNIT: Byte[0] = 197 (0xC5)[0m
+[0;32mI (42865) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (42872) I2C SLAVE: .............[0m
+
+[0;32mI (43332) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (43335) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (43375) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43382) I2C SLAVE: .............[0m
+
+[0;32mI (43632) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (43635) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (43872) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (43875) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (43885) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43894) I2C SLAVE: .............[0m
+
+[0;32mI (43984) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (43984) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (44397) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44404) I2C SLAVE: .............[0m
+
+[0;32mI (44907) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44914) I2C SLAVE: .............[0m
+
+[0;32mI (44952) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[1;31mE (44955) BLE UNIT: Buffer overflow or length mismatch: recv_len=60 + len=20 > 68[0m
+[0;32mI (45072) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (45075) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (45192) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (45195) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (45417) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (45424) I2C SLAVE: .............[0m
+
+[0;32mI (45433) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (45435) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (45516) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (45516) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (151087) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (151094) I2C SLAVE: .............[0m
+
+[0;32mI (151138) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (151138) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (151513) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (151516) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (151597) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (151604) I2C SLAVE: .............[0m
+
+[0;32mI (151633) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (151636) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (151933) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (151936) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (152055) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (152055) BLE UNIT: BLE data received complete[0m
+[0;32mI (152055) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (152055) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (152056) BLE UNIT: Float[0] = 8000.00[0m
+[1;31mE (152061) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (152064) BLE UNIT: Float[1] = 4000.00[0m
+[0;32mI (152071) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (152075) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (152078) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (152082) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (152086) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (152089) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (152093) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (152096) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (152100) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (152104) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (152107) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (152108) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (152127) I2C SLAVE: .............[0m
+
+[0;32mI (152129) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (152137) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (152140) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (152533) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (152536) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (152633) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (152640) I2C SLAVE: .............[0m
+
+[0;32mI (152653) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (152656) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (152688) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (152689) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (152893) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (152896) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (153012) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (153015) BLE UNIT: BLE data received complete[0m
+[0;32mI (153015) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (153015) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (153021) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (153143) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (153150) I2C SLAVE: .............[0m
+
+[0;32mI (153492) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (153495) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (153653) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (153660) I2C SLAVE: .............[0m
+
+[0;32mI (153673) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (153676) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (153793) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (153796) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (153912) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (153915) BLE UNIT: BLE data received complete[0m
+[0;32mI (153915) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (153915) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (153921) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (154163) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (154170) I2C SLAVE: .............[0m
+
+[0;32mI (154256) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (154257) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (154392) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (154395) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (154513) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (154516) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (154674) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (154681) I2C SLAVE: .............[0m
+
+[0;32mI (154693) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (154696) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (154812) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (154815) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (154815) BLE UNIT: BLE data received complete[0m
+[0;33mW (154816) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (154821) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (155184) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (155191) I2C SLAVE: .............[0m
+
+[0;32mI (155292) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (155295) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (155413) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (155416) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (155593) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (155595) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (155694) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (155701) I2C SLAVE: .............[0m
+
+[0;32mI (155775) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (155775) BLE UNIT: BLE data received complete[0m
+[0;32mI (155775) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (155776) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (155781) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (155825) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (155825) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (156204) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (156211) I2C SLAVE: .............[0m
+
+[0;32mI (156313) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (156316) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (156493) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (156495) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (156613) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (156615) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (156714) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (156721) I2C SLAVE: .............[0m
+
+[0;32mI (156735) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (156735) BLE UNIT: BLE data received complete[0m
+[0;32mI (156735) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (156736) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (156736) BLE UNIT: Float[0] = 8000.00[0m
+[1;31mE (156741) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (156745) BLE UNIT: Float[1] = 4000.00[0m
+[0;32mI (156752) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (156755) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (156759) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (156762) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (156766) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (156770) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (156773) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (156777) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (156781) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (156784) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (156788) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (156792) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (156795) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (156799) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (157224) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (157231) I2C SLAVE: .............[0m
+
+[0;32mI (157273) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (157276) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (157393) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (157394) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (157393) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (157398) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (157513) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (157515) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (157633) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (157635) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (157635) BLE UNIT: BLE data received complete[0m
+[0;33mW (157636) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (157641) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (157734) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (157741) I2C SLAVE: .............[0m
+
+[0;32mI (158232) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (158235) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (158244) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (158252) I2C SLAVE: .............[0m
+
+[0;32mI (158355) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (158355) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (158653) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (158655) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (158755) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (158762) I2C SLAVE: .............[0m
+
+[0;32mI (158773) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (158775) BLE UNIT: BLE data received complete[0m
+[0;32mI (158775) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (158776) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (158782) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (158961) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (158961) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (159252) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (159255) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (159265) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (159274) I2C SLAVE: .............[0m
+
+[0;32mI (159495) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (159495) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (159613) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (159615) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (159777) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (159784) I2C SLAVE: .............[0m
+
+[0;32mI (159853) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (159855) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (159855) BLE UNIT: BLE data received complete[0m
+[0;33mW (159856) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (159861) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (160287) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (160294) I2C SLAVE: .............[0m
+
+[0;32mI (160333) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (160335) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (160529) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (160529) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (160573) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (160575) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (160693) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (160695) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (160797) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (160804) I2C SLAVE: .............[0m
+
+[0;32mI (160813) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (160816) BLE UNIT: BLE data received complete[0m
+[0;32mI (160816) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (160816) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (160824) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (161293) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (161295) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (161307) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (161314) I2C SLAVE: .............[0m
+
+[0;32mI (161413) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (161415) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (161533) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (161535) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (161713) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (161715) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (161715) BLE UNIT: BLE data received complete[0m
+[0;32mI (161716) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (161716) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (161720) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (161724) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (161728) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (161735) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (161739) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (161742) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (161746) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (161749) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (161753) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (161757) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (161760) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (161764) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (161768) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (161771) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (161775) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (161779) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (161817) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (161824) I2C SLAVE: .............[0m
+
+[0;32mI (162097) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (162097) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (162192) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (162195) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (162313) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (162315) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (162327) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (162334) I2C SLAVE: .............[0m
+
+[0;32mI (162493) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (162495) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (162673) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (162675) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (162675) BLE UNIT: BLE data received complete[0m
+[0;33mW (162676) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (162681) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (162837) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (162844) I2C SLAVE: .............[0m
+
+[0;32mI (163153) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (163155) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (163333) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (163335) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (163347) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (163354) I2C SLAVE: .............[0m
+
+[0;32mI (163453) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (163455) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (163573) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (163575) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (163575) BLE UNIT: BLE data received complete[0m
+[0;33mW (163576) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (163581) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (163665) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (163665) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (163857) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (163864) I2C SLAVE: .............[0m
+
+[0;32mI (164053) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (164055) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (164173) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (164175) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (164353) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (164355) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (164367) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (164374) I2C SLAVE: .............[0m
+
+[0;32mI (164473) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (164476) BLE UNIT: BLE data received complete[0m
+[0;32mI (164476) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;33mW (164476) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (164481) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (164877) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (164884) I2C SLAVE: .............[0m
+
+[0;32mI (164953) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (164955) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (165193) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (165195) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (165233) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (165234) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (165387) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (165394) I2C SLAVE: .............[0m
+
+[0;32mI (165433) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (165436) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (165553) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (165556) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (165556) BLE UNIT: BLE data received complete[0m
+[0;33mW (165556) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (165561) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (165897) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (165904) I2C SLAVE: .............[0m
+
+[0;32mI (166033) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (166035) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (166213) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (166216) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (166333) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (166336) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (166407) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (166414) I2C SLAVE: .............[0m
+
+[0;32mI (166513) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (166516) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (166516) BLE UNIT: BLE data received complete[0m
+[0;32mI (166516) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (166516) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (166520) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (166524) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (166528) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (166535) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (166539) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (166542) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (166546) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (166549) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (166553) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (166557) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (166560) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (166564) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (166568) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (166571) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (166575) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (166579) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (166802) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (166802) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (166917) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (166924) I2C SLAVE: .............[0m
+
+[0;32mI (166993) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (166995) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (167113) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (167116) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (167293) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (167296) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (167427) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (167434) I2C SLAVE: .............[0m
+
+[0;32mI (167533) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (167536) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (167536) BLE UNIT: BLE data received complete[0m
+[0;33mW (167536) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (167541) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (167937) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (167944) I2C SLAVE: .............[0m
+
+[0;32mI (168013) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (168016) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (168133) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (168136) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (168253) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (168256) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (168370) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (168370) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (168373) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (168376) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (168376) BLE UNIT: BLE data received complete[0m
+[0;33mW (168381) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (168386) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (168448) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (168455) I2C SLAVE: .............[0m
+
+[0;32mI (168853) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (168856) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (168958) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (168965) I2C SLAVE: .............[0m
+
+[0;32mI (168973) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (168976) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (169093) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (169096) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (169213) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (169216) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (169216) BLE UNIT: BLE data received complete[0m
+[0;33mW (169216) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (169221) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (169468) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (169475) I2C SLAVE: .............[0m
+
+[0;32mI (169813) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (169816) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (169938) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (169938) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (169978) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (169985) I2C SLAVE: .............[0m
+
+[0;32mI (170293) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (170296) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (170413) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (170416) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (170488) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (170495) I2C SLAVE: .............[0m
+
+[0;32mI (170998) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (171005) I2C SLAVE: .............[0m
+
+[0;32mI (171013) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (171016) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (171016) BLE UNIT: BLE data received complete[0m
+[0;33mW (171020) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (171025) BLE UNIT: Byte[0] = 0 (0x00)[0m
+[0;32mI (171133) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (171136) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (171253) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (171256) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (171373) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (171376) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (171506) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (171506) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (171508) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (171524) I2C SLAVE: .............[0m
+
+[0;32mI (172027) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (172034) I2C SLAVE: .............[0m
+
+[0;32mI (172093) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (172096) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (172096) BLE UNIT: BLE data received complete[0m
+[0;32mI (172096) BLE UNIT: Float[0] = -4000.00[0m
+[0;33mW (172096) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (172100) BLE UNIT: Float[1] = 8000.00[0m
+[1;31mE (172105) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (172108) BLE UNIT: Float[2] = -8000.00[0m
+[0;32mI (172116) BLE UNIT: Float[3] = 12000.00[0m
+[0;32mI (172119) BLE UNIT: Float[4] = -4000.00[0m
+[0;32mI (172123) BLE UNIT: Float[5] = 4000.00[0m
+[0;32mI (172126) BLE UNIT: Float[6] = -4000.00[0m
+[0;32mI (172130) BLE UNIT: Float[7] = 8000.00[0m
+[0;32mI (172134) BLE UNIT: Float[8] = -4000.00[0m
+[0;32mI (172137) BLE UNIT: Float[9] = 8000.00[0m
+[0;32mI (172141) BLE UNIT: Float[10] = -4000.00[0m
+[0;32mI (172145) BLE UNIT: Float[11] = 0.00[0m
+[0;32mI (172148) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (172152) BLE UNIT: Float[13] = 4000.00[0m
+[0;32mI (172155) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (172159) BLE UNIT: Float[15] = 4000.00[0m
+[0;32mI (172513) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (172516) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (172537) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (172544) I2C SLAVE: .............[0m
+
+[0;32mI (172992) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (172995) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (173047) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (173054) I2C SLAVE: .............[0m
+
+[0;32mI (173074) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (173074) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (173173) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (173176) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (173413) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[1;31mE (173416) BLE UNIT: Buffer overflow or length mismatch: recv_len=60 + len=20 > 68[0m
+[0;32mI (173533) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (173536) BLE UNIT: BLE data receiving in progress: 8/68[0m
+[0;32mI (173557) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (173564) I2C SLAVE: .............[0m
+
+[0;32mI (174067) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (174074) I2C SLAVE: .............[0m
+
+[0;32mI (174313) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (174316) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (174433) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (174436) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (174577) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (174584) I2C SLAVE: .............[0m
+
+[0;32mI (174624) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (174625) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (174793) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (174796) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (174796) BLE UNIT: BLE data received complete[0m
+[0;33mW (174797) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (174801) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (175087) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (175094) I2C SLAVE: .............[0m
+
+[0;32mI (175093) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (175102) BLE UNIT: BLE data receiving in progress: 8/68[0m
+[0;32mI (175573) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (175576) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (175597) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (175604) I2C SLAVE: .............[0m
+
+[0;32mI (175693) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (175696) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (175813) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (175816) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (175816) BLE UNIT: BLE data received complete[0m
+[0;33mW (175817) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (175821) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (176107) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (176114) I2C SLAVE: .............[0m
+
+[0;32mI (176115) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (176122) BLE UNIT: BLE data receiving in progress: 8/68[0m
+[0;32mI (176193) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (176193) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (176593) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (176596) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (176617) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (176624) I2C SLAVE: .............[0m
+
+[0;32mI (176953) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (176956) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (177073) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (177076) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (177076) BLE UNIT: BLE data received complete[0m
+[0;33mW (177077) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (177081) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (177127) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (177134) I2C SLAVE: .............[0m
+
+[0;32mI (177493) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (177496) BLE UNIT: BLE data receiving in progress: 8/68[0m
+[0;32mI (177637) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (177644) I2C SLAVE: .............[0m
+
+[0;32mI (177761) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (177761) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (178093) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (178096) BLE UNIT: BLE data receiving in progress: 28/68[0m
+[0;32mI (178147) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (178154) I2C SLAVE: .............[0m
+
+[0;32mI (178213) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (178216) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (178333) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (178336) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (178336) BLE UNIT: BLE data received complete[0m
+[0;33mW (178337) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (178341) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (733933) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (733933) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (734091) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (734098) I2C SLAVE: .............[0m
+
+[0;32mI (734601) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (734608) I2C SLAVE: .............[0m
+
+[0;32mI (735111) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (735118) I2C SLAVE: .............[0m
+
+[0;32mI (735501) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (735501) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (735621) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (735628) I2C SLAVE: .............[0m
+
+[0;32mI (736131) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (736138) I2C SLAVE: .............[0m
+
+[0;32mI (736641) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (736648) I2C SLAVE: .............[0m
+
+[0;32mI (737069) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (737069) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (737151) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (737158) I2C SLAVE: .............[0m
+
+[0;32mI (737661) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (737668) I2C SLAVE: .............[0m
+
+[0;32mI (738171) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 23
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (738178) I2C SLAVE: .............[0m
+
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13d14h ( 81172) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023d3c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023d60 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028b30 vaddr=40080000 size=074e8h ( 29928) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75d64h (482660) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a5d8c vaddr=400874e8 size=11c54h ( 72788) load[0m
+[0;32mI (346) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (346) boot: Disabling RNG early entropy source...[0m
+[0;32mI (356) cpu_start: Multicore app[0m
+[0;32mI (365) cpu_start: Pro cpu start user code[0m
+[0;32mI (365) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (365) app_init: Application information:[0m
+[0;32mI (365) app_init: Project name:     control_1.1[0m
+[0;32mI (369) app_init: App version:      v5.4[0m
+[0;32mI (373) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (378) app_init: ELF file SHA256:  0906fbf27...[0m
+[0;32mI (382) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (386) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (389) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (393) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (398) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (404) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (409) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (414) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (419) heap_init: At 3FFC49C0 len 0001B640 (109 KiB): DRAM[0m
+[0;32mI (424) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (435) heap_init: At 4009913C len 00006EC4 (27 KiB): IRAM[0m
+[0;32mI (442) spi_flash: detected chip: generic[0m
+[0;32mI (444) spi_flash: flash io: dio[0m
+[0;32mI (448) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (452) main_task: Started on CPU0[0m
+[0;32mI (455) main_task: Calling app_main()[0m
+[0;32mI (458) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (466) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (470) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (476) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (494) I2C SLAVE: .............[0m
+
+[0;32mI (497) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (502) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (507) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (515) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (524) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (532) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (548) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (557) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (565) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (573) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (582) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (590) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (598) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (607) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (615) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (623) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (632) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (641) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (645) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (692) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (694) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (697) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (698) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (776) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (997) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1005) I2C SLAVE: .............[0m
+
+[0;32mI (1112) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1121) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1135) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1121) main_task: Returned from app_main()[0m
+[0;32mI (1147) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1148) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1150) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1159) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1164) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1167) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1171) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1175) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1182) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1185) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1508) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1515) I2C SLAVE: .............[0m
+
+[0;32mI (2018) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2025) I2C SLAVE: .............[0m
+
+[0;32mI (2164) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2164) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (2528) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2535) I2C SLAVE: .............[0m
+
+[0;32mI (3038) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3045) I2C SLAVE: .............[0m
+
+[0;32mI (3324) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 53:57:f6:ae:0d:a9:, link_role 1[0m
+[0;32mI (3500) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (3548) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3555) I2C SLAVE: .............[0m
+
+[0;32mI (3679) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (3679) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (3811) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (4058) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4065) I2C SLAVE: .............[0m
+
+[0;32mI (4308) BLE UNIT: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (4554) BLE UNIT: GATT_WRITE_EVT, handle 45[0m
+[0;32mI (4555) BLE UNIT: CCCD Write: 0001[0m
+[0;32mI (4555) BLE UNIT: notify enable[0m
+[0;32mI (4568) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4575) I2C SLAVE: .............[0m
+
+[0;32mI (4598) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (5079) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5086) I2C SLAVE: .............[0m
+
+[0;32mI (5211) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5211) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5589) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5596) I2C SLAVE: .............[0m
+
+[0;32mI (6099) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6106) I2C SLAVE: .............[0m
+
+[0;32mI (6609) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6616) I2C SLAVE: .............[0m
+
+[0;32mI (6726) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (6726) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (7119) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7126) I2C SLAVE: .............[0m
+
+[0;32mI (7548) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (7550) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (7629) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7636) I2C SLAVE: .............[0m
+
+[0;32mI (7728) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (7730) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (7908) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (7910) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (8088) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (8090) BLE UNIT: BLE data received complete[0m
+[0;32mI (8090) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (8091) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (8095) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (8139) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8146) I2C SLAVE: .............[0m
+
+[0;32mI (8258) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8258) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8567) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (8570) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (8649) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8656) I2C SLAVE: .............[0m
+
+[0;32mI (8688) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (8690) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (8868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (8870) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (8988) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (8990) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (8990) BLE UNIT: BLE data received complete[0m
+[0;33mW (8991) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (8995) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (9159) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9166) I2C SLAVE: .............[0m
+
+[0;32mI (9587) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (9590) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (9669) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9676) I2C SLAVE: .............[0m
+
+[0;32mI (9708) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (9710) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (9773) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (9773) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (9828) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (9830) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (9948) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (9950) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (9950) BLE UNIT: BLE data received complete[0m
+[0;33mW (9951) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (9955) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (10179) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10186) I2C SLAVE: .............[0m
+
+[0;32mI (10487) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (10490) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (10608) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (10610) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (10689) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10696) I2C SLAVE: .............[0m
+
+[0;32mI (10728) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (10730) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (10848) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (10850) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (10850) BLE UNIT: BLE data received complete[0m
+[0;33mW (10851) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (10855) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (11199) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11206) I2C SLAVE: .............[0m
+
+[0;32mI (11321) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11321) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11447) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (11450) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (11568) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (11570) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (11709) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11716) I2C SLAVE: .............[0m
+
+[0;32mI (11748) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (11750) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (11867) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (11870) BLE UNIT: BLE data received complete[0m
+[0;32mI (11870) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (11870) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (11870) BLE UNIT: Float[0] = 8000.00[0m
+[1;31mE (11875) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (11878) BLE UNIT: Float[1] = 4000.00[0m
+[0;32mI (11885) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (11889) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (11892) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (11896) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (11899) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (11903) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (11906) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (11910) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (11914) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (11917) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (11920) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (11924) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (11928) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (11931) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (12219) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12226) I2C SLAVE: .............[0m
+
+[0;32mI (12347) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (12350) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (12468) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (12470) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (12588) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (12590) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (12707) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (12710) BLE UNIT: BLE data received complete[0m
+[0;32mI (12710) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (12710) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (12715) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (12729) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12737) I2C SLAVE: .............[0m
+
+[0;32mI (12854) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (12854) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (13240) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13247) I2C SLAVE: .............[0m
+
+[0;32mI (13307) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (13310) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (13428) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (13430) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (13668) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (13670) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (13750) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13757) I2C SLAVE: .............[0m
+
+[0;32mI (13848) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (13851) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (13851) BLE UNIT: BLE data received complete[0m
+[0;33mW (13851) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (13856) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (14260) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14267) I2C SLAVE: .............[0m
+
+[0;32mI (14327) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (14330) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (14405) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (14405) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (14568) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (14571) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (14748) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (14751) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (14770) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14777) I2C SLAVE: .............[0m
+
+[0;32mI (14989) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (14990) BLE UNIT: BLE data received complete[0m
+[0;32mI (14990) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (14990) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (14995) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (15280) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15287) I2C SLAVE: .............[0m
+
+[0;32mI (15527) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (15530) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (15648) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (15651) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (15790) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15797) I2C SLAVE: .............[0m
+
+[0;32mI (15828) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (15831) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (15938) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (15938) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (16007) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (16010) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (16010) BLE UNIT: BLE data received complete[0m
+[0;33mW (16010) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (16015) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (16300) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16307) I2C SLAVE: .............[0m
+
+[0;32mI (16607) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (16610) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (16788) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (16791) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (16810) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16817) I2C SLAVE: .............[0m
+
+[0;32mI (17028) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (17031) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (17267) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (17270) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (17270) BLE UNIT: BLE data received complete[0m
+[0;32mI (17270) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (17270) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (17274) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (17278) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (17282) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (17289) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (17292) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (17296) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (17299) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (17303) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (17306) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (17310) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (17314) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (17317) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (17321) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (17320) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17324) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (17344) I2C SLAVE: .............[0m
+
+[0;32mI (17346) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (17353) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (17489) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (17489) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (17748) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (17751) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (17849) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17856) I2C SLAVE: .............[0m
+
+[0;32mI (17868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (17871) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (17987) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (17990) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (18287) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (18290) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (18290) BLE UNIT: BLE data received complete[0m
+[0;33mW (18290) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (18295) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (18359) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18366) I2C SLAVE: .............[0m
+
+[0;32mI (18827) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (18830) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (18869) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18876) I2C SLAVE: .............[0m
+
+[0;32mI (19008) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (19011) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (19022) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (19022) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (19127) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (19130) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (19247) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (19250) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (19250) BLE UNIT: BLE data received complete[0m
+[0;33mW (19251) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (19255) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (19379) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19386) I2C SLAVE: .............[0m
+
+[0;32mI (19727) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (19730) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (19889) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19896) I2C SLAVE: .............[0m
+
+[0;32mI (19968) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (19971) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (20087) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (20090) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (20267) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (20270) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (20270) BLE UNIT: BLE data received complete[0m
+[0;33mW (20271) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (20275) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (20399) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20406) I2C SLAVE: .............[0m
+
+[0;32mI (20572) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (20573) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (20747) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (20750) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (20867) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (20870) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (20909) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20916) I2C SLAVE: .............[0m
+
+[0;32mI (21047) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (21050) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (21227) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (21230) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (21230) BLE UNIT: BLE data received complete[0m
+[0;33mW (21231) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (21235) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (21419) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21426) I2C SLAVE: .............[0m
+
+[0;32mI (21767) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (21770) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (21887) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (21890) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (21929) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21936) I2C SLAVE: .............[0m
+
+[0;32mI (22070) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22070) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (22105) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (22106) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (22247) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (22250) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (22250) BLE UNIT: BLE data received complete[0m
+[0;32mI (22250) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (22251) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (22254) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (22259) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (22262) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (22269) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (22272) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (22276) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (22279) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (22283) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (22287) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (22290) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (22294) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (22297) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (22301) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (22304) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (22308) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (22312) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (22439) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22446) I2C SLAVE: .............[0m
+
+[0;32mI (22727) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22730) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (22907) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22910) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (22949) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22956) I2C SLAVE: .............[0m
+
+[0;32mI (23027) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23030) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (23207) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (23210) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (23210) BLE UNIT: BLE data received complete[0m
+[0;33mW (23211) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (23215) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (23459) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23466) I2C SLAVE: .............[0m
+
+[0;32mI (23656) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (23656) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (23927) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23930) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (23969) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23976) I2C SLAVE: .............[0m
+
+[0;32mI (24167) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24170) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (24287) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24290) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (24479) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24486) I2C SLAVE: .............[0m
+
+[0;32mI (24527) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (24530) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (24530) BLE UNIT: BLE data received complete[0m
+[0;33mW (24531) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (24535) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (24989) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24996) I2C SLAVE: .............[0m
+
+[0;32mI (25067) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25070) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (25187) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (25189) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (25190) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;33mW (25190) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (25307) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25310) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (25427) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (25430) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (25430) BLE UNIT: BLE data received complete[0m
+[0;33mW (25431) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (25435) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (25499) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (25506) I2C SLAVE: .............[0m
+
+[0;32mI (25967) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25970) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (26009) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26016) I2C SLAVE: .............[0m
+
+[0;32mI (26087) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26090) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (26207) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26210) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (26387) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (26390) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (26390) BLE UNIT: BLE data received complete[0m
+[0;33mW (26391) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (26395) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (26519) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26526) I2C SLAVE: .............[0m
+
+[0;32mI (26740) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (26740) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (27029) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27036) I2C SLAVE: .............[0m
+
+[0;32mI (27047) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27050) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (27167) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27170) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (27287) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27290) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (27407) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (27410) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (27410) BLE UNIT: BLE data received complete[0m
+[0;32mI (27410) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (27411) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (27414) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (27419) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (27422) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (27429) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (27433) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (27436) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (27440) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (27443) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (27447) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (27450) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (27454) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (27457) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (27461) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (27465) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (27468) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (27472) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (27539) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27546) I2C SLAVE: .............[0m
+
+[0;32mI (27887) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27890) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (28007) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28010) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (28049) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28056) I2C SLAVE: .............[0m
+
+[0;32mI (28187) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28190) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (28273) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (28273) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (28307) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (28310) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (28310) BLE UNIT: BLE data received complete[0m
+[0;33mW (28311) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (28315) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (28559) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28566) I2C SLAVE: .............[0m
+
+[0;32mI (28847) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28850) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (28967) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28970) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (29069) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29076) I2C SLAVE: .............[0m
+
+[0;32mI (29147) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29150) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (29327) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (29330) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (29330) BLE UNIT: BLE data received complete[0m
+[0;33mW (29331) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (29335) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (29579) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29586) I2C SLAVE: .............[0m
+
+[0;32mI (29807) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29810) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (29824) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (29824) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (29927) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29930) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (30047) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30050) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (30089) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30096) I2C SLAVE: .............[0m
+
+[0;32mI (30228) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (30230) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (30230) BLE UNIT: BLE data received complete[0m
+[0;33mW (30231) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (30235) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (30599) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30606) I2C SLAVE: .............[0m
+
+[0;32mI (30767) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30770) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (30948) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30950) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (31109) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31116) I2C SLAVE: .............[0m
+
+[0;32mI (31128) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31130) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (31307) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (31310) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (31310) BLE UNIT: BLE data received complete[0m
+[0;33mW (31311) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (31315) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (31357) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (31357) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (31619) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31626) I2C SLAVE: .............[0m
+
+[0;32mI (31847) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31850) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (31967) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31970) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (32088) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32090) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (32129) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32136) I2C SLAVE: .............[0m
+
+[0;32mI (32268) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (32270) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (32270) BLE UNIT: BLE data received complete[0m
+[0;32mI (32271) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (32271) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (32274) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (32279) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (32282) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (32289) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (32293) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (32296) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (32300) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (32303) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (32307) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (32310) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (32314) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (32317) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (32321) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (32325) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (32328) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (32332) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (32639) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32646) I2C SLAVE: .............[0m
+
+[0;32mI (32747) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32750) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (32907) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (32908) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (32928) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32930) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (33108) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33110) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (33149) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33156) I2C SLAVE: .............[0m
+
+[0;32mI (33288) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (33290) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (33290) BLE UNIT: BLE data received complete[0m
+[0;33mW (33291) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (33295) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (33659) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33666) I2C SLAVE: .............[0m
+
+[0;32mI (33767) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33770) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (34008) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34010) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (34128) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34130) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (34169) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34176) I2C SLAVE: .............[0m
+
+[0;32mI (34248) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (34250) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (34250) BLE UNIT: BLE data received complete[0m
+[0;33mW (34251) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (34255) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (34440) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (34441) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (34679) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34686) I2C SLAVE: .............[0m
+
+[0;32mI (34788) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34790) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (34968) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34970) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (35088) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35090) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (35189) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35196) I2C SLAVE: .............[0m
+
+[0;32mI (35208) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (35210) BLE UNIT: BLE data received complete[0m
+[0;32mI (35210) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (35211) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (35216) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (35688) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35690) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (35699) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35707) I2C SLAVE: .............[0m
+
+[0;32mI (35808) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35810) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (35988) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35990) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (35991) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (35993) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (36108) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (36110) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (36110) BLE UNIT: BLE data received complete[0m
+[0;33mW (36111) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (36115) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (36210) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36217) I2C SLAVE: .............[0m
+
+[0;32mI (36587) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36590) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (36708) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36710) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (36721) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36729) I2C SLAVE: .............[0m
+
+[0;32mI (36828) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36830) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (37008) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (37010) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (37010) BLE UNIT: BLE data received complete[0m
+[0;32mI (37011) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (37011) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (37014) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (37019) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (37022) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (37029) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (37033) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (37036) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (37040) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (37043) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (37047) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (37050) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (37054) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (37058) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (37061) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (37065) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (37068) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (37072) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (37232) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37239) I2C SLAVE: .............[0m
+
+[0;32mI (37524) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (37524) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (37548) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37550) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (37728) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37730) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (37742) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37749) I2C SLAVE: .............[0m
+
+[0;32mI (37848) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37851) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (38088) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (38090) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (38090) BLE UNIT: BLE data received complete[0m
+[0;33mW (38091) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (38095) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (38252) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38259) I2C SLAVE: .............[0m
+
+[0;32mI (38627) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38630) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (38748) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38750) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (38762) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38769) I2C SLAVE: .............[0m
+
+[0;32mI (38868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38871) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (38988) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (38991) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (38991) BLE UNIT: BLE data received complete[0m
+[0;33mW (38991) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (38995) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (39075) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (39075) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (39272) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39279) I2C SLAVE: .............[0m
+
+[0;32mI (39527) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (39530) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (39768) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (39770) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (39782) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39789) I2C SLAVE: .............[0m
+
+[0;32mI (39948) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (39951) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (40188) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (40191) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (40191) BLE UNIT: BLE data received complete[0m
+[0;33mW (40191) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (40195) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (40292) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40299) I2C SLAVE: .............[0m
+
+[0;32mI (40608) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (40608) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (40667) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (40670) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (40788) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (40791) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (40802) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40809) I2C SLAVE: .............[0m
+
+[0;32mI (40908) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (40911) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (41028) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (41031) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (41031) BLE UNIT: BLE data received complete[0m
+[0;33mW (41031) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (41036) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (41312) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41319) I2C SLAVE: .............[0m
+
+[0;32mI (41507) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (41510) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (41628) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (41631) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (41748) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (41751) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (41822) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41829) I2C SLAVE: .............[0m
+
+[0;32mI (41868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (41871) BLE UNIT: BLE data received complete[0m
+[0;32mI (41871) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (41871) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (41871) BLE UNIT: Float[0] = 8000.00[0m
+[1;31mE (41876) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (41879) BLE UNIT: Float[1] = 4000.00[0m
+[0;32mI (41886) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (41890) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (41893) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (41896) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (41900) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (41904) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (41907) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (41911) BLE UNIT: Float[9] = -4000.00[0m
+[0;32mI (41914) BLE UNIT: Float[10] = 4000.00[0m
+[0;32mI (41918) BLE UNIT: Float[11] = -4000.00[0m
+[0;32mI (41921) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (41925) BLE UNIT: Float[13] = -4000.00[0m
+[0;32mI (41929) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (41932) BLE UNIT: Float[15] = -4000.00[0m
+[0;32mI (42159) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (42159) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (42332) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (42339) I2C SLAVE: .............[0m
+
+[0;32mI (42347) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (42350) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (42468) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (42471) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (42588) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (42591) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (42708) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (42711) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (42711) BLE UNIT: BLE data received complete[0m
+[0;33mW (42711) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (42716) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (42842) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (42849) I2C SLAVE: .............[0m
+
+[0;32mI (43187) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (43190) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (43308) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (43311) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (43352) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43359) I2C SLAVE: .............[0m
+
+[0;32mI (43428) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (43431) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (43607) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (43610) BLE UNIT: BLE data received complete[0m
+[0;32mI (43610) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (43610) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (43615) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (43692) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (43692) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (43862) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43869) I2C SLAVE: .............[0m
+
+[0;32mI (44087) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (44090) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (44208) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (44211) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (44328) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (44331) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (44372) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44379) I2C SLAVE: .............[0m
+
+[0;32mI (44508) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (44511) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (44511) BLE UNIT: BLE data received complete[0m
+[0;33mW (44511) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (44516) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (44882) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44889) I2C SLAVE: .............[0m
+
+[0;32mI (44987) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (44990) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (45108) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (45111) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (45228) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (45231) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (45242) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (45243) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (45347) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (45350) BLE UNIT: BLE data received complete[0m
+[0;32mI (45350) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (45350) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (45355) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (45392) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (45399) I2C SLAVE: .............[0m
+
+[0;32mI (45887) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (45890) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (45902) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (45909) I2C SLAVE: .............[0m
+
+[0;32mI (46068) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (46071) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (46412) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (46419) I2C SLAVE: .............[0m
+
+[0;32mI (46428) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (46431) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (46775) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (46776) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (46922) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (46929) I2C SLAVE: .............[0m
+
+[0;32mI (47027) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (47030) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (47030) BLE UNIT: BLE data received complete[0m
+[0;32mI (47030) BLE UNIT: Float[0] = 8000.00[0m
+[0;33mW (47031) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (47034) BLE UNIT: Float[1] = 4000.00[0m
+[1;31mE (47039) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;32mI (47042) BLE UNIT: Float[2] = 8000.00[0m
+[0;32mI (47049) BLE UNIT: Float[3] = 4000.00[0m
+[0;32mI (47052) BLE UNIT: Float[4] = 4000.00[0m
+[0;32mI (47056) BLE UNIT: Float[5] = -4000.00[0m
+[0;32mI (47059) BLE UNIT: Float[6] = 8000.00[0m
+[0;32mI (47063) BLE UNIT: Float[7] = -8000.00[0m
+[0;32mI (47066) BLE UNIT: Float[8] = 12000.00[0m
+[0;32mI (47070) BLE UNIT: Float[9] = 8000.00[0m
+[0;32mI (47073) BLE UNIT: Float[10] = -4000.00[0m
+[0;32mI (47077) BLE UNIT: Float[11] = 0.00[0m
+[0;32mI (47080) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (47084) BLE UNIT: Float[13] = 4000.00[0m
+[0;32mI (47088) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (47091) BLE UNIT: Float[15] = 4000.00[0m
+[0;32mI (47208) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (47211) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (47388) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (47391) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (47432) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (47439) I2C SLAVE: .............[0m
+
+[0;32mI (47507) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (47510) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (47942) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (47949) I2C SLAVE: .............[0m
+
+[0;32mI (48047) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (48050) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (48050) BLE UNIT: BLE data received complete[0m
+[0;33mW (48051) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (48055) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (48168) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (48171) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (48288) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (48291) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (48326) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (48326) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (48407) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (48410) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (48452) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (48459) I2C SLAVE: .............[0m
+
+[0;32mI (48947) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (48950) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (48950) BLE UNIT: BLE data received complete[0m
+[0;33mW (48951) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (48955) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (48962) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (48977) I2C SLAVE: .............[0m
+
+[0;32mI (49068) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (49071) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (49248) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (49251) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (49480) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (49487) I2C SLAVE: .............[0m
+
+[0;32mI (49607) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (49610) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (49859) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (49859) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (49990) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (49997) I2C SLAVE: .............[0m
+
+[0;32mI (50088) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (50091) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (50091) BLE UNIT: BLE data received complete[0m
+[0;33mW (50091) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (50096) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (50207) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (50210) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (50330) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (50330) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (50447) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (50450) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (50500) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (50507) I2C SLAVE: .............[0m
+
+[0;32mI (50928) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (50931) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (50931) BLE UNIT: BLE data received complete[0m
+[0;33mW (50931) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (50936) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (51010) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (51017) I2C SLAVE: .............[0m
+
+[0;32mI (51170) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (51170) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (51288) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (51290) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (51410) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (51410) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (51520) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (51527) I2C SLAVE: .............[0m
+
+[0;32mI (51528) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (51534) BLE UNIT: BLE data receiving in progress: 48/68[0m
+��&&�S�JJ�C SLAVE:  
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (126723) I2C SLAVE: .............[0m
+
+[0;32mI (126768) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (126771) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (126888) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (126891) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (127227) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (127234) I2C SLAVE: .............[0m
+
+[0;32mI (127379) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (127379) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (127547) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (127550) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (127550) BLE UNIT: BLE data received complete[0m
+[0;33mW (127551) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (127556) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (127738) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (127745) I2C SLAVE: .............[0m
+
+[0;32mI (127788) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (127791) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (128088) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (128091) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (128208) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (128211) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (128249) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (128256) I2C SLAVE: .............[0m
+
+[0;32mI (128747) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (128750) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (128750) BLE UNIT: BLE data received complete[0m
+[0;33mW (128751) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (128756) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (128760) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (128778) I2C SLAVE: .............[0m
+
+[0;32mI (128868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (128871) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (128948) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (128949) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (129048) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (129051) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (129168) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (129171) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (129281) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (129288) I2C SLAVE: .............[0m
+
+[0;32mI (129767) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (129770) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (129770) BLE UNIT: BLE data received complete[0m
+[0;33mW (129771) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (129776) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (129792) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (129800) I2C SLAVE: .............[0m
+
+[0;32mI (130008) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (130011) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (130128) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (130131) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (130248) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (130251) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (130303) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (130310) I2C SLAVE: .............[0m
+
+[0;32mI (130500) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (130500) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (130787) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (130790) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (130790) BLE UNIT: BLE data received complete[0m
+[0;32mI (130790) BLE UNIT: Float[0] = -4000.00[0m
+[0;33mW (130791) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (130795) BLE UNIT: Float[1] = 8000.00[0m
+[1;31mE (130799) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (130803) BLE UNIT: Float[2] = -8000.00[0m
+[0;32mI (130810) BLE UNIT: Float[3] = 12000.00[0m
+[0;32mI (130814) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (130814) BLE UNIT: Float[4] = -4000.00[0m
+[0;32mI (130832) I2C SLAVE: .............[0m
+
+[0;32mI (130836) BLE UNIT: Float[5] = 4000.00[0m
+[0;32mI (130843) BLE UNIT: Float[6] = -4000.00[0m
+[0;32mI (130846) BLE UNIT: Float[7] = 8000.00[0m
+[0;32mI (130850) BLE UNIT: Float[8] = -4000.00[0m
+[0;32mI (130854) BLE UNIT: Float[9] = 8000.00[0m
+[0;32mI (130857) BLE UNIT: Float[10] = -4000.00[0m
+[0;32mI (130861) BLE UNIT: Float[11] = 0.00[0m
+[0;32mI (130864) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (130868) BLE UNIT: Float[13] = 4000.00[0m
+[0;32mI (130871) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (130875) BLE UNIT: Float[15] = 4000.00[0m
+[0;32mI (130908) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (130911) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (131028) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (131031) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (131148) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (131150) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (131339) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (131346) I2C SLAVE: .............[0m
+
+[0;32mI (131688) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (131691) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (131691) BLE UNIT: BLE data received complete[0m
+[0;33mW (131692) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (131696) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (131808) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (131811) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (131850) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (131857) I2C SLAVE: .............[0m
+
+[0;32mI (131928) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (131931) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (132048) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (132050) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (132069) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (132069) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (132360) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (132367) I2C SLAVE: .............[0m
+
+[0;32mI (132707) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (132710) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (132710) BLE UNIT: BLE data received complete[0m
+[0;33mW (132711) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (132716) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (132871) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (132878) I2C SLAVE: .............[0m
+
+[0;32mI (132888) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (132891) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (133008) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (133011) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (133188) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (133190) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (133382) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (133389) I2C SLAVE: .............[0m
+
+[0;32mI (133638) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (133638) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (133727) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (133730) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (133730) BLE UNIT: BLE data received complete[0m
+[0;33mW (133731) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (133736) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (133848) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (133851) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (133893) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (133900) I2C SLAVE: .............[0m
+
+[0;32mI (134028) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (134031) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (134148) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (134150) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (134403) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (134410) I2C SLAVE: .............[0m
+
+[0;32mI (134687) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (134690) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (134690) BLE UNIT: BLE data received complete[0m
+[0;33mW (134691) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (134696) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (134808) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (134811) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (134914) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (134921) I2C SLAVE: .............[0m
+
+[0;32mI (134928) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (134931) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (135108) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (135110) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (135208) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (135208) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (135425) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (135432) I2C SLAVE: .............[0m
+
+[0;32mI (135647) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (135650) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (135650) BLE UNIT: BLE data received complete[0m
+[0;32mI (135651) BLE UNIT: Float[0] = -4000.00[0m
+[0;33mW (135651) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (135655) BLE UNIT: Float[1] = 8000.00[0m
+[1;31mE (135659) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (135663) BLE UNIT: Float[2] = -8000.00[0m
+[0;32mI (135670) BLE UNIT: Float[3] = 12000.00[0m
+[0;32mI (135674) BLE UNIT: Float[4] = -4000.00[0m
+[0;32mI (135678) BLE UNIT: Float[5] = 4000.00[0m
+[0;32mI (135681) BLE UNIT: Float[6] = -4000.00[0m
+[0;32mI (135685) BLE UNIT: Float[7] = 8000.00[0m
+[0;32mI (135688) BLE UNIT: Float[8] = -4000.00[0m
+[0;32mI (135692) BLE UNIT: Float[9] = 8000.00[0m
+[0;32mI (135696) BLE UNIT: Float[10] = -4000.00[0m
+[0;32mI (135699) BLE UNIT: Float[11] = 0.00[0m
+[0;32mI (135703) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (135706) BLE UNIT: Float[13] = 4000.00[0m
+[0;32mI (135710) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (135714) BLE UNIT: Float[15] = 4000.00[0m
+[0;32mI (135768) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (135770) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (135888) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (135890) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (135936) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (135943) I2C SLAVE: .............[0m
+
+[0;32mI (136068) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (136070) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (136446) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (136453) I2C SLAVE: .............[0m
+
+[0;32mI (136608) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (136610) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (136610) BLE UNIT: BLE data received complete[0m
+[0;33mW (136611) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (136616) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (136728) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (136730) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (136777) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (136777) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (136848) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (136850) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (136957) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (136964) I2C SLAVE: .............[0m
+
+[0;32mI (136968) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (136972) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (137468) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (137475) I2C SLAVE: .............[0m
+
+[0;32mI (137568) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (137571) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (137571) BLE UNIT: BLE data received complete[0m
+[0;33mW (137572) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (137576) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (137688) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (137691) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (137808) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (137810) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (137928) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (137930) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (137979) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (137986) I2C SLAVE: .............[0m
+
+[0;32mI (138346) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (138346) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (138489) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (138496) I2C SLAVE: .............[0m
+
+[0;32mI (138528) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (138530) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (138530) BLE UNIT: BLE data received complete[0m
+[0;33mW (138531) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (138536) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (138648) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (138651) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (138768) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (138770) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (138948) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (138950) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (139000) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (139007) I2C SLAVE: .............[0m
+
+[0;32mI (139511) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (139518) I2C SLAVE: .............[0m
+
+[0;32mI (139548) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (139551) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (139551) BLE UNIT: BLE data received complete[0m
+[0;33mW (139552) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (139556) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (139668) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (139671) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (139788) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (139790) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (139897) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (139898) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (139908) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (139910) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (140021) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (140029) I2C SLAVE: .............[0m
+
+[0;32mI (140448) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (140450) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (140450) BLE UNIT: BLE data received complete[0m
+[0;32mI (140451) BLE UNIT: Float[0] = -4000.00[0m
+[0;33mW (140451) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (140455) BLE UNIT: Float[1] = 8000.00[0m
+[1;31mE (140459) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (140463) BLE UNIT: Float[2] = -8000.00[0m
+[0;32mI (140470) BLE UNIT: Float[3] = 12000.00[0m
+[0;32mI (140474) BLE UNIT: Float[4] = -4000.00[0m
+[0;32mI (140478) BLE UNIT: Float[5] = 4000.00[0m
+[0;32mI (140481) BLE UNIT: Float[6] = -4000.00[0m
+[0;32mI (140485) BLE UNIT: Float[7] = 8000.00[0m
+[0;32mI (140488) BLE UNIT: Float[8] = -4000.00[0m
+[0;32mI (140492) BLE UNIT: Float[9] = 8000.00[0m
+[0;32mI (140496) BLE UNIT: Float[10] = -4000.00[0m
+[0;32mI (140499) BLE UNIT: Float[11] = 0.00[0m
+[0;32mI (140503) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (140506) BLE UNIT: Float[13] = 4000.00[0m
+[0;32mI (140510) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (140514) BLE UNIT: Float[15] = 4000.00[0m
+[0;32mI (140532) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (140539) I2C SLAVE: .............[0m
+
+[0;32mI (140570) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (140571) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (140748) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (140751) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (140868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (140870) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (141043) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (141050) I2C SLAVE: .............[0m
+
+[0;32mI (141467) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (141467) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (141468) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (141471) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (141471) BLE UNIT: BLE data received complete[0m
+[0;33mW (141478) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (141483) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (141554) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (141561) I2C SLAVE: .............[0m
+
+[0;32mI (141648) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (141651) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (141828) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (141831) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (141948) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (141951) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (142065) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (142072) I2C SLAVE: .............[0m
+
+[0;32mI (142488) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (142490) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (142490) BLE UNIT: BLE data received complete[0m
+[0;33mW (142491) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (142496) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (142576) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (142583) I2C SLAVE: .............[0m
+
+[0;32mI (142668) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (142671) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (142848) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (142851) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (143028) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (143031) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (143036) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (143036) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (143087) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (143094) I2C SLAVE: .............[0m
+
+[0;32mI (143508) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (143510) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (143510) BLE UNIT: BLE data received complete[0m
+[0;33mW (143511) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (143516) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (143598) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (143605) I2C SLAVE: .............[0m
+
+[0;32mI (143688) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (143691) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (143868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (143871) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (143988) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (143991) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (144109) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (144116) I2C SLAVE: .............[0m
+
+[0;32mI (144605) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (144605) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (144620) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (144627) I2C SLAVE: .............[0m
+
+[0;32mI (144648) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (144651) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (144651) BLE UNIT: BLE data received complete[0m
+[0;33mW (144651) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (144656) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (144768) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (144771) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (145008) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (145011) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (145130) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (145137) I2C SLAVE: .............[0m
+
+[0;32mI (145488) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (145491) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (145641) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (145648) I2C SLAVE: .............[0m
+
+[0;32mI (202608) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (202611) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (202788) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (202791) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (202926) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (202933) I2C SLAVE: .............[0m
+
+[0;32mI (203328) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (203331) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (203331) BLE UNIT: BLE data received complete[0m
+[0;33mW (203331) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (203336) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (203437) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (203444) I2C SLAVE: .............[0m
+
+[0;32mI (203448) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (203452) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (203688) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (203691) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (203928) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (203931) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (203948) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (203955) I2C SLAVE: .............[0m
+
+[0;32mI (204076) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (204077) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (204408) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (204411) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (204411) BLE UNIT: BLE data received complete[0m
+[0;33mW (204411) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (204416) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (204458) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (204465) I2C SLAVE: .............[0m
+
+[0;32mI (204528) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (204531) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (204708) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (204711) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (204828) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (204831) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (204969) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (204976) I2C SLAVE: .............[0m
+
+[0;32mI (205480) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (205487) I2C SLAVE: .............[0m
+
+[0;32mI (205488) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (205495) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (205495) BLE UNIT: BLE data received complete[0m
+[0;33mW (205503) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (205507) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (205646) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (205646) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (205668) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (205671) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (205848) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (205851) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (205990) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (205997) I2C SLAVE: .............[0m
+
+[0;32mI (206028) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (206031) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (206501) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (206508) I2C SLAVE: .............[0m
+
+[0;32mI (206568) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (206571) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (206571) BLE UNIT: BLE data received complete[0m
+[0;33mW (206571) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (206576) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (206748) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (206751) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (206868) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (206871) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (206988) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (206991) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (207012) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (207019) I2C SLAVE: .............[0m
+
+[0;32mI (207215) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (207215) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (207522) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (207529) I2C SLAVE: .............[0m
+
+[0;32mI (207708) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (207711) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (207711) BLE UNIT: BLE data received complete[0m
+[0;32mI (207711) BLE UNIT: Float[0] = -4000.00[0m
+[0;33mW (207712) BLE UNIT: Total BLE data received: 68/68[0m
+[0;32mI (207715) BLE UNIT: Float[1] = 8000.00[0m
+[1;31mE (207720) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (207723) BLE UNIT: Float[2] = -8000.00[0m
+[0;32mI (207731) BLE UNIT: Float[3] = 12000.00[0m
+[0;32mI (207734) BLE UNIT: Float[4] = -4000.00[0m
+[0;32mI (207738) BLE UNIT: Float[5] = 4000.00[0m
+[0;32mI (207741) BLE UNIT: Float[6] = -4000.00[0m
+[0;32mI (207745) BLE UNIT: Float[7] = 8000.00[0m
+[0;32mI (207749) BLE UNIT: Float[8] = -4000.00[0m
+[0;32mI (207752) BLE UNIT: Float[9] = 8000.00[0m
+[0;32mI (207756) BLE UNIT: Float[10] = -4000.00[0m
+[0;32mI (207760) BLE UNIT: Float[11] = 0.00[0m
+[0;32mI (207763) BLE UNIT: Float[12] = 8000.00[0m
+[0;32mI (207767) BLE UNIT: Float[13] = 4000.00[0m
+[0;32mI (207770) BLE UNIT: Float[14] = 8000.00[0m
+[0;32mI (207774) BLE UNIT: Float[15] = 4000.00[0m
+[0;32mI (207828) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (207831) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (207948) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (207951) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (208032) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (208039) I2C SLAVE: .............[0m
+
+[0;32mI (208128) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (208131) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (208543) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (208550) I2C SLAVE: .............[0m
+
+[0;32mI (208668) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (208671) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (208671) BLE UNIT: BLE data received complete[0m
+[0;33mW (208672) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (208676) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (208766) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (208766) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (208788) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (208791) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (208968) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (208971) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (209054) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (209061) I2C SLAVE: .............[0m
+
+[0;32mI (209088) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (209091) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (209565) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (209572) I2C SLAVE: .............[0m
+
+[0;32mI (209628) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (209631) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (209631) BLE UNIT: BLE data received complete[0m
+[0;33mW (209632) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (209636) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (209808) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (209811) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (209988) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (209991) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (210076) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (210083) I2C SLAVE: .............[0m
+
+[0;32mI (210108) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (210111) BLE UNIT: BLE data receiving in progress: 48/68[0m
+[0;32mI (210336) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (210336) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (210587) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (210594) I2C SLAVE: .............[0m
+
+[0;32mI (210888) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (210891) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (210891) BLE UNIT: BLE data received complete[0m
+[0;33mW (210892) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (210896) BLE UNIT: Byte[0] = 69 (0x45)[0m
+[0;32mI (211098) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 175
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (211105) I2C SLAVE: .............[0m
+
+[0;32mI (211128) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (211131) BLE UNIT: BLE data receiving in progress: 20/68[0m

@@ -1,0 +1,28 @@
+[1/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/control_1.4.c.obj
+[2/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/CPG.c.obj
+[3/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/UART.c.obj
+[4/13] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\main_controler_1.1\control_1.4\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6560 bytes. 0xaa0 bytes (9%) free.
+[5/13] No install step for 'bootloader'
+[6/13] Completed 'bootloader'
+[7/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/PWM.c.obj
+[8/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/PID.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c: In function 'position_loop_task':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c:227:20: warning: unused variable 'motors_copy' [-Wunused-variable]
+  227 |              Motor motors_copy[NUM_MOTORS];
+      |                    ^~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c:136:38: warning: variable 'en_stall_count' set but not used [-Wunused-but-set-variable]
+  136 |     static volatile PID_debugger_log en_stall_count[5] = {0};
+      |                                      ^~~~~~~~~~~~~~
+[9/13] Linking C static library esp-idf\main\libmain.a
+[10/13] Generating ld/sections.ld
+[11/13] Linking CXX executable control_1.4.elf
+[12/13] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/control_1.4.bin
+[13/13] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\main_controler_1.1\control_1.4\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/control_1.4.bin"
+control_1.4.bin binary size 0xc1840 bytes. Smallest app partition is 0x100000 bytes. 0x3e7c0 bytes (24%) free.

@@ -1,0 +1,616 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Nov  3 2025 12:14:25[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=21e6ch (138860) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=00031e94 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031eb8 vaddr=3ffbdb60 size=04da8h ( 19880) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00036c68 vaddr=40080000 size=093b0h ( 37808) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=81a34h (530996) map[0m
+[0;32mI (345) esp_image: segment 5: paddr=000c1a5c vaddr=400893b0 size=0fe00h ( 65024) load[0m
+[0;32mI (383) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (383) boot: Disabling RNG early entropy source...[0m
+[0;32mI (393) cpu_start: Multicore app[0m
+[0;32mI (401) cpu_start: Pro cpu start user code[0m
+[0;32mI (401) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (402) app_init: Application information:[0m
+[0;32mI (402) app_init: Project name:     control_1.4[0m
+[0;32mI (406) app_init: App version:      v5.4-dirty[0m
+[0;32mI (410) app_init: Compile time:     Nov  6 2025 19:30:17[0m
+[0;32mI (415) app_init: ELF file SHA256:  ba37ef4f2...[0m
+[0;32mI (419) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (424) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (427) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (431) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (436) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (442) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (447) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (457) heap_init: At 3FFC7F00 len 00018100 (96 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (467) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 400991B0 len 00006E50 (27 KiB): IRAM[0m
+[0;32mI (480) spi_flash: detected chip: generic[0m
+[0;32mI (482) spi_flash: flash io: dio[0m
+[0;32mI (486) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (490) main_task: Started on CPU0[0m
+[0;32mI (493) main_task: Calling app_main()[0m
+[0;32mI (496) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (504) i2c.common: new bus(0) at 0x3ffb7f14
+[0;32mI (508) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (514) I2C SLAVE: Setting up PWM and PID module[0m
+[1;31mE (519) RESET: CPU Reset reason: 1[0m
+[0;32mI (522) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (527) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (535) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (544) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (552) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (560) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (568) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (585) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (593) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (602) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (610) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (618) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (627) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (635) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (643) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (652) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (661) LEDC_PWM_UNIT: LEDC unit setiing up cI (676) UART_PID: UART initialized on port 0 at 115200 baud[0m
+[0;32mI (686) PID: Starting PID application...[0m
+[0;32mI (686) PID: PID application started successfully[0m
+[0;32mI (686) CPG: settingup the motor comnads[0m
+[0;32mI (686) CPG: Initializing CPG network...[0m
+[0;32mI (690) CPG: settingup the motor comnads complete[0m
+[0;32mI (690) CPG: Mode change detected: 0[0m
+[1;31mE (697) PID: Receiving encoder values failed[0m
+[0;32mI (698) CPG: Setting IDLE gait[0m
+[0;32mI (694) BLE: Setting up BLE unit[0m
+[1;31mE (712) PID: Receiving encoder values failed[0m
+[0;32mI (718) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (720) BTDM_INIT: Bluetooth MAC: 6c:c8:40:66:40:b2[0m
+[1;31mE (723) PID: Receiving encoder values failed[0m
+[0;32mI (726) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[1;31mE (735) PID: Receiving encoder values failed[0m
+[1;31mE (745) PID: Receiving encoder values failed[0m
+[1;31mE (755) PID: Receiving encoder values failed[0m
+[1;31mE (765) PID: Receiving encoder values failed[0m
+[1;31mE (775) PID: Receiving encoder values failed[0m
+[1;31mE (785) PID: Receiving encoder values failed[0m
+[1;31mE (795) PID: Receiving encoder values failed[0m
+[1;31mE (805) PID: Receiving encoder values failed[0m
+[1;31mE (1054) PID: Receiving encoder values failed[0m
+[1;31mE (1069) PID: Receiving encoder values failed[0m
+[1;31mE (1081) PID: Receiving encoder values failed[0m
+[1;31mE (1095) PID: Receiving encoder values failed[0m
+[1;31mE (1111) PID: Receiving encoder values failed[0m
+[1;31mE (1125) PID: Receiving encoder values failed[0m
+[0;32mI (1140) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (1142) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (1143) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[1;31mE (1148) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+[0;32mI (1153) BLE: Unhandled GATTS event: 12[0m
+[0;32mI (1157) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[0;32mI (1161) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[0;32mI (1170) BLE: Unhandled GAP event: 6[0m
+[0;32mI (1170) BLE: TX CCCD Handle: 45[0m
+[1;31mE (1172) PID: Receiving encoder values failed[0m
+[0;32mI (1177) BLE: BLE unit setup completed[0m
+[1;31mE (1187) PID: Receiving encoder values failed[0m
+[1;31mE (1197) PID: Receiving encoder values failed[0m
+[1;31mE (1207) PID: Receiving encoder values failed[0m
+[1;31mE (1217) PID: Receiving encoder values failed[0m
+[1;31mE (1227) PID: Receiving encoder values failed[0m
+[1;31mE (1238) PID: Receiving encoder values failed[0m
+[1;31mE (1250) PID: Receiving encoder values failed[0m
+[1;31mE (1263) PID: Receiving encoder values failed[0m
+[1;31mE (1276) PID: Receiving encoder values failed[0m
+[1;31mE (1289) PID: Receiving encoder values failed[0m
+[1;31mE (1299) PID: Receiving encoder values failed[0m
+[1;31mE (1309) PID: Receiving encoder values failed[0m
+[1;31mE (1320) PID: Receiving encoder values failed[0m
+[1;31mE (1332) PID: Receiving encoder values failed[0m
+[1;31mE (1345) PID: Receiving encoder values failed[0m
+[1;31mE (1358) PID: Receiving encoder values failed[0m
+[1;31mE (1370) PID: Receiving encoder values failed[0m
+[1;31mE (1383) PID: Receiving encoder values failed[0m
+[1;31mE (1396) PID: Receiving encoder values failed[0m
+[1;31mE (1410) PID: Receiving encoder values failed[0m
+[1;31mE (1420) PID: Receiving encoder values failed[0m
+[1;31mE (1439) PID: Receiving encoder values failed[0m
+[1;31mE (1452) PID: Receiving encoder values failed[0m
+[1;31mE (1465) PID: Receiving encoder values failed[0m
+[1;31mE (1478) PID: Receiving encoder values failed[0m
+[1;31mE (1491) PID: Receiving encoder values failed[0m
+[1;31mE (1504) PID: Receiving encoder values failed[0m
+[1;31mE (1516) PID: Receiving encoder values failed[0m
+[1;31mE (1529) PID: Receiving encoder values failed[0m
+[1;31mE (1539) PID: Receiving encoder values failed[0m
+[1;31mE (1549) PID: Receiving encoder values failed[0m
+[1;31mE (1560) PID: Receiving encoder values failed[0m
+[1;31mE (1573) PID: Receiving encoder values failed[0m
+[1;31mE (1586) PID: Receiving encoder values failed[0m
+[1;31mE (1599) PID: Receiving encoder values failed[0m
+[1;31mE (1612) PID: Receiving encoder values failed[0m
+[1;31mE (1625) PID: Receiving encoder values failed[0m
+[1;31mE (1638) PID: Receiving encoder values failed[0m
+[1;31mE (1648) PID: Receiving encoder values failed[0m
+[1;31mE (1658) PID: Receiving encoder values failed[0m
+[1;31mE (1668) PID: Receiving encoder values failed[0m
+[1;31mE (1681) PID: Receiving encoder values failed[0m
+[1;31mE (1694) PID: Receiving encoder values failed[0m
+[1;31mE (1707) PID: Receiving encoder values failed[0m
+[1;31mE (1720) PID: Receiving encoder values failed[0m
+[1;31mE (1733) PID: Receiving encoder values failed[0m
+[1;31mE (1743) PID: Receiving encoder values failed[0m
+[1;31mE (1755) PID: Receiving encoder values failed[0m
+[1;31mE (1765) PID: Receiving encoder values failed[0m
+[1;31mE (1775) PID: Receiving encoder values failed[0m
+[1;31mE (1786) PID: Receiving encoder values failed[0m
+[1;31mE (1799) PID: Receiving encoder values failed[0m
+[1;31mE (1812) PID: Receiving encoder values failed[0m
+[1;31mE (1825) PID: Receiving encoder values failed[0m
+[1;31mE (1838) PID: Receiving encoder values failed[0m
+[1;31mE (1851) PID: Receiving encoder values failed[0m
+[1;31mE (1864) PID: Receiving encoder values failed[0m
+[1;31mE (1877) PID: Receiving encoder values failed[0m
+[1;31mE (1887) PID: Receiving encoder values failed[0m
+[1;31mE (1897) PID: Receiving encoder values failed[0m
+[1;31mE (1908) PID: Receiving encoder values failed[0m
+[1;31mE (1921) PID: Receiving encoder values failed[0m
+[1;31mE (1934) PID: Receiving encoder values failed[0m
+[1;31mE (1947) PID: Receiving encoder values failed[0m
+[1;31mE (1960) PID: Receiving encoder values failed[0m
+[1;31mE (1973) PID: Receiving encoder values failed[0m
+[1;31mE (1986) PID: Receiving encoder values failed[0m
+[1;31mE (1999) PID: Receiving encoder values failed[0m
+[1;31mE (2009) PID: Receiving encoder values failed[0m
+[1;31mE (2019) PID: Receiving encoder values failed[0m
+[1;31mE (2030) PID: Receiving encoder values failed[0m
+[1;31mE (2042) PID: Receiving encoder values failed[0m
+[1;31mE (2055) PID: Receiving encoder values failed[0m
+[1;31mE (2068) PID: Receiving encoder values failed[0m
+[1;31mE (2082) PID: Receiving encoder values failed[0m
+[1;31mE (2094) PID: Receiving encoder values failed[0m
+[1;31mE (2107) PID: Receiving encoder values failed[0m
+[1;31mE (2121) PID: Receiving encoder values failed[0m
+[1;31mE (2131) PID: Receiving encoder values failed[0m
+[1;31mE (2141) PID: Receiving encoder values failed[0m
+[1;31mE (2152) PID: Receiving encoder values failed[0m
+[1;31mE (2164) PID: Receiving encoder values failed[0m
+[1;31mE (2177) PID: Receiving encoder values failed[0m
+[1;31mE (2190) PID: Receiving encoder values failed[0m
+[1;31mE (2203) PID: Receiving encoder values failed[0m
+[1;31mE (2216) PID: Receiving encoder values failed[0m
+[1;31mE (2229) PID: Receiving encoder values failed[0m
+[1;31mE (2242) PID: Receiving encoder values failed[0m
+[1;31mE (2252) PID: Receiving encoder values failed[0m
+[1;31mE (2262) PID: Receiving encoder values failed[0m
+[1;31mE (2273) PID: Receiving encoder values failed[0m
+[1;31mE (2286) PID: Receiving encoder values failed[0m
+[1;31mE (2299) PID: Receiving encoder values failed[0m
+[1;31mE (2312) PID: Receiving encoder values failed[0m
+[1;31mE (2325) PID: Receiving encoder values failed[0m
+[1;31mE (2338) PID: Receiving encoder values failed[0m
+[1;31mE (2351) PID: Receiving encoder values failed[0m
+[1;31mE (2364) PID: Receiving encoder values failed[0m
+[1;31mE (2374) PID: Receiving encoder values failed[0m
+[1;31mE (2384) PID: Receiving encoder values failed[0m
+[1;31mE (2396) PID: Receiving encoder values failed[0m
+[1;31mE (2407) PID: Receiving encoder values failed[0m
+[1;31mE (2421) PID: Receiving encoder values failed[0m
+[1;31mE (2434) PID: Receiving encoder values failed[0m
+[1;31mE (2447) PID: Receiving encoder values failed[0m
+[1;31mE (2460) PID: Receiving encoder values failed[0m
+[1;31mE (2473) PID: Receiving encoder values failed[0m
+[1;31mE (2486) PID: Receiving encoder values failed[0m
+[1;31mE (2496) PID: Receiving encoder values failed[0m
+[1;31mE (2506) PID: Receiving encoder values failed[0m
+[1;31mE (2516) PID: Receiving encoder values failed[0m
+[1;31mE (2529) PID: Receiving encoder values failed[0m
+[1;31mE (2542) PID: Receiving encoder values failed[0m
+[1;31mE (2555) PID: Receiving encoder values failed[0m
+[1;31mE (2568) PID: Receiving encoder values failed[0m
+[1;31mE (2581) PID: Receiving encoder values failed[0m
+[1;31mE (2594) PID: Receiving encoder values failed[0m
+[1;31mE (2607) PID: Receiving encoder values failed[0m
+[1;31mE (2617) PID: Receiving encoder values failed[0m
+[1;31mE (2627) PID: Receiving encoder values failed[0m
+[1;31mE (2638) PID: Receiving encoder values failed[0m
+[1;31mE (2651) PID: Receiving encoder values failed[0m
+[1;31mE (2664) PID: Receiving encoder values failed[0m
+[1;31mE (2677) PID: Receiving encoder values failed[0m
+[1;31mE (2690) PID: Receiving encoder values failed[0m
+[1;31mE (2703) PID: Receiving encoder values failed[0m
+[1;31mE (2716) PID: Receiving encoder values failed[0m
+[1;31mE (2729) PID: Receiving encoder values failed[0m
+[1;31mE (2739) PID: Receiving encoder values failed[0m
+[1;31mE (2749) PID: Receiving encoder values failed[0m
+[1;31mE (2760) PID: Receiving encoder values failed[0m
+[1;31mE (2773) PID: Receiving encoder values failed[0m
+[1;31mE (2786) PID: Receiving encoder values failed[0m
+[1;31mE (2799) PID: Receiving encoder values failed[0m
+[1;31mE (2812) PID: Receiving encoder values failed[0m
+[1;31mE (2825) PID: Receiving encoder values failed[0m
+[1;31mE (2838) PID: Receiving encoder values failed[0m
+[1;31mE (2851) PID: Receiving encoder values failed[0m
+[1;31mE (2861) PID: Receiving encoder values failed[0m
+[1;31mE (2871) PID: Receiving encoder values failed[0m
+[1;31mE (2882) PID: Receiving encoder values failed[0m
+[1;31mE (2894) PID: Receiving encoder values failed[0m
+[1;31mE (2907) PID: Receiving encoder values failed[0m
+[1;31mE (2920) PID: Receiving encoder values failed[0m
+[1;31mE (2933) PID: Receiving encoder values failed[0m
+[1;31mE (2946) PID: Receiving encoder values failed[0m
+[1;31mE (2959) PID: Receiving encoder values failed[0m
+[1;31mE (2972) PID: Receiving encoder values failed[0m
+[1;31mE (2982) PID: Receiving encoder values failed[0m
+[1;31mE (2992) PID: Receiving encoder values failed[0m
+[1;31mE (3003) PID: Receiving encoder values failed[0m
+[1;31mE (3016) PID: Receiving encoder values failed[0m
+[1;31mE (3029) PID: Receiving encoder values failed[0m
+[1;31mE (3042) PID: Receiving encoder values failed[0m
+[1;31mE (3055) PID: Receiving encoder values failed[0m
+[1;31mE (3068) PID: Receiving encoder values failed[0m
+[1;31mE (3081) PID: Receiving encoder values failed[0m
+[1;31mE (3094) PID: Receiving encoder values failed[0m
+[1;31mE (3104) PID: Receiving encoder values failed[0m
+[1;31mE (3114) PID: Receiving encoder values failed[0m
+[1;31mE (3125) PID: Receiving encoder values failed[0m
+[1;31mE (3138) PID: Receiving encoder values failed[0m
+[1;31mE (3151) PID: Receiving encoder values failed[0m
+[1;31mE (3164) PID: Receiving encoder values failed[0m
+[1;31mE (3177) PID: Receiving encoder values failed[0m
+[1;31mE (3190) PID: Receiving encoder values failed[0m
+[1;31mE (3203) PID: Receiving encoder values failed[0m
+[1;31mE (3216) PID: Receiving encoder values failed[0m
+[1;31mE (3226) PID: Receiving encoder values failed[0m
+[1;31mE (3236) PID: Receiving encoder values failed[0m
+[1;31mE (3246) PID: Receiving encoder values failed[0m
+[1;31mE (3259) PID: Receiving encoder values failed[0m
+[1;31mE (3272) PID: Receiving encoder values failed[0m
+[1;31mE (3285) PID: Receiving encoder values failed[0m
+[1;31mE (3299) PID: Receiving encoder values failed[0m
+[1;31mE (3311) PID: Receiving encoder values failed[0m
+[1;31mE (3325) PID: Receiving encoder values failed[0m
+[1;31mE (3338) PID: Receiving encoder values failed[0m
+[1;31mE (3348) PID: Receiving encoder values failed[0m
+[1;31mE (3358) PID: Receiving encoder values failed[0m
+[1;31mE (3368) PID: Receiving encoder values failed[0m
+[1;31mE (3381) PID: Receiving encoder values failed[0m
+[1;31mE (3394) PID: Receiving encoder values failed[0m
+[1;31mE (3407) PID: Receiving encoder values failed[0m
+[1;31mE (3420) PID: Receiving encoder values failed[0m
+[1;31mE (3433) PID: Receiving encoder values failed[0m
+[1;31mE (3446) PID: Receiving encoder values failed[0m
+[1;31mE (3459) PID: Receiving encoder values failed[0m
+[1;31mE (3469) PID: Receiving encoder values failed[0m
+[1;31mE (3479) PID: Receiving encoder values failed[0m
+[1;31mE (3490) PID: Receiving encoder values failed[0m
+[1;31mE (3503) PID: Receiving encoder values failed[0m
+[1;31mE (3516) PID: Receiving encoder values failed[0m
+[1;31mE (3529) PID: Receiving encoder values failed[0m
+[1;31mE (3542) PID: Receiving encoder values failed[0m
+[1;31mE (3555) PID: Receiving encoder values failed[0m
+[1;31mE (3568) PID: Receiving encoder values failed[0m
+[1;31mE (3581) PID: Receiving encoder values failed[0m
+[1;31mE (3591) PID: Receiving encoder values failed[0m
+[1;31mE (3601) PID: Receiving encoder values failed[0m
+[1;31mE (3612) PID: Receiving encoder values failed[0m
+[1;31mE (3624) PID: Receiving encoder values failed[0m
+[1;31mE (3638) PID: Receiving encoder values failed[0m
+[1;31mE (3651) PID: Receiving encoder values failed[0m
+[1;31mE (3664) PID: Receiving encoder values failed[0m
+[1;31mE (3677) PID: Receiving encoder values failed[0m
+[1;31mE (3690) PID: Receiving encoder values failed[0m
+[1;31mE (3703) PID: Receiving encoder values failed[0m
+[1;31mE (3713) PID: Receiving encoder values failed[0m
+[1;31mE (3723) PID: Receiving encoder values failed[0m
+[1;31mE (3734) PID: Receiving encoder values failed[0m
+[1;31mE (3746) PID: Receiving encoder values failed[0m
+[1;31mE (3759) PID: Receiving encoder values failed[0m
+[1;31mE (3772) PID: Receiving encoder values failed[0m
+[1;31mE (3785) PID: Receiving encoder values failed[0m
+[1;31mE (3798) PID: Receiving encoder values failed[0m
+[1;31mE (3811) PID: Receiving encoder values failed[0m
+[1;31mE (3824) PID: Receiving encoder values failed[0m
+[1;31mE (3834) PID: Receiving encoder values failed[0m
+[1;31mE (3844) PID: Receiving encoder values failed[0m
+[1;31mE (3855) PID: Receiving encoder values failed[0m
+[1;31mE (3868) PID: Receiving encoder values failed[0m
+[1;31mE (3881) PID: Receiving encoder values failed[0m
+[1;31mE (3894) PID: Receiving encoder values failed[0m
+[1;31mE (3907) PID: Receiving encoder values failed[0m
+[1;31mE (3920) PID: Receiving encoder values failed[0m
+[1;31mE (3933) PID: Receiving encoder values failed[0m
+[1;31mE (3946) PID: Receiving encoder values failed[0m
+[1;31mE (3956) PID: Receiving encoder values failed[0m
+[1;31mE (3966) PID: Receiving encoder values failed[0m
+[1;31mE (3977) PID: Receiving encoder values failed[0m
+[1;31mE (3990) PID: Receiving encoder values failed[0m
+[1;31mE (4003) PID: Receiving encoder values failed[0m
+[1;31mE (4016) PID: Receiving encoder values failed[0m
+[1;31mE (4029) PID: Receiving encoder values failed[0m
+[1;31mE (4042) PID: Receiving encoder values failed[0m
+[1;31mE (4055) PID: Receiving encoder values failed[0m
+[1;31mE (4068) PID: Receiving encoder values failed[0m
+[1;31mE (4078) PID: Receiving encoder values failed[0m
+[1;31mE (4088) PID: Receiving encoder values failed[0m
+[1;31mE (4098) PID: Receiving encoder values failed[0m
+[1;31mE (4111) PID: Receiving encoder values failed[0m
+[1;31mE (4124) PID: Receiving encoder values failed[0m
+[1;31mE (4137) PID: Receiving encoder values failed[0m
+[1;31mE (4150) PID: Receiving encoder values failed[0m
+[1;31mE (4163) PID: Receiving encoder values failed[0m
+[1;31mE (4176) PID: Receiving encoder values failed[0m
+[1;31mE (4189) PID: Receiving encoder values failed[0m
+[1;31mE (4199) PID: Receiving encoder values failed[0m
+[1;31mE (4210) PID: Receiving encoder values failed[0m
+[1;31mE (4220) PID: Receiving encoder values failed[0m
+[1;31mE (4233) PID: Receiving encoder values failed[0m
+[1;31mE (4246) PID: Receiving encoder values failed[0m
+[1;31mE (4259) PID: Receiving encoder values failed[0m
+[1;31mE (4272) PID: Receiving encoder values failed[0m
+[1;31mE (4285) PID: Receiving encoder values failed[0m
+[1;31mE (4298) PID: Receiving encoder values failed[0m
+[1;31mE (4311) PID: Receiving encoder values failed[0m
+[1;31mE (4321) PID: Receiving encoder values failed[0m
+[1;31mE (4331) PID: Receiving encoder values failed[0m
+[1;31mE (4342) PID: Receiving encoder values failed[0m
+[1;31mE (4355) PID: Receiving encoder values failed[0m
+[1;31mE (4368) PID: Receiving encoder values failed[0m
+[1;31mE (4381) PID: Receiving encoder values failed[0m
+[1;31mE (4394) PID: Receiving encoder values failed[0m
+[1;31mE (4407) PID: Receiving encoder values failed[0m
+[1;31mE (4420) PID: Receiving encoder values failed[0m
+[1;31mE (4433) PID: Receiving encoder values failed[0m
+[1;31mE (4443) PID: Receiving encoder values failed[0m
+[1;31mE (4453) PID: Receiving encoder values failed[0m
+[1;31mE (4464) PID: Receiving encoder values failed[0m
+[1;31mE (4476) PID: Receiving encoder values failed[0m
+[1;31mE (4490) PID: Receiving encoder values failed[0m
+[1;31mE (4502) PID: Receiving encoder values failed[0m
+[1;31mE (4515) PID: Receiving encoder values failed[0m
+[1;31mE (4528) PID: Receiving encoder values failed[0m
+[1;31mE (4542) PID: Receiving encoder values failed[0m
+[1;31mE (4555) PID: Receiving encoder values failed[0m
+[1;31mE (4565) PID: Receiving encoder values failed[0m
+[1;31mE (4575) PID: Receiving encoder values failed[0m
+[1;31mE (4586) PID: Receiving encoder values failed[0m
+[1;31mE (4598) PID: Receiving encoder values failed[0m
+[1;31mE (4611) PID: Receiving encoder values failed[0m
+[1;31mE (4625) PID: Receiving encoder values failed[0m
+[1;31mE (4637) PID: Receiving encoder values failed[0m
+[1;31mE (4650) PID: Receiving encoder values failed[0m
+[1;31mE (4663) PID: Receiving encoder values failed[0m
+[1;31mE (4676) PID: Receiving encoder values failed[0m
+[1;31mE (4686) PID: Receiving encoder values failed[0m
+[1;31mE (4696) PID: Receiving encoder values failed[0m
+[1;31mE (4707) PID: Receiving encoder values failed[0m
+[1;31mE (4720) PID: Receiving encoder values failed[0m
+[1;31mE (4733) PID: Receiving encoder values failed[0m
+[1;31mE (4746) PID: Receiving encoder values failed[0m
+[1;31mE (4759) PID: Receiving encoder values failed[0m
+[1;31mE (4772) PID: Receiving encoder values failed[0m
+[1;31mE (4785) PID: Receiving encoder values failed[0m
+[1;31mE (4798) PID: Receiving encoder values failed[0m
+[1;31mE (4808) PID: Receiving encoder values failed[0m
+[1;31mE (4818) PID: Receiving encoder values failed[0m
+[1;31mE (4828) PID: Receiving encoder values failed[0m
+[1;31mE (4841) PID: Receiving encoder values failed[0m
+[1;31mE (4855) PID: Receiving encoder values failed[0m
+[1;31mE (4868) PID: Receiving encoder values failed[0m
+[1;31mE (4881) PID: Receiving encoder values failed[0m
+[1;31mE (4894) PID: Receiving encoder values failed[0m
+[1;31mE (4907) PID: Receiving encoder values failed[0m
+[1;31mE (4920) PID: Receiving encoder values failed[0m
+[1;31mE (4930) PID: Receiving encoder values failed[0m
+[1;31mE (4940) PID: Receiving encoder values failed[0m
+[1;31mE (4950) PID: Receiving encoder values failed[0m
+[1;31mE (4963) PID: Receiving encoder values failed[0m
+[1;31mE (4976) PID: Receiving encoder values failed[0m
+[1;31mE (4989) PID: Receiving encoder values failed[0m
+[1;31mE (5002) PID: Receiving encoder values failed[0m
+[1;31mE (5015) PID: Receiving encoder values failed[0m
+[1;31mE (5028) PID: Receiving encoder values failed[0m
+[1;31mE (5041) PID: Receiving encoder values failed[0m
+[1;31mE (5051) PID: Receiving encoder values failed[0m
+[1;31mE (5061) PID: Receiving encoder values failed[0m
+[1;31mE (5072) PID: Receiving encoder values failed[0m
+[1;31mE (5085) PID: Receiving encoder values failed[0m
+[1;31mE (5098) PID: Receiving encoder values failed[0m
+[1;31mE (5111) PID: Receiving encoder values failed[0m
+[1;31mE (5124) PID: Receiving encoder values failed[0m
+[1;31mE (5137) PID: Receiving encoder values failed[0m
+[1;31mE (5150) PID: Receiving encoder values failed[0m
+[1;31mE (5163) PID: Receiving encoder values failed[0m
+[1;31mE (5173) PID: Receiving encoder values failed[0m
+[1;31mE (5183) PID: Receiving encoder values failed[0m
+[1;31mE (5194) PID: Receiving encoder values failed[0m
+[1;31mE (5207) PID: Receiving encoder values failed[0m
+[1;31mE (5220) PID: Receiving encoder values failed[0m
+[1;31mE (5233) PID: Receiving encoder values failed[0m
+[1;31mE (5246) PID: Receiving encoder values failed[0m
+[1;31mE (5259) PID: Receiving encoder values failed[0m
+[1;31mE (5272) PID: Receiving encoder values failed[0m
+[1;31mE (5285) PID: Receiving encoder values failed[0m
+[1;31mE (5295) PID: Receiving encoder values failed[0m
+[1;31mE (5305) PID: Receiving encoder values failed[0m
+[1;31mE (5316) PID: Receiving encoder values failed[0m
+[1;31mE (5328) PID: Receiving encoder values failed[0m
+[1;31mE (5341) PID: Receiving encoder values failed[0m
+[1;31mE (5354) PID: Receiving encoder values failed[0m
+[1;31mE (5367) PID: Receiving encoder values failed[0m
+[1;31mE (5380) PID: Receiving encoder values failed[0m
+[1;31mE (5393) PID: Receiving encoder values failed[0m
+[1;31mE (5406) PID: Receiving encoder values failed[0m
+[1;31mE (5416) PID: Receiving encoder values failed[0m
+[1;31mE (5426) PID: Receiving encoder values failed[0m
+[1;31mE (5437) PID: Receiving encoder values failed[0m
+[1;31mE (5450) PID: Receiving encoder values failed[0m
+[1;31mE (5463) PID: Receiving encoder values failed[0m
+[1;31mE (5476) PID: Receiving encoder values failed[0m
+[1;31mE (5489) PID: Receiving encoder values failed[0m
+[1;31mE (5502) PID: Receiving encoder values failed[0m
+[1;31mE (5515) PID: Receiving encoder values failed[0m
+[1;31mE (5528) PID: Receiving encoder values failed[0m
+[1;31mE (5538) PID: Receiving encoder values failed[0m
+[1;31mE (5548) PID: Receiving encoder values failed[0m
+[1;31mE (5559) PID: Receiving encoder values failed[0m
+[1;31mE (5572) PID: Receiving encoder values failed[0m
+[1;31mE (5585) PID: Receiving encoder values failed[0m
+[1;31mE (5598) PID: Receiving encoder values failed[0m
+[1;31mE (5611) PID: Receiving encoder values failed[0m
+[1;31mE (5624) PID: Receiving encoder values failed[0m
+[1;31mE (5637) PID: Receiving encoder values failed[0m
+[1;31mE (5650) PID: Receiving encoder values failed[0m
+[1;31mE (5660) PID: Receiving encoder values failed[0m
+[1;31mE (5670) PID: Receiving encoder values failed[0m
+[1;31mE (5680) PID: Receiving encoder values failed[0m
+[1;31mE (5693) PID: Receiving encoder values failed[0m
+[1;31mE (5706) PID: Receiving encoder values failed[0m
+[1;31mE (5719) PID: Receiving encoder values failed[0m
+[1;31mE (5732) PID: Receiving encoder values failed[0m
+[1;31mE (5745) PID: Receiving encoder values failed[0m
+[1;31mE (5759) PID: Receiving encoder values failed[0m
+[1;31mE (5772) PID: Receiving encoder values failed[0m
+[1;31mE (5782) PID: Receiving encoder values failed[0m
+[1;31mE (5792) PID: Receiving encoder values failed[0m
+[1;31mE (5802) PID: Receiving encoder values failed[0m
+[1;31mE (5815) PID: Receiving encoder values failed[0m
+[1;31mE (5828) PID: Receiving encoder values failed[0m
+[1;31mE (5841) PID: Receiving encoder values failed[0m
+[1;31mE (5854) PID: Receiving encoder values failed[0m
+[1;31mE (5867) PID: Receiving encoder values failed[0m
+[1;31mE (5880) PID: Receiving encoder values failed[0m
+[1;31mE (5893) PID: Receiving encoder values failed[0m
+[1;31mE (5903) PID: Receiving encoder values failed[0m
+[1;31mE (5913) PID: Receiving encoder values failed[0m
+[1;31mE (5924) PID: Receiving encoder values failed[0m
+[1;31mE (5937) PID: Receiving encoder values failed[0m
+[1;31mE (5950) PID: Receiving encoder values failed[0m
+[1;31mE (5963) PID: Receiving encoder values failed[0m
+[1;31mE (5976) PID: Receiving encoder values failed[0m
+[1;31mE (5989) PID: Receiving encoder values failed[0m
+[1;31mE (6002) PID: Receiving encoder values failed[0m
+[1;31mE (6015) PID: Receiving encoder values failed[0m
+[1;31mE (6025) PID: Receiving encoder values failed[0m
+[1;31mE (6035) PID: Receiving encoder values failed[0m
+[1;31mE (6046) PID: Receiving encoder values failed[0m
+[1;31mE (6058) PID: Receiving encoder values failed[0m
+[1;31mE (6072) PID: Receiving encoder values failed[0m
+[1;31mE (6085) PID: Receiving encoder values failed[0m
+[1;31mE (6098) PID: Receiving encoder values failed[0m
+[1;31mE (6111) PID: Receiving encoder values failed[0m
+[1;31mE (6124) PID: Receiving encoder values failed[0m
+[1;31mE (6137) PID: Receiving encoder values failed[0m
+[1;31mE (6147) PID: Receiving encoder values failed[0m
+[1;31mE (6157) PID: Receiving encoder values failed[0m
+[1;31mE (6168) PID: Receiving encoder values failed[0m
+[1;31mE (6180) PID: Receiving encoder values failed[0m
+[1;31mE (6193) PID: Receiving encoder values failed[0m
+[1;31mE (6206) PID: Receiving encoder values failed[0m
+[1;31mE (6219) PID: Receiving encoder values failed[0m
+[1;31mE (6232) PID: Receiving encoder values failed[0m
+[1;31mE (6245) PID: Receiving encoder values failed[0m
+[1;31mE (6258) PID: Receiving encoder values failed[0m
+[1;31mE (6268) PID: Receiving encoder values failed[0m
+[1;31mE (6278) PID: Receiving encoder values failed[0m
+[1;31mE (6289) PID: Receiving encoder values failed[0m
+[1;31mE (6302) PID: Receiving encoder values failed[0m
+[1;31mE (6315) PID: Receiving encoder values failed[0m
+[1;31mE (6328) PID: Receiving encoder values failed[0m
+[1;31mE (6341) PID: Receiving encoder values failed[0m
+[1;31mE (6354) PID: Receiving encoder values failed[0m
+[1;31mE (6367) PID: Receiving encoder values failed[0m
+[1;31mE (6380) PID: Receiving encoder values failed[0m
+[1;31mE (6390) PID: Receiving encoder values failed[0m
+[1;31mE (6400) PID: Receiving encoder values failed[0m
+[1;31mE (6411) PID: Receiving encoder values failed[0m
+[1;31mE (6424) PID: Receiving encoder values failed[0m
+[1;31mE (6437) PID: Receiving encoder values failed[0m
+[1;31mE (6450) PID: Receiving encoder values failed[0m
+[1;31mE (6463) PID: Receiving encoder values failed[0m
+[1;31mE (6476) PID: Receiving encoder values failed[0m
+[1;31mE (6489) PID: Receiving encoder values failed[0m
+[1;31mE (6502) PID: Receiving encoder values failed[0m
+[1;31mE (6512) PID: Receiving encoder values failed[0m
+[1;31mE (6522) PID: Receiving encoder values failed[0m
+[1;31mE (6532) PID: Receiving encoder values failed[0m
+[1;31mE (6545) PID: Receiving encoder values failed[0m
+[1;31mE (6558) PID: Receiving encoder values failed[0m
+[1;31mE (6571) PID: Receiving encoder values failed[0m
+[1;31mE (6584) PID: Receiving encoder values failed[0m
+[1;31mE (6597) PID: Receiving encoder values failed[0m
+[1;31mE (6611) PID: Receiving encoder values failed[0m
+[1;31mE (6623) PID: Receiving encoder values failed[0m
+[1;31mE (6633) PID: Receiving encoder values failed[0m
+[1;31mE (6643) PID: Receiving encoder values failed[0m
+[1;31mE (6654) PID: Receiving encoder values failed[0m
+[1;31mE (6667) PID: Receiving encoder values failed[0m
+[1;31mE (6680) PID: Receiving encoder values failed[0m
+[1;31mE (6693) PID: Receiving encoder values failed[0m
+[1;31mE (6706) PID: Receiving encoder values failed[0m
+[1;31mE (6719) PID: Receiving encoder values failed[0m
+[1;31mE (6732) PID: Receiving encoder values failed[0m
+[1;31mE (6745) PID: Receiving encoder values failed[0m
+[1;31mE (6755) PID: Receiving encoder values failed[0m
+[1;31mE (6765) PID: Receiving encoder values failed[0m
+[1;31mE (6776) PID: Receiving encoder values failed[0m
+[1;31mE (6789) PID: Receiving encoder values failed[0m
+[1;31mE (6802) PID: Receiving encoder values failed[0m
+[1;31mE (6815) PID: Receiving encoder values failed[0m
+[1;31mE (6828) PID: Receiving encoder values failed[0m
+[1;31mE (6841) PID: Receiving encoder values failed[0m
+[1;31mE (6854) PID: Receiving encoder values failed[0m
+[1;31mE (6867) PID: Receiving encoder values failed[0m
+[1;31mE (6877) PID: Receiving encoder values failed[0m
+[1;31mE (6887) PID: Receiving encoder values failed[0m
+[1;31mE (6898) PID: Receiving encoder values failed[0m
+[1;31mE (6910) PID: Receiving encoder values failed[0m
+[1;31mE (6923) PID: Receiving encoder values failed[0m
+[1;31mE (6936) PID: Receiving encoder values failed[0m
+[1;31mE (6949) PID: Receiving encoder values failed[0m
+[1;31mE (6962) PID: Receiving encoder values failed[0m
+[1;31mE (6976) PID: Receiving encoder values failed[0m
+[1;31mE (6989) PID: Receiving encoder values failed[0m
+[1;31mE (6999) PID: Receiving encoder values failed[0m
+[1;31mE (7009) PID: Receiving encoder values failed[0m
+[1;31mE (7020) PID: Receiving encoder values failed[0m
+[1;31mE (7032) PID: Receiving encoder values failed[0m
+[1;31mE (7045) PID: Receiving encoder values failed[0m
+[1;31mE (7058) PID: Receiving encoder values failed[0m
+[1;31mE (7071) PID: Receiving encoder values failed[0m
+[1;31mE (7084) PID: Receiving encoder values failed[0m
+[1;31mE (7097) PID: Receiving encoder values failed[0m
+[1;31mE (7110) PID: Receiving encoder values failed[0m
+[1;31mE (7120) PID: Receiving encoder values failed[0m
+[1;31mE (7130) PID: Receiving encoder values failed[0m
+[1;31mE (7141) PID: Receiving encoder values failed[0m
+[1;31mE (7154) PID: Receiving encoder values failed[0m
+[1;31mE (7167) PID: Receiving encoder values failed[0m
+[1;31mE (7180) PID: Receiving encoder values failed[0m
+[1;31mE (7193) PID: Receiving encoder values failed[0m

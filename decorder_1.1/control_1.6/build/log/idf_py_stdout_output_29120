@@ -1,0 +1,1667 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 10 2025 10:53:43[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=229b4h (141748) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=000329dc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032a00 vaddr=3ffbdb60 size=04d88h ( 19848) load[0m
+[0;32mI (149) esp_image: segment 3: paddr=00037790 vaddr=40080000 size=08888h ( 34952) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=82c0ch (535564) map[0m
+[0;32mI (347) esp_image: segment 5: paddr=000c2c34 vaddr=40088888 size=10d50h ( 68944) load[0m
+[0;32mI (386) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (386) boot: Disabling RNG early entropy source...[0m
+[0;32mI (396) cpu_start: Multicore app[0m
+[0;32mI (405) cpu_start: Pro cpu start user code[0m
+[0;32mI (405) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (405) app_init: Application information:[0m
+[0;32mI (405) app_init: Project name:     control_1.6[0m
+[0;32mI (409) app_init: App version:      v5.4-dirty[0m
+[0;32mI (413) app_init: Compile time:     Nov 10 2025 10:53:14[0m
+[0;32mI (418) app_init: ELF file SHA256:  4d232c8dc...[0m
+[0;32mI (423) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (427) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (431) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (435) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (439) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (445) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (450) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (460) heap_init: At 3FFC7D80 len 00018280 (96 KiB): DRAM[0m
+[0;32mI (465) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (471) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (476) heap_init: At 400995D8 len 00006A28 (26 KiB): IRAM[0m
+[0;32mI (483) spi_flash: detected chip: generic[0m
+[0;32mI (485) spi_flash: flash io: dio[0m
+[0;32mI (489) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (493) main_task: Started on CPU0[0m
+[0;32mI (503) main_task: Calling app_main()[0m
+[0;32mI (503) I2C MASTER: setting up I2C MASTER device[0m
+D (503) i2c.common: new bus(0) at 0x3ffb7e6c
+[0;33mW (503) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+D (513) i2c.common: bus clock source frequency: 80000000hz
+[0;32mI (523) I2C MASTER: setting up I2C MASTER device Complete[0m
+[0;32mI (523) I2C MASTER: setting up PCNT Count Print_Tasks[0m
+[0;32mI (533) I2C MASTER: setting up I2C Send_Tasks[0m
+D (1033) pcnt: new group (0) at 0x3ffb6b3c
+D (1033) pcnt: new pcnt unit (0,0) at 0x3ffbd19c, count range:[-32000,32000]
+D (1033) pcnt: new pcnt channel(0,0,0) at 0x3ffbd284
+D (1033) pcnt: new pcnt channel(0,0,1) at 0x3ffbd298
+D (1043) pcnt: new pcnt unit (0,1) at 0x3ffbd2ac, count range:[-32000,32000]
+D (1043) pcnt: new pcnt channel(0,1,0) at 0x3ffbd34c
+D (1053) pcnt: new pcnt channel(0,1,1) at 0x3ffbd360
+D (1053) pcnt: new pcnt unit (0,2) at 0x3ffbd374, count range:[-32000,32000]
+D (1063) pcnt: new pcnt channel(0,2,0) at 0x3ffbd414
+D (1063) pcnt: new pcnt channel(0,2,1) at 0x3ffbd428
+D (1073) pcnt: new pcnt unit (0,3) at 0x3ffbd43c, count range:[-32000,32000]
+D (1073) pcnt: new pcnt channel(0,3,0) at 0x3ffbd4dc
+D (1083) pcnt: new pcnt channel(0,3,1) at 0x3ffbd4f0
+D (1083) pcnt: new pcnt unit (0,4) at 0x3ffbd504, count range:[-32000,32000]
+D (1093) pcnt: new pcnt channel(0,4,0) at 0x3ffbd5a4
+D (1093) pcnt: new pcnt channel(0,4,1) at 0x3ffbd5b8
+D (1103) pcnt: new pcnt unit (0,5) at 0x3ffbd5cc, count range:[-32000,32000]
+D (1113) pcnt: new pcnt channel(0,5,0) at 0x3ffbd66c
+D (1113) pcnt: new pcnt channel(0,5,1) at 0x3ffbd680
+D (1123) pcnt: new pcnt unit (0,6) at 0x3ffbd694, count range:[-32000,32000]
+D (1123) pcnt: new pcnt channel(0,6,0) at 0x3ffbd734
+D (1133) pcnt: new pcnt channel(0,6,1) at 0x3ffbd748
+D (1133) pcnt: new pcnt unit (0,7) at 0x3ffbd75c, count range:[-32000,32000]
+D (1143) pcnt: new pcnt channel(0,7,0) at 0x3ffbd7fc
+D (1143) pcnt: neE (1173) I2C MASTER: CPG[0] (out: 0.00)
+[1;31mE (1173) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1173) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1173) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1173) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1173) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1183) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1183) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1193) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1193) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1193) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1193) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1203) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1203) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1213) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1213) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1213) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1223) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1223) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1223) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1233) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1233) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1233) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1243) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1243) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1243) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1253) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1253) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1263) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1263) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1263) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1273) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1273) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1273) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1283) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1283) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1283) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1293) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1293) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1293) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1303) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1303) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1303) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1313) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1313) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1323) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1323) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1323) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1333) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1333) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1333) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1343) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1343) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1343) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1353) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1353) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1353) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1363) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1363) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1353) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1363) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1373) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1373) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1373) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1383) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1383) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1383) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1393) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1393) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1403) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1403) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1403) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1413) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1413) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1413) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1423) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1423) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1423) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1433) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1433) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1443) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1443) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1443) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1443) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1453) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1443) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1453) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1453) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1463) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1463) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1473) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1463) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1473) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1483) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1483) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1483) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1493) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1493) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1493) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1503) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1503) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1513) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1513) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1513) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1523) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1523) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1523) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1533) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1523) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1533) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1533) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1533) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1543) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1543) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1543) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1553) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1553) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1553) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1563) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1563) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1573) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1563) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1573) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1573) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1583) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1583) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1593) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1583) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1593) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1603) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1593) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1603) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1603) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1603) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1613) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1613) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1613) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1623) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1623) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1623) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1633) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1633) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1633) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1523) CPG: CPG command send failed :que full![0m
+[1;31mE (1643) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1653) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1653) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1653) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1663) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1663) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1663) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1673) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1673) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1673) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1683) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1683) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1683) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1653) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1683) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1693) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1693) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1693) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1703) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1703) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1713) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1703) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1713) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1723) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1723) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1723) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1713) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1723) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1733) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1733) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1733) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1743) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1743) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1753) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1753) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1753) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1753) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1763) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1763) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1763) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1773) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1773) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1773) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1783) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1783) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1783) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1793) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1653) CPG: CPG command send failed :que full![0m
+[1;31mE (1793) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1803) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1803) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1813) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1803) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1813) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1823) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1813) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1823) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1823) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1823) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1833) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1833) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1843) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1843) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1843) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1853) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1843) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (1853) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1863) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1853) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (1863) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1863) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (1873) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1873) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1873) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (1883) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1883) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1893) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1893) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1883) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (1893) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1903) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1893) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (1903) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1903) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (1913) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1913) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1923) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1913) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (1923) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1933) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1933) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1933) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1933) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1943) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1803) CPG: CPG command send failed :que full![0m
+[1;31mE (1953) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1953) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1953) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1953) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1963) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1963) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1963) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1973) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1973) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1973) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (1973) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (1983) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (1983) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (1983) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (1993) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (1993) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (1993) CPG: CPG command send failed :que full![0m
+[1;31mE (2003) CPG: CPG command send failed :que full![0m
+[1;31mE (2003) CPG: CPG command send failed :que full![0m
+[1;31mE (2013) CPG: CPG command send failed :que full![0m
+[1;31mE (2013) CPG: CPG command send failed :que full![0m
+[1;31mE (2013) CPG: CPG command send failed :que full![0m
+[1;31mE (2023) CPG: CPG command send failed :que full![0m
+[1;31mE (2023) CPG: CPG command send failed :que full![0m
+[1;31mE (2033) CPG: CPG command send failed :que full![0m
+[1;31mE (2033) CPG: CPG command send failed :que full![0m
+[1;31mE (2043) CPG: CPG command send failed :que full![0m
+[1;31mE (2043) CPG: CPG command send failed :que full![0m
+[1;31mE (2043) CPG: CPG command send failed :que full![0m
+[1;31mE (2053) CPG: CPG command send failed :que full![0m
+[1;31mE (2053) CPG: CPG command send failed :que full![0m
+[1;31mE (2063) CPG: CPG command send failed :que full![0m
+[1;31mE (2063) CPG: CPG command send failed :que full![0m
+[1;31mE (2073) CPG: CPG command send failed :que full![0m
+[1;31mE (2073) CPG: CPG command send failed :que full![0m
+[1;31mE (2073) CPG: CPG command send failed :que full![0m
+[1;31mE (2083) CPG: CPG command send failed :que full![0m
+[1;31mE (2083) CPG: CPG command send failed :que full![0m
+[1;31mE (2093) CPG: CPG command send failed :que full![0m
+[1;31mE (2093) CPG: CPG command send failed :que full![0m
+[1;31mE (2103) CPG: CPG command send failed :que full![0m
+[1;31mE (2103) CPG: CPG command send failed :que full![0m
+[1;31mE (2113) CPG: CPG command send failed :que full![0m
+[1;31mE (2113) CPG: CPG command send failed :que full![0m
+[1;31mE (2113) CPG: CPG command send failed :que full![0m
+[1;31mE (2123) CPG: CPG command send failed :que full![0m
+[1;31mE (2123) CPG: CPG command send failed :que full![0m
+[1;31mE (2133) CPG: CPG command send failed :que full![0m
+[1;31mE (2133) CPG: CPG command send failed :que full![0m
+[1;31mE (2143) CPG: CPG command send failed :que full![0m
+[1;31mE (2143) CPG: CPG command send failed :que full![0m
+[1;31mE (2143) CPG: CPG command send failed :que full![0m
+[1;31mE (2153) CPG: CPG command send failed :que full![0m
+[1;31mE (2153) CPG: CPG command send failed :que full![0m
+[1;31mE (2163) CPG: CPG command send failed :que full![0m
+[1;31mE (2163) CPG: CPG command send failed :que full![0m
+[1;31mE (2173) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2173) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2173) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2173) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2183) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2183) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2183) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2193) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2193) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (1923) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2193) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2203) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2203) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2203) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2213) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2213) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2213) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2203) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2223) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2223) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2223) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2233) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2233) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2233) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2243) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2243) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2253) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2253) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2253) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2253) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2263) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2263) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2263) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2273) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2273) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2273) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2243) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2193) CPG: CPG command send failed :que full![0m
+[1;31mE (2283) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2293) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2293) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2283) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2293) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2303) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2303) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2303) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2313) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2313) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2313) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2323) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2323) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2323) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2323) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2303) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2333) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2333) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2333) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2343) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2343) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2353) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2343) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2353) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2353) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2363) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2363) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2363) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2373) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2373) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2373) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2373) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2383) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2383) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2383) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2393) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2393) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2393) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2403) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2403) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2403) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2413) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2413) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2293) CPG: CPG command send failed :que full![0m
+[1;31mE (2423) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2423) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2423) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2433) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2433) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2433) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2443) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2443) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2443) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2453) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2453) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2463) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2453) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2463) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2473) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2473) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2463) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2473) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2483) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2473) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2483) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2483) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2493) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2493) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2503) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2493) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2503) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2513) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2513) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2503) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2513) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2523) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2523) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2523) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2533) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2533) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2533) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2543) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2533) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2543) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2553) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2553) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2543) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2553) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2563) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2563) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2563) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2573) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2573) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2573) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2583) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2423) CPG: CPG command send failed :que full![0m
+[1;31mE (2583) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2593) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2593) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2593) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2603) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2603) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2603) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2613) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2613) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2613) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2623) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2623) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2623) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2633) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2633) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2633) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2633) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2643) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2643) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2643) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2653) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2653) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2653) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2663) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2663) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2663) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2673) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2673) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2673) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2683) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2683) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2693) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2693) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2693) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2683) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2703) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2703) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2703) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2703) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2713) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2713) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2713) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2723) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2723) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2723) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2733) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2733) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2733) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2743) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2743) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2753) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2743) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2753) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2593) CPG: CPG command send failed :que full![0m
+[1;31mE (2763) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2763) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2763) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2773) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2773) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2783) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2773) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2783) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2793) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2793) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2783) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2793) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2803) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2803) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2803) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2803) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2813) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2813) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2813) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2823) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2823) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2833) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2833) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2823) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2833) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2843) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2843) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2853) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2843) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2853) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2863) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2863) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2853) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2863) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2873) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2873) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2873) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2883) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2883) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2873) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2883) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2893) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2893) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2903) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2903) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2893) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2903) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2913) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2913) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2923) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2763) CPG: CPG command send failed :que full![0m
+[1;31mE (2923) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (2923) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2933) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2933) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2943) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2933) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (2943) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2943) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (2953) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2953) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2963) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (2953) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (2963) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2963) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (2963) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (2973) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (2973) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (2973) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (2983) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (2983) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (2983) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (2993) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (2993) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3003) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (2993) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3003) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3013) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3003) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3013) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3013) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3013) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3023) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3023) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3023) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3033) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3033) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3043) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3033) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3043) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3053) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3043) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3053) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3053) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3063) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3063) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3073) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3063) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3073) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3073) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3083) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (2923) CPG: CPG command send failed :que full![0m
+[1;31mE (3083) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3093) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3093) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3093) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3103) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3103) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3113) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3113) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3103) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3113) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3123) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3123) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3123) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3123) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3133) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3133) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3133) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3143) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3143) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3153) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3153) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3143) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3153) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3163) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3163) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3163) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3173) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3173) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3173) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3173) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3183) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3183) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3193) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3193) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3183) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3193) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3203) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3203) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3203) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3213) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3213) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3213) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3223) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3223) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3223) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3233) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3233) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3233) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3233) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3243) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3243) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3093) CPG: CPG command send failed :que full![0m
+[1;31mE (3253) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3253) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3263) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3263) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3263) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3273) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3273) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3273) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3273) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3283) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3283) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3283) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3293) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3293) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3293) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3303) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3303) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3303) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3313) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3313) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3323) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3313) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3323) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3333) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3323) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3333) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3333) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3343) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3343) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3343) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3353) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3353) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3353) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3353) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3363) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3363) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3363) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3373) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3373) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3373) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3383) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3383) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3393) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3383) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3393) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3403) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3393) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3403) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3403) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3413) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3413) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3413) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3423) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3423) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3423) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3433) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3253) CPG: CPG command send failed :que full![0m
+[1;31mE (3433) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3443) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3443) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3443) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3453) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3453) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3463) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3463) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3453) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3463) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3473) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3473) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3473) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3483) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3483) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3483) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3483) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3493) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3493) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3503) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3503) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3493) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3503) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3513) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3513) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3513) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3523) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3523) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3523) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3533) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3533) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3533) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3543) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3543) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3543) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3553) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3553) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3553) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3563) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3563) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3563) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3573) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3573) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3573) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3573) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3583) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3583) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3583) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3593) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3593) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3593) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3603) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3603) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3603) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3613) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3613) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3443) CPG: CPG command send failed :que full![0m
+[1;31mE (3623) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3623) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3623) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3633) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3633) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3633) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3643) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3643) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3643) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3653) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3653) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3653) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3663) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3663) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3663) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3673) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3673) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3673) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3683) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3683) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3683) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3683) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3693) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3693) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3693) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3703) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3703) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3703) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3713) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3713) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3713) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3723) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3723) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3733) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3723) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3733) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3743) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3733) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3743) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3743) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3753) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3753) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3753) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3753) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3763) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3763) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3773) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3763) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3773) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3783) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3773) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3783) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3623) CPG: CPG command send failed :que full![0m
+[1;31mE (3793) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3793) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3803) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3803) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3803) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3813) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3813) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3803) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3813) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3823) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3823) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3823) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3833) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3833) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3833) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3843) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3843) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3843) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3853) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3853) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3853) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3853) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3863) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3863) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3863) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3873) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3873) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3883) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3883) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3873) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3883) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3893) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3893) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3893) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3893) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3903) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3903) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3903) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3913) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3913) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3913) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3923) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3923) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3923) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3933) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3933) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3933) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3943) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (3943) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (3943) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (3953) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (3953) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (3963) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (3793) CPG: CPG command send failed :que full![0m
+[1;31mE (3963) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (3963) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (3973) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (3973) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (3973) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3983) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (3983) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (3983) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (3993) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (3993) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (3993) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4003) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4003) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4013) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4003) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4013) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4023) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4013) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4023) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4023) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4023) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4033) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4033) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4033) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4043) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4043) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4043) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4053) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4053) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4063) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4053) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4063) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4063) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4073) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4073) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4083) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4073) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4083) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4093) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4093) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4083) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4093) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4103) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4093) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4103) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4103) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4113) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4113) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4123) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4113) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4123) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (3963) CPG: CPG command send failed :que full![0m
+[1;31mE (4133) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4133) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4143) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4143) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4143) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4143) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4153) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4153) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4163) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4163) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4153) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4163) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4173) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4173) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4173) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4183) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4183) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4183) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4193) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4193) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4193) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4203) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4203) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4203) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4203) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4213) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4213) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4213) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4223) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4223) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4223) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4233) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4233) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4233) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4243) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4243) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4243) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4253) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4253) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4253) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4263) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4263) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4263) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4273) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4273) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4273) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4273) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4283) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4283) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4283) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4293) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4293) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4303) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4133) CPG: CPG command send failed :que full![0m
+[1;31mE (4303) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4303) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4313) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4313) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4313) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4323) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4323) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4323) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4333) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4333) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4333) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4343) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4343) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4343) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4353) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4353) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4363) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4353) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4363) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4373) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4363) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4373) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4373) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4373) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4383) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4383) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4383) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4393) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4393) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4393) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4403) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4403) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4413) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4403) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4413) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4413) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4423) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4423) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4433) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4423) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4433) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4443) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4433) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4443) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4443) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4453) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4453) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4453) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4463) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4463) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4463) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4473) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4463) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4473) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4473) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4483) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4303) CPG: CPG command send failed :que full![0m
+[1;31mE (4483) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4493) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4503) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4503) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4493) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4503) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4513) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4513) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4503) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4513) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4523) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4523) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4523) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4533) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4533) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4533) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4543) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4543) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4543) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4553) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4553) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4553) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4553) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4563) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4563) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4563) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4573) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4573) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4583) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4583) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4573) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4583) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4593) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4593) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4593) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4603) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4603) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4603) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4603) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4613) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4613) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4613) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4623) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4623) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4623) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4633) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4633) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4633) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4643) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4493) CPG: CPG command send failed :que full![0m
+[1;31mE (4643) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4653) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4653) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4653) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4663) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4663) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4673) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4673) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4673) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4683) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4673) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4683) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4693) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4683) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4693) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4693) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4703) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4703) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4713) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4703) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4713) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4713) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4723) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4713) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4723) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4723) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4733) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4733) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4733) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4743) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4743) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4743) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4753) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4753) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4763) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4753) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4763) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4763) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4773) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4773) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4773) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4783) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4783) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4793) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4793) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4783) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4793) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4803) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4793) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4803) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4813) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4813) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4813) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4823) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4653) CPG: CPG command send failed :que full![0m
+[1;31mE (4823) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4833) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4833) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4833) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4833) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4843) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4843) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4843) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4853) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4853) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4863) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4863) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4863) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4863) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4873) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4873) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4873) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4883) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4883) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4883) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4893) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4893) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4893) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4903) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4903) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4903) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4903) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4913) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4913) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4913) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4923) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4923) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4923) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4933) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4933) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (4933) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4943) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4943) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4943) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4953) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (4953) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4953) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (4963) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (4963) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (4963) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (4973) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (4973) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (4973) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (4983) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (4983) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (4983) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (4983) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (4993) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (4993) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (4993) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5003) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (4833) CPG: CPG command send failed :que full![0m
+[1;31mE (5003) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5013) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5013) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5023) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5023) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5023) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5033) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5033) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5033) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5043) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5043) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5043) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5043) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5053) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5053) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5053) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5063) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5063) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5063) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5073) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5073) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5073) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5083) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5083) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5093) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5083) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5093) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5093) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5103) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5103) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5103) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5113) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5113) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5113) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5123) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5123) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5123) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5123) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5133) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5133) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5133) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5143) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5143) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5143) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5153) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5153) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5163) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5153) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5163) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5173) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5163) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5173) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5173) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5183) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5183) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5193) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5013) CPG: CPG command send failed :que full![0m
+[1;31mE (5193) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5193) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5203) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5203) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5203) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5213) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5213) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5213) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5223) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5223) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5233) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5233) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5223) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5233) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5243) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5243) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5243) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5243) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5253) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5253) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5253) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5263) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5263) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5273) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5273) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5263) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5273) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5283) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5283) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5283) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5293) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5293) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5293) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5303) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5303) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5303) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5313) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5313) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5313) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5313) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5323) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5323) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5323) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5333) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5333) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5333) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5343) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5343) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5343) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5353) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5353) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5353) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5363) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5193) CPG: CPG command send failed :que full![0m
+[1;31mE (5363) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5373) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5373) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5373) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5383) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5383) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5383) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5393) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5393) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5393) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5403) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5403) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5403) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5413) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5413) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5413) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5423) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5423) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5423) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5423) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5433) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5433) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5433) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5443) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5443) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5443) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5453) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5453) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5453) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5463) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5463) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5473) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5463) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5473) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5483) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5473) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5483) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5483) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5493) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5493) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5493) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5493) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5503) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5503) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5513) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5503) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5513) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5523) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5513) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5523) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5523) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5533) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5533) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5543) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5373) CPG: CPG command send failed :que full![0m
+[1;31mE (5543) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5543) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5553) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5553) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5563) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5563) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5563) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5563) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5573) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5573) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5583) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5583) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5573) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5583) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5593) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5593) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5593) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5603) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5603) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5603) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5603) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5613) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5613) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5623) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5623) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5623) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5623) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5633) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5633) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5633) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5643) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5643) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5653) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5653) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5643) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5653) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5663) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5663) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5663) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5663) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5673) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5673) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5673) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5683) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5683) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5693) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5693) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5683) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5693) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5703) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5703) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5713) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5543) CPG: CPG command send failed :que full![0m
+[1;31mE (5713) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5713) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5723) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5723) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5733) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5723) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5733) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5733) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5743) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5743) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5753) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5743) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5753) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5763) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5753) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5763) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5763) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5763) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5773) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5773) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5773) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5783) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5783) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5793) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5783) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5793) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5803) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5793) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5803) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5803) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5813) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5813) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5813) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5823) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5823) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5833) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5823) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5833) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5833) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5833) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5843) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5843) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5843) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5853) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5853) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5863) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5853) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5863) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5873) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5863) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5873) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5873) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5883) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5713) CPG: CPG command send failed :que full![0m
+[1;31mE (5883) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5893) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5893) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5893) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5903) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5903) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5903) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5913) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5913) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5913) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5923) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5923) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5933) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5933) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5923) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (5933) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5943) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5943) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5943) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5953) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (5953) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5953) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (5953) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (5963) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (5963) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (5973) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (5973) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (5963) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (5973) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (5983) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (5983) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (5983) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (5993) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (5993) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (5993) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (6003) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (6003) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (6003) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (6013) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (6013) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (6013) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (6023) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (6023) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (6023) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (6033) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (6033) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (6033) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (6043) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (6043) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (6043) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (6043) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (6053) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (6053) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (6053) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (6063) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (6063) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (5893) CPG: CPG command send failed :que full![0m
+[1;31mE (6073) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (6073) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (6083) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (6083) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (6083) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (6083) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (6093) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (6093) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (6093) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (6103) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (6103) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (6103) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (6113) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (6113) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (6113) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (6123) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (6123) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (6123) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (6133) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (6133) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (6133) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (6143) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (6143) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (6143) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (6153) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (6153) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (6153) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (6153) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (6163) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (6163) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (6163) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (6173) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (6173) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (6173) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (6183) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (6183) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (6183) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (6193) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (6193) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (6193) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (6203) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (6203) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (6203) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (6213) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (6213) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (6213) I2C MASTER: CPG[2] (out: 0.00)[0m
+[1;31mE (6223) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (6223) PID: CPG[3] (out: 0.00)[0m
+[1;31mE (6233) PID: CPG[4] (out: 0.00)[0m
+[1;31mE (6223) I2C MASTER: CPG[3] (out: 0.00)[0m
+[1;31mE (6233) PID: CPG[5] (out: 0.00)[0m
+[1;31mE (6233) PID: CPG[6] (out: 0.00)[0m
+[1;31mE (6233) I2C MASTER: CPG[4] (out: 0.00)[0m
+[1;31mE (6243) PID: CPG[7] (out: 0.00)[0m
+[1;31mE (6243) I2C MASTER: CPG[5] (out: 0.00)[0m
+[1;31mE (6253) I2C MASTER: CPG[6] (out: 0.00)[0m
+[1;31mE (6073) CPG: CPG command send failed :que full![0m
+[1;31mE (6253) I2C MASTER: CPG[7] (out: 0.00)[0m
+[1;31mE (6263) PID: CPG[0] (out: 0.00)[0m
+[1;31mE (6263) I2C MASTER: CPG[0] (out: 0.00)[0m
+[1;31mE (6263) PID: CPG[1] (out: 0.00)[0m
+[1;31mE (6273) I2C MASTER: CPG[1] (out: 0.00)[0m
+[1;31mE (6273) PID: CPG[2] (out: 0.00)[0m
+[1;31mE (6273) I2C MASTER: CPG[2] (out: 0.00)[0m

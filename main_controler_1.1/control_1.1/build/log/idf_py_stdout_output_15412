@@ -1,0 +1,281 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13e74h ( 81524) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023e9c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023ec0 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028c90 vaddr=40080000 size=07388h ( 29576) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75794h (481172) map[0m
+[0;32mI (304) esp_image: segment 5: paddr=000a57bc vaddr=40087388 size=127e0h ( 75744) load[0m
+[0;32mI (347) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (347) boot: Disabling RNG early entropy source...[0m
+[0;32mI (357) cpu_start: Multicore app[0m
+[0;32mI (365) cpu_start: Pro cpu start user code[0m
+[0;32mI (365) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (366) app_init: Application information:[0m
+[0;32mI (366) app_init: Project name:     control_1.1[0m
+[0;32mI (370) app_init: App version:      v5.4[0m
+[0;32mI (373) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (378) app_init: ELF file SHA256:  29188e40b...[0m
+[0;32mI (383) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (386) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (390) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (394) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (398) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (405) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (409) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (415) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (420) heap_init: At 3FFC49C0 len 0001B640 (109 KiB): DRAM[0m
+[0;32mI (425) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 40099B68 len 00006498 (25 KiB): IRAM[0m
+[0;32mI (443) spi_flash: detected chip: generic[0m
+[0;32mI (445) spi_flash: flash io: dio[0m
+[0;32mI (449) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (453) main_task: Started on CPU0[0m
+[0;32mI (456) main_task: Calling app_main()[0m
+[0;32mI (459) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (467) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (471) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (477) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (495) I2C SLAVE: .............[0m
+
+[0;32mI (498) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (503) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (508) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (516) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (524) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (533) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (549) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (558) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (574) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (591) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (599) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (608) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (616) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (624) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (633) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (642) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (646) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (693) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (695) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (698) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (699) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (776) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (1111) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1125) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1125) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1132) main_task: Returned from app_main()[0m
+[0;32mI (1133) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1137) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1141) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1149) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1153) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1157) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1164) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1165) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1172) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1176) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (2535) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2535) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (4047) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (4047) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5577) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5577) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (7090) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (7090) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8301) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 41:91:2f:b1:5d:79:, link_role 1[0m
+[0;32mI (8390) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (8620) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8620) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8698) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (9237) BLE UNIT: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (9433) BLE UNIT: GATT_WRITE_EVT, handle 45[0m
+[0;33mW (9434) BLE UNIT: BLE data receiving length: 2/68[0m
+[0;32mI (9434) BLE UNIT: CCCD Write: 0001[0m
+[0;32mI (9434) BLE UNIT: notify enable[0m
+[0;32mI (9470) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (10132) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (10132) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11638) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (11641) BLE UNIT: BLE data receiving length: 20/68[0m
+
+abort() was called at PC 0x40082e7b on core 0
+
+
+Backtrace: 0x40081e0d:0x3ffcf000 0x400918e9:0x3ffcf020 0x40097b69:0x3ffcf040 0x40082e7b:0x3ffcf0b0 0x40082fb9:0x3ffcf0e0 0x40083032:0x3ffcf100 0x401355e7:0x3ffcf130 0x4012dae1:0x3ffcf450 0x40144161:0x3ffcf480 0x40097ad9:0x3ffcf4b0 0x40083d55:0x3ffcf500 0x400d8826:0x3ffcf5d0 0x400dc39a:0x3ffcf600 0x400dcbd1:0x3ffcf620 0x400fb8ed:0x3ffcf670 0x400fd94b:0x3ffcf690 0x4009236d:0x3ffcf6c0
+
+
+
+
+ELF file SHA256: 29188e40b
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13e74h ( 81524) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023e9c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00023ec0 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00028c90 vaddr=40080000 size=07388h ( 29576) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75794h (481172) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a57bc vaddr=40087388 size=127e0h ( 75744) load[0m
+[0;32mI (347) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (347) boot: Disabling RNG early entropy source...[0m
+[0;32mI (358) cpu_start: Multicore app[0m
+[0;32mI (366) cpu_start: Pro cpu start user code[0m
+[0;32mI (366) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (366) app_init: Application information:[0m
+[0;32mI (366) app_init: Project name:     control_1.1[0m
+[0;32mI (370) app_init: App version:      v5.4[0m
+[0;32mI (374) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (379) app_init: ELF file SHA256:  29188e40b...[0m
+[0;32mI (383) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (387) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (391) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (395) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (399) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (405) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (410) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (415) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (420) heap_init: At 3FFC49C0 len 0001B640 (109 KiB): DRAM[0m
+[0;32mI (426) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (431) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (437) heap_init: At 40099B68 len 00006498 (25 KiB): IRAM[0m
+[0;32mI (443) spi_flash: detected chip: generic[0m
+[0;32mI (445) spi_flash: flash io: dio[0m
+[0;32mI (449) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (454) main_task: Started on CPU0[0m
+[0;32mI (457) main_task: Calling app_main()[0m
+[0;32mI (460) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (468) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (472) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (478) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (496) I2C SLAVE: .............[0m
+
+[0;32mI (499) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (504) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (509) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (517) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (534) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (542) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (559) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (567) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (575) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (584) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (592) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (600) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (609) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (617) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (625) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (634) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (643) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (647) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (692) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (694) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (697) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (698) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (776) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (1112) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1121) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1135) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1143) main_task: Returned from app_main()[0m
+[0;32mI (1148) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1148) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1148) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1156) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1161) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1165) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1169) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1172) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1179) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1183) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (2270) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2270) I2C SLAVE: Data Received - Encoder values updated[0m
+

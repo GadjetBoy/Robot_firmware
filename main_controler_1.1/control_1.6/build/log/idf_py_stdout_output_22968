@@ -1,0 +1,1043 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 10 2025 15:12:23[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0be0ch ( 48652) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001be34 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001be58 vaddr=3ffb0000 size=02414h (  9236) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e274 vaddr=40080000 size=01da4h (  7588) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1721ch ( 94748) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037244 vaddr=40081da4 size=0c3bch ( 50108) load[0m
+[0;32mI (184) boot: Loaded app from partition at offset 0x10000[0m
+I (184) boot: Disabling RNG early entropy source...
+[0;32mI (195) cpu_start: Multicore app[0m
+[0;32mI (203) cpu_start: Pro cpu start user code[0m
+[0;32mI (203) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (203) app_init: Application information:[0m
+[0;32mI (203) app_init: Project name:     control_1.6[0m
+[0;32mI (207) app_init: App version:      v5.4-dirty[0m
+[0;32mI (212) app_init: Compile time:     Nov 10 2025 15:12:11[0m
+[0;32mI (217) app_init: ELF file SHA256:  dba8739ba...[0m
+[0;32mI (221) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (225) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (229) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (233) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (237) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (243) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (248) heap_init: At 3FFB2E20 len 0002D1E0 (180 KiB): DRAM[0m
+[0;32mI (253) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (259) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (264) heap_init: At 4008E160 len 00011EA0 (71 KiB): IRAM[0m
+[0;32mI (271) spi_flash: detected chip: generic[0m
+[0;32mI (273) spi_flash: flash io: dio[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (280) main_task: Calling app_main()[0m
+[0;32mI (283) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (291) I2C SLAVE: Setting up PWM and PID module[0m
+[0;32mI (295) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (300) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (308) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (325) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (333) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (342) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (350) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (358) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (367) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (375) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (383) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (392) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (400) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (408) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (425) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (544) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (554) MOTOR_SET: Starting PID application...[0m
+[0;32mI (554) MOTOR_SET: PID application started successfully[0m
+D (554) i2c.common: new bus(0) at 0x3ffb87b0
+[0;32mI (556) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[1;31mE (572) RESET: CPU Reset reason: 1[0m
+|������Send Data 
+[1;31mE (30873) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (30873) I2C MASTER: send Complete[0m
+[0;33mW (30863) CPG: CPG update missed: expected 140814, got 140903[0m
+[0;32mI (30883) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (30883) CPG: CPG update missed: expected 140904, got 140945[0m
+[0;32mI (30893) I2C MASTER: send Complete[0m
+[0;32mI (30893) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (30893) CPG: CPG update missed: expected 140946, got 140993[0m
+[0;32mI (30903) I2C MASTER: send Complete[0m
+[0;33mW (30903) CPG: CPG update missed: expected 140994, got 141035[0m
+[0;32mI (30913) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (30913) CPG: CPG update missed: expected 141036, got 141083[0m
+[0;32mI (30923) I2C MASTER: send Complete[0m
+[0;32mI (30923) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (30923) CPG: CPG update missed: expected 141084, got 141127[0m
+[0;32mI (30933) I2C MASTER: send Complete[0m
+[0;33mW (30933) CPG: CPG update missed: expected 141128, got 141175[0m
+[0;32mI (30943) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (30943) CPG: CPG update missed: expected 141176, got 141217[0m
+[0;32mI (30953) I2C MASTER: send Complete[0m
+[0;33mW (30953) CPG: CPG update missed: expected 141218, got 141265[0m
+[0;32mI (30963) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (30973) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (30973) I2C MASTER: send Complete[0m
+[0;32mI (30973) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (30963) CPG: CPG update missed: expected 141266, got 141309[0m
+[0;32mI (30983) I2C MASTER: send Complete[0m
+[0;33mW (30983) CPG: CPG update missed: expected 141310, got 141355[0m
+[0;32mI (30993) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (30993) CPG: CPG update missed: expected 141356, got 141445[0m
+[0;32mI (31003) I2C MASTER: send Complete[0m
+[0;32mI (31003) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31003) CPG: CPG update missed: expected 141446, got 141489[0m
+[0;32mI (31013) I2C MASTER: send Complete[0m
+[0;33mW (31013) CPG: CPG update missed: expected 141490, got 141535[0m
+[0;32mI (31023) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31023) CPG: CPG update missed: expected 141536, got 141599[0m
+[0;32mI (31033) I2C MASTER: send Complete[0m
+[0;33mW (31033) CPG: CPG update missed: expected 141600, got 141643[0m
+[0;32mI (31043) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31043) CPG: CPG update missed: expected 141644, got 141691[0m
+[0;32mI (31053) I2C MASTER: send Complete[0m
+[0;33mW (31053) CPG: CPG update missed: expected 141692, got 141755[0m
+[0;32mI (31053) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31063) CPG: CPG update missed: expected 141756, got 141799[0m
+[0;32mI (31063) I2C MASTER: send Complete[0m
+[1;31mE (31073) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31073) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31073) CPG: CPG update missed: expected 141800, got 141845[0m
+[0;32mI (31083) I2C MASTER: send Complete[0m
+[0;33mW (31093) CPG: CPG update missed: expected 141846, got 141909[0m
+[0;32mI (31093) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31103) CPG: CPG update missed: expected 141910, got 141997[0m
+[0;32mI (31103) I2C MASTER: send Complete[0m
+[0;32mI (31113) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31103) CPG: CPG update missed: expected 141998, got 142041[0m
+[0;32mI (31113) I2C MASTER: send Complete[0m
+[0;33mW (31123) CPG: CPG update missed: expected 142042, got 142089[0m
+[0;32mI (31123) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31133) CPG: CPG update missed: expected 142090, got 142133[0m
+[0;32mI (31133) I2C MASTER: send Complete[0m
+[0;32mI (31143) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31143) CPG: CPG update missed: expected 142134, got 142181[0m
+[0;32mI (31143) I2C MASTER: send Complete[0m
+[0;33mW (31153) CPG: CPG update missed: expected 142182, got 142223[0m
+[0;32mI (31153) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31163) CPG: CPG update missed: expected 142224, got 142271[0m
+[0;32mI (31163) I2C MASTER: send Complete[0m
+[0;33mW (31173) CPG: CPG update missed: expected 142272, got 142315[0m
+[0;32mI (31173) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (31183) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31183) I2C MASTER: send Complete[0m
+[0;32mI (31193) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31183) CPG: CPG update missed: expected 142316, got 142363[0m
+[0;32mI (31193) I2C MASTER: send Complete[0m
+[0;33mW (31203) CPG: CPG update missed: expected 142364, got 142453[0m
+[0;32mI (31203) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31213) CPG: CPG update missed: expected 142454, got 142493[0m
+[0;32mI (31213) I2C MASTER: send Complete[0m
+[0;32mI (31223) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31223) CPG: CPG update missed: expected 142494, got 142541[0m
+[0;32mI (31223) I2C MASTER: send Complete[0m
+[0;33mW (31233) CPG: CPG update missed: expected 142542, got 142585[0m
+[0;32mI (31233) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31243) CPG: CPG update missed: expected 142586, got 142633[0m
+[0;32mI (31243) I2C MASTER: send Complete[0m
+[0;33mW (31253) CPG: CPG update missed: expected 142634, got 142677[0m
+[0;32mI (31253) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31263) CPG: CPG update missed: expected 142678, got 142723[0m
+[0;32mI (31263) I2C MASTER: send Complete[0m
+[0;33mW (31263) CPG: CPG update missed: expected 142724, got 142787[0m
+[0;32mI (31273) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (31283) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31283) I2C MASTER: send Complete[0m
+[0;32mI (31293) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31273) CPG: CPG update missed: expected 142788, got 142831[0m
+[0;32mI (31293) I2C MASTER: send Complete[0m
+[0;32mI (31303) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31303) CPG: CPG update missed: expected 142832, got 142879[0m
+[0;32mI (31303) I2C MASTER: send Complete[0m
+[0;33mW (31313) CPG: CPG update missed: expected 142880, got 142921[0m
+[0;32mI (31313) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31323) CPG: CPG update missed: expected 142922, got 143011[0m
+[0;32mI (31323) I2C MASTER: send Complete[0m
+[0;33mW (31333) CPG: CPG update missed: expected 143012, got 143059[0m
+[0;32mI (31333) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31333) CPG: CPG update missed: expected 143060, got 143103[0m
+[0;32mI (31343) I2C MASTER: send Complete[0m
+[0;33mW (31343) CPG: CPG update missed: expected 143104, got 143149[0m
+[0;32mI (31353) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31353) CPG: CPG update missed: expected 143150, got 143193[0m
+[0;32mI (31363) I2C MASTER: send Complete[0m
+[0;33mW (31363) CPG: CPG update missed: expected 143194, got 143241[0m
+[0;32mI (31373) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31373) CPG: CPG update missed: expected 143242, got 143305[0m
+[0;32mI (31383) I2C MASTER: send Complete[0m
+[0;33mW (31383) CPG: CPG update missed: expected 143306, got 143347[0m
+[0;32mI (31383) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (31393) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31393) I2C MASTER: send Complete[0m
+[0;33mW (31393) CPG: CPG update missed: expected 143348, got 143395[0m
+[0;32mI (31403) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31413) CPG: CPG update missed: expected 143396, got 143459[0m
+[0;32mI (31413) I2C MASTER: send Complete[0m
+[0;33mW (31423) CPG: CPG update missed: expected 143460, got 143547[0m
+[0;32mI (31423) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31433) CPG: CPG update missed: expected 143548, got 143591[0m
+[0;32mI (31433) I2C MASTER: send Complete[0m
+[0;33mW (31433) CPG: CPG update missed: expected 143592, got 143639[0m
+[0;32mI (31443) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31443) CPG: CPG update missed: expected 143640, got 143703[0m
+[0;32mI (31453) I2C MASTER: send Complete[0m
+[0;33mW (31453) CPG: CPG update missed: expected 143704, got 143745[0m
+[0;32mI (31463) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31463) CPG: CPG update missed: expected 143746, got 143793[0m
+[0;32mI (31473) I2C MASTER: send Complete[0m
+[0;32mI (31473) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31473) CPG: CPG update missed: expected 143794, got 143857[0m
+[0;32mI (31483) I2C MASTER: send Complete[0m
+[0;33mW (31483) CPG: CPG update missed: expected 143858, got 143901[0m
+[0;32mI (31493) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (31503) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31503) I2C MASTER: send Complete[0m
+[0;33mW (31493) CPG: CPG update missed: expected 143902, got 143949[0m
+[0;32mI (31503) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31513) CPG: CPG update missed: expected 143950, got 144037[0m
+[0;32mI (31513) I2C MASTER: send Complete[0m
+[0;33mW (31523) CPG: CPG update missed: expected 144038, got 144101[0m
+[0;32mI (31523) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31533) CPG: CPG update missed: expected 144102, got 144143[0m
+[0;32mI (31533) I2C MASTER: send Complete[0m
+[0;33mW (31543) CPG: CPG update missed: expected 144144, got 144191[0m
+[0;32mI (31543) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31553) CPG: CPG update missed: expected 144192, got 144255[0m
+[0;32mI (31553) I2C MASTER: send Complete[0m
+[0;33mW (31563) CPG: CPG update missed: expected 144256, got 144299[0m
+[0;32mI (31563) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31573) CPG: CPG update missed: expected 144300, got 144347[0m
+[0;32mI (31573) I2C MASTER: send Complete[0m
+[0;32mI (31583) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31573) CPG: CPG update missed: expected 144348, got 144389[0m
+[0;32mI (31583) I2C MASTER: send Complete[0m
+[0;33mW (31593) CPG: CPG update missed: expected 144390, got 144437[0m
+[0;32mI (31593) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31603) CPG: CPG update missed: expected 144438, got 144481[0m
+[0;32mI (31603) I2C MASTER: send Complete[0m
+[1;31mE (31613) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31613) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31613) CPG: CPG update missed: expected 144482, got 144553[0m
+[0;32mI (31623) I2C MASTER: send Complete[0m
+[0;32mI (31633) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31623) CPG: CPG update missed: expected 144554, got 144617[0m
+[0;32mI (31633) I2C MASTER: send Complete[0m
+[0;33mW (31643) CPG: CPG update missed: expected 144618, got 144661[0m
+[0;32mI (31643) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31643) CPG: CPG update missed: expected 144662, got 144707[0m
+[0;32mI (31653) I2C MASTER: send Complete[0m
+[0;32mI (31663) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31653) CPG: CPG update missed: expected 144708, got 144753[0m
+[0;32mI (31663) I2C MASTER: send Complete[0m
+[0;33mW (31673) CPG: CPG update missed: expected 144754, got 144799[0m
+[0;32mI (31673) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31683) CPG: CPG update missed: expected 144800, got 144843[0m
+[0;32mI (31683) I2C MASTER: send Complete[0m
+[0;33mW (31693) CPG: CPG update missed: expected 144844, got 144891[0m
+[0;32mI (31693) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31693) CPG: CPG update missed: expected 144892, got 144933[0m
+[0;32mI (31703) I2C MASTER: send Complete[0m
+[1;31mE (31713) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31713) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31703) CPG: CPG update missed: expected 144934, got 144981[0m
+[0;32mI (31723) I2C MASTER: send Complete[0m
+[0;33mW (31723) CPG: CPG update missed: expected 144982, got 145025[0m
+[0;32mI (31723) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31733) CPG: CPG update missed: expected 145026, got 145071[0m
+[0;32mI (31733) I2C MASTER: send Complete[0m
+[0;33mW (31743) CPG: CPG update missed: expected 145072, got 145161[0m
+[0;32mI (31743) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31753) CPG: CPG update missed: expected 145162, got 145203[0m
+[0;32mI (31753) I2C MASTER: send Complete[0m
+[0;32mI (31763) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31763) CPG: CPG update missed: expected 145204, got 145253[0m
+[0;32mI (31773) I2C MASTER: send Complete[0m
+[0;33mW (31773) CPG: CPG update missed: expected 145254, got 145295[0m
+[0;32mI (31773) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31783) CPG: CPG update missed: expected 145296, got 145343[0m
+[0;32mI (31783) I2C MASTER: send Complete[0m
+[0;32mI (31793) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31793) CPG: CPG update missed: expected 145344, got 145387[0m
+[0;32mI (31803) I2C MASTER: send Complete[0m
+[0;33mW (31803) CPG: CPG update missed: expected 145388, got 145435[0m
+[0;32mI (31803) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (31813) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31813) I2C MASTER: send Complete[0m
+[0;33mW (31813) CPG: CPG update missed: expected 145436, got 145497[0m
+[0;32mI (31823) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31833) CPG: CPG update missed: expected 145498, got 145541[0m
+[0;32mI (31833) I2C MASTER: send Complete[0m
+[0;32mI (31843) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31843) CPG: CPG update missed: expected 145542, got 145589[0m
+[0;32mI (31843) I2C MASTER: send Complete[0m
+[0;33mW (31853) CPG: CPG update missed: expected 145590, got 145693[0m
+[0;32mI (31853) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31863) CPG: CPG update missed: expected 145694, got 145741[0m
+[0;32mI (31863) I2C MASTER: send Complete[0m
+[0;32mI (31873) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31873) CPG: CPG update missed: expected 145742, got 145785[0m
+[0;32mI (31883) I2C MASTER: send Complete[0m
+[0;33mW (31883) CPG: CPG update missed: expected 145786, got 145831[0m
+[0;32mI (31883) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31893) CPG: CPG update missed: expected 145832, got 145895[0m
+[0;32mI (31893) I2C MASTER: send Complete[0m
+[0;33mW (31903) CPG: CPG update missed: expected 145896, got 145939[0m
+[0;32mI (31903) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31913) CPG: CPG update missed: expected 145940, got 145987[0m
+[0;32mI (31913) I2C MASTER: send Complete[0m
+[1;31mE (31923) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (31923) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31923) CPG: CPG update missed: expected 145988, got 146051[0m
+[0;32mI (31933) I2C MASTER: send Complete[0m
+[0;33mW (31943) CPG: CPG update missed: expected 146052, got 146095[0m
+[0;32mI (31943) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31943) CPG: CPG update missed: expected 146096, got 146183[0m
+[0;32mI (31953) I2C MASTER: send Complete[0m
+[0;33mW (31953) CPG: CPG update missed: expected 146184, got 146229[0m
+[0;32mI (31963) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31963) CPG: CPG update missed: expected 146230, got 146293[0m
+[0;32mI (31973) I2C MASTER: send Complete[0m
+[0;33mW (31973) CPG: CPG update missed: expected 146294, got 146337[0m
+[0;32mI (31973) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31983) CPG: CPG update missed: expected 146338, got 146385[0m
+[0;32mI (31983) I2C MASTER: send Complete[0m
+[0;32mI (31993) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (31993) CPG: CPG update missed: expected 146386, got 146449[0m
+[0;32mI (32003) I2C MASTER: send Complete[0m
+[0;33mW (32003) CPG: CPG update missed: expected 146450, got 146493[0m
+[0;32mI (32013) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32013) CPG: CPG update missed: expected 146494, got 146539[0m
+[0;32mI (32023) I2C MASTER: send Complete[0m
+[0;32mI (32023) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32023) CPG: CPG update missed: expected 146540, got 146583[0m
+[0;32mI (32033) I2C MASTER: send Complete[0m
+[1;31mE (32043) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32043) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32033) CPG: CPG update missed: expected 146584, got 146691[0m
+[0;32mI (32053) I2C MASTER: send Complete[0m
+[0;33mW (32053) CPG: CPG update missed: expected 146692, got 146735[0m
+[0;32mI (32053) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32063) CPG: CPG update missed: expected 146736, got 146783[0m
+[0;32mI (32063) I2C MASTER: send Complete[0m
+[0;32mI (32073) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32073) CPG: CPG update missed: expected 146784, got 146847[0m
+[0;32mI (32083) I2C MASTER: send Complete[0m
+[0;33mW (32083) CPG: CPG update missed: expected 146848, got 146891[0m
+[0;32mI (32083) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32093) CPG: CPG update missed: expected 146892, got 146937[0m
+[0;32mI (32103) I2C MASTER: send Complete[0m
+[0;32mI (32103) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32103) CPG: CPG update missed: expected 146938, got 146981[0m
+[0;32mI (32113) I2C MASTER: send Complete[0m
+[0;33mW (32113) CPG: CPG update missed: expected 146982, got 147029[0m
+[0;32mI (32123) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32123) CPG: CPG update missed: expected 147030, got 147073[0m
+[0;32mI (32133) I2C MASTER: send Complete[0m
+[0;33mW (32133) CPG: CPG update missed: expected 147074, got 147119[0m
+[0;32mI (32133) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (32143) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32143) I2C MASTER: send Complete[0m
+[0;32mI (32153) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32143) CPG: CPG update missed: expected 147120, got 147209[0m
+[0;32mI (32163) I2C MASTER: send Complete[0m
+[0;33mW (32163) CPG: CPG update missed: expected 147210, got 147253[0m
+[0;32mI (32163) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32173) CPG: CPG update missed: expected 147254, got 147299[0m
+[0;32mI (32173) I2C MASTER: send Complete[0m
+[0;32mI (32183) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32183) CPG: CPG update missed: expected 147300, got 147363[0m
+[0;32mI (32193) I2C MASTER: send Complete[0m
+[0;33mW (32193) CPG: CPG update missed: expected 147364, got 147407[0m
+[0;32mI (32203) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32203) CPG: CPG update missed: expected 147408, got 147455[0m
+[0;32mI (32213) I2C MASTER: send Complete[0m
+[0;33mW (32213) CPG: CPG update missed: expected 147456, got 147519[0m
+[0;32mI (32213) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32223) CPG: CPG update missed: expected 147520, got 147561[0m
+[0;32mI (32223) I2C MASTER: send Complete[0m
+[0;33mW (32233) CPG: CPG update missed: expected 147562, got 147609[0m
+[0;32mI (32233) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32243) CPG: CPG update missed: expected 147610, got 147651[0m
+[0;32mI (32243) I2C MASTER: send Complete[0m
+[1;31mE (32253) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32253) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32253) CPG: CPG update missed: expected 147652, got 147761[0m
+[0;32mI (32263) I2C MASTER: send Complete[0m
+[0;33mW (32263) CPG: CPG update missed: expected 147762, got 147805[0m
+[0;32mI (32273) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32273) CPG: CPG update missed: expected 147806, got 147853[0m
+[0;32mI (32283) I2C MASTER: send Complete[0m
+[0;32mI (32293) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32283) CPG: CPG update missed: expected 147854, got 147917[0m
+[0;32mI (32293) I2C MASTER: send Complete[0m
+[0;33mW (32303) CPG: CPG update missed: expected 147918, got 147959[0m
+[0;32mI (32303) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32303) CPG: CPG update missed: expected 147960, got 148007[0m
+[0;32mI (32313) I2C MASTER: send Complete[0m
+[0;32mI (32323) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32313) CPG: CPG update missed: expected 148008, got 148051[0m
+[0;32mI (32323) I2C MASTER: send Complete[0m
+[0;33mW (32333) CPG: CPG update missed: expected 148052, got 148099[0m
+[0;32mI (32333) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32343) CPG: CPG update missed: expected 148100, got 148141[0m
+[0;32mI (32343) I2C MASTER: send Complete[0m
+[0;33mW (32353) CPG: CPG update missed: expected 148142, got 148251[0m
+[0;32mI (32353) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32353) CPG: CPG update missed: expected 148252, got 148315[0m
+[0;32mI (32363) I2C MASTER: send Complete[0m
+[1;31mE (32373) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32373) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32363) CPG: CPG update missed: expected 148316, got 148357[0m
+[0;32mI (32383) I2C MASTER: send Complete[0m
+[0;33mW (32383) CPG: CPG update missed: expected 148358, got 148405[0m
+[0;32mI (32383) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32393) CPG: CPG update missed: expected 148406, got 148449[0m
+[0;32mI (32393) I2C MASTER: send Complete[0m
+[0;33mW (32403) CPG: CPG update missed: expected 148450, got 148497[0m
+[0;32mI (32403) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32413) CPG: CPG update missed: expected 148498, got 148539[0m
+[0;32mI (32413) I2C MASTER: send Complete[0m
+[0;33mW (32423) CPG: CPG update missed: expected 148540, got 148587[0m
+[0;32mI (32423) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32433) CPG: CPG update missed: expected 148588, got 148631[0m
+[0;32mI (32433) I2C MASTER: send Complete[0m
+[0;33mW (32443) CPG: CPG update missed: expected 148632, got 148679[0m
+[0;32mI (32443) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32443) CPG: CPG update missed: expected 148680, got 148721[0m
+[0;32mI (32453) I2C MASTER: send Complete[0m
+[0;33mW (32453) CPG: CPG update missed: expected 148722, got 148811[0m
+[0;32mI (32463) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (32473) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32473) I2C MASTER: send Complete[0m
+[0;33mW (32463) CPG: CPG update missed: expected 148812, got 148859[0m
+[0;32mI (32473) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32483) CPG: CPG update missed: expected 148860, got 148903[0m
+[0;32mI (32483) I2C MASTER: send Complete[0m
+[0;32mI (32493) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32493) CPG: CPG update missed: expected 148904, got 148949[0m
+[0;32mI (32503) I2C MASTER: send Complete[0m
+[0;33mW (32503) CPG: CPG update missed: expected 148950, got 148993[0m
+[0;32mI (32513) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32513) CPG: CPG update missed: expected 148994, got 149041[0m
+[0;32mI (32523) I2C MASTER: send Complete[0m
+[0;33mW (32523) CPG: CPG update missed: expected 149042, got 149083[0m
+[0;32mI (32523) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32533) CPG: CPG update missed: expected 149084, got 149131[0m
+[0;32mI (32533) I2C MASTER: send Complete[0m
+[0;33mW (32543) CPG: CPG update missed: expected 149132, got 149195[0m
+[0;32mI (32543) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32553) CPG: CPG update missed: expected 149196, got 149239[0m
+[0;32mI (32553) I2C MASTER: send Complete[0m
+[0;33mW (32563) CPG: CPG update missed: expected 149240, got 149327[0m
+[0;32mI (32563) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (32573) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32573) I2C MASTER: send Complete[0m
+[0;33mW (32573) CPG: CPG update missed: expected 149328, got 149375[0m
+[0;32mI (32583) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32583) CPG: CPG update missed: expected 149376, got 149417[0m
+[0;32mI (32593) I2C MASTER: send Complete[0m
+[0;33mW (32593) CPG: CPG update missed: expected 149418, got 149465[0m
+[0;32mI (32603) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32603) CPG: CPG update missed: expected 149466, got 149509[0m
+[0;32mI (32613) I2C MASTER: send Complete[0m
+[0;33mW (32613) CPG: CPG update missed: expected 149510, got 149557[0m
+[0;32mI (32613) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32623) CPG: CPG update missed: expected 149558, got 149601[0m
+[0;32mI (32623) I2C MASTER: send Complete[0m
+[0;33mW (32633) CPG: CPG update missed: expected 149602, got 149647[0m
+[0;32mI (32633) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32643) CPG: CPG update missed: expected 149648, got 149711[0m
+[0;32mI (32643) I2C MASTER: send Complete[0m
+[0;33mW (32653) CPG: CPG update missed: expected 149712, got 149755[0m
+[0;32mI (32653) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32663) CPG: CPG update missed: expected 149756, got 149801[0m
+[0;32mI (32663) I2C MASTER: send Complete[0m
+[1;31mE (32673) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32673) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32673) CPG: CPG update missed: expected 149802, got 149891[0m
+[0;32mI (32683) I2C MASTER: send Complete[0m
+[0;33mW (32683) CPG: CPG update missed: expected 149892, got 149955[0m
+[0;32mI (32693) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32693) CPG: CPG update missed: expected 149956, got 149999[0m
+[0;32mI (32703) I2C MASTER: send Complete[0m
+[0;33mW (32703) CPG: CPG update missed: expected 150000, got 150045[0m
+[0;32mI (32703) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32713) CPG: CPG update missed: expected 150046, got 150109[0m
+[0;32mI (32723) I2C MASTER: send Complete[0m
+[0;33mW (32723) CPG: CPG update missed: expected 150110, got 150153[0m
+[0;32mI (32723) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32733) CPG: CPG update missed: expected 150154, got 150201[0m
+[0;32mI (32733) I2C MASTER: send Complete[0m
+[0;33mW (32743) CPG: CPG update missed: expected 150202, got 150245[0m
+[0;32mI (32743) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32753) CPG: CPG update missed: expected 150246, got 150291[0m
+[0;32mI (32753) I2C MASTER: send Complete[0m
+[0;33mW (32763) CPG: CPG update missed: expected 150292, got 150381[0m
+[0;32mI (32763) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (32773) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32773) I2C MASTER: send Complete[0m
+[0;33mW (32773) CPG: CPG update missed: expected 150382, got 150423[0m
+[0;32mI (32783) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32783) CPG: CPG update missed: expected 150424, got 150471[0m
+[0;32mI (32793) I2C MASTER: send Complete[0m
+[0;32mI (32803) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32793) CPG: CPG update missed: expected 150472, got 150515[0m
+[0;32mI (32803) I2C MASTER: send Complete[0m
+[0;33mW (32813) CPG: CPG update missed: expected 150516, got 150563[0m
+[0;32mI (32813) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32813) CPG: CPG update missed: expected 150564, got 150627[0m
+[0;32mI (32823) I2C MASTER: send Complete[0m
+[0;32mI (32833) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32823) CPG: CPG update missed: expected 150628, got 150669[0m
+[0;32mI (32833) I2C MASTER: send Complete[0m
+[0;33mW (32843) CPG: CPG update missed: expected 150670, got 150717[0m
+[0;32mI (32843) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32843) CPG: CPG update missed: expected 150718, got 150781[0m
+[0;32mI (32853) I2C MASTER: send Complete[0m
+[0;33mW (32853) CPG: CPG update missed: expected 150782, got 150823[0m
+[0;32mI (32863) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32863) CPG: CPG update missed: expected 150824, got 150913[0m
+[0;32mI (32873) I2C MASTER: send Complete[0m
+[0;32mI (32883) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (32883) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32883) I2C MASTER: send Complete[0m
+[0;33mW (32873) CPG: CPG update missed: expected 150914, got 150961[0m
+[0;32mI (32893) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32893) CPG: CPG update missed: expected 150962, got 151025[0m
+[0;32mI (32903) I2C MASTER: send Complete[0m
+[0;32mI (32913) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32903) CPG: CPG update missed: expected 151026, got 151067[0m
+[0;32mI (32913) I2C MASTER: send Complete[0m
+[0;33mW (32923) CPG: CPG update missed: expected 151068, got 151115[0m
+[0;32mI (32923) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32923) CPG: CPG update missed: expected 151116, got 151179[0m
+[0;32mI (32933) I2C MASTER: send Complete[0m
+[0;33mW (32933) CPG: CPG update missed: expected 151180, got 151223[0m
+[0;32mI (32943) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32943) CPG: CPG update missed: expected 151224, got 151271[0m
+[0;32mI (32953) I2C MASTER: send Complete[0m
+[0;32mI (32953) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32953) CPG: CPG update missed: expected 151272, got 151313[0m
+[0;32mI (32963) I2C MASTER: send Complete[0m
+[0;33mW (32963) CPG: CPG update missed: expected 151314, got 151361[0m
+[0;32mI (32973) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (32983) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (32983) I2C MASTER: send Complete[0m
+[0;32mI (32993) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (32973) CPG: CPG update missed: expected 151362, got 151449[0m
+[0;32mI (32993) I2C MASTER: send Complete[0m
+[0;33mW (33003) CPG: CPG update missed: expected 151450, got 151493[0m
+[0;32mI (33003) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33003) CPG: CPG update missed: expected 151494, got 151541[0m
+[0;32mI (33013) I2C MASTER: send Complete[0m
+[0;33mW (33013) CPG: CPG update missed: expected 151542, got 151585[0m
+[0;32mI (33023) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33023) CPG: CPG update missed: expected 151586, got 151631[0m
+[0;32mI (33033) I2C MASTER: send Complete[0m
+[0;32mI (33033) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33033) CPG: CPG update missed: expected 151632, got 151675[0m
+[0;32mI (33043) I2C MASTER: send Complete[0m
+[0;33mW (33043) CPG: CPG update missed: expected 151676, got 151723[0m
+[0;32mI (33053) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33053) CPG: CPG update missed: expected 151724, got 151787[0m
+[0;32mI (33063) I2C MASTER: send Complete[0m
+[0;32mI (33073) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33063) CPG: CPG update missed: expected 151788, got 151831[0m
+[0;32mI (33073) I2C MASTER: send Complete[0m
+[1;31mE (33083) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33083) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33083) CPG: CPG update missed: expected 151832, got 151877[0m
+[0;32mI (33093) I2C MASTER: send Complete[0m
+[0;33mW (33093) CPG: CPG update missed: expected 151878, got 151941[0m
+[0;32mI (33103) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33103) CPG: CPG update missed: expected 151942, got 152029[0m
+[0;32mI (33113) I2C MASTER: send Complete[0m
+[0;32mI (33113) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33113) CPG: CPG update missed: expected 152030, got 152073[0m
+[0;32mI (33123) I2C MASTER: send Complete[0m
+[0;33mW (33123) CPG: CPG update missed: expected 152074, got 152121[0m
+[0;32mI (33133) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33133) CPG: CPG update missed: expected 152122, got 152185[0m
+[0;32mI (33143) I2C MASTER: send Complete[0m
+[0;32mI (33153) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33143) CPG: CPG update missed: expected 152186, got 152229[0m
+[0;32mI (33153) I2C MASTER: send Complete[0m
+[0;33mW (33163) CPG: CPG update missed: expected 152230, got 152275[0m
+[0;32mI (33163) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33163) CPG: CPG update missed: expected 152276, got 152339[0m
+[0;32mI (33173) I2C MASTER: send Complete[0m
+[0;33mW (33173) CPG: CPG update missed: expected 152340, got 152383[0m
+[0;32mI (33183) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (33193) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33193) I2C MASTER: send Complete[0m
+[0;32mI (33193) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33183) CPG: CPG update missed: expected 152384, got 152431[0m
+[0;32mI (33203) I2C MASTER: send Complete[0m
+[0;33mW (33203) CPG: CPG update missed: expected 152432, got 152473[0m
+[0;32mI (33213) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33213) CPG: CPG update missed: expected 152474, got 152583[0m
+[0;32mI (33223) I2C MASTER: send Complete[0m
+[0;32mI (33223) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33223) CPG: CPG update missed: expected 152584, got 152627[0m
+[0;32mI (33233) I2C MASTER: send Complete[0m
+[0;33mW (33233) CPG: CPG update missed: expected 152628, got 152673[0m
+[0;32mI (33243) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33243) CPG: CPG update missed: expected 152674, got 152737[0m
+[0;32mI (33253) I2C MASTER: send Complete[0m
+[0;33mW (33253) CPG: CPG update missed: expected 152738, got 152781[0m
+[0;32mI (33263) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33263) CPG: CPG update missed: expected 152782, got 152829[0m
+[0;32mI (33273) I2C MASTER: send Complete[0m
+[0;33mW (33273) CPG: CPG update missed: expected 152830, got 152873[0m
+[0;32mI (33273) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33283) CPG: CPG update missed: expected 152874, got 152921[0m
+[0;32mI (33283) I2C MASTER: send Complete[0m
+[1;31mE (33293) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33293) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33293) CPG: CPG update missed: expected 152922, got 152963[0m
+[0;32mI (33303) I2C MASTER: send Complete[0m
+[0;33mW (33313) CPG: CPG update missed: expected 152964, got 153011[0m
+[0;32mI (33313) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33323) CPG: CPG update missed: expected 153012, got 153099[0m
+[0;32mI (33323) I2C MASTER: send Complete[0m
+[0;33mW (33333) CPG: CPG update missed: expected 153100, got 153143[0m
+[0;32mI (33333) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33333) CPG: CPG update missed: expected 153144, got 153191[0m
+[0;32mI (33343) I2C MASTER: send Complete[0m
+[0;33mW (33343) CPG: CPG update missed: expected 153192, got 153255[0m
+[0;32mI (33353) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33353) CPG: CPG update missed: expected 153256, got 153297[0m
+[0;32mI (33363) I2C MASTER: send Complete[0m
+[0;33mW (33363) CPG: CPG update missed: expected 153298, got 153345[0m
+[0;32mI (33363) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33373) CPG: CPG update missed: expected 153346, got 153409[0m
+[0;32mI (33373) I2C MASTER: send Complete[0m
+[0;33mW (33383) CPG: CPG update missed: expected 153410, got 153453[0m
+[0;32mI (33383) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33393) CPG: CPG update missed: expected 153454, got 153501[0m
+[0;32mI (33393) I2C MASTER: send Complete[0m
+[1;31mE (33403) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33403) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33403) CPG: CPG update missed: expected 153502, got 153543[0m
+[0;32mI (33413) I2C MASTER: send Complete[0m
+[0;33mW (33423) CPG: CPG update missed: expected 153544, got 153591[0m
+[0;32mI (33423) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33423) CPG: CPG update missed: expected 153592, got 153679[0m
+[0;32mI (33433) I2C MASTER: send Complete[0m
+[0;33mW (33433) CPG: CPG update missed: expected 153680, got 153723[0m
+[0;32mI (33443) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33443) CPG: CPG update missed: expected 153724, got 153771[0m
+[0;32mI (33453) I2C MASTER: send Complete[0m
+[0;32mI (33463) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33453) CPG: CPG update missed: expected 153772, got 153815[0m
+[0;32mI (33463) I2C MASTER: send Complete[0m
+[0;33mW (33473) CPG: CPG update missed: expected 153816, got 153861[0m
+[0;32mI (33473) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33473) CPG: CPG update missed: expected 153862, got 153905[0m
+[0;32mI (33483) I2C MASTER: send Complete[0m
+[0;33mW (33483) CPG: CPG update missed: expected 153906, got 153953[0m
+[0;32mI (33493) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33493) CPG: CPG update missed: expected 153954, got 153997[0m
+[0;32mI (33503) I2C MASTER: send Complete[0m
+[0;32mI (33503) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33503) CPG: CPG update missed: expected 153998, got 154045[0m
+[0;32mI (33513) I2C MASTER: send Complete[0m
+[1;31mE (33523) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33523) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33513) CPG: CPG update missed: expected 154046, got 154087[0m
+[0;32mI (33533) I2C MASTER: send Complete[0m
+[0;33mW (33533) CPG: CPG update missed: expected 154088, got 154175[0m
+[0;32mI (33533) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33543) CPG: CPG update missed: expected 154176, got 154223[0m
+[0;32mI (33553) I2C MASTER: send Complete[0m
+[0;32mI (33553) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33553) CPG: CPG update missed: expected 154224, got 154287[0m
+[0;32mI (33563) I2C MASTER: send Complete[0m
+[0;33mW (33563) CPG: CPG update missed: expected 154288, got 154331[0m
+[0;32mI (33573) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33573) CPG: CPG update missed: expected 154332, got 154379[0m
+[0;32mI (33583) I2C MASTER: send Complete[0m
+[0;32mI (33583) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33583) CPG: CPG update missed: expected 154380, got 154421[0m
+[0;32mI (33593) I2C MASTER: send Complete[0m
+[0;33mW (33593) CPG: CPG update missed: expected 154422, got 154469[0m
+[0;32mI (33603) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33603) CPG: CPG update missed: expected 154470, got 154513[0m
+[0;32mI (33613) I2C MASTER: send Complete[0m
+[0;33mW (33613) CPG: CPG update missed: expected 154514, got 154561[0m
+[0;32mI (33613) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (33623) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33633) I2C MASTER: send Complete[0m
+[0;33mW (33623) CPG: CPG update missed: expected 154562, got 154603[0m
+[0;32mI (33633) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33643) CPG: CPG update missed: expected 154604, got 154693[0m
+[0;32mI (33643) I2C MASTER: send Complete[0m
+[0;33mW (33653) CPG: CPG update missed: expected 154694, got 154739[0m
+[0;32mI (33653) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33663) CPG: CPG update missed: expected 154740, got 154783[0m
+[0;32mI (33663) I2C MASTER: send Complete[0m
+[0;33mW (33673) CPG: CPG update missed: expected 154784, got 154831[0m
+[0;32mI (33673) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33673) CPG: CPG update missed: expected 154832, got 154875[0m
+[0;32mI (33683) I2C MASTER: send Complete[0m
+[0;32mI (33693) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33683) CPG: CPG update missed: expected 154876, got 154923[0m
+[0;32mI (33693) I2C MASTER: send Complete[0m
+[0;33mW (33703) CPG: CPG update missed: expected 154924, got 154965[0m
+[0;32mI (33703) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33713) CPG: CPG update missed: expected 154966, got 155013[0m
+[0;32mI (33713) I2C MASTER: send Complete[0m
+[0;32mI (33723) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33723) CPG: CPG update missed: expected 155014, got 155057[0m
+[0;32mI (33723) I2C MASTER: send Complete[0m
+[1;31mE (33733) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33733) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33733) CPG: CPG update missed: expected 155058, got 155103[0m
+[0;32mI (33743) I2C MASTER: send Complete[0m
+[0;33mW (33753) CPG: CPG update missed: expected 155104, got 155193[0m
+[0;32mI (33753) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33753) CPG: CPG update missed: expected 155194, got 155235[0m
+[0;32mI (33763) I2C MASTER: send Complete[0m
+[0;32mI (33773) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33763) CPG: CPG update missed: expected 155236, got 155283[0m
+[0;32mI (33773) I2C MASTER: send Complete[0m
+[0;33mW (33783) CPG: CPG update missed: expected 155284, got 155327[0m
+[0;32mI (33783) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33793) CPG: CPG update missed: expected 155328, got 155375[0m
+[0;32mI (33793) I2C MASTER: send Complete[0m
+[0;32mI (33803) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33793) CPG: CPG update missed: expected 155376, got 155419[0m
+[0;32mI (33803) I2C MASTER: send Complete[0m
+[0;33mW (33813) CPG: CPG update missed: expected 155420, got 155467[0m
+[0;32mI (33813) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33823) CPG: CPG update missed: expected 155468, got 155509[0m
+[0;32mI (33823) I2C MASTER: send Complete[0m
+[0;33mW (33833) CPG: CPG update missed: expected 155510, got 155557[0m
+[0;32mI (33833) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (33843) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33843) I2C MASTER: send Complete[0m
+[0;32mI (33853) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33833) CPG: CPG update missed: expected 155558, got 155601[0m
+[0;32mI (33853) I2C MASTER: send Complete[0m
+[0;33mW (33863) CPG: CPG update missed: expected 155602, got 155689[0m
+[0;32mI (33863) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33873) CPG: CPG update missed: expected 155690, got 155737[0m
+[0;32mI (33873) I2C MASTER: send Complete[0m
+[0;32mI (33883) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33873) CPG: CPG update missed: expected 155738, got 155801[0m
+[0;32mI (33883) I2C MASTER: send Complete[0m
+[0;33mW (33893) CPG: CPG update missed: expected 155802, got 155843[0m
+[0;32mI (33893) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33903) CPG: CPG update missed: expected 155844, got 155891[0m
+[0;32mI (33903) I2C MASTER: send Complete[0m
+[0;33mW (33913) CPG: CPG update missed: expected 155892, got 155955[0m
+[0;32mI (33913) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33913) CPG: CPG update missed: expected 155956, got 155999[0m
+[0;32mI (33923) I2C MASTER: send Complete[0m
+[0;33mW (33923) CPG: CPG update missed: expected 156000, got 156047[0m
+[0;32mI (33933) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33933) CPG: CPG update missed: expected 156048, got 156089[0m
+[0;32mI (33943) I2C MASTER: send Complete[0m
+[0;33mW (33943) CPG: CPG update missed: expected 156090, got 156137[0m
+[0;32mI (33943) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (33953) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (33963) I2C MASTER: send Complete[0m
+[0;33mW (33953) CPG: CPG update missed: expected 156138, got 156241[0m
+[0;32mI (33963) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33973) CPG: CPG update missed: expected 156242, got 156289[0m
+[0;32mI (33973) I2C MASTER: send Complete[0m
+[0;33mW (33983) CPG: CPG update missed: expected 156290, got 156353[0m
+[0;32mI (33983) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (33993) CPG: CPG update missed: expected 156354, got 156397[0m
+[0;32mI (33993) I2C MASTER: send Complete[0m
+[0;33mW (34003) CPG: CPG update missed: expected 156398, got 156445[0m
+[0;32mI (34003) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34003) CPG: CPG update missed: expected 156446, got 156487[0m
+[0;32mI (34013) I2C MASTER: send Complete[0m
+[0;33mW (34013) CPG: CPG update missed: expected 156488, got 156535[0m
+[0;32mI (34023) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34023) CPG: CPG update missed: expected 156536, got 156599[0m
+[0;32mI (34033) I2C MASTER: send Complete[0m
+[0;33mW (34033) CPG: CPG update missed: expected 156600, got 156643[0m
+[0;32mI (34043) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34043) CPG: CPG update missed: expected 156644, got 156753[0m
+[0;32mI (34053) I2C MASTER: send Complete[0m
+[0;32mI (34053) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (34063) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34063) I2C MASTER: send Complete[0m
+[0;33mW (34053) CPG: CPG update missed: expected 156754, got 156795[0m
+[0;32mI (34073) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34073) CPG: CPG update missed: expected 156796, got 156843[0m
+[0;32mI (34083) I2C MASTER: send Complete[0m
+[0;32mI (34083) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34083) CPG: CPG update missed: expected 156844, got 156885[0m
+[0;32mI (34093) I2C MASTER: send Complete[0m
+[0;33mW (34093) CPG: CPG update missed: expected 156886, got 156933[0m
+[0;32mI (34103) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34103) CPG: CPG update missed: expected 156934, got 156997[0m
+[0;32mI (34113) I2C MASTER: send Complete[0m
+[0;33mW (34113) CPG: CPG update missed: expected 156998, got 157041[0m
+[0;32mI (34113) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34123) CPG: CPG update missed: expected 157042, got 157089[0m
+[0;32mI (34133) I2C MASTER: send Complete[0m
+[0;32mI (34133) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34133) CPG: CPG update missed: expected 157090, got 157151[0m
+[0;32mI (34143) I2C MASTER: send Complete[0m
+[0;33mW (34143) CPG: CPG update missed: expected 157152, got 157241[0m
+[0;32mI (34153) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (34163) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34163) I2C MASTER: send Complete[0m
+[0;32mI (34163) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34153) CPG: CPG update missed: expected 157242, got 157283[0m
+[0;32mI (34173) I2C MASTER: send Complete[0m
+[0;33mW (34173) CPG: CPG update missed: expected 157284, got 157331[0m
+[0;32mI (34183) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34183) CPG: CPG update missed: expected 157332, got 157395[0m
+[0;32mI (34193) I2C MASTER: send Complete[0m
+[0;33mW (34193) CPG: CPG update missed: expected 157396, got 157439[0m
+[0;32mI (34193) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34203) CPG: CPG update missed: expected 157440, got 157487[0m
+[0;32mI (34203) I2C MASTER: send Complete[0m
+[0;32mI (34213) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34213) CPG: CPG update missed: expected 157488, got 157551[0m
+[0;32mI (34223) I2C MASTER: send Complete[0m
+[0;33mW (34223) CPG: CPG update missed: expected 157552, got 157593[0m
+[0;32mI (34233) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34233) CPG: CPG update missed: expected 157594, got 157641[0m
+[0;32mI (34243) I2C MASTER: send Complete[0m
+[0;32mI (34243) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34243) CPG: CPG update missed: expected 157642, got 157685[0m
+[0;32mI (34253) I2C MASTER: send Complete[0m
+[1;31mE (34263) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34263) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34253) CPG: CPG update missed: expected 157686, got 157793[0m
+[0;32mI (34273) I2C MASTER: send Complete[0m
+[0;33mW (34273) CPG: CPG update missed: expected 157794, got 157837[0m
+[0;32mI (34273) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34283) CPG: CPG update missed: expected 157838, got 157885[0m
+[0;32mI (34283) I2C MASTER: send Complete[0m
+[0;32mI (34293) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34293) CPG: CPG update missed: expected 157886, got 157949[0m
+[0;32mI (34303) I2C MASTER: send Complete[0m
+[0;32mI (34313) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34303) CPG: CPG update missed: expected 157950, got 157991[0m
+[0;32mI (34313) I2C MASTER: send Complete[0m
+[0;33mW (34323) CPG: CPG update missed: expected 157992, got 158039[0m
+[0;32mI (34323) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34323) CPG: CPG update missed: expected 158040, got 158083[0m
+[0;32mI (34333) I2C MASTER: send Complete[0m
+[0;33mW (34333) CPG: CPG update missed: expected 158084, got 158131[0m
+[0;32mI (34343) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34343) CPG: CPG update missed: expected 158132, got 158173[0m
+[0;32mI (34353) I2C MASTER: send Complete[0m
+[0;33mW (34353) CPG: CPG update missed: expected 158174, got 158221[0m
+[0;32mI (34353) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34363) CPG: CPG update missed: expected 158222, got 158309[0m
+[0;32mI (34363) I2C MASTER: send Complete[0m
+[1;31mE (34373) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34373) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34373) CPG: CPG update missed: expected 158310, got 158353[0m
+[0;32mI (34383) I2C MASTER: send Complete[0m
+[0;33mW (34393) CPG: CPG update missed: expected 158354, got 158401[0m
+[0;32mI (34393) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34403) CPG: CPG update missed: expected 158402, got 158445[0m
+[0;32mI (34403) I2C MASTER: send Complete[0m
+[0;33mW (34413) CPG: CPG update missed: expected 158446, got 158491[0m
+[0;32mI (34413) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34413) CPG: CPG update missed: expected 158492, got 158535[0m
+[0;32mI (34423) I2C MASTER: send Complete[0m
+[0;33mW (34423) CPG: CPG update missed: expected 158536, got 158583[0m
+[0;32mI (34433) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34433) CPG: CPG update missed: expected 158584, got 158627[0m
+[0;32mI (34443) I2C MASTER: send Complete[0m
+[0;33mW (34443) CPG: CPG update missed: expected 158628, got 158675[0m
+[0;32mI (34443) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34453) CPG: CPG update missed: expected 158676, got 158717[0m
+[0;32mI (34463) I2C MASTER: send Complete[0m
+[0;33mW (34463) CPG: CPG update missed: expected 158718, got 158765[0m
+[0;32mI (34463) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34473) CPG: CPG update missed: expected 158766, got 158853[0m
+[0;32mI (34473) I2C MASTER: send Complete[0m
+[1;31mE (34483) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34483) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34483) CPG: CPG update missed: expected 158854, got 158897[0m
+[0;32mI (34493) I2C MASTER: send Complete[0m
+[0;32mI (34503) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34503) CPG: CPG update missed: expected 158898, got 158945[0m
+[0;32mI (34503) I2C MASTER: send Complete[0m
+[0;33mW (34513) CPG: CPG update missed: expected 158946, got 158989[0m
+[0;32mI (34513) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34523) CPG: CPG update missed: expected 158990, got 159035[0m
+[0;32mI (34523) I2C MASTER: send Complete[0m
+[0;32mI (34533) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34533) CPG: CPG update missed: expected 159036, got 159099[0m
+[0;32mI (34533) I2C MASTER: send Complete[0m
+[0;33mW (34543) CPG: CPG update missed: expected 159100, got 159143[0m
+[0;32mI (34543) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34553) CPG: CPG update missed: expected 159144, got 159191[0m
+[0;32mI (34553) I2C MASTER: send Complete[0m
+[0;33mW (34563) CPG: CPG update missed: expected 159192, got 159235[0m
+[0;32mI (34563) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34573) CPG: CPG update missed: expected 159236, got 159281[0m
+[0;32mI (34573) I2C MASTER: send Complete[0m
+[0;33mW (34583) CPG: CPG update missed: expected 159282, got 159345[0m
+[0;32mI (34583) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34593) CPG: CPG update missed: expected 159346, got 159433[0m
+[0;32mI (34593) I2C MASTER: send Complete[0m
+[1;31mE (34603) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34603) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34593) CPG: CPG update missed: expected 159434, got 159477[0m
+[0;32mI (34613) I2C MASTER: send Complete[0m
+[0;33mW (34613) CPG: CPG update missed: expected 159478, got 159525[0m
+[0;32mI (34613) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34623) CPG: CPG update missed: expected 159526, got 159589[0m
+[0;32mI (34633) I2C MASTER: send Complete[0m
+[0;33mW (34633) CPG: CPG update missed: expected 159590, got 159633[0m
+[0;32mI (34633) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34643) CPG: CPG update missed: expected 159634, got 159679[0m
+[0;32mI (34643) I2C MASTER: send Complete[0m
+[0;32mI (34653) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34653) CPG: CPG update missed: expected 159680, got 159743[0m
+[0;32mI (34663) I2C MASTER: send Complete[0m
+[0;33mW (34663) CPG: CPG update missed: expected 159744, got 159787[0m
+[0;32mI (34663) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34673) CPG: CPG update missed: expected 159788, got 159835[0m
+[0;32mI (34673) I2C MASTER: send Complete[0m
+[0;32mI (34683) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34683) CPG: CPG update missed: expected 159836, got 159877[0m
+[0;32mI (34693) I2C MASTER: send Complete[0m
+[1;31mE (34703) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34703) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34693) CPG: CPG update missed: expected 159878, got 159967[0m
+[0;32mI (34713) I2C MASTER: send Complete[0m
+[0;33mW (34713) CPG: CPG update missed: expected 159968, got 160015[0m
+[0;32mI (34713) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34723) CPG: CPG update missed: expected 160016, got 160057[0m
+[0;32mI (34723) I2C MASTER: send Complete[0m
+[0;33mW (34733) CPG: CPG update missed: expected 160058, got 160105[0m
+[0;32mI (34733) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34743) CPG: CPG update missed: expected 160106, got 160149[0m
+[0;32mI (34743) I2C MASTER: send Complete[0m
+[0;33mW (34753) CPG: CPG update missed: expected 160150, got 160197[0m
+[0;32mI (34753) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34763) CPG: CPG update missed: expected 160198, got 160261[0m
+[0;32mI (34763) I2C MASTER: send Complete[0m
+[0;33mW (34763) CPG: CPG update missed: expected 160262, got 160303[0m
+[0;32mI (34773) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34773) CPG: CPG update missed: expected 160304, got 160353[0m
+[0;32mI (34783) I2C MASTER: send Complete[0m
+[0;32mI (34793) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34783) CPG: CPG update missed: expected 160354, got 160415[0m
+[0;32mI (34793) I2C MASTER: send Complete[0m
+[1;31mE (34803) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34803) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34803) CPG: CPG update missed: expected 160416, got 160503[0m
+[0;32mI (34813) I2C MASTER: send Complete[0m
+[0;33mW (34813) CPG: CPG update missed: expected 160504, got 160547[0m
+[0;32mI (34823) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34823) CPG: CPG update missed: expected 160548, got 160595[0m
+[0;32mI (34833) I2C MASTER: send Complete[0m
+[0;33mW (34833) CPG: CPG update missed: expected 160596, got 160659[0m
+[0;32mI (34833) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34843) CPG: CPG update missed: expected 160660, got 160703[0m
+[0;32mI (34843) I2C MASTER: send Complete[0m
+[0;33mW (34853) CPG: CPG update missed: expected 160704, got 160749[0m
+[0;32mI (34853) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34863) CPG: CPG update missed: expected 160750, got 160813[0m
+[0;32mI (34863) I2C MASTER: send Complete[0m
+[0;33mW (34873) CPG: CPG update missed: expected 160814, got 160857[0m
+[0;32mI (34873) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34883) CPG: CPG update missed: expected 160858, got 160905[0m
+[0;32mI (34883) I2C MASTER: send Complete[0m
+[0;32mI (34893) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34893) CPG: CPG update missed: expected 160906, got 160947[0m
+[0;32mI (34893) I2C MASTER: send Complete[0m
+[1;31mE (34903) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (34903) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34903) CPG: CPG update missed: expected 160948, got 161057[0m
+[0;32mI (34913) I2C MASTER: send Complete[0m
+[0;33mW (34923) CPG: CPG update missed: expected 161058, got 161099[0m
+[0;32mI (34923) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34933) CPG: CPG update missed: expected 161100, got 161147[0m
+[0;32mI (34933) I2C MASTER: send Complete[0m
+[0;32mI (34943) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34933) CPG: CPG update missed: expected 161148, got 161211[0m
+[0;32mI (34943) I2C MASTER: send Complete[0m
+[0;33mW (34953) CPG: CPG update missed: expected 161212, got 161255[0m
+[0;32mI (34953) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34963) CPG: CPG update missed: expected 161256, got 161303[0m
+[0;32mI (34963) I2C MASTER: send Complete[0m
+[0;32mI (34973) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34973) CPG: CPG update missed: expected 161304, got 161345[0m
+[0;32mI (34973) I2C MASTER: send Complete[0m
+[0;33mW (34983) CPG: CPG update missed: expected 161346, got 161393[0m
+[0;32mI (34983) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (34993) CPG: CPG update missed: expected 161394, got 161437[0m
+[0;32mI (34993) I2C MASTER: send Complete[0m
+[0;33mW (35003) CPG: CPG update missed: expected 161438, got 161485[0m
+[0;32mI (35003) I2C MASTER: Preparing to Send Data [0m
+[1;31mE (35013) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (35013) I2C MASTER: send Complete[0m
+[0;32mI (35023) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35013) CPG: CPG update missed: expected 161486, got 161527[0m
+[0;32mI (35023) I2C MASTER: send Complete[0m
+[0;33mW (35033) CPG: CPG update missed: expected 161528, got 161617[0m
+[0;32mI (35033) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35043) CPG: CPG update missed: expected 161618, got 161663[0m
+[0;32mI (35043) I2C MASTER: send Complete[0m
+[0;32mI (35053) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35053) CPG: CPG update missed: expected 161664, got 161707[0m
+[0;32mI (35053) I2C MASTER: send Complete[0m
+[0;33mW (35063) CPG: CPG update missed: expected 161708, got 161755[0m
+[0;32mI (35063) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35073) CPG: CPG update missed: expected 161756, got 161799[0m
+[0;32mI (35073) I2C MASTER: send Complete[0m
+[0;33mW (35083) CPG: CPG update missed: expected 161800, got 161847[0m
+[0;32mI (35083) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35093) CPG: CPG update missed: expected 161848, got 161889[0m
+[0;32mI (35093) I2C MASTER: send Complete[0m
+[0;33mW (35093) CPG: CPG update missed: expected 161890, got 161937[0m
+[0;32mI (35103) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35103) CPG: CPG update missed: expected 161938, got 161981[0m
+[0;32mI (35113) I2C MASTER: send Complete[0m
+[1;31mE (35123) PID: Receiving cpg values failed (count: 10)[0m
+[0;32mI (35123) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35113) CPG: CPG update missed: expected 161982, got 162029[0m
+[0;32mI (35133) I2C MASTER: send Complete[0m
+[0;33mW (35133) CPG: CPG update missed: expected 162030, got 162133[0m
+[0;32mI (35133) I2C MASTER: Preparing to Send Data [0m
+[0;33mW (35143) CPG: CPG update missed: expected 162134, got 162181[0m
+[0;32mI (35143) I2C MASTER: send Complete[0m
+[0;32mI (35153) I2C MASTER: Preparing to Send Data [0m

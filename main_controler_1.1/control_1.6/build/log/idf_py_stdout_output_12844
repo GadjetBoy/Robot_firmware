@@ -1,0 +1,2328 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 10 2025 15:12:23[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0be1ch ( 48668) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001be44 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001be68 vaddr=3ffb0000 size=02414h (  9236) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e284 vaddr=40080000 size=01d94h (  7572) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1721ch ( 94748) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037244 vaddr=40081d94 size=0c3cch ( 50124) load[0m
+[0;32mI (184) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (184) boot: Disabling RNG early entropy source...[0m
+[0;32mI (195) cpu_start: Multicore app[0m
+[0;32mI (203) cpu_start: Pro cpu start user code[0m
+[0;32mI (203) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (203) app_init: Application information:[0m
+[0;32mI (203) app_init: Project name:     control_1.6[0m
+[0;32mI (208) app_init: App version:      v5.4-dirty[0m
+[0;32mI (212) app_init: Compile time:     Nov 10 2025 15:12:11[0m
+[0;32mI (217) app_init: ELF file SHA256:  c39b751af...[0m
+[0;32mI (221) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (225) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (229) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (233) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (237) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (243) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (248) heap_init: At 3FFB2E20 len 0002D1E0 (180 KiB): DRAM[0m
+[0;32mI (254) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (259) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (264) heap_init: At 4008E160 len 00011EA0 (71 KiB): IRAM[0m
+[0;32mI (271) spi_flash: detected chip: generic[0m
+[0;32mI (273) spi_flash: flash io: dio[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (280) main_task: Calling app_main()[0m
+[0;32mI (283) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (291) I2C SLAVE: Setting up PWM and PID module[0m
+[0;32mI (295) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (300) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (308) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (325) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (333) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (342) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (350) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (358) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (367) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (375) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (383) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (392) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (400) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (408) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (425) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (544) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (554) MOTOR_SET: Starting PID application...[0m
+[0;32mI (554) MOTOR_SET: PID application started successfully[0m
+D (554) i2c.common: new bus(0) at 0x3ffb87b0
+[0;32mI (556) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[1;31mE (572) RESET: CPU Reset reason: 1[0m
+[1;31mE (795) MOTOR_SET: i2c data received[0m
+
+[1;31mE (808) MOTOR_SET: i2c data received[0m
+
+[1;31mE (821) MOTOR_SET: i2c data received[0m
+
+[1;31mE (834) MOTOR_SET: i2c data received[0m
+
+[1;31mE (846) MOTOR_SET: i2c data received[0m
+
+[1;31mE (877) MOTOR_SET: i2c data received[0m
+
+[1;31mE (889) MOTOR_SET: i2c data received[0m
+
+[1;31mE (902) MOTOR_SET: i2c data received[0m
+
+[1;31mE (915) MOTOR_SET: i2c data received[0m
+
+[1;31mE (928) MOTOR_SET: i2c data received[0m
+
+[1;31mE (941) MOTOR_SET: i2c data received[0m
+
+[1;31mE (954) MOTOR_SET: i2c data received[0m
+
+[1;31mE (967) MOTOR_SET: i2c data received[0m
+
+[1;31mE (997) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1010) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1023) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1035) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1048) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1061) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1074) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1087) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1117) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1130) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1143) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1156) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1169) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1182) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1195) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1226) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1239) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1252) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1265) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1278) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1291) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1313) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1344) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1357) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1370) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1383) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1396) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1409) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1422) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1435) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1465) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1478) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1491) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1504) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1517) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1530) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1543) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1556) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1587) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1600) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1613) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1626) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1639) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1652) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1665) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1678) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1709) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1722) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1735) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1748) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1761) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1774) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1787) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1800) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1830) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1843) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1856) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1869) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1882) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1895) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1909) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1922) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1952) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1965) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1978) MOTOR_SET: i2c data received[0m
+
+[1;31mE (1991) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2004) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2017) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2030) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2043) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2074) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2087) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2100) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2113) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2126) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2139) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2152) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2165) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2195) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2209) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2222) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2235) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2248) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2261) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2274) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2287) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2317) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2330) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2343) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2356) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2369) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2382) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2395) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2408) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2439) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2452) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2465) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2478) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2491) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2504) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2517) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2530) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2561) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2574) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2587) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2600) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2613) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2626) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2639) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2652) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2682) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2695) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2708) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2721) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2734) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2747) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2760) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2773) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2804) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2817) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2830) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2843) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2856) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2869) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2882) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2895) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2926) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2939) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2952) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2965) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2978) MOTOR_SET: i2c data received[0m
+
+[1;31mE (2991) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3004) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3017) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3047) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3060) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3073) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3086) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3099) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3112) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3126) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3139) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3169) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3182) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3195) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3208) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3221) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3234) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3247) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3260) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3291) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3304) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3317) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3330) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3343) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3356) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3369) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3382) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3412) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3426) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3439) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3452) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3465) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3478) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3491) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3504) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3534) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3547) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3560) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3573) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3586) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3599) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3612) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3625) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3656) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3669) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3682) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3695) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3708) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3721) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3734) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3747) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3778) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3791) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3804) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3817) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3830) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3843) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3856) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3869) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3899) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3912) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3925) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3938) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3951) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3964) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3977) MOTOR_SET: i2c data received[0m
+
+[1;31mE (3990) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4021) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4034) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4047) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4060) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4073) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4086) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4099) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4112) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4143) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4156) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4169) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4182) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4195) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4208) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4221) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4234) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4264) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4277) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4290) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4303) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4316) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4329) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4343) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4356) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4386) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4399) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4412) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4425) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4438) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4451) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4464) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4477) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4508) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4521) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4534) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4547) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4560) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4573) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4586) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4599) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4629) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4643) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4656) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4669) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4682) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4695) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4708) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4721) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4751) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4764) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4777) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4790) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4803) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4816) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4829) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4842) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4873) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4886) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4899) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4912) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4925) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4938) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4951) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4964) MOTOR_SET: i2c data received[0m
+
+[1;31mE (4995) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5008) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5021) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5034) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5047) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5060) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5073) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5086) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5116) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5129) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5142) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5155) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5168) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5181) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5194) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5207) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5238) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5251) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5264) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5277) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5290) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5303) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5316) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5329) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5360) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5373) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5386) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5399) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5412) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5425) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5438) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5451) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5481) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5494) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5507) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5520) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5533) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5547) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5560) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5573) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5603) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5616) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5629) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5642) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5655) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5668) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5681) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5694) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5725) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5738) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5751) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5764) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5777) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5790) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5803) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5816) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5846) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5860) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5873) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5886) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5899) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5912) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5925) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5938) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5968) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5981) MOTOR_SET: i2c data received[0m
+
+[1;31mE (5994) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6007) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6020) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6033) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6046) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6059) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6090) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6103) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6116) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6129) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6142) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6155) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6168) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6181) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6212) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6225) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6238) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6251) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6264) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6277) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6290) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6303) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6333) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6346) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6359) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6372) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6385) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6398) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6411) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6424) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6455) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6468) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6481) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6494) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6507) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6520) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6533) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6546) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6577) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6590) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6603) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6616) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6629) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6642) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6655) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6668) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6698) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6711) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6724) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6737) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6750) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6764) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6777) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6790) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6820) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6833) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6846) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6859) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6872) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6885) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6898) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6911) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6942) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6955) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6968) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6981) MOTOR_SET: i2c data received[0m
+
+[1;31mE (6994) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7007) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7020) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7033) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7064) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7077) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7090) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7103) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7116) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7129) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7142) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7155) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7185) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7198) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7211) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7224) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7237) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7250) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7263) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7276) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7307) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7320) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7333) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7346) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7359) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7372) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7385) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7398) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7429) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7442) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7455) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7468) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7481) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7494) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7507) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7520) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7550) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7563) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7576) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7589) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7602) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7615) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7628) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7641) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7672) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7685) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7698) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7711) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7724) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7737) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7750) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7763) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7794) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7807) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7820) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7833) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7846) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7859) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7872) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7885) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7915) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7928) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7941) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7954) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7967) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7981) MOTOR_SET: i2c data received[0m
+
+[1;31mE (7994) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8007) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8037) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8050) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8063) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8076) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8089) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8102) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8115) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8128) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8159) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8172) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8185) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8198) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8211) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8224) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8237) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8250) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8281) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8294) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8307) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8320) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8333) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8346) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8359) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8372) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8402) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8415) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8428) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8441) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8454) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8467) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8480) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8493) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8524) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8537) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8550) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8563) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8576) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8589) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8602) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8615) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8646) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8659) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8672) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8685) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8698) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8711) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8724) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8737) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8767) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8780) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8793) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8806) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8819) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8832) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8845) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8858) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8889) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8902) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8915) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8928) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8941) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8954) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8967) MOTOR_SET: i2c data received[0m
+
+[1;31mE (8980) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9011) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9024) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9037) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9050) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9063) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9076) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9089) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9102) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9132) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9145) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9158) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9171) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9184) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9198) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9211) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9224) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9254) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9267) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9280) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9293) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9306) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9319) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9332) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9345) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9376) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9389) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9402) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9415) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9428) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9441) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9454) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9467) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9498) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9511) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9524) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9537) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9550) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9563) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9576) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9589) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9619) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9632) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9645) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9658) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9671) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9684) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9697) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9710) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9741) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9754) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9767) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9780) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9793) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9806) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9819) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9832) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9863) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9876) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9889) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9902) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9915) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9928) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9941) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9954) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9984) MOTOR_SET: i2c data received[0m
+
+[1;31mE (9997) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10010) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10023) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10036) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10049) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10062) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10075) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10106) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10119) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10132) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10146) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10159) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10172) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10185) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10198) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10229) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10242) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10256) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10269) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10282) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10295) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10308) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10322) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10352) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10366) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10379) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10392) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10405) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10418) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10432) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10445) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10476) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10489) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10502) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10515) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10528) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10542) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10555) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10568) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10581) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10612) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10625) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10638) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10651) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10665) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10678) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10691) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10722) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10735) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10748) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10761) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10775) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10788) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10801) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10814) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10845) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10858) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10871) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10885) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10898) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10911) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10924) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10937) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10968) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10981) MOTOR_SET: i2c data received[0m
+
+[1;31mE (10995) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11008) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11021) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11034) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11047) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11061) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11091) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11105) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11118) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11131) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11144) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11157) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11171) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11184) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11215) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11228) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11241) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11254) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11267) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11281) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11294) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11307) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11338) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11351) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11364) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11377) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11391) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11404) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11417) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11430) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11461) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11474) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11487) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11501) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11514) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11527) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11540) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11553) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11584) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11597) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11611) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11624) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11637) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11650) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11663) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11676) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11707) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11720) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11734) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11747) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11760) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11773) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11786) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11800) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11830) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11844) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11857) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11870) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11883) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11896) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11910) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11923) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11954) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11967) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11980) MOTOR_SET: i2c data received[0m
+
+[1;31mE (11993) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12006) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12020) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12033) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12046) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12077) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12090) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12103) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12116) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12130) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12143) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12156) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12169) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12200) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12213) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12226) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12240) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12253) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12266) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12279) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12292) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12323) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12336) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12350) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12363) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12376) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12389) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12402) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12416) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12446) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12460) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12473) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12486) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12499) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12512) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12526) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12539) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12570) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12583) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12596) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12609) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12622) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12636) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12649) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12662) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12675) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12706) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12719) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12732) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12745) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12759) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12772) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12785) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12816) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12829) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12842) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12855) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12869) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12882) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12895) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12908) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12939) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12952) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12965) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12979) MOTOR_SET: i2c data received[0m
+
+[1;31mE (12992) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13005) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13018) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13031) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13062) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13075) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13089) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13102) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13115) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13128) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13141) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13155) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13185) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13199) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13212) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13225) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13238) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13251) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13265) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13278) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13309) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13322) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13335) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13348) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13361) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13375) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13388) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13401) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13432) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13445) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13458) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13471) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13485) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13498) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13511) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13524) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13555) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13568) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13581) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13595) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13608) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13621) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13634) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13647) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13678) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13691) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13705) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13718) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13731) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13744) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13757) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13770) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13801) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13814) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13828) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13841) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13854) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13867) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13880) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13894) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13924) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13938) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13951) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13964) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13977) MOTOR_SET: i2c data received[0m
+
+[1;31mE (13990) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14004) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14017) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14048) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14061) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14074) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14087) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14100) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14114) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14127) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14140) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14171) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14184) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14197) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14210) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14224) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14237) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14250) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14263) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14294) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14307) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14320) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14334) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14347) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14360) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14373) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14386) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14417) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14430) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14444) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14457) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14470) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14483) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14496) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14510) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14540) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14554) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14567) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14580) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14593) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14606) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14620) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14633) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14664) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14677) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14690) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14703) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14716) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14730) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14743) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14756) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14787) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14800) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14813) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14826) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14839) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14853) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14866) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14879) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14910) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14923) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14936) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14949) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14963) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14976) MOTOR_SET: i2c data received[0m
+
+[1;31mE (14989) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15002) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15033) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15046) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15059) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15073) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15086) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15099) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15112) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15125) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15156) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15169) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15183) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15196) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15209) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15222) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15235) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15249) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15279) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15293) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15306) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15319) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15332) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15345) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15359) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15372) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15403) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15416) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15429) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15442) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15455) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15469) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15482) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15495) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15526) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15539) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15552) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15565) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15579) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15592) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15605) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15618) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15649) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15662) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15675) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15689) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15702) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15715) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15728) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15741) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15772) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15785) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15799) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15812) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15825) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15838) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15851) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15864) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15895) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15908) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15922) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15935) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15948) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15961) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15974) MOTOR_SET: i2c data received[0m
+
+[1;31mE (15988) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16018) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16032) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16045) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16058) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16071) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16084) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16098) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16111) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16142) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16155) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16168) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16181) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16194) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16208) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16221) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16234) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16265) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16278) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16291) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16304) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16318) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16331) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16344) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16357) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16388) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16401) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16414) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16428) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16441) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16454) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16467) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16480) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16511) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16524) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16538) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16551) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16564) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16577) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16590) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16604) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16634) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16648) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16661) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16674) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16687) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16700) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16714) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16727) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16758) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16771) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16784) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16797) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16810) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16823) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16837) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16850) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16881) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16894) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16907) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16920) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16933) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16947) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16960) MOTOR_SET: i2c data received[0m
+
+[1;31mE (16973) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17004) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17017) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17030) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17043) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17057) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17070) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17083) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17096) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17127) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17140) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17153) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17167) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17180) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17193) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17206) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17219) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17250) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17263) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17277) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17290) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17303) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17316) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17329) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17343) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17373) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17387) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17400) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17413) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17426) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17439) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17453) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17466) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17497) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17510) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17523) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17536) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17549) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17563) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17576) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17589) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17602) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17633) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17646) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17659) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17673) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17686) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17699) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17712) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17743) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17756) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17769) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17783) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17796) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17809) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17822) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17835) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17866) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17879) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17892) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17906) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17919) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17932) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17945) MOTOR_SET: i2c data received[0m
+
+[1;31mE (17958) MOTOR_SET: i2c data received[0m
+

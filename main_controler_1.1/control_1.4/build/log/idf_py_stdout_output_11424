@@ -1,0 +1,2313 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Nov  3 2025 12:14:25[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=21dfch (138748) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=00031e24 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031e48 vaddr=3ffbdb60 size=04da8h ( 19880) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00036bf8 vaddr=40080000 size=09420h ( 37920) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=81a80h (531072) map[0m
+[0;32mI (345) esp_image: segment 5: paddr=000c1aa8 vaddr=40089420 size=0fcf0h ( 64752) load[0m
+[0;32mI (382) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (382) boot: Disabling RNG early entropy source...[0m
+[0;32mI (393) cpu_start: Multicore app[0m
+[0;32mI (401) cpu_start: Pro cpu start user code[0m
+[0;32mI (401) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (402) app_init: Application information:[0m
+[0;32mI (402) app_init: Project name:     control_1.4[0m
+[0;32mI (406) app_init: App version:      v5.4-dirty[0m
+[0;32mI (410) app_init: Compile time:     Nov  6 2025 19:30:17[0m
+[0;32mI (415) app_init: ELF file SHA256:  281cca98e...[0m
+[0;32mI (419) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (423) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (427) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (431) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (435) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (442) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (447) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (457) heap_init: At 3FFC7F00 len 00018100 (96 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (467) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 40099110 len 00006EF0 (27 KiB): IRAM[0m
+[0;32mI (480) spi_flash: detected chip: generic[0m
+[0;32mI (482) spi_flash: flash io: dio[0m
+[0;32mI (486) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (490) main_task: Started on CPU0[0m
+[0;32mI (493) main_task: Calling app_main()[0m
+[0;32mI (496) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (504) i2c.common: new bus(0) at 0x3ffbcd28
+[0;32mI (508) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (614) I2C SLAVE: Setting up PWM and PID module[0m
+[1;31mE (614) RESET: CPU Reset reason: 1[0m
+[0;32mI (614) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (615) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (624) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (632) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (640) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (649) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (657) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (665) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (674) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (682) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (690) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (699) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (707) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (715) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (723) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (732) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (740) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (859) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (870) UART_PID: UART initialized on port 0 at 115200 baud[0m
+[0;32mI (880) PID: Starting PID application...[0m
+[0;32mI (880) PID: PID application started successfully[0m
+[0;32mI (880) CPG: settingup the motor comnads[0m
+[0;32mI (880) CPG: Initializing CPG network...[0m
+[0;32mI (884) CPG: Mode change detected: 0[0m
+[0;32mI (887) CPG: Setting IDLE gait[0m
+[1;31mE (903) I2C SLAVE: i2c data received[0m
+
+[0;32mI (903) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (903) PID: Received encoder[8]=0[0m
+[0;32mI (913) I2C SLAVE: .............[0m
+
+[1;31mE (917) I2C SLAVE: i2c data received[0m
+
+[0;32mI (918) PID: Received encoder[8]=0[0m
+[1;31mE (928) I2C SLAVE: i2c data received[0m
+
+[0;32mI (930) PID: Received encoder[8]=0[0m
+[1;31mE (941) I2C SLAVE: i2c data received[0m
+
+[0;32mI (942) PID: Received encoder[8]=0[0m
+[1;31mE (954) I2C SLAVE: i2c data received[0m
+
+[0;32mI (954) PID: Received encoder[8]=0[0m
+[1;31mE (984) I2C SLAVE: i2c data received[0m
+
+[0;32mI (985) PID: Received encoder[8]=0[0m
+[1;31mE (997) I2C SLAVE: i2c data received[0m
+
+[0;32mI (998) PID: Received encoder[8]=0[0m
+[1;31mE (1010) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1010) PID: Received encoder[8]=0[0m
+[0;32mI (1020) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (1023) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1023) PID: Received encoder[8]=0[0m
+[0;32mI (1027) I2C SLAVE: .............[0m
+
+[1;31mE (1036) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1036) PID: Received encoder[8]=0[0m
+[1;31mE (1049) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1049) PID: Received encoder[8]=0[0m
+[1;31mE (1062) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1062) PID: Received encoder[8]=0[0m
+[1;31mE (1074) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1075) PID: Received encoder[8]=0[0m
+[0;32mI (1084) CPG: settingup the motor comnads complete[0m
+[0;32mI (1084) BLE: Setting up BLE unit[0m
+[0;32mI (1094) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (1096) BTDM_INIT: Bluetooth MAC: 6c:c8:40:66:40:b2[0m
+[0;32mI (1099) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[1;31mE (1105) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1105) PID: Received encoder[8]=0[0m
+[1;31mE (1118) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1118) PID: Received encoder[8]=0[0m
+[1;31mE (1130) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1131) PID: Received encoder[8]=0[0m
+[0;32mI (1137) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (1143) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1143) PID: Received encoder[8]=0[0m
+[0;32mI (1145) I2C SLAVE: .............[0m
+
+[1;31mE (1156) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1158) PID: Received encoder[8]=0[0m
+[1;31mE (1169) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1169) PID: Received encoder[8]=0[0m
+[1;31mE (1182) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1182) PID: Received encoder[8]=0[0m
+[1;31mE (1195) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1195) PID: Received encoder[8]=0[0m
+[0;32mI (1255) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1262) I2C SLAVE: .............[0m
+
+[1;31mE (1430) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1431) PID: Received encoder[8]=0[0m
+[0;32mI (1430) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1444) I2C SLAVE: .............[0m
+
+[1;31mE (1451) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1452) PID: Received encoder[8]=0[0m
+[1;31mE (1465) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1466) PID: Received encoder[8]=0[0m
+[1;31mE (1478) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1479) PID: Received encoder[8]=0[0m
+[0;32mI (1493) PID: Received encoder[8]=0[0m
+[1;31mE (1493) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1504) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1515) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[1;31mE (1517) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1518) PID: Received encoder[8]=0[0m
+[0;33mW (1519) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (1523) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[1;31mE (1527) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+[1;31mE (1529) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1530) PID: Received encoder[8]=0[0m
+[0;32mI (1542) BLE: Unhandled GATTS event: 12[0m
+[1;31mE (1543) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1543) PID: Received encoder[8]=0[0m
+[0;32mI (1547) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1555) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[1;31mE (1573) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1573) PID: Received encoder[8]=0[0m
+[0;32mI (1567) I2C SLAVE: .............[0m
+
+[0;32mI (1581) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[1;31mE (1586) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1586) PID: Received encoder[8]=0[0m
+[0;32mI (1597) BLE: Unhandled GAP event: 6[0m
+[1;31mE (1599) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1599) PID: Received encoder[8]=0[0m
+[0;32mI (1608) BLE: TX CCCD Handle: 45[0m
+[0;32mI (1558) BLE: BLE unit setup completed[0m
+[1;31mE (1612) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1612) PID: Received encoder[8]=0[0m
+[1;31mE (1625) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1625) PID: Received encoder[8]=0[0m
+[1;31mE (1638) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1652) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1664) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1695) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1708) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1721) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1734) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1747) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1760) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1773) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1786) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1816) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1829) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1843) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1856) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1869) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1882) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1895) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1908) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1938) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1951) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1964) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1977) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1990) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2003) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2016) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2029) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2060) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2073) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2086) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2099) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2112) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2125) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2138) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2151) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2182) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2195) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2208) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2221) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2234) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2247) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2260) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2273) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2303) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2316) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2329) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2342) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2355) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2368) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2381) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2394) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2425) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2438) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2451) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2464) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2477) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2490) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2503) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2516) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2547) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2560) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2573) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2586) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2599) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2612) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2625) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2638) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2668) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2681) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2695) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2707) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2720) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2733) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2746) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2760) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2790) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2803) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2816) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2829) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2842) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2855) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2868) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2881) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2912) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2925) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2938) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2951) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2964) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2977) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2990) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3003) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3033) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3046) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3060) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3073) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3086) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3099) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3112) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3125) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3155) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3168) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3181) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3195) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3207) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3220) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3233) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3246) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3277) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3290) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3303) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3316) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3329) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3342) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3355) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3368) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3399) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3412) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3425) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3438) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3451) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3464) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3477) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3490) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3520) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3533) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3546) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3559) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3572) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3585) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3598) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3611) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3642) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3655) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3668) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3681) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3694) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3707) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3720) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3733) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3764) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3777) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3790) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3803) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3816) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3829) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3842) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3855) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3885) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3898) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3911) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3925) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3937) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3950) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3963) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3977) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4007) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4020) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4033) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4046) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4059) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4072) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4085) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4098) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4129) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4142) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4155) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4168) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4181) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4194) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4207) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4220) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4250) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4263) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4277) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4290) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4303) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4316) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4329) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4342) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4372) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4385) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4398) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4411) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4424) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4437) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4450) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4463) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4494) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4507) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4520) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4533) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4546) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4559) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4572) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4585) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4616) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4629) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4642) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4655) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4668) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4681) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4694) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4707) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4737) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4750) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4763) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4776) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4789) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4802) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4815) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4828) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4859) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4872) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4885) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4898) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4911) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4924) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4937) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4950) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4981) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4994) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5007) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5020) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5033) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5046) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5059) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5072) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5102) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5115) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5128) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5141) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5154) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5167) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5180) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5194) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5224) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5237) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5250) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5263) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5276) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5289) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5302) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5315) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5346) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5359) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5372) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5385) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5398) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5411) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5424) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5437) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5467) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5480) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5494) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5507) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5520) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5533) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5546) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5559) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5590) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5602) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5615) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5628) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5641) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5654) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5667) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5680) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5711) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5724) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5737) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5750) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5763) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5776) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5789) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5802) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5833) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5846) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5859) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5872) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5885) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5898) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5911) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5924) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5954) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5967) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5980) I2C SLAVE: i2c data received[0m
+
+[1;31mE (5993) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6006) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6019) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6032) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6045) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6076) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6089) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6102) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6115) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6128) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6141) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6154) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6167) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6198) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6211) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6224) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6237) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6250) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6263) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6276) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6289) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6319) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6332) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6345) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6358) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6371) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6384) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6397) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6411) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6441) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6454) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6467) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6480) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6493) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6506) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6519) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6532) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6563) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6576) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6589) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6602) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6615) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6628) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6641) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6654) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6684) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6697) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6711) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6724) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6737) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6750) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6763) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6776) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6806) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6819) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6832) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6845) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6858) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6871) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6884) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6897) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6928) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6941) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6954) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6967) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6980) I2C SLAVE: i2c data received[0m
+
+[1;31mE (6993) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7006) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7019) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7050) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7063) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7076) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7089) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7102) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7115) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7128) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7141) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7171) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7184) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7197) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7210) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7223) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7236) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7249) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7262) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7293) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7306) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7319) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7332) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7345) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7358) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7371) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7384) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7415) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7428) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7441) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7454) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7467) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7480) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7493) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7506) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7536) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7549) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7562) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7575) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7588) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7601) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7614) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7628) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7658) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7671) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7684) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7697) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7710) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7723) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7736) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7749) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7780) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7793) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7806) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7819) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7832) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7845) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7859) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7871) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7901) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7914) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7928) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7941) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7954) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7967) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7980) I2C SLAVE: i2c data received[0m
+
+[1;31mE (7993) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8023) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8036) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8049) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8062) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8075) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8088) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8101) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8114) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8145) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8158) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8171) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8184) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8197) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8210) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8223) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8236) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8267) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8280) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8293) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8306) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8319) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8332) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8345) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8358) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8388) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8401) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8414) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8427) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8440) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8453) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8466) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8479) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8510) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8523) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8536) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8549) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8562) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8575) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8588) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8601) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8632) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8645) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8658) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8671) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8684) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8697) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8710) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8723) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8753) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8766) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8779) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8792) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8806) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8818) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8831) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8845) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8875) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8888) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8901) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8914) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8927) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8940) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8953) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8966) I2C SLAVE: i2c data received[0m
+
+[1;31mE (8997) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9010) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9023) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9036) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9049) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9062) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9075) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9088) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9118) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9131) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9145) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9158) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9171) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9184) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9197) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9210) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9240) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9253) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9266) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9279) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9292) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9306) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9318) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9331) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9362) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9375) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9388) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9401) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9414) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9427) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9440) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9453) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9484) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9497) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9510) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9523) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9536) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9549) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9562) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9575) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9605) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9618) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9631) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9644) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9657) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9670) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9683) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9696) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9727) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9740) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9753) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9766) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9779) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9792) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9805) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9818) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9849) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9862) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9875) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9888) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9901) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9914) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9927) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9940) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9970) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9983) I2C SLAVE: i2c data received[0m
+
+[1;31mE (9996) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10009) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10022) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10035) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10048) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10062) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10092) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10105) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10118) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10131) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10144) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10157) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10170) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10183) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10214) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10227) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10240) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10253) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10267) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10280) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10293) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10306) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10337) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10350) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10363) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10377) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10390) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10403) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10416) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10429) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10460) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10473) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10487) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10500) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10513) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10526) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10539) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10552) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10583) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10596) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10610) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10623) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10636) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10649) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10662) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10676) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10689) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10720) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10733) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10746) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10759) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10772) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10786) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10799) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10830) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10843) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10856) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10869) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10882) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10896) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10909) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10922) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10953) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10966) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10979) I2C SLAVE: i2c data received[0m
+
+[1;31mE (10992) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11006) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11019) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11032) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11045) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11076) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11089) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11102) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11116) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11129) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11142) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11155) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11168) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11199) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11212) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11226) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11239) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11252) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11265) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11278) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11292) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11322) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11336) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11349) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11362) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11375) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11388) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11402) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11415) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11446) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11459) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11472) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11485) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11498) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11511) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11525) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11538) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11569) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11582) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11595) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11608) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11621) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11635) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11648) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11661) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11692) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11705) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11718) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11731) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11745) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11758) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11771) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11784) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11815) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11828) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11841) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11855) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11868) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11881) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11894) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11907) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11938) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11951) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11965) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11978) I2C SLAVE: i2c data received[0m
+
+[1;31mE (11991) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12004) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12017) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12031) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12061) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12075) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12088) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12101) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12114) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12127) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12141) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12154) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12185) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12198) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12211) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12224) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12237) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12251) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12264) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12277) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12308) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12321) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12334) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12347) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12361) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12374) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12387) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12400) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12431) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12444) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12457) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12471) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12484) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12497) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12510) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12523) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12554) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12567) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12580) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12594) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12607) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12620) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12633) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12646) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12677) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12690) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12704) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12717) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12730) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12743) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12756) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12770) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12783) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12814) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12827) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12840) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12853) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12866) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12880) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12893) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12924) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12937) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12950) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12963) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12976) I2C SLAVE: i2c data received[0m
+
+[1;31mE (12990) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13003) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13016) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13047) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13060) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13073) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13086) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13100) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13113) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13126) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13139) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13170) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13183) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13196) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13210) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13223) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13236) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13249) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13262) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13293) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13306) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13320) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13333) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13346) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13359) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13372) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13386) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13416) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13430) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13443) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13456) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13469) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13482) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13496) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13509) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13540) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13553) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13566) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13579) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13592) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13605) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13619) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13632) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13663) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13676) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13689) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13702) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13715) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13729) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13742) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13755) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13786) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13799) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13812) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13825) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13839) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13852) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13865) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13878) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13909) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13922) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13935) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13949) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13962) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13975) I2C SLAVE: i2c data received[0m
+
+[1;31mE (13988) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14001) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14032) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14045) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14059) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14072) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14085) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14098) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14111) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14125) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14155) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14169) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14182) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14195) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14208) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14221) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14235) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14248) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14279) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14292) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14305) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14318) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14331) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14345) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14358) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14371) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14402) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14415) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14428) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14441) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14455) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14468) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14481) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14494) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14525) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14538) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14551) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14564) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14578) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14591) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14604) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14617) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14648) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14661) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14674) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14688) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14701) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14714) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14727) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14740) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14771) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14784) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14798) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14811) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14824) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14837) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14850) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14864) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14894) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14908) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14921) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14934) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14947) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14960) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14974) I2C SLAVE: i2c data received[0m
+
+[1;31mE (14987) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15018) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15031) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15044) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15057) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15070) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15084) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15097) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15110) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15141) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15154) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15167) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15181) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15194) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15207) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15220) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15233) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15264) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15277) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15290) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15304) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15317) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15330) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15343) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15356) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15387) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15401) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15414) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15427) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15440) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15453) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15466) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15480) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15510) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15524) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15537) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15550) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15563) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15576) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15589) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15603) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15633) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15647) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15660) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15673) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15686) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15699) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15713) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15726) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15757) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15770) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15783) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15796) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15809) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15823) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15836) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15849) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15880) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15893) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15906) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15919) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15933) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15946) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15959) I2C SLAVE: i2c data received[0m
+
+[1;31mE (15972) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16003) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16016) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16029) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16043) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16056) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16069) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16082) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16095) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16126) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16139) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16153) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16166) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16179) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16192) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16205) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16219) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16249) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16263) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16276) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16289) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16302) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16315) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16329) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16342) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16373) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16386) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16399) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16412) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16425) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16439) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16452) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16465) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16496) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16509) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16522) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16535) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16549) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16562) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16575) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16588) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16619) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16632) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16645) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16658) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16672) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16685) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16698) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16711) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16742) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16755) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16768) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16782) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16795) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16808) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16821) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16834) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16865) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16878) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16892) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16905) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16918) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16931) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16944) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16958) I2C SLAVE: i2c data received[0m
+
+[1;31mE (16988) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17002) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17015) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17028) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17041) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17054) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17068) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17081) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17112) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17125) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17138) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17151) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17164) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17178) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17191) I2C SLAVE: i2c data received[0m
+
+[1;31mE (17204) I2C SLAVE: i2c data received[0m
+

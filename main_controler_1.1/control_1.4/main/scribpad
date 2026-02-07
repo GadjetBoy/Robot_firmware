@@ -1,0 +1,1522 @@
+#include "PID.h"
+#include "CPG.h"
+#include "UART.h"
+
+#define TAG "PID"
+#define PID_QUEUE_LENGTH 20
+
+// ====================== Globals ======================
+static Motor motors[NUM_MOTORS];
+QueueHandle_t motor_command_queue;
+static QueueHandle_t pid_log_data_que;
+
+// Forward declarations
+void drive_motor(Motor* m);
+void stop_motor(Motor *m);
+
+// ====================== PID Functions ======================
+void PIDController_Init(PIDController *pid) {
+    pid->integrator = 0.0f;
+    pid->prevError = 0.0f;
+    pid->differentiator = 0.0f;
+    pid->prevMeasurement = 0.0f;
+    pid->firstUpdate = true;
+    pid->out = 0.0f;
+    pid->prev_differentiator = 0.0f;  // Initialize missing member
+}
+
+void update_PID_gain(void){
+    if (xSemaphoreTake(uart_mutex,0) == pdTRUE){
+    for(int i=0;i<NUM_MOTORS;i++){
+     motors[i].pos_pid.Kp = update_motors[i].pos_pid.Kp;
+     motors[i].pos_pid.Ki = update_motors[i].pos_pid.Ki;
+     motors[i].pos_pid.Kd = update_motors[i].pos_pid.Kd;
+    }
+    xSemaphoreGive(uart_mutex);
+    }
+}
+
+float PIDController_Update(PIDController *pid, float setpoint, int32_t measurement, uint8_t i) {
+    
+    pid->prevError = pid->error;
+    pid->lastOutput = pid->out;
+    pid->prevMeasurement = (float)measurement;
+  
+    pid->error = setpoint - (float)measurement;
+
+    // Proportional term
+    pid->proportional = pid->Kp * pid->error;
+    //derivative term
+    pid->differentiator = pid->Kd*(pid->error - pid->prevError);
+    //integral term
+    pid->integrator += pid->Ki *pid->error;
+
+    // Clamp integrator
+    if (pid->integrator > pid->limMaxInt){
+        pid->integrator = pid->limMaxInt;
+    }
+    if (pid->integrator < pid->limMinInt){
+        pid->integrator = pid->limMinInt;
+    }
+
+    if(fabs(pid->error)<=STOP_TRESHOLD*10){
+      pid->integrator *= 0.9f; // decay
+    }
+
+    //calculate PID output 
+    pid->out = pid->proportional +pid->differentiator+pid->integrator;
+    //normalize output for stability
+    pid->out = 0.7 * pid->out + 0.3 * pid->lastOutput;
+
+    //clamp PID output 
+
+    if (pid->out > pid->limMax){
+        pid->out = pid->limMax;
+    }
+    if (pid->out < pid->limMin){
+        pid->out = pid->limMin;
+    }
+
+    return pid->out;
+}
+
+// ====================== Motor Control ======================
+void drive_motor(Motor* m) {
+
+     esp_err_t ret1, ret2;
+
+    if (m->direction == -1) {
+        ret1 =ledc_set_duty(LEDC_MODEA, m->pwm_channelA, 0);
+        ret2 =ledc_set_duty(LEDC_MODEB, m->pwm_channelB, m->pwm);
+    
+    } else {
+        ret1 =ledc_set_duty(LEDC_MODEA, m->pwm_channelA, m->pwm);
+        ret2 =ledc_set_duty(LEDC_MODEB, m->pwm_channelB, 0);
+    }
+
+    //log errors if they occur (outside of timing-critical section)
+    if (ret1 != ESP_OK || ret2 != ESP_OK) {
+        // Use printf instead of ESP_LOG to avoid lock issues
+        printf("LEDC set_duty error: chA=%d, chB=%d\n", ret1, ret2);
+    }
+
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEA, m->pwm_channelA));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEB, m->pwm_channelB));
+   
+}
+
+void stop_motor(Motor *m) {
+    
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEA, m->pwm_channelA, PWM_STOP));
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEB, m->pwm_channelB, PWM_STOP));
+    
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEA, m->pwm_channelA));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEB, m->pwm_channelB));
+}
+static inline void apply_break(Motor *m){
+ 
+ ESP_ERROR_CHECK(ledc_stop(LEDC_MODEA, m->pwm_channelA, 1)); // Set idle level to HIGH
+ ESP_ERROR_CHECK(ledc_stop(LEDC_MODEB, m->pwm_channelB, 1)); // Set idle level to HIGH
+ 
+}
+
+// ====================== Motor Functions ======================
+void motor_update_position(Motor *m, int counts) {
+    m->current_position = (float)counts;
+}
+
+// ====================== Position Loop ======================
+void position_loop_task(void *arg) {
+    TickType_t xLastWakeTime = xTaskGetTickCount();
+    const TickType_t xFrequency = pdMS_TO_TICKS(PID_UPDATE_RATE_MS);
+
+    uint8_t stall_count[NUM_MOTORS] = {0};
+    static motor_Command_t cpg[NUM_MOTORS];
+    encoder_packet_t current_encoders = {0};  // This packet will hold our local, consistent copy of all encoder values
+    //static volatile PID_debugger_log en_stall_count[5] = {0};
+    //uint8_t log=0;
+    //static float filtered_pos[NUM_MOTORS] = {0};
+
+    while (1) {
+        while (xQueueReceive(motor_command_queue,cpg,0) == pdTRUE) {
+            for(int i =0 ; i<NUM_MOTORS;i++){
+             motors[i].target_position = cpg[i].motor_target;
+             motors[i].active = cpg[i].activate;
+            }
+        }
+        
+        // At the start of the loop, get the MOST RECENT encoder snapshot
+        xQueueReceive(encoder_data_queue, &current_encoders, 0);
+
+        update_PID_gain();
+
+        for (int i = 0; i < NUM_MOTORS; i++) {
+
+            motors[i].current_position = current_encoders.encoders[i];
+            
+            /*filtered_pos[i] = 0.7f * filtered_pos[i] + 0.3f * curr_counts;
+            // Use filtered_pos[i] for error
+            motors[i].current_position = filtered_pos[i];*/
+
+            float error = motors[i].target_position - (float)motors[i].current_position;
+            float abs_error = fabsf(error);
+
+            float pid_output = PIDController_Update(&motors[i].pos_pid,
+                                                    motors[i].target_position,
+                                                    motors[i].current_position, i);
+
+            /*printf("PID:%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n",
+                   motors[0].pos_pid.out, motors[1].pos_pid.out,
+                   motors[2].pos_pid.out, motors[3].pos_pid.out,
+                   motors[4].pos_pid.out, motors[5].pos_pid.out,
+                   motors[6].pos_pid.out, motors[7].pos_pid.out);*/
+
+            int new_dir = (error > 0) ? 1 : -1;
+            if (motors[i].direction != new_dir){
+                motors[i].direction = new_dir;
+            }
+
+            uint32_t pwm_magnitude = (uint32_t)fabsf(pid_output);
+
+            if (pwm_magnitude <= PWM_MIN && abs_error <= TOL){
+                pwm_magnitude = pwm_magnitude;
+                if(pwm_magnitude < MIN_DUTY){
+                   pwm_magnitude = MIN_DUTY;
+                }
+            }
+
+            if (abs_error > TOL) {
+                if (motors[i].current_position == motors[i].last_enc_val) {
+                    stall_count[i]++;
+                    //en_stall_count[log].encorder_val=motors[i].current_position;
+                    //log++;
+                    if (stall_count[i] >= 5) {
+                        pwm_magnitude = PWM_MAX;
+                        /*ESP_LOGE("TARGET","Motor %d kick start, TARGET Pos=%.2f, "
+                                 "encoder stall(1)=%" PRId32 ", stall(2)=%" PRId32 ", "
+                                 "stall(3)=%" PRId32 ", stall(4)=%" PRId32 ", stall(5)=%" PRId32,
+                                 i,motors[i].target_position,
+                                 en_stall_count[0].encorder_val,
+                                 en_stall_count[1].encorder_val,
+                                 en_stall_count[2].encorder_val,
+                                 en_stall_count[3].encorder_val,
+                                 en_stall_count[4].encorder_val);*/
+                        //log=0;
+                    }
+                } else {
+                    stall_count[i] = 0;
+                }
+            }
+
+            motors[i].pwm = pwm_magnitude;
+            motors[i].last_pwm = pwm_magnitude;
+            motors[i].last_enc_val = motors[i].current_position;
+
+            if (!motors[i].active) {
+                if(motors[i].current_position<=STOP_TRESHOLD*2){
+                 stop_motor(&motors[i]);
+                 apply_break(&motors[i]); // Apply brake when idle
+                 //ESP_LOGI("TARGET", "Motor %d STOP", i);
+                 continue; 
+                }
+            }
+
+            drive_motor(&motors[i]);
+        }
+
+             //Motor motors_copy[NUM_MOTORS];
+             //memcpy(motors_copy, motors, sizeof(motors));
+             //xQueueSend(pid_log_data_que, motors_copy,0);
+
+        vTaskDelayUntil(&xLastWakeTime, xFrequency);
+    }
+}
+
+// ====================== PID Logging ======================
+void PID_logging_task(void *pvParameters) {
+    Motor motor_log[NUM_MOTORS];
+    char msg[512];
+    TickType_t xLastWakeTime = xTaskGetTickCount();
+    const TickType_t xFrequency = pdMS_TO_TICKS(10); // 10Hz
+    
+    static int message_count = 0;
+    
+    // Send startup message
+    char startup_msg[] = "GUI_CONNECTED: ESP32 PID System Ready\n";
+    uart_send_data(startup_msg);
+    
+    // Send test data message
+    char test_msg[] = "M[1],Err=100.50,P=10.05,I=0.00,D=0.00,Out=10.05,PosT=1000,Pos=899,PWM=100,Dir=1\n";
+    uart_send_data(test_msg);
+
+    while (1) {
+        if (xQueueReceive(pid_log_data_que,motor_log, xFrequency) == pdTRUE) {
+            for (int i = 0; i < NUM_MOTORS; i++) {
+                // Send data for ALL motors (active and inactive) for testing
+                snprintf(msg, sizeof(msg),
+                         "M[%d],Err=%.2f,P=%.2f,I=%.2f,D=%.2f,Out=%.2f,PosT=%ld,Pos=%ld,PWM=%ld,Dir=%d\n",
+                         motor_log[i].m_num,
+                         motor_log[i].pos_pid.prevError,
+                         motor_log[i].pos_pid.proportional,
+                         motor_log[i].pos_pid.integrator,
+                         motor_log[i].pos_pid.differentiator,
+                         motor_log[i].pos_pid.out,
+                         (long)motor_log[i].target_position,
+                         (long)motor_log[i].current_position,
+                         (long)motor_log[i].pwm,
+                         motor_log[i].direction);
+
+                // Send via UART
+                uart_send_data(msg);
+                message_count++;
+                
+                // Log every 20 messages
+                if (message_count % 20 == 0) {
+                    ESP_LOGI(TAG, "Sent %d messages to GUI", message_count);
+                }
+            }
+        } else {
+            // Queue empty - send heartbeat
+            static int heartbeat = 0;
+            if (heartbeat++ % 100 == 0) { // Every second
+                char heartbeat_msg[] = "HEARTBEAT: System running\n";
+                uart_send_data(heartbeat_msg);
+                    
+            }
+        }
+        vTaskDelayUntil(&xLastWakeTime, xFrequency);
+    }
+}
+// ====================== Motor Setup ======================
+void pid_app_main(void) {
+    ESP_LOGI(TAG, "Starting PID application...");
+
+    // Configure logging - reduce noise but don't disable
+    //esp_log_level_set("*", ESP_LOG_WARN);
+    //esp_log_level_set("PID", ESP_LOG_INFO);
+    
+    motor_command_queue = xQueueCreate(PID_QUEUE_LENGTH, sizeof(motor_Command_t)*NUM_MOTORS);
+    if (!motor_command_queue) {
+        ESP_LOGE(TAG, "Creating motor command queue failed");
+        return;
+    }
+
+    /*pid_log_data_que = xQueueCreate(15, sizeof(motors));
+    if (!pid_log_data_que) {
+        ESP_LOGE(TAG, "Creating PID log queue failed");
+        return;
+    }*/
+
+    for (int i = 0; i < NUM_MOTORS; i++) {
+        motors[i].m_num = i + 1;
+        motors[i].target_position = 0.0f;
+        motors[i].current_position = 0;
+        motors[i].prev_dir = 0;
+        motors[i].pwm_channelA = LEDC_A_CHANNEL[i];
+        motors[i].pwm_channelB = LEDC_B_CHANNEL[i];
+        motors[i].active = false;
+
+        motors[i].pos_pid.Kp = 0.00f;
+        motors[i].pos_pid.Ki = 0.00f;
+        motors[i].pos_pid.Kd = 0.00f;
+
+        motors[i].pos_pid.T = POS_DT;
+        motors[i].pos_pid.tau = 0.02f;
+        motors[i].pos_pid.limMin = -PWM_MAX;
+        motors[i].pos_pid.limMax = PWM_MAX;
+        motors[i].pos_pid.limMinInt = -400;
+        motors[i].pos_pid.limMaxInt = 400;
+
+        PIDController_Init(&motors[i].pos_pid);
+    }
+
+    xTaskCreatePinnedToCore(position_loop_task, "pos_loop", 5120, NULL, 20, NULL,1);
+   // xTaskCreatePinnedToCore(PID_logging_task, "PID_logging_task", 8192, NULL, 7, NULL, tskNO_AFFINITY);
+
+    ESP_LOGI(TAG, "PID application started successfully");
+}  
+
+
+///////////////////////////////////////////////////////////////////////
+#include "PID.h"
+#include "CPG.h"
+#include "UART.h"
+
+#define TAG "PID"
+#define PID_QUEUE_LENGTH 20
+
+// ====================== Globals ======================
+static Motor motors[NUM_MOTORS];
+QueueHandle_t motor_command_queue;
+static QueueHandle_t pid_log_data_que;
+static portMUX_TYPE motor_mux = portMUX_INITIALIZER_UNLOCKED;
+
+// Forward declarations
+void drive_motor(Motor* m);
+void stop_motor(Motor *m);
+
+// ====================== PID Functions ======================
+void PIDController_Init(PIDController *pid) {
+    pid->integrator = 0.0f;
+    pid->prevError = 0.0f;
+    pid->differentiator = 0.0f;
+    pid->prevMeasurement = 0.0f;
+    pid->out = 0.0f;
+}
+
+void update_PID_gain(void){
+    if (xSemaphoreTake(uart_mutex,0) == pdTRUE){
+    for(int i=0;i<NUM_MOTORS;i++){
+     motors[i].pos_pid.Kp = update_motors[i].pos_pid.Kp;
+     motors[i].pos_pid.Ki = update_motors[i].pos_pid.Ki;
+     motors[i].pos_pid.Kd = update_motors[i].pos_pid.Kd;
+    }
+    xSemaphoreGive(uart_mutex);
+    }
+}
+
+float PIDController_Update(PIDController *pid, float setpoint, int32_t measurement, uint8_t i) {
+    
+    pid->prevError = pid->error;
+    pid->lastOutput = pid->out;
+    pid->prevMeasurement = (float)measurement;
+  
+    pid->error = setpoint - (float)measurement;
+
+    // Proportional term
+    pid->proportional = pid->Kp * pid->error;
+    //derivative term
+    pid->differentiator = pid->Kd*(pid->error - pid->prevError);
+    //integral term
+
+    //calculate PID output 
+    pid->out = pid->proportional +pid->differentiator;
+    //normalize output for stability
+    pid->out = 0.7 * pid->out + 0.3 * pid->lastOutput;
+
+    //clamp PID output 
+
+    if (pid->out > pid->limMax){
+        pid->out = pid->limMax;
+    }
+    if (pid->out < pid->limMin){
+        pid->out = pid->limMin;
+    }
+
+    return pid->out;
+}
+
+// ====================== Motor Control ======================
+void drive_motor(Motor* m) {
+
+    if (m->direction == -1) {
+        ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEA, m->pwm_channelA, 0));
+        ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEB, m->pwm_channelB, m->pwm));
+    
+    } else {
+        ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEA, m->pwm_channelA, m->pwm));
+        ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEB, m->pwm_channelB, 0));
+    }
+
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEA, m->pwm_channelA));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEB, m->pwm_channelB));
+   
+}
+
+void stop_motor(Motor *m) {
+    
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEA, m->pwm_channelA, PWM_STOP));
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEB, m->pwm_channelB, PWM_STOP));
+    
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEA, m->pwm_channelA));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEB, m->pwm_channelB));
+}
+static inline void apply_break(Motor *m){
+ 
+ ESP_ERROR_CHECK(ledc_stop(LEDC_MODEA, m->pwm_channelA, 1)); // Set idle level to HIGH
+ ESP_ERROR_CHECK(ledc_stop(LEDC_MODEB, m->pwm_channelB, 1)); // Set idle level to HIGH
+ 
+}
+
+// ====================== Motor Functions ======================
+void motor_update_position(Motor *m, int counts) {
+    m->current_position = (float)counts;
+}
+
+// ====================== Position Loop ======================
+void position_loop_task(void *arg) {
+    TickType_t xLastWakeTime = xTaskGetTickCount();
+    const TickType_t xFrequency = pdMS_TO_TICKS(PID_UPDATE_RATE_MS);
+
+    uint8_t stall_count[NUM_MOTORS] = {0};
+    static motor_Command_t cpg[NUM_MOTORS];
+    encoder_packet_t current_encoders = {0};  // This packet will hold our local, consistent copy of all encoder values
+
+    while (1) {
+        while (xQueueReceive(motor_command_queue,cpg,0) == pdTRUE) {
+            for(int i=0 ; i<NUM_MOTORS;i++){
+             motors[i].target_position = cpg[i].motor_target;
+             motors[i].active = cpg[i].activate;
+            }
+        }
+        
+        // At the start of the loop, get the MOST RECENT encoder snapshot
+        xQueueReceive(encoder_data_queue, &current_encoders, portMAX_DELAY);
+
+        update_PID_gain();
+
+        for (int i = 0; i < NUM_MOTORS; i++) {
+
+            motors[i].current_position = current_encoders.encoders[i];
+            
+
+            float error = motors[i].target_position - (float)motors[i].current_position;
+            float abs_error = fabsf(error);
+
+            float pid_output = PIDController_Update(&motors[i].pos_pid,
+                                                    motors[i].target_position,
+                                                    motors[i].current_position, i);
+
+            int new_dir = (error > 0) ? 1 : -1;
+            if (motors[i].direction != new_dir){
+                motors[i].direction = new_dir;
+            }
+
+            uint32_t pwm_magnitude = (uint32_t)fabsf(pid_output);
+
+            if(pwm_magnitude>PWM_MAX){
+                pwm_magnitude = PWM_MAX;
+            }
+
+            if (pwm_magnitude <= PWM_MIN && abs_error <= TOL){
+                pwm_magnitude = pwm_magnitude;
+                if(pwm_magnitude < MIN_DUTY){
+                   pwm_magnitude = MIN_DUTY;
+                }
+            } else{
+                if(pwm_magnitude<PWM_MIN){
+                 pwm_magnitude = PWM_MIN;
+                }
+            }
+
+            if (abs_error > TOL) {
+                if (motors[i].current_position == motors[i].last_enc_val) {
+                    stall_count[i]++;
+                    if (stall_count[i] >= 5) {
+                        pwm_magnitude = PWM_MAX;
+                    }
+                } else {
+                    stall_count[i] = 0;
+                }
+            }
+
+            motors[i].pwm = pwm_magnitude;
+            motors[i].last_pwm = pwm_magnitude;
+            motors[i].last_enc_val = motors[i].current_position;
+
+            if (!motors[i].active) {
+                if(motors[i].current_position<=STOP_TRESHOLD*2){
+                 stop_motor(&motors[i]);
+                 apply_break(&motors[i]); // Apply brake when idle
+                 continue; 
+                }
+            }
+
+            drive_motor(&motors[i]);
+        }
+
+        vTaskDelayUntil(&xLastWakeTime, xFrequency);
+    }
+}
+
+// ====================== PID Logging ======================
+void PID_logging_task(void *pvParameters) {
+    Motor motor_log[NUM_MOTORS];
+    char msg[512];
+    TickType_t xLastWakeTime = xTaskGetTickCount();
+    const TickType_t xFrequency = pdMS_TO_TICKS(10); // 10Hz
+    
+    static int message_count = 0;
+    
+    // Send startup message
+    char startup_msg[] = "GUI_CONNECTED: ESP32 PID System Ready\n";
+    uart_send_data(startup_msg);
+    
+    // Send test data message
+    char test_msg[] = "M[1],Err=100.50,P=10.05,I=0.00,D=0.00,Out=10.05,PosT=1000,Pos=899,PWM=100,Dir=1\n";
+    uart_send_data(test_msg);
+
+    while (1) {
+        if (xQueueReceive(pid_log_data_que,motor_log, xFrequency) == pdTRUE) {
+            for (int i = 0; i < NUM_MOTORS; i++) {
+                // Send data for ALL motors (active and inactive) for testing
+                snprintf(msg, sizeof(msg),
+                         "M[%d],Err=%.2f,P=%.2f,I=%.2f,D=%.2f,Out=%.2f,PosT=%ld,Pos=%ld,PWM=%ld,Dir=%d\n",
+                         motor_log[i].m_num,
+                         motor_log[i].pos_pid.prevError,
+                         motor_log[i].pos_pid.proportional,
+                         motor_log[i].pos_pid.integrator,
+                         motor_log[i].pos_pid.differentiator,
+                         motor_log[i].pos_pid.out,
+                         (long)motor_log[i].target_position,
+                         (long)motor_log[i].current_position,
+                         (long)motor_log[i].pwm,
+                         motor_log[i].direction);
+
+                // Send via UART
+                uart_send_data(msg);
+                message_count++;
+                
+                // Log every 20 messages
+                if (message_count % 20 == 0) {
+                    ESP_LOGI(TAG, "Sent %d messages to GUI", message_count);
+                }
+            }
+        } else {
+            // Queue empty - send heartbeat
+            static int heartbeat = 0;
+            if (heartbeat++ % 100 == 0) { // Every second
+                char heartbeat_msg[] = "HEARTBEAT: System running\n";
+                uart_send_data(heartbeat_msg);
+                    
+            }
+        }
+        vTaskDelayUntil(&xLastWakeTime, xFrequency);
+    }
+}
+// ====================== Motor Setup ======================
+void pid_app_main(void) {
+    ESP_LOGI(TAG, "Starting PID application...");
+    
+    motor_command_queue = xQueueCreate(PID_QUEUE_LENGTH, sizeof(motor_Command_t)*NUM_MOTORS);
+    if (!motor_command_queue) {
+        ESP_LOGE(TAG, "Creating motor command queue failed");
+        return;
+    }
+
+    for (int i = 0; i < NUM_MOTORS; i++) {
+        motors[i].m_num = i + 1;
+        motors[i].target_position = 0.0f;
+        motors[i].current_position = 0;
+        taskENTER_CRITICAL(&motor_mux);
+        motors[i].pwm_channelA = LEDC_A_CHANNEL[i];
+        motors[i].pwm_channelB = LEDC_B_CHANNEL[i];
+        taskEXIT_CRITICAL(&motor_mux);
+        motors[i].active = false;
+
+        motors[i].pos_pid.Kp = 0.0f;
+        motors[i].pos_pid.Ki = 0.0f;
+        motors[i].pos_pid.Kd = 0.0f;
+
+        motors[i].pos_pid.T = POS_DT;
+        motors[i].pos_pid.limMin = -PWM_MAX;
+        motors[i].pos_pid.limMax = PWM_MAX;
+        motors[i].pos_pid.limMinInt = -400.0f;
+        motors[i].pos_pid.limMaxInt = 400.0f;
+
+        PIDController_Init(&motors[i].pos_pid);
+    }
+
+    xTaskCreatePinnedToCore(position_loop_task, "pos_loop", 5120, NULL, 15, NULL,0);
+   // xTaskCreatePinnedToCore(PID_logging_task, "PID_logging_task", 8192, NULL, 7, NULL, tskNO_AFFINITY);
+
+    ESP_LOGI(TAG, "PID application started successfully");
+}//////////////////////////////////////////////////////////////////////////////////////////////
+//=======================================================================================
+///////////////////////CPG////////////////////////cpg///////////////////////
+#include "CPG.h" 
+#include "BLE.h"
+#include "PID.h"
+
+#define TAG "CPG"
+// CPG update loop timing
+#define CPG_UPDATE_RATE_MS 20 // 50 Hz update rate
+#define CPG_DT (CPG_UPDATE_RATE_MS / 1000.0f) // 0.02f seconds
+const float TWO_PI = 2.0f * 3.1415926535f; // Use a float constant
+
+// Define the global CPG variables
+Oscillator cpg_network[NUM_OSCILLATORS];
+osc_pram CPG_network_pram;
+volatile SequenceMode current_mode;
+float coupling_weights[NUM_OSCILLATORS][NUM_OSCILLATORS];
+float phase_offsets[NUM_OSCILLATORS][NUM_OSCILLATORS];
+static SemaphoreHandle_t cpg_params_mutex;
+static motor_Command_t cmd[NUM_MOTORS];
+
+void motor_set(uint8_t i, float target, bool set) {
+    cmd[i].motor_index = i;
+    cmd[i].motor_target=target;
+    cmd[i].activate= set;
+}
+
+void cpg_update_task(void *arg) {
+    TickType_t xLastWakeTime = xTaskGetTickCount();
+    const TickType_t xFrequency = pdMS_TO_TICKS(CPG_UPDATE_RATE_MS);
+
+    float d_phi[NUM_OSCILLATORS]; // To store the change in phase for each oscillator
+
+    while (1) {
+      
+      if (xSemaphoreTake(cpg_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE) {
+        // --- 1. Calculate phase changes for all oscillators ---
+        for (int i = 0; i < NUM_OSCILLATORS; i++) { 
+            float coupling_term = 0.0f;
+
+            // === Adaptive stabilization ===
+            float A_GAIN = 1.0f;   // amplitude convergence rate
+            float B_GAIN = 0.5f;   // offset convergence rate
+            float dt_sec = CPG_DT; // 0.02s (50 Hz)
+
+            // Sum the influence of all *other* oscillators (j) on this one (i)
+            for (int j = 0; j < NUM_OSCILLATORS; j++) {
+                if (i == j) continue; // An oscillator doesn't couple to itself
+
+                float amp_factor = cpg_network[j].amplitude / CPG_network_pram.max_amp;
+                // safety clamp:
+                if (!isfinite(amp_factor)) amp_factor = 0.0f;
+                if (amp_factor < 0.0f) amp_factor = 0.0f;
+                if (amp_factor > 1.0f) amp_factor = 1.0f;
+                
+                coupling_term += coupling_weights[i][j] * amp_factor *
+                                 sinf(cpg_network[j].phase - cpg_network[i].phase - phase_offsets[i][j]);
+            }
+            
+            // The final "change in phase" formula
+            d_phi[i] = cpg_network[i].omega + coupling_term; 
+        }
+
+        // --- 2. Update all phases and calculate outputs ---
+        // (We do this in a separate loop to prevent using "new" values
+        // in the calculation for the same time step)
+        for (int i = 0; i < NUM_OSCILLATORS; i++) {
+            
+            // Apply the change: new_phase = old_phase + (change * time_step)
+            cpg_network[i].phase += d_phi[i] * CPG_DT;
+
+            // Wrap the phase (keep it between 0 and 2*PI)
+            cpg_network[i].phase = fmodf(cpg_network[i].phase, TWO_PI);
+            if (cpg_network[i].phase < 0.0f) cpg_network[i].phase += TWO_PI;
+
+            // --- Amplitude stabilization ---
+            float target_amp = (i % 2 == 0) ? CPG_network_pram.hip_amp:CPG_network_pram.knee_amp;
+            cpg_network[i].amplitude += 0.01f * (target_amp - cpg_network[i].amplitude); // smooth correction
+
+            
+            // --- Bias correction (prevent drift) ---
+            float target_offset = (i % 2 != 0) ? CPG_network_pram.knee_offset:CPG_network_pram.hip_offset;
+            cpg_network[i].offset += 0.05f * (target_offset - cpg_network[i].offset);
+
+
+            // --- 3. Calculate the final motor setpoint ---
+            cpg_network[i].output = cpg_network[i].offset + 
+                                    cpg_network[i].amplitude * sinf(cpg_network[i].phase);
+
+            if (cpg_network[i].amplitude != 0) {
+                motor_set(i, cpg_network[i].output, true);
+            } else {
+                motor_set(i, cpg_network[i].offset, false);
+            }
+        
+        } 
+        // --- Give the Mutex Back ---
+            xSemaphoreGive(cpg_params_mutex);
+
+            // Only send the command array if we successfully updated it.
+             xQueueSend(motor_command_queue, cmd, portMAX_DELAY);
+
+        }else {
+            ESP_LOGE(TAG, "CPG task failed to get mutex!");
+        }
+
+       /* printf("CPG:%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n",
+                   cpg_network[0].output, cpg_network[1].output,
+                   cpg_network[2].output, cpg_network[3].output,
+                   cpg_network[4].output, cpg_network[5].output,
+                   cpg_network[6].output, cpg_network[7].output);*/
+
+           // fflush(stdout);  // ensure immediate send
+        
+        // Wait for the next cycle
+        vTaskDelayUntil(&xLastWakeTime, xFrequency);
+    }
+}
+
+// A helper function to set parameters for an oscillator
+void set_oscillator_params(int i, float omega, float amp, float offset) {
+    cpg_network[i].omega = omega;
+    cpg_network[i].amplitude = amp;
+    cpg_network[i].offset = offset;
+}
+
+// Call this from sequence_runner_task to set the IDLE gait
+void set_gait_idle() {
+    // Stop all oscillators by setting their amplitude to 0
+    for(int i=0; i < NUM_OSCILLATORS; i++) {
+        // Use a default offset (e.g., 0) or a "stand" position
+        float stand_offset = 0;
+        if (i % 2 != 0) stand_offset = 0;// Example: knees bent
+
+        cpg_network[i].phase = 0;        
+        cpg_network[i].output = stand_offset; 
+
+        set_oscillator_params(i, 0, 0, stand_offset); // Freq=0, Amp=0
+        
+    }
+    // No coupling needed
+    memset(coupling_weights, 0, sizeof(coupling_weights));
+    memset(phase_offsets, 0, sizeof(phase_offsets));
+}
+
+// Call this to set the TROT gait
+void set_gait_trot() {
+    // --- 1. Reset all couplings ---
+    memset(coupling_weights, 0, sizeof(coupling_weights));
+    memset(phase_offsets, 0, sizeof(phase_offsets));
+
+    // --- 2. Set Oscillator base parameters ---
+    CPG_network_pram.base_freq = TWO_PI * 0.50f; //0.2 1.0 Hz (1 cycle/sec)
+    CPG_network_pram.hip_amp = 32704.0f;  // Example: 1500 counts swing
+    CPG_network_pram.knee_amp = 65408.0f;   // Example: 800 counts lift
+    CPG_network_pram.hip_offset = 0.0f;   //Hip center position
+    CPG_network_pram.knee_offset = 0.0f; // Example: knee center position
+
+    // set max_amp safely
+     CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp, CPG_network_pram.knee_amp);
+     if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f; // fallback
+
+    // Set params for all Hips
+    set_oscillator_params(FLH, CPG_network_pram.base_freq, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+    set_oscillator_params(FRH, CPG_network_pram.base_freq, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, CPG_network_pram.base_freq, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, CPG_network_pram.base_freq, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+    
+    // Set params for all Knees
+    set_oscillator_params(FLK, CPG_network_pram.base_freq, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+    set_oscillator_params(FRK, CPG_network_pram.base_freq, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, CPG_network_pram.base_freq, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, CPG_network_pram.base_freq, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+
+    // --- 3. Define Coupling ---
+    float K_intra_leg = 10.0f; // Strong coupling between a hip and its knee
+    float K_inter_leg = 5.0f;  // Medium coupling between legs
+
+    // === INTRA-LEG Coupling (Hip to Knee) ===
+    // We want the knee to lift (e.g., sin(phi)=1) *before* the hip
+    // moves forward (e.g., sin(phi)=0 -> 1).
+    // A -90 degree (-PI/2) offset on the knee relative to the hip is common.
+    //if(KH_offset==0){
+     float  KH_offset =4.0f;
+    //}
+
+    float knee_lag = -TWO_PI / KH_offset;// Knee lags hip by 90 deg
+    // FL leg
+    coupling_weights[FLK][FLH] = K_intra_leg; // Knee listens to Hip
+    phase_offsets[FLK][FLH] = knee_lag;
+    // FR leg
+    coupling_weights[FRK][FRH] = K_intra_leg;
+    phase_offsets[FRK][FRH] = knee_lag;
+    // BL leg
+    coupling_weights[BLK][BLH] = K_intra_leg;
+    phase_offsets[BLK][BLH] = knee_lag;
+    // BR leg
+    coupling_weights[BRK][BRH] = K_intra_leg;
+    phase_offsets[BRK][BRH] = knee_lag;
+    
+    // === INTER-LEG Coupling (Hip to Hip) ===
+    // Trot: Diagonals are in-phase (0 offset)
+    //       Opposing diagonals are out-of-phase (PI offset)
+
+    // FLH (0) <-> BRH (6) :: In-phase (0)
+    coupling_weights[FLH][BRH] = K_inter_leg;
+    phase_offsets[FLH][BRH] = 0;
+    coupling_weights[BRH][FLH] = K_inter_leg;
+    phase_offsets[BRH][FLH] = 0;
+    
+    // FRH (2) <-> BLH (4) :: In-phase (0)
+    coupling_weights[FRH][BLH] = K_inter_leg;
+    phase_offsets[FRH][BLH] = 0;
+    coupling_weights[BLH][FRH] = K_inter_leg;
+    phase_offsets[BLH][FRH] = 0;
+    
+    // FLH (0) <-> FRH (2) :: Out-of-phase (PI)
+    coupling_weights[FLH][FRH] = K_inter_leg;
+    phase_offsets[FLH][FRH] = M_PI;
+    coupling_weights[FRH][FLH] = K_inter_leg;
+    phase_offsets[FRH][FLH] = M_PI;
+    
+    // ... (and so on for all other hip-to-hip pairs) ...
+    // FLH(0) <-> BLH(4) :: Out-of-phase (PI)
+    coupling_weights[FLH][BLH] = K_inter_leg;
+    phase_offsets[FLH][BLH] = M_PI;
+    coupling_weights[BLH][FLH] = K_inter_leg;
+    phase_offsets[BLH][FLH] = M_PI;
+
+    // FRH(2) <-> BRH(6) :: Out-of-phase (PI)
+    coupling_weights[FRH][BRH] = K_inter_leg;
+    phase_offsets[FRH][BRH] = M_PI;
+    coupling_weights[BRH][FRH] = K_inter_leg;
+    phase_offsets[BRH][FRH] = M_PI;
+
+    // BLH(4) <-> BRH(6) :: Out-of-phase (PI)
+    coupling_weights[BLH][BRH] = K_inter_leg;
+    phase_offsets[BLH][BRH] = M_PI;
+    coupling_weights[BRH][BLH] = K_inter_leg;
+    phase_offsets[BRH][BLH] = M_PI;
+
+    // Seed trot pattern with initial phases for instant equilibrium
+// Group 1 (FL/BR): hips at 0
+cpg_network[FLH].phase = 0.0f;
+cpg_network[BRH].phase = 0.0f;
+cpg_network[FLK].phase = 0.0f + (M_PI / 2.0f);  // Knee leads hip by 90° (from knee_lag = -PI/2)
+cpg_network[BRK].phase = 0.0f + (M_PI / 2.0f);
+
+// Group 2 (FR/BL): hips at PI (anti-phase to Group 1)
+cpg_network[FRH].phase = M_PI;
+cpg_network[BLH].phase = M_PI;
+cpg_network[FRK].phase = M_PI + (M_PI / 2.0f);  // Wrap if needed: fmod(1.5*PI, 2*PI)
+cpg_network[BLK].phase = M_PI + (M_PI / 2.0f);
+
+}
+
+uint8_t get_mode(void){
+  taskENTER_CRITICAL(&ble_mux);
+  current_mode =(SequenceMode)byte_val[0];
+  taskEXIT_CRITICAL(&ble_mux);
+  return (uint8_t)current_mode;
+}
+
+
+void sequence_runner_task(void *arg) {
+    uint8_t mode;
+    uint8_t last_mode = 255; // Force an update on first run
+
+    while (1) {
+        // get_set_point(); // You might not need this anymore,
+                         // Amplitudes/Offsets are set by the gait function.
+                         // You could use BLE to tune them, though!
+
+        mode = get_mode();
+
+        if (mode != last_mode) { // Only update when the mode *changes*
+            ESP_LOGI(TAG, "Mode change detected: %d", mode);
+            
+            // --- Take the Mutex ---
+          if (xSemaphoreTake(cpg_params_mutex, 100) == pdTRUE) {
+
+            switch (mode) {
+                case MODE_CRAWL:
+                    // You'll need to write set_gait_crawl()
+                    // set_gait_crawl();
+                    set_gait_trot(); 
+                    ESP_LOGI(TAG, "Setting CRAWL gait");
+                    break;
+
+                case MODE_TURTLE: // Let's map this to TROT
+                    set_gait_trot();
+                    ESP_LOGI(TAG, "Setting TROT gait");
+                    break;
+
+                case MODE_STANDBY:
+                    break;
+                case MODE_IDLE:
+                    set_gait_idle();
+                    ESP_LOGI(TAG, "Setting IDLE gait");
+                    break;
+
+                default:
+                    // Maybe just default to IDLE
+                    set_gait_idle();
+                    break;
+            }
+            last_mode = mode; // Remember the last mode
+        
+         // --- Give the Mutex Back ---
+         xSemaphoreGive(cpg_params_mutex);
+
+         } else {
+                ESP_LOGE(TAG, "Seq. task failed to get mutex!");
+            }
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(100)); // Check for a new mode 10 times/sec
+    }
+}
+
+void mot_command_app_main(void) {
+
+    ESP_LOGI(TAG, "settingup the motor comnads");
+
+    cpg_params_mutex = xSemaphoreCreateMutex(); 
+    if (cpg_params_mutex == NULL) {
+        ESP_LOGE(TAG, "Failed to create CPG mutex!");
+    }
+
+    // One-time phase initialization (remove from gait functions)
+   for (int i = 0; i < NUM_OSCILLATORS; i++) {
+       cpg_network[i].phase = 0.0f;
+   }
+
+    // --- NEW CPG Setup ---
+    ESP_LOGI(TAG, "Initializing CPG network...");
+    // Initialize to a safe state
+    set_gait_idle(); 
+    // ---
+
+    TaskHandle_t seq_runner_handle = NULL;
+
+   xTaskCreatePinnedToCore(sequence_runner_task, 
+                            "seq_runner",
+                             4096, 
+                             NULL, 
+                             9, 
+                             &seq_runner_handle, 
+                             1);
+
+    // --- NEW CPG Task ---
+    TaskHandle_t cpg_task_handle = NULL;
+    xTaskCreatePinnedToCore(cpg_update_task, 
+                            "cpg_updater", 
+                            4096, // CPG task might need stack for float math
+                            NULL, 
+                            15, // Higher priority than sequence runner
+                            &cpg_task_handle, 
+                            1); // Pin to core 1
+    // ---
+    
+    ESP_LOGI(TAG, "settingup the motor comnads complete");
+}
+/////////////////////CPG//////////////////////////CPG////////////////////////////////////////////
+
+ESP_LOGI(TAG, "\n"
+              "ENCODER[1] READING: %" PRId32 "\n"
+              "ENCODER[2] READING: %" PRId32 "\n"
+              "ENCODER[3] READING: %" PRId32 "\n"
+              "ENCODER[4] READING: %" PRId32 "\n"
+              "ENCODER[5] READING: %" PRId32 "\n"
+              "ENCODER[6] READING: %" PRId32 "\n"
+              "ENCODER[7] READING: %" PRId32 "\n"
+              "ENCODER[8] READING: %" PRId32,
+              current_encoders.encoders[0], current_encoders.encoders[1],
+              current_encoders.encoders[2], current_encoders.encoders[3],
+              current_encoders.encoders[4], current_encoders.encoders[5],
+              current_encoders.encoders[6], current_encoders.encoders[7]);
+
+
+
+
+              /////////////////////////////////////pid with swap buffer ///////////////////////////////////
+              #include "control_1.4.h"
+#include "PID.h"
+#include "PWM.h"
+#include "CPG.h"
+#include "BLE.h"
+#include "UART.h"
+
+#define I2C_PORT                 I2C_NUM_0  
+#define I2C_SLAVE_SCL_IO         15
+#define I2C_SLAVE_SDA_IO         13
+#define SLAVE_ADDR               0x77
+#define DATA_LENGTH              (sizeof(encoder_packet_t)*2)
+
+#define TAG "I2C SLAVE"
+#define QUEUE_LENGTH             20
+#define GPIO_NUM                 12
+
+#define i2c_log_freq             100
+
+// ========================================= STRUCT DEFINITIONS ========================================= //
+
+typedef struct {
+    encoder_packet_t packet;
+    size_t len;
+} i2c_message_t;
+
+typedef struct {
+    i2c_slave_dev_handle_t slave_handle;
+    QueueHandle_t recieve_queue;
+    bool error;
+} i2c_slave_context_t;
+
+// ========================================= GLOBAL VARIABLES ========================================= //
+
+static i2c_slave_context_t context = {0};
+volatile int32_t encorder_val[NUM_MOTORS] = {0};
+
+QueueHandle_t encoder_data_queue;
+QueueHandle_t log_queue;
+
+TaskHandle_t Recieve_task = NULL;
+TaskHandle_t Print_task = NULL;
+TaskHandle_t blinkTaskHandle = NULL;
+
+volatile DRAM_ATTR int32_t encorder_val_buf_A[NUM_MOTORS];
+volatile DRAM_ATTR int32_t encorder_val_buf_B[NUM_MOTORS];
+
+volatile DRAM_ATTR int32_t *front_buf = encorder_val_buf_A;   // readers use this
+volatile DRAM_ATTR int32_t *back_buf  = encorder_val_buf_B;   // writer updates this
+
+portMUX_TYPE buf_mux = portMUX_INITIALIZER_UNLOCKED;
+
+// ========================================= FUNCTION DECLARATIONS ========================================= //
+
+void I2C_Salve_Device_Setup(i2c_slave_context_t *context);
+static bool i2c_slave_rx_done_callback(i2c_slave_dev_handle_t channel,
+                                       const i2c_slave_rx_done_event_data_t *evt_data,
+                                       void *user_data);
+void Data_Recive_task(void *arg);
+void PCNT_Print_Task(void *Parameters);
+void blinkLed(void *pvValue);
+
+// ========================================= I2C SLAVE SETUP ========================================= //
+
+void I2C_Salve_Device_Setup(i2c_slave_context_t *context) {
+    i2c_slave_config_t i2c_slv_config = {
+        .addr_bit_len = I2C_ADDR_BIT_LEN_7,
+        .clk_source = I2C_CLK_SRC_DEFAULT,
+        .i2c_port = I2C_PORT,
+        .send_buf_depth = DATA_LENGTH,
+        .receive_buf_depth = DATA_LENGTH,
+        .scl_io_num = I2C_SLAVE_SCL_IO,
+        .sda_io_num = I2C_SLAVE_SDA_IO,
+        .slave_addr = SLAVE_ADDR,
+        .intr_priority = 3,
+    };
+
+    ESP_ERROR_CHECK(i2c_new_slave_device(&i2c_slv_config, &(context->slave_handle)));
+
+    i2c_slave_event_callbacks_t Call_back = {
+        .on_receive = i2c_slave_rx_done_callback,
+    };
+
+    ESP_ERROR_CHECK(i2c_slave_register_event_callbacks(context->slave_handle, &Call_back, context));
+}
+
+static inline void swap_buffers(void) {
+    taskENTER_CRITICAL(&buf_mux);
+    int32_t *tmp = (void*)front_buf;
+    front_buf = back_buf;
+    back_buf  = tmp;
+    taskEXIT_CRITICAL(&buf_mux);
+}
+
+// ========================================= CALLBACK ========================================= //
+
+static IRAM_ATTR bool i2c_slave_rx_done_callback(i2c_slave_dev_handle_t channel,
+                                                 const i2c_slave_rx_done_event_data_t *evt_data,
+                                                 void *user_data) {
+    i2c_slave_context_t *context = (i2c_slave_context_t *)user_data;
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    i2c_message_t rx_msg;
+    memcpy(&rx_msg.packet, evt_data->buffer, sizeof(encoder_packet_t));
+    rx_msg.len = DATA_LENGTH;
+
+    if (xQueueSendFromISR(context->recieve_queue, &rx_msg, &xHigherPriorityTaskWoken) != pdTRUE) {
+        context->error = true;
+    }
+
+    vTaskNotifyGiveFromISR(Recieve_task, &xHigherPriorityTaskWoken);
+    vTaskNotifyGiveFromISR(blinkTaskHandle, &xHigherPriorityTaskWoken);
+
+    return (xHigherPriorityTaskWoken == pdTRUE);
+}
+
+// ========================================= DATA RECEIVE TASK ========================================= //
+
+void IRAM_ATTR Data_Recive_task(void *arg) {
+    i2c_slave_context_t *context = (i2c_slave_context_t *)arg;
+    i2c_message_t msg;
+    static uint8_t log_counter = 0;
+    bool data_received = false;
+
+    while (1) {
+        uint32_t notify_count = ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        log_counter++;
+        data_received = false;
+
+        if (log_counter >= i2c_log_freq) {
+            ESP_LOGI(TAG, "Receiving ..... (notify count: %lu)\n", notify_count);
+        }
+        // Drain the queue, 'msg' will hold the last item
+        for (uint32_t i = 0; i < notify_count; i++) {
+            if (xQueueReceive(context->recieve_queue, &msg, pdMS_TO_TICKS(1)) == pdTRUE) {
+                data_received = true;
+            }
+            else {
+                 ESP_LOGE(TAG, "Queue receive failed (possible mismatch or timeout)\n");
+            }
+        }
+
+        if (data_received) {
+            if (context->error) {
+                ESP_LOGE(TAG, "RX queue overflow detected earlier\n");
+                context->error = false;
+            }
+                
+            memcpy((void*)back_buf,&msg.packet,sizeof(encoder_packet_t));
+            swap_buffers();
+
+
+            if (log_counter >= i2c_log_freq) {
+                ESP_LOGI(TAG, "Data Received - Encoder values updated\n");
+                log_counter = 0;
+            }
+
+            xQueueOverwrite(log_queue, &msg);
+             
+        }
+    }
+}
+
+// ========================================= PRINT TASK ========================================= //
+
+void PCNT_Print_Task(void *Parameters) {
+    i2c_message_t msg;
+
+    while (1) {
+        if (xQueueReceive(log_queue, &msg, pdMS_TO_TICKS(100)) == pdTRUE) {
+            ESP_LOGI(TAG, "\n"
+              "ENCODER[1] READING: %" PRId32 "\n"
+              "ENCODER[2] READING: %" PRId32 "\n"
+              "ENCODER[3] READING: %" PRId32 "\n"
+              "ENCODER[4] READING: %" PRId32 "\n"
+              "ENCODER[5] READING: %" PRId32 "\n"
+              "ENCODER[6] READING: %" PRId32 "\n"
+              "ENCODER[7] READING: %" PRId32 "\n"
+              "ENCODER[8] READING: %" PRId32,
+              msg.packet.encoders[0], msg.packet.encoders[1],
+              msg.packet.encoders[2], msg.packet.encoders[3],
+              msg.packet.encoders[4], msg.packet.encoders[5],
+              msg.packet.encoders[6], msg.packet.encoders[7]);
+
+            ESP_LOGI(TAG, ".............\n");
+        }
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+}
+
+// ========================================= LED BLINK TASK ========================================= //
+
+void blinkLed(void *pvValue) {
+    while (1) {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        gpio_set_level(GPIO_NUM, 1);
+        vTaskDelay(50 / portTICK_PERIOD_MS);
+        gpio_set_level(GPIO_NUM, 0);
+        vTaskDelay(50 / portTICK_PERIOD_MS);
+    }
+}
+
+// ========================================= APP MAIN ========================================= //
+
+void app_main(void) {
+    gpio_reset_pin(GPIO_NUM);
+    gpio_set_direction(GPIO_NUM, GPIO_MODE_OUTPUT);
+    gpio_set_level(GPIO_NUM, 0);
+
+    context.recieve_queue = xQueueCreate(QUEUE_LENGTH, sizeof(i2c_message_t));
+    if (!context.recieve_queue) {
+        ESP_LOGE(TAG, "Creating receive queue failed");
+        return;
+    }
+
+    encoder_data_queue = xQueueCreate(80, sizeof(encoder_packet_t)); 
+    if (!encoder_data_queue) {
+        ESP_LOGE(TAG, "Creating encoder data queue failed");
+        return;
+    }
+
+    log_queue = xQueueCreate(1, sizeof(i2c_message_t));
+    if (!log_queue) {
+        ESP_LOGE(TAG, "Creating log queue failed");
+        return;
+    }
+
+    context.error = false;
+
+    I2C_Salve_Device_Setup(&context);
+    ESP_LOGI(TAG, "Slave initialization complete and ready to receive data");
+
+    xTaskCreatePinnedToCore(Data_Recive_task, "I2C_receive_Task", 5120, &context, 20, &Recieve_task, 0);
+    xTaskCreatePinnedToCore(PCNT_Print_Task, "Print_task", 3072, NULL, 4, &Print_task, 1);
+    xTaskCreatePinnedToCore(blinkLed, "blink_task", 1024, NULL, 5, &blinkTaskHandle, tskNO_AFFINITY);
+
+    ESP_LOGI(TAG, "Setting up PWM and PID module");
+    
+    esp_reset_reason_t reason = esp_reset_reason();
+    ESP_LOGE("RESET", "CPU Reset reason: %d", reason);
+
+    pwm_app_main();
+    vTaskDelay(pdMS_TO_TICKS(10));
+    UART_app_main();
+    vTaskDelay(pdMS_TO_TICKS(10));
+    pid_app_main();
+    mot_command_app_main();
+    BLE_app_main();
+    vTaskDelay(pdMS_TO_TICKS(10));
+
+    esp_log_level_set("*", ESP_LOG_ERROR);
+   
+}
+//////////////////////////i2c with swapbuffer       /////////////////////////////////
+#include "PID.h"
+#include "CPG.h"
+#include "UART.h"
+
+#define TAG "PID"
+#define PID_QUEUE_LENGTH 20
+
+// ====================== Globals ======================
+static Motor motors[NUM_MOTORS];
+QueueHandle_t motor_command_queue;
+
+// Forward declarations
+void drive_motor(Motor* m);
+void stop_motor(Motor *m);
+
+// ====================== PID Functions ======================
+void PIDController_Init(PIDController *pid) {
+    pid->integrator = 0.0f;
+    pid->prevError = 0.0f;
+    pid->differentiator = 0.0f;
+    pid->prevMeasurement = 0.0f;
+    pid->out = 0.0f;
+}
+
+void update_PID_gain(void){
+    if (xSemaphoreTake(uart_mutex,0) == pdTRUE){
+    for(int i=0;i<NUM_MOTORS;i++){
+     motors[i].pos_pid.Kp = update_motors[i].pos_pid.Kp;
+     motors[i].pos_pid.Ki = update_motors[i].pos_pid.Ki;
+     motors[i].pos_pid.Kd = update_motors[i].pos_pid.Kd;
+    }
+    xSemaphoreGive(uart_mutex);
+    }
+}
+
+float PIDController_Update(PIDController *pid, float setpoint, int32_t measurement, uint8_t i) {
+    
+    pid->prevError = pid->error;
+    pid->lastOutput = pid->out;
+    pid->prevMeasurement = (float)measurement;
+  
+    pid->error = setpoint - (float)measurement;
+
+    // Proportional term
+    pid->proportional = pid->Kp * pid->error;
+    //derivative term
+    pid->differentiator = pid->Kd*(pid->error - pid->prevError);
+    //integral term
+    pid->integrator += pid->Ki *pid->error;
+
+    // Clamp integrator
+    if (pid->integrator > pid->limMaxInt){
+        pid->integrator = pid->limMaxInt;
+    }
+    if (pid->integrator < pid->limMinInt){
+        pid->integrator = pid->limMinInt;
+    }
+
+    if(fabs(pid->error)<=STOP_THRESHOLD*10){
+      pid->integrator *= 0.9f; // decay
+    }
+
+    //calculate PID output 
+    pid->out = pid->proportional +pid->differentiator+pid->integrator;
+    //normalize output for stability
+    pid->out = 0.7 * pid->out + 0.3 * pid->lastOutput;
+
+    //clamp PID output 
+
+    if (pid->out > pid->limMax){
+        pid->out = pid->limMax;
+    }
+    if (pid->out < pid->limMin){
+        pid->out = pid->limMin;
+    }
+
+    return pid->out;
+}
+
+// ====================== Motor Control ======================
+void drive_motor(Motor* m) {
+
+     esp_err_t ret1, ret2;
+
+    if (m->direction == -1) {
+        ret1 =ledc_set_duty(LEDC_MODEA, m->pwm_channelA, 0);
+        ret2 =ledc_set_duty(LEDC_MODEB, m->pwm_channelB, m->pwm);
+    
+    } else {
+        ret1 =ledc_set_duty(LEDC_MODEA, m->pwm_channelA, m->pwm);
+        ret2 =ledc_set_duty(LEDC_MODEB, m->pwm_channelB, 0);
+    }
+
+    //log errors if they occur (outside of timing-critical section)
+    if (ret1 != ESP_OK || ret2 != ESP_OK) {
+        // Use printf instead of ESP_LOG to avoid lock issues
+        printf("LEDC set_duty error: chA=%d, chB=%d\n", ret1, ret2);
+    }
+
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEA, m->pwm_channelA));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEB, m->pwm_channelB));
+   
+}
+
+void stop_motor(Motor *m) {
+    
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEA, m->pwm_channelA, PWM_STOP));
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODEB, m->pwm_channelB, PWM_STOP));
+    
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEA, m->pwm_channelA));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODEB, m->pwm_channelB));
+}
+static inline void apply_break(Motor *m){
+ 
+ ESP_ERROR_CHECK(ledc_stop(LEDC_MODEA, m->pwm_channelA, 1)); // Set idle level to HIGH
+ ESP_ERROR_CHECK(ledc_stop(LEDC_MODEB, m->pwm_channelB, 1)); // Set idle level to HIGH
+ 
+}
+
+// ====================== Motor Functions ======================
+void motor_update_position(Motor *m, int counts) {
+    m->current_position = (float)counts;
+}
+
+// ====================== Position Loop ======================
+void position_loop_task(void *arg) {
+    TickType_t xLastWakeTime = xTaskGetTickCount();
+    const TickType_t xFrequency = pdMS_TO_TICKS(PID_UPDATE_RATE_MS);
+
+    uint8_t stall_count[NUM_MOTORS] = {0};
+    static motor_Command_t cpg[NUM_MOTORS];
+    encoder_packet_t current_encoders = {0};  // This packet will hold our local, consistent copy of all encoder value
+    uint8_t log_counter=0;
+    while (1) {
+        if (xQueueReceive(motor_command_queue,cpg,10) == pdTRUE) {
+            for(int i =0 ; i<NUM_MOTORS;i++){
+             motors[i].target_position = cpg[i].motor_target;
+             motors[i].active = cpg[i].activate;
+            }
+        }
+        else{
+          ESP_LOGE(TAG, "Receiving CPG values failed");
+        }
+        
+        // At the start of the loop, get the MOST RECENT encoder snapshot
+        memcpy(&current_encoders,(void*)front_buf,sizeof(encoder_packet_t));
+
+        update_PID_gain();
+
+        for (int i = 0; i < NUM_MOTORS; i++) {
+
+            motors[i].current_position = current_encoders.encoders[i];
+            if(motors[i].current_position == motors[i].last_enc_val && motors[i].active == true && i==7){
+               log_counter++;
+               if(log_counter>=10){
+                 ESP_LOGE(TAG, "Receiving new encorder values failed motor[%1d] count:%1d\n",i+1,log_counter);
+                 stop_motor(&motors[i]);
+                 log_counter=0;
+                 continue;
+                  
+                }
+            }
+
+            float error = motors[i].target_position - (float)motors[i].current_position;
+            float abs_error = fabsf(error);
+
+            float pid_output = PIDController_Update(&motors[i].pos_pid,
+                                                    motors[i].target_position,
+                                                    motors[i].current_position, i);
+
+            int new_dir = (pid_output > 0) ? 1 : -1;
+            if (motors[i].direction != new_dir){
+                motors[i].direction = new_dir;
+            }
+
+            uint32_t pwm_magnitude = (uint32_t)fabsf(pid_output);
+
+            if (pwm_magnitude <= PWM_MIN && abs_error <= TOL){
+                pwm_magnitude = pwm_magnitude;
+                if(pwm_magnitude < MIN_DUTY){
+                   pwm_magnitude = MIN_DUTY;
+                }
+            }
+
+            if (abs_error > TOL) {
+                if (motors[i].current_position == motors[i].last_enc_val) {
+                    stall_count[i]++;
+                    if (stall_count[i] >= 5) {
+                        pwm_magnitude = PWM_MAX;
+                    }
+                } else {
+                    stall_count[i] = 0;
+                }
+            }
+
+            motors[i].pwm = pwm_magnitude;
+            motors[i].last_pwm = pwm_magnitude;
+            motors[i].last_enc_val = motors[i].current_position;
+
+            if (!motors[i].active) {
+                if(motors[i].current_position<=STOP_THRESHOLD*5){
+                 stop_motor(&motors[i]);
+                 apply_break(&motors[i]); // Apply brake when idle
+                 continue; 
+                }
+            }
+
+            drive_motor(&motors[i]);
+        }
+
+        vTaskDelayUntil(&xLastWakeTime, xFrequency);
+    }
+}
+
+// ====================== Motor Setup ======================
+void pid_app_main(void) {
+    ESP_LOGI(TAG, "Starting PID application...");
+    
+    motor_command_queue = xQueueCreate(PID_QUEUE_LENGTH, sizeof(motor_Command_t)*NUM_MOTORS);
+    if (!motor_command_queue) {
+        ESP_LOGE(TAG, "Creating motor command queue failed");
+        return;
+    }
+
+    for (int i = 0; i < NUM_MOTORS; i++) {
+        motors[i].m_num = i + 1;
+        motors[i].target_position = 0.0f;
+        motors[i].current_position = 0;
+        motors[i].pwm_channelA = LEDC_A_CHANNEL[i];
+        motors[i].pwm_channelB = LEDC_B_CHANNEL[i];
+        motors[i].active = false;
+
+        motors[i].pos_pid.Kp = 0.00f;
+        motors[i].pos_pid.Ki = 0.00f;
+        motors[i].pos_pid.Kd = 0.00f;
+
+        motors[i].pos_pid.T = POS_DT;
+        motors[i].pos_pid.limMin = -PWM_MAX;
+        motors[i].pos_pid.limMax = PWM_MAX;
+        motors[i].pos_pid.limMinInt = -400.0f;
+        motors[i].pos_pid.limMaxInt = 400.0f;
+
+        PIDController_Init(&motors[i].pos_pid);
+    }
+
+    xTaskCreatePinnedToCore(position_loop_task, "pos_loop", 5120, NULL, 20, NULL,1);
+
+    ESP_LOGI(TAG, "PID application started successfully");
+}  extern volatile int32_t encorder_val_buf_A[NUM_MOTORS];
+extern volatile int32_t encorder_val_buf_B[NUM_MOTORS];
+
+extern volatile  int32_t *front_buf ;   // readers use this
+extern volatile  int32_t *back_buf  ;   // writer updates this
+ 
+ volatile DRAM_ATTR int32_t encorder_val_buf_A[NUM_MOTORS];
+volatile DRAM_ATTR int32_t encorder_val_buf_B[NUM_MOTORS];
+
+volatile DRAM_ATTR int32_t *front_buf = encorder_val_buf_A;   // readers use this
+volatile DRAM_ATTR int32_t *back_buf  = encorder_val_buf_B;   // writer updates this
+
+portMUX_TYPE buf_mux = portMUX_INITIALIZER_UNLOCKED;

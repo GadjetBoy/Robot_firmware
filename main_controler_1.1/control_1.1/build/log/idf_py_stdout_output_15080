@@ -1,0 +1,1699 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13ec4h ( 81604) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023eec vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023f10 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028ce0 vaddr=40080000 size=07338h ( 29496) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75ddch (482780) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a5e04 vaddr=40087338 size=122fch ( 74492) load[0m
+[0;32mI (346) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (347) boot: Disabling RNG early entropy source...[0m
+[0;32mI (357) cpu_start: Multicore app[0m
+[0;32mI (365) cpu_start: Pro cpu start user code[0m
+[0;32mI (365) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (365) app_init: Application information:[0m
+[0;32mI (365) app_init: Project name:     control_1.1[0m
+[0;32mI (370) app_init: App version:      v5.4[0m
+[0;32mI (373) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (378) app_init: ELF file SHA256:  345bb26bf...[0m
+[0;32mI (383) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (386) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (390) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (394) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (398) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (404) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (409) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (415) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (420) heap_init: At 3FFC49B0 len 0001B650 (109 KiB): DRAM[0m
+[0;32mI (425) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 40099634 len 000069CC (26 KiB): IRAM[0m
+[0;32mI (443) spi_flash: detected chip: generic[0m
+[0;32mI (445) spi_flash: flash io: dio[0m
+[0;32mI (449) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (453) main_task: Started on CPU0[0m
+[0;32mI (456) main_task: Calling app_main()[0m
+[0;32mI (459) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (467) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (471) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (477) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (495) I2C SLAVE: .............[0m
+
+[0;32mI (498) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (503) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (508) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (516) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (533) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (549) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (558) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (574) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (591) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (599) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (608) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (616) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (624) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (633) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (642) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (646) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (650) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (653) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (657) BLE UNIT: setting up BLE unit[0m
+
+[1;31mE (696) PID: Error=-110.0, P=-11.0, I=-0.0,D=0.0,Out=-11[0m
+[0;32mI (704) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (706) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (710) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (713) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (746) CASCADE: M[1]: PosT=0.0 Pos=110.0| PWM=400 Dir=-1[0m
+[1;31mE (746) PID: Error=-110.0, P=-11.0, I=-0.1,D=-0.0,Out=-11[0m
+[0;33mW (793) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[1;31mE (803) PID: Error=-110.0, P=-11.0, I=-0.1,D=-0.0,Out=-11[0m
+[1;31mE (846) PID: Error=-110.0, P=-11.0, I=-0.2,D=-0.0,Out=-11[0m
+[0;32mI (847) CASCADE: M[1]: PosT=0.0 Pos=110.0| PWM=400 Dir=-1[0m
+[1;31mE (896) PID: Error=-110.0, P=-11.0, I=-0.2,D=-0.0,Out=-11[0m
+[1;31mE (946) PID: Error=-110.0, P=-11.0, I=-0.3,D=-0.0,Out=-11[0m
+[0;32mI (947) TARGET: Motor 1 kik start[0m
+[0;32mI (947) CASCADE: M[1]: PosT=0.0 Pos=110.0| PWM=613 Dir=-1[0m
+[1;31mE (996) PID: Error=-86.0, P=-8.6, I=-0.4,D=2.7,Out=-6[0m
+[0;32mI (998) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 86
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1008) I2C SLAVE: .............[0m
+
+[0;32mI (1046) TARGET: Motor 1 reached target: -12.0[0m
+[1;31mE (1047) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1055) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1055) MOTOR_COMMANDS: IDLE gate running[0m
+[1;31mE (1096) PID: Error=72.0, P=7.2, I=0.0,D=0.0,Out=7[0m
+[0;32mI (1121) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1130) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1143) BLE UNIT: Unhandled event: 14[0m
+[1;31mE (1146) PID: Error=81.0, P=8.1, I=0.1,D=1.0,Out=9[0m
+[0;32mI (1149) CASCADE: M[1]: PosT=0.0 Pos=-81.0| PWM=400 Dir=1[0m
+[0;32mI (1156) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1157) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1157) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1164) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1169) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1172) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1177) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1180) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1187) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1191) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1130) main_task: Returned from app_main()[0m
+[1;31mE (1196) PID: Error=70.0, P=7.0, I=0.1,D=-1.1,Out=6[0m
+[0;32mI (1246) TARGET: Motor 1 reached target: -38.0[0m
+[1;31mE (1246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1403) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1403) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1511) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1518) I2C SLAVE: .............[0m
+
+[0;32mI (1546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (1996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2021) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2028) I2C SLAVE: .............[0m
+
+[0;32mI (2046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2047) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2048) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (2052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2057) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2532) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2539) I2C SLAVE: .............[0m
+
+[0;32mI (2546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2555) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2555) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (2996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3042) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3050) I2C SLAVE: .............[0m
+
+[0;32mI (3062) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3064) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3553) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3553) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3560) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3562) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (3568) I2C SLAVE: .............[0m
+
+[0;32mI (3573) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (3596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (3996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4076) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4083) I2C SLAVE: .............[0m
+
+[0;32mI (4096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4586) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4593) I2C SLAVE: .............[0m
+
+[0;32mI (4596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4609) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4609) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (4952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (4952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (4996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (4996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5094) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5094) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5096) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5112) I2C SLAVE: .............[0m
+
+[0;32mI (5124) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5126) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5623) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5630) I2C SLAVE: .............[0m
+
+[0;32mI (5646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (5952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (5952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (5996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (5996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6133) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6140) I2C SLAVE: .............[0m
+
+[0;32mI (6146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6156) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6157) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6253) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6253) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6608) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (6609) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (6643) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6651) I2C SLAVE: .............[0m
+
+[0;32mI (6663) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6664) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (6952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (6952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (6996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (6996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7161) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7168) I2C SLAVE: .............[0m
+
+[0;32mI (7196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7671) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7678) I2C SLAVE: .............[0m
+
+[0;32mI (7696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (7952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (7952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (7996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (7996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8127) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 4e:5d:d8:26:9d:cd:, link_role 1[0m
+[0;32mI (8141) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8141) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8153) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8153) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8181) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8188) I2C SLAVE: .............[0m
+
+[0;32mI (8196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8204) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8204) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8299) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (8302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8303) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8347) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8353) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8353) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8568) BLE UNIT: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (8596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8653) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8691) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8699) I2C SLAVE: .............[0m
+
+[0;32mI (8711) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8712) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8755) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8755) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8831) BLE UNIT: GATT_WRITE_EVT, handle 45[0m
+[0;32mI (8832) BLE UNIT: CCCD Write: 0001[0m
+[0;32mI (8832) BLE UNIT: notify enable[0m
+[0;32mI (8834) BLE UNIT: Unhandled GATTS event: 21[0m
+[0;32mI (8846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8905) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (8946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (8952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (8952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (8996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (8996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9209) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9218) I2C SLAVE: .............[0m
+
+[0;32mI (9246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9655) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (9656) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (9696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9721) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9728) I2C SLAVE: .............[0m
+
+[0;32mI (9746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (9952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (9952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (9996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (9996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10231) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10238) I2C SLAVE: .............[0m
+
+[0;32mI (10246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10254) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10254) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10741) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10749) I2C SLAVE: .............[0m
+
+[0;32mI (10761) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10762) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (10952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (10952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (10996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (10996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11204) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11205) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11259) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11269) I2C SLAVE: .............[0m
+
+[0;32mI (11296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11396) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11596) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11646) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11696) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11746) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11772) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11779) I2C SLAVE: .............[0m
+
+[0;32mI (11796) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11846) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11896) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11946) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (11952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (11952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (11996) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (11996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12035) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (12038) BLE UNIT: Received data: �
+[0;33mW (12038) BLE UNIT: BLE data recieving not completed:recieving....[0m
+[0;32mI (12041) BLE UNIT: Unhandled GATTS event: 21[0m
+[0;32mI (12046) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12046) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12057) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12057) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12096) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12146) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12196) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12217) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (12217) BLE UNIT: Received data: zE[0m
+[0;33mW (12217) BLE UNIT: BLE data recieving not completed:recieving....[0m
+[0;32mI (12221) BLE UNIT: Unhandled GATTS event: 21[0m
+[0;32mI (12246) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12282) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -28
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12289) I2C SLAVE: .............[0m
+
+[0;32mI (12296) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12305) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12305) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12346) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12396) TARGET: Motor 1 reached target: -28.0[0m
+[0;32mI (12397) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (12397) BLE UNIT: Received data: z�
+[0;33mW (12398) BLE UNIT: BLE data recieving not completed:recieving....[0m
+[0;32mI (12404) BLE UNIT: Unhandled GATTS event: 21[0m
+[1;31mE (12407) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12416) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12416) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12446) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12453) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12496) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12546) TARGET: Motor 1 reached target: -28.0[0m
+[1;31mE (12546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (12552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (12552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (12577) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (12577) BLE UNIT: Received data: �E[0m
+[1;31mE (12577) BLE UNIT: Byte[1] = 0 (0x00)[0m
+[0;32mI (12578) B[0m
+abort() was called at PC 0x40082d9b on core 1
+
+
+Backtrace: 0x40081d2d:0x3ffdbd90 0x40090f01:0x3ffdbdb0 0x40097635:0x3ffdbdd0 0x40082d9b:0x3ffdbe40 0x40082ed9:0x3ffdbe70 0x40082f52:0x3ffdbe90 0x40135c2f:0x3ffdbec0 0x4012e129:0x3ffdc1e0 0x401447a9:0x3ffdc210 0x400975a5:0x3ffdc240 0x400d91b2:0x3ffdc290 0x40091985:0x3ffdc2c0
+
+
+
+
+ELF file SHA256: 345bb26bf
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13ec4h ( 81604) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023eec vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00023f10 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00028ce0 vaddr=40080000 size=07338h ( 29496) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75ddch (482780) map[0m
+[0;32mI (306) esp_image: segment 5: paddr=000a5e04 vaddr=40087338 size=122fch ( 74492) load[0m
+[0;32mI (347) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (347) boot: Disabling RNG early entropy source...[0m
+[0;32mI (358) cpu_start: Multicore app[0m
+[0;32mI (366) cpu_start: Pro cpu start user code[0m
+[0;32mI (366) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (366) app_init: Application information:[0m
+[0;32mI (366) app_init: Project name:     control_1.1[0m
+[0;32mI (370) app_init: App version:      v5.4[0m
+[0;32mI (374) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (379) app_init: ELF file SHA256:  345bb26bf...[0m
+[0;32mI (383) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (387) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (391) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (395) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (399) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (405) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (410) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (415) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (420) heap_init: At 3FFC49B0 len 0001B650 (109 KiB): DRAM[0m
+[0;32mI (425) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (431) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 40099634 len 000069CC (26 KiB): IRAM[0m
+[0;32mI (443) spi_flash: detected chip: generic[0m
+[0;32mI (445) spi_flash: flash io: dio[0m
+[0;32mI (449) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (453) main_task: Started on CPU0[0m
+[0;32mI (456) main_task: Calling app_main()[0m
+[0;32mI (459) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (467) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (471) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (477) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (495) I2C SLAVE: .............[0m
+
+[0;32mI (498) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (503) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (508) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (516) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (533) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (549) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (558) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (574) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (591) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (599) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (608) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (616) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (624) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (633) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (642) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (646) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (650) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (653) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (657) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (696) TARGET: Motor 1 reached target: 0.0[0m
+[1;31mE (696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (703) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (705) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (710) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (711) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (716) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (721) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (746) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (746) PID: Error=-97.0, P=-9.7, I=-0.0,D=0.0,Out=-10[0m
+[1;31mE (796) PID: Error=-96.0, P=-9.6, I=-0.1,D=0.1,Out=-10[0m
+[0;33mW (800) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[1;31mE (846) PID: Error=-96.0, P=-9.6, I=-0.1,D=0.0,Out=-10[0m
+[0;32mI (847) CASCADE: M[1]: PosT=0.0 Pos=96.0| PWM=400 Dir=-1[0m
+[1;31mE (896) PID: Error=-96.0, P=-9.6, I=-0.2,D=0.0,Out=-10[0m
+[1;31mE (946) PID: Error=-96.0, P=-9.6, I=-0.2,D=0.0,Out=-10[0m
+[0;32mI (947) CASCADE: M[1]: PosT=0.0 Pos=96.0| PWM=400 Dir=-1[0m
+[1;31mE (996) PID: Error=-96.0, P=-9.6, I=-0.3,D=0.0,Out=-10[0m
+[0;32mI (998) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 96
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1008) I2C SLAVE: .............[0m
+
+[1;31mE (1046) PID: Error=-96.0, P=-9.6, I=-0.3,D=0.0,Out=-10[0m
+[0;32mI (1047) TARGET: Motor 1 kik start[0m
+[0;32mI (1047) CASCADE: M[1]: PosT=0.0 Pos=96.0| PWM=613 Dir=-1[0m
+[1;31mE (1096) PID: Error=-74.0, P=-7.4, I=-0.4,D=2.4,Out=-5[0m
+[0;32mI (1146) TARGET: Motor 1 reached target: -4.0[0m
+[1;31mE (1154) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1168) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1168) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1174) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1177) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1178) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1186) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1190) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1194) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1201) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1203) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1210) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1213) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1216) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1221) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1224) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1227) main_task: Returned from app_main()[0m
+[0;32mI (1246) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1252) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1252) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1296) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1346) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1396) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1446) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1496) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1512) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -49
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1520) I2C SLAVE: .............[0m
+
+[0;32mI (1546) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1552) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1552) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1596) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1646) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1696) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1746) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1796) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1846) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1896) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1902) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1902) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1946) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (1952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (1952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (1996) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (1996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2024) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -49
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2031) I2C SLAVE: .............[0m
+
+[0;32mI (2046) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2047) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2052) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2052) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2096) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2096) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2102) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2102) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2146) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2146) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2152) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2152) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2196) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2196) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2202) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2202) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2243) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2243) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (2246) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2246) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2255) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2255) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2296) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2296) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2302) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2302) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2346) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2346) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2352) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2352) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2396) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2396) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2402) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2402) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2446) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2446) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2452) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2452) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2496) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2496) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2502) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2502) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2534) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -49
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2541) I2C SLAVE: .............[0m
+
+[0;32mI (2546) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2546) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2557) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2557) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2596) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2596) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2602) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2602) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2646) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2646) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2652) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2652) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2696) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2696) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2702) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2702) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2746) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2746) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2752) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2752) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2796) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2796) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2802) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2802) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2846) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2846) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2852) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2852) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2896) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2896) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2901) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2901) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2946) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2946) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (2952) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (2952) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (2996) TARGET: Motor 1 reached target: -49.0[0m
+[1;31mE (2996) MOTOR_COMMANDS: ALL motors STOPED[0m
+[0;32mI (3002) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (3002) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (3044) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -49
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READ

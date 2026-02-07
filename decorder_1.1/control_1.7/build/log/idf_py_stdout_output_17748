@@ -1,0 +1,5284 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 14 2025 16:38:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2196ch (137580) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=00031994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=000319b8 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00036b94 vaddr=40080000 size=09484h ( 38020) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fe20h (523808) map[0m
+[0;32mI (343) esp_image: segment 5: paddr=000bfe48 vaddr=40089484 size=1060ch ( 67084) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (392) cpu_start: Multicore app[0m
+[0;32mI (400) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (400) app_init: Application information:[0m
+[0;32mI (400) app_init: Project name:     control_1.7[0m
+[0;32mI (405) app_init: App version:      v5.4-dirty[0m
+[0;32mI (409) app_init: Compile time:     Nov 14 2025 16:38:13[0m
+[0;32mI (414) app_init: ELF file SHA256:  7ad155056...[0m
+[0;32mI (418) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (422) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (426) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (430) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (434) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (440) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (445) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (451) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (456) heap_init: At 3FFC7EB8 len 00018148 (96 KiB): DRAM[0m
+[0;32mI (461) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (466) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (472) heap_init: At 40099A90 len 00006570 (25 KiB): IRAM[0m
+[0;32mI (479) spi_flash: detected chip: generic[0m
+[0;32mI (481) spi_flash: flash io: dio[0m
+[0;33mW (484) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (497) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (501) main_task: Started on CPU0[0m
+[0;32mI (504) main_task: Calling app_main()[0m
+[0;32mI (506) UART MASTER: decorder initialization begins[0m
+[0;32mI (511) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1019) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (1019) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1020) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1029) PCNT: install pcnt unit1[0m
+[0;32mI (1032) PCNT: set glitch filter for unit1[0m
+[0;32mI (1036) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1040) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1046) PCNT: enable pcnt unit1[0m
+[0;32mI (1049) PCNT: clear pcnt unit1[0m
+[0;32mI (1052) PCNT: start pcnt unit1[0m
+[0;32mI (1055) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1063) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1071) PCNT: install pcnt unit2[0m
+[0;32mI (1074) PCNT: set glitch filter for unit2[0m
+[0;32mI (1078) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1082) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1088) PCNT: enable pcnt unit2[0m
+[0;32mI (1091) PCNT: clear pcnt unit2[0m
+[0;32mI (1094) PCNT: start pcnt unit2[0m
+[0;32mI (1097) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1105) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1114) PCNT: install pcnt unit3[0m
+[0;32mI (1117) PCNT: set glitch filter for unit3[0m
+[0;32mI (1121) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1125) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1131) PCNT: enable pcnt unit3[0m
+[0;32mI (1134) PCNT: clear pcnt unit3[0m
+[0;32mI (1137) PCNT: start pcnt unit3[0m
+[0;32mI (1140) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1148) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1156) PCNT: install pcnt unit4[0m
+[0;32mI (1160) PCNT: set glitch filter for unit4[0m
+[0;32mI (1163) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1167) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1173) PCNT: enable pcnt unit4[0m
+[0;32mI (1176) PCNT: clear pcnt unit4[0m
+[0;32mI (1179) PCNT: start pcnt unit4[0m
+[0;32mI (1182) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1191) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1199) PCNT: install pcnt unit5[0m
+[0;32mI (1202) PCNT: set glitch filter for unit5[0m
+[0;32mI (1206) PCNT: install pcnt channels of unit5[0m
+[0;32mI (1210) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (1216) PCNT: enable pcnt unit5[0m
+[0;32mI (1219) PCNT: clear pcnt unit5[0m
+[0;32mI (1222) PCNT: start pcnt unit5[0m
+[0;32mI (1225) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1233) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1241) PCNT: install pcnt unit6[0m
+[0;32mI (1244) PCNT: set glitch filter for unit6[0m
+[0;32mI (1248) PCNT: install pcnt channels of unit6[0m
+[0;32mI (1252) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (1258) PCNT: enable pcnt unit6[0m
+[0;32mI (1261) PCNT: clear pcnt unit6[0m
+[0;32mI (1264) PCNT: start pcnt unit6[0m
+[0;32mI (1267) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1275) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1284) PCNT: install pcnt unit7[0m
+[0;32mI (1287) PCNT: set glitch filter for unit7[0m
+[0;32mI (1291) PCNT: install pcnt channels of unit7[0m
+[0;32mI (1295) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (1301) PCNT: enable pcnt unit7[0m
+[0;32mI (1304) PCNT: clear pcnt unit7[0m
+[0;32mI (1307) PCNT: start pcnt unit7[0m
+[0;32mI (1310) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1318) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1326) PCNT: install pcnt unit8[0m
+[0;32mI (1329) PCNT: set glitch filter for unit8[0m
+[0;32mI (1333) PCNT: install pcnt channels of unit8[0m
+[0;32mI (1337) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (1343) PCNT: enable pcnt unit8[0m
+[0;32mI (1346) PCNT: clear pcnt unit8[0m
+[0;32mI (1349) PCNT: start pcnt unit8[0m
+[0;32mI (1352) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1356) PCNT: setting up   pcnt Que[0m
+[0;32mI (1359) PCNT: setting up PCNT Read_Tasks[0m
+[0;32mI (1363) PCNT: PCNT Task Initialization Complete. TasI (1379) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1380) UART_PID: UART initialized on port 0 at 115200 baud[0m
+[0;32mI (1383) UART_PID: setting up UART [0m
+[0;32mI (1386) UART_PID: setting up UART MASTER device[0m
+[0;32mI (1390) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1399) uart: queue free spaces: 20[0m
+[0;32mI (1403) UART_PID: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (1407) UART_PID: setting up UART MASTER device Complete[0m
+[0;32mI (1422) PID_CTRL: Starting PID application...[0m
+[0;32mI (1422) PID_CTRL: PID application started successfully[0m
+[0;32mI (1424) CPG_NET: Starting CPG application...[0m
+[0;32mI (1526) CPG_NET: Gait set to IDLE[0m
+[0;32mI (1526) CPG_NET: Base params updated for freq=0.10 Hz[0m
+[0;32mI (1526) SEQ_RUN: Mode change: 255 -> 0[0m
+[0;32mI (1726) CPG_NET: CPG timer started at 2500Hz[0m
+[0;33mW (1727) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1826) CPG_NET: CPG application started[0m
+[0;32mI (1836) BLE: Setting up BLE unit[0m
+[0;32mI (1858) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (1862) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:22[0m
+[0;32mI (1866) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (1928) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (1997) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;33mW (2236) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2373) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (2378) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (2381) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[1;31mE (2386) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+[0;32mI (2389) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (2391) BLE: Unhandled GATTS event: 12[0m
+[0;32mI (2401) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[0;32mI (2410) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[0;32mI (2411) BLE: Unhandled GAP event: 6[0m
+[0;32mI (2415) BLE: TX CCCD Handle: 45[0m
+[0;32mI (2418) BLE: BLE unit setup completed[0m
+[1;31mE (2431) RESET: CPU Reset reason: 1[0m
+[0;32mI (2431) UART MASTER: decorder initialization complete[0m
+[0;32mI (2431) main_task: Returned from app_main()[0m
+[0;32mI (2596) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (2743) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2797) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (2999) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (3199) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (3249) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3401) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (3603) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (3755) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3805) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (4006) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (4208) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (4261) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4409) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (4611) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (4767) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4812) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (5013) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (5214) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (5273) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5415) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (5617) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (5779) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5819) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (6020) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (6221) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (6285) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6423) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (6624) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (6791) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6825) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (7027) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (7228) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (7297) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7430) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (7631) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (7804) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7833) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (8035) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (8237) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (8311) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8439) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (8641) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (8817) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8842) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (9044) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (9245) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (9323) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9446) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (9648) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (9829) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: -132
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9850) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 14 2025 16:38:21[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2196ch (137580) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=00031994 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=000319b8 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00036b94 vaddr=40080000 size=09484h ( 38020) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fe20h (523808) map[0m
+[0;32mI (343) esp_image: segment 5: paddr=000bfe48 vaddr=40089484 size=1060ch ( 67084) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (392) cpu_start: Multicore app[0m
+[0;32mI (400) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (400) app_init: Application information:[0m
+[0;32mI (400) app_init: Project name:     control_1.7[0m
+[0;32mI (405) app_init: App version:      v5.4-dirty[0m
+[0;32mI (409) app_init: Compile time:     Nov 14 2025 16:38:13[0m
+[0;32mI (414) app_init: ELF file SHA256:  7ad155056...[0m
+[0;32mI (418) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (422) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (426) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (430) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (434) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (440) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (445) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (451) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (456) heap_init: At 3FFC7EB8 len 00018148 (96 KiB): DRAM[0m
+[0;32mI (461) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (466) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (472) heap_init: At 40099A90 len 00006570 (25 KiB): IRAM[0m
+[0;32mI (479) spi_flash: detected chip: generic[0m
+[0;32mI (481) spi_flash: flash io: dio[0m
+[0;33mW (484) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (497) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (501) main_task: Started on CPU0[0m
+[0;32mI (504) main_task: Calling app_main()[0m
+[0;32mI (506) UART MASTER: decorder initialization begins[0m
+[0;32mI (511) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1019) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (1019) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1020) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1029) PCNT: install pcnt unit1[0m
+[0;32mI (1032) PCNT: set glitch filter for unit1[0m
+[0;32mI (1036) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1040) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1046) PCNT: enable pcnt unit1[0m
+[0;32mI (1049) PCNT: clear pcnt unit1[0m
+[0;32mI (1052) PCNT: start pcnt unit1[0m
+[0;32mI (1055) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1063) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1071) PCNT: install pcnt unit2[0m
+[0;32mI (1074) PCNT: set glitch filter for unit2[0m
+[0;32mI (1078) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1082) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1088) PCNT: enable pcnt unit2[0m
+[0;32mI (1091) PCNT: clear pcnt unit2[0m
+[0;32mI (1094) PCNT: start pcnt unit2[0m
+[0;32mI (1097) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1105) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1114) PCNT: install pcnt unit3[0m
+[0;32mI (1117) PCNT: set glitch filter for unit3[0m
+[0;32mI (1121) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1125) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1131) PCNT: enable pcnt unit3[0m
+[0;32mI (1134) PCNT: clear pcnt unit3[0m
+[0;32mI (1137) PCNT: start pcnt unit3[0m
+[0;32mI (1140) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1148) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1156) PCNT: install pcnt unit4[0m
+[0;32mI (1160) PCNT: set glitch filter for unit4[0m
+[0;32mI (1163) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1167) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1173) PCNT: enable pcnt unit4[0m
+[0;32mI (1176) PCNT: clear pcnt unit4[0m
+[0;32mI (1179) PCNT: start pcnt unit4[0m
+[0;32mI (1182) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1191) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1199) PCNT: install pcnt unit5[0m
+[0;32mI (1202) PCNT: set glitch filter for unit5[0m
+[0;32mI (1206) PCNT: install pcnt channels of unit5[0m
+[0;32mI (1210) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (1216) PCNT: enable pcnt unit5[0m
+[0;32mI (1219) PCNT: clear pcnt unit5[0m
+[0;32mI (1222) PCNT: start pcnt unit5[0m
+[0;32mI (1225) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1233) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1241) PCNT: install pcnt unit6[0m
+[0;32mI (1244) PCNT: set glitch filter for unit6[0m
+[0;32mI (1248) PCNT: install pcnt channels of unit6[0m
+[0;32mI (1252) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (1258) PCNT: enable pcnt unit6[0m
+[0;32mI (1261) PCNT: clear pcnt unit6[0m
+[0;32mI (1264) PCNT: start pcnt unit6[0m
+[0;32mI (1267) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1275) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1284) PCNT: install pcnt unit7[0m
+[0;32mI (1287) PCNT: set glitch filter for unit7[0m
+[0;32mI (1291) PCNT: install pcnt channels of unit7[0m
+[0;32mI (1295) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (1301) PCNT: enable pcnt unit7[0m
+[0;32mI (1304) PCNT: clear pcnt unit7[0m
+[0;32mI (1307) PCNT: start pcnt unit7[0m
+[0;32mI (1310) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1318) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1326) PCNT: install pcnt unit8[0m
+[0;32mI (1329) PCNT: set glitch filter for unit8[0m
+[0;32mI (1333) PCNT: install pcnt channels of unit8[0m
+[0;32mI (1337) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (1343) PCNT: enable pcnt unit8[0m
+[0;32mI (1346) PCNT: clear pcnt unit8[0m
+[0;32mI (1349) PCNT: start pcnt unit8[0m
+[0;32mI (1352) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1356) PCNT: setting up   pcnt Que[0m
+[0;32mI (1359) PCNT: setting up PCNT Read_Tasks[0m
+[0;32mI (1363) PCNT: PCNT Task Initialization Complete. TasI (1379) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1380) UART_PID: UART initialized on port 0 at 115200 baud[0m
+[0;32mI (1383) UART_PID: setting up UART [0m
+[0;32mI (1386) UART_PID: setting up UART MASTER device[0m
+[0;32mI (1390) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1399) uart: queue free spaces: 20[0m
+[0;32mI (1403) UART_PID: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (1407) UART_PID: setting up UART MASTER device Complete[0m
+[0;32mI (1422) PID_CTRL: Starting PID application...[0m
+[0;32mI (1422) PID_CTRL: PID application started successfully[0m
+[0;32mI (1424) CPG_NET: Starting CPG application...[0m
+[0;32mI (1526) CPG_NET: Gait set to IDLE[0m
+[0;32mI (1526) CPG_NET: Base params updated for freq=0.10 Hz[0m
+[0;32mI (1526) SEQ_RUN: Mode change: 255 -> 0[0m
+[0;32mI (1726) CPG_NET: CPG timer started at 2500Hz[0m
+[0;33mW (1727) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1826) CPG_NET: CPG application started[0m
+[0;32mI (1836) BLE: Setting up BLE unit[0m
+[0;32mI (1857) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (1862) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:22[0m
+[0;32mI (1866) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (1928) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (1997) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;33mW (2236) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2361) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (2366) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (2369) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[0;32mI (2373) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[1;31mE (2374) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+[0;32mI (2384) BLE: Unhandled GATTS event: 12[0m
+[0;32mI (2397) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[0;32mI (2402) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[0;32mI (2403) BLE: Unhandled GAP event: 6[0m
+[0;32mI (2407) BLE: TX CCCD Handle: 45[0m
+[0;32mI (2410) BLE: BLE unit setup completed[0m
+[1;31mE (2423) RESET: CPU Reset reason: 1[0m
+[0;32mI (2423) UART MASTER: decorder initialization complete[0m
+[0;32mI (2423) main_task: Returned from app_main()[0m
+[0;32mI (2579) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (2743) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2781) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (2982) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (3184) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (3249) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3385) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (3587) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (3755) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3789) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (3991) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (4192) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (4261) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4393) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (4595) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (4767) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4797) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (4998) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (5200) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (5273) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5402) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (5603) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (5779) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5805) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (6006) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (6207) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (6285) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6408) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (6610) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (6792) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6810) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (7011) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (7213) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (7298) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7415) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (7616) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (7804) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7818) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (8019) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (8221) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (8310) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8423) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (8625) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (8816) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8827) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (9029) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (9230) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (9322) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9432) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (9634) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (9828) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9835) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (10041) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (10243) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (10334) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10444) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (10645) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (10840) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10846) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (11053) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (11254) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (11346) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11455) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (11656) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (11852) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11857) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (12065) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (12267) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (12358) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12469) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (12671) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (12864) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12872) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (13077) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (13279) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (13370) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13480) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (13682) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (13876) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13883) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (14089) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (14291) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (14382) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14492) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (14694) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (14888) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14895) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (15101) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (15302) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (15394) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15504) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (15705) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (15900) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15907) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (16113) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (16315) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (16406) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16515) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (16717) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (16912) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16919) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (17125) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (17327) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (17418) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17528) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (17729) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (17924) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17931) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (18137) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (18338) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (18430) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18539) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (18741) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (18936) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18943) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (19149) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (19351) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (19442) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19553) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (19754) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (19948) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (19956) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (20162) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (20363) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (20455) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20565) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (20766) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (20961) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (20968) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (21174) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (21376) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (21467) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21577) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (21779) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (21973) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (21981) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (22187) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (22388) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (22479) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22589) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (22791) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (22985) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (22992) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (23199) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (23400) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (23491) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (23601) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (23803) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (23997) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24005) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (24209) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (24411) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (24503) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (24613) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (24814) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (25009) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (25016) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (25222) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (25424) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (25515) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (25625) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (25827) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (26021) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26029) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (26234) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (26435) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (26527) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (26637) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (26839) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (27033) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27040) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (27246) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (27448) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (27539) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (27649) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (27851) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (28045) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28052) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (28258) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (28460) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (28551) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (28662) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (28863) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (29057) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29065) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (29270) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (29471) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (29563) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (29673) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (29875) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (30069) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30077) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (30282) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (30483) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (30575) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (30684) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (30885) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (31081) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31086) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (31294) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (31495) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (31587) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (31697) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (31897) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (32093) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32099) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (32306) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (32508) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (32599) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (32709) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (32911) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (33105) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33112) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (33318) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (33520) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (33611) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (33721) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (33922) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (34117) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34123) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (34329) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (34531) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (34623) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (34732) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (34933) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (35129) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35135) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (35342) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (35543) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (35635) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (35745) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (35946) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (36141) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36147) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (36354) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (36555) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (36647) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (36757) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (36958) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (37153) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37159) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (37367) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (37568) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (37659) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (37770) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (37971) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (38165) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38172) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (38378) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (38579) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (38671) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (38780) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (38982) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (39177) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39183) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (39390) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (39591) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (39684) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (39793) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (39995) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (40190) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40196) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (40403) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (40605) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (40696) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (40807) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (41008) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (41202) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41210) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (41415) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (41617) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (41708) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (41819) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (42020) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (42214) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (42221) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (42427) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (42629) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (42720) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (42830) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (43031) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (43226) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43232) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (43439) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (43641) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (43732) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (43842) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (44044) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (44238) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44245) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (44451) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (44653) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (44744) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (44855) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (45057) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (45250) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (45258) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (45463) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (45665) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (45756) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (45867) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (46068) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (46262) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (46270) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (46475) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (46677) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (46768) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (46878) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (47080) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (47274) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (47281) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (47488) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (47689) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (47781) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (47891) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (48092) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (48287) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (48294) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (48500) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (48702) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (48793) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (48903) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (49104) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (49299) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (49305) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (49512) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (49714) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (49805) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (49916) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (50117) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (50311) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (50319) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (50524) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (50725) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (50817) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (50927) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (51128) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (51323) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (51329) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (51537) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (51738) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (51829) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (51939) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (52141) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (52335) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (52342) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (52548) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (52750) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (52841) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (52952) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (53153) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (53347) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (53354) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (53560) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (53762) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (53853) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (53963) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (54164) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (54359) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (54365) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (54572) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (54773) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (54865) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (54975) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (55176) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (55371) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (55377) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (55584) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (55785) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (55877) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (55987) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (56188) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (56383) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (56389) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (56596) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (56797) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (56889) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (56999) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (57199) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (57395) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (57401) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (57609) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (57810) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (57901) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (58011) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (58213) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (58407) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (58414) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (58620) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (58821) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (58913) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (59023) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (59224) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (59419) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (59426) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (59632) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (59833) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (59925) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (60035) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (60237) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (60431) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (60439) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (60644) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (60846) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (60937) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (61047) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (61248) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (61443) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (61450) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (61656) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (61858) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (61949) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (62059) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (62261) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (62455) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (62462) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (62669) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (62870) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (62961) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (63071) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (63273) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (63468) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (63474) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (63682) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (63883) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (63974) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (64085) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (64286) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (64480) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (64486) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (64693) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (64895) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (64986) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (65096) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (65297) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (65492) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (65499) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (65705) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (65906) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (65999) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (66108) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (66310) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (66505) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (66511) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (66718) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (66919) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (67011) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (67120) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (67321) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (67517) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (67523) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (67730) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (67931) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (68023) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (68132) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (68333) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (68529) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (68534) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (68743) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (68944) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (69035) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (69146) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (69348) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (69541) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (69549) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (69754) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (69956) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (70047) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (70157) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (70358) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (70553) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (70559) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (70767) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (70969) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (71059) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (71170) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (71371) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (71565) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (71572) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (71778) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (71979) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (72071) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (72181) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (72382) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (72577) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (72584) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (72790) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (72992) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (73083) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (73193) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (73395) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (73589) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (73597) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (73801) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (74002) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (74095) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (74204) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (74405) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (74601) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (74606) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (74814) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (75015) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (75107) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (75217) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (75419) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (75613) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (75621) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (75827) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (76028) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (76119) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (76230) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (76431) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (76625) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (76633) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (76837) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (77039) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (77131) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (77240) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (77442) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (77637) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (77643) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (77850) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (78051) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (78143) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (78253) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (78455) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (78649) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (78657) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (78862) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (79064) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (79155) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (79265) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (79467) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (79661) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (79668) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (79875) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (80076) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (80167) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (80278) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (80480) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (80673) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (80681) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (80887) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (81088) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (81179) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (81290) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (81491) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (81685) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (81693) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (81898) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (82099) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (82191) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (82301) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (82502) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (82697) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (82704) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (82910) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (83111) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (83203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (83313) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (83513) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (83709) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (83715) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (83921) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (84123) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (84215) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (84325) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (84527) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (84721) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (84729) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (84934) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (85135) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (85227) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (85335) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (85537) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (85733) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (85737) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (85946) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (86148) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (86239) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (86350) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (86551) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (86745) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (86753) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (86957) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (87159) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (87251) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (87361) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (87563) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (87757) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (87763) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (87970) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (88171) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (88263) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (88373) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (88574) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (88769) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (88775) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (88982) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (89184) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (89275) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (89385) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (89587) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (89781) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (89788) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (89994) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (90196) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (90287) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (90397) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (90599) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (90793) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (90801) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (91006) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (91207) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (91299) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (91409) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (91611) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (91805) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (91812) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (92017) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (92219) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (92311) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (92420) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (92621) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (92817) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (92823) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (93030) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (93232) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (93323) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (93434) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (93635) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (93829) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (93837) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (94042) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (94244) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (94335) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (94445) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (94646) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (94841) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (94848) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (95054) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (95256) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (95347) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (95458) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (95660) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (95853) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (95861) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (96066) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (96267) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (96359) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (96468) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (96669) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (96865) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (96870) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (97078) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (97279) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (97371) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (97481) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (97682) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (97877) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (97883) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (98090) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (98292) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (98383) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (98493) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (98695) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (98889) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (98897) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (99102) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (99304) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (99395) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (99505) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (99707) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (99901) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (99909) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (100113) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (100315) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (100407) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (100517) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (100718) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (100913) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (100920) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (101126) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (101327) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (101419) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (101529) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (101730) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (101925) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (101932) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (102138) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (102339) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (102431) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (102541) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (102742) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (102937) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (102944) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (103151) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (103352) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (103443) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (103554) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (103755) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (103949) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (103957) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (104162) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (104363) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (104455) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (104565) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (104767) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (104961) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (104967) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (105175) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (105376) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (105467) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (105578) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (105780) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (105973) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (105981) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (106186) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (106388) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (106479) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (106589) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (106791) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (106985) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (106993) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (107198) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (107399) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (107491) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (107601) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (107801) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (107997) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (108003) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (108210) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (108411) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (108504) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (108613) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (108815) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (109010) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (109017) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (109223) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (109425) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (109516) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (109626) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (109827) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (110022) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (110028) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (110236) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (110437) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (110528) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (110639) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (110840) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (111034) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (111041) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (111248) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (111449) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (111540) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (111651) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (111853) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (112046) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (112054) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (112259) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (112460) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (112552) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (112661) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (112862) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (113058) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (113063) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (113271) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (113472) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (113565) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (113674) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (113875) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (114071) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (114077) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (114284) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (114486) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (114578) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (114687) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (114889) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (115084) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (115090) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (115297) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (115498) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (115590) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (115699) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (115900) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (116096) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (116102) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (116309) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (116511) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (116602) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (116711) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (116913) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (117108) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (117115) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (117321) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (117522) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (117614) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (117724) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (117926) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (118120) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (118128) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (118333) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (118535) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (118626) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (118736) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (118937) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (119132) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (119138) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (119345) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (119546) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (119638) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (119747) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (119948) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (120144) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (120150) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (120357) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (120559) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (120651) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (120761) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (120962) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (121157) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (121163) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (121371) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (121572) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (121663) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (121773) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (121975) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (122169) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (122177) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (122383) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (122584) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (122675) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (122785) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (122987) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (123181) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (123188) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (123395) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (123596) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (123687) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (123797) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (123998) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (124193) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (124199) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (124406) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (124607) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (124699) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (124809) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (125011) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (125205) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (125212) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (125419) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (125621) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (125711) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (125822) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (126024) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (126217) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (126225) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (126431) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (126632) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (126723) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (126834) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (127036) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (127229) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (127237) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (127442) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (127643) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (127735) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (127844) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (128046) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (128241) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (128247) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (128454) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (128656) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (128748) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (128857) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (129059) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (129254) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (129260) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (129468) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (129669) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (129761) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (129870) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (130071) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (130267) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (130273) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (130480) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (130682) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (130774) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (130884) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (131084) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (131280) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (131286) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (131493) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (131695) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (131787) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (131897) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (132099) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (132293) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (132301) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (132507) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (132708) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (132799) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (132910) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (133111) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (133305) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (133313) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (133517) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (133719) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (133811) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (133920) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (134122) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (134317) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (134324) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (134530) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (134731) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (134823) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (134932) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (135133) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (135329) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (135335) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (135541) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (135743) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (135836) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (135945) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (136147) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (136342) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (136349) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (136555) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (136757) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (136849) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (136958) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (137160) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (137355) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (137361) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (137568) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (137769) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (137861) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (137971) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (138172) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (138367) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (138374) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (138580) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (138781) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (138873) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (138982) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (139183) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (139379) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (139385) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (139592) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (139794) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (139886) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (139995) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (140197) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (140392) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (140398) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (140605) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (140807) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (140899) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (141007) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (141209) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (141405) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (141409) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (141618) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (141820) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (141912) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (142021) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (142223) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (142418) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (142424) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (142631) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (142833) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (142924) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (143034) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (143236) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (143430) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (143437) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (143643) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (143845) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (143936) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (144046) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (144248) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (144442) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (144449) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (144656) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (144857) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (144948) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (145059) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (145261) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (145454) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (145463) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (145667) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (145869) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (145960) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (146071) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (146272) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (146466) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (146474) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (146679) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (146880) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (146972) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (147082) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (147284) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (147478) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (147485) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (147692) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (147894) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (147984) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (148095) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (148296) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (148491) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (148498) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (148704) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (148906) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (148997) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (149107) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (149309) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (149503) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (149511) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (149716) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (149917) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (150009) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (150119) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (150321) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (150515) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (150523) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (150728) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (150929) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (151021) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (151131) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (151333) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (151527) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (151534) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (151741) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (151943) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (152033) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (152143) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (152345) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (152539) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (152546) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (152752) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (152954) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (153045) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (153155) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (153357) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (153551) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (153559) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (153764) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (153965) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (154057) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (154167) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (154368) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (154563) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (154570) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (154775) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (154977) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (155069) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (155179) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (155380) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (155575) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (155581) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (155788) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (155990) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (156082) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (156191) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (156392) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (156588) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (156593) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (156801) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (157003) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (157095) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (157204) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (157406) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (157601) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (157608) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (157814) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (158015) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (158107) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (158217) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (158419) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (158613) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (158620) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (158827) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (159028) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (159119) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (159230) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (159431) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (159625) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (159633) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (159838) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (160040) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (160131) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (160241) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (160443) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (160637) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (160644) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (160850) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (161051) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (161143) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (161253) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (161454) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (161649) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (161655) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (161862) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (162063) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (162155) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (162265) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (162466) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (162661) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (162668) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (162874) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (163076) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (163167) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (163278) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (163479) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (163673) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (163681) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (163885) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (164087) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (164179) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (164288) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (164489) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (164685) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (164690) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (164897) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (165100) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (165192) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (165301) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (165503) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (165698) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (165704) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (165912) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (166113) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (166205) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (166315) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (166515) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (166711) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (166717) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (166924) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (167126) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (167218) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (167328) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (167529) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (167724) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (167731) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (167937) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (168139) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (168230) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (168341) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (168543) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (168736) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (168744) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (168949) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (169151) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (169242) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (169352) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (169553) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (169748) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (169753) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (169962) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (170163) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (170255) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (170365) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (170566) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (170761) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (170768) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (170974) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (171175) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (171267) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (171377) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (171579) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (171773) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (171780) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (171986) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (172188) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (172279) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (172390) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (172592) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (172785) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (172793) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (172998) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (173199) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (173291) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (173401) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (173602) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (173797) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (173803) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (174009) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (174211) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (174303) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (174413) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (174615) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (174809) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (174815) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (175022) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (175223) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (175316) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (175424) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (175626) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (175822) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (175827) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (176035) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (176237) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (176329) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (176439) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (176640) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (176835) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (176841) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (177049) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (177251) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (177341) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (177452) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (177653) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (177847) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (177855) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (178060) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (178261) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (178353) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (178463) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (178664) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (178859) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (178865) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (179072) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (179273) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (179365) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (179475) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (179677) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (179871) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (179879) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (180083) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (180285) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (180377) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (180486) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (180688) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (180883) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (180889) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (181096) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (181297) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (181389) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (181499) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (181700) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (181895) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (181902) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (182109) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (182310) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (182401) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (182512) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (182713) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (182907) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (182915) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (183120) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (183321) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (183413) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (183523) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (183725) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (183919) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (183926) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (184133) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (184333) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (184425) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (184535) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (184736) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (184931) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (184937) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (185144) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (185346) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (185437) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (185548) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (185749) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (185943) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (185951) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (186155) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (186357) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (186449) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (186557) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (186758) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (186955) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (186959) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (187169) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (187370) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (187462) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (187572) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (187773) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (187968) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (187975) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (188181) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (188383) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (188474) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (188585) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (188787) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (188980) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (188988) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (189194) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (189395) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (189486) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (189597) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (189799) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (189992) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (190000) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (190205) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (190407) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (190498) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (190609) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (190810) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (191004) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (191011) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (191217) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (191418) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (191510) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (191620) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (191821) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (192016) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (192023) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (192230) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (192431) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (192522) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (192633) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (192835) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (193028) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (193036) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (193241) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (193443) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (193534) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (193644) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (193846) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (194040) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (194047) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (194253) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (194455) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (194546) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (194657) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (194858) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (195052) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (195060) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (195265) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (195467) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (195558) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (195668) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (195870) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (196064) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (196071) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (196277) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (196479) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (196570) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (196681) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (196882) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (197076) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (197083) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (197289) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (197490) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (197582) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (197691) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (197893) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (198088) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (198095) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (198301) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (198503) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (198594) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (198705) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (198906) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (199100) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (199108) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (199313) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (199515) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (199606) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (199717) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (199918) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (200112) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (200120) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (200325) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (200526) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (200618) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (200727) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (200929) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (201124) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (201131) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (201337) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (201539) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (201630) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (201741) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (201943) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (202136) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (202144) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (202349) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (202551) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (202642) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (202752) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (202953) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (203148) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (203155) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (203361) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (203563) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (203654) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (203764) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (203966) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (204160) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (204167) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (204374) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (204575) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (204666) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (204777) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (204979) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (205172) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (205181) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (205385) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (205586) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (205678) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (205788) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (205989) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (206185) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (206191) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (206399) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (206600) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (206692) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (206802) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (207004) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (207198) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (207205) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (207412) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (207613) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (207704) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (207815) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (208016) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (208210) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (208218) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (208424) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (208625) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (208716) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (208825) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (209027) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (209222) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (209228) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (209436) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (209637) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (209729) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (209839) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;32mI (210040) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m
+[0;33mW (210235) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (210242) LOOP: Elapsed μs=0.1, Freq=0.10, Hip amp=0, Knee amp=0[0m

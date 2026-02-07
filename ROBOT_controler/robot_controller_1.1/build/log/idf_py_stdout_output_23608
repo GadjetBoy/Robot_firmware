@@ -1,0 +1,4612 @@
+q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  2 2025 19:47:00[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20494h (132244) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=000304bc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=000304e0 vaddr=3ffbdb60 size=04ce8h ( 19688) load[0m
+[0;32mI (146) esp_image: segment 3: paddr=000351d0 vaddr=40080000 size=0ae48h ( 44616) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7dab4h (514740) map[0m
+[0;32mI (340) esp_image: segment 5: paddr=000bdadc vaddr=4008ae48 size=0cfach ( 53164) load[0m
+[0;32mI (372) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (372) boot: Disabling RNG early entropy source...[0m
+[0;32mI (383) cpu_start: Multicore app[0m
+[0;32mI (391) cpu_start: Pro cpu start user code[0m
+[0;32mI (391) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (391) app_init: Application information:[0m
+[0;32mI (391) app_init: Project name:     robot_controller_1.1[0m
+[0;32mI (396) app_init: App version:      v5.4[0m
+[0;32mI (400) app_init: Compile time:     May  2 2025 19:46:51[0m
+[0;32mI (405) app_init: ELF file SHA256:  dcfaa7e0f...[0m
+[0;32mI (409) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (413) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (417) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (421) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (425) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (431) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (436) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (441) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (446) heap_init: At 3FFC7500 len 00018B00 (98 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (457) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (463) heap_init: At 40097DF4 len 0000820C (32 KiB): IRAM[0m
+[0;32mI (469) spi_flash: detected chip: generic[0m
+[0;32mI (471) spi_flash: flash io: dio[0m
+[0;32mI (475) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (479) main_task: Started on CPU0[0m
+[0;32mI (482) main_task: Calling app_main()[0m
+[0;32mI (493) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (496) BTDM_INIT: Bluetooth MAC: 78:42:1c:2e:4c:ea[0m
+[0;32mI (499) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (890) BTserver: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (892) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (893) BTserver: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (897) BTserver: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (905) BTserver: Unhandled GATTS event: 12[0m
+[0;32mI (909) BTserver: the gatts char length = 8[0m
+[0;32mI (913) BTserver: prf_char[0] = 0[0m
+[0;32mI (913) BTserver: prf_char[1] = 0[0m
+[0;32mI (916) BTserver: prf_char[2] = 0[0m
+[0;32mI (919) BTserver: prf_char[3] = 0[0m
+[0;32mI (922) BTserver: prf_char[4] = 0[0m
+[0;32mI (925) BTserver: prf_char[5] = 0[0m
+[0;32mI (928) BTserver: prf_char[6] = 0[0m
+[0;32mI (931) BTserver: prf_char[7] = 0[0m
+[0;32mI (934) BTserver: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (941) BTserver: the gatts char length = 8[0m
+[0;32mI (945) BTserver: prf_char[0] = 0[0m
+[0;32mI (948) BTserver: prf_char[1] = 1[0m
+[0;32mI (951) BTserver: prf_char[2] = 2[0m
+[0;32mI (954) BTserver: prf_char[3] = 3[0m
+[0;32mI (957) BTserver: prf_char[4] = 4[0m
+[0;32mI (960) BTserver: prf_char[5] = 5[0m
+[0;32mI (963) BTserver: prf_char[6] = 6[0m
+[0;32mI (966) BTserver: prf_char[7] = 7[0m
+[0;32mI (969) BTserver: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (976) BTserver: Unhandled event: 6[0m
+[0;32mI (980) BTserver: TX CCCD Handle: 45[0m
+[0;32mI (1083) PCNT: setting up PCNT units and chaneels[0m
+[0;32mI (1083) PCNT: install pcnt unit1[0m
+[0;32mI (1084) PCNT: set glitch filter for unit1[0m
+[0;32mI (1084) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1087) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1093) PCNT: enable pcnt unit1[0m
+[0;32mI (1097) PCNT: clear pcnt unit1[0m
+[0;32mI (1099) PCNT: start pcnt unit1[0m
+[0;32mI (1102) PCNT: install pcnt unit2[0m
+[0;32mI (1105) PCNT: set glitch filter for unit2[0m
+[0;32mI (1109) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1113) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1119) PCNT: enable pcnt unit2[0m
+[0;32mI (1122) PCNT: clear pcnt unit2[0m
+[0;32mI (1125) PCNT: start pcnt unit2[0m
+[0;32mI (1128) PCNT: install pcnt unit3[0m
+[0;32mI (1131) PCNT: set glitch filter for unit3[0m
+[0;32mI (1134) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1139) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1145) PCNT: enable pcnt unit3[0m
+[0;32mI (1148) PCNT: clear pcnt unit3[0m
+[0;32mI (1150) PCNT: start pcnt unit3[0m
+[0;32mI (1153) PCNT: install pcnt unit4[0m
+[0;32mI (1157) PCNT: set glitch filter for unit4[0m
+[0;32mI (1160) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1164) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1170) PCNT: enable pcnt unit4[0m
+[0;32mI (1173) PCNT: clear pcnt unit4[0m
+[0;32mI (1176) PCNT: start pcnt unit4[0m
+[0;32mI (1179) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1183) PCNT: setting up Ques[0m
+[0;32mI (1186) PCNT: setting up Tasks[0m
+[0;32mI (1189) PCNT: Task Initialization Complete. Tasks running.[0m
+[0;32mI (1189) PCNT: Read Task Stack: 3636[0m
+[0;32mI (1194) LEDC_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (1198) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1203) LEDC_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (1217) main_task: Returned from app_main()[0m
+[1;31mE (1217) PWM: Invalid state: 0x0[0m
+[0;32mI (1222) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1224) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1237) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1240) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1244) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1244) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1257) PWM: Invalid state: 0x0[0m
+[0;32mI (1260) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1264) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1264) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1277) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1281) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1284) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1284) PWM: Invalid state: 0x0[0m
+[0;32mI (1297) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1300) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1304) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1304) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1317) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1321) PWM: Invalid state: 0x0[0m
+[0;32mI (1324) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1324) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1337) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1341) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1343) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1344) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1358) PWM: Invalid state: 0x0[0m
+[0;32mI (1360) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1364) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1364) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1377) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1381) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1384) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1385) PWM: Invalid state: 0x0[0m
+[0;32mI (1397) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1401) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1404) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1404) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1418) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1421) PWM: Invalid state: 0x0[0m
+[0;32mI (1424) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1424) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1437) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1441) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1444) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1445) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1458) PWM: Invalid state: 0x0[0m
+[0;32mI (1461) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1464) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1465) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1468) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1481) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1485) PWM: Invalid state: 0x0[0m
+[0;32mI (1488) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1488) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1501) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1505) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1508) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1508) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1522) PWM: Invalid state: 0x0[0m
+[0;32mI (1525) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1528) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1528) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1541) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1545) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1548) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1549) PWM: Invalid state: 0x0[0m
+[0;32mI (1561) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1565) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1568) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1568) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1582) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1585) PWM: Invalid state: 0x0[0m
+[0;32mI (1588) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1589) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1592) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1605) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1609) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1611) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1612) PWM: Invalid state: 0x0[0m
+[0;32mI (1625) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1629) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1632) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1633) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1636) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1649) PWM: Invalid state: 0x0[0m
+[0;32mI (1652) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1655) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1656) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1669) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1672) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1675) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1676) PWM: Invalid state: 0x0[0m
+[0;32mI (1689) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1692) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1696) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1696) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1709) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1713) PWM: Invalid state: 0x0[0m
+[0;32mI (1716) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1716) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1729) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1733) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1735) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1736) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1749) PWM: Invalid state: 0x0[0m
+[0;32mI (1752) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1756) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1756) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1769) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1773) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1775) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1777) PWM: Invalid state: 0x0[0m
+[0;32mI (1789) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1793) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1796) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1796) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1809) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1813) PWM: Invalid state: 0x0[0m
+[0;32mI (1816) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1816) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1829) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1833) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1836) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1837) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1850) PWM: Invalid state: 0x0[0m
+[0;32mI (1853) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1856) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1856) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1870) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1873) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1876) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1877) PWM: Invalid state: 0x0[0m
+[0;32mI (1889) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1893) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1896) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1897) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1910) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1913) PWM: Invalid state: 0x0[0m
+[0;32mI (1916) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1916) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1930) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1933) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1936) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1937) PWM: control_signal[0] 0.000000[0m
+[1;31mE (1950) PWM: Invalid state: 0x0[0m
+[0;32mI (1953) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1956) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1957) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1970) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1973) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1976) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (1977) PWM: Invalid state: 0x0[0m
+[0;32mI (1990) PWM: control_signal[4] 0.000000[0m
+[0;32mI (1993) PWM: control_signal[0] 0.000000[0m
+[0;32mI (1997) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1997) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2010) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2014) PWM: Invalid state: 0x0[0m
+[0;32mI (2016) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2017) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2030) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2034) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2036) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2037) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2050) PWM: Invalid state: 0x0[0m
+[0;32mI (2053) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2057) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2057) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2070) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2074) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2077) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2078) PWM: Invalid state: 0x0[0m
+[0;32mI (2090) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2094) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2097) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2097) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2110) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2114) PWM: Invalid state: 0x0[0m
+[0;32mI (2117) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2117) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2130) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2134) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2137) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2138) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2151) PWM: Invalid state: 0x0[0m
+[0;32mI (2154) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2157) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2158) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2161) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2174) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2178) PWM: Invalid state: 0x0[0m
+[0;32mI (2181) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2181) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2194) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2198) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2201) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2201) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2215) PWM: Invalid state: 0x0[0m
+[0;32mI (2217) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2221) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2221) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2234) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2238) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2241) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2242) PWM: Invalid state: 0x0[0m
+[0;32mI (2254) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2258) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2261) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2261) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2275) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2278) PWM: Invalid state: 0x0[0m
+[0;32mI (2281) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2281) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2294) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2298) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2302) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2302) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2315) PWM: Invalid state: 0x0[0m
+[0;32mI (2318) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2321) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2321) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2325) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2338) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2342) PWM: Invalid state: 0x0[0m
+[0;32mI (2345) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2345) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2358) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2362) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2364) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2365) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2379) PWM: Invalid state: 0x0[0m
+[0;32mI (2381) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2385) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2385) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2398) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2402) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2405) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2406) PWM: Invalid state: 0x0[0m
+[0;32mI (2418) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2422) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2425) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2426) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2429) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2442) PWM: Invalid state: 0x0[0m
+[0;32mI (2445) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2449) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2449) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2462) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2466) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2469) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2469) PWM: Invalid state: 0x0[0m
+[0;32mI (2482) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2485) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2489) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2489) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2502) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2506) PWM: Invalid state: 0x0[0m
+[0;32mI (2509) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2510) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2513) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2526) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2529) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2532) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2533) PWM: Invalid state: 0x0[0m
+[0;32mI (2545) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2549) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2553) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2553) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2566) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2570) PWM: Invalid state: 0x0[0m
+[0;32mI (2572) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2573) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2586) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2589) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2592) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2593) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2606) PWM: Invalid state: 0x0[0m
+[0;32mI (2609) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2613) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2613) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2626) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2630) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2632) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2633) PWM: Invalid state: 0x0[0m
+[0;32mI (2646) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2650) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2653) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2653) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2666) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2670) PWM: Invalid state: 0x0[0m
+[0;32mI (2673) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2673) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2686) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2690) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2692) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2693) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2707) PWM: Invalid state: 0x0[0m
+[0;32mI (2710) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2713) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2713) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2726) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2730) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2734) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2734) PWM: Invalid state: 0x0[0m
+[0;32mI (2746) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2750) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2753) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2754) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2767) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2770) PWM: Invalid state: 0x0[0m
+[0;32mI (2773) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2774) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2777) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2790) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2794) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2796) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2798) PWM: Invalid state: 0x0[0m
+[0;32mI (2810) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2814) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2817) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2818) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2821) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2834) PWM: Invalid state: 0x0[0m
+[0;32mI (2837) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2840) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2841) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2854) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2858) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2861) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2861) PWM: Invalid state: 0x0[0m
+[0;32mI (2874) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2877) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2881) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2881) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2894) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2898) PWM: Invalid state: 0x0[0m
+[0;32mI (2900) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2901) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2914) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2918) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2920) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2921) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2934) PWM: Invalid state: 0x0[0m
+[0;32mI (2937) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2941) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2941) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2954) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2958) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2961) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2962) PWM: Invalid state: 0x0[0m
+[0;32mI (2974) PWM: control_signal[4] 0.000000[0m
+[0;32mI (2978) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2981) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (2981) PWM: control_signal[0] 0.000000[0m
+[0;32mI (2994) PWM: control_signal[0] 0.000000[0m
+[1;31mE (2998) PWM: Invalid state: 0x0[0m
+[0;32mI (3001) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3002) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3005) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3018) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3021) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3024) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3025) PWM: Invalid state: 0x0[0m
+[0;32mI (3038) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3041) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3045) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3045) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3058) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3062) PWM: Invalid state: 0x0[0m
+[0;32mI (3065) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3065) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3078) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3082) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3085) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3085) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3099) PWM: Invalid state: 0x0[0m
+[0;32mI (3101) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3105) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3105) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3118) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3122) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3126) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3126) PWM: Invalid state: 0x0[0m
+[0;32mI (3138) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3142) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3145) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3145) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3159) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3162) PWM: Invalid state: 0x0[0m
+[0;32mI (3165) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3166) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3169) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3182) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3186) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3188) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3189) PWM: Invalid state: 0x0[0m
+[0;32mI (3202) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3205) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3209) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3209) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3222) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3226) PWM: Invalid state: 0x0[0m
+[0;32mI (3229) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3229) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3242) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3246) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3249) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3249) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3263) PWM: Invalid state: 0x0[0m
+[0;32mI (3265) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3269) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3269) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3282) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3286) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3289) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3290) PWM: Invalid state: 0x0[0m
+[0;32mI (3302) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3306) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3309) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3310) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3313) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3326) PWM: Invalid state: 0x0[0m
+[0;32mI (3329) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3333) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3333) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3346) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3350) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3352) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3353) PWM: Invalid state: 0x0[0m
+[0;32mI (3366) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3369) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3373) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3373) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3386) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3390) PWM: Invalid state: 0x0[0m
+[0;32mI (3393) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3393) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3406) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3410) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3412) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3413) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3427) PWM: Invalid state: 0x0[0m
+[0;32mI (3430) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3433) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3434) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3437) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3450) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3454) PWM: Invalid state: 0x0[0m
+[0;32mI (3456) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3456) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3460) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3473) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3477) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3480) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3481) PWM: Invalid state: 0x0[0m
+[0;32mI (3493) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3497) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3501) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3500) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3504) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3517) PWM: Invalid state: 0x0[0m
+[0;32mI (3520) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3524) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3525) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3528) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3541) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3545) PWM: Invalid state: 0x0[0m
+[0;32mI (3547) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3547) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3561) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3564) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3567) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3568) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3581) PWM: Invalid state: 0x0[0m
+[0;32mI (3584) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3587) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3588) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3601) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3605) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3608) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3608) PWM: Invalid state: 0x0[0m
+[0;32mI (3621) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3624) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3628) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3628) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3641) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3645) PWM: Invalid state: 0x0[0m
+[0;32mI (3648) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3648) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3661) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3665) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3667) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3668) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3682) PWM: Invalid state: 0x0[0m
+[0;32mI (3684) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3688) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3689) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3692) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3705) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3709) PWM: Invalid state: 0x0[0m
+[0;32mI (3711) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3711) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3725) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3728) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3731) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3732) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3745) PWM: Invalid state: 0x0[0m
+[0;32mI (3748) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3752) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3752) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3765) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3769) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3771) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3772) PWM: Invalid state: 0x0[0m
+[0;32mI (3785) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3788) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3792) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3793) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3796) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3809) PWM: Invalid state: 0x0[0m
+[0;32mI (3812) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3815) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3816) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3829) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3832) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3835) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3836) PWM: Invalid state: 0x0[0m
+[0;32mI (3848) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3852) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3855) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3856) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3869) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3873) PWM: Invalid state: 0x0[0m
+[0;32mI (3875) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3876) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3889) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3892) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3895) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3896) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3909) PWM: Invalid state: 0x0[0m
+[0;32mI (3912) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3916) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3917) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3919) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3933) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3936) PWM: Invalid state: 0x0[0m
+[0;32mI (3939) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3939) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3952) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3956) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3959) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3960) PWM: control_signal[0] 0.000000[0m
+[1;31mE (3973) PWM: Invalid state: 0x0[0m
+[0;32mI (3976) PWM: control_signal[4] 0.000000[0m
+[0;32mI (3979) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (3980) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3993) PWM: control_signal[0] 0.000000[0m
+[0;32mI (3996) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4000) PWM: Invalid state: 0x0[0m
+[0;32mI (4002) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4003) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4016) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4020) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4023) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4023) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4037) PWM: Invalid state: 0x0[0m
+[0;32mI (4039) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4043) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4043) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4054) BTserver: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 7c:65:b5:89:13:84:, link_role 1[0m
+[0;32mI (4056) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4068) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4064) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4072) PWM: Invalid state: 0x0[0m
+[0;32mI (4084) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4088) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4091) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4092) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4105) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4109) PWM: Invalid state: 0x0[0m
+[0;32mI (4111) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4111) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4125) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4128) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4131) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4132) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4143) BTserver: Unhandled event: 21[0m
+[1;31mE (4145) PWM: Invalid state: 0x0[0m
+[0;32mI (4151) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4153) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4155) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4168) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4172) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4176) PWM: Invalid state: 0x0[0m
+[0;32mI (4176) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4179) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4192) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4195) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4199) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4199) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4212) PWM: Invalid state: 0x0[0m
+[0;32mI (4215) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4219) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4219) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4223) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4236) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4239) PWM: Invalid state: 0x0[0m
+[0;32mI (4242) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4243) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4246) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4259) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4263) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4265) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4267) PWM: Invalid state: 0x0[0m
+[0;32mI (4279) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4283) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4286) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4286) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4299) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4303) PWM: Invalid state: 0x0[0m
+[0;32mI (4306) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4306) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4319) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4323) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4327) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4329) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4330) PWM: Invalid state: 0x0[0m
+[0;32mI (4343) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4346) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4350) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4350) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4363) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4367) PWM: Invalid state: 0x0[0m
+[0;32mI (4370) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4370) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4383) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4387) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4389) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4390) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4403) PWM: Invalid state: 0x0[0m
+[0;32mI (4406) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4410) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4410) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4423) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4427) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4431) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4431) PWM: Invalid state: 0x0[0m
+[0;32mI (4443) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4447) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4450) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4451) BTserver: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (4454) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4451) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4466) PWM: Invalid state: 0x0[0m
+[0;32mI (4479) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4482) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4486) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4486) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4499) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4503) PWM: Invalid state: 0x0[0m
+[0;32mI (4505) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4506) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4519) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4523) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4526) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4525) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4530) PWM: Invalid state: 0x0[0m
+[0;32mI (4542) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4546) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4550) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4550) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4563) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4567) PWM: Invalid state: 0x0[0m
+[0;32mI (4569) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4569) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4583) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4586) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4589) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4590) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4603) PWM: Invalid state: 0x0[0m
+[0;32mI (4606) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4609) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4610) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4623) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4627) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4629) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4630) PWM: Invalid state: 0x0[0m
+[0;32mI (4643) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4646) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4650) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4651) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4654) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4667) PWM: Invalid state: 0x0[0m
+[0;32mI (4670) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4673) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4673) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4687) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4690) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4693) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4694) PWM: Invalid state: 0x0[0m
+[0;32mI (4706) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4710) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4714) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4714) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4727) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4731) PWM: Invalid state: 0x0[0m
+[0;32mI (4733) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4733) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4747) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4750) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4753) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4754) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4767) PWM: Invalid state: 0x0[0m
+[0;32mI (4770) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4774) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4774) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4787) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4791) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4793) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4794) PWM: Invalid state: 0x0[0m
+[0;32mI (4807) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4810) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4814) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4814) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4827) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4831) PWM: Invalid state: 0x0[0m
+[0;32mI (4834) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4835) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4837) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4851) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4854) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4857) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4858) PWM: Invalid state: 0x0[0m
+[0;32mI (4870) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4874) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4877) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4878) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4891) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4895) PWM: Invalid state: 0x0[0m
+[0;32mI (4897) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4899) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4901) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4914) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4918) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4921) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4922) PWM: Invalid state: 0x0[0m
+[0;32mI (4934) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4938) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4941) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4946) BTserver: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (4941) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4961) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4963) PWM: control_signal[0] 0.000000[0m
+[1;31mE (4976) PWM: Invalid state: 0x0[0m
+[0;32mI (4979) PWM: control_signal[4] 0.000000[0m
+[0;32mI (4983) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (4983) PWM: control_signal[0] 0.000000[0m
+[0;32mI (4996) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5000) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5002) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5003) PWM: Invalid state: 0x0[0m
+[0;32mI (5016) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5019) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5023) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5027) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5024) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5030) PWM: Invalid state: 0x0[0m
+[0;32mI (5043) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5047) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5050) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5053) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5054) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5067) PWM: Invalid state: 0x0[0m
+[0;32mI (5070) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5073) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5074) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5087) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5090) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5094) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5094) PWM: Invalid state: 0x0[0m
+[0;32mI (5107) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5110) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5114) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5115) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5118) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5131) PWM: Invalid state: 0x0[0m
+[0;32mI (5134) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5137) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5141) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5142) BTserver: GATT_WRITE_EVT, handle 45[0m
+[0;32mI (5145) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5149) BTserver: CCCD Write: 0001[0m
+[1;31mE (5152) PWM: Invalid state: 0x0[0m
+[0;32mI (5155) BTserver: notify enable[0m
+[0;32mI (5158) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5164) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (5165) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5138) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5178) BTserver: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (5173) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5192) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5194) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5208) PWM: Invalid state: 0x0[0m
+[0;32mI (5210) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5214) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5214) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5227) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5231) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5234) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5235) PWM: Invalid state: 0x0[0m
+[0;32mI (5247) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5251) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5254) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5255) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5258) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5271) PWM: Invalid state: 0x0[0m
+[0;32mI (5274) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5278) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5278) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5291) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5295) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5297) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5298) PWM: Invalid state: 0x0[0m
+[0;32mI (5311) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5315) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5318) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5319) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5322) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5335) PWM: Invalid state: 0x0[0m
+[0;32mI (5338) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5341) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5342) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5355) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5358) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5361) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5362) PWM: Invalid state: 0x0[0m
+[0;32mI (5375) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5378) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5382) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5383) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5386) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5399) PWM: Invalid state: 0x0[0m
+[0;32mI (5402) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5405) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5405) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5419) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5422) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5425) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5426) PWM: Invalid state: 0x0[0m
+[0;32mI (5438) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5442) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5445) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5446) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5459) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5462) PWM: Invalid state: 0x0[0m
+[0;32mI (5465) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5465) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5479) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5482) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5485) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5486) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5499) PWM: Invalid state: 0x0[0m
+[0;32mI (5502) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5505) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5506) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5519) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5522) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5525) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5526) PWM: Invalid state: 0x0[0m
+[0;32mI (5539) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5542) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5546) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5546) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5559) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5563) PWM: Invalid state: 0x0[0m
+[0;32mI (5565) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5566) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5579) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5583) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5585) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5586) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5599) PWM: Invalid state: 0x0[0m
+[0;32mI (5602) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5606) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5606) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5619) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5623) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5626) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5627) PWM: Invalid state: 0x0[0m
+[0;32mI (5639) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5643) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5646) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5646) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5659) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5663) PWM: Invalid state: 0x0[0m
+[0;32mI (5666) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5666) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5679) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5683) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5686) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5687) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5700) PWM: Invalid state: 0x0[0m
+[0;32mI (5703) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5706) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5706) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5720) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5723) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5726) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5727) PWM: Invalid state: 0x0[0m
+[0;32mI (5739) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5743) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5746) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5747) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5760) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5764) PWM: Invalid state: 0x0[0m
+[0;32mI (5766) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5766) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5780) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5783) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5786) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5787) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5800) PWM: Invalid state: 0x0[0m
+[0;32mI (5803) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5806) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5807) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5820) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5824) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5826) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5827) PWM: Invalid state: 0x0[0m
+[0;32mI (5840) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5843) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5847) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5847) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5860) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5864) PWM: Invalid state: 0x0[0m
+[0;32mI (5866) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5867) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5880) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5884) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5886) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5887) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5901) PWM: Invalid state: 0x0[0m
+[0;32mI (5903) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5907) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5907) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5920) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5924) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5927) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5928) PWM: Invalid state: 0x0[0m
+[0;32mI (5940) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5944) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5947) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5947) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5961) PWM: control_signal[0] 0.000000[0m
+[1;31mE (5964) PWM: Invalid state: 0x0[0m
+[0;32mI (5967) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (5967) PWM: control_signal[4] 0.000000[0m
+[0;32mI (5980) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5984) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5984) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (5988) PWM: control_signal[0] 0.000000[0m
+[0;32mI (5987) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5995) PWM: Invalid state: 0x0[0m
+[0;32mI (6008) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6011) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6015) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6015) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6028) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6032) PWM: Invalid state: 0x0[0m
+[0;32mI (6035) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6035) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6048) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6052) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6054) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6055) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6068) PWM: Invalid state: 0x0[0m
+[0;32mI (6071) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6075) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6075) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6088) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6092) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6095) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6096) PWM: Invalid state: 0x0[0m
+[0;32mI (6108) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6112) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6115) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6115) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6128) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6132) PWM: Invalid state: 0x0[0m
+[0;32mI (6135) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6135) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6148) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6152) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6155) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6156) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6169) PWM: Invalid state: 0x0[0m
+[0;32mI (6172) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6175) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6175) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6189) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6192) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6195) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6196) PWM: Invalid state: 0x0[0m
+[0;32mI (6208) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6212) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6216) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6216) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6229) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6233) PWM: Invalid state: 0x0[0m
+[0;32mI (6235) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6235) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6249) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6252) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6255) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6256) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6269) PWM: Invalid state: 0x0[0m
+[0;32mI (6272) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6276) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6276) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6289) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6293) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6295) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6296) PWM: Invalid state: 0x0[0m
+[0;32mI (6309) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6312) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6316) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6316) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6329) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6333) PWM: Invalid state: 0x0[0m
+[0;32mI (6336) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6336) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6349) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6353) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6355) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6356) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6370) PWM: Invalid state: 0x0[0m
+[0;32mI (6372) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6376) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6376) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6389) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6393) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6397) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6397) PWM: Invalid state: 0x0[0m
+[0;32mI (6409) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6413) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6416) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6416) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6430) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6433) PWM: Invalid state: 0x0[0m
+[0;32mI (6436) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6436) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6449) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6453) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6457) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6457) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6470) PWM: Invalid state: 0x0[0m
+[0;32mI (6473) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6476) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6476) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6490) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6493) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6496) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6497) PWM: Invalid state: 0x0[0m
+[0;32mI (6509) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6513) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6517) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6517) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6530) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6534) PWM: Invalid state: 0x0[0m
+[0;32mI (6536) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6536) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6550) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6553) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6556) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6557) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6570) PWM: Invalid state: 0x0[0m
+[0;32mI (6573) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6577) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6577) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6590) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6594) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6596) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6597) PWM: Invalid state: 0x0[0m
+[0;32mI (6610) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6613) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6617) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6617) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6630) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6634) PWM: Invalid state: 0x0[0m
+[0;32mI (6637) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6638) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6640) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6654) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6657) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6660) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6661) PWM: Invalid state: 0x0[0m
+[0;32mI (6673) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6677) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6680) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6681) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6694) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6698) PWM: Invalid state: 0x0[0m
+[0;32mI (6700) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6700) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6714) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6717) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6720) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6721) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6734) PWM: Invalid state: 0x0[0m
+[0;32mI (6737) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6741) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6741) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6754) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6758) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6760) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6761) PWM: Invalid state: 0x0[0m
+[0;32mI (6774) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6777) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6781) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6781) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6794) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6798) PWM: Invalid state: 0x0[0m
+[0;32mI (6801) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6801) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6814) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6818) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6820) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6821) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6835) PWM: Invalid state: 0x0[0m
+[0;32mI (6837) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6841) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6841) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6854) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6858) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6861) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6862) PWM: Invalid state: 0x0[0m
+[0;32mI (6874) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6878) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6881) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6881) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6895) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6898) PWM: Invalid state: 0x0[0m
+[0;32mI (6901) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6901) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6914) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6918) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6921) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6922) PWM: control_signal[0] 0.000000[0m
+[1;31mE (6935) PWM: Invalid state: 0x0[0m
+[0;32mI (6938) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6941) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6942) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6955) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6958) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6961) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6962) PWM: Invalid state: 0x0[0m
+[0;32mI (6974) PWM: control_signal[4] 0.000000[0m
+[0;32mI (6978) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6982) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (6986) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (6982) PWM: control_signal[0] 0.000000[0m
+[0;32mI (6999) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7001) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7003) PWM: Invalid state: 0x0[0m
+[0;32mI (7015) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7019) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7022) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7022) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7036) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7039) PWM: Invalid state: 0x0[0m
+[0;32mI (7042) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7042) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7055) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7059) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7062) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7063) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7076) PWM: Invalid state: 0x0[0m
+[0;32mI (7079) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7082) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7082) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7096) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7099) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7102) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7103) PWM: Invalid state: 0x0[0m
+[0;32mI (7115) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7119) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7122) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7123) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7136) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7140) PWM: Invalid state: 0x0[0m
+[0;32mI (7142) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7142) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7156) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7159) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7162) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7163) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7176) PWM: Invalid state: 0x0[0m
+[0;32mI (7179) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7182) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7183) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7196) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7200) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7202) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7203) PWM: Invalid state: 0x0[0m
+[0;32mI (7216) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7219) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7223) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7223) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7236) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7240) PWM: Invalid state: 0x0[0m
+[0;32mI (7243) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7243) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7256) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7260) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7262) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7263) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7277) PWM: Invalid state: 0x0[0m
+[0;32mI (7279) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7283) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7283) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7296) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7300) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7303) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7304) PWM: Invalid state: 0x0[0m
+[0;32mI (7316) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7320) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7323) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7323) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7337) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7340) PWM: Invalid state: 0x0[0m
+[0;32mI (7343) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7343) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7356) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7360) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7363) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7364) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7377) PWM: Invalid state: 0x0[0m
+[0;32mI (7380) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7383) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7383) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7397) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7400) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7403) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7404) PWM: Invalid state: 0x0[0m
+[0;32mI (7416) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7420) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7423) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7424) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7437) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7441) PWM: Invalid state: 0x0[0m
+[0;32mI (7443) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7443) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7457) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7460) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7463) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7464) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7477) PWM: Invalid state: 0x0[0m
+[0;32mI (7480) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7483) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7484) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7497) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7501) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7503) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7504) PWM: Invalid state: 0x0[0m
+[0;32mI (7517) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7520) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7524) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7524) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7537) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7541) PWM: Invalid state: 0x0[0m
+[0;32mI (7544) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7544) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7557) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7561) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7563) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7564) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7578) PWM: Invalid state: 0x0[0m
+[0;32mI (7580) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7584) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7584) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7597) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7601) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7605) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7605) PWM: Invalid state: 0x0[0m
+[0;32mI (7617) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7621) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7624) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7624) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7638) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7641) PWM: Invalid state: 0x0[0m
+[0;32mI (7644) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7644) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7648) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7661) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7665) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7667) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7668) PWM: Invalid state: 0x0[0m
+[0;32mI (7681) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7684) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7688) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7688) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7701) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7705) PWM: Invalid state: 0x0[0m
+[0;32mI (7708) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7708) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7721) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7725) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7727) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7728) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7742) PWM: Invalid state: 0x0[0m
+[0;32mI (7744) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7748) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7748) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7761) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7765) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7768) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7769) PWM: Invalid state: 0x0[0m
+[0;32mI (7781) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7785) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7788) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7788) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7802) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7805) PWM: Invalid state: 0x0[0m
+[0;32mI (7808) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7808) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7821) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7825) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7828) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7829) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7842) PWM: Invalid state: 0x0[0m
+[0;32mI (7845) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7848) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7849) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7862) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7865) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7868) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7869) PWM: Invalid state: 0x0[0m
+[0;32mI (7881) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7885) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7889) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7889) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7902) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7906) PWM: Invalid state: 0x0[0m
+[0;32mI (7908) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7909) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7922) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7925) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7928) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7929) PWM: control_signal[0] 0.000000[0m
+[1;31mE (7942) PWM: Invalid state: 0x0[0m
+[0;32mI (7945) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7949) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (7949) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7962) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7966) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7968) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7969) PWM: Invalid state: 0x0[0m
+[0;32mI (7982) PWM: control_signal[4] 0.000000[0m
+[0;32mI (7985) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7989) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7987) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (7993) PWM: control_signal[0] 0.000000[0m
+[0;32mI (7990) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8000) PWM: Invalid state: 0x0[0m
+[0;32mI (8013) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8016) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8020) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8020) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8033) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8037) PWM: Invalid state: 0x0[0m
+[0;32mI (8040) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8040) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8053) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8057) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8059) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8060) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8074) PWM: Invalid state: 0x0[0m
+[0;32mI (8077) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8080) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8080) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8093) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8097) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8100) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8101) PWM: Invalid state: 0x0[0m
+[0;32mI (8113) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8117) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8120) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8124) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8121) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8128) PWM: Invalid state: 0x0[0m
+[0;32mI (8140) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8144) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8147) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8148) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8161) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8164) PWM: Invalid state: 0x0[0m
+[0;32mI (8167) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8167) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8181) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8184) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8187) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8188) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8201) PWM: Invalid state: 0x0[0m
+[0;32mI (8204) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8207) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8208) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8221) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8224) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8227) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8228) PWM: Invalid state: 0x0[0m
+[0;32mI (8241) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8244) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8248) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8248) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8261) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8265) PWM: Invalid state: 0x0[0m
+[0;32mI (8267) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8268) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8281) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8285) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8287) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8288) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8301) PWM: Invalid state: 0x0[0m
+[0;32mI (8304) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8308) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8308) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8321) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8325) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8327) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8329) PWM: Invalid state: 0x0[0m
+[0;32mI (8341) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8345) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8348) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8348) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8361) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8365) PWM: Invalid state: 0x0[0m
+[0;32mI (8368) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8368) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8381) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8385) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8388) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8389) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8402) PWM: Invalid state: 0x0[0m
+[0;32mI (8405) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8408) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8408) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8422) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8425) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8428) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8429) PWM: Invalid state: 0x0[0m
+[0;32mI (8441) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8445) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8448) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8449) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8462) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8466) PWM: Invalid state: 0x0[0m
+[0;32mI (8468) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8468) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8482) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8485) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8488) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8489) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8502) PWM: Invalid state: 0x0[0m
+[0;32mI (8505) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8508) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8509) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8522) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8526) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8528) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8529) PWM: Invalid state: 0x0[0m
+[0;32mI (8542) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8545) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8549) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8549) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8562) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8566) PWM: Invalid state: 0x0[0m
+[0;32mI (8568) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8569) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8582) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8586) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8588) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8589) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8602) PWM: Invalid state: 0x0[0m
+[0;32mI (8605) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8609) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8609) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8622) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8626) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8629) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8630) PWM: Invalid state: 0x0[0m
+[0;32mI (8642) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8646) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8649) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8649) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8662) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8666) PWM: Invalid state: 0x0[0m
+[0;32mI (8669) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8669) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8682) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8686) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8689) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8690) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8703) PWM: Invalid state: 0x0[0m
+[0;32mI (8706) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8709) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8709) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8723) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8726) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8729) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8730) PWM: Invalid state: 0x0[0m
+[0;32mI (8742) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8746) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8749) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8750) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8763) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8767) PWM: Invalid state: 0x0[0m
+[0;32mI (8769) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8769) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8783) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8786) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8789) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8790) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8803) PWM: Invalid state: 0x0[0m
+[0;32mI (8806) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8809) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8810) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8823) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8827) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8829) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8830) PWM: Invalid state: 0x0[0m
+[0;32mI (8843) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8846) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8850) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8850) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8863) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8867) PWM: Invalid state: 0x0[0m
+[0;32mI (8870) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8870) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8883) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8887) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8889) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8890) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8904) PWM: Invalid state: 0x0[0m
+[0;32mI (8906) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8910) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8910) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8923) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8927) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8930) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8931) PWM: Invalid state: 0x0[0m
+[0;32mI (8943) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8947) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8950) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8950) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8964) PWM: control_signal[0] 0.000000[0m
+[1;31mE (8967) PWM: Invalid state: 0x0[0m
+[0;32mI (8970) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (8970) PWM: control_signal[4] 0.000000[0m
+[0;32mI (8983) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8987) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8988) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (8991) PWM: control_signal[0] 0.000000[0m
+[0;32mI (8990) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8998) PWM: Invalid state: 0x0[0m
+[0;32mI (9011) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9014) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9018) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9018) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9031) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9035) PWM: Invalid state: 0x0[0m
+[0;32mI (9037) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9038) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9051) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9055) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9057) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9058) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9071) PWM: Invalid state: 0x0[0m
+[0;32mI (9074) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9078) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9078) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9091) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9095) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9098) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9099) PWM: Invalid state: 0x0[0m
+[0;32mI (9111) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9115) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9118) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9118) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9131) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9135) PWM: Invalid state: 0x0[0m
+[0;32mI (9138) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9138) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9151) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9155) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9158) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9159) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9172) PWM: Invalid state: 0x0[0m
+[0;32mI (9175) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9178) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9178) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9192) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9195) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9198) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9199) PWM: Invalid state: 0x0[0m
+[0;32mI (9211) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9215) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9218) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9219) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9232) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9236) PWM: Invalid state: 0x0[0m
+[0;32mI (9238) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9238) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9252) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9255) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9258) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9259) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9272) PWM: Invalid state: 0x0[0m
+[0;32mI (9275) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9278) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9279) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9292) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9296) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9298) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9299) PWM: Invalid state: 0x0[0m
+[0;32mI (9312) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9315) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9319) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9319) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9332) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9336) PWM: Invalid state: 0x0[0m
+[0;32mI (9339) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9339) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9352) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9356) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9358) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9359) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9373) PWM: Invalid state: 0x0[0m
+[0;32mI (9375) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9379) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9379) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9392) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9396) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9399) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9400) PWM: Invalid state: 0x0[0m
+[0;32mI (9412) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9416) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9419) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9419) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9433) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9436) PWM: Invalid state: 0x0[0m
+[0;32mI (9439) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9439) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9452) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9456) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9459) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9460) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9473) PWM: Invalid state: 0x0[0m
+[0;32mI (9476) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9479) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9479) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9493) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9496) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9500) PWM: Invalid state: 0x0[0m
+[0;32mI (9499) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9503) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9516) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9520) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9522) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9523) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9537) PWM: Invalid state: 0x0[0m
+[0;32mI (9539) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9543) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9543) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9556) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9560) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9563) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9564) PWM: Invalid state: 0x0[0m
+[0;32mI (9576) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9580) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9583) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9583) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9597) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9600) PWM: Invalid state: 0x0[0m
+[0;32mI (9603) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9603) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9616) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9620) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9623) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9624) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9637) PWM: Invalid state: 0x0[0m
+[0;32mI (9640) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9643) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9643) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9657) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9660) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9663) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9664) PWM: Invalid state: 0x0[0m
+[0;32mI (9676) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9680) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9683) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9684) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9697) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9701) PWM: Invalid state: 0x0[0m
+[0;32mI (9703) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9704) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9717) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9720) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9723) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9724) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9737) PWM: Invalid state: 0x0[0m
+[0;32mI (9740) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9744) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9744) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9757) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9761) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9763) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9764) PWM: Invalid state: 0x0[0m
+[0;32mI (9777) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9780) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9784) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9784) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9797) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9801) PWM: Invalid state: 0x0[0m
+[0;32mI (9804) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9804) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9817) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9821) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9823) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9824) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9838) PWM: Invalid state: 0x0[0m
+[0;32mI (9840) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9844) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9844) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9857) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9861) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9864) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9865) PWM: Invalid state: 0x0[0m
+[0;32mI (9877) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9881) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9884) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9884) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9898) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9901) PWM: Invalid state: 0x0[0m
+[0;32mI (9904) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9904) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9917) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9921) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9924) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9925) PWM: control_signal[0] 0.000000[0m
+[1;31mE (9938) PWM: Invalid state: 0x0[0m
+[0;32mI (9941) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9944) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9945) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9958) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9961) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9964) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9965) PWM: Invalid state: 0x0[0m
+[0;32mI (9977) PWM: control_signal[4] 0.000000[0m
+[0;32mI (9981) PWM: control_signal[0] 0.000000[0m
+[0;32mI (9985) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (9989) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (9985) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10002) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10004) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10006) PWM: Invalid state: 0x0[0m
+[0;32mI (10018) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10022) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10025) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10026) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10039) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10043) PWM: Invalid state: 0x0[0m
+[0;32mI (10045) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10046) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10059) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10063) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10066) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10067) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10080) PWM: Invalid state: 0x0[0m
+[0;32mI (10083) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10086) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10087) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10100) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10104) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10106) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10108) PWM: Invalid state: 0x0[0m
+[0;32mI (10120) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10124) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10127) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10128) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10141) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10145) PWM: Invalid state: 0x0[0m
+[0;32mI (10147) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10148) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10161) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10165) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10168) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10169) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10182) PWM: Invalid state: 0x0[0m
+[0;32mI (10185) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10188) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10189) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10202) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10206) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10209) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10210) PWM: Invalid state: 0x0[0m
+[0;32mI (10222) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10226) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10229) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10230) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10243) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10247) PWM: Invalid state: 0x0[0m
+[0;32mI (10250) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10250) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10263) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10267) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10270) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10271) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10284) PWM: Invalid state: 0x0[0m
+[0;32mI (10287) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10291) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10291) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10304) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10308) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10311) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10312) PWM: Invalid state: 0x0[0m
+[0;32mI (10325) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10328) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10331) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10332) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10345) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10349) PWM: Invalid state: 0x0[0m
+[0;32mI (10352) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10352) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10366) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10369) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10372) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10373) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10386) PWM: Invalid state: 0x0[0m
+[0;32mI (10389) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10393) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10393) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10406) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10410) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10414) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10414) PWM: Invalid state: 0x0[0m
+[0;32mI (10427) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10430) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10434) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10434) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10447) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10451) PWM: Invalid state: 0x0[0m
+[0;32mI (10454) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10454) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10468) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10471) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10475) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10475) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10488) PWM: Invalid state: 0x0[0m
+[0;32mI (10491) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10495) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10495) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10509) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10512) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10515) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10516) PWM: Invalid state: 0x0[0m
+[0;32mI (10529) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10532) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10536) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10537) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10540) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10553) PWM: Invalid state: 0x0[0m
+[0;32mI (10556) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10560) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10560) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10573) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10577) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10580) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10581) PWM: Invalid state: 0x0[0m
+[0;32mI (10594) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10597) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10601) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10601) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10614) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10618) PWM: Invalid state: 0x0[0m
+[0;32mI (10621) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10621) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10635) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10638) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10641) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10642) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10655) PWM: Invalid state: 0x0[0m
+[0;32mI (10658) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10662) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10662) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10675) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10679) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10682) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10683) PWM: Invalid state: 0x0[0m
+[0;32mI (10696) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10699) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10703) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10703) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10716) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10720) PWM: Invalid state: 0x0[0m
+[0;32mI (10723) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10723) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10737) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10740) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10743) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10744) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10758) PWM: Invalid state: 0x0[0m
+[0;32mI (10760) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10764) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10764) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10768) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10781) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10785) PWM: Invalid state: 0x0[0m
+[0;32mI (10788) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10788) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10801) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10805) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10808) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10809) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10822) PWM: Invalid state: 0x0[0m
+[0;32mI (10825) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10829) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10829) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10842) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10846) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10849) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10850) PWM: Invalid state: 0x0[0m
+[0;32mI (10863) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10866) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10869) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10870) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10883) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10887) PWM: Invalid state: 0x0[0m
+[0;32mI (10890) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10890) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10904) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10907) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10910) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10911) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10924) PWM: Invalid state: 0x0[0m
+[0;32mI (10927) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10931) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10931) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10944) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10948) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10952) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10952) PWM: Invalid state: 0x0[0m
+[0;32mI (10965) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10968) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10972) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (10972) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10985) PWM: control_signal[0] 0.000000[0m
+[1;31mE (10989) PWM: Invalid state: 0x0[0m
+[0;32mI (10992) PWM: control_signal[4] 0.000000[0m
+[0;32mI (10990) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (10996) PWM: control_signal[0] 0.000000[0m
+[0;32mI (10992) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11004) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11017) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11021) PWM: Invalid state: 0x0[0m
+[0;32mI (11023) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11024) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11037) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11041) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11043) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11045) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11058) PWM: Invalid state: 0x0[0m
+[0;32mI (11061) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11065) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11064) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11069) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11082) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11086) PWM: Invalid state: 0x0[0m
+[0;32mI (11088) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11089) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11102) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11106) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11108) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11110) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11123) PWM: Invalid state: 0x0[0m
+[0;32mI (11126) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11129) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11130) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11143) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11147) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11149) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11151) PWM: Invalid state: 0x0[0m
+[0;32mI (11163) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11167) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11170) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11171) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11184) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11188) PWM: Invalid state: 0x0[0m
+[0;32mI (11190) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11191) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11204) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11208) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11210) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11212) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11225) PWM: Invalid state: 0x0[0m
+[0;32mI (11228) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11231) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11232) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11245) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11249) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11252) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11253) PWM: Invalid state: 0x0[0m
+[0;32mI (11265) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11269) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11272) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11273) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11286) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11290) PWM: Invalid state: 0x0[0m
+[0;32mI (11292) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11293) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11306) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11310) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11313) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11314) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11327) PWM: Invalid state: 0x0[0m
+[0;32mI (11330) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11333) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11334) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11347) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11351) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11353) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11355) PWM: Invalid state: 0x0[0m
+[0;32mI (11367) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11371) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11375) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11375) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11388) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11392) PWM: Invalid state: 0x0[0m
+[0;32mI (11394) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11395) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11408) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11412) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11415) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11416) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11429) PWM: Invalid state: 0x0[0m
+[0;32mI (11432) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11436) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11436) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11449) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11453) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11456) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11457) PWM: Invalid state: 0x0[0m
+[0;32mI (11469) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11473) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11476) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11477) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11490) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11494) PWM: Invalid state: 0x0[0m
+[0;32mI (11497) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11497) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11510) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11514) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11517) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11518) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11531) PWM: Invalid state: 0x0[0m
+[0;32mI (11534) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11537) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11538) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11551) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11555) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11559) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11559) PWM: Invalid state: 0x0[0m
+[0;32mI (11571) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11575) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11578) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11579) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11592) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11596) PWM: Invalid state: 0x0[0m
+[0;32mI (11599) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11599) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11612) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11616) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11620) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11620) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11633) PWM: Invalid state: 0x0[0m
+[0;32mI (11636) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11640) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11640) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11653) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11657) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11660) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11661) PWM: Invalid state: 0x0[0m
+[0;32mI (11674) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11677) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11681) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11681) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11694) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11698) PWM: Invalid state: 0x0[0m
+[0;32mI (11701) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11701) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11715) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11718) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11721) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11722) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11735) PWM: Invalid state: 0x0[0m
+[0;32mI (11738) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11742) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11742) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11756) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11759) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11762) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11763) PWM: Invalid state: 0x0[0m
+[0;32mI (11776) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11779) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11783) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11783) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11796) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11800) PWM: Invalid state: 0x0[0m
+[0;32mI (11803) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11803) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11817) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11820) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11823) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11824) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11838) PWM: Invalid state: 0x0[0m
+[0;32mI (11840) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11844) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11844) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11848) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11861) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11865) PWM: Invalid state: 0x0[0m
+[0;32mI (11868) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11868) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11881) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11885) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11888) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11889) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11902) PWM: Invalid state: 0x0[0m
+[0;32mI (11905) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11909) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11909) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11922) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11926) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11929) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11930) PWM: Invalid state: 0x0[0m
+[0;32mI (11943) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11946) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11950) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11950) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11963) PWM: control_signal[0] 0.000000[0m
+[1;31mE (11967) PWM: Invalid state: 0x0[0m
+[0;32mI (11970) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (11970) PWM: control_signal[4] 0.000000[0m
+[0;32mI (11984) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11987) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11991) PWM: control_signal[0] 0.000000[0m
+[0;32mI (11991) BTserver: Unhandled GATTS event: 5[0m
+[1;31mE (11995) PWM: Invalid state: 0x0[0m
+[0;32mI (11991) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12002) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12015) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12019) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12021) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12023) PWM: control_signal[0] 0.000000[0m
+[1;31mE (12036) PWM: Invalid state: 0x0[0m
+[0;32mI (12039) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12042) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12043) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12056) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12060) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12062) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (12064) PWM: Invalid state: 0x0[0m
+[0;32mI (12076) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12080) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12083) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12084) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12097) PWM: control_signal[0] 0.000000[0m
+[1;31mE (12101) PWM: Invalid state: 0x0[0m
+[0;32mI (12104) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12104) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12117) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12121) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12123) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12125) PWM: control_signal[0] 0.000000[0m
+[1;31mE (12138) PWM: Invalid state: 0x0[0m
+[0;32mI (12141) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12144) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12145) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12158) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12162) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12164) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (12166) PWM: Invalid state: 0x0[0m
+[0;32mI (12178) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12182) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12185) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12186) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12199) PWM: control_signal[0] 0.000000[0m
+[1;31mE (12203) PWM: Invalid state: 0x0[0m
+[0;32mI (12205) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12206) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12219) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12223) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12226) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12227) PWM: control_signal[0] 0.000000[0m
+[1;31mE (12240) PWM: Invalid state: 0x0[0m
+[0;32mI (12243) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12246) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12247) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12260) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12264) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12267) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (12268) PWM: Invalid state: 0x0[0m
+[0;32mI (12280) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12284) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12287) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12288) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12301) PWM: control_signal[0] 0.000000[0m
+[1;31mE (12305) PWM: Invalid state: 0x0[0m
+[0;32mI (12307) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12308) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12321) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12325) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12328) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12329) PWM: control_signal[0] 0.000000[0m
+[1;31mE (12342) PWM: Invalid state: 0x0[0m
+[0;32mI (12345) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12348) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (12349) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12362) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12366) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12369) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (12370) PWM: Invalid state: 0x0[0m
+[0;32mI (12382) PWM: control_signal[4] 0.000000[0m
+[0;32mI (12386) PWM: control_signal[0] 0.000000[0m
+[0;32mI (12388) BTserver: GATT_WRITE_EVT, handle 42[0m
+I (
+abort() was called at PC 0x40082bbf on core 0
+
+
+Backtrace: 0x40081b51:0x3ffcbd00 0x4008fb09:0x3ffcbd20 0x40095df5:0x3ffcbd40 0x40082bbf:0x3ffcbdb0 0x40082cfd:0x3ffcbde0 0x40082d76:0x3ffcbe00 0x4013eecb:0x3ffcbe30 0x401373c5:0x3ffcc150 0x4014c451:0x3ffcc180 0x40095d65:0x3ffcc1b0 0x400d98ad:0x3ffcc200 0x400d92f2:0x3ffcc450 0x400de596:0x3ffcc480 0x400df019:0x3ffcc4a0 0x4010234d:0x3ffcc4f0 0x40104857:0x3ffcc510 0x400905ed:0x3ffcc540
+
+
+
+
+ELF file SHA256: dcfaa7e0f
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  2 2025 19:47:00[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20494h (132244) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=000304bc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=000304e0 vaddr=3ffbdb60 size=04ce8h ( 19688) load[0m
+[0;32mI (146) esp_image: segment 3: paddr=000351d0 vaddr=40080000 size=0ae48h ( 44616) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7dab4h (514740) map[0m
+[0;32mI (340) esp_image: segment 5: paddr=000bdadc vaddr=4008ae48 size=0cfach ( 53164) load[0m
+[0;32mI (372) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (372) boot: Disabling RNG early entropy source...[0m
+[0;32mI (383) cpu_start: Multicore app[0m
+[0;32mI (391) cpu_start: Pro cpu start user code[0m
+[0;32mI (391) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (391) app_init: Application information:[0m
+[0;32mI (391) app_init: Project name:     robot_controller_1.1[0m
+[0;32mI (396) app_init: App version:      v5.4[0m
+[0;32mI (400) app_init: Compile time:     May  2 2025 19:46:51[0m
+[0;32mI (405) app_init: ELF file SHA256:  dcfaa7e0f...[0m
+[0;32mI (409) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (413) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (417) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (421) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (425) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (431) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (436) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (441) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (446) heap_init: At 3FFC7500 len 00018B00 (98 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (457) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (462) heap_init: At 40097DF4 len 0000820C (32 KiB): IRAM[0m
+[0;32mI (469) spi_flash: detected chip: generic[0m
+[0;32mI (471) spi_flash: flash io: dio[0m
+[0;32mI (475) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (479) main_task: Started on CPU0[0m
+[0;32mI (482) main_task: Calling app_main()[0m
+[0;32mI (493) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (496) BTDM_INIT: Bluetooth MAC: 78:42:1c:2e:4c:ea[0m
+[0;32mI (499) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m

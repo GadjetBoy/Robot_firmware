@@ -1,0 +1,1644 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep  5 2025 16:23:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0be9ch ( 48796) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001bec4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001bee8 vaddr=3ffb0000 size=023dch (  9180) load[0m
+[0;32mI (113) esp_image: segment 3: paddr=0001e2cc vaddr=40080000 size=01d4ch (  7500) load[0m
+[0;32mI (120) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1746ch ( 95340) map[0m
+[0;32mI (157) esp_image: segment 5: paddr=00037494 vaddr=40081d4c size=0bfe0h ( 49120) load[0m
+[0;32mI (183) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (183) boot: Disabling RNG early entropy source...[0m
+[0;32mI (194) cpu_start: Multicore app[0m
+[0;32mI (202) cpu_start: Pro cpu start user code[0m
+[0;32mI (202) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (202) app_init: Application information:[0m
+[0;32mI (202) app_init: Project name:     i2c_master[0m
+[0;32mI (206) app_init: App version:      v5.4[0m
+[0;32mI (210) app_init: Compile time:     Sep  5 2025 16:23:32[0m
+[0;32mI (215) app_init: ELF file SHA256:  d1226dd91...[0m
+[0;32mI (219) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (223) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (227) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (231) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (235) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (241) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (246) heap_init: At 3FFB2D08 len 0002D2F8 (180 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (257) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (262) heap_init: At 4008DD2C len 000122D4 (72 KiB): IRAM[0m
+[0;32mI (269) spi_flash: detected chip: generic[0m
+[0;32mI (271) spi_flash: flash io: dio[0m
+[0;32mI (275) main_task: Started on CPU0[0m
+[0;32mI (278) main_task: Calling app_main()[0m
+[0;32mI (281) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (285) PCNT: install pcnt unit1[0m
+[0;32mI (288) PCNT: set glitch filter for unit1[0m
+[0;32mI (291) PCNT: install pcnt channels of unit1[0m
+[0;32mI (296) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (301) PCNT: enable pcnt unit1[0m
+[0;32mI (304) PCNT: clear pcnt unit1[0m
+[0;32mI (307) PCNT: start pcnt unit1[0m
+[0;32mI (310) PCNT: install pcnt unit2[0m
+[0;32mI (313) PCNT: set glitch filter for unit2[0m
+[0;32mI (316) PCNT: install pcnt channels of unit2[0m
+[0;32mI (321) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (326) PCNT: enable pcnt unit2[0m
+[0;32mI (329) PCNT: clear pcnt unit2[0m
+[0;32mI (332) PCNT: start pcnt unit2[0m
+[0;32mI (335) PCNT: install pcnt unit3[0m
+[0;32mI (338) PCNT: set glitch filter for unit3[0m
+[0;32mI (342) PCNT: install pcnt channels of unit3[0m
+[0;32mI (346) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (352) PCNT: enable pcnt unit3[0m
+[0;32mI (354) PCNT: clear pcnt unit3[0m
+[0;32mI (357) PCNT: start pcnt unit3[0m
+[0;32mI (360) PCNT: install pcnt unit4[0m
+[0;32mI (363) PCNT: set glitch filter for unit4[0m
+[0;32mI (367) PCNT: install pcnt channels of unit4[0m
+[0;32mI (371) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (377) PCNT: enable pcnt unit4[0m
+[0;32mI (379) PCNT: clear pcnt unit4[0m
+[0;32mI (382) PCNT: start pcnt unit4[0m
+[0;32mI (385) PCNT: install pcnt unit5[0m
+[0;32mI (388) PCNT: set glitch filter for unit5[0m
+[0;32mI (392) PCNT: install pcnt channels of unit5[0m
+[0;32mI (396) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (402) PCNT: enable pcnt unit5[0m
+[0;32mI (405) PCNT: clear pcnt unit5[0m
+[0;32mI (407) PCNT: start pcnt unit5[0m
+[0;32mI (410) PCNT: install pcnt unit6[0m
+[0;32mI (413) PCNT: set glitch filter for unit6[0m
+[0;32mI (417) PCNT: install pcnt channels of unit6[0m
+[0;32mI (421) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (427) PCNT: enable pcnt unit6[0m
+[0;32mI (430) PCNT: clear pcnt unit6[0m
+[0;32mI (432) PCNT: start pcnt unit6[0m
+[0;32mI (435) PCNT: install pcnt unit7[0m
+[0;32mI (438) PCNT: set glitch filter for unit7[0m
+[0;32mI (442) PCNT: install pcnt channels of unit7[0m
+[0;32mI (446) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (452) PCNT: enable pcnt unit7[0m
+[0;32mI (455) PCNT: clear pcnt unit7[0m
+[0;32mI (458) PCNT: start pcnt unit7[0m
+[0;32mI (460) PCNT: install pcnt unit8[0m
+[0;32mI (463) PCNT: set glitch filter for unit8[0m
+[0;32mI (467) PCNT: install pcnt channels of unit8[0m
+[0;32mI (471) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (477) PCNT: enable pcnt unit8[0m
+[0;32mI (480) PCNT: clear pcnt unit8[0m
+[0;32mI (483) PCNT: start pcnt unit8[0m
+[0;32mI (485) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (490) PCNT: setting up   pcnt Que[0m
+[0;32mI (493) PCNT: setting up PCNT Read_Tasks[0m
+[0;32mI (496) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (502) I2C MASTER: setting up I2C MASTER device[0m
+[0;32mI (507) I2C MASTER: setting up I2C MASTER device Complete[0m
+[0;32mI (511) I2C MASTER: setting up PCNT Count Print_Tasks[0m
+[0;32mI (516) I2C MASTER:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (517) I2C MASTER: setting up I2C Send_Tasks[0m
+[0;32mI (538) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (543) main_task: Returned from app_main()[0m
+[0;32mI (543) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (555) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (544) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (560) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (587) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (588) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (591) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (618) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (619) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (623) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (650) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (651) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (654) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (681) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (682) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (686) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (713) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (714) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (717) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (744) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (745) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (749) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (776) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (777) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (780) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (807) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (808) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (812) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (839) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (840) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (843) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (870) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (871) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (875) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (902) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (903) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (906) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (933) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (934) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (938) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (965) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (966) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (970) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (996) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (997) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1001) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1028) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1029) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1033) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1060) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1061) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1064) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1091) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1092) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1096) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1123) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1124) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1128) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1155) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1156) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1160) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1187) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1188) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1192) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1218) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1219) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1223) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1250) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1251) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1255) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1282) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1283) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1287) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1314) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1315) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1319) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1346) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1346) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1350) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1377) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1378) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1382) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1409) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1410) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1414) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1441) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1442) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1446) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1473) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1474) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1477) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1504) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1505) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1509) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1536) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1537) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1541) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1568) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1569) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1573) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1600) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1601) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1605) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1631) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1632) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1636) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1663) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1664) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1668) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1695) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1696) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1700) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1727) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1728) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1732) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1759) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1760) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1763) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1790) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1791) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1795) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1822) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1823) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1827) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1854) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1855) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1859) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1886) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1887) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1891) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1917) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1918) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1922) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1949) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1950) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1954) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (1981) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (1982) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (1986) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2013) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2014) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2018) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2044) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2045) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2049) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2076) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2077) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2081) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2108) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2109) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2113) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2140) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2141) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2145) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2172) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2173) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2176) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2203) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2204) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2208) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2235) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2236) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2240) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2267) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2268) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2272) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2299) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2300) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2304) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2330) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2331) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2335) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2362) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2363) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2367) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2394) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2395) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2399) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2426) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2427) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2431) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2458) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2458) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2462) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2489) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2490) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2494) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2521) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2522) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2526) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2553) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2554) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2558) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2585) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2586) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2589) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2616) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2617) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2621) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2648) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2649) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2653) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2680) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2681) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2685) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2712) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2713) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2717) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2743) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2744) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2748) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2775) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2776) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2780) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2807) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2808) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2812) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2839) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2840) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2844) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2871) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2871) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2875) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2902) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2903) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2907) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2934) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2935) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2939) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2966) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2967) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (2971) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (2998) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (2999) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3002) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3029) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3030) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3034) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3061) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3062) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3066) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3093) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3094) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3098) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3125) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3126) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3130) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3156) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3157) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3161) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3188) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3189) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3193) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3220) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3221) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3225) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3252) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3253) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3257) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3284) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3284) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3288) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3315) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3316) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3320) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3347) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3348) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3352) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3379) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3380) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3384) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3411) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3412) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3415) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3442) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3443) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3447) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3474) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3475) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3479) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3506) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3507) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3511) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3538) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3539) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3543) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3569) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3570) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3574) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3601) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3602) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3606) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3633) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3634) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3638) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3665) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3666) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3670) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3697) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3698) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3701) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3728) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3729) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3733) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3760) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3761) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3765) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3792) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3793) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3797) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3824) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3825) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3829) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3855) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3856) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3860) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3887) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3888) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3892) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3919) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3920) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3924) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3951) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3952) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3956) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (3982) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (3983) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (3987) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4014) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4015) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4019) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4046) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4047) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4051) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4078) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4079) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4083) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4110) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4111) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4114) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4141) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4142) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4146) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4173) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4174) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4178) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4205) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4206) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4210) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4237) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4238) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4242) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4268) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4269) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4273) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4300) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4301) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4305) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4332) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4333) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4337) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4364) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4365) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4369) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4396) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4396) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4400) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4427) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4428) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4432) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4459) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4460) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4464) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4491) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4492) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4496) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4523) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4524) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4527) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4554) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4555) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4559) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4586) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4587) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4591) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4618) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4619) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4623) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4650) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4651) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4655) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4681) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4682) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4686) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4713) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4714) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4718) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4745) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4746) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4750) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4777) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4778) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4782) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4809) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4809) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4813) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4840) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4841) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4845) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4872) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4873) I2C MASTER:  [0m
+ENCODER[1] READING: 20
+ENCODER[2] READING: 20
+ENCODER[3] READING: 20
+ENCODER[4] READING: 20
+ENCODER[5] READING: 20
+ENCODER[6] READING: 20
+ENCODER[7] READING: 20
+ENCODER[8] READING: 20
+[0;32mI (4877) I2C MASTER: Yo!the Data is Sent:look down below to chek if the other guy rcieved it properly [0m
+[0;32mI (4904) I2C MASTER: Preparing to Send Data [0m
+[0;32mI (4905) I2C MASTER:  [0m
+ENCODER[1] READING: 20

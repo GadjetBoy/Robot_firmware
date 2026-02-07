@@ -1,0 +1,41 @@
+[1/14] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\decorder_1.1\control_1.6\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6560 bytes. 0xaa0 bytes (9%) free.
+[2/14] No install step for 'bootloader'
+[3/14] Completed 'bootloader'
+[4/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pcnt.c.obj
+[5/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pid.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/pid.c: In function 'update_i2c_motor_commands':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/pid.c:28:29: warning: passing argument 1 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   28 |     memcpy(motor_cmd_buffers[write_buffer], new_commands,
+      |            ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/control_1.6.h:4,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/pid.h:3,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/pid.c:1:
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:18: note: expected 'void * restrict' but argument is of type 'volatile float *'
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                  ^
+[6/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/UART.c.obj
+[7/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/control_1.6.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/control_1.6.c: In function 'read_PID_commands':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/control_1.6.c:94:35: warning: passing argument 2 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   94 |     memcpy(dest, motor_cmd_buffers[read_buffer],
+      |                  ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/control_1.6.h:4,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/main/control_1.6.c:1:
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:36: note: expected 'const void * restrict' but argument is of type 'volatile float *'
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                                    ^
+[8/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/cpg.c.obj
+[9/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ble.c.obj
+[10/14] Linking C static library esp-idf\main\libmain.a
+[11/14] Generating ld/sections.ld
+[12/14] Linking CXX executable control_1.6.elf
+[13/14] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/build/control_1.6.bin
+[14/14] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\decorder_1.1\control_1.6\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.6/build/control_1.6.bin"
+control_1.6.bin binary size 0xc3a30 bytes. Smallest app partition is 0x100000 bytes. 0x3c5d0 bytes (24%) free.

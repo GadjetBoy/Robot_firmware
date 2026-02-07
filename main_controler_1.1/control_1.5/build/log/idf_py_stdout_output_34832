@@ -1,0 +1,647 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Nov  8 2025 21:12:14[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=21dach (138668) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=00031dd4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031df8 vaddr=3ffbdb60 size=04f3ch ( 20284) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00036d3c vaddr=40080000 size=092dch ( 37596) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=80d00h (527616) map[0m
+[0;32mI (344) esp_image: segment 5: paddr=000c0d28 vaddr=400892dc size=10afch ( 68348) load[0m
+[0;32mI (383) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (383) boot: Disabling RNG early entropy source...[0m
+[0;32mI (394) cpu_start: Multicore app[0m
+[0;32mI (402) cpu_start: Pro cpu start user code[0m
+[0;32mI (402) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (402) app_init: Application information:[0m
+[0;32mI (402) app_init: Project name:     control_1.5[0m
+[0;32mI (406) app_init: App version:      v5.4-dirty[0m
+[0;32mI (410) app_init: Compile time:     Nov  8 2025 21:12:07[0m
+[0;32mI (415) app_init: ELF file SHA256:  f85b7335d...[0m
+[0;32mI (420) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (424) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (428) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (432) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (436) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (442) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (447) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (457) heap_init: At 3FFC80A8 len 00017F58 (95 KiB): DRAM[0m
+[0;32mI (463) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (468) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 40099DD8 len 00006228 (24 KiB): IRAM[0m
+[0;32mI (480) spi_flash: detected chip: generic[0m
+[0;32mI (482) spi_flash: flash io: dio[0m
+[0;32mI (486) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (490) main_task: Started on CPU0[0m
+[0;32mI (493) main_task: Calling app_main()[0m
+[0;32mI (496) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (504) I2C SLAVE: Setting up PWM and PID module[0m
+[1;31mE (508) RESET: CPU Reset reason: 1[0m
+[0;32mI (511) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (516) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (533) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (558) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (575) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (591) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (600) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (608) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (616) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (625) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (633) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (641) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (760) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (770) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (771) UART_PID: UART initialized on port 0 at 115200 baud[0m
+[0;32mI (783) PID: Starting PID application...[0m
+[0;32mI (783) PID: PID application started successfully[0m
+D (783) i2c.common: new bus(0) at 0x3ffd1d3c
+[0;32mI (786) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (802) CPG: settingup the motor comnads[0m
+[0;32mI (1002) CPG: Initializing CPG network...[0m
+[0;32mI (1002) CPG: Mode change detected: 1[0m
+[0;32mI (1003) CPG: Setting CRAWL gait[0m
+[0;33mW (1102) CPG: CPG update missed: expected 1, got 0[0m
+[1;31mE (1166) PID: i2c data received[0m
+
+[1;31mE (1179) PID: i2c data received[0m
+
+[1;31mE (1192) PID: i2c data received[0m
+
+[0;32mI (1202) CPG: settingup the motor comnads complete[0m
+[0;32mI (1202) BLE: Setting up BLE unit[0m
+[1;31mE (1205) PID: i2c data received[0m
+
+[0;32mI (1216) BTDM_INIT: BT controller compile version [20b459d][0m
+[1;31mE (1218) PID: i2c data received[0m
+
+[0;32mI (1218) BTDM_INIT: Bluetooth MAC: 6c:c8:40:66:40:b2[0m
+[0;32mI (1221) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[1;31mE (1248) PID: i2c data received[0m
+
+[1;31mE (1261) PID: i2c data received[0m
+
+[1;31mE (1274) PID: i2c data received[0m
+
+[1;31mE (1286) PID: i2c data received[0m
+
+[1;31mE (1299) PID: i2c data received[0m
+
+[1;31mE (1300) PID: mor[7]stall:[10][0m
+
+[1;31mE (1399) CPG: CPG command send failed :que full![0m
+[1;31mE (1500) CPG: CPG command send failed :que full![0m
+[1;31mE (1539) PID: i2c data received[0m
+
+[1;31mE (1540) PID: i2c data received[0m
+
+[1;31mE (1553) PID: i2c data received[0m
+
+[1;31mE (1568) PID: i2c data received[0m
+
+[1;31mE (1597) PID: i2c data received[0m
+
+[1;31mE (1614) PID: i2c data received[0m
+
+[0;32mI (1623) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[1;31mE (1623) PID: i2c data received[0m
+
+[0;33mW (1626) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (1627) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[1;31mE (1631) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+[1;31mE (1636) PID: i2c data received[0m
+
+[0;32mI (1642) BLE: Unhandled GATTS event: 12[0m
+[0;32mI (1643) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[1;31mE (1651) PID: i2c data received[0m
+
+[0;32mI (1658) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[0;32mI (1659) BLE: Unhandled GAP event: 6[0m
+[1;31mE (1662) PID: i2c data received[0m
+
+[1;31mE (1665) PID: mor[7]stall:[10][0m
+
+[0;32mI (1668) BLE: TX CCCD Handle: 45[0m
+[0;32mI (1671) BLE: BLE unit setup completed[0m
+[1;31mE (1684) PID: i2c data received[0m
+
+[1;31mE (1715) PID: i2c data received[0m
+
+[1;31mE (1728) PID: i2c data received[0m
+
+[1;31mE (1741) PID: i2c data received[0m
+
+[1;31mE (1754) PID: i2c data received[0m
+
+[1;31mE (1767) PID: i2c data received[0m
+
+[1;31mE (1780) PID: i2c data received[0m
+
+[1;31mE (1793) PID: i2c data received[0m
+
+[1;31mE (1806) PID: i2c data received[0m
+
+[1;31mE (1836) PID: i2c data received[0m
+
+[1;31mE (1837) PID: mor[7]stall:[10][0m
+
+[1;31mE (1849) PID: i2c data received[0m
+
+[1;31mE (1862) PID: i2c data received[0m
+
+[1;31mE (1876) PID: i2c data received[0m
+
+[1;31mE (1889) PID: i2c data received[0m
+
+[1;31mE (1902) PID: i2c data received[0m
+
+[1;31mE (1915) PID: i2c data received[0m
+
+[1;31mE (1928) PID: i2c data received[0m
+
+[1;31mE (1958) PID: i2c data received[0m
+
+[1;31mE (1971) PID: i2c data received[0m
+
+[1;31mE (1984) PID: i2c data received[0m
+
+[1;31mE (1985) PID: mor[7]stall:[10][0m
+
+[1;31mE (1997) PID: i2c data received[0m
+
+[1;31mE (2010) PID: i2c data received[0m
+
+[1;31mE (2023) PID: i2c data received[0m
+
+[1;31mE (2036) PID: i2c data received[0m
+
+[1;31mE (2049) PID: i2c data received[0m
+
+[1;31mE (2080) PID: i2c data received[0m
+
+[1;31mE (2093) PID: i2c data received[0m
+
+[1;31mE (2106) PID: i2c data received[0m
+
+[1;31mE (2119) PID: i2c data received[0m
+
+[1;31mE (2132) PID: i2c data received[0m
+
+[1;31mE (2132) PID: mor[7]stall:[10][0m
+
+[1;31mE (2145) PID: i2c data received[0m
+
+[1;31mE (2158) PID: i2c data received[0m
+
+[1;31mE (2171) PID: i2c data received[0m
+
+[1;31mE (2202) PID: i2c data received[0m
+
+[1;31mE (2215) PID: i2c data received[0m
+
+[1;31mE (2228) PID: i2c data received[0m
+
+[1;31mE (2241) PID: i2c data received[0m
+
+[1;31mE (2254) PID: i2c data received[0m
+
+[1;31mE (2267) PID: i2c data received[0m
+
+[1;31mE (2280) PID: i2c data received[0m
+
+[1;31mE (2280) PID: mor[7]stall:[10][0m
+
+[1;31mE (2293) PID: i2c data received[0m
+
+[1;31mE (2323) PID: i2c data received[0m
+
+[1;31mE (2336) PID: i2c data received[0m
+
+[1;31mE (2349) PID: i2c data received[0m
+
+[1;31mE (2362) PID: i2c data received[0m
+
+[1;31mE (2375) PID: i2c data received[0m
+
+[1;31mE (2388) PID: i2c data received[0m
+
+[1;31mE (2401) PID: i2c data received[0m
+
+[1;31mE (2414) PID: i2c data received[0m
+
+[1;31mE (2445) PID: i2c data received[0m
+
+[1;31mE (2445) PID: mor[7]stall:[10][0m
+
+[1;31mE (2458) PID: i2c data received[0m
+
+[1;31mE (2471) PID: i2c data received[0m
+
+[1;31mE (2484) PID: i2c data received[0m
+
+[1;31mE (2497) PID: i2c data received[0m
+
+[1;31mE (2510) PID: i2c data received[0m
+
+[1;31mE (2523) PID: i2c data received[0m
+
+[1;31mE (2536) PID: i2c data received[0m
+
+[1;31mE (2567) PID: i2c data received[0m
+
+[1;31mE (2580) PID: i2c data received[0m
+
+[1;31mE (2593) PID: i2c data received[0m
+
+[1;31mE (2593) PID: mor[7]stall:[10][0m
+
+[1;31mE (2606) PID: i2c data received[0m
+
+[1;31mE (2619) PID: i2c data received[0m
+
+[1;31mE (2632) PID: i2c data received[0m
+
+[1;31mE (2645) PID: i2c data received[0m
+
+[1;31mE (2658) PID: i2c data received[0m
+
+[1;31mE (2688) PID: i2c data received[0m
+
+[1;31mE (2701) PID: i2c data received[0m
+
+[1;31mE (2714) PID: i2c data received[0m
+
+[1;31mE (2727) PID: i2c data received[0m
+
+[1;31mE (2740) PID: i2c data received[0m
+
+[1;31mE (2741) PID: mor[7]stall:[10][0m
+
+[1;31mE (2753) PID: i2c data received[0m
+
+[1;31mE (2766) PID: i2c data received[0m
+
+[1;31mE (2779) PID: i2c data received[0m
+
+[1;31mE (2810) PID: i2c data received[0m
+
+[1;31mE (2823) PID: i2c data received[0m
+
+[1;31mE (2836) PID: i2c data received[0m
+
+[1;31mE (2849) PID: i2c data received[0m
+
+[1;31mE (2862) PID: i2c data received[0m
+
+[1;31mE (2875) PID: i2c data received[0m
+
+[1;31mE (2888) PID: i2c data received[0m
+
+[1;31mE (2889) PID: mor[7]stall:[10][0m
+
+[1;31mE (2901) PID: i2c data received[0m
+
+[1;31mE (2932) PID: i2c data received[0m
+
+[1;31mE (2945) PID: i2c data received[0m
+
+[1;31mE (2958) PID: i2c data received[0m
+
+[1;31mE (2971) PID: i2c data received[0m
+
+[1;31mE (2984) PID: i2c data received[0m
+
+[1;31mE (2997) PID: i2c data received[0m
+
+[1;31mE (3010) PID: i2c data received[0m
+
+[1;31mE (3023) PID: i2c data received[0m
+
+[1;31mE (3053) PID: i2c data received[0m
+
+[1;31mE (3054) PID: mor[7]stall:[10][0m
+
+[1;31mE (3066) PID: i2c data received[0m
+
+[1;31mE (3079) PID: i2c data received[0m
+
+[1;31mE (3093) PID: i2c data received[0m
+
+[1;31mE (3106) PID: i2c data received[0m
+
+[1;31mE (3119) PID: i2c data received[0m
+
+[1;31mE (3132) PID: i2c data received[0m
+
+[1;31mE (3145) PID: i2c data received[0m
+
+[1;31mE (3175) PID: i2c data received[0m
+
+[1;31mE (3188) PID: i2c data received[0m
+
+[1;31mE (3201) PID: i2c data received[0m
+
+[1;31mE (3202) PID: mor[7]stall:[10][0m
+
+[1;31mE (3214) PID: i2c data received[0m
+
+[1;31mE (3227) PID: i2c data received[0m
+
+[1;31mE (3240) PID: i2c data received[0m
+
+[1;31mE (3253) PID: i2c data received[0m
+
+[1;31mE (3266) PID: i2c data received[0m
+
+[1;31mE (3297) PID: i2c data received[0m
+
+[1;31mE (3310) PID: i2c data received[0m
+
+[1;31mE (3323) PID: i2c data received[0m
+
+[1;31mE (3336) PID: i2c data received[0m
+
+[1;31mE (3349) PID: i2c data received[0m
+
+[1;31mE (3349) PID: mor[7]stall:[10][0m
+
+[1;31mE (3362) PID: i2c data received[0m
+
+[1;31mE (3375) PID: i2c data received[0m
+
+[1;31mE (3388) PID: i2c data received[0m
+
+[1;31mE (3419) PID: i2c data received[0m
+
+[1;31mE (3432) PID: i2c data received[0m
+
+[1;31mE (3445) PID: i2c data received[0m
+
+[1;31mE (3458) PID: i2c data received[0m
+
+[1;31mE (3471) PID: i2c data received[0m
+
+[1;31mE (3484) PID: i2c data received[0m
+
+[1;31mE (3497) PID: i2c data received[0m
+
+[1;31mE (3497) PID: mor[7]stall:[10][0m
+
+[1;31mE (3510) PID: i2c data received[0m
+
+[1;31mE (3540) PID: i2c data received[0m
+
+[1;31mE (3553) PID: i2c data received[0m
+
+[1;31mE (3566) PID: i2c data received[0m
+
+[1;31mE (3579) PID: i2c data received[0m
+
+[1;31mE (3592) PID: i2c data received[0m
+
+[1;31mE (3605) PID: i2c data received[0m
+
+[1;31mE (3618) PID: i2c data received[0m
+
+[1;31mE (3631) PID: i2c data received[0m
+
+[1;31mE (3662) PID: i2c data received[0m
+
+[1;31mE (3662) PID: mor[7]stall:[10][0m
+
+[1;31mE (3675) PID: i2c data received[0m
+
+[1;31mE (3688) PID: i2c data received[0m
+
+[1;31mE (3701) PID: i2c data received[0m
+
+[1;31mE (3714) PID: i2c data received[0m
+
+[1;31mE (3727) PID: i2c data received[0m
+
+[1;31mE (3740) PID: i2c data received[0m
+
+[1;31mE (3753) PID: i2c data received[0m
+
+[1;31mE (3784) PID: i2c data received[0m
+
+[1;31mE (3797) PID: i2c data received[0m
+
+[1;31mE (3810) PID: i2c data received[0m
+
+[1;31mE (3810) PID: mor[7]stall:[10][0m
+
+[1;31mE (3823) PID: i2c data received[0m
+
+[1;31mE (3836) PID: i2c data received[0m
+
+[1;31mE (3849) PID: i2c data received[0m
+
+[1;31mE (3862) PID: i2c data received[0m
+
+[1;31mE (3875) PID: i2c data received[0m
+
+[1;31mE (3906) PID: i2c data received[0m
+
+[1;31mE (3918) PID: i2c data received[0m
+
+[1;31mE (3931) PID: i2c data received[0m
+
+[1;31mE (3944) PID: i2c data received[0m
+
+[1;31mE (3957) PID: i2c data received[0m
+
+[1;31mE (3958) PID: mor[7]stall:[10][0m
+
+[1;31mE (3970) PID: i2c data received[0m
+
+[1;31mE (3983) PID: i2c data received[0m
+
+[1;31mE (3997) PID: i2c data received[0m
+
+[1;31mE (4027) PID: i2c data received[0m
+
+[1;31mE (4040) PID: i2c data received[0m
+
+[1;31mE (4053) PID: i2c data received[0m
+
+[1;31mE (4066) PID: i2c data received[0m
+
+[1;31mE (4079) PID: i2c data received[0m
+
+[1;31mE (4092) PID: i2c data received[0m
+
+[1;31mE (4105) PID: i2c data received[0m
+
+[1;31mE (4106) PID: mor[7]stall:[10][0m
+
+[1;31mE (4118) PID: i2c data received[0m
+
+[1;31mE (4149) PID: i2c data received[0m
+
+[1;31mE (4162) PID: i2c data received[0m
+
+[1;31mE (4175) PID: i2c data received[0m
+
+[1;31mE (4188) PID: i2c data received[0m
+
+[1;31mE (4201) PID: i2c data received[0m
+
+[1;31mE (4214) PID: i2c data received[0m
+
+[1;31mE (4227) PID: i2c data received[0m
+
+[1;31mE (4240) PID: i2c data received[0m
+
+[1;31mE (4270) PID: i2c data received[0m
+
+[1;31mE (4271) PID: mor[7]stall:[10][0m
+
+[1;31mE (4283) PID: i2c data received[0m
+
+[1;31mE (4296) PID: i2c data received[0m
+
+[1;31mE (4310) PID: i2c data received[0m
+
+[1;31mE (4323) PID: i2c data received[0m
+
+[1;31mE (4336) PID: i2c data received[0m
+
+[1;31mE (4349) PID: i2c data received[0m
+
+[1;31mE (4362) PID: i2c data received[0m
+
+[1;31mE (4392) PID: i2c data received[0m
+
+[1;31mE (4406) PID: i2c data received[0m
+
+[1;31mE (4418) PID: i2c data received[0m
+
+[1;31mE (4419) PID: mor[7]stall:[10][0m
+
+[1;31mE (4431) PID: i2c data received[0m
+
+[1;31mE (4444) PID: i2c data received[0m
+
+[1;31mE (4457) PID: i2c data received[0m
+
+[1;31mE (4470) PID: i2c data received[0m
+
+[1;31mE (4483) PID: i2c data received[0m
+
+[1;31mE (4514) PID: i2c data received[0m
+
+[1;31mE (4527) PID: i2c data received[0m
+
+[1;31mE (4540) PID: i2c data received[0m
+
+[1;31mE (4553) PID: i2c data received[0m
+
+[1;31mE (4566) PID: i2c data received[0m
+
+[1;31mE (4566) PID: mor[7]stall:[10][0m
+
+[1;31mE (4579) PID: i2c data received[0m
+
+[1;31mE (4592) PID: i2c data received[0m
+
+[1;31mE (4605) PID: i2c data received[0m
+
+[1;31mE (4636) PID: i2c data received[0m
+
+[1;31mE (4649) PID: i2c data received[0m
+
+[1;31mE (4662) PID: i2c data received[0m
+
+[1;31mE (4675) PID: i2c data received[0m
+
+[1;31mE (4688) PID: i2c data received[0m
+
+[1;31mE (4701) PID: i2c data received[0m
+
+[1;31mE (4714) PID: i2c data received[0m
+
+[1;31mE (4714) PID: mor[7]stall:[10][0m
+
+[1;31mE (4727) PID: i2c data received[0m
+
+[1;31mE (4757) PID: i2c data received[0m
+
+[1;31mE (4771) PID: i2c data received[0m
+
+[1;31mE (4783) PID: i2c data received[0m
+
+[1;31mE (4796) PID: i2c data received[0m
+
+[1;31mE (4809) PID: i2c data received[0m
+
+[1;31mE (4822) PID: i2c data received[0m
+
+[1;31mE (4835) PID: i2c data received[0m
+
+[1;31mE (4848) PID: i2c data received[0m
+
+[1;31mE (4879) PID: i2c data received[0m
+
+[1;31mE (4879) PID: mor[7]stall:[10][0m
+
+[1;31mE (4892) PID: i2c data received[0m
+
+[1;31mE (4905) PID: i2c data received[0m
+
+[1;31mE (4918) PID: i2c data received[0m
+
+[1;31mE (4931) PID: i2c data received[0m
+
+[1;31mE (4944) PID: i2c data received[0m
+
+[1;31mE (4957) PID: i2c data received[0m
+
+[1;31mE (4970) PID: i2c data received[0m
+
+[1;31mE (5001) PID: i2c data received[0m
+
+[1;31mE (5014) PID: i2c data received[0m
+
+[1;31mE (5027) PID: i2c data received[0m
+
+[1;31mE (5027) PID: mor[7]stall:[10][0m
+
+[1;31mE (5040) PID: i2c data received[0m
+
+[1;31mE (5053) PID: i2c data received[0m
+
+[1;31mE (5066) PID: i2c data received[0m
+
+[1;31mE (5079) PID: i2c data received[0m
+
+[1;31mE (5092) PID: i2c data received[0m
+

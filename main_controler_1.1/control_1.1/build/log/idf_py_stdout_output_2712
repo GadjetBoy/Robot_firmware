@@ -1,0 +1,249 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13f1ch ( 81692) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023f44 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023f68 vaddr=3ffbdb60 size=04e08h ( 19976) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028d78 vaddr=40080000 size=072a0h ( 29344) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=759f4h (481780) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a5a1c vaddr=400872a0 size=12a20h ( 76320) load[0m
+[0;32mI (347) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (347) boot: Disabling RNG early entropy source...[0m
+[0;32mI (358) cpu_start: Multicore app[0m
+[0;32mI (366) cpu_start: Pro cpu start user code[0m
+[0;32mI (366) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (366) app_init: Application information:[0m
+[0;32mI (366) app_init: Project name:     control_1.1[0m
+[0;32mI (370) app_init: App version:      v5.4[0m
+[0;32mI (374) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (379) app_init: ELF file SHA256:  32008db81...[0m
+[0;32mI (383) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (387) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (391) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (395) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (399) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (405) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (410) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (415) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (420) heap_init: At 3FFC4A50 len 0001B5B0 (109 KiB): DRAM[0m
+[0;32mI (426) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (431) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 40099CC0 len 00006340 (24 KiB): IRAM[0m
+[0;32mI (443) spi_flash: detected chip: generic[0m
+[0;32mI (445) spi_flash: flash io: dio[0m
+[0;32mI (449) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (454) main_task: Started on CPU0[0m
+[0;32mI (457) main_task: Calling app_main()[0m
+[0;32mI (460) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (468) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (472) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (478) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (496) I2C SLAVE: .............[0m
+
+[0;32mI (499) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (504) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (509) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (517) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (534) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (542) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (559) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (567) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (575) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (584) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (592) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (600) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (609) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (617) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (625) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (634) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (643) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (647) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;33mW (651) MOTOR_COMMANDS: recieve mode[0m
+[0;32mI (655) MOTOR_COMMANDS: Mode[1][0m
+[0;32mI (657) MOTOR_COMMANDS: crawl gate running[0m
+[0;32mI (661) MOTOR_COMMANDS: settingup the motor comnads complete[0m
+[0;32mI (667) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (685) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (687) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (690) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[1;31mE (697) PID: Error=28000.0, P=2800.0, I=7.0,D=0.0,Out=1023[0m
+[0;33mW (700) OSCILLATION: Motor 1 PID saturated: 1023, Error: 28000.0[0m
+[0;32mI (747) CASCADE: M[1]: PosT=28000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[1;31mE (747) PID: Error=28000.0, P=2800.0, I=21.0,D=-0.0,Out=1023[0m
+[0;33mW (748) OSCILLATION: Motor 1 PID saturated: 1023, Error: 28000.0[0m
+[1;31mE (797) PID: Error=28000.0, P=2800.0, I=35.0,D=-0.0,Out=1023[0m
+[0;33mW (798) OSCILLATION: Motor 1 PID saturated: 1023, Error: 28000.0[0m
+[1;31mE (847) PID: Error=26399.0, P=2639.9, I=48.6,D=-177.9,Out=1023[0m
+[0;33mW (848) OSCILLATION: Motor 1 PID saturated: 1023, Error: 26399.0[0m
+[0;32mI (848) CASCADE: M[1]: PosT=28000.0 Pos=1601.0| PWM=1023 Dir=1[0m
+[1;31mE (897) PID: Error=25836.0, P=2583.6, I=61.7,D=-82.3,Out=1023[0m
+[0;33mW (898) OSCILLATION: Motor 1 PID saturated: 1023, Error: 25836.0[0m
+[1;31mE (947) PID: Error=24829.0, P=2482.9, I=74.3,D=-121.0,Out=1023[0m
+[0;33mW (947) OSCILLATION: Motor 1 PID saturated: 1023, Error: 24829.0[0m
+[0;32mI (953) CASCADE: M[1]: PosT=28000.0 Pos=3171.0| PWM=1023 Dir=1[0m
+[1;31mE (997) PID: Error=24258.0, P=2425.8, I=86.6,D=-76.9,Out=1023[0m
+[0;33mW (998) OSCILLATION: Motor 1 PID saturated: 1023, Error: 24258.0[0m
+[1;31mE (1047) PID: Error=23439.0, P=2343.9, I=98.5,D=-99.5,Out=1023[0m
+[0;33mW (1048) OSCILLATION: Motor 1 PID saturated: 1023, Error: 23439.0[0m
+[0;32mI (1054) CASCADE: M[1]: PosT=28000.0 Pos=4561.0| PWM=1023 Dir=1[0m
+[0;32mI (1079) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1082) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1083) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1088) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1092) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1096) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[1;31mE (1097) PID: Error=22691.0, P=2269.1, I=100.0,D=-94.2,Out=1023[0m
+[0;32mI (1101) BLE UNIT: the gatts char length = 0[0m
+[0;33mW (1106) OSCILLATION: Motor 1 PID saturated: 1023, Error: 22691.0[0m
+[0;32mI (1110) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1123) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1127) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1102) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1134) main_task: Returned from app_main()[0m
+[1;31mE (1147) PID: Error=22310.0, P=2231.0, I=100.0,D=-52.8,Out=1023[0m
+[0;33mW (1148) OSCILLATION: Motor 1 PID saturated: 1023, Error: 22310.0[0m
+[0;32mI (1155) CASCADE: M[1]: PosT=28000.0 Pos=5690.0| PWM=1023 Dir=1[0m
+[1;31mE (1197) PID: Error=21283.0, P=2128.3, I=100.0,D=-120.0,Out=1023[0m
+[0;33mW (1198) OSCILLATION: Motor 1 PID saturated: 1023, Error: 21283.0[0m
+[1;31mE (1247) PID: Error=20710.0, P=2071.0, I=100.0,D=-77.0,Out=1023[0m
+[0;33mW (1248) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20710.0[0m
+[0;32mI (1256) CASCADE: M[1]: PosT=28000.0 Pos=7290.0| PWM=1023 Dir=1[0m
+[1;31mE (1297) PID: Error=19682.0, P=1968.2, I=100.0,D=-122.8,Out=1023[0m
+[0;33mW (1298) OSCILLATION: Motor 1 PID saturated: 1023, Error: 19682.0[0m
+[1;31mE (1347) PID: Error=19109.0, P=1910.9, I=100.0,D=-77.3,Out=1023[0m
+[0;33mW (1348) OSCILLATION: Motor 1 PID saturated: 1023, Error: 19109.0[0m
+[0;32mI (1356) CASCADE: M[1]: PosT=28000.0 Pos=8891.0| PWM=1023 Dir=1[0m
+[1;31mE (1397) PID: Error=18226.0, P=1822.6, I=100.0,D=-106.7,Out=1023[0m
+[0;33mW (1398) OSCILLATION: Motor 1 PID saturated: 1023, Error: 18226.0[0m
+[1;31mE (1447) PID: Error=17638.0, P=1763.8, I=100.0,D=-77.2,Out=1023[0m
+[0;33mW (1448) OSCILLATION: Motor 1 PID saturated: 1023, Error: 17638.0[0m
+[0;32mI (1456) CASCADE: M[1]: PosT=28000.0 Pos=10362.0| PWM=1023 Dir=1[0m
+[1;31mE (1497) PID: Error=17062.0, P=1706.2, I=100.0,D=-72.6,Out=1023[0m
+[0;33mW (1498) OSCILLATION: Motor 1 PID saturated: 1023, Error: 17062.0[0m
+[1;31mE (1547) PID: Error=16029.0, P=1602.9, I=100.0,D=-122.8,Out=1023[0m
+[0;33mW (1548) OSCILLATION: Motor 1 PID saturated: 1023, Error: 16029.0[0m
+[0;32mI (1556) CASCADE: M[1]: PosT=28000.0 Pos=11971.0| PWM=1023 Dir=1[0m
+[1;31mE (1597) PID: Error=15453.0, P=1545.3, I=100.0,D=-77.6,Out=1023[0m
+[0;33mW (1598) OSCILLATION: Motor 1 PID saturated: 1023, Error: 15453.0[0m
+[1;31mE (1647) PID: Error=14612.0, P=1461.2, I=100.0,D=-102.1,Out=1023[0m
+[0;33mW (1648) OSCILLATION: Motor 1 PID saturated: 1023, Error: 14612.0[0m
+[0;32mI (1656) CASCADE: M[1]: PosT=28000.0 Pos=13388.0| PWM=1023 Dir=1[0m
+[1;31mE (1697) PID: Error=13844.0, P=1384.4, I=100.0,D=-96.7,Out=1023[0m
+[0;33mW (1698) OSCILLATION: Motor 1 PID saturated: 1023, Error: 13844.0[0m
+[1;31mE (1747) PID: Error=13460.0, P=1346.0, I=100.0,D=-53.4,Out=1023[0m
+[0;33mW (1748) OSCILLATION: Motor 1 PID saturated: 1023, Error: 13460.0[0m
+[0;32mI (1756) CASCADE: M[1]: PosT=28000.0 Pos=14540.0| PWM=1023 Dir=1[0m
+[1;31mE (1797) PID: Error=12426.0, P=1242.6, I=100.0,D=-120.8,Out=1023[0m
+[0;33mW (1798) OSCILLATION: Motor 1 PID saturated: 1023, Error: 12426.0[0m
+[1;31mE (1847) PID: Error=11850.0, P=1185.0, I=100.0,D=-77.4,Out=1023[0m
+[0;33mW (1848) OSCILLATION: Motor 1 PID saturated: 1023, Error: 11850.0[0m
+[0;32mI (1856) CASCADE: M[1]: PosT=28000.0 Pos=16150.0| PWM=1023 Dir=1[0m
+[1;31mE (1897) PID: Error=11008.0, P=1100.8, I=100.0,D=-102.2,Out=1023[0m
+[0;33mW (1898) OSCILLATION: Motor 1 PID saturated: 1023, Error: 11008.0[0m
+[1;31mE (1947) PID: Error=10240.0, P=1024.0, I=100.0,D=-96.7,Out=1023[0m
+[0;33mW (1948) OSCILLATION: Motor 1 PID saturated: 1023, Error: 10240.0[0m
+[0;32mI (1956) CASCADE: M[1]: PosT=28000.0 Pos=17760.0| PWM=1023 Dir=1[0m
+[1;31mE (1997) PID: Error=9399.0, P=939.9, I=100.0,D=-104.2,Out=936[0m
+[0;33mW (1998) OSCILLATION: Motor 1 PID saturated: 936, Error: 9399.0[0m
+[1;31mE (2047) PID: Error=8646.0, P=864.6, I=100.0,D=-95.2,Out=869[0m
+[0;32mI (2056) CASCADE: M[1]: PosT=28000.0 Pos=19354.0| PWM=869 Dir=1[0m
+[1;31mE (2097) PID: Error=8283.0, P=828.3, I=100.0,D=-50.9,Out=877[0m
+[1;31mE (2147) PID: Error=7362.0, P=736.2, I=100.0,D=-108.0,Out=728[0m
+[0;32mI (2156) CASCADE: M[1]: PosT=28000.0 Pos=20638.0| PWM=728 Dir=1[0m
+[1;31mE (2197) PID: Error=6722.0, P=672.2, I=100.0,D=-83.1,Out=689[0m
+[1;31mE (2247) PID: Error=6215.0, P=621.5, I=100.0,D=-65.6,Out=656[0m
+[0;32mI (2256) CASCADE: M[1]: PosT=28000.0 Pos=21785.0| PWM=655 Dir=1[0m
+[1;31mE (2297) PID: Error=5653.0, P=565.3, I=100.0,D=-69.7,Out=596[0m
+[1;31mE (2347) PID: Error=5386.0, P=538.6, I=100.0,D=-37.4,Out=601[0m
+[0;32mI (2347) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2348) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (2356) CASCADE: M[1]: PosT=28000.0 Pos=22614.0| PWM=601 Dir=1[0m
+[1;31mE (2397) PID: Error=4707.0, P=470.7, I=100.0,D=-79.6,Out=491[0m
+[1;31mE (2447) PID: Error=4236.0, P=423.6, I=100.0,D=-61.2,Out=462[0m
+[0;32mI (2458) CASCADE: M[1]: PosT=28000.0 Pos=23764.0| PWM=462 Dir=1[0m
+[1;31mE (2497) PID: Error=3755.0, P=375.5, I=100.0,D=-60.2,Out=415[0m
+[1;31mE (2547) PID: Error=3447.0, P=344.7, I=100.0,D=-40.9,Out=404[0m
+[0;32mI (2558) CASCADE: M[1]: PosT=28000.0 Pos=24553.0| PWM=403 Dir=1[0m
+[1;31mE (2597) PID: Error=3155.0, P=315.5, I=100.0,D=-37.0,Out=379[0m
+[1;31mE (2647) PID: Error=2668.0, P=266.8, I=100.0,D=-58.2,Out=309[0m
+[0;32mI (2658) CASCADE: M[1]: PosT=28000.0 Pos=25332.0| PWM=400 Dir=1[0m
+[1;31mE (2697) PID: Error=2416.0, P=241.6, I=100.0,D=-34.5,Out=307[0m
+[1;31mE (2747) PID: Error=2066.0, P=206.6, I=100.0,D=-42.7,Out=264[0m
+[0;32mI (2758) CASCADE: M[1]: PosT=28000.0 Pos=25934.0| PWM=400 Dir=1[0m
+[1;31mE (2797) PID: Error=1764.0, P=176.4, I=100.0,D=-38.3,Out=238[0m
+[1;31mE (2847) PID: Error=1618.0, P=161.8, I=100.0,D=-20.5,Out=241[0m
+[0;32mI (2858) CASCADE: M[1]: PosT=28000.0 Pos=26382.0| PWM=400 Dir=1[0m
+[1;31mE (2897) PID: Error=1241.0, P=124.1, I=100.0,D=-44.2,Out=180[0m
+[1;31mE (2947) PID: Error=1040.0, P=104.0, I=100.0,D=-27.2,Out=177[0m
+[0;32mI (2958) CASCADE: M[1]: PosT=28000.0 Pos=26960.0| PWM=400 Dir=1[0m
+[1;31mE (2997) PID: Error=691.0, P=69.1, I=100.0,D=-41.8,Out=127[0m
+[1;31mE (3047) PID: Error=502.0, P=50.2, I=100.0,D=-25.6,Out=125[0m
+[0;32mI (3058) CASCADE: M[1]: PosT=28000.0 Pos=27498.0| PWM=400 Dir=1[0m
+[1;31mE (3097) PID: Error=234.0, P=23.4, I=100.0,D=-32.6,Out=91[0m
+[0;32mI (3147) TARGET: Motor 1 reached target: 28006.0[0m
+[0;32mI (3864) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (3864) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5399) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5399) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (6915) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (6915) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8450) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8450) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (9967) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (9967) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11518) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11518) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (13053) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (13053) I2C SLAVE: Data Received - Encoder values updated[0m
+

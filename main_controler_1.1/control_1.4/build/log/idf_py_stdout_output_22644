@@ -1,0 +1,1102 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Nov  3 2025 12:14:25[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=21dfch (138748) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=00031e24 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031e48 vaddr=3ffbdb60 size=04da8h ( 19880) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00036bf8 vaddr=40080000 size=09420h ( 37920) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=81a68h (531048) map[0m
+[0;32mI (345) esp_image: segment 5: paddr=000c1a90 vaddr=40089420 size=0fcf4h ( 64756) load[0m
+[0;32mI (382) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (382) boot: Disabling RNG early entropy source...[0m
+[0;32mI (393) cpu_start: Multicore app[0m
+[0;32mI (401) cpu_start: Pro cpu start user code[0m
+[0;32mI (401) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (401) app_init: Application information:[0m
+[0;32mI (402) app_init: Project name:     control_1.4[0m
+[0;32mI (406) app_init: App version:      v5.4-dirty[0m
+[0;32mI (410) app_init: Compile time:     Nov  6 2025 19:30:17[0m
+[0;32mI (415) app_init: ELF file SHA256:  20761f486...[0m
+[0;32mI (419) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (423) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (427) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (431) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (435) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (442) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (446) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (457) heap_init: At 3FFC7F00 len 00018100 (96 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (467) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 40099114 len 00006EEC (27 KiB): IRAM[0m
+[0;32mI (480) spi_flash: detected chip: generic[0m
+[0;32mI (482) spi_flash: flash io: dio[0m
+[0;32mI (486) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (490) main_task: Started on CPU0[0m
+[0;32mI (493) main_task: Calling app_main()[0m
+[0;32mI (496) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (504) i2c.common: new bus(0) at 0x3ffbcd28
+[0;32mI (508) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (614) I2C SLAVE: Setting up PWM and PID module[0m
+[1;31mE (614) RESET: CPU Reset reason: 1[0m
+[0;32mI (614) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (615) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (624) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (632) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (640) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (649) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (657) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (665) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (674) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (682) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (690) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (699) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (707) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (715) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (723) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (732) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (740) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (749) LEDC_PWM_UNIT: LEDC unit setiingI (764) UART_PID: UART initialized on port 0 at 115200 baud[0m
+[0;32mI (774) PID: Starting PID application...[0m
+[0;32mI (774) PID: PID application started successfully[0m
+[0;32mI (774) CPG: settingup the motor comnads[0m
+[0;32mI (774) CPG: Initializing CPG network...[0m
+[0;32mI (778) CPG: settingup the motor comnads complete[0m
+[1;31mE (780) PID: Receiving encoder values failed[0m
+[0;32mI (778) CPG: Mode change detected: 0[0m
+[0;32mI (787) BLE: Setting up BLE unit[0m
+[1;31mE (793) PID: Receiving encoder values failed[0m
+[0;32mI (790) CPG: Setting IDLE gait[0m
+[1;31mE (800) CPG: CPG task failed to get mutex![0m
+[1;31mE (803) PID: Receiving encoder values failed[0m
+[0;32mI (811) BTDM_INIT: BT controller compile version [20b459d][0m
+[1;31mE (814) PID: Receiving encoder values failed[0m
+[0;32mI (817) BTDM_INIT: Bluetooth MAC: 6c:c8:40:66:40:b2[0m
+[0;32mI (824) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[1;31mE (830) PID: Receiving encoder values failed[0m
+[1;31mE (838) PID: Receiving encoder values failed[0m
+[1;31mE (844) PID: Receiving encoder values failed[0m
+[1;31mE (850) PID: Receiving encoder values failed[0m
+[1;31mE (856) PID: Receiving encoder values failed[0m
+[1;31mE (862) PID: Receiving encoder values failed[0m
+[1;31mE (868) PID: Receiving encoder values failed[0m
+[1;31mE (874) PID: Receiving encoder values failed[0m
+[1;31mE (880) PID: Receiving encoder values failed[0m
+[1;31mE (886) PID: Receiving encoder values failed[0m
+[1;31mE (892) PID: Receiving encoder values failed[0m
+[1;31mE (898) PID: Receiving encoder values failed[0m
+[1;31mE (904) PID: Receiving encoder values failed[0m
+[1;31mE (910) PID: Receiving encoder values failed[0m
+[1;31mE (1151) PID: Receiving encoder values failed[0m
+[1;31mE (1157) PID: Receiving encoder values failed[0m
+[1;31mE (1166) PID: Receiving encoder values failed[0m
+[1;31mE (1179) PID: Receiving encoder values failed[0m
+[1;31mE (1180) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1191) PID: Received encoder[8]=0[0m
+[1;31mE (1194) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1195) PID: Received encoder[8]=0[0m
+[1;31mE (1204) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1204) PID: Received encoder[8]=0[0m
+[1;31mE (1212) PID: Receiving encoder values failed[0m
+[0;32mI (1214) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1223) I2C SLAVE: .............[0m
+
+[0;32mI (1217) PID: Received encoder[8]=0[0m
+[1;31mE (1216) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1238) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (1240) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[1;31mE (1242) PID: Receiving encoder values failed[0m
+[1;31mE (1245) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1252) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[0;32mI (1253) PID: Received encoder[8]=0[0m
+[1;31mE (1261) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+[1;31mE (1262) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1262) PID: Received encoder[8]=0[0m
+[0;32mI (1275) BLE: Unhandled GATTS event: 12[0m
+[1;31mE (1278) PID: Receiving encoder values failed[0m
+[1;31mE (1279) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1288) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[0;32mI (1292) PID: Received encoder[8]=0[0m
+[0;32mI (1294) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[1;31mE (1297) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1297) PID: Received encoder[8]=0[0m
+[0;32mI (1306) BLE: Unhandled GAP event: 6[0m
+[0;32mI (1310) BLE: TX CCCD Handle: 45[0m
+[1;31mE (1312) PID: Receiving encoder values failed[0m
+[1;31mE (1313) I2C SLAVE: i2c data received[0m
+
+[0;32mI (1321) PID: Received encoder[8]=0[0m
+[0;32mI (1320) BLE: BLE unit setup completed[0m
+[0;32mI (1327) I2C SLAVE: [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (1329) PID: Receiving encoder values failed[0m
+[1;31mE (1330) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1362) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1369) PID: Receiving encoder values failed[0m
+[1;31mE (1375) PID: Receiving encoder values failed[0m
+[1;31mE (1379) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1385) PID: Receiving encoder values failed[0m
+[1;31mE (1391) PID: Receiving encoder values failed[0m
+[1;31mE (1391) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1398) PID: Receiving encoder values failed[0m
+[1;31mE (1404) PID: Receiving encoder values failed[0m
+[1;31mE (1404) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1411) PID: Receiving encoder values failed[0m
+[1;31mE (1417) PID: Receiving encoder values failed[0m
+[1;31mE (1417) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1424) PID: Receiving encoder values failed[0m
+[1;31mE (1430) PID: Receiving encoder values failed[0m
+[1;31mE (1430) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1437) PID: Receiving encoder values failed[0m
+[1;31mE (1443) PID: Receiving encoder values failed[0m
+[1;31mE (1443) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1450) PID: Receiving encoder values failed[0m
+[1;31mE (1456) PID: Receiving encoder values failed[0m
+[1;31mE (1456) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1463) PID: Receiving encoder values failed[0m
+[1;31mE (1469) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1476) PID: Receiving encoder values failed[0m
+[1;31mE (1482) PID: Receiving encoder values failed[0m
+[1;31mE (1488) PID: Receiving encoder values failed[0m
+[1;31mE (1494) PID: Receiving encoder values failed[0m
+[1;31mE (1499) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1505) PID: Receiving encoder values failed[0m
+[1;31mE (1511) PID: Receiving encoder values failed[0m
+[1;31mE (1512) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1519) PID: Receiving encoder values failed[0m
+[1;31mE (1525) PID: Receiving encoder values failed[0m
+[1;31mE (1525) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1532) PID: Receiving encoder values failed[0m
+[1;31mE (1538) PID: Receiving encoder values failed[0m
+[1;31mE (1538) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1545) PID: Receiving encoder values failed[0m
+[1;31mE (1551) PID: Receiving encoder values failed[0m
+[1;31mE (1551) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1558) PID: Receiving encoder values failed[0m
+[1;31mE (1564) PID: Receiving encoder values failed[0m
+[1;31mE (1564) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1572) PID: Receiving encoder values failed[0m
+[1;31mE (1577) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1584) PID: Receiving encoder values failed[0m
+[1;31mE (1590) PID: Receiving encoder values failed[0m
+[1;31mE (1596) PID: Receiving encoder values failed[0m
+[1;31mE (1602) PID: Receiving encoder values failed[0m
+[1;31mE (1608) PID: Receiving encoder values failed[0m
+[1;31mE (1608) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1616) PID: Receiving encoder values failed[0m
+[1;31mE (1621) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1627) PID: Receiving encoder values failed[0m
+[1;31mE (1633) PID: Receiving encoder values failed[0m
+[1;31mE (1634) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1640) PID: Receiving encoder values failed[0m
+[1;31mE (1646) PID: Receiving encoder values failed[0m
+[1;31mE (1647) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1653) PID: Receiving encoder values failed[0m
+[1;31mE (1659) PID: Receiving encoder values failed[0m
+[1;31mE (1660) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1666) PID: Receiving encoder values failed[0m
+[1;31mE (1672) PID: Receiving encoder values failed[0m
+[1;31mE (1673) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1679) PID: Receiving encoder values failed[0m
+[1;31mE (1685) PID: Receiving encoder values failed[0m
+[1;31mE (1691) PID: Receiving encoder values failed[0m
+[1;31mE (1695) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1701) PID: Receiving encoder values failed[0m
+[1;31mE (1707) PID: Receiving encoder values failed[0m
+[1;31mE (1713) PID: Receiving encoder values failed[0m
+[1;31mE (1719) PID: Receiving encoder values failed[0m
+[1;31mE (1725) PID: Receiving encoder values failed[0m
+[1;31mE (1725) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1732) PID: Receiving encoder values failed[0m
+[1;31mE (1738) PID: Receiving encoder values failed[0m
+[1;31mE (1738) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1746) PID: Receiving encoder values failed[0m
+[1;31mE (1751) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1758) PID: Receiving encoder values failed[0m
+[1;31mE (1764) PID: Receiving encoder values failed[0m
+[1;31mE (1764) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1771) PID: Receiving encoder values failed[0m
+[1;31mE (1777) PID: Receiving encoder values failed[0m
+[1;31mE (1777) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1784) PID: Receiving encoder values failed[0m
+[1;31mE (1790) PID: Receiving encoder values failed[0m
+[1;31mE (1790) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1797) PID: Receiving encoder values failed[0m
+[1;31mE (1803) PID: Receiving encoder values failed[0m
+[1;31mE (1803) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1810) PID: Receiving encoder values failed[0m
+[1;31mE (1816) PID: Receiving encoder values failed[0m
+[1;31mE (1816) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1823) PID: Receiving encoder values failed[0m
+[1;31mE (1829) PID: Receiving encoder values failed[0m
+[1;31mE (1835) PID: Receiving encoder values failed[0m
+[1;31mE (1841) PID: Receiving encoder values failed[0m
+[1;31mE (1847) PID: Receiving encoder values failed[0m
+[1;31mE (1847) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1854) PID: Receiving encoder values failed[0m
+[1;31mE (1860) PID: Receiving encoder values failed[0m
+[1;31mE (1860) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1867) PID: Receiving encoder values failed[0m
+[1;31mE (1873) PID: Receiving encoder values failed[0m
+[1;31mE (1873) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1880) PID: Receiving encoder values failed[0m
+[1;31mE (1886) PID: Receiving encoder values failed[0m
+[1;31mE (1886) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1893) PID: Receiving encoder values failed[0m
+[1;31mE (1899) PID: Receiving encoder values failed[0m
+[1;31mE (1899) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1906) PID: Receiving encoder values failed[0m
+[1;31mE (1912) PID: Receiving encoder values failed[0m
+[1;31mE (1912) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1919) PID: Receiving encoder values failed[0m
+[1;31mE (1925) PID: Receiving encoder values failed[0m
+[1;31mE (1926) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1933) PID: Receiving encoder values failed[0m
+[1;31mE (1938) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1945) PID: Receiving encoder values failed[0m
+[1;31mE (1951) PID: Receiving encoder values failed[0m
+[1;31mE (1957) PID: Receiving encoder values failed[0m
+[1;31mE (1963) PID: Receiving encoder values failed[0m
+[1;31mE (1969) PID: Receiving encoder values failed[0m
+[1;31mE (1969) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1977) PID: Receiving encoder values failed[0m
+[1;31mE (1982) I2C SLAVE: i2c data received[0m
+
+[1;31mE (1988) PID: Receiving encoder values failed[0m
+[1;31mE (1994) PID: Receiving encoder values failed[0m
+[1;31mE (1995) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2001) PID: Receiving encoder values failed[0m
+[1;31mE (2007) PID: Receiving encoder values failed[0m
+[1;31mE (2008) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2014) PID: Receiving encoder values failed[0m
+[1;31mE (2020) PID: Receiving encoder values failed[0m
+[1;31mE (2021) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2027) PID: Receiving encoder values failed[0m
+[1;31mE (2033) PID: Receiving encoder values failed[0m
+[1;31mE (2034) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2040) PID: Receiving encoder values failed[0m
+[1;31mE (2046) PID: Receiving encoder values failed[0m
+[1;31mE (2047) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2053) PID: Receiving encoder values failed[0m
+[1;31mE (2059) PID: Receiving encoder values failed[0m
+[1;31mE (2061) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2068) PID: Receiving encoder values failed[0m
+[1;31mE (2074) PID: Receiving encoder values failed[0m
+[1;31mE (2080) PID: Receiving encoder values failed[0m
+[1;31mE (2086) PID: Receiving encoder values failed[0m
+[1;31mE (2090) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2097) PID: Receiving encoder values failed[0m
+[1;31mE (2103) PID: Receiving encoder values failed[0m
+[1;31mE (2103) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2110) PID: Receiving encoder values failed[0m
+[1;31mE (2116) PID: Receiving encoder values failed[0m
+[1;31mE (2116) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2124) PID: Receiving encoder values failed[0m
+[1;31mE (2129) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2136) PID: Receiving encoder values failed[0m
+[1;31mE (2142) PID: Receiving encoder values failed[0m
+[1;31mE (2142) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2149) PID: Receiving encoder values failed[0m
+[1;31mE (2156) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2162) PID: Receiving encoder values failed[0m
+[1;31mE (2168) PID: Receiving encoder values failed[0m
+[1;31mE (2169) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2175) PID: Receiving encoder values failed[0m
+[1;31mE (2181) PID: Receiving encoder values failed[0m
+[1;31mE (2182) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2188) PID: Receiving encoder values failed[0m
+[1;31mE (2195) PID: Receiving encoder values failed[0m
+[1;31mE (2201) PID: Receiving encoder values failed[0m
+[1;31mE (2207) PID: Receiving encoder values failed[0m
+[1;31mE (2212) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2219) PID: Receiving encoder values failed[0m
+[1;31mE (2225) PID: Receiving encoder values failed[0m
+[1;31mE (2225) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2232) PID: Receiving encoder values failed[0m
+[1;31mE (2238) PID: Receiving encoder values failed[0m
+[1;31mE (2238) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2246) PID: Receiving encoder values failed[0m
+[1;31mE (2251) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2258) PID: Receiving encoder values failed[0m
+[1;31mE (2264) PID: Receiving encoder values failed[0m
+[1;31mE (2264) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2271) PID: Receiving encoder values failed[0m
+[1;31mE (2277) PID: Receiving encoder values failed[0m
+[1;31mE (2277) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2284) PID: Receiving encoder values failed[0m
+[1;31mE (2290) PID: Receiving encoder values failed[0m
+[1;31mE (2290) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2297) PID: Receiving encoder values failed[0m
+[1;31mE (2303) PID: Receiving encoder values failed[0m
+[1;31mE (2303) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2310) PID: Receiving encoder values failed[0m
+[1;31mE (2316) PID: Receiving encoder values failed[0m
+[1;31mE (2322) PID: Receiving encoder values failed[0m
+[1;31mE (2329) PID: Receiving encoder values failed[0m
+[1;31mE (2334) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2340) PID: Receiving encoder values failed[0m
+[1;31mE (2346) PID: Receiving encoder values failed[0m
+[1;31mE (2347) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2353) PID: Receiving encoder values failed[0m
+[1;31mE (2359) PID: Receiving encoder values failed[0m
+[1;31mE (2360) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2366) PID: Receiving encoder values failed[0m
+[1;31mE (2372) PID: Receiving encoder values failed[0m
+[1;31mE (2373) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2379) PID: Receiving encoder values failed[0m
+[1;31mE (2385) PID: Receiving encoder values failed[0m
+[1;31mE (2386) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2392) PID: Receiving encoder values failed[0m
+[1;31mE (2398) PID: Receiving encoder values failed[0m
+[1;31mE (2399) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2405) PID: Receiving encoder values failed[0m
+[1;31mE (2411) PID: Receiving encoder values failed[0m
+[1;31mE (2412) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2418) PID: Receiving encoder values failed[0m
+[1;31mE (2424) PID: Receiving encoder values failed[0m
+[1;31mE (2425) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2431) PID: Receiving encoder values failed[0m
+[1;31mE (2437) PID: Receiving encoder values failed[0m
+[1;31mE (2443) PID: Receiving encoder values failed[0m
+[1;31mE (2449) PID: Receiving encoder values failed[0m
+[1;31mE (2455) PID: Receiving encoder values failed[0m
+[1;31mE (2455) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2462) PID: Receiving encoder values failed[0m
+[1;31mE (2468) PID: Receiving encoder values failed[0m
+[1;31mE (2468) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2475) PID: Receiving encoder values failed[0m
+[1;31mE (2481) PID: Receiving encoder values failed[0m
+[1;31mE (2482) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2488) PID: Receiving encoder values failed[0m
+[1;31mE (2494) PID: Receiving encoder values failed[0m
+[1;31mE (2495) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2501) PID: Receiving encoder values failed[0m
+[1;31mE (2507) PID: Receiving encoder values failed[0m
+[1;31mE (2508) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2514) PID: Receiving encoder values failed[0m
+[1;31mE (2520) PID: Receiving encoder values failed[0m
+[1;31mE (2521) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2527) PID: Receiving encoder values failed[0m
+[1;31mE (2533) PID: Receiving encoder values failed[0m
+[1;31mE (2534) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2540) PID: Receiving encoder values failed[0m
+[1;31mE (2546) PID: Receiving encoder values failed[0m
+[1;31mE (2547) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2553) PID: Receiving encoder values failed[0m
+[1;31mE (2559) PID: Receiving encoder values failed[0m
+[1;31mE (2565) PID: Receiving encoder values failed[0m
+[1;31mE (2571) PID: Receiving encoder values failed[0m
+[1;31mE (2577) PID: Receiving encoder values failed[0m
+[1;31mE (2577) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2584) PID: Receiving encoder values failed[0m
+[1;31mE (2590) PID: Receiving encoder values failed[0m
+[1;31mE (2590) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2597) PID: Receiving encoder values failed[0m
+[1;31mE (2603) PID: Receiving encoder values failed[0m
+[1;31mE (2603) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2610) PID: Receiving encoder values failed[0m
+[1;31mE (2616) PID: Receiving encoder values failed[0m
+[1;31mE (2616) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2623) PID: Receiving encoder values failed[0m
+[1;31mE (2629) PID: Receiving encoder values failed[0m
+[1;31mE (2630) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2637) PID: Receiving encoder values failed[0m
+[1;31mE (2642) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2649) PID: Receiving encoder values failed[0m
+[1;31mE (2655) PID: Receiving encoder values failed[0m
+[1;31mE (2655) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2662) PID: Receiving encoder values failed[0m
+[1;31mE (2668) PID: Receiving encoder values failed[0m
+[1;31mE (2668) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2675) PID: Receiving encoder values failed[0m
+[1;31mE (2681) PID: Receiving encoder values failed[0m
+[1;31mE (2687) PID: Receiving encoder values failed[0m
+[1;31mE (2693) PID: Receiving encoder values failed[0m
+[1;31mE (2699) PID: Receiving encoder values failed[0m
+[1;31mE (2699) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2706) PID: Receiving encoder values failed[0m
+[1;31mE (2712) PID: Receiving encoder values failed[0m
+[1;31mE (2712) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2719) PID: Receiving encoder values failed[0m
+[1;31mE (2725) PID: Receiving encoder values failed[0m
+[1;31mE (2725) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2732) PID: Receiving encoder values failed[0m
+[1;31mE (2738) PID: Receiving encoder values failed[0m
+[1;31mE (2738) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2745) PID: Receiving encoder values failed[0m
+[1;31mE (2751) PID: Receiving encoder values failed[0m
+[1;31mE (2751) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2758) PID: Receiving encoder values failed[0m
+[1;31mE (2764) PID: Receiving encoder values failed[0m
+[1;31mE (2764) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2772) PID: Receiving encoder values failed[0m
+[1;31mE (2777) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2784) PID: Receiving encoder values failed[0m
+[1;31mE (2790) PID: Receiving encoder values failed[0m
+[1;31mE (2790) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2797) PID: Receiving encoder values failed[0m
+[1;31mE (2803) PID: Receiving encoder values failed[0m
+[1;31mE (2809) PID: Receiving encoder values failed[0m
+[1;31mE (2815) PID: Receiving encoder values failed[0m
+[1;31mE (2821) PID: Receiving encoder values failed[0m
+[1;31mE (2821) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2828) PID: Receiving encoder values failed[0m
+[1;31mE (2834) PID: Receiving encoder values failed[0m
+[1;31mE (2834) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2841) PID: Receiving encoder values failed[0m
+[1;31mE (2847) PID: Receiving encoder values failed[0m
+[1;31mE (2847) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2854) PID: Receiving encoder values failed[0m
+[1;31mE (2860) PID: Receiving encoder values failed[0m
+[1;31mE (2860) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2868) PID: Receiving encoder values failed[0m
+[1;31mE (2873) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2879) PID: Receiving encoder values failed[0m
+[1;31mE (2885) PID: Receiving encoder values failed[0m
+[1;31mE (2886) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2892) PID: Receiving encoder values failed[0m
+[1;31mE (2898) PID: Receiving encoder values failed[0m
+[1;31mE (2899) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2905) PID: Receiving encoder values failed[0m
+[1;31mE (2911) PID: Receiving encoder values failed[0m
+[1;31mE (2912) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2918) PID: Receiving encoder values failed[0m
+[1;31mE (2924) PID: Receiving encoder values failed[0m
+[1;31mE (2930) PID: Receiving encoder values failed[0m
+[1;31mE (2936) PID: Receiving encoder values failed[0m
+[1;31mE (2942) PID: Receiving encoder values failed[0m
+[1;31mE (2942) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2949) PID: Receiving encoder values failed[0m
+[1;31mE (2955) PID: Receiving encoder values failed[0m
+[1;31mE (2955) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2963) PID: Receiving encoder values failed[0m
+[1;31mE (2968) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2975) PID: Receiving encoder values failed[0m
+[1;31mE (2981) PID: Receiving encoder values failed[0m
+[1;31mE (2981) I2C SLAVE: i2c data received[0m
+
+[1;31mE (2988) PID: Receiving encoder values failed[0m
+[1;31mE (2994) PID: Receiving encoder values failed[0m
+[1;31mE (2994) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3001) PID: Receiving encoder values failed[0m
+[1;31mE (3007) PID: Receiving encoder values failed[0m
+[1;31mE (3007) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3014) PID: Receiving encoder values failed[0m
+[1;31mE (3020) PID: Receiving encoder values failed[0m
+[1;31mE (3020) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3027) PID: Receiving encoder values failed[0m
+[1;31mE (3033) PID: Receiving encoder values failed[0m
+[1;31mE (3033) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3040) PID: Receiving encoder values failed[0m
+[1;31mE (3046) PID: Receiving encoder values failed[0m
+[1;31mE (3052) PID: Receiving encoder values failed[0m
+[1;31mE (3058) PID: Receiving encoder values failed[0m
+[1;31mE (3064) PID: Receiving encoder values failed[0m
+[1;31mE (3064) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3071) PID: Receiving encoder values failed[0m
+[1;31mE (3077) PID: Receiving encoder values failed[0m
+[1;31mE (3077) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3084) PID: Receiving encoder values failed[0m
+[1;31mE (3090) PID: Receiving encoder values failed[0m
+[1;31mE (3090) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3097) PID: Receiving encoder values failed[0m
+[1;31mE (3103) PID: Receiving encoder values failed[0m
+[1;31mE (3103) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3110) PID: Receiving encoder values failed[0m
+[1;31mE (3116) PID: Receiving encoder values failed[0m
+[1;31mE (3116) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3123) PID: Receiving encoder values failed[0m
+[1;31mE (3129) PID: Receiving encoder values failed[0m
+[1;31mE (3129) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3137) PID: Receiving encoder values failed[0m
+[1;31mE (3142) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3149) PID: Receiving encoder values failed[0m
+[1;31mE (3155) PID: Receiving encoder values failed[0m
+[1;31mE (3155) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3162) PID: Receiving encoder values failed[0m
+[1;31mE (3168) PID: Receiving encoder values failed[0m
+[1;31mE (3174) PID: Receiving encoder values failed[0m
+[1;31mE (3181) PID: Receiving encoder values failed[0m
+[1;31mE (3186) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3192) PID: Receiving encoder values failed[0m
+[1;31mE (3198) PID: Receiving encoder values failed[0m
+[1;31mE (3199) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3205) PID: Receiving encoder values failed[0m
+[1;31mE (3211) PID: Receiving encoder values failed[0m
+[1;31mE (3212) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3218) PID: Receiving encoder values failed[0m
+[1;31mE (3224) PID: Receiving encoder values failed[0m
+[1;31mE (3225) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3231) PID: Receiving encoder values failed[0m
+[1;31mE (3237) PID: Receiving encoder values failed[0m
+[1;31mE (3238) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3244) PID: Receiving encoder values failed[0m
+[1;31mE (3250) PID: Receiving encoder values failed[0m
+[1;31mE (3251) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3257) PID: Receiving encoder values failed[0m
+[1;31mE (3263) PID: Receiving encoder values failed[0m
+[1;31mE (3264) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3270) PID: Receiving encoder values failed[0m
+[1;31mE (3276) PID: Receiving encoder values failed[0m
+[1;31mE (3277) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3283) PID: Receiving encoder values failed[0m
+[1;31mE (3289) PID: Receiving encoder values failed[0m
+[1;31mE (3295) PID: Receiving encoder values failed[0m
+[1;31mE (3301) PID: Receiving encoder values failed[0m
+[1;31mE (3307) PID: Receiving encoder values failed[0m
+[1;31mE (3307) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3314) PID: Receiving encoder values failed[0m
+[1;31mE (3320) PID: Receiving encoder values failed[0m
+[1;31mE (3320) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3327) PID: Receiving encoder values failed[0m
+[1;31mE (3333) PID: Receiving encoder values failed[0m
+[1;31mE (3333) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3340) PID: Receiving encoder values failed[0m
+[1;31mE (3346) PID: Receiving encoder values failed[0m
+[1;31mE (3346) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3353) PID: Receiving encoder values failed[0m
+[1;31mE (3359) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3366) PID: Receiving encoder values failed[0m
+[1;31mE (3372) PID: Receiving encoder values failed[0m
+[1;31mE (3372) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3379) PID: Receiving encoder values failed[0m
+[1;31mE (3385) PID: Receiving encoder values failed[0m
+[1;31mE (3385) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3392) PID: Receiving encoder values failed[0m
+[1;31mE (3398) PID: Receiving encoder values failed[0m
+[1;31mE (3399) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3405) PID: Receiving encoder values failed[0m
+[1;31mE (3411) PID: Receiving encoder values failed[0m
+[1;31mE (3417) PID: Receiving encoder values failed[0m
+[1;31mE (3423) PID: Receiving encoder values failed[0m
+[1;31mE (3429) PID: Receiving encoder values failed[0m
+[1;31mE (3429) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3436) PID: Receiving encoder values failed[0m
+[1;31mE (3442) PID: Receiving encoder values failed[0m
+[1;31mE (3442) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3449) PID: Receiving encoder values failed[0m
+[1;31mE (3455) PID: Receiving encoder values failed[0m
+[1;31mE (3455) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3462) PID: Receiving encoder values failed[0m
+[1;31mE (3468) PID: Receiving encoder values failed[0m
+[1;31mE (3468) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3475) PID: Receiving encoder values failed[0m
+[1;31mE (3481) PID: Receiving encoder values failed[0m
+[1;31mE (3481) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3488) PID: Receiving encoder values failed[0m
+[1;31mE (3494) PID: Receiving encoder values failed[0m
+[1;31mE (3494) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3502) PID: Receiving encoder values failed[0m
+[1;31mE (3507) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3514) PID: Receiving encoder values failed[0m
+[1;31mE (3520) PID: Receiving encoder values failed[0m
+[1;31mE (3520) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3527) PID: Receiving encoder values failed[0m
+[1;31mE (3533) PID: Receiving encoder values failed[0m
+[1;31mE (3539) PID: Receiving encoder values failed[0m
+[1;31mE (3545) PID: Receiving encoder values failed[0m
+[1;31mE (3551) PID: Receiving encoder values failed[0m
+[1;31mE (3551) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3558) PID: Receiving encoder values failed[0m
+[1;31mE (3564) PID: Receiving encoder values failed[0m
+[1;31mE (3564) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3571) PID: Receiving encoder values failed[0m
+[1;31mE (3577) PID: Receiving encoder values failed[0m
+[1;31mE (3577) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3584) PID: Receiving encoder values failed[0m
+[1;31mE (3590) PID: Receiving encoder values failed[0m
+[1;31mE (3590) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3597) PID: Receiving encoder values failed[0m
+[1;31mE (3603) PID: Receiving encoder values failed[0m
+[1;31mE (3603) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3610) PID: Receiving encoder values failed[0m
+[1;31mE (3616) PID: Receiving encoder values failed[0m
+[1;31mE (3616) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3623) PID: Receiving encoder values failed[0m
+[1;31mE (3629) PID: Receiving encoder values failed[0m
+[1;31mE (3629) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3637) PID: Receiving encoder values failed[0m
+[1;31mE (3642) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3648) PID: Receiving encoder values failed[0m
+[1;31mE (3654) PID: Receiving encoder values failed[0m
+[1;31mE (3660) PID: Receiving encoder values failed[0m
+[1;31mE (3666) PID: Receiving encoder values failed[0m
+[1;31mE (3672) PID: Receiving encoder values failed[0m
+[1;31mE (3672) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3679) PID: Receiving encoder values failed[0m
+[1;31mE (3685) PID: Receiving encoder values failed[0m
+[1;31mE (3685) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3692) PID: Receiving encoder values failed[0m
+[1;31mE (3698) PID: Receiving encoder values failed[0m
+[1;31mE (3699) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3705) PID: Receiving encoder values failed[0m
+[1;31mE (3711) PID: Receiving encoder values failed[0m
+[1;31mE (3712) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3718) PID: Receiving encoder values failed[0m
+[1;31mE (3724) PID: Receiving encoder values failed[0m
+[1;31mE (3725) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3731) PID: Receiving encoder values failed[0m
+[1;31mE (3737) PID: Receiving encoder values failed[0m
+[1;31mE (3738) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3744) PID: Receiving encoder values failed[0m
+[1;31mE (3750) PID: Receiving encoder values failed[0m
+[1;31mE (3751) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3757) PID: Receiving encoder values failed[0m
+[1;31mE (3764) PID: Receiving encoder values failed[0m
+[1;31mE (3765) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3772) PID: Receiving encoder values failed[0m
+[1;31mE (3778) PID: Receiving encoder values failed[0m
+[1;31mE (3784) PID: Receiving encoder values failed[0m
+[1;31mE (3790) PID: Receiving encoder values failed[0m
+[1;31mE (3794) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3801) PID: Receiving encoder values failed[0m
+[1;31mE (3807) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3814) PID: Receiving encoder values failed[0m
+[1;31mE (3820) PID: Receiving encoder values failed[0m
+[1;31mE (3820) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3827) PID: Receiving encoder values failed[0m
+[1;31mE (3833) PID: Receiving encoder values failed[0m
+[1;31mE (3833) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3840) PID: Receiving encoder values failed[0m
+[1;31mE (3846) PID: Receiving encoder values failed[0m
+[1;31mE (3846) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3853) PID: Receiving encoder values failed[0m
+[1;31mE (3859) PID: Receiving encoder values failed[0m
+[1;31mE (3859) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3867) PID: Receiving encoder values failed[0m
+[1;31mE (3872) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3879) PID: Receiving encoder values failed[0m
+[1;31mE (3885) PID: Receiving encoder values failed[0m
+[1;31mE (3885) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3892) PID: Receiving encoder values failed[0m
+[1;31mE (3898) PID: Receiving encoder values failed[0m
+[1;31mE (3904) PID: Receiving encoder values failed[0m
+[1;31mE (3910) PID: Receiving encoder values failed[0m
+[1;31mE (3916) PID: Receiving encoder values failed[0m
+[1;31mE (3916) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3923) PID: Receiving encoder values failed[0m
+[1;31mE (3929) PID: Receiving encoder values failed[0m
+[1;31mE (3929) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3936) PID: Receiving encoder values failed[0m
+[1;31mE (3942) PID: Receiving encoder values failed[0m
+[1;31mE (3942) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3950) PID: Receiving encoder values failed[0m
+[1;31mE (3955) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3961) PID: Receiving encoder values failed[0m
+[1;31mE (3967) PID: Receiving encoder values failed[0m
+[1;31mE (3968) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3974) PID: Receiving encoder values failed[0m
+[1;31mE (3980) PID: Receiving encoder values failed[0m
+[1;31mE (3981) I2C SLAVE: i2c data received[0m
+
+[1;31mE (3987) PID: Receiving encoder values failed[0m
+[1;31mE (3993) PID: Receiving encoder values failed[0m
+[1;31mE (3994) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4000) PID: Receiving encoder values failed[0m
+[1;31mE (4006) PID: Receiving encoder values failed[0m
+[1;31mE (4007) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4013) PID: Receiving encoder values failed[0m
+[1;31mE (4019) PID: Receiving encoder values failed[0m
+[1;31mE (4025) PID: Receiving encoder values failed[0m
+[1;31mE (4031) PID: Receiving encoder values failed[0m
+[1;31mE (4037) PID: Receiving encoder values failed[0m
+[1;31mE (4038) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4044) PID: Receiving encoder values failed[0m
+[1;31mE (4050) PID: Receiving encoder values failed[0m
+[1;31mE (4051) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4057) PID: Receiving encoder values failed[0m
+[1;31mE (4063) PID: Receiving encoder values failed[0m
+[1;31mE (4064) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4070) PID: Receiving encoder values failed[0m
+[1;31mE (4076) PID: Receiving encoder values failed[0m
+[1;31mE (4077) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4084) PID: Receiving encoder values failed[0m
+[1;31mE (4090) PID: Receiving encoder values failed[0m
+[1;31mE (4090) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4097) PID: Receiving encoder values failed[0m
+[1;31mE (4103) PID: Receiving encoder values failed[0m
+[1;31mE (4103) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4110) PID: Receiving encoder values failed[0m
+[1;31mE (4116) PID: Receiving encoder values failed[0m
+[1;31mE (4116) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4123) PID: Receiving encoder values failed[0m
+[1;31mE (4129) PID: Receiving encoder values failed[0m
+[1;31mE (4129) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4136) PID: Receiving encoder values failed[0m
+[1;31mE (4142) PID: Receiving encoder values failed[0m
+[1;31mE (4148) PID: Receiving encoder values failed[0m
+[1;31mE (4154) PID: Receiving encoder values failed[0m
+[1;31mE (4159) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4166) PID: Receiving encoder values failed[0m
+[1;31mE (4172) PID: Receiving encoder values failed[0m
+[1;31mE (4172) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4180) PID: Receiving encoder values failed[0m
+[1;31mE (4185) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4192) PID: Receiving encoder values failed[0m
+[1;31mE (4198) PID: Receiving encoder values failed[0m
+[1;31mE (4198) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4205) PID: Receiving encoder values failed[0m
+[1;31mE (4211) PID: Receiving encoder values failed[0m
+[1;31mE (4211) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4219) PID: Receiving encoder values failed[0m
+[1;31mE (4224) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4231) PID: Receiving encoder values failed[0m
+[1;31mE (4237) PID: Receiving encoder values failed[0m
+[1;31mE (4237) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4244) PID: Receiving encoder values failed[0m
+[1;31mE (4250) PID: Receiving encoder values failed[0m
+[1;31mE (4250) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4257) PID: Receiving encoder values failed[0m
+[1;31mE (4263) PID: Receiving encoder values failed[0m
+[1;31mE (4269) PID: Receiving encoder values failed[0m
+[1;31mE (4275) PID: Receiving encoder values failed[0m
+[1;31mE (4281) PID: Receiving encoder values failed[0m
+[1;31mE (4281) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4288) PID: Receiving encoder values failed[0m
+[1;31mE (4294) PID: Receiving encoder values failed[0m
+[1;31mE (4294) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4301) PID: Receiving encoder values failed[0m
+[1;31mE (4307) PID: Receiving encoder values failed[0m
+[1;31mE (4307) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4315) PID: Receiving encoder values failed[0m
+[1;31mE (4320) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4327) PID: Receiving encoder values failed[0m
+[1;31mE (4333) PID: Receiving encoder values failed[0m
+[1;31mE (4333) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4340) PID: Receiving encoder values failed[0m
+[1;31mE (4346) PID: Receiving encoder values failed[0m
+[1;31mE (4346) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4353) PID: Receiving encoder values failed[0m
+[1;31mE (4359) PID: Receiving encoder values failed[0m
+[1;31mE (4359) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4366) PID: Receiving encoder values failed[0m
+[1;31mE (4372) PID: Receiving encoder values failed[0m
+[1;31mE (4372) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4379) PID: Receiving encoder values failed[0m
+[1;31mE (4385) PID: Receiving encoder values failed[0m
+[1;31mE (4391) PID: Receiving encoder values failed[0m
+[1;31mE (4397) PID: Receiving encoder values failed[0m
+[1;31mE (4403) PID: Receiving encoder values failed[0m
+[1;31mE (4403) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4410) PID: Receiving encoder values failed[0m
+[1;31mE (4416) PID: Receiving encoder values failed[0m
+[1;31mE (4416) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4423) PID: Receiving encoder values failed[0m
+[1;31mE (4429) PID: Receiving encoder values failed[0m
+[1;31mE (4429) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4436) PID: Receiving encoder values failed[0m
+[1;31mE (4442) PID: Receiving encoder values failed[0m
+[1;31mE (4442) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4450) PID: Receiving encoder values failed[0m
+[1;31mE (4455) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4461) PID: Receiving encoder values failed[0m
+[1;31mE (4467) PID: Receiving encoder values failed[0m
+[1;31mE (4468) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4474) PID: Receiving encoder values failed[0m
+[1;31mE (4480) PID: Receiving encoder values failed[0m
+[1;31mE (4481) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4487) PID: Receiving encoder values failed[0m
+[1;31mE (4493) PID: Receiving encoder values failed[0m
+[1;31mE (4494) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4500) PID: Receiving encoder values failed[0m
+[1;31mE (4506) PID: Receiving encoder values failed[0m
+[1;31mE (4512) PID: Receiving encoder values failed[0m
+[1;31mE (4518) PID: Receiving encoder values failed[0m
+[1;31mE (4524) PID: Receiving encoder values failed[0m
+[1;31mE (4524) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4531) PID: Receiving encoder values failed[0m
+[1;31mE (4537) PID: Receiving encoder values failed[0m
+[1;31mE (4537) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4544) PID: Receiving encoder values failed[0m
+[1;31mE (4550) PID: Receiving encoder values failed[0m
+[1;31mE (4550) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4557) PID: Receiving encoder values failed[0m
+[1;31mE (4563) PID: Receiving encoder values failed[0m
+[1;31mE (4563) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4570) PID: Receiving encoder values failed[0m
+[1;31mE (4576) PID: Receiving encoder values failed[0m
+[1;31mE (4576) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4583) PID: Receiving encoder values failed[0m
+[1;31mE (4589) PID: Receiving encoder values failed[0m
+[1;31mE (4589) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4596) PID: Receiving encoder values failed[0m
+[1;31mE (4602) PID: Receiving encoder values failed[0m
+[1;31mE (4602) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4609) PID: Receiving encoder values failed[0m
+[1;31mE (4615) PID: Receiving encoder values failed[0m
+[1;31mE (4616) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4622) PID: Receiving encoder values failed[0m
+[1;31mE (4628) PID: Receiving encoder values failed[0m
+[1;31mE (4634) PID: Receiving encoder values failed[0m
+[1;31mE (4640) PID: Receiving encoder values failed[0m
+[1;31mE (4646) PID: Receiving encoder values failed[0m
+[1;31mE (4646) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4653) PID: Receiving encoder values failed[0m
+[1;31mE (4659) PID: Receiving encoder values failed[0m
+[1;31mE (4659) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4666) PID: Receiving encoder values failed[0m
+[1;31mE (4672) I2C SLAVE: i2c data received[0m
+
+[1;31mE (4679) PID: Receiving encoder values failed[0m
+[1;31mE (4685) PID: Receiving encoder values failed[0m

@@ -1,0 +1,24 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM13 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM13 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40082d1b: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:133
+[0m
+[0;33m--- 0x40081cad: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40090cc1: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x40096f49: abort at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/abort.c:38
+0x40082d1b: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:133
+0x40082e59: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40082ed2: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x40142c7b: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4013b175: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x40150569: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40096eb9: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x401225dd: ledc_set_duty at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_ledc/src/ledc.c:1056 (discriminator 1)
+0x400dafae: drive_motor at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c:93
+0x400db19c: position_loop_task at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c:217
+0x40091779: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0m

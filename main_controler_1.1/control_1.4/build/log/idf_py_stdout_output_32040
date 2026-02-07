@@ -1,0 +1,41 @@
+[1/14] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\main_controler_1.1\control_1.4\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6560 bytes. 0xaa0 bytes (9%) free.
+[2/14] No install step for 'bootloader'
+[3/14] Completed 'bootloader'
+[4/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/PWM.c.obj
+[5/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/PID.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c: In function 'position_loop_task':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c:146:34: warning: passing argument 2 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  146 |         memcpy(&current_encoders,front_buf,sizeof(current_encoders));
+      |                                  ^~~~~~~~~
+In file included from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/control_1.4.h:5,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.h:3,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/PID.c:1:
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:36: note: expected 'const void * restrict' but argument is of type 'volatile int32_t *' {aka 'volatile long int *'}
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                                    ^
+[6/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/control_1.4.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/control_1.4.c: In function 'Data_Recive_task':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/control_1.4.c:149:20: warning: passing argument 1 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  149 |             memcpy(back_buf,&msg.packet,sizeof(msg.packet));
+      |                    ^~~~~~~~
+In file included from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/control_1.4.h:5,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/main/control_1.4.c:1:
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:18: note: expected 'void * restrict' but argument is of type 'volatile int32_t *' {aka 'volatile long int *'}
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                  ^
+[7/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/UART.c.obj
+[8/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/CPG.c.obj
+[9/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/BLE.c.obj
+[10/14] Linking C static library esp-idf\main\libmain.a
+[11/14] Generating ld/sections.ld
+[12/14] Linking CXX executable control_1.4.elf
+[13/14] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/control_1.4.bin
+[14/14] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\main_controler_1.1\control_1.4\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/main_controler_1.1/control_1.4/build/control_1.4.bin"
+control_1.4.bin binary size 0xc1920 bytes. Smallest app partition is 0x100000 bytes. 0x3e6e0 bytes (24%) free.

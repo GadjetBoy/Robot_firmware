@@ -1,0 +1,3169 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (205) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (205) app_init: Application information:[0m
+[0;32mI (205) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (227) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (239) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (250) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+I (219) app_init: ELF file SHA256:  f9908cb73...
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+I (273) spi_flash: detected chip: generic
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (286) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (294) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (303) uart: queue free spaces: 20[0m
+[1;31mE (306) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[1;31mE (305) uart: uart_set_rx_full_threshold(1873): rx fifo full threshold value error[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d5df0
+file: "/IDF/Project_Code/main_controler_1.1/control_1.7/main/control_1.7.c" line 56
+func: uart_init
+expression: uart_set_rx_full_threshold(UART_PORT_NUM, UART_DMA_RX_SIZE / 2)
+
+abort() was called at PC 0x4008733f on core 0
+
+
+Backtrace: 0x40081a65:0x3ffb49a0 0x40087349:0x3ffb49c0 0x4008d715:0x3ffb49e0 0x4008733f:0x3ffb4a50 0x400d5df0:0x3ffb4a80 0x400d5f10:0x3ffb4ac0 0x400e631c:0x3ffb4af0 0x40087dc1:0x3ffb4b20
+
+
+
+
+ELF file SHA256: f9908cb73
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0bd64h ( 48484) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001bd8c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001bdb0 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e3a4 vaddr=40080000 size=01c74h (  7284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17668h ( 95848) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=00037690 vaddr=40081c74 size=0d224h ( 53796) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (206) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  f9908cb73...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (240) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (251) heap_init: At 3FFB3800 len 0002C800 (178 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (274) spi_flash: detected chip: generic[0m

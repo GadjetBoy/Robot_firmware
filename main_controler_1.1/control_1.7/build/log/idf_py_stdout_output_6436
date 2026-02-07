@@ -1,0 +1,567 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c11ch ( 49436) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c144 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001c168 vaddr=3ffb0000 size=0261ch (  9756) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e78c vaddr=40080000 size=0188ch (  6284) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17d84h ( 97668) map[0m
+[0;32mI (159) esp_image: segment 5: paddr=00037dac vaddr=4008188c size=0d984h ( 55684) load[0m
+[0;32mI (188) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (188) boot: Disabling RNG early entropy source...[0m
+[0;32mI (199) cpu_start: Multicore app[0m
+[0;32mI (207) cpu_start: Pro cpu start user code[0m
+[0;32mI (207) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) app_init: Application information:[0m
+[0;32mI (207) app_init: Project name:     control_1.7[0m
+[0;32mI (211) app_init: App version:      v5.4-dirty[0m
+[0;32mI (216) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (221) app_init: ELF file SHA256:  9f2b5d797...[0m
+[0;32mI (225) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (229) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (233) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (237) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (241) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFB4870 len 0002B790 (173 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (268) heap_init: At 4008F210 len 00010DF0 (67 KiB): IRAM[0m
+[0;32mI (275) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;32mI (281) main_task: Started on CPU0[0m
+[0;32mI (284) main_task: Calling app_main()[0m
+[0;32mI (287) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (295) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (304) uart: queue free spaces: 40[0m
+[0;32mI (308) UART_SLAVE_DMA: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (322) UART_SLAVE_DMA: Setting up PWM and PID module[0m
+[0;32mI (322) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (322) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (331) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (339) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (347) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (356) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (364) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (381) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (389) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (397) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (406) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (414) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (422) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (430) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (439) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (447) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (576) MOTOR_SET: Starting PID application...[0m
+[0;32mI (676) MOTOR_SET: Motor timer started at 5000.00 Hz[0m
+[0;32mI (681) MOTOR_SET: PID application started successfully[0m
+[1;31mE (696) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[1;31mE (714) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (732) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (750) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (769) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (787) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (804) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (824) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (842) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (861) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (880) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (899) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (917) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (934) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (952) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (972) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (991) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1009) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1028) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1048) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1066) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1085) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1105) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1123) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1141) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1160) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1178) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1195) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1215) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1233) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1252) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1272) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1290) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1310) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1328) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1348) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1366) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1383) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1402) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1420) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1438) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1455) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1475) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1493) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1511) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1530) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1548) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1565) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1585) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[0;33mW (1597) UART_SLAVE_DMA: HW FIFO overflow - flushed & reset[0m
+[1;31mE (1605) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1622) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1642) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1660) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1678) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1698) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1717) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1735) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1754) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1771) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1791) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1811) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1829) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1847) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1867) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1886) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1905) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1923) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1942) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1961) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1979) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (1999) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2017) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2034) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2053) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2071) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2088) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2106) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2126) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2144) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2161) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2180) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2199) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2216) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2233) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2253) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2270) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2288) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2308) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2327) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2346) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2365) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2381) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2400) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2419) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2436) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2453) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2473) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2491) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2508) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2528) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2546) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2563) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2582) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2601) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2618) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2636) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2655) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2672) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2689) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2709) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2727) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2744) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2765) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2783) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2802) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2821) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2838) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2858) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2876) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2895) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2915) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2933) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2952) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2971) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (2989) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3007) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3027) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3045) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[0;32mI (3058) UART_SLAVE_DMA: Event #100: Rx 3740 bytes, buf used 1692/2048 (82.6%)[0m
+[1;31mE (3065) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3083) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3101) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3120) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3138) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3156) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3176) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3195) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3214) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3233) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3251) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3267) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3287) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3305) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3322) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3341) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3360) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3378) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3398) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3415) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3431) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3451) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3469) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3487) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[0;33mW (3496) UART_SLAVE_DMA: HW FIFO overflow - flushed & reset[0m
+[1;31mE (3507) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3525) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3544) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3563) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3581) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3599) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3619) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3637) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3654) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3673) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3692) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3709) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3727) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3747) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3766) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3784) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3803) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3823) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3841) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3861) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3879) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3896) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3916) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3934) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3951) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3970) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (3989) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4006) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4025) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4044) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4061) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4078) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4098) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4116) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4135) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4155) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4173) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4192) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4211) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4229) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4246) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4267) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4285) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4304) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4322) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4340) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4359) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4377) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4394) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4414) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4432) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4452) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4471) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4488) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4506) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4525) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4543) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4561) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4581) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4599) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4616) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4636) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4655) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4674) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4692) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4709) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4728) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4747) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4764) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4782) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4801) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4819) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4837) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4857) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4875) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4892) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4912) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4930) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4947) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4966) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (4985) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5004) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5022) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5042) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5060) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5079) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5097) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5115) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5134) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5152) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5171) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5191) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5210) MOTOR_SET: Applied to motor[4]: pwm=-1023 dir=-1[0m
+[1;31mE (5229) MOTOR_SET: Applied to motor[4]: pwm=-1020 dir=-1[0m
+[1;31mE (5248) MOTOR_SET: Applied to motor[4]: pwm=273 dir=1[0m
+[1;31mE (5265) MOTOR_SET: Applied to motor[4]: pwm=480 dir=1[0m
+[1;31mE (5283) MOTOR_SET: Applied to motor[4]: pwm=638 dir=1[0m
+[1;31mE (5303) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5321) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5339) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[0;33mW (5346) UART_SLAVE_DMA: HW FIFO overflow - flushed & reset[0m
+[1;31mE (5358) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5377) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5395) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5412) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5431) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5449) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5467) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5486) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5504) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5520) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[0;32mI (5536) UART_SLAVE_DMA: Event #200: Rx 4096 bytes, buf used 0/2048 (0.0%)[0m
+[1;31mE (5540) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5560) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5578) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5595) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5616) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5634) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5653) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5671) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5675) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (5675) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (5675) task_wdt: Tasks currently running:[0m
+[1;31mE (5675) task_wdt: CPU 0: pos_loop[0m
+[1;31mE (5675) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (5675) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8B76:0x3FFB1080 0x400D8F38:0x3FFB10A0 0x40083BD1:0x3FFB10D0 0x4000BFED:0x3FFBA7F0 0x400884D2:0x3FFBA800 0x40085534:0x3FFBA820 0x400D6633:0x3FFBA840 0x400D6712:0x3FFBA860 0x40088139:0x3FFBA8A0
+
+[1;31mE (5729) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5748) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5766) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5785) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5803) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5819) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5839) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5858) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5876) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5896) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5914) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5932) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5952) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5970) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (5989) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6008) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6026) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6042) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6062) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6080) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6096) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6116) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6134) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6151) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6169) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6189) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6207) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6225) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6244) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6262) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6280) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6299) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6317) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6335) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6355) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6374) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6392) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6411) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6429) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6448) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[0;33mW (6456) UART_SLAVE_DMA: Ring buffer full - flushed & reset[0m
+[1;31mE (6467) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6486) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6504) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6521) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6541) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6559) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6578) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6597) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6614) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6631) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6651) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6669) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6686) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6705) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6725) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6742) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6759) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6780) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6798) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6815) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6835) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6853) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6870) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6887) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6906) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6924) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6941) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6961) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6979) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (6995) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7015) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7034) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7054) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7072) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7090) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7109) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7128) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7146) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7166) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7184) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7202) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7219) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7239) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7258) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7277) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7295) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7315) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7332) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7351) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7370) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7388) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7405) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7425) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7443) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7461) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7481) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7498) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7515) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7535) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7553) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7570) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7590) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7608) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7624) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7644) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7663) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7680) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7698) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7717) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7735) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7754) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7773) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7790) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[0;33mW (7803) UART_SLAVE_DMA: HW FIFO overflow - flushed & reset[0m
+[1;31mE (7810) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7829) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7847) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7864) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7884) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7902) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7919) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7939) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7957) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (7976) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[0;32mI (7980) UART_SLAVE_DMA: Event #300: Rx 4096 bytes, buf used 0/2048 (0.0%)[0m
+[1;31mE (7995) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8015) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8033) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8052) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8071) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8089) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8106) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8126) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8145) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8163) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8182) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8200) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8217) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8237) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8255) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8271) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8291) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8309) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8326) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8345) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8365) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8383) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8402) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8421) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8439) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8455) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8475) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8493) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8510) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8530) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8548) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8565) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8584) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8603) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8621) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8641) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8659) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8677) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8697) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8715) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8734) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8752) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8770) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8787) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8807) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8826) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8843) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8861) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8880) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8898) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8916) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8936) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8953) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8970) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (8990) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9009) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9028) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9046) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9066) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9084) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9101) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9120) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9139) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9156) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9176) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9194) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9211) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9229) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+[1;31mE (9248) MOTOR_SET: Applied to motor[4]: pwm=1023 dir=1[0m
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x1 (DOWNLOAD_BOOT(UART0/UART1/SDIO_FEI_REO_V2))
+waiting for download

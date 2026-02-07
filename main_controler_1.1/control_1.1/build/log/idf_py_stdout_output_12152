@@ -1,0 +1,509 @@
+[0;32mI (595) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (598) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (602) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (607) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (612) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (616) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+Guru Meditation Error: Core  0 panic'ed (IllegalInstruction). Exception was unhandled.
+Memory dump at 0x4005938c: aea558c3 00f01db2 cc004136
+Core  0 register dump:
+PC      : 0x40059391  PS      : 0x00060b30  A0      : 0x3ffc15c0  A1      : 0x3ffc15c0  
+A2      : 0x00000000  A3      : 0x3ffc15d4  A4      : 0x3ffc15a4  A5      : 0x3ffc15b8  
+A6      : 0x3ffc15cc  A7      : 0x00000000  A8      : 0xffffffff  A9      : 0x3ffc15d4  
+A10     : 0x00000000  A11     : 0x3ffb6708  A12     : 0x3ffc15d9  A13     : 0xffffffca  
+A14     : 0x3ffc15a4  A15     : 0x3ffc15a4  SAR     : 0x00000004  EXCCAUSE: 0x00000000  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xfffffffd  
+
+
+Backtrace: 0x4005938e:0x3ffc15c0 0x3ffc15bd:0x3ffc15cc |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 901a75cd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep 17 2025 20:44:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c6f4h ( 50932) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c71c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001c740 vaddr=3ffbdb60 size=03724h ( 14116) load[0m
+[0;32mI (116) esp_image: segment 3: paddr=0001fe6c vaddr=40080000 size=001ach (   428) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1b108h (110856) map[0m
+[0;32mI (164) esp_image: segment 5: paddr=0003b130 vaddr=400801ac size=0efech ( 61420) load[0m
+[0;32mI (195) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (195) boot: Disabling RNG early entropy source...[0m
+[0;32mI (206) cpu_start: Multicore app[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (214) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (214) app_init: Application information:[0m
+[0;32mI (214) app_init: Project name:     control_1.1[0m
+[0;32mI (219) app_init: App version:      v5.4[0m
+[0;32mI (222) app_init: Compile time:     Sep 17 2025 20:44:09[0m
+[0;32mI (227) app_init: ELF file SHA256:  901a75cd0...[0m
+[0;32mI (232) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (235) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (239) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (243) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (247) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (253) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (258) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (263) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (269) heap_init: At 3FFC21A0 len 0001DE60 (119 KiB): DRAM[0m
+[0;32mI (274) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (279) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 4008F198 len 00010E68 (67 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: generic[0m
+[0;32mI (294) spi_flash: flash io: dio[0m
+[0;32mI (298) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (302) main_task: Started on CPU0[0m
+[0;32mI (305) main_task: Calling app_main()[0m
+[0;32mI (308) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (322) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (340) I2C SLAVE: .............[0m
+
+[0;32mI (343) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (348) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (354) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (358) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (362) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (367) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (372) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (377) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (381) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (386) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (391) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (395) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (400) main_task: Returned from app_main()[0m
+[0;32mI (595) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (598) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (602) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (607) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (612) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (616) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (824) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (828) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (833) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (838) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (842) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1047) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1047) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1047) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1050) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1055) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1059) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1064) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1069) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1274) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1274) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1274) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1277) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1282) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1286) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+Guru Meditation Error: Core  0 panic'ed (IllegalInstruction). Exception was unhandled.
+Memory dump at 0x4005938c: aea558c3 00f01db2 cc004136
+Core  0 register dump:
+PC      : 0x40059391  PS      : 0x00060b30  A0      : 0x3ffc15c0  A1      : 0x3ffc15c0  
+A2      : 0x00000000  A3      : 0x3ffc15d4  A4      : 0x3ffc15a4  A5      : 0x3ffc15b8  
+A6      : 0x3ffc15cc  A7      : 0x00000000  A8      : 0xffffffff  A9      : 0x3ffc15d4  
+A10     : 0x00000000  A11     : 0x3ffb6708  A12     : 0x3ffc15da  A13     : 0xffffffc9  
+A14     : 0x3ffc15a4  A15     : 0x3ffc15a4  SAR     : 0x00000004  EXCCAUSE: 0x00000000  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xfffffffd  
+
+
+Backtrace: 0x4005938e:0x3ffc15c0 0x3ffc15bd:0x3ffc15cc |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 901a75cd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep 17 2025 20:44:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c6f4h ( 50932) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c71c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001c740 vaddr=3ffbdb60 size=03724h ( 14116) load[0m
+[0;32mI (116) esp_image: segment 3: paddr=0001fe6c vaddr=40080000 size=001ach (   428) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1b108h (110856) map[0m
+[0;32mI (164) esp_image: segment 5: paddr=0003b130 vaddr=400801ac size=0efech ( 61420) load[0m
+[0;32mI (195) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (195) boot: Disabling RNG early entropy source...[0m
+[0;32mI (206) cpu_start: Multicore app[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (214) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (214) app_init: Application information:[0m
+[0;32mI (214) app_init: Project name:     control_1.1[0m
+[0;32mI (219) app_init: App version:      v5.4[0m
+[0;32mI (222) app_init: Compile time:     Sep 17 2025 20:44:09[0m
+[0;32mI (227) app_init: ELF file SHA256:  901a75cd0...[0m
+[0;32mI (232) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (235) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (239) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (243) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (247) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (253) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (258) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (263) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (269) heap_init: At 3FFC21A0 len 0001DE60 (119 KiB): DRAM[0m
+[0;32mI (274) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (279) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 4008F198 len 00010E68 (67 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: generic[0m
+[0;32mI (294) spi_flash: flash io: dio[0m
+[0;32mI (298) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (302) main_task: Started on CPU0[0m
+[0;32mI (305) main_task: Calling app_main()[0m
+[0;32mI (308) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (322) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (340) I2C SLAVE: .............[0m
+
+[0;32mI (343) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (348) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (354) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (358) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (362) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (367) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (372) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (377) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (381) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (386) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (391) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (395) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (400) main_task: Returned from app_main()[0m
+[0;32mI (595) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (598) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (602) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (607) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (612) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (616) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+Guru Meditation Error: Core  0 panic'ed (IllegalInstruction). Exception was unhandled.
+Memory dump at 0x4005938c: aea558c3 00f01db2 cc004136
+Core  0 register dump:
+PC      : 0x40059391  PS      : 0x00060b30  A0      : 0x3ffc15c0  A1      : 0x3ffc15c0  
+A2      : 0x00000000  A3      : 0x3ffc15d4  A4      : 0x3ffc15a4  A5      : 0x3ffc15b8  
+A6      : 0x3ffc15cc  A7      : 0x00000000  A8      : 0xffffffff  A9      : 0x3ffc15d4  
+A10     : 0x00000000  A11     : 0x3ffb6708  A12     : 0x3ffc15d9  A13     : 0xffffffca  
+A14     : 0x3ffc15a4  A15     : 0x3ffc15a4  SAR     : 0x00000004  EXCCAUSE: 0x00000000  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xfffffffd  
+
+
+Backtrace: 0x4005938e:0x3ffc15c0 0x3ffc15bd:0x3ffc15cc |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 901a75cd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep 17 2025 20:44:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c6f4h ( 50932) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c71c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001c740 vaddr=3ffbdb60 size=03724h ( 14116) load[0m
+[0;32mI (116) esp_image: segment 3: paddr=0001fe6c vaddr=40080000 size=001ach (   428) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1b108h (110856) map[0m
+[0;32mI (164) esp_image: segment 5: paddr=0003b130 vaddr=400801ac size=0efech ( 61420) load[0m
+[0;32mI (195) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (195) boot: Disabling RNG early entropy source...[0m
+[0;32mI (206) cpu_start: Multicore app[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (214) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (214) app_init: Application information:[0m
+[0;32mI (214) app_init: Project name:     control_1.1[0m
+[0;32mI (219) app_init: App version:      v5.4[0m
+[0;32mI (222) app_init: Compile time:     Sep 17 2025 20:44:09[0m
+[0;32mI (227) app_init: ELF file SHA256:  901a75cd0...[0m
+[0;32mI (232) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (235) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (239) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (243) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (247) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (253) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (258) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (263) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (269) heap_init: At 3FFC21A0 len 0001DE60 (119 KiB): DRAM[0m
+[0;32mI (274) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (279) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 4008F198 len 00010E68 (67 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: generic[0m
+[0;32mI (294) spi_flash: flash io: dio[0m
+[0;32mI (298) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (302) main_task: Started on CPU0[0m
+[0;32mI (305) main_task: Calling app_main()[0m
+[0;32mI (308) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (322) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (340) I2C SLAVE: .............[0m
+
+[0;32mI (343) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (348) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (354) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (358) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (362) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (367) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (372) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (377) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (381) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (386) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (391) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (395) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (400) main_task: Returned from app_main()[0m
+[0;32mI (595) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (598) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (602) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (607) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (612) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (616) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (821) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (824) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (828) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (833) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (838) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (842) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1047) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1047) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1047) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1050) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1055) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1059) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1064) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1069) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1274) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1274) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1274) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1277) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1282) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+Guru Meditation Error: Core  0 panic'ed (IllegalInstruction). Exception was unhandled.
+Memory dump at 0x4005938c: aea558c3 00f01db2 cc004136
+Core  0 register dump:
+PC      : 0x40059391  PS      : 0x00060d30  A0      : 0x3ffc15c0  A1      : 0x3ffc15c0  
+A2      : 0x00000000  A3      : 0x3ffc15d4  A4      : 0x3ffc15a4  A5      : 0x3ffc15b8  
+A6      : 0x3ffc15cc  A7      : 0x00000000  A8      : 0xffffffff  A9      : 0x3ffc15d4  
+A10     : 0x00000000  A11     : 0x3ffb6708  A12     : 0x3ffc15da  A13     : 0xffffffc9  
+A14     : 0x3ffc15a4  A15     : 0x3ffc15a4  SAR     : 0x00000004  EXCCAUSE: 0x00000000  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xfffffffd  
+
+
+Backtrace: 0x4005938e:0x3ffc15c0 0x3ffc15bd:0x3ffc15cc |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 901a75cd0
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep 17 2025 20:44:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c6f4h ( 50932) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c71c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001c740 vaddr=3ffbdb60 size=03724h ( 14116) load[0m
+[0;32mI (116) esp_image: segment 3: paddr=0001fe6c vaddr=40080000 size=001ach (   428) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1b108h (110856) map[0m
+[0;32mI (164) esp_image: segment 5: paddr=0003b130 vaddr=400801ac size=0efech ( 61420) load[0m
+[0;32mI (195) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (195) boot: Disabling RNG early entropy source...[0m
+[0;32mI (206) cpu_start: Multicore app[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (214) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (214) app_init: Application information:[0m
+[0;32mI (214) app_init: Project name:     control_1.1[0m
+[0;32mI (219) app_init: App version:      v5.4[0m
+[0;32mI (222) app_init: Compile time:     Sep 17 2025 20:44:09[0m
+[0;32mI (227) app_init: ELF file SHA256:  901a75cd0...[0m
+[0;32mI (232) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (235) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (239) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (243) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (247) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (253) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (258) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (263) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (269) heap_init: At 3FFC21A0 len 0001DE60 (119 KiB): DRAM[0m
+[0;32mI (274) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (279) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 4008F198 len 00010E68 (67 KiB): IRAM[0m
+[0;32mI (292) spi_flash: detected chip: generic[0m
+[0;32mI (294) spi_flash: flash io: dio[0m
+[0;32mI (298) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (302) main_task: Started on CPU0[0m
+[0;32mI (305) main_task: Calling app_main()[0m
+[0;32mI (308) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (322) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (340) I2C SLAVE: .............[0m
+
+[0;32mI (343) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (348) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (354) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (358) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (362) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (367) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (372) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (377) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (381) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (386) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (391) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (395) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (400) main_task: Returned from app_main()[0m
+[0;32mI (595) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (595) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (598) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (602) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (607) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (612) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (616) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m

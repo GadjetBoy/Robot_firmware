@@ -1,0 +1,665 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM11 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM11 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+[0m
+[0;33m--- 0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+[0m
+[0;33m--- 0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+[0m
+[0;33m--- 0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+[0m
+[0;33m--- 0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+[0m
+[0;33m--- 0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+[0m
+[0;33m--- 0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+[0m
+[0;33m--- 0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+[0m
+[0;33m--- 0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+[0m
+[0;33m--- 0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+[0m
+[0;33m--- 0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+[0m
+[0;33m--- 0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+[0m
+[0;33m--- 0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+[0m
+[0;33m--- 0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+[0m
+[0;33m--- 0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+[0m
+[0;33m--- 0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+[0m
+[0;33m--- 0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+[0m
+[0;33m--- 0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+[0m
+[0;33m--- 0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+[0m
+[0;33m--- 0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+[0m
+[0;33m--- 0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+[0m
+[0;33m--- 0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+[0m
+[0;33m--- 0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+[0m
+[0;33m--- 0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0;33m--- 0x40375a6d: panic_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/panic.c:454
+0x40379f05: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/esp_system_chip.c:92
+0x403804b9: __assert_func at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/assert.c:80
+0x4037a95e: spinlock_acquire at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/include/spinlock.h:142 (discriminator 1)
+ (inlined by) xPortEnterCriticalTimeout at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:479 (discriminator 1)
+0x4037a554: vPortEnterCritical at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:567
+ (inlined by) xQueueSemaphoreTake at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:1727
+0x4037a62e: xQueueTakeMutexRecursive at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x403769dd: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:146
+0x40376abd: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:162
+0x40376b87: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.4/components/newlib/locks.c:321
+0x4200e17f: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4200d705: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x42018912: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40380311: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420039fd: esp_intr_alloc_intrstatus at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:558 (discriminator 1)
+0x42003c01: esp_intr_alloc at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_hw_support/intr_alloc.c:677
+0x42009a9d: gpio_isr_register_on_core_static at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_gpio/src/gpio.c:580
+0x40375ebe: ipc_task at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/esp_ipc.c:84
+0x4037a6f1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x403759ac: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/port/soc/esp32s3/system_internal.c:160
+[0m
+[0m

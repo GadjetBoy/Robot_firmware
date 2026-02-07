@@ -1,0 +1,440 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Nov  3 2025 12:14:25[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=21e8ch (138892) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=00031eb4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031ed8 vaddr=3ffbdb60 size=04da8h ( 19880) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=00036c88 vaddr=40080000 size=09390h ( 37776) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=81a40h (531008) map[0m
+[0;32mI (345) esp_image: segment 5: paddr=000c1a68 vaddr=40089390 size=0fe20h ( 65056) load[0m
+[0;32mI (382) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (383) boot: Disabling RNG early entropy source...[0m
+[0;32mI (393) cpu_start: Multicore app[0m
+[0;32mI (401) cpu_start: Pro cpu start user code[0m
+[0;32mI (402) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (402) app_init: Application information:[0m
+[0;32mI (402) app_init: Project name:     control_1.4[0m
+[0;32mI (406) app_init: App version:      v5.4-dirty[0m
+[0;32mI (410) app_init: Compile time:     Nov  6 2025 19:30:17[0m
+[0;32mI (415) app_init: ELF file SHA256:  c19392a71...[0m
+[0;32mI (419) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (424) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (427) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (431) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (436) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (442) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (447) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (457) heap_init: At 3FFC7F00 len 00018100 (96 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (467) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 400991B0 len 00006E50 (27 KiB): IRAM[0m
+[0;32mI (480) spi_flash: detected chip: generic[0m
+[0;32mI (482) spi_flash: flash io: dio[0m
+[0;32mI (486) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (490) main_task: Started on CPU0[0m
+[0;32mI (493) main_task: Calling app_main()[0m
+[0;32mI (496) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (504) i2c.common: new bus(0) at 0x3ffb7f14
+[0;32mI (508) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (514) I2C SLAVE: Setting up PWM and PID module[0m
+[1;31mE (519) RESET: CPU Reset reason: 1[0m
+[0;32mI (522) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (527) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (535) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (544) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (552) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (560) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (568) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (585) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (593) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (602) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (610) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (618) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (627) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (635) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (643) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (652) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (661) LEDC_PWM_UNIT: LEDC unit setiing up cI (676) UART_PID: UART initialized on port 0 at 115200 baud[0m
+[0;32mI (686) PID: Starting PID application...[0m
+[0;32mI (686) PID: PID application started successfully[0m
+[0;32mI (686) CPG: settingup the motor comnads[0m
+[0;32mI (686) CPG: Initializing CPG network...[0m
+[0;32mI (690) CPG: settingup the motor comnads complete[0m
+[1;31mE (691) PID: Receiving encoder values failed[0m
+[0;32mI (690) CPG: Mode change detected: 0[0m
+[0;32mI (694) BLE: Setting up BLE unit[0m
+[0;32mI (702) CPG: Setting IDLE gait[0m
+[1;31mE (711) PID: Receiving encoder values failed[0m
+[0;32mI (714) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (718) BTDM_INIT: Bluetooth MAC: 6c:c8:40:66:40:b2[0m
+[0;32mI (724) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[1;31mE (732) PID: Receiving encoder values failed[0m
+[1;31mE (751) PID: Receiving encoder values failed[0m
+[1;31mE (771) PID: Receiving encoder values failed[0m
+[1;31mE (791) PID: Receiving encoder values failed[0m
+[1;31mE (811) PID: Receiving encoder values failed[0m
+[1;31mE (831) PID: Receiving encoder values failed[0m
+[1;31mE (851) PID: Receiving encoder values failed[0m
+[1;31mE (871) PID: Receiving encoder values failed[0m
+[1;31mE (891) PID: Receiving encoder values failed[0m
+[1;31mE (911) PID: Receiving encoder values failed[0m
+[1;31mE (931) PID: Receiving encoder values failed[0m
+[1;31mE (951) PID: Receiving encoder values failed[0m
+[1;31mE (971) PID: Receiving encoder values failed[0m
+[1;31mE (991) PID: Receiving encoder values failed[0m
+[1;31mE (1011) PID: Receiving encoder values failed[0m
+[1;31mE (1031) PID: Receiving encoder values failed[0m
+[1;31mE (1051) PID: Receiving encoder values failed[0m
+[1;31mE (1071) PID: Receiving encoder values failed[0m
+[1;31mE (1091) PID: Receiving encoder values failed[0m
+[1;31mE (1111) PID: Receiving encoder values failed[0m
+[0;32mI (1115) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (1118) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (1119) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[1;31mE (1123) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+[0;32mI (1128) BLE: Unhandled GATTS event: 12[0m
+[1;31mE (1131) PID: Receiving encoder values failed[0m
+[0;32mI (1133) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[0;32mI (1140) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[0;32mI (1146) BLE: Unhandled GAP event: 6[0m
+[0;32mI (1150) BLE: TX CCCD Handle: 45[0m
+[1;31mE (1151) PID: Receiving encoder values failed[0m
+[0;32mI (1133) BLE: BLE unit setup completed[0m
+[1;31mE (1171) PID: Receiving encoder values failed[0m
+[1;31mE (1191) PID: Receiving encoder values failed[0m
+[1;31mE (1211) PID: Receiving encoder values failed[0m
+[1;31mE (6345) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6427) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6466) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6549) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6588) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6684) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6710) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6805) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6844) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6927) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (6966) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7049) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7088) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7183) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7209) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7305) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7344) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7427) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7466) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7549) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7588) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7670) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7709) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7805) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7888) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (7927) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8009) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8048) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8144) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8170) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8266) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8305) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8387) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8426) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8509) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8548) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8644) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8670) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8766) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8805) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8887) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (8926) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9009) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9048) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9144) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9170) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9265) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9348) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9387) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9470) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9509) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9604) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9643) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9726) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9765) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9848) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9887) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (9969) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10009) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10104) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10130) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10226) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10265) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10348) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10387) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10469) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10508) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10605) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10688) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10728) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10825) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10864) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10948) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (10988) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11084) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11124) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11208) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11247) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11344) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11428) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11467) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11564) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11590) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11687) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11727) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11810) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11850) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11947) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (11986) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12070) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12109) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12206) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12290) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12329) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12426) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12466) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12549) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12589) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12686) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12725) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12809) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12848) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (12945) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13029) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13068) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13108) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13205) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13288) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13328) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13425) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13464) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13548) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13587) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13684) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13768) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13807) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13904) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (13944) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14027) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14067) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14164) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14190) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14287) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14327) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14410) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14450) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14547) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14630) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14670) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14766) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14806) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14890) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (14929) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15026) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15066) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15149) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15189) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15286) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15369) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15409) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15506) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15545) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15629) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15668) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15765) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15805) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15888) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (15928) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (16025) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (16108) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (16148) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (16245) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+[1;31mE (16285) I2C SLAVE: Queue send failed (que full or timeout)[0m
+
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download

@@ -1,0 +1,80 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM11 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM11 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4200c136: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/task_wdt/task_wdt.c:434
+0x4200c54c: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/task_wdt/task_wdt.c:507
+0x40377331: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.4/components/xtensa/xtensa_vectors.S:1240
+0x420066ae: uart_ll_get_txfifo_len at C:/Espressif/frameworks/esp-idf-v5.4/components/hal/esp32s3/include/hal/uart_ll.h:410
+ (inlined by) uart_tx_char at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:170
+0x4200755b: uart_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:223
+0x42008c6e: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4200fe22: write at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c:11 (discriminator 1)
+0x42008664: console_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_vfs_console/vfs_console.c:71
+0x42008c6e: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4200f86a: __swrite at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c:94
+0x4200f041: __sflush_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:224
+0x4200f092: _fflush_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:278
+0x4200f691: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x42016507: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x42015ed1: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1766 (discriminator 1)
+0x4200f8e1: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4201dc7e: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x403809d9: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420097a5: printData at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/i2c_v_1.1/ROBOT_CONTROL_CODE_V_1.2/MASTER/main/i2c_send.c:140 (discriminator 1)
+0x420097bb: app_main at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/i2c_v_1.1/ROBOT_CONTROL_CODE_V_1.2/MASTER/main/i2c_send.c:47 (discriminator 1)
+0x4201d533: main_task at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/app_startup.c:208
+0x4037ab55: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4200c136: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/task_wdt/task_wdt.c:434
+0x4200c54c: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/task_wdt/task_wdt.c:507
+0x40377331: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.4/components/xtensa/xtensa_vectors.S:1240
+0x420066b4: uart_ll_get_txfifo_len at C:/Espressif/frameworks/esp-idf-v5.4/components/hal/esp32s3/include/hal/uart_ll.h:410
+ (inlined by) uart_tx_char at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:170
+0x4200755b: uart_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:223
+0x42008c6e: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4200fe22: write at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c:11 (discriminator 1)
+0x42008664: console_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_vfs_console/vfs_console.c:71
+0x42008c6e: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4200f86a: __swrite at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c:94
+0x4200f041: __sflush_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:224
+0x4200f092: _fflush_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:278
+0x4200f691: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x42016507: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x42015ed1: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1766 (discriminator 1)
+0x4200f8e1: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4201dc7e: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x403809d9: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420097a5: printData at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/i2c_v_1.1/ROBOT_CONTROL_CODE_V_1.2/MASTER/main/i2c_send.c:140 (discriminator 1)
+0x420097bb: app_main at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/i2c_v_1.1/ROBOT_CONTROL_CODE_V_1.2/MASTER/main/i2c_send.c:47 (discriminator 1)
+0x4201d533: main_task at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/app_startup.c:208
+0x4037ab55: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x4200c136: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/task_wdt/task_wdt.c:434
+0x4200c54c: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/task_wdt/task_wdt.c:507
+0x40377331: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.4/components/xtensa/xtensa_vectors.S:1240
+0x420066ae: uart_ll_get_txfifo_len at C:/Espressif/frameworks/esp-idf-v5.4/components/hal/esp32s3/include/hal/uart_ll.h:410
+ (inlined by) uart_tx_char at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:170
+0x4200755b: uart_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:223
+0x42008c6e: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4200fe22: write at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c:11 (discriminator 1)
+0x42008664: console_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_vfs_console/vfs_console.c:71
+0x42008c6e: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4200f86a: __swrite at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c:94
+0x4200f041: __sflush_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:224
+0x4200f092: _fflush_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:278
+0x4200f691: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x42016507: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x42015ed1: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1766 (discriminator 1)
+0x4200f8e1: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4201dc7e: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x403809d9: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x420097a5: printData at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/i2c_v_1.1/ROBOT_CONTROL_CODE_V_1.2/MASTER/main/i2c_send.c:140 (discriminator 1)
+0x420097bb: app_main at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/i2c_v_1.1/ROBOT_CONTROL_CODE_V_1.2/MASTER/main/i2c_send.c:47 (discriminator 1)
+0x4201d533: main_task at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/app_startup.c:208
+0x4037ab55: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0m

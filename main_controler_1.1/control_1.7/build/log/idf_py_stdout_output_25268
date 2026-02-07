@@ -1,0 +1,359 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c12ch ( 49452) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c154 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001c178 vaddr=3ffb0000 size=0261ch (  9756) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e79c vaddr=40080000 size=0187ch (  6268) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17dd0h ( 97744) map[0m
+[0;32mI (159) esp_image: segment 5: paddr=00037df8 vaddr=4008187c size=0d994h ( 55700) load[0m
+[0;32mI (188) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (188) boot: Disabling RNG early entropy source...[0m
+[0;32mI (199) cpu_start: Multicore app[0m
+[0;32mI (207) cpu_start: Pro cpu start user code[0m
+[0;32mI (207) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) app_init: Application information:[0m
+[0;32mI (207) app_init: Project name:     control_1.7[0m
+[0;32mI (211) app_init: App version:      v5.4-dirty[0m
+[0;32mI (216) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (221) app_init: ELF file SHA256:  fe884f8de...[0m
+[0;32mI (225) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (229) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (233) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (237) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (241) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFB4898 len 0002B768 (173 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (263) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (268) heap_init: At 4008F210 len 00010DF0 (67 KiB): IRAM[0m
+[0;32mI (275) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;32mI (281) main_task: Started on CPU0[0m
+[0;32mI (284) main_task: Calling app_main()[0m
+[0;32mI (287) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (295) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (304) uart: queue free spaces: 40[0m
+[0;32mI (308) UART_SLAVE_DMA: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (322) UART_SLAVE_DMA: Setting up PWM and PID module[0m
+[0;32mI (322) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (322) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (331) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (339) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (347) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (356) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (364) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (381) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (389) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (397) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (406) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (414) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (422) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (430) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (439) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (447) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (576) MOTOR_SET: Starting PID application...[0m
+[0;32mI (676) MOTOR_SET: Motor timer started at 5000.00 Hz[0m
+[0;32mI (682) MOTOR_SET: PID application started successfully[0m
+[0;33mW (828) UART_SLAVE_DMA: HW FIFO overflow - flushed & reset[0m
+[0;32mI (942) UART_SLAVE_DMA: Parsed 50 pkts total (latest motor0=1023.0)[0m
+[0;32mI (1040) UART_SLAVE_DMA: Slave initialization complete and ready to receive data[0m
+[0;32mI (1115) UART_SLAVE_DMA: Parsed 100 pkts total (latest motor0=1023.0)[0m
+[0;32mI (1040) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 412.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 412.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 412.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 412.00
+[0;32mI (1138) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1271) RESET: CPU Reset reason: 1[0m
+[0;32mI (1285) UART_SLAVE_DMA: Parsed 150 pkts total (latest motor0=1023.0)[0m
+[0;32mI (1342) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -305.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -305.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -305.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -305.00
+[0;32mI (1352) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1403) UART_SLAVE_DMA: Parsed 200 pkts total (latest motor0=1023.0)[0m
+[0;32mI (1555) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 432.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 432.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 432.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 432.00
+[0;32mI (1564) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1572) UART_SLAVE_DMA: Parsed 250 pkts total (latest motor0=-622.6)[0m
+[0;32mI (1627) UART_SLAVE_DMA: Event #200: Rx 340 bytes, buf used 522/2048 (25.5%)[0m
+[0;32mI (1709) UART_SLAVE_DMA: Parsed 300 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (1370) main_task: Returned from app_main()[0m
+[0;32mI (1815) UART_SLAVE_DMA: Parsed 350 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (1768) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -359.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -359.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -359.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -359.00
+[0;32mI (1836) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (1932) UART_SLAVE_DMA: Parsed 400 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (2040) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 657.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 657.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 657.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 657.00
+[0;32mI (2050) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2041) UART_SLAVE_DMA: Parsed 450 pkts total (latest motor0=-1023.0)[0m
+[0;33mW (2205) UART_SLAVE_DMA: Ring buffer full - flushed & reset[0m
+[0;32mI (2253) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -728.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -728.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -728.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -728.00
+[0;32mI (2263) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2328) UART_SLAVE_DMA: Parsed 50 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (2441) UART_SLAVE_DMA: Parsed 100 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (2467) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -598.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -598.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -598.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -598.00
+[0;32mI (2477) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2580) UART_SLAVE_DMA: Parsed 150 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (2681) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -355.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -371.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -355.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -355.00
+[0;32mI (2691) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2750) UART_SLAVE_DMA: Parsed 200 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (2845) UART_SLAVE_DMA: Parsed 250 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (2895) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 364.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 364.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 364.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 364.00
+[0;32mI (2905) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (2946) UART_SLAVE_DMA: Parsed 300 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (3070) UART_SLAVE_DMA: Parsed 350 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (3104) UART_SLAVE_DMA: Event #200: Rx 170 bytes, buf used 626/2048 (30.6%)[0m
+[0;32mI (3108) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -857.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -857.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -857.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -857.00
+[0;32mI (3122) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3242) UART_SLAVE_DMA: Parsed 400 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (3326) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -668.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -668.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -668.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -668.00
+[0;32mI (3336) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3356) UART_SLAVE_DMA: Parsed 450 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (3515) UART_SLAVE_DMA: Parsed 500 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (3540) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -977.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -977.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -977.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -977.00
+[0;32mI (3550) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3650) UART_SLAVE_DMA: Parsed 550 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (3754) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 440.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 440.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 440.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 440.00
+[0;32mI (3764) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (3785) UART_SLAVE_DMA: Parsed 600 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (3896) UART_SLAVE_DMA: Parsed 650 pkts total (latest motor0=-1023.0)[0m
+[0;33mW (3915) UART_SLAVE_DMA: Pre-copy drop: 16 bytes (events: 10)[0m
+[0;32mI (3963) UART_SLAVE_DMA: Event #400: Rx 170 bytes, buf used 1748/2048 (85.4%)[0m
+[0;32mI (3967) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 332.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 332.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 332.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 332.00
+[0;32mI (3982) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4081) UART_SLAVE_DMA: Parsed 700 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (4186) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 240.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 240.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 240.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 240.00
+[0;32mI (4196) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4192) UART_SLAVE_DMA: Parsed 750 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (4339) UART_SLAVE_DMA: Parsed 800 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (4399) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 471.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 471.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 471.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 471.00
+[0;32mI (4409) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4455) UART_SLAVE_DMA: Parsed 850 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (4562) UART_SLAVE_DMA: Parsed 900 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (4612) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 277.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 277.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 277.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 277.00
+[0;32mI (4622) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4717) UART_SLAVE_DMA: Parsed 950 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (4734) UART_SLAVE_DMA: Event #600: Rx 1768 bytes, buf used 1768/2048 (86.3%)[0m
+[0;32mI (4825) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 581.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 581.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 581.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 581.00
+[0;32mI (4835) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (4865) UART_SLAVE_DMA: Parsed 1000 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (4980) UART_SLAVE_DMA: Parsed 1050 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (5038) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 410.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 410.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 410.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 410.00
+[0;32mI (5048) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5093) UART_SLAVE_DMA: Parsed 1100 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (5214) UART_SLAVE_DMA: Parsed 1150 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (5251) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -293.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -293.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -293.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -293.00
+[0;32mI (5261) UART_SLAVE_DMA: .............[0m
+
+[0;32mI (5326) UART_SLAVE_DMA: Parsed 1200 pkts total (latest motor0=-1023.0)[0m
+[0;32mI (5426) UART_SLAVE_DMA: Parsed 1250 pkts total (latest motor0=-1023.0)[0m
+[0;33mW (5458) UART_SLAVE_DMA: Pre-copy drop: 35 bytes (events: 20)[0m
+[0;32mI (5465) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 740.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 740.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 740.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 740.00
+[0;32mI (5476) UART_SLAVE_DMA: .............[0m
+

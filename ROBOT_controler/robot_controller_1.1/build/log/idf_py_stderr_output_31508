@@ -1,0 +1,30 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM15 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM15 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40085666: esp_crosscore_isr at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_system/crosscore_int.c:73
+0x400839e1: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.4/components/xtensa/xtensa_vectors.S:1240
+0x400d6d5b: uart_ll_get_txfifo_len at C:/Espressif/frameworks/esp-idf-v5.4/components/hal/esp32/include/hal/uart_ll.h:428
+ (inlined by) uart_tx_char at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:170
+0x400d741b: uart_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d82f2: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d7d25: console_write at C:/Espressif/frameworks/esp-idf-v5.4/components/esp_vfs_console/vfs_console.c:71
+0x400d82f2: esp_vfs_write at C:/Espressif/frameworks/esp-idf-v5.4/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x401376ad: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x401427af: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x401421c6: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x40137b3d: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4014cbe9: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:34
+0x40095c79: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.4/components/log/src/os/log_write.c:44
+0x400da449: mode_set at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/PID_unit.c:277 (discriminator 1)
+0x400da58f: pid_task at C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/PID_unit.c:319
+0x40090501: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.4/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0m

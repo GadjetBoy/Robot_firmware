@@ -1,0 +1,804 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c0dch ( 49372) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001c104 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001c128 vaddr=3ffb0000 size=0261ch (  9756) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e74c vaddr=40080000 size=018cch (  6348) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=17ad0h ( 96976) map[0m
+[0;32mI (159) esp_image: segment 5: paddr=00037af8 vaddr=400818cc size=0d944h ( 55620) load[0m
+[0;32mI (188) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (188) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (207) cpu_start: Pro cpu start user code[0m
+[0;32mI (207) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) app_init: Application information:[0m
+[0;32mI (207) app_init: Project name:     control_1.7[0m
+[0;32mI (211) app_init: App version:      v5.4-dirty[0m
+[0;32mI (215) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (220) app_init: ELF file SHA256:  d1733a1c4...[0m
+[0;32mI (225) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (229) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (233) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (237) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (241) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (252) heap_init: At 3FFB3C68 len 0002C398 (176 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (262) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (268) heap_init: At 4008F210 len 00010DF0 (67 KiB): IRAM[0m
+[0;32mI (275) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;32mI (281) main_task: Started on CPU0[0m
+[0;32mI (284) main_task: Calling app_main()[0m
+[0;32mI (287) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (295) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (304) uart: queue free spaces: 20[0m
+[0;32mI (308) UART_SLAVE_DMA: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (322) UART_SLAVE_DMA: Setting up PWM and PID module[0m
+[0;32mI (322) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (322) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (331) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (339) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (347) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (356) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (364) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (381) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (389) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (397) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (406) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (414) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (422) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (430) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (439) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (447) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (576) MOTOR_SET: Starting PID application...[0m
+[0;32mI (676) MOTOR_SET: Motor timer started at 5000.00 Hz[0m
+[0;32mI (681) MOTOR_SET: PID application started successfully[0m
+[0;33mW (684) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (687) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (692) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (697) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (696) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (702) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (713) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (718) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (723) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (727) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (729) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (739) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;32mI (684) UART_SLAVE_DMA: Slave initialization complete and ready to receive data[0m
+[0;33mW (744) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (754) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (756) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (767) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (772) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (777) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (783) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (781) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (788) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (798) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (803) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (809) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (813) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (814) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (824) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (751) RESET: CPU Reset reason: 1[0m
+[0;33mW (830) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (838) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (839) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (843) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (853) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (859) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (864) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (868) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (869) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (880) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;32mI (833) main_task: Returned from app_main()[0m
+[0;33mW (885) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (894) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (894) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (904) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (910) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (915) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (919) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (920) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (930) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (936) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (941) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (946) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (945) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (952) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (962) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (967) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (972) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (978) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (977) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (983) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (993) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (999) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1004) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1008) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1009) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1020) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1025) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1030) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1034) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1036) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1046) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1052) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1057) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1061) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1062) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1073) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1078) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1084) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1087) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1089) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1099) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1105) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1110) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1116) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1121) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1114) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1126) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1137) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1142) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1147) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1153) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1151) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1158) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1169) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1174) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1179) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1183) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1185) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1195) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1201) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1206) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1210) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1211) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1222) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1227) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1233) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1238) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1236) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1243) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1254) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1259) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1265) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1268) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1270) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1280) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1286) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1291) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1295) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1296) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1307) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1312) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1318) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1321) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1323) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1333) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1339) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1344) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1348) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1350) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1360) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1365) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1371) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1376) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1375) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1382) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1392) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1397) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1403) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1407) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1408) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1419) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1424) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1429) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1433) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1435) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1445) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1450) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1456) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1460) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1461) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1472) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1477) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1482) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1486) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1488) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1498) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1504) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1509) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1513) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1514) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1525) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1530) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1536) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1539) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1541) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1551) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1557) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1562) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1566) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1567) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1578) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1583) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1589) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1592) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1594) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1604) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1610) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1615) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1619) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1621) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1631) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1636) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1642) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1647) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1646) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1653) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1663) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1668) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1674) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1678) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1679) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1690) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1695) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1700) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1704) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1706) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1716) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1721) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1727) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1731) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1732) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1743) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1748) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1753) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1757) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1759) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1769) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1775) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1780) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1785) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1784) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1791) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1801) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1807) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1812) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1816) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1817) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1828) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1833) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1838) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1842) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1844) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1854) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1860) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1865) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1869) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1870) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1881) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1886) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1892) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1897) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1902) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1895) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1908) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1918) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1924) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1929) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1933) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1934) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1945) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1950) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1955) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1959) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1961) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1971) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1977) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1982) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (1986) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (1987) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (1998) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2003) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2009) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2012) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2014) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2024) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2030) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2035) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2041) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2039) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2046) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2056) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2062) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2067) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2071) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2072) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2083) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2088) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2094) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2097) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2099) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2109) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2115) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2120) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2124) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2126) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2136) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2141) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2147) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2151) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2152) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2163) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2168) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2173) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2177) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2179) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2189) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2195) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2200) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2204) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2205) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2216) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2221) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2226) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2230) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2232) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2242) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2248) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2253) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2257) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2258) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2269) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2274) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2280) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2283) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2285) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2295) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2301) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2306) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2312) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2310) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2317) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2327) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2333) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2338) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2342) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2343) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2354) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2359) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2365) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2369) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2370) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2380) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2386) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2391) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2395) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2397) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2407) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2412) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2418) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2422) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2423) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2434) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2439) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2444) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2450) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2448) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2455) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2466) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2471) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2476) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2480) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2482) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2492) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2497) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2503) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2507) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2508) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2519) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2524) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2529) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2533) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2535) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2545) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2551) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2556) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2560) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2561) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2572) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2577) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2583) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2588) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2586) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2593) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2604) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2609) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2614) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2618) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2620) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2630) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2636) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2641) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2645) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2646) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2657) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2662) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2668) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2671) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2673) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2683) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2689) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2694) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2700) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2705) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2698) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2710) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2721) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2726) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2732) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2735) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2737) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2747) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2753) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2758) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2762) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2763) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2774) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2779) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2785) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2788) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2790) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2800) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2806) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2811) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2815) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2817) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2827) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2832) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2838) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2843) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2842) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2849) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2859) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2864) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2870) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2874) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2875) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2886) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2891) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2896) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2900) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2902) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2912) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2917) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2923) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2927) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2928) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2939) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2944) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2949) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2955) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2960) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2953) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2966) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2976) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2981) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (2987) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (2991) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (2992) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3003) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3008) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3013) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3017) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3019) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3029) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3034) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3040) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3044) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3045) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3056) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3061) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3066) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3070) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3072) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3082) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3088) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3093) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3098) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3097) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3104) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3114) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3120) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3125) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3130) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3129) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3136) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3146) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3151) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3157) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3161) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3162) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3173) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3178) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3183) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3187) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3189) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3199) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3205) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3210) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3215) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3221) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3214) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3226) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3237) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3242) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3247) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3251) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3253) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3263) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3268) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3274) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3278) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3279) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3290) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3295) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3300) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3304) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3306) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3316) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3322) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3327) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3331) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3332) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3343) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3348) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3354) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3357) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3359) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3369) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3375) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3380) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3384) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3385) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3396) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3401) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3407) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3412) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3410) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3417) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3428) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3433) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3439) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3444) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3442) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3449) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3460) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3465) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3471) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3476) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3474) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3481) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3492) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3497) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3503) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3506) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3508) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3518) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3524) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3529) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3533) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3534) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3545) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3550) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3556) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3559) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3561) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3571) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3577) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3582) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3586) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3588) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3598) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3603) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3609) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3614) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3613) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3620) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3630) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3635) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3641) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3645) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3646) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3657) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3662) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3667) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3673) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3671) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3678) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3688) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3694) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3699) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3703) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3705) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3715) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3720) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3726) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3731) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3730) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3737) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3747) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3752) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3758) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3762) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3763) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3774) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3779) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3784) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3788) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3790) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3800) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3805) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3811) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3815) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3816) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3827) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3832) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3837) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3841) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3843) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3853) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3859) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3864) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3869) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3868) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3875) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3885) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3891) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3896) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3900) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3901) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3912) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3917) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3922) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3926) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3928) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3938) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3944) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3949) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3953) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3954) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3965) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3970) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3976) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (3979) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (3981) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3991) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (3997) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4002) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4008) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4006) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4013) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4023) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4029) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4034) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4038) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4039) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4050) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4055) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4061) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4064) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4066) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4076) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4082) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4087) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4091) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4093) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4103) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4108) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4114) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4119) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4125) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4118) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4130) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4140) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4146) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4151) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4155) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4156) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4167) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4172) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4178) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4181) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4183) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4193) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4199) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4204) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4208) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4210) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4220) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4225) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4231) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4235) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4236) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4247) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4252) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4257) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4263) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4261) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4268) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4279) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4284) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4289) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4293) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4295) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4305) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4310) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4316) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4320) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4321) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4332) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4337) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4342) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4346) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4348) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4358) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4364) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4369) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4373) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4374) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4385) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4390) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4396) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4399) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4401) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4411) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4417) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4422) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4426) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4428) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4438) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4443) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4449) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4454) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4452) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4459) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4470) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4475) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4481) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[1;31mE (4484) MOTOR_SET: Applied to motor[4]: pwm=-240 dir=-1[0m
+[0;33mW (4486) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4496) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m
+[0;33mW (4502) UART_SLAVE_DMA: RX buffer overflow, dropped 1 bytes[0m

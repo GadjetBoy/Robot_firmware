@@ -1,0 +1,441 @@
+ (113190) PID UNIT: state IDLE state machine: 0x0
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May 12 2025 13:55:11[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20774h (132980) map[0m
+I (135) esp_image: segment 1: paddr=0003079c vaddr=3ff80000 size=0001ch (    28) load
+[0;32mI (135) esp_image: segment 2: paddr=000307c0 vaddr=3ffbdb60 size=04d20h ( 19744) load[0m
+[0;32mI (146) esp_image: segment 3: paddr=000354e8 vaddr=40080000 size=0ab30h ( 43824) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7dd4ch (515404) map[0m
+[0;32mI (340) esp_image: segment 5: paddr=000bdd74 vaddr=4008ab30 size=0d524h ( 54564) load[0m
+[0;32mI (373) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (373) boot: Disabling RNG early entropy source...[0m
+[0;32mI (384) cpu_start: Multicore app[0m
+[0;32mI (392) cpu_start: Pro cpu start user code[0m
+[0;32mI (392) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (392) app_init: Application information:[0m
+[0;32mI (392) app_init: Project name:     robot_controller_1.3[0m
+[0;32mI (397) app_init: App version:      v5.4[0m
+[0;32mI (401) app_init: Compile time:     May 12 2025 13:55:13[0m
+[0;32mI (406) app_init: ELF file SHA256:  76b68d44d...[0m
+[0;32mI (410) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (414) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (418) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (422) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (426) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (432) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (437) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (442) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (447) heap_init: At 3FFC7480 len 00018B80 (98 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (458) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (463) heap_init: At 40098054 len 00007FAC (31 KiB): IRAM[0m
+[0;32mI (470) spi_flash: detected chip: generic[0m
+[0;32mI (472) spi_flash: flash io: dio[0m
+[0;33mW (475) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (488) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (492) main_task: Started on CPU0[0m
+[0;32mI (495) main_task: Calling app_main()[0m
+[0;32mI (497) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (510) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (512) BTDM_INIT: Bluetooth MAC: 78:42:1c:2e:4c:ea[0m
+[0;32mI (515) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (592) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;32mI (988) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (990) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (991) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (995) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1002) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1007) BLE UNIT: the gatts char length = 4[0m
+[0;32mI (1010) BLE UNIT: prf_char[0] = 0[0m
+[0;32mI (1013) BLE UNIT: prf_char[1] = 0[0m
+[0;32mI (1017) BLE UNIT: prf_char[2] = 0[0m
+[0;32mI (1017) BLE UNIT: prf_char[3] = 0[0m
+[0;32mI (1020) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1027) BLE UNIT: the gatts char length = 4[0m
+[0;32mI (1031) BLE UNIT: prf_char[0] = 0[0m
+[0;32mI (1034) BLE UNIT: prf_char[1] = 1[0m
+[0;32mI (1037) BLE UNIT: prf_char[2] = 2[0m
+[0;32mI (1040) BLE UNIT: prf_char[3] = 3[0m
+[0;32mI (1044) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1050) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1054) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1057) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1162) PCNT UNIT: setting up PCNT units and chaneels[0m
+
+[0;32mI (1162) PCNT UNIT: install pcnt unit1[0m
+[0;32mI (1163) PCNT UNIT: set glitch filter for unit1[0m
+[0;32mI (1164) PCNT UNIT: install pcnt channels of unit1[0m
+[0;32mI (1168) PCNT UNIT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1175) PCNT UNIT: enable pcnt unit1[0m
+[0;32mI (1178) PCNT UNIT: clear pcnt unit1[0m
+[0;32mI (1181) PCNT UNIT: start pcnt unit1[0m
+[0;32mI (1185) PCNT UNIT: install pcnt unit2[0m
+[0;32mI (1188) PCNT UNIT: set glitch filter for unit2[0m
+[0;32mI (1192) PCNT UNIT: install pcnt channels of unit2[0m
+[0;32mI (1197) PCNT UNIT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1203) PCNT UNIT: enable pcnt unit2[0m
+[0;32mI (1207) PCNT UNIT: clear pcnt unit2[0m
+[0;32mI (1210) PCNT UNIT: start pcnt unit2[0m
+[0;32mI (1213) PCNT UNIT: install pcnt unit3[0m
+[0;32mI (1217) PCNT UNIT: set glitch filter for unit3[0m
+[0;32mI (1221) PCNT UNIT: install pcnt channels of unit3[0m
+[0;32mI (1226) PCNT UNIT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1232) PCNT UNIT: enable pcnt unit3[0m
+[0;32mI (1235) PCNT UNIT: clear pcnt unit3[0m
+[0;32mI (1239) PCNT UNIT: start pcnt unit3[0m
+[0;32mI (1242) PCNT UNIT: install pcnt unit4[0m
+[0;32mI (1247) PCNT UNIT: set glitch filter for unit4[0m
+[0;32mI (1250) PCNT UNIT: install pcnt channels of unit4[0m
+[0;32mI (1254) PCNT UNIT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1261) PCNT UNIT: enable pcnt unit4[0m
+[0;32mI (1264) PCNT UNIT: clear pcnt unit4[0m
+[0;32mI (1267) PCNT UNIT: start pcnt unit4[0m
+[0;32mI (1271) PCNT UNIT: setting up Ques[0m
+[0;32mI (1274) PCNT UNIT: setting up Tasks[0m
+[0;32mI (1277) PCNT UNIT: Task Initialization Complete. Tasks running.[0m
+[0;32mI (1277) PCNT UNIT: Read Task Stack: 3804[0m
+[0;32mI (1287) PCNT UNIT: [0m
+ENCODER[1] READING: 0.00
+ENCODER[2] READING: 0.00
+ENCODER[3] READING: 0.00
+ENCODER[4] READING: 0.00
+[0;32mI (1283) PCNT UNIT: PCNT unit setiing up completed[0m
+
+[0;32mI (1302) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (1309) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (1313) main_task: Returned from app_main()[0m
+[0;32mI (1313) PID UNIT: control= 0[0m
+[0;32mI (1319) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1333) PID UNIT: control= 0[0m
+[0;32mI (1333) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1353) PID UNIT: control= 0[0m
+[0;32mI (1353) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1373) PID UNIT: control= 0[0m
+[0;32mI (1373) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1393) PID UNIT: control= 0[0m
+[0;32mI (1393) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1413) PID UNIT: control= 0[0m
+[0;32mI (1413) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1433) PID UNIT: control= 0[0m
+[0;32mI (1433) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1453) PID UNIT: control= 0[0m
+[0;32mI (1453) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1473) PID UNIT: control= 0[0m
+[0;32mI (1473) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1493) PID UNIT: control= 0[0m
+[0;32mI (1493) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1513) PID UNIT: control= 0[0m
+[0;32mI (1513) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1533) PID UNIT: control= 0[0m
+[0;32mI (1533) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1553) PID UNIT: control= 0[0m
+[0;32mI (1553) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1573) PID UNIT: control= 0[0m
+[0;32mI (1573) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1593) PID UNIT: control= 0[0m
+[0;32mI (1593) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1613) PID UNIT: control= 0[0m
+[0;32mI (1613) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1633) PID UNIT: control= 0[0m
+[0;32mI (1633) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1653) PID UNIT: control= 0[0m
+[0;32mI (1653) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1673) PID UNIT: control= 0[0m
+[0;32mI (1673) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1693) PID UNIT: control= 0[0m
+[0;32mI (1693) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1713) PID UNIT: control= 0[0m
+[0;32mI (1713) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1733) PID UNIT: control= 0[0m
+[0;32mI (1733) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1753) PID UNIT: control= 0[0m
+[0;32mI (1753) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1773) PID UNIT: control= 0[0m
+[0;32mI (1773) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1793) PID UNIT: control= 0[0m
+[0;32mI (1793) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1813) PID UNIT: control= 0[0m
+[0;32mI (1813) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1833) PID UNIT: control= 0[0m
+[0;32mI (1833) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1853) PID UNIT: control= 0[0m
+[0;32mI (1853) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1873) PID UNIT: control= 0[0m
+[0;32mI (1873) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1893) PID UNIT: control= 0[0m
+[0;32mI (1893) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1913) PID UNIT: control= 0[0m
+[0;32mI (1913) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1933) PID UNIT: control= 0[0m
+[0;32mI (1933) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1953) PID UNIT: control= 0[0m
+[0;32mI (1953) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1973) PID UNIT: control= 0[0m
+[0;32mI (1973) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (1993) PID UNIT: control= 0[0m
+[0;32mI (1993) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2013) PID UNIT: control= 0[0m
+[0;32mI (2013) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2033) PID UNIT: control= 0[0m
+[0;32mI (2033) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2053) PID UNIT: control= 0[0m
+[0;32mI (2053) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2073) PID UNIT: control= 0[0m
+[0;32mI (2073) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2093) PID UNIT: control= 0[0m
+[0;32mI (2093) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2113) PID UNIT: control= 0[0m
+[0;32mI (2113) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2133) PID UNIT: control= 0[0m
+[0;32mI (2133) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2153) PID UNIT: control= 0[0m
+[0;32mI (2153) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2173) PID UNIT: control= 0[0m
+[0;32mI (2173) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2193) PID UNIT: control= 0[0m
+[0;32mI (2193) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2213) PID UNIT: control= 0[0m
+[0;32mI (2213) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2233) PID UNIT: control= 0[0m
+[0;32mI (2233) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2253) PID UNIT: control= 0[0m
+[0;32mI (2253) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2273) PID UNIT: control= 0[0m
+[0;32mI (2273) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2293) PID UNIT: control= 0[0m
+[0;32mI (2293) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2298) PCNT UNIT: [0m
+ENCODER[1] READING: 0.00
+ENCODER[2] READING: 0.00
+ENCODER[3] READING: 0.00
+ENCODER[4] READING: 0.00
+[0;32mI (2313) PID UNIT: control= 0[0m
+[0;32mI (2313) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2333) PID UNIT: control= 0[0m
+[0;32mI (2333) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2353) PID UNIT: control= 0[0m
+[0;32mI (2353) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2373) PID UNIT: control= 0[0m
+[0;32mI (2373) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2393) PID UNIT: control= 0[0m
+[0;32mI (2393) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2413) PID UNIT: control= 0[0m
+[0;32mI (2413) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2433) PID UNIT: control= 0[0m
+[0;32mI (2433) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2453) PID UNIT: control= 0[0m
+[0;32mI (2453) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2473) PID UNIT: control= 0[0m
+[0;32mI (2473) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2493) PID UNIT: control= 0[0m
+[0;32mI (2493) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2513) PID UNIT: control= 0[0m
+[0;32mI (2513) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2533) PID UNIT: control= 0[0m
+[0;32mI (2533) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2553) PID UNIT: control= 0[0m
+[0;32mI (2553) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2573) PID UNIT: control= 0[0m
+[0;32mI (2573) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2593) PID UNIT: control= 0[0m
+[0;32mI (2593) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2613) PID UNIT: control= 0[0m
+[0;32mI (2613) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2633) PID UNIT: control= 0[0m
+[0;32mI (2633) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2653) PID UNIT: control= 0[0m
+[0;32mI (2653) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2673) PID UNIT: control= 0[0m
+[0;32mI (2673) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2693) PID UNIT: control= 0[0m
+[0;32mI (2693) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2713) PID UNIT: control= 0[0m
+[0;32mI (2713) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2733) PID UNIT: control= 0[0m
+[0;32mI (2733) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2753) PID UNIT: control= 0[0m
+[0;32mI (2753) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2773) PID UNIT: control= 0[0m
+[0;32mI (2773) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2793) PID UNIT: control= 0[0m
+[0;32mI (2793) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2813) PID UNIT: control= 0[0m
+[0;32mI (2813) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2833) PID UNIT: control= 0[0m
+[0;32mI (2833) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2853) PID UNIT: control= 0[0m
+[0;32mI (2853) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2873) PID UNIT: control= 0[0m
+[0;32mI (2873) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2893) PID UNIT: control= 0[0m
+[0;32mI (2893) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2913) PID UNIT: control= 0[0m
+[0;32mI (2913) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2933) PID UNIT: control= 0[0m
+[0;32mI (2933) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2953) PID UNIT: control= 0[0m
+[0;32mI (2953) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2973) PID UNIT: control= 0[0m
+[0;32mI (2973) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (2993) PID UNIT: control= 0[0m
+[0;32mI (2993) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3013) PID UNIT: control= 0[0m
+[0;32mI (3013) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3033) PID UNIT: control= 0[0m
+[0;32mI (3033) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3053) PID UNIT: control= 0[0m
+[0;32mI (3053) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3073) PID UNIT: control= 0[0m
+[0;32mI (3073) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3093) PID UNIT: control= 0[0m
+[0;32mI (3093) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3113) PID UNIT: control= 0[0m
+[0;32mI (3113) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3133) PID UNIT: control= 0[0m
+[0;32mI (3133) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3153) PID UNIT: control= 0[0m
+[0;32mI (3153) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3173) PID UNIT: control= 0[0m
+[0;32mI (3173) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3193) PID UNIT: control= 0[0m
+[0;32mI (3193) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3213) PID UNIT: control= 0[0m
+[0;32mI (3213) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3233) PID UNIT: control= 0[0m
+[0;32mI (3233) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3253) PID UNIT: control= 0[0m
+[0;32mI (3253) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3273) PID UNIT: control= 0[0m
+[0;32mI (3273) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3293) PID UNIT: control= 0[0m
+[0;32mI (3293) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3300) PCNT UNIT: [0m
+ENCODER[1] READING: 0.00
+ENCODER[2] READING: 0.00
+ENCODER[3] READING: 0.00
+ENCODER[4] READING: 0.00
+[0;32mI (3313) PID UNIT: control= 0[0m
+[0;32mI (3313) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3333) PID UNIT: control= 0[0m
+[0;32mI (3333) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3353) PID UNIT: control= 0[0m
+[0;32mI (3353) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3373) PID UNIT: control= 0[0m
+[0;32mI (3373) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3393) PID UNIT: control= 0[0m
+[0;32mI (3393) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3413) PID UNIT: control= 0[0m
+[0;32mI (3413) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3433) PID UNIT: control= 0[0m
+[0;32mI (3433) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3453) PID UNIT: control= 0[0m
+[0;32mI (3453) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3473) PID UNIT: control= 0[0m
+[0;32mI (3473) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3493) PID UNIT: control= 0[0m
+[0;32mI (3493) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3513) PID UNIT: control= 0[0m
+[0;32mI (3513) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3533) PID UNIT: control= 0[0m
+[0;32mI (3533) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3553) PID UNIT: control= 0[0m
+[0;32mI (3553) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3573) PID UNIT: control= 0[0m
+[0;32mI (3573) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3593) PID UNIT: control= 0[0m
+[0;32mI (3593) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3613) PID UNIT: control= 0[0m
+[0;32mI (3613) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3633) PID UNIT: control= 0[0m
+[0;32mI (3633) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3653) PID UNIT: control= 0[0m
+[0;32mI (3653) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3673) PID UNIT: control= 0[0m
+[0;32mI (3673) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3693) PID UNIT: control= 0[0m
+[0;32mI (3693) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3713) PID UNIT: control= 0[0m
+[0;32mI (3713) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3733) PID UNIT: control= 0[0m
+[0;32mI (3733) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3753) PID UNIT: control= 0[0m
+[0;32mI (3753) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3773) PID UNIT: control= 0[0m
+[0;32mI (3773) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3793) PID UNIT: control= 0[0m
+[0;32mI (3793) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3813) PID UNIT: control= 0[0m
+[0;32mI (3813) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3833) PID UNIT: control= 0[0m
+[0;32mI (3833) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3853) PID UNIT: control= 0[0m
+[0;32mI (3853) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3873) PID UNIT: control= 0[0m
+[0;32mI (3873) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3893) PID UNIT: control= 0[0m
+[0;32mI (3893) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3913) PID UNIT: control= 0[0m
+[0;32mI (3913) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3933) PID UNIT: control= 0[0m
+[0;32mI (3933) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3953) PID UNIT: control= 0[0m
+[0;32mI (3953) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3973) PID UNIT: control= 0[0m
+[0;32mI (3973) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (3993) PID UNIT: control= 0[0m
+[0;32mI (3993) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4013) PID UNIT: control= 0[0m
+[0;32mI (4013) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4033) PID UNIT: control= 0[0m
+[0;32mI (4033) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4053) PID UNIT: control= 0[0m
+[0;32mI (4053) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4073) PID UNIT: control= 0[0m
+[0;32mI (4073) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4093) PID UNIT: control= 0[0m
+[0;32mI (4093) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4113) PID UNIT: control= 0[0m
+[0;32mI (4113) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4129) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 61:77:c6:b5:3c:1f:, link_role 1[0m
+[0;32mI (4133) PID UNIT: control= 0[0m
+[0;32mI (4133) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4153) PID UNIT: control= 0[0m
+[0;32mI (4153) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4173) PID UNIT: control= 0[0m
+[0;32mI (4173) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4193) PID UNIT: control= 0[0m
+[0;32mI (4193) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4213) PID UNIT: control= 0[0m
+[0;32mI (4213) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4233) PID UNIT: control= 0[0m
+[0;32mI (4233) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4253) PID UNIT: control= 0[0m
+[0;32mI (4253) PID UNIT: state IDLE state machine: 0x0[0m
+[0;32mI (4257) BLE UNIT: Unhandled event: 21[0m

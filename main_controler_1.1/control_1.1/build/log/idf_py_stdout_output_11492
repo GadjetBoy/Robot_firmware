@@ -1,0 +1,1997 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep 17 2025 20:44:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20e34h (134708) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00030e5c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=00030e80 vaddr=3ffbdb60 size=04d40h ( 19776) load[0m
+[0;32mI (146) esp_image: segment 3: paddr=00035bc8 vaddr=40080000 size=0a450h ( 42064) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7e244h (516676) map[0m
+[0;32mI (340) esp_image: segment 5: paddr=000be26c vaddr=4008a450 size=0ef20h ( 61216) load[0m
+[0;32mI (376) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (376) boot: Disabling RNG early entropy source...[0m
+[0;32mI (387) cpu_start: Multicore app[0m
+[0;32mI (395) cpu_start: Pro cpu start user code[0m
+[0;32mI (395) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (395) app_init: Application information:[0m
+[0;32mI (395) app_init: Project name:     control_1.1[0m
+[0;32mI (399) app_init: App version:      v5.4[0m
+[0;32mI (403) app_init: Compile time:     Sep 17 2025 20:44:09[0m
+[0;32mI (408) app_init: ELF file SHA256:  04e00cfa3...[0m
+[0;32mI (412) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (416) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (420) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (424) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (428) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (434) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (439) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (444) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (449) heap_init: At 3FFC7980 len 00018680 (97 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (460) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (465) heap_init: At 40099370 len 00006C90 (27 KiB): IRAM[0m
+[0;32mI (472) spi_flash: detected chip: generic[0m
+[0;32mI (474) spi_flash: flash io: dio[0m
+[0;32mI (478) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (483) main_task: Started on CPU0[0m
+[0;32mI (486) main_task: Calling app_main()[0m
+[0;32mI (489) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (498) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (503) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (521) I2C SLAVE: .............[0m
+
+[0;32mI (524) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (529) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (535) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (539) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (543) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (548) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (553) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (557) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (562) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (567) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (572) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (576) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (581) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (596) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (599) BTDM_INIT: Bluetooth MAC: ac:15:18:d2:81:36[0m
+[0;32mI (601) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (624) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (631) I2C SLAVE: .............[0m
+
+I BOD: Brownout detector was triggered
+
+
+ets Jun  8 2016 00:22:57
+
+rst:0x3 (SW_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (60) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (60) boot: compile time Sep 17 2025 20:44:17[0m
+[0;32mI (60) boot: Multicore bootloader[0m
+[0;32mI (62) boot: chip revision: v1.1[0m
+[0;32mI (65) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (68) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (72) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (76) boot: Enabling RNG early entropy source...[0m
+[0;32mI (80) boot: Partition Table:[0m
+[0;32mI (83) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (89) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (96) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (102) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (109) boot: End of partition table[0m
+[0;32mI (112) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20e34h (134708) map[0m
+[0;32mI (166) esp_image: segment 1: paddr=00030e5c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (166) esp_image: segment 2: paddr=00030e80 vaddr=3ffbdb60 size=04d40h ( 19776) load[0m
+[0;32mI (177) esp_image: segment 3: paddr=00035bc8 vaddr=40080000 size=0a450h ( 42064) load[0m
+[0;32mI (193) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7e244h (516676) map[0m
+[0;32mI (370) esp_image: segment 5: paddr=000be26c vaddr=4008a450 size=0ef20h ( 61216) load[0m
+[0;32mI (406) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (407) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (425) cpu_start: Pro cpu start user code[0m
+[0;32mI (425) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (426) app_init: Application information:[0m
+[0;32mI (426) app_init: Project name:     control_1.1[0m
+[0;32mI (430) app_init: App version:      v5.4[0m
+[0;32mI (433) app_init: Compile time:     Sep 17 2025 20:44:09[0m
+[0;32mI (438) app_init: ELF file SHA256:  04e00cfa3...[0m
+[0;32mI (443) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (446) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (450) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (454) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (458) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (465) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (475) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (480) heap_init: At 3FFC7980 len 00018680 (97 KiB): DRAM[0m
+[0;32mI (485) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (490) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (496) heap_init: At 40099370 len 00006C90 (27 KiB): IRAM[0m
+[0;32mI (503) spi_flash: detected chip: generic[0m
+[0;32mI (505) spi_flash: flash io: dio[0m
+[0;32mI (509) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (513) main_task: Started on CPU0[0m
+[0;32mI (516) main_task: Calling app_main()[0m
+[0;32mI (519) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (528) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (533) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (551) I2C SLAVE: .............[0m
+
+[0;32mI (554) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (559) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (565) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (569) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (573) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (578) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (583) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (587) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (592) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (597) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (602) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (606) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (611) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (626) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (629) BTDM_INIT: Bluetooth MAC: ac:15:18:d2:81:36[0m
+[0;32mI (631) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (654) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (661) I2C SLAVE: .............[0m
+
+[0;32mI (764) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (772) I2C SLAVE: .............[0m
+
+[0;32mI (806) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (807) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (807) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (810) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (815) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (820) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (825) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (829) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (875) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (882) I2C SLAVE: .............[0m
+
+[0;32mI (985) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (992) I2C SLAVE: .............[0m
+
+[0;32mI (1034) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1034) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1035) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;33mW (1036) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (1036) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1038) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1050) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1055) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1066) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1064) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1071) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1078) BLE UNIT: the gatts char length = 8[0m
+[0;32mI (1080) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1084) BLE UNIT: prf_char[0] = 0[0m
+[0;32mI (1089) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1092) BLE UNIT: prf_char[1] = 0[0m
+[0;32mI (1095) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1100) BLE UNIT: prf_char[2] = 0[0m
+[0;32mI (1118) I2C SLAVE: .............[0m
+
+[0;32mI (1121) BLE UNIT: prf_char[3] = 0[0m
+[0;32mI (1127) BLE UNIT: prf_char[4] = 0[0m
+[0;32mI (1131) BLE UNIT: prf_char[5] = 0[0m
+[0;32mI (1134) BLE UNIT: prf_char[6] = 0[0m
+[0;32mI (1137) BLE UNIT: prf_char[7] = 0[0m
+[0;32mI (1140) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1147) BLE UNIT: the gatts char length = 8[0m
+[0;32mI (1151) BLE UNIT: prf_char[0] = 0[0m
+[0;32mI (1154) BLE UNIT: prf_char[1] = 1[0m
+[0;32mI (1157) BLE UNIT: prf_char[2] = 2[0m
+[0;32mI (1160) BLE UNIT: prf_char[3] = 3[0m
+[0;32mI (1163) BLE UNIT: prf_char[4] = 4[0m
+[0;32mI (1166) BLE UNIT: prf_char[5] = 5[0m
+[0;32mI (1169) BLE UNIT: prf_char[6] = 6[0m
+[0;32mI (1173) BLE UNIT: prf_char[7] = 7[0m
+[0;32mI (1176) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1183) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1186) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1037) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1194) main_task: Returned from app_main()[0m
+[0;32mI (1224) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1231) I2C SLAVE: .............[0m
+
+[0;32mI (1297) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1297) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1297) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1301) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1306) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1311) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1316) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1321) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1334) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1343) I2C SLAVE: .............[0m
+
+[0;32mI (1447) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1454) I2C SLAVE: .............[0m
+
+[0;32mI (1526) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1526) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1526) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1530) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1534) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1539) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1544) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1549) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1557) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1572) I2C SLAVE: .............[0m
+
+[0;32mI (1675) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1682) I2C SLAVE: .............[0m
+
+[0;32mI (1754) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1754) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1754) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1758) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1762) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1767) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1772) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1777) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1785) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1800) I2C SLAVE: .............[0m
+
+[0;32mI (1903) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1910) I2C SLAVE: .............[0m
+
+[0;32mI (1982) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1982) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1982) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1986) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1990) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (1995) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2000) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2005) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2013) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2028) I2C SLAVE: .............[0m
+
+[0;32mI (2131) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2138) I2C SLAVE: .............[0m
+
+[0;32mI (2210) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2210) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2210) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2214) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2219) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2223) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2228) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2233) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2241) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2256) I2C SLAVE: .............[0m
+
+[0;32mI (2359) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2366) I2C SLAVE: .............[0m
+
+[0;32mI (2438) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2438) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2438) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2442) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2447) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2451) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2456) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2461) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2469) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2484) I2C SLAVE: .............[0m
+
+[0;32mI (2587) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2594) I2C SLAVE: .............[0m
+
+[0;32mI (2666) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2666) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2666) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2670) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2675) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2679) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2684) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2689) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2697) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2712) I2C SLAVE: .............[0m
+
+[0;32mI (2815) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2822) I2C SLAVE: .............[0m
+
+[0;32mI (2894) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2894) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2894) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2898) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2903) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2907) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2912) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2917) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (2925) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2940) I2C SLAVE: .............[0m
+
+[0;32mI (3043) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3050) I2C SLAVE: .............[0m
+
+[0;32mI (3122) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3122) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3122) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3126) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3131) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3135) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3140) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3145) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3153) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3168) I2C SLAVE: .............[0m
+
+[0;32mI (3271) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3278) I2C SLAVE: .............[0m
+
+[0;32mI (3350) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3350) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3350) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3354) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3359) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3363) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3368) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3373) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3381) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3396) I2C SLAVE: .............[0m
+
+[0;32mI (3499) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3506) I2C SLAVE: .............[0m
+
+[0;32mI (3578) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3578) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3578) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3582) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3587) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3591) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3596) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3601) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3609) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3624) I2C SLAVE: .............[0m
+
+[0;32mI (3727) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3734) I2C SLAVE: .............[0m
+
+[0;32mI (3806) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3806) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3806) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3810) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3814) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3819) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3824) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3829) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (3837) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3852) I2C SLAVE: .............[0m
+
+[0;32mI (3955) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3962) I2C SLAVE: .............[0m
+
+[0;32mI (4028) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (4028) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (4034) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4034) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4037) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4042) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4047) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4052) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4057) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4062) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4065) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4084) I2C SLAVE: .............[0m
+
+[0;32mI (4188) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4195) I2C SLAVE: .............[0m
+
+[0;32mI (4267) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4267) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4267) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4271) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4276) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4280) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4285) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4290) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4298) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4313) I2C SLAVE: .............[0m
+
+[0;32mI (4416) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4423) I2C SLAVE: .............[0m
+
+[0;32mI (4495) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4495) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4495) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4499) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4504) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4508) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4513) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4518) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4526) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4541) I2C SLAVE: .............[0m
+
+[0;32mI (4644) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4651) I2C SLAVE: .............[0m
+
+[0;32mI (4723) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4723) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4723) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4727) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4732) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4736) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4741) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4746) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4754) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4769) I2C SLAVE: .............[0m
+
+[0;32mI (4872) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4879) I2C SLAVE: .............[0m
+
+[0;32mI (4951) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4951) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4951) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4955) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4960) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4965) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4970) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4974) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (4982) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4997) I2C SLAVE: .............[0m
+
+[0;32mI (5101) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5108) I2C SLAVE: .............[0m
+
+[0;32mI (5179) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5179) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5179) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5183) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5187) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5192) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5197) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5202) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5211) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5225) I2C SLAVE: .............[0m
+
+[0;32mI (5328) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5335) I2C SLAVE: .............[0m
+
+[0;32mI (5407) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5407) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5407) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5411) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5416) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5420) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5425) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5430) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5438) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5453) I2C SLAVE: .............[0m
+
+[0;32mI (5556) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5563) I2C SLAVE: .............[0m
+
+[0;32mI (5635) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5635) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5635) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5639) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5643) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5648) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5653) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5658) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5666) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5681) I2C SLAVE: .............[0m
+
+[0;32mI (5784) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5791) I2C SLAVE: .............[0m
+
+[0;32mI (5863) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5863) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5863) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5867) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5872) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5876) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5881) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5886) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (5894) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5909) I2C SLAVE: .............[0m
+
+[0;32mI (6012) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6019) I2C SLAVE: .............[0m
+
+[0;32mI (6091) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6091) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6091) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6095) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6100) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6104) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6109) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6114) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6122) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6137) I2C SLAVE: .............[0m
+
+[0;32mI (6240) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6247) I2C SLAVE: .............[0m
+
+[0;32mI (6319) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6319) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6320) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6323) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6328) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6333) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6338) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6343) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6350) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6366) I2C SLAVE: .............[0m
+
+[0;32mI (6469) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6476) I2C SLAVE: .............[0m
+
+[0;32mI (6548) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6548) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6548) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6552) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6557) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6561) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6566) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6572) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6579) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6594) I2C SLAVE: .............[0m
+
+[0;32mI (6697) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6704) I2C SLAVE: .............[0m
+
+[0;32mI (6776) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6776) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6776) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6780) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6785) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6789) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6794) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6799) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (6807) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6822) I2C SLAVE: .............[0m
+
+[0;32mI (6925) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (6932) I2C SLAVE: .............[0m
+
+[0;32mI (7004) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7004) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7004) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7008) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7013) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7017) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7022) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7027) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7035) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7050) I2C SLAVE: .............[0m
+
+[0;32mI (7135) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (7135) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (7153) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7159) I2C SLAVE: .............[0m
+
+[0;32mI (7232) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7232) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7232) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7236) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7241) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7245) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7250) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7255) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7263) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7278) I2C SLAVE: .............[0m
+
+[0;32mI (7381) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7388) I2C SLAVE: .............[0m
+
+[0;32mI (7460) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7460) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7460) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7464) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7469) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7473) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7478) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7483) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7491) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7506) I2C SLAVE: .............[0m
+
+[0;32mI (7609) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7616) I2C SLAVE: .............[0m
+
+[0;32mI (7688) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7688) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7688) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7692) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7697) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7701) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7706) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7711) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7719) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7734) I2C SLAVE: .............[0m
+
+[0;32mI (7837) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7844) I2C SLAVE: .............[0m
+
+[0;32mI (7916) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7916) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7916) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7920) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7925) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7929) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7934) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7939) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (7947) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7962) I2C SLAVE: .............[0m
+
+[0;32mI (8065) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8072) I2C SLAVE: .............[0m
+
+[0;32mI (8144) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8144) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8144) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8148) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8153) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8157) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8162) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8167) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8175) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8190) I2C SLAVE: .............[0m
+
+[0;32mI (8293) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8300) I2C SLAVE: .............[0m
+
+[0;32mI (8372) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8372) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8372) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8376) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8381) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8385) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8390) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8395) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8403) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8418) I2C SLAVE: .............[0m
+
+[0;32mI (8521) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8528) I2C SLAVE: .............[0m
+
+[0;32mI (8600) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8600) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8600) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8604) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8609) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8613) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8618) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8623) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8631) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8646) I2C SLAVE: .............[0m
+
+[0;32mI (8749) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8756) I2C SLAVE: .............[0m
+
+[0;32mI (8828) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8828) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8828) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8832) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8837) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8841) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8846) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8851) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (8859) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8874) I2C SLAVE: .............[0m
+
+[0;32mI (8977) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8984) I2C SLAVE: .............[0m
+
+[0;32mI (9056) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9056) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9056) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9060) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9065) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9069) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9074) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9079) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9087) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9102) I2C SLAVE: .............[0m
+
+[0;32mI (9205) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9212) I2C SLAVE: .............[0m
+
+[0;32mI (9284) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9284) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9284) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9288) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9293) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9297) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9302) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9307) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9315) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9330) I2C SLAVE: .............[0m
+
+[0;32mI (9433) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9440) I2C SLAVE: .............[0m
+
+[0;32mI (9512) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9512) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9512) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9516) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9521) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9525) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9530) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9535) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9543) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9558) I2C SLAVE: .............[0m
+
+[0;32mI (9661) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9668) I2C SLAVE: .............[0m
+
+[0;32mI (9740) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9740) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9740) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9744) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9749) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9753) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9758) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9763) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9771) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9786) I2C SLAVE: .............[0m
+
+[0;32mI (9889) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9896) I2C SLAVE: .............[0m
+
+[0;32mI (9968) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9968) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9968) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9972) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9977) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9981) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9986) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9991) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (9999) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10014) I2C SLAVE: .............[0m
+
+[0;32mI (10118) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10125) I2C SLAVE: .............[0m
+
+[0;32mI (10196) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10196) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10196) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10200) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10205) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10210) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10215) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10220) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10228) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10243) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (10243) I2C SLAVE: .............[0m
+
+[0;32mI (10248) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (10351) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10358) I2C SLAVE: .............[0m
+
+[0;32mI (10425) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10425) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10425) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10429) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10434) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10439) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10444) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10449) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10461) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10472) I2C SLAVE: .............[0m
+
+[0;32mI (10575) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10582) I2C SLAVE: .............[0m
+
+[0;32mI (10654) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10654) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10654) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10658) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10663) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10668) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10673) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10678) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10685) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10701) I2C SLAVE: .............[0m
+
+[0;32mI (10804) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10811) I2C SLAVE: .............[0m
+
+[0;32mI (10883) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10883) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10883) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10887) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10892) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10897) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10902) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10907) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (10914) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10930) I2C SLAVE: .............[0m
+
+[0;32mI (11033) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11040) I2C SLAVE: .............[0m
+
+[0;32mI (11112) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11112) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11112) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11116) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11121) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11126) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11131) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11136) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11143) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11159) I2C SLAVE: .............[0m
+
+[0;32mI (11262) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11269) I2C SLAVE: .............[0m
+
+[0;32mI (11341) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11341) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11341) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11345) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11350) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11355) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11360) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11365) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11372) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11388) I2C SLAVE: .............[0m
+
+[0;32mI (11491) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11498) I2C SLAVE: .............[0m
+
+[0;32mI (11570) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11570) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11570) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11574) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11579) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11584) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11589) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11594) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11601) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11617) I2C SLAVE: .............[0m
+
+[0;32mI (11720) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11727) I2C SLAVE: .............[0m
+
+[0;32mI (11799) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11799) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11799) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11803) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11808) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11813) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11818) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11823) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (11830) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11846) I2C SLAVE: .............[0m
+
+[0;32mI (11949) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11956) I2C SLAVE: .............[0m
+
+[0;32mI (12028) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12028) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12028) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12032) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12037) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12042) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12047) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12052) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12059) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12075) I2C SLAVE: .............[0m
+
+[0;32mI (12178) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12185) I2C SLAVE: .............[0m
+
+[0;32mI (12257) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12257) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12257) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12261) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12266) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12271) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12276) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12281) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12288) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12304) I2C SLAVE: .............[0m
+
+[0;32mI (12407) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12414) I2C SLAVE: .............[0m
+
+[0;32mI (12486) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12486) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12486) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12490) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12495) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12500) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12505) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12510) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12517) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12533) I2C SLAVE: .............[0m
+
+[0;32mI (12636) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12643) I2C SLAVE: .............[0m
+
+[0;32mI (12715) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12715) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12715) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12719) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12724) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12729) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12734) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12739) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12746) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12762) I2C SLAVE: .............[0m
+
+[0;32mI (12865) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12872) I2C SLAVE: .............[0m
+
+[0;32mI (12944) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12944) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12944) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12948) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12953) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12958) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12963) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12968) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (12975) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12991) I2C SLAVE: .............[0m
+
+[0;32mI (13094) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13101) I2C SLAVE: .............[0m
+
+[0;32mI (13173) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13173) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13173) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13177) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13182) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13187) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13192) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13197) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13204) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13220) I2C SLAVE: .............[0m
+
+[0;32mI (13323) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13330) I2C SLAVE: .............[0m
+
+[0;32mI (13375) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (13375) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (13402) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13402) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13402) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13406) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13411) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13416) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13421) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13426) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13433) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13449) I2C SLAVE: .............[0m
+
+[0;32mI (13552) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13559) I2C SLAVE: .............[0m
+
+[0;32mI (13631) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13631) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13631) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13635) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13640) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13645) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13650) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13655) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13662) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13678) I2C SLAVE: .............[0m
+
+[0;32mI (13781) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13788) I2C SLAVE: .............[0m
+
+[0;32mI (13860) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13860) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13860) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13864) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13869) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13874) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13879) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13884) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=255 Dir=1[0m
+[0;32mI (13891) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (13907) I2C SLAVE: .............[0m
+
+[0;32mI (14010) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0

@@ -1,0 +1,3330 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 12 2025 13:47:17[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0be14h ( 48660) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0001be3c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001be60 vaddr=3ffb0000 size=025ech (  9708) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001e454 vaddr=40080000 size=01bc4h (  7108) load[0m
+[0;32mI (121) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=176b0h ( 95920) map[0m
+[0;32mI (158) esp_image: segment 5: paddr=000376d8 vaddr=40081bc4 size=0d2d4h ( 53972) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (205) cpu_start: Pro cpu start user code[0m
+[0;32mI (205) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (205) app_init: Application information:[0m
+[0;32mI (206) app_init: Project name:     control_1.7[0m
+[0;32mI (210) app_init: App version:      v5.4-dirty[0m
+[0;32mI (214) app_init: Compile time:     Nov 12 2025 13:47:06[0m
+[0;32mI (219) app_init: ELF file SHA256:  4c4dd51ef...[0m
+[0;32mI (223) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (227) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (231) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (235) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (239) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (250) heap_init: At 3FFB3A28 len 0002C5D8 (177 KiB): DRAM[0m
+[0;32mI (256) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (261) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 4008EE98 len 00011168 (68 KiB): IRAM[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (279) main_task: Started on CPU0[0m
+[0;32mI (282) main_task: Calling app_main()[0m
+[0;32mI (285) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (293) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (302) uart: queue free spaces: 20[0m
+[0;32mI (306) UART_SLAVE_DMA: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (320) UART_SLAVE_DMA: Setting up PWM and PID module[0m
+[0;32mI (320) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (320) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (329) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (337) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (345) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (354) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (370) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (379) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (395) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (404) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (412) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (420) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (428) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (437) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (445) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (564) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (574) MOTOR_SET: Starting PID application...[0m
+[0;32mI (574) MOTOR_SET: PID application started successfully[0m
+[0;32mI (574) UART_SLAVE_DMA: Slave initialization complete and ready to receive data[0m
+[0;33mW (575) UART_SLAVE_DMA: Ring buffer full[0m
+[0;32mI (575) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (583) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (603) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (579) RESET: CPU Reset reason: 1[0m
+[1;31mE (612) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (619) main_task: Returned from app_main()[0m
+[1;31mE (624) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (632) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (647) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (652) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (657) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (662) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (667) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (672) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (677) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (682) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (688) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (692) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (702) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (707) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (711) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (712) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (724) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (733) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (741) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (746) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (756) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (761) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (766) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (771) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (776) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (781) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (786) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (791) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (796) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (801) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (811) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (816) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (821) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (827) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (832) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (832) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (842) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (852) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (865) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (870) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (875) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (880) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (885) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (890) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (895) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (900) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (905) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (910) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (920) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (925) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (930) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (935) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (940) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (945) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (950) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (951) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (955) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (966) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (978) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (984) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (989) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (994) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (999) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1004) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1009) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1014) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1019) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1025) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1034) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1039) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1044) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1049) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1054) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1059) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1064) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1069) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (1074) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (1074) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (1084) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1093) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1102) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1107) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1112) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1117) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1122) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1127) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1132) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1151) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1156) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1161) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1166) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1171) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1176) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1181) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1186) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1191) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (1192) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[0;32mI (1207) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1196) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1220) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1225) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1230) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1236) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1241) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1246) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1251) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1260) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1265) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1270) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1275) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1280) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1286) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1291) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1296) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1301) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1306) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (1311) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[0;32mI (1323) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1315) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1336) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1341) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1346) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1351) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1356) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1361) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1370) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1375) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1381) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1386) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1391) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1396) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1401) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1406) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1411) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1416) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (1425) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (1426) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (1430) MOTOR_SET: Applied to motor[0]: pwm=330 dir=1[0m
+[0;32mI (1440) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1449) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1458) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1463) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1468) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1479) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1484) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1489) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1494) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1499) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1504) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1509) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1514) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1519) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1524) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1534) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1539) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1544) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1548) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (1549) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1559) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1568) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1577) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1587) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1592) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1597) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1602) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1607) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1612) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1617) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1622) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1627) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1632) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1642) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1647) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1652) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1657) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1662) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1667) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1668) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (1672) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1683) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1697) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1702) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1707) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1712) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1717) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1722) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1727) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1732) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1737) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1742) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1756) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1761) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1766) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1771) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1776) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1781) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1786) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1791) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (1791) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1802) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1815) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1820) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1825) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1830) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1835) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1841) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1846) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1851) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1856) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1866) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1871) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1876) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1881) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1886) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1891) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1896) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1901) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1906) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1911) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (1911) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (1924) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (1933) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1942) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1947) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1952) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1957) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1962) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1967) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1978) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1982) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1987) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1992) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (1997) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2002) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2007) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2012) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2017) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2023) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2032) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2033) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2042) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2052) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2060) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2066) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2071) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2076) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2086) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2091) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2096) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2101) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2106) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2111) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2116) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2121) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2126) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2131) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2151) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2156) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2161) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2170) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2179) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2184) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2189) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2195) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2199) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2205) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2215) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2220) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2225) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2230) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2235) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2240) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2245) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2250) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2255) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2260) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2270) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2270) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2280) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2289) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2298) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2303) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2308) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2313) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2323) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2328) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2333) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2338) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2343) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2348) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2353) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2358) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2363) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2368) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2378) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2383) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2388) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2388) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2398) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2408) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2416) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2422) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2432) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2437) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2442) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2447) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2452) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2457) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2462) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2467) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2472) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2477) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2487) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2492) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2497) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2502) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2507) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2507) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2517) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2527) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2536) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2546) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2551) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2556) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2561) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2566) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2571) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2576) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2581) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2586) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2592) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2601) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2606) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2611) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2616) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2621) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2626) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2626) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2637) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2646) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2656) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2661) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2666) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2671) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2676) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2681) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2686) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2691) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2696) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2701) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2711) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2716) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2721) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2727) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2732) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2737) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2742) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2745) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2747) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2758) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2768) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2776) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2782) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2787) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2792) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2797) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2802) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2807) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2813) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2823) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2827) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2832) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2837) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2842) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2847) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2852) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2857) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2862) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2867) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2868) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2880) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (2889) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2898) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2903) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2908) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2913) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2918) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2924) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2934) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2939) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2944) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2949) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2954) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2959) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2964) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2969) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2974) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (2979) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2989) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (2989) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (2999) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3008) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3017) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3022) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3027) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3032) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3038) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3047) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3053) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3058) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3063) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3068) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3073) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3078) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3083) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3088) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3094) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3103) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3107) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3108) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3118) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3127) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3136) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3141) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3146) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3165) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3170) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3175) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3180) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3185) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3191) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3196) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3201) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3206) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3211) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3221) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3226) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3226) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3236) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3245) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3254) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3259) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3264) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3274) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3280) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3285) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3290) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3295) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3300) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3305) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3310) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3315) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3320) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3330) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3335) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3340) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3344) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3345) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3356) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3365) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3374) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3379) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3389) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3394) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3399) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3404) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3409) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3414) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3419) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3424) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3429) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3435) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3444) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3449) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3454) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3459) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3464) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3464) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3475) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3484) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3498) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3503) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3508) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3513) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3518) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3523) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3528) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3533) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3538) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3543) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3553) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3558) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3563) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3568) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3573) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3578) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3583) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3583) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3594) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3608) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3613) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3618) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3623) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3628) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3633) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3638) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3643) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3648) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3653) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3663) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3668) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3673) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3678) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3683) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3689) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3694) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3699) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3702) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3704) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3715) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3725) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3734) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3739) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3744) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3749) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3754) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3759) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3764) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3774) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3779) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3784) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3789) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3794) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3799) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3804) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3809) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3814) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3820) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3824) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3830) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3837) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3846) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3855) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3860) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3866) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3871) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3876) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3886) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3891) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3896) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3901) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3906) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3911) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3916) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3921) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3926) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3931) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3941) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3946) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (3946) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (3956) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (3966) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3974) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3979) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (3985) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4000) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4005) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4010) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4015) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4020) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4025) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4030) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4035) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4040) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4045) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4055) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4060) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4065) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (4065) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4075) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4085) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4093) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4098) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4104) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4113) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4118) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4123) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4128) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4133) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4138) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4143) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4148) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4153) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4159) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4174) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4179) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4184) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (4184) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4194) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4204) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4213) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4218) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4228) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4233) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4238) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4243) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4248) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4253) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4258) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4263) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4268) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4273) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4283) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4288) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4293) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4298) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4303) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (4303) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4313) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4322) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4336) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4341) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4346) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4351) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4357) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4361) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4366) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4371) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4376) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4381) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4391) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4396) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4402) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4407) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4412) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4417) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4422) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (4422) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4434) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4449) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4454) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4459) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4464) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4469) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4474) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4479) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4484) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4489) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4494) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4504) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4509) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4514) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4519) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4524) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4529) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4534) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4539) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4543) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (4544) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4556) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4565) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4574) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4579) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4584) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4589) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4594) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4599) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4605) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4615) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4620) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4625) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4630) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4635) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4640) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4645) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4650) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4655) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4660) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4664) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (4670) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4677) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4687) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4695) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4701) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4706) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4711) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4721) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4726) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4731) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4736) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4741) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4746) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4751) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4756) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4761) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4766) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4776) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4781) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4786) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (4786) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4796) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4805) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4814) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4819) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4824) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4834) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4839) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4844) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4850) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4854) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4859) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4864) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4869) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4874) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4879) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4889) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4894) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4899) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4904) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4905) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (4909) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (4920) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (4929) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4943) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4949) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4953) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4958) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4963) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4968) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4973) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4978) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4983) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4988) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (4998) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5003) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5008) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5013) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5018) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5023) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5028) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5029) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5033) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5044) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5055) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5062) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5067) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5072) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5077) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5082) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5088) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5093) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5098) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5113) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5118) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5123) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5128) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5133) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5138) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5143) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5148) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5153) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5153) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5163) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5180) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5185) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5190) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5195) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5200) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5205) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5210) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5215) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5220) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5225) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5235) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5240) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5245) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5250) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5255) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5260) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5265) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5270) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5272) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5275) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5287) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5297) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5305) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5310) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5316) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5321) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5326) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5331) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5342) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5346) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5351) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5356) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5361) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5366) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5371) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5376) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5381) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5386) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5396) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5397) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5406) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5415) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5424) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5429) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5434) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5440) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5445) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5455) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5460) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5465) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5470) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5475) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5480) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5485) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5490) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5495) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5500) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5510) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5515) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5515) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5525) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5534) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5543) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5548) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5553) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5563) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5568) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5573) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5578) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5583) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5588) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5593) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5598) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5603) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5608) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5618) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5623) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5628) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5633) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5634) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5638) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5649) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5658) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5666) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5676) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5681) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5686) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5691) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5696) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5701) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5706) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5711) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5716) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5721) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5731) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5736) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5741) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5746) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5751) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5756) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5757) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5761) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5772) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5785) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5791) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5796) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5801) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5806) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5811) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5816) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5821) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5826) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5837) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5842) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5847) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5852) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5857) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5862) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5867) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5872) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5877) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5881) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (5882) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (5894) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (5903) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5912) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5917) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5922) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5928) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5933) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5938) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5948) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5953) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5958) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5963) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5968) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5973) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5978) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5983) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5988) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (5993) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6003) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6003) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6013) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6022) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6031) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6036) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6041) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6046) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6057) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6061) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6066) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6071) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6076) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6081) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6086) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6091) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6096) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6101) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6112) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6116) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6121) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6121) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6132) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6141) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6150) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6155) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6160) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6187) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6192) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6197) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6202) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6207) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6212) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6217) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6222) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6227) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6232) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6240) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6247) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6250) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6259) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6268) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6273) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6278) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6283) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6289) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6299) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6304) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6309) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6314) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6319) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6324) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6329) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6334) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6339) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6344) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6355) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6359) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6359) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6369) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6379) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6387) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6393) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6398) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6403) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6413) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6418) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6423) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6428) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6433) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6438) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6443) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6448) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6453) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6458) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6468) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6473) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6478) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6478) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6488) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6497) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6506) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6511) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6521) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6526) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6531) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6536) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6541) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6546) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6551) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6556) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6561) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6566) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6576) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6581) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6586) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6591) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6596) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6597) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6601) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6612) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6621) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6632) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6637) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6642) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6647) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6652) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6657) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6662) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6667) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6672) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6677) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6687) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6692) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6697) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6702) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6707) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6712) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6717) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6721) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6722) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;33mW (6734) UART_SLAVE_DMA: Ring buffer full[0m
+[0;32mI (6733) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6745) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6755) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6760) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6766) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6771) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6776) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6781) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6786) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6796) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6801) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6806) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6811) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6816) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6821) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6826) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6831) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6836) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6841) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6846) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6850) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6859) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6868) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6877) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6882) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6887) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6892) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6902) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6907) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6912) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6917) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6922) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6927) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6932) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6937) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6942) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6947) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6957) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6962) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (6967) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6968) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (6972) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (6983) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (6992) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (7001) MOTOR_SET: Applied to motor[0]: pwm=-321 dir=-1[0m
+[1;31mE (7010) MOTOR_SET: Applied to motor[0]: pwm=706 dir=1[0m
+[1;31mE (7015) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7020) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7025) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7030) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7035) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7040) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7045) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7050) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7055) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7065) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7070) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7075) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7080) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7085) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7090) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7091) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7095) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7107) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7120) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7125) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7130) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7135) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7140) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7145) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7150) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7155) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7160) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7165) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7191) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7196) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7201) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7206) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7211) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7215) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7216) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7227) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7237) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7249) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7254) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7259) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7264) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7269) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7274) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7279) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7284) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7289) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7294) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7304) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7309) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7314) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7319) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7324) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7329) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7334) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7336) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7339) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7350) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7363) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7368) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7373) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7378) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7384) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7389) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7394) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7399) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7404) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7409) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7418) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7423) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7429) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7433) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7438) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7443) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7448) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7453) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7458) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7459) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7463) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7473) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7483) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7491) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7496) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7501) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7506) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7511) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7516) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7526) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7531) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7536) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7541) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7546) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7551) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7556) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7561) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7566) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7571) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7581) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7582) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7586) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7596) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7605) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7614) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7619) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7624) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7634) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7639) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7644) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7649) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7654) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7659) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7664) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7670) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7674) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7679) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7689) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7694) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7699) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7704) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7704) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7714) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7723) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7732) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7737) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7747) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7752) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7757) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7762) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7767) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7772) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7777) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7782) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7787) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7792) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7802) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7807) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7812) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7817) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7822) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7822) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7834) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7843) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7857) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7862) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7867) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7872) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7877) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7882) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7887) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7892) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7897) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7902) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7912) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7917) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7922) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7927) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7932) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7937) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7942) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7943) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (7947) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (7958) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (7969) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7976) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7981) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7986) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7991) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (7996) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8001) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8006) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8011) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8021) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8026) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8031) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8036) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8041) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8046) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8051) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8056) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8061) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8067) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (8067) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8077) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8086) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8094) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8099) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8104) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8109) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8114) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8119) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8124) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8134) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8139) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8144) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8149) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8154) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8160) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8165) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8170) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8175) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8180) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8185) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[0;32mI (8195) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8201) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8208) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8213) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8218) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8223) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8228) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8233) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8238) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8243) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8253) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8258) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8263) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8268) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8273) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8278) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8283) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8288) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8293) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8298) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8299) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (8308) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8313) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8322) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8331) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8337) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8341) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8346) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8351) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8356) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8366) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8371) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8376) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8381) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8386) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8391) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8396) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8401) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8406) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8411) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8421) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8422) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (8426) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8436) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8445) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8454) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8459) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8464) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8479) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8484) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8489) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8494) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8499) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8504) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8509) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8514) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8519) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8524) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8534) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8539) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8544) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8545) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[0;32mI (8559) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8549) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8572) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8577) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8582) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8592) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8597) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8602) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8607) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8612) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8617) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8622) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8627) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8632) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8637) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8647) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8652) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8657) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8662) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (8662) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8674) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8683) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8691) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8701) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8706) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8711) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8716) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8721) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8726) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8731) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8736) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8741) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8746) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8756) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8761) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8766) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8771) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8776) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8781) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8782) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (8786) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8798) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8812) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8817) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8822) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8827) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8832) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8837) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8842) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8847) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8852) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8857) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8867) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8872) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8877) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8882) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8888) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8893) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8898) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8903) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8906) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (8908) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (8918) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (8928) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8937) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8942) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8947) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8952) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8957) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8962) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8967) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8977) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8982) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8987) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8992) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (8997) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9002) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9007) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9012) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9017) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9022) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9027) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (9032) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9039) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9048) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9057) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9062) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9067) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9072) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9077) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9087) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9092) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9097) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9102) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9107) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9112) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9117) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9122) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9127) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9132) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9142) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9147) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9148) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (9152) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9164) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9174) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9182) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9187) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9204) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9210) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9215) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9220) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9225) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9230) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9235) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9240) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9245) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9250) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9260) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9265) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9270) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9273) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (9275) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9284) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9294) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9302) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9307) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9317) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9322) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9327) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9332) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9337) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9342) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9347) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9352) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9357) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9362) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9372) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9378) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9383) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9388) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9393) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (9393) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9404) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9413) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9427) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9432) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9437) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9442) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9447) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9452) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9457) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9462) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9467) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9472) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9482) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9487) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9492) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9497) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9502) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9507) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9513) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (9513) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9524) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9538) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9543) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9548) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9553) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9559) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9563) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9568) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9573) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9578) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9583) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9598) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9603) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9609) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9614) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9619) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9624) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9629) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9632) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (9634) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9645) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9656) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9663) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9668) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9673) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9678) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9683) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9688) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9693) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9698) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9708) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9713) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9718) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9723) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9728) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9733) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9739) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9744) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9749) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9753) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: 1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: -1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: 1023.00
+[1;31mE (9754) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9765) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9775) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9783) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9788) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9793) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9798) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9803) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9808) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9818) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9824) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9828) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9833) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9838) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9843) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9848) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9853) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9858) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9863) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9873) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9874) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (9878) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9888) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (9897) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9906) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9911) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9916) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9921) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9931) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9936) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9941) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9946) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9951) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9956) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9962) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9967) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9972) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9977) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9987) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (9992) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (9997) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (9997) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10009) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10018) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10027) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10032) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10042) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10047) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10052) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10057) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10062) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10067) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10072) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10077) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10082) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10087) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10097) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10102) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10107) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10112) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10117) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10117) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10127) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10137) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10150) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10155) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10160) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10165) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10170) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10175) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10180) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10185) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10190) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10195) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10212) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10217) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10222) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10227) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10232) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10236) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10237) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;33mW (10250) UART_SLAVE_DMA: Ring buffer full[0m
+[0;32mI (10249) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10260) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10271) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10276) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10281) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10286) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10291) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10296) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10301) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10306) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10311) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10317) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10326) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10331) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10336) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10341) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10346) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10351) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10356) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10362) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10362) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10373) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10383) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10391) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10396) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10402) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10406) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10412) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10417) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10422) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10427) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10437) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10442) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10447) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10452) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10457) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10462) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10467) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10472) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10477) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10482) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10482) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10494) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10503) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10512) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10517) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10522) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10527) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10532) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10537) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10547) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10552) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10557) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10562) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10567) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10572) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10577) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10582) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10587) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10592) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10602) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10602) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10612) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10621) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10630) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10635) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10640) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10645) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10655) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10660) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10665) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10670) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10675) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10680) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10685) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10690) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10695) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10700) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10715) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10720) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10720) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10730) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10740) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10748) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10753) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10758) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10764) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10773) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10778) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10783) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10788) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10793) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10798) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10804) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10809) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10814) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10819) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10829) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10834) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10839) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10839) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10849) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10858) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10867) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10872) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10882) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10887) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10892) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10897) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10902) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10907) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10912) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10917) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10922) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10927) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10937) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10942) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10947) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10952) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10957) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (10957) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (10969) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (10978) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10992) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (10997) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11002) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11007) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11012) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11017) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11022) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11027) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11032) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11037) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11047) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11052) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11057) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11062) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11067) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11072) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11078) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11078) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11090) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11104) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11109) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11114) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11119) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11124) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11129) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11135) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11139) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11144) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11149) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11159) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11164) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11169) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11174) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11179) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11184) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11189) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11194) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11198) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: -1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11199) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11210) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11224) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11229) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11234) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11239) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11244) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11249) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11254) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11259) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11264) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11269) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11279) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11284) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11289) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11294) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11299) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11304) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11309) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11314) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11319) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11319) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11330) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11339) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11348) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11353) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11358) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11364) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11369) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11374) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11379) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11389) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11394) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11399) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11404) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11409) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11414) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11419) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11424) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11429) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11434) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11439) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11444) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11450) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11459) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11468) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11473) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11478) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11483) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11488) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11498) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11504) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11509) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11514) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11519) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11524) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11529) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11534) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11539) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11544) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11554) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11559) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: -1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11559) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11569) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11578) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11587) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11592) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11597) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11607) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11612) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11617) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11622) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11627) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11632) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11637) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11642) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11647) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11652) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11662) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11667) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11672) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11677) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11677) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11687) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11696) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11705) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11710) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11720) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11725) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11730) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11735) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11740) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11745) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11750) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11755) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11760) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11765) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11775) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11780) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11785) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11790) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11795) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11795) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11805) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11814) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11833) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11838) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11843) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11848) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11853) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11858) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11863) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11868) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11873) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11878) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11888) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11893) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11898) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11903) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11909) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11913) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (11914) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (11926) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (11935) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11948) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11953) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11958) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11963) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11968) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11973) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11978) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11983) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11988) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (11993) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12003) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12008) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12013) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12018) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12023) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12028) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12034) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12034) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12045) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12059) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12064) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12069) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12074) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12079) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12084) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12089) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12094) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12099) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12104) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12113) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12118) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12124) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12129) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12134) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12139) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12144) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12149) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12154) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12154) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12165) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12175) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12184) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12189) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12194) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12199) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12204) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12209) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12215) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12230) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12235) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12240) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12245) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12250) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12256) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12261) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12266) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12271) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12274) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12276) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12288) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12297) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12306) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12311) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12316) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12321) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12326) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12331) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12340) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12345) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12350) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12355) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12360) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12365) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12370) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12375) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12381) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12386) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12395) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12396) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12400) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12410) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12419) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12428) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12433) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12438) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12448) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12453) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12458) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12463) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12468) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12473) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12478) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12483) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12488) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12493) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12502) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12507) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12512) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12517) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12519) UART_SLAVE_DMA: [0m
+PWM[1] READING: 1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: -1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: 1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12522) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[0;32mI (12532) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12542) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12555) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12560) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12565) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12570) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12575) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12580) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12585) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12590) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12595) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12600) MOTOR_SET: Applied to motor[0]: pwm=1023 dir=1[0m
+[1;31mE (12609) MOTOR_SET: Applied to motor[0]: pwm=113 dir=1[0m
+[1;31mE (12614) MOTOR_SET: Applied to motor[0]: pwm=-914 dir=-1[0m
+[1;31mE (12619) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12624) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12629) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12634) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12639) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (12641) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12644) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (12656) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12668) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12674) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12679) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12684) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12690) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12695) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12700) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12705) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12710) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12720) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12725) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12730) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12736) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12741) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12746) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12751) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12756) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12761) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (12764) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12766) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (12779) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12788) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12797) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12803) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12808) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12814) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12818) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12824) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12833) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12838) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12843) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12848) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12853) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12858) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12863) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12868) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12873) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12878) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12887) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (12888) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (12892) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (12902) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (12912) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12921) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12926) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12931) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12946) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12951) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12956) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12961) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12966) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12971) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12976) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12981) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12986) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (12991) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13001) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13006) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13011) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13011) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13023) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13032) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13041) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13046) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13056) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13061) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13066) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13071) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13076) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13081) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13086) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13092) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13097) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13102) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13111) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13116) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13121) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13126) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13131) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13132) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13143) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13152) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13166) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13171) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13177) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13181) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13186) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13191) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13196) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13201) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13206) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13211) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13236) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13241) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13246) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13251) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13252) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13256) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13267) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13276) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13290) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13295) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13300) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13305) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13310) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13316) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13321) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13326) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13331) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13336) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13346) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13351) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13356) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13362) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13366) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13371) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13376) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13376) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13387) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13402) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13407) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13412) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13417) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13422) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13427) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13432) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13437) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13442) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13447) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13458) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13463) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13468) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13473) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13478) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13483) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13488) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13493) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13496) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13498) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13511) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13520) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13529) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13534) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13541) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13545) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13550) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13555) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13566) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13570) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13575) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13580) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13585) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13590) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13595) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13600) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13605) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13610) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13620) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13621) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13631) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13641) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13650) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13655) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13660) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13665) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13677) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13681) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13686) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13691) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13696) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13701) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13706) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13711) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13716) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13721) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13731) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13736) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13740) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13741) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13752) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13761) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13770) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13776) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13786) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13791) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13796) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13801) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13806) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13811) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13816) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13821) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13826) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13831) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13842) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13846) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13851) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13856) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13861) UART_SLAVE_DMA: [0m
+PWM[1] READING: -1023.00 
+PWM[2] READING: -1023.00 
+PWM[3] READING: 1023.00 
+PWM[4] READING: 1023.00 
+PWM[5] READING: 1023.00 
+PWM[6] READING: 1023.00 
+PWM[7] READING: -1023.00 
+PWM[8] READING: -1023.00
+[1;31mE (13861) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[0;32mI (13872) UART_SLAVE_DMA: .............[0m
+
+[1;31mE (13882) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13891) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13901) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13906) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13911) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13916) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13921) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13926) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13931) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13936) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13941) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13946) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m
+[1;31mE (13956) MOTOR_SET: Applied to motor[0]: pwm=-1023 dir=-1[0m

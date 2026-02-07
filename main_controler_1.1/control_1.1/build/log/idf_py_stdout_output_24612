@@ -1,0 +1,2289 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13d74h ( 81268) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023d9c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023dc0 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028b90 vaddr=40080000 size=07488h ( 29832) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75a7ch (481916) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a5aa4 vaddr=40087488 size=121b0h ( 74160) load[0m
+[0;32mI (346) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (346) boot: Disabling RNG early entropy source...[0m
+[0;32mI (357) cpu_start: Multicore app[0m
+[0;32mI (365) cpu_start: Pro cpu start user code[0m
+[0;32mI (365) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (365) app_init: Application information:[0m
+[0;32mI (365) app_init: Project name:     control_1.1[0m
+[0;32mI (369) app_init: App version:      v5.4[0m
+[0;32mI (373) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (378) app_init: ELF file SHA256:  2d1ea3543...[0m
+[0;32mI (382) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (386) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (390) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (394) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (398) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (404) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (409) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (414) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (419) heap_init: At 3FFC48E0 len 0001B720 (109 KiB): DRAM[0m
+[0;32mI (425) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (435) heap_init: At 40099638 len 000069C8 (26 KiB): IRAM[0m
+[0;32mI (442) spi_flash: detected chip: generic[0m
+[0;32mI (444) spi_flash: flash io: dio[0m
+[0;32mI (448) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (453) main_task: Started on CPU0[0m
+[0;32mI (456) main_task: Calling app_main()[0m
+[0;32mI (459) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (467) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (471) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (477) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (495) I2C SLAVE: .............[0m
+
+[0;32mI (498) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (503) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (508) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (516) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (533) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (549) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (558) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (574) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (591) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (599) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (608) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (616) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (624) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (633) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (642) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (646) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (650) CASCADE: M[1]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (655) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (660) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (665) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (669) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (674) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (679) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (683) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (688) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (688) MOTOR_COMMANDS: Mode[1][0m
+[0;32mI (721) MOTOR_COMMANDS: crawl gate running[0m
+[0;32mI (734) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (737) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (739) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (740) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[1;31mE (746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (753) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (783) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (784) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (784) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (787) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (792) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (797) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (801) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (806) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (797) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (817) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;33mW (829) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[1;31mE (846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (848) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (896) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (911) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (911) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (912) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (915) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (920) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (924) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (929) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (934) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (996) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (998) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1013) I2C SLAVE: .............[0m
+
+[0;32mI (1038) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1038) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1039) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1042) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1047) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1052) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1056) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1061) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1071) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (1096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1097) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (1146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1147) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1166) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1167) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1168) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1171) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1176) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1181) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1185) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1190) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1192) BLE UNIT: Unhandled event: 14[0m
+[1;31mE (1196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1203) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1178) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1215) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1218) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1225) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1229) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1237) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1241) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1245) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[1;31mE (1246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1254) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1262) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1266) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1271) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1274) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (1277) main_task: Returned from app_main()[0m
+[0;32mI (1295) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1295) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1295) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (1299) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (1304) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1308) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1319) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1324) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1328) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (1396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1396) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1433) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1433) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1433) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1437) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1441) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (1447) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (1451) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1456) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1466) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1496) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1516) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (1523) I2C SLAVE: .............[0m
+
+[1;31mE (1546) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1571) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1571) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1571) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1575) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1579) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1584) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1589) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1594) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1596) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1603) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (1646) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1646) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (1696) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1696) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1699) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1700) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1706) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1710) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1715) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1720) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1725) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1730) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1746) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (1796) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1796) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1834) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1834) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1834) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1838) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1842) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (1848) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (1852) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1857) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1867) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1896) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (1946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (1946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (1972) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1972) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (1972) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1976) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1980) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1985) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1990) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (1995) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (1996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2004) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2026) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (2033) I2C SLAVE: .............[0m
+
+[1;31mE (2046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2046) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2096) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2099) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2100) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2106) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2111) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2115) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2120) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2125) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2130) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2146) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2153) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2153) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (2196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2196) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2234) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2234) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2234) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2238) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2242) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (2247) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (2252) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2257) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2267) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2296) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2372) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2372) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2372) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2375) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2380) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2385) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2390) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2395) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2404) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2446) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2496) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2499) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2500) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2506) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2510) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2515) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2520) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2525) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2530) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2536) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (2546) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (2553) I2C SLAVE: .............[0m
+
+[0;33mW (2557) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2596) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2596) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2634) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2634) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2634) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2638) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2642) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2646) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (2648) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (2652) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2657) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2667) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2696) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2696) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2746) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2772) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2772) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2772) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2776) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2780) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2785) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2790) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2795) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2796) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2804) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2846) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2896) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (2899) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2900) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (2906) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2911) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2915) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2920) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2925) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (2930) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (2946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (2996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (2996) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3034) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3034) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3034) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3038) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3042) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (3048) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (3052) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3057) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3060) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (3067) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3085) I2C SLAVE: .............[0m
+
+[1;31mE (3096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3098) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (3146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3146) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3190) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3190) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3190) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3194) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (3199) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (3203) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3208) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3219) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3223) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3246) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (3296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3296) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3328) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3328) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3328) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3332) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3336) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3341) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (3346) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (3351) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3355) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3396) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (3446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3446) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3466) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3466) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3466) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3469) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3474) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3479) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3484) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3489) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3498) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (3546) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3593) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (3596) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (3593) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (3605) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3600) I2C SLAVE: .............[0m
+
+[0;32mI (3609) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3624) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3628) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3633) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3638) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3643) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3646) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (3648) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (3652) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3665) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (3668) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (3696) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3696) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (3746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3746) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3757) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3757) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3757) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3763) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3768) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3772) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3777) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3782) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3796) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3796) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (3846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3846) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3887) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3887) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (3887) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3891) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3895) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (3900) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (3905) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (3910) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (3920) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (3946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (3996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (3996) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4025) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4025) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4025) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4029) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4033) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4038) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4043) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (4048) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (4053) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4096) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4118) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4125) I2C SLAVE: .............[0m
+
+[1;31mE (4146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4146) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4157) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4157) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4157) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4163) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4167) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4172) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4177) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4182) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4196) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4246) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4286) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4286) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4286) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4290) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4294) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (4299) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (4304) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4309) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4319) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4396) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4424) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4424) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4424) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4427) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4432) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4437) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4442) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (4447) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (4451) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4496) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4546) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4556) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4556) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4556) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4560) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4565) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4570) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4575) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4580) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4596) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4596) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4628) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (4635) I2C SLAVE: .............[0m
+
+[1;31mE (4646) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4646) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4684) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4684) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4684) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4688) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4693) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4696) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (4698) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (4702) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4707) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4717) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4746) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4796) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4796) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4822) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4822) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4822) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4825) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4830) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4835) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4840) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4845) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4854) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4896) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (4946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (4949) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4950) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (4956) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4960) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4965) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4970) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4975) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (4980) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (4996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (4996) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5046) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5084) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5084) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (5084) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5088) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5092) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (5098) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (5102) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5107) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5117) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5138) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (5145) I2C SLAVE: .............[0m
+
+[1;31mE (5146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5153) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5195) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5195) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (5196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5199) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5222) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5222) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (5222) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5226) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5230) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5235) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5240) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5245) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5254) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5296) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5349) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5350) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (5356) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5360) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5365) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5370) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5375) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5380) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5396) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5446) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5484) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5484) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (5484) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5488) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5492) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (5498) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (5502) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5507) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5517) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5546) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5596) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5596) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5622) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5622) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (5622) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5626) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5630) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5635) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5640) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5645) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5646) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (5648) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (5654) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5672) I2C SLAVE: .............[0m
+
+[1;31mE (5696) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5696) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5746) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5749) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5750) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (5756) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5760) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5765) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5770) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5775) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5780) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5796) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5796) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5846) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5884) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5884) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (5884) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5888) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5892) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (5898) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (5902) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (5907) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (5917) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (5946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (5996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (5996) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6022) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6022) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6022) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6026) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6030) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6035) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6040) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6045) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6054) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6096) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6146) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6149) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6150) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6156) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6161) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6165) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6170) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6175) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6180) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6181) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (6196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (6203) I2C SLAVE: .............[0m
+
+[0;33mW (6207) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6246) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6284) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6284) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6284) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6288) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6292) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (6298) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (6302) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6307) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6317) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6396) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6422) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6422) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6422) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6426) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6430) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6435) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6440) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6445) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6454) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6496) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6546) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6549) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6550) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6556) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6561) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6565) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6570) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6575) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6580) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6596) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6596) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6646) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6646) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6684) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6684) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6684) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6688) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6692) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6696) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (6698) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (6702) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6708) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (6707) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6718) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (6710) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (6746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (6722) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (6751) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6746) I2C SLAVE: .............[0m
+
+[1;31mE (6796) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6796) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6846) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6855) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6855) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6856) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6861) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6865) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6870) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6875) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6880) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6896) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (6946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (6946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (6984) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6984) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (6984) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6988) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (6992) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (6996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (6998) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (7002) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7007) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7017) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7046) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7096) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7122) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7122) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (7122) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7126) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7130) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7135) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7140) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7145) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7154) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7196) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7246) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7250) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7250) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (7256) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7260) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7264) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (7265) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7283) I2C SLAVE: .............[0m
+
+[0;32mI (7288) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (7296) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (7301) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7306) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7396) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7416) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7416) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (7416) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7420) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7424) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7429) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7434) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7439) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7448) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7496) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7543) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7543) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (7543) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7546) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (7547) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (7552) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7556) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7567) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7572) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7576) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7596) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7596) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7646) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7646) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7681) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7681) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (7681) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7685) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7689) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7694) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7696) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (7699) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (7704) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7709) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7746) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7746) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7791) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (7796) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (7798) I2C SLAVE: .............[0m
+
+[0;33mW (7803) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7819) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7819) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (7822) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7826) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7831) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7836) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7841) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7846) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (7846) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (7850) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7896) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7896) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (7946) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (7955) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7955) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (7956) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7960) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7965) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7970) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7975) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (7980) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (7996) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (7996) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (8046) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (8046) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (8084) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8084) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (8085) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8088) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8093) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8096) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (8098) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (8103) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (8107) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8118) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8146) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (8146) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (8196) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (8196) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (8223) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8223) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (8223) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8227) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8231) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8236) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8238) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8241) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8246) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (8246) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (8251) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (8261) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (8296) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (8296) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (8306) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8313) I2C SLAVE: .............[0m
+
+[1;31mE (8346) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (8346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (8366) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8366) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (8366) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8370) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8374) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8379) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8384) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8389) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8396) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (8398) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[1;31mE (8446) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;33mW (8446) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (8494) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8494) CASCADE: M[1]: PosT=20000.0 Pos=0.0| PWM=1023 Dir=1[0m
+[0;32mI (8494) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8496) PID: Error=20000.0, P=2000.0, I=0.0, Out=1023[0m
+[0;32mI (8498) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (8503) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20000.0[0m
+[0;32mI (8507) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8518) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8523) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8527) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8546) PID: Error=19996.0, P=1999.6, I=0.0, Out=1023[0m
+[0;33mW (8546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 19996.0[0m
+[1;31mE (8596) PID: Error=19819.0, P=1981.9, I=0.0, Out=1023[0m
+[0;33mW (8596) OSCILLATION: Motor 1 PID saturated: 1023, Error: 19819.0[0m
+[0;32mI (8632) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8632) CASCADE: M[1]: PosT=20000.0 Pos=181.0| PWM=1023 Dir=1[0m
+[0;32mI (8632) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8636) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8641) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8645) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8646) PID: Error=19430.0, P=1943.0, I=0.0, Out=1023[0m
+[0;32mI (8650) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (8655) OSCILLATION: Motor 1 PID saturated: 1023, Error: 19430.0[0m
+[0;32mI (8660) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8696) PID: Error=18893.0, P=1889.3, I=0.0, Out=1023[0m
+[0;33mW (8696) OSCILLATION: Motor 1 PID saturated: 1023, Error: 18893.0[0m
+[1;31mE (8746) PID: Error=18419.0, P=1841.9, I=0.0, Out=1023[0m
+[0;33mW (8746) OSCILLATION: Motor 1 PID saturated: 1023, Error: 18419.0[0m
+[0;32mI (8770) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8770) CASCADE: M[1]: PosT=20000.0 Pos=1581.0| PWM=1023 Dir=1[0m
+[0;32mI (8770) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8774) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8779) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8783) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8788) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8793) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8796) PID: Error=17942.0, P=1794.2, I=0.0, Out=1023[0m
+[0;33mW (8803) OSCILLATION: Motor 1 PID saturated: 1023, Error: 17942.0[0m
+[0;32mI (8817) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 2329
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (8827) I2C SLAVE: .............[0m
+
+[1;31mE (8846) PID: Error=17671.0, P=1767.1, I=0.0, Out=1023[0m
+[0;33mW (8846) OSCILLATION: Motor 1 PID saturated: 1023, Error: 17671.0[0m
+[1;31mE (8896) PID: Error=16763.0, P=1676.3, I=0.0, Out=627[0m
+[0;32mI (8898) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8898) CASCADE: M[1]: PosT=20000.0 Pos=3237.0| PWM=950 Dir=1[0m
+[0;32mI (8900) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8905) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8910) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8914) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8919) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (8924) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (8946) PID: Error=16033.0, P=1603.3, I=8.2, Out=684[0m
+[1;31mE (8996) PID: Error=15252.0, P=1525.2, I=16.0, Out=570[0m
+[0;32mI (9029) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9029) CASCADE: M[1]: PosT=20000.0 Pos=4748.0| PWM=950 Dir=1[0m
+[0;32mI (9029) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9033) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9038) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9042) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9046) PID: Error=14728.0, P=1472.8, I=23.5, Out=806[0m
+[0;32mI (9048) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9057) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9096) PID: Error=14214.0, P=1421.4, I=30.8, Out=804[0m
+[1;31mE (9146) PID: Error=13287.0, P=1328.7, I=37.6, Out=264[0m
+[0;32mI (9162) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9162) CASCADE: M[1]: PosT=20000.0 Pos=6713.0| PWM=950 Dir=1[0m
+[0;32mI (9162) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9166) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9171) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9175) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9180) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9185) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9196) PID: Error=12767.0, P=1276.7, I=44.1, Out=621[0m
+[1;31mE (9246) PID: Error=12003.0, P=1200.3, I=50.3, Out=324[0m
+[0;32mI (9290) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9290) CASCADE: M[1]: PosT=20000.0 Pos=7997.0| PWM=950 Dir=1[0m
+[0;32mI (9290) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9294) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9296) PID: Error=11304.0, P=1130.4, I=56.2, Out=307[0m
+[0;32mI (9299) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9308) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9313) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9318) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9330) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 8870
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (9341) I2C SLAVE: .............[0m
+
+[1;31mE (9346) PID: Error=10955.0, P=1095.5, I=61.7, Out=672[0m
+[1;31mE (9396) PID: Error=10013.0, P=1001.3, I=67.0, Out=-32[0m
+[0;32mI (9423) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9423) CASCADE: M[1]: PosT=20000.0 Pos=9987.0| PWM=950 Dir=1[0m
+[0;32mI (9423) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9427) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9432) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9436) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9441) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9446) PID: Error=9488.0, P=948.8, I=71.8, Out=315[0m
+[0;32mI (9446) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9496) PID: Error=8720.0, P=872.0, I=76.4, Out=17[0m
+[1;31mE (9546) PID: Error=8019.0, P=801.9, I=80.6, Out=0[0m
+[0;32mI (9555) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9555) CASCADE: M[1]: PosT=20000.0 Pos=11981.0| PWM=950 Dir=1[0m
+[0;32mI (9555) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9559) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9564) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9568) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9573) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9578) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9596) PID: Error=7260.0, P=726.0, I=84.4, Out=-131[0m
+[1;31mE (9646) PID: Error=6568.0, P=656.8, I=87.9, Out=-129[0m
+[0;32mI (9683) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9683) CASCADE: M[1]: PosT=20000.0 Pos=13432.0| PWM=950 Dir=1[0m
+[0;32mI (9683) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9687) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9692) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9696) PID: Error=6221.0, P=622.1, I=91.1, Out=231[0m
+[0;32mI (9697) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9706) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9711) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9746) PID: Error=5282.0, P=528.2, I=93.9, Out=-475[0m
+[0;32mI (9753) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (9753) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (9796) PID: Error=4599.0, P=459.9, I=96.4, Out=-324[0m
+[0;32mI (9815) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9815) CASCADE: M[1]: PosT=20000.0 Pos=15401.0| PWM=950 Dir=1[0m
+[0;32mI (9815) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9819) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9824) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9829) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9833) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9838) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9844) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 15912
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (9846) PID: Error=4088.0, P=408.8, I=98.6, Out=-158[0m
+[0;32mI (9861) I2C SLAVE: .............[0m
+
+[1;31mE (9896) PID: Error=3538.0, P=353.8, I=100.0, Out=-231[0m
+[0;32mI (9943) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9943) CASCADE: M[1]: PosT=20000.0 Pos=16462.0| PWM=950 Dir=1[0m
+[0;32mI (9943) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9946) PID: Error=3124.0, P=312.4, I=100.0, Out=-124[0m
+[0;32mI (9947) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9957) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9961) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9966) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (9971) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (9996) PID: Error=2560.0, P=256.0, I=100.0, Out=-330[0m
+[1;31mE (10046) PID: Error=2056.0, P=205.6, I=100.0, Out=-331[0m
+[0;32mI (10076) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10076) CASCADE: M[1]: PosT=20000.0 Pos=17944.0| PWM=950 Dir=1[0m
+[0;32mI (10076) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10080) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10085) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10090) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10095) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10096) PID: Error=1531.0, P=153.1, I=100.0, Out=-401[0m
+[0;32mI (10100) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10146) PID: Error=1166.0, P=116.6, I=100.0, Out=-262[0m
+[1;31mE (10196) PID: Error=747.0, P=74.7, I=100.0, Out=-344[0m
+[0;32mI (10209) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10209) CASCADE: M[1]: PosT=20000.0 Pos=19253.0| PWM=950 Dir=1[0m
+[0;32mI (10209) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10213) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10218) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10223) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10228) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10233) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10246) PID: Error=-132.0, P=-13.2, I=100.0, Out=-947[0m
+[0;33mW (10246) OSCILLATION: Motor 1 PID saturated: -947, Error: -132.0[0m
+[1;31mE (10296) PID: Error=-518.0, P=-51.8, I=99.8, Out=-496[0m
+[0;32mI (10338) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10338) CASCADE: M[1]: PosT=20000.0 Pos=20518.0| PWM=950 Dir=-1[0m
+[0;32mI (10338) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10342) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10347) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10346) PID: Error=-530.0, P=-53.0, I=99.6, Out=-27[0m
+[0;32mI (10352) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10362) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10366) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10369) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 20303
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (10390) I2C SLAVE: .............[0m
+
+[0;32mI (10396) TARGET: Motor 1 reached target: 20022.0[0m
+[1;31mE (10446) PID: Error=-39712.0, P=-3971.2, I=0.0, Out=-1023[0m
+[0;33mW (10446) OSCILLATION: Motor 1 PID saturated: -1023, Error: -39712.0[0m
+[0;32mI (10471) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10471) CASCADE: M[1]: PosT=-20000.0 Pos=19712.0| PWM=1023 Dir=-1[0m
+[0;32mI (10471) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10475) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10480) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10485) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10490) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10495) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10496) PID: Error=-38900.0, P=-3890.0, I=0.0, Out=-1023[0m
+[0;33mW (10505) OSCILLATION: Motor 1 PID saturated: -1023, Error: -38900.0[0m
+[1;31mE (10546) PID: Error=-38365.0, P=-3836.5, I=0.0, Out=-1023[0m
+[0;33mW (10546) OSCILLATION: Motor 1 PID saturated: -1023, Error: -38365.0[0m
+[1;31mE (10596) PID: Error=-37541.0, P=-3754.1, I=0.0, Out=-1023[0m
+[0;33mW (10596) OSCILLATION: Motor 1 PID saturated: -1023, Error: -37541.0[0m
+[0;32mI (10600) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10601) CASCADE: M[1]: PosT=-20000.0 Pos=17541.0| PWM=1023 Dir=-1[0m
+[0;32mI (10607) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10612) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10617) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10622) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10626) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10631) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10646) PID: Error=-36788.0, P=-3678.8, I=0.0, Out=-1023[0m
+[0;33mW (10646) OSCILLATION: Motor 1 PID saturated: -1023, Error: -36788.0[0m
+[1;31mE (10696) PID: Error=-36418.0, P=-3641.8, I=0.0, Out=-1023[0m
+[0;33mW (10696) OSCILLATION: Motor 1 PID saturated: -1023, Error: -36418.0[0m
+[0;32mI (10736) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10736) CASCADE: M[1]: PosT=-20000.0 Pos=16418.0| PWM=1023 Dir=-1[0m
+[0;32mI (10736) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10740) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10745) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10746) PID: Error=-35408.0, P=-3540.8, I=0.0, Out=-1023[0m
+[0;32mI (10750) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (10755) OSCILLATION: Motor 1 PID saturated: -1023, Error: -35408.0[0m
+[0;32mI (10760) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10771) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10796) PID: Error=-34853.0, P=-3485.3, I=0.0, Out=-1023[0m
+[0;33mW (10796) OSCILLATION: Motor 1 PID saturated: -1023, Error: -34853.0[0m
+[1;31mE (10846) PID: Error=-34028.0, P=-3402.8, I=0.0, Out=-1023[0m
+[0;33mW (10846) OSCILLATION: Motor 1 PID saturated: -1023, Error: -34028.0[0m
+[0;32mI (10876) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10876) CASCADE: M[1]: PosT=-20000.0 Pos=14028.0| PWM=1023 Dir=-1[0m
+[0;32mI (10876) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10880) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10885) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10890) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (10893) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 13274
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (10896) PID: Error=-33274.0, P=-3327.4, I=0.0, Out=-1023[0m
+[0;32mI (10895) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (10919) OSCILLATION: Motor 1 PID saturated: -1023, Error: -33274.0[0m
+[0;32mI (10914) I2C SLAVE: .............[0m
+
+[0;32mI (10923) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (10946) PID: Error=-32904.0, P=-3290.4, I=0.0, Out=-1023[0m
+[0;33mW (10946) OSCILLATION: Motor 1 PID saturated: -1023, Error: -32904.0[0m
+[1;31mE (10996) PID: Error=-31894.0, P=-3189.4, I=0.0, Out=-1023[0m
+[0;33mW (10996) OSCILLATION: Motor 1 PID saturated: -1023, Error: -31894.0[0m
+[0;32mI (11038) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11038) CASCADE: M[1]: PosT=-20000.0 Pos=11894.0| PWM=1023 Dir=-1[0m
+[0;32mI (11038) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11042) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11046) PID: Error=-31155.0, P=-3115.5, I=0.0, Out=-1023[0m
+[0;32mI (11048) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11057) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (11053) OSCILLATION: Motor 1 PID saturated: -1023, Error: -31155.0[0m
+[0;32mI (11062) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11073) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11096) PID: Error=-30515.0, P=-3051.5, I=0.0, Out=-1023[0m
+[0;33mW (11096) OSCILLATION: Motor 1 PID saturated: -1023, Error: -30515.0[0m
+[1;31mE (11146) PID: Error=-29762.0, P=-2976.2, I=0.0, Out=-1023[0m
+[0;33mW (11146) OSCILLATION: Motor 1 PID saturated: -1023, Error: -29762.0[0m
+[0;32mI (11178) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11178) CASCADE: M[1]: PosT=-20000.0 Pos=9762.0| PWM=1023 Dir=-1[0m
+[0;32mI (11178) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11182) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11187) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11192) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11196) PID: Error=-28951.0, P=-2895.1, I=0.0, Out=-1023[0m
+[0;32mI (11197) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (11202) OSCILLATION: Motor 1 PID saturated: -1023, Error: -28951.0[0m
+[0;32mI (11207) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11246) PID: Error=-28382.0, P=-2838.2, I=0.0, Out=-1023[0m
+[0;33mW (11246) OSCILLATION: Motor 1 PID saturated: -1023, Error: -28382.0[0m
+[1;31mE (11296) PID: Error=-27828.0, P=-2782.8, I=0.0, Out=-1023[0m
+[0;33mW (11296) OSCILLATION: Motor 1 PID saturated: -1023, Error: -27828.0[0m
+[0;32mI (11303) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11304) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11318) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11318) CASCADE: M[1]: PosT=-20000.0 Pos=7828.0| PWM=1023 Dir=-1[0m
+[0;32mI (11318) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11325) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11329) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11334) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11339) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11344) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11346) PID: Error=-26820.0, P=-2682.0, I=0.0, Out=-1023[0m
+[0;33mW (11354) OSCILLATION: Motor 1 PID saturated: -1023, Error: -26820.0[0m
+[1;31mE (11396) PID: Error=-26266.0, P=-2626.6, I=0.0, Out=-1023[0m
+[0;33mW (11396) OSCILLATION: Motor 1 PID saturated: -1023, Error: -26266.0[0m
+[0;32mI (11433) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 5883
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11440) I2C SLAVE: .............[0m
+
+[1;31mE (11446) PID: Error=-25442.0, P=-2544.2, I=0.0, Out=-1023[0m
+[0;33mW (11449) OSCILLATION: Motor 1 PID saturated: -1023, Error: -25442.0[0m
+[0;32mI (11449) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11459) CASCADE: M[1]: PosT=-20000.0 Pos=5442.0| PWM=1023 Dir=-1[0m
+[0;32mI (11465) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11470) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11475) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11480) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11485) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11490) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11496) PID: Error=-24689.0, P=-2468.9, I=0.0, Out=-1023[0m
+[0;33mW (11500) OSCILLATION: Motor 1 PID saturated: -1023, Error: -24689.0[0m
+[1;31mE (11546) PID: Error=-24320.0, P=-2432.0, I=0.0, Out=-1023[0m
+[0;33mW (11546) OSCILLATION: Motor 1 PID saturated: -1023, Error: -24320.0[0m
+[0;32mI (11594) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11594) CASCADE: M[1]: PosT=-20000.0 Pos=4320.0| PWM=1023 Dir=-1[0m
+[0;32mI (11594) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11596) PID: Error=-23312.0, P=-2331.2, I=0.0, Out=-1023[0m
+[0;32mI (11599) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (11604) OSCILLATION: Motor 1 PID saturated: -1023, Error: -23312.0[0m
+[0;32mI (11609) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11620) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11624) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11629) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11646) PID: Error=-22559.0, P=-2255.9, I=0.0, Out=-1023[0m
+[0;33mW (11646) OSCILLATION: Motor 1 PID saturated: -1023, Error: -22559.0[0m
+[1;31mE (11696) PID: Error=-21933.0, P=-2193.3, I=0.0, Out=-1023[0m
+[0;33mW (11696) OSCILLATION: Motor 1 PID saturated: -1023, Error: -21933.0[0m
+[0;32mI (11734) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11734) CASCADE: M[1]: PosT=-20000.0 Pos=1933.0| PWM=1023 Dir=-1[0m
+[0;32mI (11734) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11738) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11743) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11746) PID: Error=-21176.0, P=-2117.6, I=0.0, Out=-1023[0m
+[0;32mI (11748) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (11753) OSCILLATION: Motor 1 PID saturated: -1023, Error: -21176.0[0m
+[0;32mI (11758) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11769) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11796) PID: Error=-20806.0, P=-2080.6, I=0.0, Out=-1023[0m
+[0;33mW (11796) OSCILLATION: Motor 1 PID saturated: -1023, Error: -20806.0[0m
+[1;31mE (11846) PID: Error=-19794.0, P=-1979.4, I=0.0, Out=-798[0m
+[0;32mI (11874) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11874) CASCADE: M[1]: PosT=-20000.0 Pos=-206.0| PWM=950 Dir=-1[0m
+[0;32mI (11874) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11878) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11883) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11888) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (11893) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (11896) PID: Error=-19060.0, P=-1906.0, I=-9.7, Out=-969[0m
+[0;32mI (11898) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (11903) OSCILLATION: Motor 1 PID saturated: -969, Error: -19060.0[0m
+[0;32mI (11943) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -1562
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (11951) I2C SLAVE: .............[0m
+
+[1;31mE (11946) PID: Error=-18438.0, P=-1843.8, I=-19.1, Out=-1023[0m
+[0;33mW (11959) OSCILLATION: Motor 1 PID saturated: -1023, Error: -18438.0[0m
+[1;31mE (11996) PID: Error=-17714.0, P=-1771.4, I=-28.1, Out=-907[0m
+[0;32mI (12008) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12008) CASCADE: M[1]: PosT=-20000.0 Pos=-2286.0| PWM=950 Dir=-1[0m
+[0;32mI (12008) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12012) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12017) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12022) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12027) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12032) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12046) PID: Error=-17149.0, P=-1714.9, I=-36.8, Out=-1023[0m
+[0;33mW (12046) OSCILLATION: Motor 1 PID saturated: -1023, Error: -17149.0[0m
+[1;31mE (12096) PID: Error=-16338.0, P=-1633.8, I=-45.2, Out=-697[0m
+[0;32mI (12137) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12137) CASCADE: M[1]: PosT=-20000.0 Pos=-3662.0| PWM=950 Dir=-1[0m
+[0;32mI (12137) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12141) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12146) PID: Error=-15606.0, P=-1560.6, I=-53.2, Out=-691[0m
+[0;32mI (12147) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12156) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12161) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12166) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12196) PID: Error=-14808.0, P=-1480.8, I=-60.8, Out=-552[0m
+[1;31mE (12246) PID: Error=-14264.0, P=-1426.4, I=-68.1, Out=-780[0m
+[0;32mI (12271) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12271) CASCADE: M[1]: PosT=-20000.0 Pos=-5736.0| PWM=950 Dir=-1[0m
+[0;32mI (12271) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12275) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12280) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12285) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12290) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12295) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12296) PID: Error=-13734.0, P=-1373.4, I=-75.1, Out=-780[0m
+[1;31mE (12346) PID: Error=-12775.0, P=-1277.5, I=-81.7, Out=-219[0m
+[1;31mE (12396) PID: Error=-12248.0, P=-1224.8, I=-88.0, Out=-601[0m
+[0;32mI (12400) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12400) CASCADE: M[1]: PosT=-20000.0 Pos=-7752.0| PWM=950 Dir=-1[0m
+[0;32mI (12401) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12406) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12411) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12416) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12420) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12425) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12446) PID: Error=-11466.0, P=-1146.6, I=-93.9, Out=-292[0m
+[0;32mI (12454) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -8534
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12461) I2C SLAVE: .............[0m
+
+[1;31mE (12496) PID: Error=-10751.0, P=-1075.1, I=-99.4, Out=-275[0m
+[0;32mI (12530) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12530) CASCADE: M[1]: PosT=-20000.0 Pos=-9249.0| PWM=950 Dir=-1[0m
+[0;32mI (12530) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12534) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12539) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12544) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12546) PID: Error=-10401.0, P=-1040.1, I=-100.0, Out=-651[0m
+[0;32mI (12549) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12559) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12596) PID: Error=-9444.0, P=-944.4, I=-100.0, Out=73[0m
+[1;31mE (12646) PID: Error=-8918.0, P=-891.8, I=-100.0, Out=-283[0m
+[0;32mI (12664) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12664) CASCADE: M[1]: PosT=-20000.0 Pos=-11082.0| PWM=950 Dir=-1[0m
+[0;32mI (12664) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12668) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12673) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12678) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12683) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12688) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12696) PID: Error=-8138.0, P=-813.8, I=-100.0, Out=32[0m
+[1;31mE (12746) PID: Error=-7424.0, P=-742.4, I=-100.0, Out=56[0m
+[0;32mI (12793) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12793) CASCADE: M[1]: PosT=-20000.0 Pos=-12576.0| PWM=950 Dir=-1[0m
+[0;32mI (12793) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12796) PID: Error=-7074.0, P=-707.4, I=-100.0, Out=-319[0m
+[0;32mI (12798) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12808) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12812) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12817) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12822) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12838) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (12839) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (12846) PID: Error=-6120.0, P=-612.0, I=-100.0, Out=402[0m
+[1;31mE (12896) PID: Error=-5582.0, P=-558.2, I=-100.0, Out=63[0m
+[0;32mI (12927) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12927) CASCADE: M[1]: PosT=-20000.0 Pos=-14418.0| PWM=950 Dir=-1[0m
+[0;32mI (12927) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12931) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12936) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12941) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (12946) PID: Error=-4816.0, P=-481.6, I=-100.0, Out=350[0m
+[0;32mI (12946) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12956) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (12964) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -15547
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (12979) I2C SLAVE: .............[0m
+
+[1;31mE (12996) PID: Error=-4104.0, P=-410.4, I=-100.0, Out=384[0m
+[1;31mE (13046) PID: Error=-3755.0, P=-375.5, I=-100.0, Out=12[0m
+[0;32mI (13061) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13061) CASCADE: M[1]: PosT=-20000.0 Pos=-16245.0| PWM=950 Dir=-1[0m
+[0;32mI (13061) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13065) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13070) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13075) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13080) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13085) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13096) PID: Error=-2802.0, P=-280.2, I=-100.0, Out=733[0m
+[1;31mE (13146) PID: Error=-2264.0, P=-226.4, I=-100.0, Out=395[0m
+[0;32mI (13190) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13190) CASCADE: M[1]: PosT=-20000.0 Pos=-17736.0| PWM=950 Dir=-1[0m
+[0;32mI (13190) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13194) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13196) PID: Error=-1483.0, P=-148.3, I=-100.0, Out=700[0m
+[0;32mI (13199) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13209) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13214) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13219) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13246) PID: Error=-782.0, P=-78.2, I=-100.0, Out=706[0m
+[0;32mI (13296) TARGET: Motor 1 reached target: -19998.0[0m
+[0;32mI (13301) MOTOR_COMMANDS: Mode[1][0m
+[0;32mI (13301) MOTOR_COMMANDS: crawl gate running[0m
+[0;32mI (13324) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13324) CASCADE: M[1]: PosT=20000.0 Pos=-19998.0| PWM=950 Dir=-1[0m
+[0;32mI (13324) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13328) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13333) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13338) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13343) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13346) PID: Error=40518.0, P=4051.8, I=0.0, Out=1023[0m
+[0;32mI (13348) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (13353) OSCILLATION: Motor 1 PID saturated: 1023, Error: 40518.0[0m
+[1;31mE (13396) PID: Error=40946.0, P=4094.6, I=0.0, Out=1023[0m
+[0;33mW (13396) OSCILLATION: Motor 1 PID saturated: 1023, Error: 40946.0[0m
+[1;31mE (13446) PID: Error=40640.0, P=4064.0, I=0.0, Out=1023[0m
+[0;33mW (13446) OSCILLATION: Motor 1 PID saturated: 1023, Error: 40640.0[0m
+[0;32mI (13458) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13458) CASCADE: M[1]: PosT=20000.0 Pos=-20640.0| PWM=1023 Dir=1[0m
+[0;32mI (13458) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13464) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13468) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13473) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13478) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13483) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -20316
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (13496) PID: Error=40126.0, P=4012.6, I=0.0, Out=1023[0m
+[0;32mI (13483) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (13507) OSCILLATION: Motor 1 PID saturated: 1023, Error: 40126.0[0m
+[0;32mI (13502) I2C SLAVE: .............[0m
+
+[1;31mE (13546) PID: Error=39314.0, P=3931.4, I=0.0, Out=1023[0m
+[0;33mW (13546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 39314.0[0m
+[1;31mE (13596) PID: Error=38543.0, P=3854.3, I=0.0, Out=1023[0m
+[0;33mW (13596) OSCILLATION: Motor 1 PID saturated: 1023, Error: 38543.0[0m
+[0;32mI (13611) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13611) CASCADE: M[1]: PosT=20000.0 Pos=-18543.0| PWM=1023 Dir=1[0m
+[0;32mI (13611) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13615) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13620) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13625) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13630) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13635) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13646) PID: Error=38164.0, P=3816.4, I=0.0, Out=1023[0m
+[0;33mW (13646) OSCILLATION: Motor 1 PID saturated: 1023, Error: 38164.0[0m
+[1;31mE (13696) PID: Error=37128.0, P=3712.8, I=0.0, Out=1023[0m
+[0;33mW (13696) OSCILLATION: Motor 1 PID saturated: 1023, Error: 37128.0[0m
+[0;32mI (13739) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13739) CASCADE: M[1]: PosT=20000.0 Pos=-17128.0| PWM=1023 Dir=1[0m
+[0;32mI (13739) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13743) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13746) PID: Error=36356.0, P=3635.6, I=0.0, Out=1023[0m
+[0;32mI (13749) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (13753) OSCILLATION: Motor 1 PID saturated: 1023, Error: 36356.0[0m
+[0;32mI (13758) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13769) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13774) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13796) PID: Error=35715.0, P=3571.5, I=0.0, Out=1023[0m
+[0;33mW (13796) OSCILLATION: Motor 1 PID saturated: 1023, Error: 35715.0[0m
+[1;31mE (13846) PID: Error=34944.0, P=3494.4, I=0.0, Out=1023[0m
+[0;33mW (13846) OSCILLATION: Motor 1 PID saturated: 1023, Error: 34944.0[0m
+[0;32mI (13879) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13879) CASCADE: M[1]: PosT=20000.0 Pos=-14944.0| PWM=1023 Dir=1[0m
+[0;32mI (13879) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13883) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13888) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13893) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (13896) PID: Error=34550.0, P=3455.0, I=0.0, Out=1023[0m
+[0;32mI (13898) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (13907) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (13903) OSCILLATION: Motor 1 PID saturated: 1023, Error: 34550.0[0m
+[1;31mE (13946) PID: Error=33531.0, P=3353.1, I=0.0, Out=1023[0m
+[0;33mW (13946) OSCILLATION: Motor 1 PID saturated: 1023, Error: 33531.0[0m
+[1;31mE (13996) PID: Error=32760.0, P=3276.0, I=0.0, Out=1023[0m
+[0;33mW (13996) OSCILLATION: Motor 1 PID saturated: 1023, Error: 32760.0[0m
+[0;32mI (14013) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14013) CASCADE: M[1]: PosT=20000.0 Pos=-12760.0| PWM=1023 Dir=1[0m
+[0;32mI (14013) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14017) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14021) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -12760
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14022) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14046) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14046) PID: Error=32104.0, P=3210.4, I=0.0, Out=1023[0m
+[0;32mI (14041) I2C SLAVE: .............[0m
+
+[0;33mW (14055) OSCILLATION: Motor 1 PID saturated: 1023, Error: 32104.0[0m
+[0;32mI (14050) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14069) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14096) PID: Error=31348.0, P=3134.8, I=0.0, Out=1023[0m
+[0;33mW (14096) OSCILLATION: Motor 1 PID saturated: 1023, Error: 31348.0[0m
+[1;31mE (14146) PID: Error=30765.0, P=3076.5, I=0.0, Out=1023[0m
+[0;33mW (14146) OSCILLATION: Motor 1 PID saturated: 1023, Error: 30765.0[0m
+[0;32mI (14174) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14174) CASCADE: M[1]: PosT=20000.0 Pos=-10765.0| PWM=1023 Dir=1[0m
+[0;32mI (14174) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14178) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14183) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14188) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14193) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14196) PID: Error=29920.0, P=2992.0, I=0.0, Out=1023[0m
+[0;32mI (14198) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (14203) OSCILLATION: Motor 1 PID saturated: 1023, Error: 29920.0[0m
+[1;31mE (14246) PID: Error=29162.0, P=2916.2, I=0.0, Out=1023[0m
+[0;33mW (14246) OSCILLATION: Motor 1 PID saturated: 1023, Error: 29162.0[0m
+[1;31mE (14296) PID: Error=28318.0, P=2831.8, I=0.0, Out=1023[0m
+[0;33mW (14296) OSCILLATION: Motor 1 PID saturated: 1023, Error: 28318.0[0m
+[0;32mI (14307) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14307) CASCADE: M[1]: PosT=20000.0 Pos=-8318.0| PWM=1023 Dir=1[0m
+[0;32mI (14307) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14311) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14317) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14321) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14326) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14331) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14346) PID: Error=27734.0, P=2773.4, I=0.0, Out=1023[0m
+[0;33mW (14346) OSCILLATION: Motor 1 PID saturated: 1023, Error: 27734.0[0m
+[0;32mI (14392) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (14393) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (14396) PID: Error=27164.0, P=2716.4, I=0.0, Out=1023[0m
+[0;33mW (14397) OSCILLATION: Motor 1 PID saturated: 1023, Error: 27164.0[0m
+[0;32mI (14436) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14436) CASCADE: M[1]: PosT=20000.0 Pos=-7164.0| PWM=1023 Dir=1[0m
+[0;32mI (14436) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14440) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14445) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14446) PID: Error=26125.0, P=2612.5, I=0.0, Out=1023[0m
+[0;32mI (14450) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (14455) OSCILLATION: Motor 1 PID saturated: 1023, Error: 26125.0[0m
+[0;32mI (14460) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14471) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14496) PID: Error=25555.0, P=2555.5, I=0.0, Out=1023[0m
+[0;33mW (14496) OSCILLATION: Motor 1 PID saturated: 1023, Error: 25555.0[0m
+[1;31mE (14546) PID: Error=24706.0, P=2470.6, I=0.0, Out=1023[0m
+[0;33mW (14546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 24706.0[0m
+[0;32mI (14559) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -4516
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (14566) I2C SLAVE: .............[0m
+
+[0;32mI (14575) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14575) CASCADE: M[1]: PosT=20000.0 Pos=-4706.0| PWM=1023 Dir=1[0m
+[0;32mI (14580) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14585) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14590) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14595) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14596) PID: Error=23931.0, P=2393.1, I=0.0, Out=1023[0m
+[0;32mI (14600) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (14605) OSCILLATION: Motor 1 PID saturated: 1023, Error: 23931.0[0m
+[0;32mI (14610) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14646) PID: Error=23550.0, P=2355.0, I=0.0, Out=1023[0m
+[0;33mW (14646) OSCILLATION: Motor 1 PID saturated: 1023, Error: 23550.0[0m
+[1;31mE (14696) PID: Error=22510.0, P=2251.0, I=0.0, Out=1023[0m
+[0;33mW (14696) OSCILLATION: Motor 1 PID saturated: 1023, Error: 22510.0[0m
+[0;32mI (14720) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14720) CASCADE: M[1]: PosT=20000.0 Pos=-2510.0| PWM=1023 Dir=1[0m
+[0;32mI (14720) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14724) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14729) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14734) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14739) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14743) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14746) PID: Error=21937.0, P=2193.7, I=11.1, Out=1023[0m
+[0;33mW (14753) OSCILLATION: Motor 1 PID saturated: 1023, Error: 21937.0[0m
+[1;31mE (14796) PID: Error=21083.0, P=2108.3, I=11.1, Out=1023[0m
+[0;33mW (14796) OSCILLATION: Motor 1 PID saturated: 1023, Error: 21083.0[0m
+[1;31mE (14846) PID: Error=20304.0, P=2030.4, I=21.5, Out=1023[0m
+[0;33mW (14846) OSCILLATION: Motor 1 PID saturated: 1023, Error: 20304.0[0m
+[0;32mI (14848) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14851) CASCADE: M[1]: PosT=20000.0 Pos=-304.0| PWM=1023 Dir=1[0m
+[0;32mI (14856) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14861) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14866) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14871) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14876) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14881) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14896) PID: Error=19923.0, P=1992.3, I=21.5, Out=1023[0m
+[0;33mW (14896) OSCILLATION: Motor 1 PID saturated: 1023, Error: 19923.0[0m
+[1;31mE (14946) PID: Error=18882.0, P=1888.2, I=21.5, Out=694[0m
+[0;32mI (14986) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14986) CASCADE: M[1]: PosT=20000.0 Pos=1118.0| PWM=950 Dir=1[0m
+[0;32mI (14986) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14990) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (14995) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (14996) PID: Error=18316.0, P=1831.6, I=30.8, Out=1023[0m
+[0;32mI (15000) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (15005) OSCILLATION: Motor 1 PID saturated: 1023, Error: 18316.0[0m
+[0;32mI (15010) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15021) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15046) PID: Error=17493.0, P=1749.3, I=39.7, Out=790[0m
+[0;32mI (15070) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 2882
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15077) I2C SLAVE: .............[0m
+
+[1;31mE (15096) PID: Error=16749.0, P=1674.9, I=48.3, Out=785[0m
+[0;32mI (15125) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15125) CASCADE: M[1]: PosT=20000.0 Pos=3251.0| PWM=950 Dir=1[0m
+[0;32mI (15125) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15129) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15134) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15139) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15144) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15146) PID: Error=16370.0, P=1637.0, I=56.6, Out=1023[0m
+[0;32mI (15148) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (15154) OSCILLATION: Motor 1 PID saturated: 1023, Error: 16370.0[0m
+[1;31mE (15196) PID: Error=15392.0, P=1539.2, I=56.6, Out=451[0m
+[1;31mE (15246) PID: Error=14820.0, P=1482.0, I=64.1, Out=783[0m
+[0;32mI (15258) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15258) CASCADE: M[1]: PosT=20000.0 Pos=5180.0| PWM=950 Dir=1[0m
+[0;32mI (15258) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15262) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15267) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15272) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15276) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15281) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15296) PID: Error=14007.0, P=1400.7, I=71.3, Out=484[0m
+[1;31mE (15346) PID: Error=13288.0, P=1328.8, I=78.1, Out=498[0m
+[0;32mI (15386) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15386) CASCADE: M[1]: PosT=20000.0 Pos=6712.0| PWM=950 Dir=1[0m
+[0;32mI (15386) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15390) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15395) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15396) PID: Error=12487.0, P=1248.7, I=84.6, Out=342[0m
+[0;32mI (15400) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15410) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15414) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15446) PID: Error=11950.0, P=1195.0, I=90.7, Out=579[0m
+[1;31mE (15496) PID: Error=11399.0, P=1139.9, I=96.5, Out=546[0m
+[0;32mI (15519) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15519) CASCADE: M[1]: PosT=20000.0 Pos=8601.0| PWM=950 Dir=1[0m
+[0;32mI (15519) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15523) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15528) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15533) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15538) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15543) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15546) PID: Error=10422.0, P=1042.2, I=100.0, Out=-20[0m
+[0;32mI (15580) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 9936
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (15587) I2C SLAVE: .............[0m
+
+[1;31mE (15596) PID: Error=9706.0, P=970.6, I=100.0, Out=146[0m
+[1;31mE (15646) PID: Error=9087.0, P=908.7, I=100.0, Out=218[0m
+[0;32mI (15647) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15647) CASCADE: M[1]: PosT=20000.0 Pos=10913.0| PWM=950 Dir=1[0m
+[0;32mI (15650) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15655) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15660) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15665) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15670) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15675) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15696) PID: Error=8358.0, P=835.8, I=100.0, Out=38[0m
+[1;31mE (15746) PID: Error=8000.0, P=800.0, I=100.0, Out=402[0m
+[0;32mI (15780) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15780) CASCADE: M[1]: PosT=20000.0 Pos=12000.0| PWM=950 Dir=1[0m
+[0;32mI (15780) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15784) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15789) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15794) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15796) PID: Error=7024.0, P=702.4, I=100.0, Out=-337[0m
+[0;32mI (15799) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15809) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15846) PID: Error=6309.0, P=630.9, I=100.0, Out=-190[0m
+[1;31mE (15896) PID: Error=5690.0, P=569.0, I=100.0, Out=-121[0m
+[0;32mI (15913) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15913) CASCADE: M[1]: PosT=20000.0 Pos=14310.0| PWM=950 Dir=1[0m
+[0;32mI (15913) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15917) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15922) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15927) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (15927) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (15932) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (15937) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15946) PID: Error=4961.0, P=496.1, I=100.0, Out=-302[0m
+[0;32mI (15947) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (15996) PID: Error=4603.0, P=460.3, I=100.0, Out=63[0m
+[1;31mE (16046) PID: Error=3625.0, P=362.5, I=100.0, Out=-679[0m
+[0;32mI (16057) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16057) CASCADE: M[1]: PosT=20000.0 Pos=16375.0| PWM=950 Dir=1[0m
+[0;32mI (16057) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16061) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16066) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16071) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16076) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16081) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16090) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 16912
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (16096) PID: Error=2910.0, P=291.0, I=100.0, Out=-530[0m
+[0;32mI (16104) I2C SLAVE: .............[0m
+
+[1;31mE (16146) PID: Error=2291.0, P=229.1, I=100.0, Out=-461[0m
+[0;32mI (16186) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16186) CASCADE: M[1]: PosT=20000.0 Pos=17709.0| PWM=950 Dir=1[0m
+[0;32mI (16186) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16190) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16195) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16196) PID: Error=1562.0, P=156.2, I=100.0, Out=-642[0m
+[0;32mI (16200) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16210) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16215) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16246) PID: Error=1026.0, P=102.6, I=100.0, Out=-493[0m
+[1;31mE (16296) PID: Error=229.0, P=22.9, I=100.0, Out=-840[0m
+[0;32mI (16319) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16319) CASCADE: M[1]: PosT=20000.0 Pos=19771.0| PWM=950 Dir=1[0m
+[0;32mI (16319) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16323) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16328) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16333) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16338) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16343) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16346) PID: Error=-499.0, P=-49.9, I=99.9, Out=-866[0m
+[1;31mE (16396) PID: Error=-1047.0, P=-104.7, I=99.5, Out=-716[0m
+[1;31mE (16446) PID: Error=-862.0, P=-86.2, I=99.1, Out=139[0m
+[0;32mI (16448) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16448) CASCADE: M[1]: PosT=20000.0 Pos=20862.0| PWM=950 Dir=-1[0m
+[0;32mI (16450) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16455) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16460) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16465) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16470) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16475) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16496) PID: Error=-463.0, P=-46.3, I=98.7, Out=510[0m
+[1;31mE (16546) PID: Error=416.0, P=41.6, I=98.7, Out=1023[0m
+[0;33mW (16546) OSCILLATION: Motor 1 PID saturated: 1023, Error: 416.0[0m
+[0;32mI (16580) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16580) CASCADE: M[1]: PosT=20000.0 Pos=19584.0| PWM=1023 Dir=1[0m
+[0;32mI (16580) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16584) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16589) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16594) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16596) PID: Error=748.0, P=74.8, I=98.7, Out=657[0m
+[0;32mI (16599) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16608) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16612) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 19252
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (16632) I2C SLAVE: .............[0m
+
+[1;31mE (16646) PID: Error=408.0, P=40.8, I=99.0, Out=-184[0m
+[1;31mE (16696) PID: Error=-208.0, P=-20.8, I=99.1, Out=-642[0m
+[0;32mI (16713) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16713) CASCADE: M[1]: PosT=20000.0 Pos=20208.0| PWM=950 Dir=-1[0m
+[0;32mI (16713) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16717) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16722) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16727) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16732) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16737) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16746) PID: Error=-477.0, P=-47.7, I=98.9, Out=-328[0m
+[1;31mE (16796) PID: Error=-188.0, P=-18.8, I=98.7, Out=359[0m
+[0;32mI (16841) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16841) CASCADE: M[1]: PosT=20000.0 Pos=20188.0| PWM=475 Dir=-1[0m
+[0;32mI (16841) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16845) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16846) PID: Error=234.0, P=23.4, I=98.7, Out=622[0m
+[0;32mI (16850) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16860) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16864) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16869) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (16896) PID: Error=670.0, P=67.0, I=99.0, Out=706[0m
+[1;31mE (16946) PID: Error=338.0, P=33.8, I=99.2, Out=-176[0m
+[0;32mI (16974) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16974) CASCADE: M[1]: PosT=20000.0 Pos=19662.0| PWM=950 Dir=1[0m
+[0;32mI (16975) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16979) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16983) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16988) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16993) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (16996) TARGET: Motor 1 reached target: 19946.0[0m
+[0;32mI (16998) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17046) PID: Error=-40802.0, P=-4080.2, I=0.0, Out=-1023[0m
+[0;33mW (17046) OSCILLATION: Motor 1 PID saturated: -1023, Error: -40802.0[0m
+[1;31mE (17096) PID: Error=-41124.0, P=-4112.4, I=0.0, Out=-1023[0m
+[0;33mW (17096) OSCILLATION: Motor 1 PID saturated: -1023, Error: -41124.0[0m
+[0;32mI (17107) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17107) CASCADE: M[1]: PosT=-20000.0 Pos=21124.0| PWM=1023 Dir=-1[0m
+[0;32mI (17107) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17112) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17117) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17122) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17126) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17131) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17135) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 20909
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[1;31mE (17146) PID: Error=-40771.0, P=-4077.1, I=0.0, Out=-1023[0m
+[0;32mI (17155) I2C SLAVE: .............[0m
+
+[0;33mW (17160) OSCILLATION: Motor 1 PID saturated: -1023, Error: -40771.0[0m
+[1;31mE (17196) PID: Error=-40086.0, P=-4008.6, I=0.0, Out=-1023[0m
+[0;33mW (17196) OSCILLATION: Motor 1 PID saturated: -1023, Error: -40086.0[0m
+[0;32mI (17236) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17236) CASCADE: M[1]: PosT=-20000.0 Pos=20086.0| PWM=1023 Dir=-1[0m
+[0;32mI (17236) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17240) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17245) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17246) PID: Error=-39722.0, P=-3972.2, I=0.0, Out=-1023[0m
+[0;32mI (17251) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (17255) OSCILLATION: Motor 1 PID saturated: -1023, Error: -39722.0[0m
+[0;32mI (17260) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17271) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17296) PID: Error=-38715.0, P=-3871.5, I=0.0, Out=-1023[0m
+[0;33mW (17296) OSCILLATION: Motor 1 PID saturated: -1023, Error: -38715.0[0m
+[1;31mE (17346) PID: Error=-38146.0, P=-3814.6, I=0.0, Out=-1023[0m
+[0;33mW (17346) OSCILLATION: Motor 1 PID saturated: -1023, Error: -38146.0[0m
+[0;32mI (17376) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17376) CASCADE: M[1]: PosT=-20000.0 Pos=18146.0| PWM=1023 Dir=-1[0m
+[0;32mI (17376) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17380) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17385) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17390) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17395) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17396) PID: Error=-37335.0, P=-3733.5, I=0.0, Out=-1023[0m
+[0;32mI (17400) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (17405) OSCILLATION: Motor 1 PID saturated: -1023, Error: -37335.0[0m
+[1;31mE (17446) PID: Error=-36581.0, P=-3658.1, I=0.0, Out=-1023[0m
+[0;33mW (17446) OSCILLATION: Motor 1 PID saturated: -1023, Error: -36581.0[0m
+[0;32mI (17480) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (17480) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[1;31mE (17496) PID: Error=-35755.0, P=-3575.5, I=0.0, Out=-1023[0m
+[0;33mW (17496) OSCILLATION: Motor 1 PID saturated: -1023, Error: -35755.0[0m
+[0;32mI (17510) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17510) CASCADE: M[1]: PosT=-20000.0 Pos=15755.0| PWM=1023 Dir=-1[0m
+[0;32mI (17510) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17514) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17519) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17524) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17529) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17534) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17546) PID: Error=-35016.0, P=-3501.6, I=0.0, Out=-1023[0m
+[0;33mW (17546) OSCILLATION: Motor 1 PID saturated: -1023, Error: -35016.0[0m
+[1;31mE (17596) PID: Error=-34631.0, P=-3463.1, I=0.0, Out=-1023[0m
+[0;33mW (17596) OSCILLATION: Motor 1 PID saturated: -1023, Error: -34631.0[0m
+[0;32mI (17639) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17639) CASCADE: M[1]: PosT=-20000.0 Pos=14631.0| PWM=1023 Dir=-1[0m
+[0;32mI (17639) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17643) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17646) PID: Error=-33635.0, P=-3363.5, I=0.0, Out=-1023[0m
+[0;32mI (17649) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (17654) OSCILLATION: Motor 1 PID saturated: -1023, Error: -33635.0[0m
+[0;32mI (17658) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17663) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 13436
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (17669) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17688) I2C SLAVE: .............[0m
+
+[1;31mE (17696) PID: Error=-32881.0, P=-3288.1, I=0.0, Out=-1023[0m
+[0;32mI (17693) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (17701) OSCILLATION: Motor 1 PID saturated: -1023, Error: -32881.0[0m
+[1;31mE (17746) PID: Error=-32240.0, P=-3224.0, I=0.0, Out=-1023[0m
+[0;33mW (17746) OSCILLATION: Motor 1 PID saturated: -1023, Error: -32240.0[0m
+[1;31mE (17796) PID: Error=-31500.0, P=-3150.0, I=0.0, Out=-1023[0m
+[0;33mW (17796) OSCILLATION: Motor 1 PID saturated: -1023, Error: -31500.0[0m
+[0;32mI (17806) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17806) CASCADE: M[1]: PosT=-20000.0 Pos=11500.0| PWM=1023 Dir=-1[0m
+[0;32mI (17807) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17812) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17817) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17822) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17826) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17831) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17846) PID: Error=-31116.0, P=-3111.6, I=0.0, Out=-1023[0m
+[0;33mW (17846) OSCILLATION: Motor 1 PID saturated: -1023, Error: -31116.0[0m
+[1;31mE (17896) PID: Error=-30104.0, P=-3010.4, I=0.0, Out=-1023[0m
+[0;33mW (17896) OSCILLATION: Motor 1 PID saturated: -1023, Error: -30104.0[0m
+[0;32mI (17936) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17936) CASCADE: M[1]: PosT=-20000.0 Pos=10104.0| PWM=1023 Dir=-1[0m
+[0;32mI (17936) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17940) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17945) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17946) PID: Error=-29364.0, P=-2936.4, I=0.0, Out=-1023[0m
+[0;32mI (17950) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (17955) OSCILLATION: Motor 1 PID saturated: -1023, Error: -29364.0[0m
+[0;32mI (17960) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (17971) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (17996) PID: Error=-28724.0, P=-2872.4, I=0.0, Out=-1023[0m
+[0;33mW (17996) OSCILLATION: Motor 1 PID saturated: -1023, Error: -28724.0[0m
+[1;31mE (18046) PID: Error=-27986.0, P=-2798.6, I=0.0, Out=-1023[0m
+[0;33mW (18046) OSCILLATION: Motor 1 PID saturated: -1023, Error: -27986.0[0m
+[0;32mI (18076) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18076) CASCADE: M[1]: PosT=-20000.0 Pos=7986.0| PWM=1023 Dir=-1[0m
+[0;32mI (18076) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18080) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18085) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18090) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18095) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18096) PID: Error=-27610.0, P=-2761.0, I=0.0, Out=-1023[0m
+[0;32mI (18101) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (18105) OSCILLATION: Motor 1 PID saturated: -1023, Error: -27610.0[0m
+[1;31mE (18146) PID: Error=-26686.0, P=-2668.6, I=0.0, Out=-1023[0m
+[0;33mW (18146) OSCILLATION: Motor 1 PID saturated: -1023, Error: -26686.0[0m
+[1;31mE (18196) PID: Error=-26036.0, P=-2603.6, I=0.0, Out=-1023[0m
+[0;33mW (18196) OSCILLATION: Motor 1 PID saturated: -1023, Error: -26036.0[0m
+[0;32mI (18196) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 6036
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18214) I2C SLAVE: .............[0m
+
+[0;32mI (18210) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18223) CASCADE: M[1]: PosT=-20000.0 Pos=6036.0| PWM=1023 Dir=-1[0m
+[0;32mI (18229) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18233) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18238) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18243) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18246) PID: Error=-25500.0, P=-2550.0, I=0.0, Out=-1023[0m
+[0;32mI (18248) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;33mW (18253) OSCILLATION: Motor 1 PID saturated: -1023, Error: -25500.0[0m
+[0;32mI (18258) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18296) PID: Error=-24820.0, P=-2482.0, I=0.0, Out=-1023[0m
+[0;33mW (18296) OSCILLATION: Motor 1 PID saturated: -1023, Error: -24820.0[0m
+[1;31mE (18346) PID: Error=-24273.0, P=-2427.3, I=0.0, Out=-1023[0m
+[0;33mW (18346) OSCILLATION: Motor 1 PID saturated: -1023, Error: -24273.0[0m
+[0;32mI (18369) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18369) CASCADE: M[1]: PosT=-20000.0 Pos=4273.0| PWM=1023 Dir=-1[0m
+[0;32mI (18369) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18373) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18378) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18383) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18388) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18393) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18396) PID: Error=-23463.0, P=-2346.3, I=0.0, Out=-1023[0m
+[0;33mW (18403) OSCILLATION: Motor 1 PID saturated: -1023, Error: -23463.0[0m
+[1;31mE (18446) PID: Error=-22707.0, P=-2270.7, I=0.0, Out=-1023[0m
+[0;33mW (18446) OSCILLATION: Motor 1 PID saturated: -1023, Error: -22707.0[0m
+[1;31mE (18496) PID: Error=-21879.0, P=-2187.9, I=0.0, Out=-1023[0m
+[0;33mW (18496) OSCILLATION: Motor 1 PID saturated: -1023, Error: -21879.0[0m
+[0;32mI (18498) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18501) CASCADE: M[1]: PosT=-20000.0 Pos=1879.0| PWM=1023 Dir=-1[0m
+[0;32mI (18507) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18512) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18517) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18522) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18527) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18531) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18546) PID: Error=-21323.0, P=-2132.3, I=0.0, Out=-1023[0m
+[0;33mW (18546) OSCILLATION: Motor 1 PID saturated: -1023, Error: -21323.0[0m
+[1;31mE (18596) PID: Error=-20752.0, P=-2075.2, I=0.0, Out=-1023[0m
+[0;33mW (18596) OSCILLATION: Motor 1 PID saturated: -1023, Error: -20752.0[0m
+[0;32mI (18636) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18636) CASCADE: M[1]: PosT=-20000.0 Pos=752.0| PWM=1023 Dir=-1[0m
+[0;32mI (18636) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18640) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18645) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18646) PID: Error=-19754.0, P=-1975.4, I=0.0, Out=-787[0m
+[0;32mI (18650) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18660) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18665) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18696) PID: Error=-19187.0, P=-1918.7, I=-9.7, Out=-1023[0m
+[0;33mW (18696) OSCILLATION: Motor 1 PID saturated: -1023, Error: -19187.0[0m
+[0;32mI (18718) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: -996
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (18725) I2C SLAVE: .............[0m
+
+[1;31mE (18746) PID: Error=-18384.0, P=-1838.4, I=-9.7, Out=-871[0m
+[0;32mI (18770) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18770) CASCADE: M[1]: PosT=-20000.0 Pos=-1616.0| PWM=950 Dir=-1[0m
+[0;32mI (18770) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18774) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18779) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18784) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18789) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18794) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18796) PID: Error=-17638.0, P=-1763.8, I=-18.7, Out=-845[0m
+[1;31mE (18846) PID: Error=-17278.0, P=-1727.8, I=-27.5, Out=-1023[0m
+[0;33mW (18846) OSCILLATION: Motor 1 PID saturated: -1023, Error: -17278.0[0m
+[1;31mE (18896) PID: Error=-16290.0, P=-1629.0, I=-27.5, Out=-503[0m
+[0;32mI (18899) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18899) CASCADE: M[1]: PosT=-20000.0 Pos=-3710.0| PWM=950 Dir=-1[0m
+[0;32mI (18901) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18906) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18911) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18916) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18920) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (18925) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (18946) PID: Error=-15726.0, P=-1572.6, I=-35.5, Out=-853[0m
+[1;31mE (18996) PID: Error=-14936.0, P=-1493.6, I=-43.1, Out=-575[0m
+[0;32mI (19014) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (19014) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (19030) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19030) CASCADE: M[1]: PosT=-20000.0 Pos=-5064.0| PWM=950 Dir=-1[0m
+[0;32mI (19030) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19034) CASCADE: M[3]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19039) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19044) CASCADE: M[5]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19046) PID: Error=-14210.0, P=-1421.0, I=-50.4, Out=-558[0m
+[0;32mI (19049) CASCADE: M[6]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19059) CASCADE: M[7]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[1;31mE (19096) PID: Error=-13841.0, P=-1384.1, I=-57.4, Out=-930[0m
+[0;33mW (19096) OSCILLATION: Motor 1 PID saturated: -930, Error: -13841.0[0m
+[1;31mE (19146) PID: Error=-12888.0, P=-1288.8, I=-64.1, Out=-237[0m
+[0;32mI (19164) CASCADE: M[0]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19164) CASCADE: M[1]: PosT=-20000.0 Pos=-7112.0| PWM=950 Dir=-1[0m
+[0;32mI (19164) CASCADE: M[2]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19168) CASCADE: M[3]: PosT=0.0 �k�0.0| PWM=0 Dir=0[0m
+[0;32mI (19173) CASCADE: M[4]: PosT=0.0 Pos=0.0| PWM=0 Dir=0[0m
+[0;32mI (19178) CASCADE: M[5

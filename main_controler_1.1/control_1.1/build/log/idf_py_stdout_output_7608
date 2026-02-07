@@ -1,0 +1,2116 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13ecch ( 81612) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023ef4 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023f18 vaddr=3ffbdb60 size=04e08h ( 19976) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028d28 vaddr=40080000 size=072f0h ( 29424) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75998h (481688) map[0m
+[0;32mI (305) esp_image: segment 5: paddr=000a59c0 vaddr=400872f0 size=129c4h ( 76228) load[0m
+[0;32mI (347) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (347) boot: Disabling RNG early entropy source...[0m
+[0;32mI (357) cpu_start: Multicore app[0m
+[0;32mI (366) cpu_start: Pro cpu start user code[0m
+[0;32mI (366) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (366) app_init: Application information:[0m
+[0;32mI (366) app_init: Project name:     control_1.1[0m
+[0;32mI (370) app_init: App version:      v5.4[0m
+[0;32mI (374) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (379) app_init: ELF file SHA256:  2eb8d8256...[0m
+[0;32mI (383) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (387) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (391) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (395) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (399) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (405) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (410) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (415) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (420) heap_init: At 3FFC4A50 len 0001B5B0 (109 KiB): DRAM[0m
+[0;32mI (425) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (431) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 40099CB4 len 0000634C (24 KiB): IRAM[0m
+[0;32mI (443) spi_flash: detected chip: generic[0m
+[0;32mI (445) spi_flash: flash io: dio[0m
+[0;32mI (449) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (453) main_task: Started on CPU0[0m
+[0;32mI (456) main_task: Calling app_main()[0m
+[0;32mI (459) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (467) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (471) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (477) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (495) I2C SLAVE: .............[0m
+
+[0;32mI (498) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (503) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (508) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (516) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (525) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (533) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (549) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (558) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (566) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (574) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (591) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (599) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (608) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (616) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (624) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (633) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (642) LEDC_PWM_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (646) MOTOR_COMMANDS: settingup the motor comnads[0m
+[0;32mI (651) MOTOR_COMMANDS: Mode[0][0m
+[0;32mI (653) MOTOR_COMMANDS: IDLE gate running[0m
+[0;32mI (657) BLE UNIT: setting up BLE unit[0m
+
+[0;32mI (696) TARGET: Motor 1 reached target: 0.0[0m
+[0;32mI (703) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (705) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:16[0m
+[0;32mI (708) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (711) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (790) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (1133) BLE UNIT: BLE unit setiing up completed[0m
+
+[0;32mI (1147) BLE UNIT: Unhandled event: 14[0m
+[0;32mI (1147) BLE UNIT: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1154) main_task: Returned from app_main()[0m
+[0;32mI (1155) BLE UNIT: Unhandled event: 15[0m
+[0;32mI (1159) BLE UNIT: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (1163) BLE UNIT: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (1171) BLE UNIT: Unhandled GATTS event: 12[0m
+[0;32mI (1175) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1179) BLE UNIT: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1186) BLE UNIT: the gatts char length = 0[0m
+[0;32mI (1187) BLE UNIT: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (1194) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (1198) BLE UNIT: TX CCCD Handle: 45[0m
+[0;32mI (2224) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (2225) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (3739) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (3739) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (5271) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (5271) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (6064) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 6d:bf:ab:96:bf:9e:, link_role 1[0m
+[0;32mI (6417) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (6685) BLE UNIT: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (6786) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (6786) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (7324) BLE UNIT: GATT_WRITE_EVT, handle 45[0m
+[0;33mW (7324) BLE UNIT: BLE data receiving length: 2/68[0m
+[0;32mI (7325) BLE UNIT: CCCD Write: 0001[0m
+[0;32mI (7325) BLE UNIT: notify enable[0m
+[0;32mI (7367) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (8318) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8318) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (9832) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (9833) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11381) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11381) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (12914) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (12914) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (14465) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (14465) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (15998) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (15998) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (17548) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (17549) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (19081) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (19082) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (20632) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (20633) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (22165) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (22166) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (22437) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22440) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (22677) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22680) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (22857) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22860) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (23217) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23220) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (23716) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (23717) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (23817) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23820) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (23997) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24000) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (24237) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24240) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (24357) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24360) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (24956) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24959) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (25197) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25200) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (25249) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (25249) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (25317) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25320) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (25437) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25440) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (26036) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26039) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (26217) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26220) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (26397) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26400) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (26517) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26520) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (26800) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (26800) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (27177) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27180) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (27297) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27300) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (27417) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27419) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (27537) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27540) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (28196) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28199) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (28317) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28320) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (28333) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (28333) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (28437) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28440) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (28678) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28679) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (29277) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29280) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (29517) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29520) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (29637) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29640) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (29877) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29879) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (29883) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (29884) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (30476) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30479) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (30657) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30660) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (30897) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30900) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (31017) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31019) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (31416) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (31417) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (31677) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31679) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (31857) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31860) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (31977) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31980) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (32097) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32099) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (32697) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32700) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (32817) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32820) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (32937) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32940) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (32967) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (32968) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (33057) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33060) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;33mW (33060) BLE UNIT: Byte[0] = 1 (0x01)[0m
+[0;33mW (33060) BLE UNIT: Float[0] = 12000.00[0m
+[0;33mW (33064) BLE UNIT: Float[1] = -4000.00[0m
+[0;33mW (33068) BLE UNIT: Float[2] = 4000.00[0m
+[0;33mW (33071) BLE UNIT: Float[3] = -8000.00[0m
+[0;33mW (33075) BLE UNIT: Float[4] = 0.00[0m
+[0;33mW (33078) BLE UNIT: Float[5] = 0.00[0m
+[0;33mW (33081) BLE UNIT: Float[6] = 0.00[0m
+[0;33mW (33084) BLE UNIT: Float[7] = 0.00[0m
+[0;33mW (33087) BLE UNIT: Float[8] = 0.00[0m
+[0;33mW (33091) BLE UNIT: Float[9] = 0.00[0m
+[0;33mW (33094) BLE UNIT: Float[10] = 0.00[0m
+[0;33mW (33097) BLE UNIT: Float[11] = 0.00[0m
+[0;33mW (33100) BLE UNIT: Float[12] = 0.00[0m
+[0;33mW (33104) BLE UNIT: Float[13] = 0.00[0m
+[0;33mW (33107) BLE UNIT: Float[14] = 0.00[0m
+[0;33mW (33110) BLE UNIT: Float[15] = 0.00[0m
+[0;32mI (33956) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33959) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (34197) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34199) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (34317) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34319) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (34500) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (34501) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (35156) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35159) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (35397) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35399) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (36051) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (36051) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (36657) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36660) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (37584) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (37585) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (37677) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37679) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (37977) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37980) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (38097) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38100) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (38697) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38700) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (38937) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38939) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (39117) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (39118) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (39119) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;33mW (39123) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (40377) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (40380) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (40617) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (40620) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (40668) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (40668) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (40857) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (40859) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (41097) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (41100) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (41757) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (41760) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (41997) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (42000) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (42117) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (42120) BLE UNIT: BLE data receiving length: 20/68[0m
+[0;32mI (42218) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (42219) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (42357) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (42360) BLE UNIT: BLE data receiving length: 8/68[0m
+[0;32mI (43751) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (43752) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (45302) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (45303) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (46835) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (46836) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (47131) BLE UNIT: ClIENT DISCONNECTED, conn_id 0, reason 8[0m
+[0;32mI (47132) BLE UNIT: CLIENT DISCONNECTED, resetting buffers[0m
+[0;32mI (47146) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (48386) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (48386) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (49919) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (49919) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (50498) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (50505) I2C SLAVE: .............[0m
+
+[0;32mI (51200) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 6d:bf:ab:96:bf:9e:, link_role 1[0m
+[0;32mI (51470) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (51470) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (51506) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (51775) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (52317) BLE UNIT: ClIENT DISCONNECTED, conn_id 0, reason 19[0m
+[0;32mI (52318) BLE UNIT: CLIENT DISCONNECTED, resetting buffers[0m
+[0;32mI (52332) BLE UNIT: Unhandled event: 6[0m
+[0;32mI (53003) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (53003) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (54553) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (54554) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (56086) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (56087) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (57637) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (57638) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (59170) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (59171) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (60721) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (60721) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (62254) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (62254) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (63805) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (63805) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (65338) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (65338) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (66888) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (66889) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (68421) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (68422) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (69972) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (69973) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (71505) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (71506) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (73056) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (73056) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (74589) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (74589) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (76140) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (76140) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (77673) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (77673) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (79224) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (79224) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (80756) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (80757) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (82307) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (82308) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (83840) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (83841) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (85391) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (85391) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (86924) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (86924) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (88475) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (88475) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (90008) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (90008) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (91559) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (91559) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (93091) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (93092) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (94643) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (94643) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (96175) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (96176) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (97708) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (97709) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (99259) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (99259) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (100508) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (100515) I2C SLAVE: .............[0m
+
+[0;32mI (100819) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (100820) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (102371) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (102371) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (103940) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (103940) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (105509) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (105510) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (107079) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (107079) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (108630) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (108630) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (110199) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (110200) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (111768) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (111769) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (113338) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (113338) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (114907) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (114907) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (116458) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (116459) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (118028) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (118028) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (119597) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (119597) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (121166) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (121166) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (122717) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (122718) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (124287) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (124287) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (125856) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (125856) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (127425) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (127426) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (128995) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (128995) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (130546) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (130546) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (132115) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (132116) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (133684) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (133685) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (135254) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (135254) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (136805) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (136805) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (138374) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (138375) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (139944) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (139944) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (141513) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (141513) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (143064) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (143065) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (144634) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (144634) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (146203) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (146203) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (147772) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (147772) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (149323) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (149324) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (150518) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (150525) I2C SLAVE: .............[0m
+
+[0;32mI (150893) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (150893) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (152462) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (152462) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (154031) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (154032) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (155601) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (155601) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (157170) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (157170) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (158721) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (158722) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (160290) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (160291) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (161860) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (161860) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (163429) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (163429) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (164980) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (164981) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (166550) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (166550) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (168119) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (168119) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (169688) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (169689) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (171239) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (171240) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (172809) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (172809) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (174378) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (174378) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (175947) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (175948) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (177499) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (177499) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (179068) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (179068) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (180637) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (180638) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (182206) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (182207) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (183776) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (183776) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (185327) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (185328) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (186896) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (186897) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (188466) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (188466) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (190035) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (190035) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (191586) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (191587) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (193156) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (193156) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (194725) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (194725) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (196294) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (196294) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (197845) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (197846) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (199415) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (199415) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (200528) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (200535) I2C SLAVE: .............[0m
+
+[0;32mI (200984) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (200984) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (202553) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (202554) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (204105) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (204105) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (205674) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (205674) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (207243) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (207244) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (208812) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (208813) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (210382) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (210382) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (211933) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (211933) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (213502) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (213503) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (215072) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (215072) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (216641) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (216641) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (218192) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (218193) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (219761) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (219762) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (221331) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (221331) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (222900) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (222900) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (224451) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (224452) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (226021) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (226021) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (227590) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (227590) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (229159) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (229160) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (230728) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (230729) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (232280) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (232280) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (233849) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (233850) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (235418) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (235419) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (236988) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (236988) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (238557) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (238557) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (240108) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (240109) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (241678) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (241678) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (243247) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (243247) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (244816) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (244816) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (246385) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (246386) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (247937) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (247937) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (249506) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (249506) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (250538) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (250545) I2C SLAVE: .............[0m
+
+[0;32mI (251075) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (251076) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (252645) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (252645) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (254196) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (254196) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (255765) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (255766) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (257334) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (257335) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (258904) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (258904) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (260455) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (260455) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (262024) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (262025) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (263594) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (263594) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (265163) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (265163) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (266714) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (266715) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (268284) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (268284) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (269853) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (269853) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (271422) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (271422) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (272991) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (272992) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (274543) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (274543) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (276112) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (276112) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (277681) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (277682) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (279250) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (279251) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (280802) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (280802) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (282371) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (282371) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (283940) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (283941) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (285510) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (285510) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (287061) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (287061) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (288630) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (288631) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (290200) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (290200) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (291769) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (291769) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (293338) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (293338) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (294889) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (294890) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (296459) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (296459) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (298028) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (298028) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (299597) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (299598) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (300548) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (300555) I2C SLAVE: .............[0m
+
+[0;32mI (301149) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (301149) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (302718) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (302718) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (304287) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (304288) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (305856) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (305857) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (307426) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (307426) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (308977) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (308977) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (310546) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (310547) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (312116) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (312116) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (313685) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (313685) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (315236) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (315237) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (316806) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (316806) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (318375) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (318375) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (319944) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (319944) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (321513) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (321514) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (323065) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (323065) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (324634) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (324634) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (326203) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (326204) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (327772) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (327773) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (329324) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (329324) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (330893) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (330894) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (332462) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (332463) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (334032) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (334032) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (335583) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (335583) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (337152) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (337153) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (338722) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (338722) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (340291) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (340291) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (341860) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (341860) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (343411) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (343412) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (344981) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (344981) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (346550) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (346550) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (348119) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (348120) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (349671) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (349671) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (350558) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (350565) I2C SLAVE: .............[0m
+
+[0;32mI (351240) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (351240) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (352809) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (352810) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (354378) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (354379) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (355930) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (355930) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (357499) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (357499) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (359068) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (359069) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (360638) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (360638) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (362207) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (362207) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (363758) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (363759) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (365328) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (365328) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (366897) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (366897) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (368466) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (368466) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (370017) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (370018) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (371587) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (371587) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (373156) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (373156) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (374725) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (374726) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (376277) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (376277) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (377846) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (377846) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (379415) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (379416) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (380984) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (380985) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (382554) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (382554) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (384105) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (384105) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (385674) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (385675) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (387244) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (387244) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (388813) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (388813) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (390382) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (390382) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (391933) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (391934) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (393503) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (393503) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (395072) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (395072) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (396641) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (396642) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (398193) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (398193) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (399762) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (399762) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (400568) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (400575) I2C SLAVE: .............[0m
+
+[0;32mI (401331) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (401332) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (402900) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (402901) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (404470) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (404470) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (406021) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (406021) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (407590) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (407591) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (409160) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (409160) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (410729) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (410729) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (412280) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (412281) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (413849) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (413850) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (415419) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (415419) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (416988) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (416988) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (418557) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (418558) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (420109) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (420109) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (421678) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (421678) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (423247) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (423248) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (424799) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (424799) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (426368) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (426368) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (427937) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (427938) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (429506) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (429507) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (431076) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (431076) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (432627) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (432627) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (434196) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (434197) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (435766) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (435766) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (437335) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (437335) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (438886) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (438887) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (440455) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (440456) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (442025) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (442025) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (443594) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (443594) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (445163) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (445164) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (446715) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (446715) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (448284) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (448284) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (449853) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (449854) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (450578) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (450585) I2C SLAVE: .............[0m
+
+[0;32mI (451422) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (451423) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (452974) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (452974) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (454543) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (454543) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (456112) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (456113) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (457682) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (457682) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (459233) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (459233) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (460802) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (460803) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (462371) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (462372) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (463941) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (463941) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (465510) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (465510) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (467061) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (467062) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (468631) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (468631) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (470200) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (470200) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (471769) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (471770) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (473338) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (473339) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (474890) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (474890) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (476460) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (476460) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (478028) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (478029) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (479598) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (479598) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (481149) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (481149) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (482718) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (482719) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (484288) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (484288) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (485857) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (485857) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (487408) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (487409) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (488977) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (488978) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (490547) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (490547) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (492116) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (492116) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (493685) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (493686) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (495237) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (495237) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (496806) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (496806) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (498375) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (498376) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (499944) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (499945) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (500588) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (500595) I2C SLAVE: .............[0m
+
+[0;32mI (501496) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (501496) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (503065) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (503065) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (504634) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (504635) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (506204) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (506204) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (507755) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (507755) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (509324) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (509325) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (510893) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (510894) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (512463) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (512463) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (514014) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (514015) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (515583) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (515584) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (517153) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (517153) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (518722) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (518722) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (520291) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (520292) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (521843) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (521843) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (523412) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (523412) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (524981) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (524981) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (526550) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (526551) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (528102) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (528102) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (529671) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (529671) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (531240) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (531241) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (532810) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (532810) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (534379) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (534379) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (535930) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (535931) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (537499) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (537500) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (539069) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (539069) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (540638) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (540638) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (542207) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (542208) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (543759) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (543759) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (545328) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (545328) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (546897) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (546898) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (548466) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (548467) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (550018) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (550018) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (550598) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (550605) I2C SLAVE: .............[0m
+
+[0;32mI (551588) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (551588) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (553156) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (553157) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (554726) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (554726) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (556295) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (556295) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (557846) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (557847) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (559415) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (559416) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (560985) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (560985) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (562554) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (562554) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (564105) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (564106) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (565675) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (565675) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (567244) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (567244) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (568813) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (568814) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (570365) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (570365) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (571934) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (571934) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (573503) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (573503) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (575072) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (575073) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (576624) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (576624) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (578193) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (578193) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (579762) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (579763) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (581332) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (581332) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (582901) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (582901) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (584452) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (584453) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (586021) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (586022) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (587591) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (587591) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (589160) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (589160) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (590711) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (590712) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (592281) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (592281) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (593850) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (593850) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (595419) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (595420) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (596971) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (596971) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (598540) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (598540) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (600109) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (600109) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (600608) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (600615) I2C SLAVE: .............[0m
+
+[0;32mI (601678) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (601679) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (603248) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (603248) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (604799) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (604799) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (606368) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (606369) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (607937) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (607938) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (609507) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (609507) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (611058) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (611058) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (612627) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (612628) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (614197) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (614197) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (615766) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (615766) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (617335) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (617336) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (618887) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (618887) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (620456) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (620456) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (622025) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (622025) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (623594) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (623595) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (625146) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (625146) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (626715) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (626715) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (628284) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (628285) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (629854) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (629854) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (631423) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (631423) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (632974) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (632975) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (634543) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (634544) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (636113) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (636113) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (637682) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (637682) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (639233) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (639234) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (640803) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (640803) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (642372) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (642372) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (643941) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (643942) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (645510) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (645511) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (647062) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (647062) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (648631) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (648631) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (650200) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (650201) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (650618) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 117
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (650625) I2C SLAVE: .............[0m
+
+[0;32mI (651770) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (651770) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (653321) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (653321) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (654890) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (654891) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (656459) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (656460) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (658029) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (658029) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (659580) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (659580) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (661149) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (661150) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (662719) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (662719) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (664288) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (664288) I2C SLAVE: Data Received - Encoder values updated[0m
+

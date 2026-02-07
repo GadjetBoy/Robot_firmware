@@ -1,0 +1,769 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x28 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2ee4
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 27 2025 10:53:51[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (37) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=20978h (133496) map[0m
+[0;32mI (112) esp_image: segment 1: paddr=000309a0 vaddr=3fc98a00 size=0410ch ( 16652) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00034ab4 vaddr=40374000 size=0b564h ( 46436) load[0m
+[0;32mI (126) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=7f41ch (521244) map[0m
+[0;32mI (218) esp_image: segment 4: paddr=000bf444 vaddr=4037f564 size=09430h ( 37936) load[0m
+[0;32mI (227) esp_image: segment 5: paddr=000c887c vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (235) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (235) boot: Disabling RNG early entropy source...[0m
+[0;32mI (245) cpu_start: Multicore app[0m
+[0;32mI (254) cpu_start: Pro cpu start user code[0m
+[0;32mI (254) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (254) app_init: Application information:[0m
+[0;32mI (254) app_init: Project name:     bluetooth_1.4[0m
+[0;32mI (259) app_init: App version:      v5.4[0m
+[0;32mI (262) app_init: Compile time:     Apr 27 2025 10:53:27[0m
+[0;32mI (268) app_init: ELF file SHA256:  11e908b05...[0m
+[0;32mI (272) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (276) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (279) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (283) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (287) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (294) heap_init: At 3FCA0C30 len 00048AE0 (290 KiB): RAM[0m
+[0;32mI (299) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (304) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (309) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (315) spi_flash: detected chip: boya[0m
+[0;32mI (318) spi_flash: flash io: dio[0m
+[0;33mW (321) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (333) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (339) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (346) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (364) coexist: coexist rom version e7ae62f[0m
+[0;32mI (365) main_task: Started on CPU0[0m
+[0;32mI (375) main_task: Calling app_main()[0m
+[0;32mI (385) BLE_INIT: BT controller compile version [d752dea][0m
+[0;32mI (385) BLE_INIT: Bluetooth MAC: cc:ba:97:21:c7:4a[0m
+[0;32mI (385) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (445) BTserver: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (445) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (445) BTserver: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (445) BTserver: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (455) BTserver: Unhandled GATTS event: 12[0m
+[0;32mI (455) BTserver: the gatts char length = 8[0m
+[0;32mI (465) BTserver: prf_char[0] = 0[0m
+[0;32mI (465) BTserver: prf_char[1] = 0[0m
+[0;32mI (465) BTserver: prf_char[2] = 0[0m
+[0;32mI (475) BTserver: prf_char[3] = 0[0m
+[0;32mI (475) BTserver: prf_char[4] = 0[0m
+[0;32mI (475) BTserver: prf_char[5] = 0[0m
+[0;32mI (485) BTserver: prf_char[6] = 0[0m
+[0;32mI (485) BTserver: prf_char[7] = 0[0m
+[0;32mI (485) BTserver: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (495) BTserver: the gatts char length = 8[0m
+[0;32mI (495) BTserver: prf_char[0] = 0[0m
+[0;32mI (505) BTserver: prf_char[1] = 1[0m
+[0;32mI (505) BTserver: prf_char[2] = 2[0m
+[0;32mI (505) BTserver: prf_char[3] = 3[0m
+[0;32mI (505) BTserver: prf_char[4] = 4[0m
+[0;32mI (515) BTserver: prf_char[5] = 5[0m
+[0;32mI (515) BTserver: prf_char[6] = 6[0m
+[0;32mI (515) BTserver: prf_char[7] = 7[0m
+[0;32mI (525) BTserver: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (525) BTserver: Unhandled event: 6[0m
+[0;32mI (535) BTserver: TX CCCD Handle: 45[0m
+[0;32mI (535) main_task: Returned from app_main()[0m
+[0;32mI (40575) BTserver: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 7a:77:12:3f:7d:e8:, link_role 1[0m
+[0;32mI (40615) BTserver: Unhandled event: 21[0m
+[0;32mI (40935) BTserver: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (41135) BTserver: GATT_WRITE_EVT, handle 45[0m
+[0;32mI (41135) BTserver: CCCD Write: 0001[0m
+[0;32mI (41135) BTserver: notify enable[0m
+[0;32mI (41135) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (41185) BTserver: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (41535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (42535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (43535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (44535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (45535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (46535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (47535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (48535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (49535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (50535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (51535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (52535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (53535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (54535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (55535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (56535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (57535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (58535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (59535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (60535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (61535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (62535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (63535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (64535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (65535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (66535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (67535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (68535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (69535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (70535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (71535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (72535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (73535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (74535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (75535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (76535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (77535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (78535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (79535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (80535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (81535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (82535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (83535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (84535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (85535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (86535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (87535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (88535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (89535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (90535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (91535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (92535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (93535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (94535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (95535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (96535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (97535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (98535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (99535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (100535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (101535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (102535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (103535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (104535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (105535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (106535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (107535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (108535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (109535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (110535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (111535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (112535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (113535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (114535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (115535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (116535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (117535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (118535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (119535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (120535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (121535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (122535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (123535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (124535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (124825) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (124825) BTserver: Received data (len 7):[0m
+[0;32mI (124825) BTserver: a5 0f 00 00 00 0f 5a[0m
+[0;32mI (124825) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (125535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (126535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (127535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (128535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (129535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (130535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (131535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (132535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (133535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (134535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (135535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (136535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (137535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (138535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (138865) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (138865) BTserver: Received data (len 7):[0m
+[0;32mI (138865) BTserver: a5 14 00 00 00 14 5a[0m
+[0;32mI (138865) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (139535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (140535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (141535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (142535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (143535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (144535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (145535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (146125) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (146125) BTserver: Received data (len 7):[0m
+[0;32mI (146125) BTserver: a5 19 00 00 00 19 5a[0m
+[0;32mI (146135) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (146535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (147535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (148535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (149535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (150535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (151535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (152535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (153535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (154535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (155535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (156535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (157535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (158535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (159535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (160535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (161535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (162535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (163535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (164535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (165535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (166535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (167535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (168535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (169535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (170535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (171535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (172535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (173535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (174535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (175535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (176535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (177535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (178535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (179535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (180535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (181535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (182535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (183535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (184535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (185535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (185905) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (185905) BTserver: Received data (len 7):[0m
+[0;32mI (185905) BTserver: a5 05 00 00 00 05 5a[0m
+[0;32mI (185915) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (186535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (187535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (188535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (189535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (189925) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (189925) BTserver: Received data (len 7):[0m
+[0;32mI (189925) BTserver: a5 0a 00 00 00 0a 5a[0m
+[0;32mI (189935) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (190535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (191535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (192535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (193535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (194535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (195535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (195985) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (195985) BTserver: Received data (len 7):[0m
+[0;32mI (195985) BTserver: a5 0f 00 00 00 0f 5a[0m
+[0;32mI (195995) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (196535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (197535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (198535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (199535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (200535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (201535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (201805) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (201805) BTserver: Received data (len 7):[0m
+[0;32mI (201805) BTserver: a5 14 00 00 00 14 5a[0m
+[0;32mI (201815) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (202535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (203535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (204535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (205535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (206535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (207085) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (207085) BTserver: Received data (len 7):[0m
+[0;32mI (207085) BTserver: a5 19 00 00 00 19 5a[0m
+[0;32mI (207095) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (207535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (208535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (209535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (210535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (211535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (211885) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (211885) BTserver: Received data (len 7):[0m
+[0;32mI (211885) BTserver: a5 1e 00 00 00 1e 5a[0m
+[0;32mI (211895) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (212535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (213535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (214535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (215535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (216535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (217535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (218535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (219535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (220165) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (220165) BTserver: Received data (len 7):[0m
+[0;32mI (220165) BTserver: a5 23 00 00 00 23 5a[0m
+[0;32mI (220175) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (220535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (221535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (222535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (223535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (224535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (225265) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (225265) BTserver: Received data (len 7):[0m
+[0;32mI (225265) BTserver: a5 28 00 00 00 28 5a[0m
+[0;32mI (225275) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (225535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (226535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (227535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (228535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (228865) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (228865) BTserver: Received data (len 7):[0m
+[0;32mI (228865) BTserver: a5 23 00 00 00 23 5a[0m
+[0;32mI (228875) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (229165) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (229165) BTserver: Received data (len 7):[0m
+[0;32mI (229165) BTserver: a5 1e 00 00 00 1e 5a[0m
+[0;32mI (229175) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (229285) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (229285) BTserver: Received data (len 7):[0m
+[0;32mI (229285) BTserver: a5 19 00 00 00 19 5a[0m
+[0;32mI (229295) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (229465) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (229465) BTserver: Received data (len 7):[0m
+[0;32mI (229465) BTserver: a5 14 00 00 00 14 5a[0m
+[0;32mI (229475) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (229535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (229585) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (229585) BTserver: Received data (len 7):[0m
+[0;32mI (229585) BTserver: a5 0f 00 00 00 0f 5a[0m
+[0;32mI (229595) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (229945) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (229945) BTserver: Received data (len 7):[0m
+[0;32mI (229945) BTserver: a5 0a 00 00 00 0a 5a[0m
+[0;32mI (229955) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (230365) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (230365) BTserver: Received data (len 7):[0m
+[0;32mI (230365) BTserver: a5 05 00 00 00 05 5a[0m
+[0;32mI (230375) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (230535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (231325) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (231325) BTserver: Received data (len 7):[0m
+[0;32mI (231325) BTserver: a5 00 00 00 00 00 5a[0m
+[0;32mI (231335) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (231535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (232535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (233535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (234535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (235535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (236535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (237535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (238535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (239535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (240535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (241535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (242535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (243535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (244535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (245535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (246535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (247535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (248535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (249535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (250535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (251535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (252535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (253535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (254535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (255535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (256535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (257535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (258535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (259535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (260535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (261535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (262535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (263535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (264535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (265535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (266535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (267535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (268535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (269535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (270535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (271535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (272535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (273535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (274535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (275535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (276535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (276865) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (276865) BTserver: Received data (len 7):[0m
+[0;32mI (276865) BTserver: a5 01 00 00 00 01 5a[0m
+[0;32mI (276875) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (277535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (278535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (279535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (280285) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (280285) BTserver: Received data (len 7):[0m
+[0;32mI (280285) BTserver: a5 02 00 00 00 02 5a[0m
+[0;32mI (280295) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (280535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (281535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (282535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (282865) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (282865) BTserver: Received data (len 7):[0m
+[0;32mI (282865) BTserver: a5 03 00 00 00 03 5a[0m
+[0;32mI (282875) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (283535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (284535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (284725) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (284725) BTserver: Received data (len 7):[0m
+[0;32mI (284725) BTserver: a5 04 00 00 00 04 5a[0m
+[0;32mI (284735) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (285535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (286535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (286705) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (286705) BTserver: Received data (len 7):[0m
+[0;32mI (286705) BTserver: a5 05 00 00 00 05 5a[0m
+[0;32mI (286715) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (287535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (288535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (288745) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (288745) BTserver: Received data (len 7):[0m
+[0;32mI (288745) BTserver: a5 06 00 00 00 06 5a[0m
+[0;32mI (288755) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (289535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (290535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (290725) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (290725) BTserver: Received data (len 7):[0m
+[0;32mI (290725) BTserver: a5 07 00 00 00 07 5a[0m
+[0;32mI (290735) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (291535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (292535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (293535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (294535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (295535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (295705) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (295705) BTserver: Received data (len 7):[0m
+[0;32mI (295715) BTserver: a5 08 00 00 00 08 5a[0m
+[0;32mI (295715) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (296535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (297535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (298535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (299185) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (299185) BTserver: Received data (len 7):[0m
+[0;32mI (299195) BTserver: a5 09 00 00 00 09 5a[0m
+[0;32mI (299195) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (299535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (300535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (301535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (301885) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (301885) BTserver: Received data (len 7):[0m
+[0;32mI (301895) BTserver: a5 0a 00 00 00 0a 5a[0m
+[0;32mI (301895) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (302535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (303535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (304535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (305535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (306535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (307535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (307945) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (307945) BTserver: Received data (len 7):[0m
+[0;32mI (307955) BTserver: a5 0b 00 00 00 0b 5a[0m
+[0;32mI (307955) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (308535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (309535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (310535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (311535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (312535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (313535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (314535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (315385) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (315395) BTserver: Received data (len 7):[0m
+[0;32mI (315395) BTserver: a5 0c 00 00 00 0c 5a[0m
+[0;32mI (315395) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (315535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (316535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (317535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (318535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (319535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (320535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (321535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (322535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (323425) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (323435) BTserver: Received data (len 7):[0m
+[0;32mI (323435) BTserver: a5 0d 00 00 00 0d 5a[0m
+[0;32mI (323435) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (323535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (324535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (325535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (326535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (327535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (328105) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (328115) BTserver: Received data (len 7):[0m
+[0;32mI (328115) BTserver: a5 0e 00 00 00 0e 5a[0m
+[0;32mI (328115) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (328535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (329535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (330535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (331465) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (331475) BTserver: Received data (len 7):[0m
+[0;32mI (331475) BTserver: a5 0f 00 00 00 0f 5a[0m
+[0;32mI (331475) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (331535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (332485) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (332495) BTserver: Received data (len 7):[0m
+[0;32mI (332495) BTserver: a5 0e 00 00 00 0e 5a[0m
+[0;32mI (332495) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (332535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (332965) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (332975) BTserver: Received data (len 7):[0m
+[0;32mI (332975) BTserver: a5 0d 00 00 00 0d 5a[0m
+[0;32mI (332975) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (333205) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (333215) BTserver: Received data (len 7):[0m
+[0;32mI (333215) BTserver: a5 0c 00 00 00 0c 5a[0m
+[0;32mI (333215) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (333505) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (333515) BTserver: Received data (len 7):[0m
+[0;32mI (333515) BTserver: a5 0b 00 00 00 0b 5a[0m
+[0;32mI (333515) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (333535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (333745) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (333755) BTserver: Received data (len 7):[0m
+[0;32mI (333755) BTserver: a5 0a 00 00 00 0a 5a[0m
+[0;32mI (333755) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (334535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (334595) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (334595) BTserver: Received data (len 7):[0m
+[0;32mI (334595) BTserver: a5 09 00 00 00 09 5a[0m
+[0;32mI (334595) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (335305) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (335315) BTserver: Received data (len 7):[0m
+[0;32mI (335315) BTserver: a5 08 00 00 00 08 5a[0m
+[0;32mI (335315) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (335535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (336535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (337535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (338535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (338845) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (338855) BTserver: Received data (len 7):[0m
+[0;32mI (338855) BTserver: a5 07 00 00 00 07 5a[0m
+[0;32mI (338855) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (339535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (339925) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (339935) BTserver: Received data (len 7):[0m
+[0;32mI (339935) BTserver: a5 06 00 00 00 06 5a[0m
+[0;32mI (339935) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (340535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (341535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (342085) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (342095) BTserver: Received data (len 7):[0m
+[0;32mI (342095) BTserver: a5 05 00 00 00 05 5a[0m
+[0;32mI (342095) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (342535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (343465) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (343475) BTserver: Received data (len 7):[0m
+[0;32mI (343475) BTserver: a5 04 00 00 00 04 5a[0m
+[0;32mI (343475) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (343535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (344535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (345385) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (345395) BTserver: Received data (len 7):[0m
+[0;32mI (345395) BTserver: a5 03 00 00 00 03 5a[0m
+[0;32mI (345395) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (345535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (346535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (347535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (348535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (348865) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (348875) BTserver: Received data (len 7):[0m
+[0;32mI (348875) BTserver: a5 02 00 00 00 02 5a[0m
+[0;32mI (348875) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (349535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (350535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (351535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (352535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (353535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (353785) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (353795) BTserver: Received data (len 7):[0m
+[0;32mI (353795) BTserver: a5 01 00 00 00 01 5a[0m
+[0;32mI (353795) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (354535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (355535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (356535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (357535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (358535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (359535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (360535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (361535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (362535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (363535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (364535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (365535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (366535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (367535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (368535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (369535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (370535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (371535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (372535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (373535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (374535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (375535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (376535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (377535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (378535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (379535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (380535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (381535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (382535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (383535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (384535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (385535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (386535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (387535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (388535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (389535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (390535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (391535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (392535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (393535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (394535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (395535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (396535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (397535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (398535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (399535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (400535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (401535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (402535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (403535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (404535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (405535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (406535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (407535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (408535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (409535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (410535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (411535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (412535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (413535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (414535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (415535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (416535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (417535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (418535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (419535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (420535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (421535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (422535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (423535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (424535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (425535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (426535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (427535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (428535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (429535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (430535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (431535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (432535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (432815) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (432815) BTserver: Received data (len 7):[0m
+[0;32mI (432815) BTserver: a5 02 00 00 00 02 5a[0m
+[0;32mI (432815) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (433535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (434535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (435215) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (435215) BTserver: Received data (len 7):[0m
+[0;32mI (435215) BTserver: a5 01 00 00 00 01 5a[0m
+[0;32mI (435215) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (435535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (436535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (437535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (438535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (439535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (440535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (441535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (442535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (443535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (444535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (445535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (446535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (447535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (448535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (449535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (450535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (451535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (452535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (453535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (454535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (455535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (456535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (457535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (458535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (459535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (460535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (461535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (462535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (463535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (464535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (465535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (466535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (467535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (468535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (469535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (470535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (471535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (472535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (473535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (474535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (475535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (476535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (477535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (478535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (479535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (480535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (481535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (482535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (483535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (484535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (485535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (486535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (487535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (488535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (489535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (490535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (491535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (492535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (493535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (494535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (495535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (496535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (497535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (498535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (499535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (500535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (501535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (502535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (503535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (504535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (505535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (506535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (507535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (508535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (509535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (510535) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (511535) BTserver: Unhandled GATTS event: 5[0m

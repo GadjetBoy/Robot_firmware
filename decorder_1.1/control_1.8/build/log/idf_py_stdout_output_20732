@@ -1,0 +1,36 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\decorder_1.1\control_1.8\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6560 bytes. 0xaa0 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/gate.c.obj
+[5/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/cpg.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c: In function 'run_position_loop':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c:187:30: warning: passing argument 1 of 'PIDController_Update' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  187 |         PIDController_Update(&motors[i].pos_pid, motors[i].target_position,
+      |                              ^~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c:106:42: note: expected 'PIDController *' but argument is of type 'volatile PIDController *'
+  106 | void PIDController_Update(PIDController *pid, float setpoint, int measurement, uint8_t i) {
+      |                           ~~~~~~~~~~~~~~~^~~
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c: In function 'pid_app_main':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c:227:28: warning: passing argument 1 of 'PIDController_Init' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  227 |         PIDController_Init(&motors[i].pos_pid);
+      |                            ^~~~~~~~~~~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c:77:40: note: expected 'PIDController *' but argument is of type 'volatile PIDController *'
+   77 | void PIDController_Init(PIDController *pid) {
+      |                         ~~~~~~~~~~~~~~~^~~
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c: At top level:
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/main/cpg.c:36:16: warning: 'stall_count' defined but not used [-Wunused-variable]
+   36 | static uint8_t stall_count[NUM_MOTORS] = {0};
+      |                ^~~~~~~~~~~
+[6/10] Linking C static library esp-idf\main\libmain.a
+[7/10] Generating ld/sections.ld
+[8/10] Linking CXX executable control_1.8.elf
+[9/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build/control_1.8.bin
+[10/10] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\decorder_1.1\control_1.8\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build/control_1.8.bin"
+control_1.8.bin binary size 0xc00b0 bytes. Smallest app partition is 0x100000 bytes. 0x3ff50 bytes (25%) free.

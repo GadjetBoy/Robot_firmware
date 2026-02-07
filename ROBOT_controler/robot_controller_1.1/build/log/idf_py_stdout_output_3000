@@ -1,0 +1,2419 @@
+hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,le�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  2 2025 19:47:00[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20614h (132628) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=0003063c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00030660 vaddr=3ffbdb60 size=04d30h ( 19760) load[0m
+[0;32mI (146) esp_image: segment 3: paddr=00035398 vaddr=40080000 size=0ac80h ( 44160) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7de90h (515728) map[0m
+[0;32mI (340) esp_image: segment 5: paddr=000bdeb8 vaddr=4008ac80 size=0d088h ( 53384) load[0m
+[0;32mI (373) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (373) boot: Disabling RNG early entropy source...[0m
+[0;32mI (383) cpu_start: Multicore app[0m
+[0;32mI (392) cpu_start: Pro cpu start user code[0m
+[0;32mI (392) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (392) app_init: Application information:[0m
+[0;32mI (392) app_init: Project name:     robot_controller_1.1[0m
+[0;32mI (397) app_init: App version:      v5.4[0m
+[0;32mI (400) app_init: Compile time:     May  2 2025 19:46:51[0m
+[0;32mI (405) app_init: ELF file SHA256:  6f43eb383...[0m
+[0;32mI (410) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (413) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (417) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (421) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (425) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (431) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (436) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (442) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (447) heap_init: At 3FFC7508 len 00018AF8 (98 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (457) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (463) heap_init: At 40097D08 len 000082F8 (32 KiB): IRAM[0m
+[0;32mI (470) spi_flash: detected chip: generic[0m
+[0;32mI (472) spi_flash: flash io: dio[0m
+[0;32mI (476) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (480) main_task: Started on CPU0[0m
+[0;32mI (483) main_task: Calling app_main()[0m
+[0;32mI (494) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;32mI (497) BTDM_INIT: Bluetooth MAC: 78:42:1c:2e:4c:ea[0m
+[0;32mI (499) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (886) BTserver: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (888) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;32mI (890) BTserver: CREATE_SERVICE_EVT_TX, status 0, service_handle 40[0m
+[0;32mI (893) BTserver: CREATE_SERVICE_EVT_RX, status 0, service_handle 40[0m
+[0;32mI (901) BTserver: Unhandled GATTS event: 12[0m
+[0;32mI (905) BTserver: the gatts char length = 8[0m
+[0;32mI (909) BTserver: prf_char[0] = 0[0m
+[0;32mI (909) BTserver: prf_char[1] = 0[0m
+[0;32mI (912) BTserver: prf_char[2] = 0[0m
+[0;32mI (916) BTserver: prf_char[3] = 0[0m
+[0;32mI (918) BTserver: prf_char[4] = 0[0m
+[0;32mI (921) BTserver: prf_char[5] = 0[0m
+[0;32mI (924) BTserver: prf_char[6] = 0[0m
+[0;32mI (927) BTserver: prf_char[7] = 0[0m
+[0;32mI (930) BTserver: ADD_RX_CHAR, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (937) BTserver: the gatts char length = 8[0m
+[0;32mI (941) BTserver: prf_char[0] = 0[0m
+[0;32mI (944) BTserver: prf_char[1] = 1[0m
+[0;32mI (947) BTserver: prf_char[2] = 2[0m
+[0;32mI (950) BTserver: prf_char[3] = 3[0m
+[0;32mI (953) BTserver: prf_char[4] = 4[0m
+[0;32mI (956) BTserver: prf_char[5] = 5[0m
+[0;32mI (959) BTserver: prf_char[6] = 6[0m
+[0;32mI (962) BTserver: prf_char[7] = 7[0m
+[0;32mI (965) BTserver: ADD_TX_CHAR, status 0,  attr_handle 44, service_handle 40[0m
+[0;32mI (972) BTserver: Unhandled event: 6[0m
+[0;32mI (976) BTserver: TX CCCD Handle: 45[0m
+[0;32mI (1079) PCNT: setting up PCNT units and chaneels[0m
+[0;32mI (1079) PCNT: install pcnt unit1[0m
+[0;32mI (1080) PCNT: set glitch filter for unit1[0m
+[0;32mI (1080) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1083) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1089) PCNT: enable pcnt unit1[0m
+[0;32mI (1092) PCNT: clear pcnt unit1[0m
+[0;32mI (1095) PCNT: start pcnt unit1[0m
+[0;32mI (1098) PCNT: install pcnt unit2[0m
+[0;32mI (1101) PCNT: set glitch filter for unit2[0m
+[0;32mI (1105) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1109) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1115) PCNT: enable pcnt unit2[0m
+[0;32mI (1118) PCNT: clear pcnt unit2[0m
+[0;32mI (1121) PCNT: start pcnt unit2[0m
+[0;32mI (1124) PCNT: install pcnt unit3[0m
+[0;32mI (1127) PCNT: set glitch filter for unit3[0m
+[0;32mI (1130) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1135) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1141) PCNT: enable pcnt unit3[0m
+[0;32mI (1144) PCNT: clear pcnt unit3[0m
+[0;32mI (1146) PCNT: start pcnt unit3[0m
+[0;32mI (1149) PCNT: install pcnt unit4[0m
+[0;32mI (1153) PCNT: set glitch filter for unit4[0m
+[0;32mI (1156) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1160) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1166) PCNT: enable pcnt unit4[0m
+[0;32mI (1169) PCNT: clear pcnt unit4[0m
+[0;32mI (1172) PCNT: start pcnt unit4[0m
+[0;32mI (1175) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1179) PCNT: setting up Ques[0m
+[0;32mI (1182) PCNT: setting up Tasks[0m
+[0;32mI (1185) PCNT: Read Task Stack: 3644[0m
+[0;32mI (1186) PCNT: Task Initialization Complete. Tasks running.[0m
+[0;32mI (1188) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (1193) LEDC_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (1209) LEDC_UNIT: LEDC unit setiing up completed[0m
+
+[0;32mI (1213) main_task: Returned from app_main()[0m
+[1;31mE (1213) PWM: Invalid state: 0x0[0m
+[0;32mI (1220) PWM: control_signal[1]= 0.00[0m
+[0;32mI (1223) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (1226) PWM: control_signal[2]= 0.00[0m
+[0;32mI (1229) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (1232) PWM: control_signal[3]= 0.00[0m
+[0;32mI (1236) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (1239) PWM: control_signal[4]= 0.00[0m
+[0;32mI (1242) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (1713) PWM: Invalid state: 0x0[0m
+[0;32mI (1713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (1714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (1714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (1715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (1718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (1721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (1725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (1728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (2203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (2213) PWM: Invalid state: 0x0[0m
+[0;32mI (2213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (2214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (2214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (2216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (2219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (2223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (2226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (2229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (2713) PWM: Invalid state: 0x0[0m
+[0;32mI (2713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (2714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (2714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (2715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (2718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (2721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (2725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (2728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (3203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (3213) PWM: Invalid state: 0x0[0m
+[0;32mI (3213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (3214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (3214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (3216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (3219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (3223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (3226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (3229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (3713) PWM: Invalid state: 0x0[0m
+[0;32mI (3713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (3714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (3714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (3715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (3718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (3721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (3725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (3728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (4203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (4213) PWM: Invalid state: 0x0[0m
+[0;32mI (4213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (4214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (4214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (4216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (4219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (4223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (4226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (4229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (4713) PWM: Invalid state: 0x0[0m
+[0;32mI (4713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (4714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (4714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (4715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (4718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (4721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (4725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (4728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (5203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (5213) PWM: Invalid state: 0x0[0m
+[0;32mI (5213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (5214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (5214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (5216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (5219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (5223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (5226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (5229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (5713) PWM: Invalid state: 0x0[0m
+[0;32mI (5713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (5714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (5714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (5715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (5718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (5721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (5725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (5728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (6203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (6213) PWM: Invalid state: 0x0[0m
+[0;32mI (6213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (6214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (6214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (6216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (6219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (6223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (6226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (6229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (6713) PWM: Invalid state: 0x0[0m
+[0;32mI (6713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (6714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (6714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (6715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (6718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (6721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (6725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (6728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (7203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (7213) PWM: Invalid state: 0x0[0m
+[0;32mI (7213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (7214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (7214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (7216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (7219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (7223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (7226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (7229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (7713) PWM: Invalid state: 0x0[0m
+[0;32mI (7713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (7714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (7714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (7715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (7718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (7721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (7725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (7728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (8203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (8213) PWM: Invalid state: 0x0[0m
+[0;32mI (8213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (8214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (8214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (8216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (8219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (8223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (8226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (8229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (8713) PWM: Invalid state: 0x0[0m
+[0;32mI (8713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (8714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (8714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (8715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (8718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (8721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (8725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (8728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (9174) BTserver: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 70:38:d8:5e:da:11:, link_role 1[0m
+[0;32mI (9203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (9213) PWM: Invalid state: 0x0[0m
+[0;32mI (9213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (9214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (9214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (9216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (9219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (9223) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (9226) PWM: control_signal[4]= 0.00[0m
+[0;32mI (9229) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (9264) BTserver: Unhandled event: 21[0m
+[0;32mI (9571) BTserver: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[1;31mE (9713) PWM: Invalid state: 0x0[0m
+[0;32mI (9713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (9714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (9714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (9715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (9718) PWM: control_signal[3]= 0.00[0m
+[0;32mI (9721) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (9725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (9728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (10051) BTserver: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (10203) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (10213) PWM: Invalid state: 0x0[0m
+[0;32mI (10213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (10214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (10214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (10217) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (10220) PWM: control_signal[3]= 0.00[0m
+[0;32mI (10224) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (10227) PWM: control_signal[4]= 0.00[0m
+[0;32mI (10230) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (10248) BTserver: GATT_WRITE_EVT, handle 45[0m
+[0;32mI (10248) BTserver: CCCD Write: 0001[0m
+[0;32mI (10249) BTserver: notify enable[0m
+[0;32mI (10250) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (10284) BTserver: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[1;31mE (10713) PWM: Invalid state: 0x0[0m
+[0;32mI (10713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (10714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (10714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (10715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (10719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (10722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (10725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (10729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (10980) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (11204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (11213) PWM: Invalid state: 0x0[0m
+[0;32mI (11213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (11214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (11214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (11216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (11219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (11222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (11225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (11229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (11713) PWM: Invalid state: 0x0[0m
+[0;32mI (11713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (11714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (11714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (11715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (11719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (11722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (11725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (11729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (11983) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (12204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (12213) PWM: Invalid state: 0x0[0m
+[0;32mI (12213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (12214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (12214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (12216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (12219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (12222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (12225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (12229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (12713) PWM: Invalid state: 0x0[0m
+[0;32mI (12713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (12714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (12714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (12715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (12719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (12722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (12725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (12729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (12985) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (13204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (13213) PWM: Invalid state: 0x0[0m
+[0;32mI (13213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (13214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (13214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (13216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (13219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (13222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (13225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (13229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (13713) PWM: Invalid state: 0x0[0m
+[0;32mI (13713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (13714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (13714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (13715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (13719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (13722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (13725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (13729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (13988) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (14204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (14213) PWM: Invalid state: 0x0[0m
+[0;32mI (14213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (14214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (14214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (14216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (14219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (14222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (14225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (14229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (14713) PWM: Invalid state: 0x0[0m
+[0;32mI (14713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (14714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (14714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (14715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (14719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (14722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (14725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (14729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (14990) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (15204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (15213) PWM: Invalid state: 0x0[0m
+[0;32mI (15213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (15214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (15214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (15216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (15219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (15222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (15225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (15229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (15713) PWM: Invalid state: 0x0[0m
+[0;32mI (15713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (15714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (15714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (15715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (15719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (15722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (15725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (15729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (15993) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (16204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (16213) PWM: Invalid state: 0x0[0m
+[0;32mI (16213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (16214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (16214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (16216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (16219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (16222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (16225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (16229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (16713) PWM: Invalid state: 0x0[0m
+[0;32mI (16713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (16714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (16714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (16715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (16719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (16722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (16725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (16729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (16995) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (17204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (17213) PWM: Invalid state: 0x0[0m
+[0;32mI (17213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (17214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (17214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (17216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (17219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (17222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (17225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (17229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (17713) PWM: Invalid state: 0x0[0m
+[0;32mI (17713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (17714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (17714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (17715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (17719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (17722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (17725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (17729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (17997) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (18204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (18213) PWM: Invalid state: 0x0[0m
+[0;32mI (18213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (18214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (18214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (18216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (18219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (18222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (18225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (18229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (18713) PWM: Invalid state: 0x0[0m
+[0;32mI (18713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (18714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (18714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (18715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (18719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (18722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (18725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (18729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (19000) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (19204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (19213) PWM: Invalid state: 0x0[0m
+[0;32mI (19213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (19214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (19214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (19216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (19219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (19222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (19225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (19229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (19713) PWM: Invalid state: 0x0[0m
+[0;32mI (19713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (19714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (19714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (19715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (19719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (19722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (19725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (19729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (20002) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (20204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (20213) PWM: Invalid state: 0x0[0m
+[0;32mI (20213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (20214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (20214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (20216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (20219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (20222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (20225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (20229) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (20372) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (20376) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (20493) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (20495) BTwriteEvent: Int[0] = 255[0m
+[0;32mI (20495) BTwriteEvent: Float[0] = 0.00[0m
+[0;32mI (20495) BTwriteEvent: Float[1] = 1.00[0m
+[0;32mI (20498) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (20502) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (20505) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (20509) BTwriteEvent: Float[5] = 0.96[0m
+[0;32mI (20512) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (20516) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (20521) BTserver: Unhandled GATTS event: 21[0m
+[1;31mE (20713) PWM: Invalid control value: 255[0m
+[1;31mE (20713) PWM: Invalid state: 0x0[0m
+[0;32mI (20714) PWM: control_signal[1]= 0.00[0m
+[0;32mI (20714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (20716) PWM: control_signal[2]= 0.00[0m
+[0;32mI (20719) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (20722) PWM: control_signal[3]= 0.00[0m
+[0;32mI (20726) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (20729) PWM: control_signal[4]= 0.00[0m
+[0;32mI (20732) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (21005) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (21204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (21213) PWM: Invalid control value: 255[0m
+[1;31mE (21213) PWM: Invalid state: 0x0[0m
+[0;32mI (21214) PWM: control_signal[1]= 0.00[0m
+[0;32mI (21214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (21216) PWM: control_signal[2]= 0.00[0m
+[0;32mI (21219) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (21222) PWM: control_signal[3]= 0.00[0m
+[0;32mI (21226) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (21229) PWM: control_signal[4]= 0.00[0m
+[0;32mI (21232) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (21713) PWM: Invalid control value: 255[0m
+[1;31mE (21713) PWM: Invalid state: 0x0[0m
+[0;32mI (21714) PWM: control_signal[1]= 0.00[0m
+[0;32mI (21714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (21716) PWM: control_signal[2]= 0.00[0m
+[0;32mI (21719) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (21722) PWM: control_signal[3]= 0.00[0m
+[0;32mI (21726) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (21729) PWM: control_signal[4]= 0.00[0m
+[0;32mI (21732) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (22008) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (22172) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (22176) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (22204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (22213) PWM: Invalid control value: 255[0m
+[1;31mE (22213) PWM: Invalid state: 0x0[0m
+[0;32mI (22214) PWM: control_signal[1]= 0.00[0m
+[0;32mI (22214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (22216) PWM: control_signal[2]= 0.00[0m
+[0;32mI (22219) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (22222) PWM: control_signal[3]= 0.00[0m
+[0;32mI (22226) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (22229) PWM: control_signal[4]= 0.00[0m
+[0;32mI (22232) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (22294) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (22295) BTwriteEvent: Int[0] = 0[0m
+[0;32mI (22295) BTwriteEvent: Float[0] = 0.00[0m
+[0;32mI (22295) BTwriteEvent: Float[1] = 1.00[0m
+[0;32mI (22298) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (22302) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (22305) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (22309) BTwriteEvent: Float[5] = 0.96[0m
+[0;32mI (22312) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (22316) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (22321) BTserver: Unhandled GATTS event: 21[0m
+[1;31mE (22713) PWM: Invalid state: 0x0[0m
+[0;32mI (22713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (22714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (22714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (22715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (22719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (22722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (22725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (22729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (23011) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (23204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (23213) PWM: Invalid state: 0x0[0m
+[0;32mI (23213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (23214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (23214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (23216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (23219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (23222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (23225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (23229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (23713) PWM: Invalid state: 0x0[0m
+[0;32mI (23713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (23714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (23714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (23715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (23719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (23722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (23725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (23729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (24013) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (24204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[1;31mE (24213) PWM: Invalid state: 0x0[0m
+[0;32mI (24213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (24214) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (24214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (24216) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (24219) PWM: control_signal[3]= 0.00[0m
+[0;32mI (24222) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (24225) PWM: control_signal[4]= 0.00[0m
+[0;32mI (24229) PWM: PWM_signal[4]= 0.00[0m
+[1;31mE (24713) PWM: Invalid state: 0x0[0m
+[0;32mI (24713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (24714) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (24714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (24715) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (24719) PWM: control_signal[3]= 0.00[0m
+[0;32mI (24722) PWM: PWM_signal[3]= 0.00[0m
+[0;32mI (24725) PWM: control_signal[4]= 0.00[0m
+[0;32mI (24729) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (24752) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (24756) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (24873) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (24875) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (24875) BTwriteEvent: Float[0] = 0.00[0m
+[0;32mI (24875) BTwriteEvent: Float[1] = 1.00[0m
+[0;32mI (24878) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (24882) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (24885) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (24889) BTwriteEvent: Float[5] = 0.96[0m
+[0;32mI (24892) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (24896) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (24901) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (25015) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (25204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (25213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (25213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (25214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (25214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (25216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (25219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (25223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (25226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (25713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (25713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (25714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (25714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (25716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (25719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (25722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (25726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (26017) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (26204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (26213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (26213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (26214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (26214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (26216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (26219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (26223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (26226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (26713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (26713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (26714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (26714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (26716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (26719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (26722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (26726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (27019) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (27204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (27213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (27213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (27214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (27214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (27216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (27219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (27223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (27226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (27713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (27713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (27714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (27714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (27716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (27719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (27722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (27726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (28022) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (28204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (28213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (28213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (28214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (28214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (28216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (28219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (28223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (28226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (28713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (28713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (28714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (28714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (28716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (28719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (28722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (28726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (29024) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (29204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (29213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (29213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (29214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (29214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (29216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (29219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (29223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (29226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (29713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (29713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (29714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (29714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (29716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (29719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (29722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (29726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (30028) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (30204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (30213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (30213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (30214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (30214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (30216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (30219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (30223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (30226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (30713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (30713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (30714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (30714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (30716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (30719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (30722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (30726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (31030) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (31204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (31213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (31213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (31214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (31214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (31216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (31219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (31223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (31226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (31713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (31713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (31714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (31714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (31716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (31719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (31722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (31726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (32032) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (32204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (32213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (32213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (32214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (32214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (32216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (32219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (32223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (32226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (32713) PWM: control_signal[1]= 0.00[0m
+[0;32mI (32713) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (32714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (32714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (32716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (32719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (32722) PWM: control_signal[4]= 0.00[0m
+[0;32mI (32726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (33034) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (33204) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (33213) PWM: control_signal[1]= 0.00[0m
+[0;32mI (33213) PWM: PWM_signal[1]= 0.00[0m
+[0;32mI (33214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (33214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (33216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (33219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (33223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (33226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (33513) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (33516) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (33633) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (33635) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (33635) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (33636) BTwriteEvent: Float[1] = 1.00[0m
+[0;32mI (33638) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (33642) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (33645) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (33649) BTwriteEvent: Float[5] = 0.96[0m
+[0;32mI (33652) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (33656) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (33661) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (33713) PWM: control_signal[1]= 510.00[0m
+[0;32mI (33714) PWM: PWM_signal[1]= 261.12[0m
+[0;32mI (33714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (33714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (33716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (33720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (33723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (33726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (34036) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (34204) PCNT:  [0m
+ENCODER[1] READING: 1208
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (34213) PWM: control_signal[1]= 466.00[0m
+[0;32mI (34214) PWM: PWM_signal[1]= 238.59[0m
+[0;32mI (34214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (34214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (34216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (34220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (34223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (34227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (34713) PWM: control_signal[1]= 386.00[0m
+[0;32mI (34714) PWM: PWM_signal[1]= 197.63[0m
+[0;32mI (34714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (34714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (34716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (34720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (34723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (34726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (35039) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (35204) PCNT:  [0m
+ENCODER[1] READING: 5985
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (35213) PWM: control_signal[1]= 295.00[0m
+[0;32mI (35214) PWM: PWM_signal[1]= 151.04[0m
+[0;32mI (35214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (35214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (35216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (35220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (35223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (35227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (35713) PWM: control_signal[1]= 212.00[0m
+[0;32mI (35714) PWM: PWM_signal[1]= 108.54[0m
+[0;32mI (35714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (35714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (35716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (35720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (35723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (35726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (36041) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (36204) PCNT:  [0m
+ENCODER[1] READING: 10005
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (36213) PWM: control_signal[1]= 152.00[0m
+[0;32mI (36214) PWM: PWM_signal[1]= 77.82[0m
+[0;32mI (36214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (36214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (36216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (36220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (36223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (36227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (36713) PWM: control_signal[1]= 120.00[0m
+[0;32mI (36714) PWM: PWM_signal[1]= 61.44[0m
+[0;32mI (36714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (36714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (36716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (36719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (36723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (36726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (37044) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (37204) PCNT:  [0m
+ENCODER[1] READING: 11196
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (37213) PWM: control_signal[1]= 111.00[0m
+[0;32mI (37214) PWM: PWM_signal[1]= 56.83[0m
+[0;32mI (37214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (37214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (37216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (37220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (37223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (37227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (37713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (37714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (37714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (37714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (37716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (37719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (37723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (37726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (38046) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (38204) PCNT:  [0m
+ENCODER[1] READING: 11251
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (38213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (38214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (38214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (38214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (38216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (38220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (38223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (38227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (38713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (38714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (38714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (38714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (38716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (38719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (38723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (38726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (39048) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (39204) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (39213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (39214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (39214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (39214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (39216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (39220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (39223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (39227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (39713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (39714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (39714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (39714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (39716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (39719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (39723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (39726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (40055) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (40057) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (40059) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (40173) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (40175) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (40175) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (40176) BTwriteEvent: Float[1] = 1.50[0m
+[0;32mI (40178) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (40182) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (40185) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (40189) BTwriteEvent: Float[5] = 0.96[0m
+[0;32mI (40192) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (40196) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (40201) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (40204) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (40213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (40217) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (40221) PWM: control_signal[2]= 0.00[0m
+[0;32mI (40224) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (40227) PWM: control_signal[3]= 996.72[0m
+[0;32mI (40231) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (40234) PWM: control_signal[4]= 0.00[0m
+[0;32mI (40238) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (40713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (40714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (40714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (40714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (40716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (40719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (40723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (40726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (41060) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (41073) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (41077) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (41193) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (41195) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (41195) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (41196) BTwriteEvent: Float[1] = 2.00[0m
+[0;32mI (41198) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (41202) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (41205) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (41209) BTwriteEvent: Float[5] = 0.96[0m
+[0;32mI (41212) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (41213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (41216) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (41220) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (41227) PWM: control_signal[2]= 0.00[0m
+[0;32mI (41225) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (41230) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (41214) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (41237) PWM: control_signal[3]= 996.72[0m
+[0;32mI (41251) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (41254) PWM: control_signal[4]= 0.00[0m
+[0;32mI (41258) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (41713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (41714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (41714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (41714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (41716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (41719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (41723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (41726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (42063) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (42213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (42214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (42214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (42214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (42216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (42219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (42223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (42226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (42248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (42273) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (42277) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (42393) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (42395) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (42395) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (42396) BTwriteEvent: Float[1] = 2.50[0m
+[0;32mI (42398) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (42402) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (42405) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (42409) BTwriteEvent: Float[5] = 0.96[0m
+[0;32mI (42413) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (42416) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (42421) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (42713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (42714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (42714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (42714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (42716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (42719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (42723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (42726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (43066) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (43213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (43214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (43214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (43214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (43216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (43219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (43223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (43226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (43248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (43713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (43714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (43714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (43714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (43716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (43719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (43723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (43726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (43773) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (43777) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (43893) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (43895) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (43895) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (43896) BTwriteEvent: Float[1] = 2.50[0m
+[0;32mI (43898) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (43902) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (43905) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (43909) BTwriteEvent: Float[5] = 1.46[0m
+[0;32mI (43913) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (43916) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (43921) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (44013) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (44017) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (44068) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (44133) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (44135) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (44135) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (44136) BTwriteEvent: Float[1] = 2.50[0m
+[0;32mI (44138) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (44142) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (44145) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (44149) BTwriteEvent: Float[5] = 1.96[0m
+[0;32mI (44153) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (44156) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (44161) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (44213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (44214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (44214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (44214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (44216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (44219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (44223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (44226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (44248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (44553) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (44557) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (44673) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (44675) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (44675) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (44676) BTwriteEvent: Float[1] = 2.50[0m
+[0;32mI (44678) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (44682) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (44685) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (44689) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (44693) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (44696) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (44701) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (44713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (44714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (44714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (44714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (44717) PWM: control_signal[3]= 996.72[0m
+[0;32mI (44721) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (44724) PWM: control_signal[4]= 0.00[0m
+[0;32mI (44728) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (45033) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (45037) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (45070) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (45153) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (45155) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (45155) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (45156) BTwriteEvent: Float[1] = 3.00[0m
+[0;32mI (45158) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (45162) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (45165) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (45169) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (45173) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (45176) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (45181) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (45213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (45214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (45214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (45214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (45216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (45219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (45223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (45226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (45248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (45713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (45714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (45714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (45714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (45716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (45719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (45723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (45726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (46071) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (46213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (46214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (46214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (46214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (46216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (46219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (46223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (46226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (46248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (46713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (46714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (46714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (46714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (46716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (46719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (46723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (46726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (47073) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (47213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (47214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (47214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (47214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (47216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (47219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (47223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (47226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (47248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (47713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (47714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (47714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (47714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (47716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (47719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (47723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (47726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (48075) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (48213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (48214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (48214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (48214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (48216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (48219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (48223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (48226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (48248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (48713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (48714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (48714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (48714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (48716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (48719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (48723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (48726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (49078) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (49213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (49214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (49214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (49214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (49216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (49219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (49223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (49226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (49248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (49713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (49714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (49714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (49714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (49716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (49719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (49723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (49726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (50080) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (50213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (50214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (50214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (50214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (50216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (50219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (50223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (50226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (50248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (50713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (50714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (50714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (50714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (50716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (50719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (50723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (50726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (51083) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (51213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (51214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (51214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (51214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (51216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (51219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (51223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (51226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (51248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (51713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (51714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (51714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (51714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (51716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (51719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (51723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (51726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (52085) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (52213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (52214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (52214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (52214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (52216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (52219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (52223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (52226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (52248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (52713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (52714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (52714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (52714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (52716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (52719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (52723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (52726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (53087) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (53213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (53214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (53214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (53214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (53216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (53219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (53223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (53226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (53248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (53713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (53714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (53714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (53714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (53716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (53719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (53723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (53726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (54091) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (54213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (54214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (54214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (54214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (54216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (54219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (54223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (54226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (54248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (54713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (54714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (54714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (54714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (54716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (54719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (54723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (54726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (55093) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (55213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (55214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (55214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (55214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (55216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (55219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (55223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (55226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (55248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (55713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (55714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (55714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (55714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (55716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (55719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (55723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (55726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (56095) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (56213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (56214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (56214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (56214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (56216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (56219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (56223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (56226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (56248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (56713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (56714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (56714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (56714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (56716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (56719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (56723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (56726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (57097) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (57213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (57214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (57214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (57214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (57216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (57219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (57223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (57226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (57248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (57713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (57714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (57714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (57714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (57716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (57719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (57723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (57726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (58099) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (58213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (58214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (58214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (58214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (58216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (58219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (58223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (58226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (58248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (58713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (58714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (58714) PWM: control_signal[2]= 0.00[0m
+[0;32mI (58714) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (58716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (58719) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (58723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (58726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (59102) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (59213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (59214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (59214) PWM: control_signal[2]= 0.00[0m
+[0;32mI (59214) PWM: PWM_signal[2]= 0.00[0m
+[0;32mI (59216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (59219) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (59223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (59226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (59248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (59713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (59714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (59714) PWM: control_signal[2]= 82.00[0m
+[0;32mI (59714) PWM: PWM_signal[2]= 41.98[0m
+[0;32mI (59716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (59720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (59723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (59726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (60104) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (60213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (60214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (60214) PWM: control_signal[2]= 167.00[0m
+[0;32mI (60214) PWM: PWM_signal[2]= 85.50[0m
+[0;32mI (60216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (60220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (60223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (60226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (60248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294962883
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (60713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (60714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (60714) PWM: control_signal[2]= 154.00[0m
+[0;32mI (60714) PWM: PWM_signal[2]= 78.85[0m
+[0;32mI (60716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (60720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (60723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (60726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (61108) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (61213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (61214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (61214) PWM: control_signal[2]= 133.00[0m
+[0;32mI (61214) PWM: PWM_signal[2]= 68.10[0m
+[0;32mI (61216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (61220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (61223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (61226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (61248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294963875
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (61713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (61714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (61714) PWM: control_signal[2]= 118.00[0m
+[0;32mI (61714) PWM: PWM_signal[2]= 60.42[0m
+[0;32mI (61716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (61720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (61723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (61726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (62110) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (62213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (62214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (62214) PWM: control_signal[2]= 110.00[0m
+[0;32mI (62214) PWM: PWM_signal[2]= 56.32[0m
+[0;32mI (62216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (62220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (62223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (62226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (62248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964484
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (62713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (62714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (62714) PWM: control_signal[2]= 107.00[0m
+[0;32mI (62714) PWM: PWM_signal[2]= 54.78[0m
+[0;32mI (62716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (62720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (62723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (62726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (63112) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (63213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (63214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (63214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (63214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (63216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (63220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (63223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (63226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (63248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (63713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (63714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (63714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (63714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (63716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (63720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (63723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (63726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (64114) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (64213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (64214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (64214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (64214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (64216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (64220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (64223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (64226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (64248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (64713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (64714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (64714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (64714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (64716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (64720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (64723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (64726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (65117) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (65213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (65214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (65214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (65214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (65216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (65220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (65223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (65226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (65248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (65713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (65714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (65714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (65714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (65716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (65720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (65723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (65726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (66119) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (66213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (66214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (66214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (66214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (66216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (66220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (66223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (66226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (66248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (66713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (66714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (66714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (66714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (66716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (66720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (66723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (66726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (67121) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (67213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (67214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (67214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (67214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (67216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (67220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (67223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (67226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (67248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (67713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (67714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (67714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (67714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (67716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (67720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (67723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (67726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (68124) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (68213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (68214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (68214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (68214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (68216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (68220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (68223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (68226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (68248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (68713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (68714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (68714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (68714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (68716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (68720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (68723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (68726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (69126) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (69213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (69214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (69214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (69214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (69216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (69220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (69223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (69226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (69248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (69633) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (69636) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (69713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (69714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (69714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (69714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (69716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (69720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (69723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (69726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (69753) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (69756) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (69756) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (69756) BTwriteEvent: Float[1] = 3.50[0m
+[0;32mI (69759) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (69762) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (69766) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (69769) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (69773) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (69777) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (69782) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (70129) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (70213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (70214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (70214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (70214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (70216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (70220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (70223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (70226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (70235) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (70237) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (70248) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (70353) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (70356) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (70356) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (70356) BTwriteEvent: Float[1] = 3.00[0m
+[0;32mI (70359) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (70362) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (70366) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (70370) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (70373) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (70377) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (70382) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (70713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (70714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (70714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (70714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (70716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (70720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (70723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (70726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (71132) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (71213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (71214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (71214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (71214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (71216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (71220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (71223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (71226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (71249) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (71713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (71714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (71714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (71714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (71716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (71720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (71723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (71726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (72135) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (72213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (72214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (72214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (72214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (72216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (72220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (72223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (72226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (72249) PCNT:  [0m
+ENCODER[1] READING: 11254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (72333) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (72336) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (72453) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (72456) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (72456) BTwriteEvent: Float[0] = 1.00[0m
+[0;32mI (72456) BTwriteEvent: Float[1] = 3.00[0m
+[0;32mI (72459) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (72462) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (72466) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (72470) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (72473) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (72477) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (72482) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (72713) PWM: control_signal[1]= 609.00[0m
+[0;32mI (72714) PWM: PWM_signal[1]= 311.81[0m
+[0;32mI (72714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (72714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (72716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (72720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (72723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (72727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (73138) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (73213) PWM: control_signal[1]= 570.00[0m
+[0;32mI (73214) PWM: PWM_signal[1]= 291.84[0m
+[0;32mI (73214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (73214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (73216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (73220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (73223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (73227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (73249) PCNT:  [0m
+ENCODER[1] READING: 12468
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (73713) PWM: control_signal[1]= 490.00[0m
+[0;32mI (73714) PWM: PWM_signal[1]= 250.88[0m
+[0;32mI (73714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (73714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (73716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (73720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (73723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (73727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (74141) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (74213) PWM: control_signal[1]= 396.00[0m
+[0;32mI (74214) PWM: PWM_signal[1]= 202.75[0m
+[0;32mI (74214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (74214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (74216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (74220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (74223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (74227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (74249) PCNT:  [0m
+ENCODER[1] READING: 17409
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (74713) PWM: control_signal[1]= 296.00[0m
+[0;32mI (74714) PWM: PWM_signal[1]= 151.55[0m
+[0;32mI (74714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (74714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (74716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (74720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (74723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (74727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (75143) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (75213) PWM: control_signal[1]= 210.00[0m
+[0;32mI (75214) PWM: PWM_signal[1]= 107.52[0m
+[0;32mI (75214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (75214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (75216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (75220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (75223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (75227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (75249) PCNT:  [0m
+ENCODER[1] READING: 22563
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (75713) PWM: control_signal[1]= 150.00[0m
+[0;32mI (75714) PWM: PWM_signal[1]= 76.80[0m
+[0;32mI (75714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (75714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (75716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (75720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (75723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (75726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (76146) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (76213) PWM: control_signal[1]= 118.00[0m
+[0;32mI (76214) PWM: PWM_signal[1]= 60.42[0m
+[0;32mI (76214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (76214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (76216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (76220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (76223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (76226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (76249) PCNT:  [0m
+ENCODER[1] READING: 25020
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (76713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (76714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (76714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (76714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (76716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (76720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (76723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (76726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (77148) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (77213) PWM: control_signal[1]= 107.00[0m
+[0;32mI (77214) PWM: PWM_signal[1]= 54.78[0m
+[0;32mI (77214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (77214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (77216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (77220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (77223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (77226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (77249) PCNT:  [0m
+ENCODER[1] READING: 25284
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (77713) PWM: control_signal[1]= 107.00[0m
+[0;32mI (77714) PWM: PWM_signal[1]= 54.78[0m
+[0;32mI (77714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (77714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (77716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (77720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (77723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (77726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (78152) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (78213) PWM: control_signal[1]= 107.00[0m
+[0;32mI (78214) PWM: PWM_signal[1]= 54.78[0m
+[0;32mI (78214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (78214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (78216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (78220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (78223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (78226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (78249) PCNT:  [0m
+ENCODER[1] READING: 25284
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (78713) PWM: control_signal[1]= 107.00[0m
+[0;32mI (78714) PWM: PWM_signal[1]= 54.78[0m
+[0;32mI (78714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (78714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (78716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (78720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (78723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (78726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (79155) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (79213) PWM: control_signal[1]= 107.00[0m
+[0;32mI (79214) PWM: PWM_signal[1]= 54.78[0m
+[0;32mI (79214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (79214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (79216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (79220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (79223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (79227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (79235) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (79237) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (79249) PCNT:  [0m
+ENCODER[1] READING: 25284
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (79354) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (79356) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (79356) BTwriteEvent: Float[0] = 0.50[0m
+[0;32mI (79357) BTwriteEvent: Float[1] = 3.00[0m
+[0;32mI (79359) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (79363) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (79366) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (79370) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (79373) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (79377) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (79382) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (79713) PWM: control_signal[1]= -413.00[0m
+[0;32mI (79714) PWM: PWM_signal[1]= 211.46[0m
+[0;32mI (79714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (79714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (79716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (79720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (79723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (79727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (80158) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (80213) PWM: control_signal[1]= -413.00[0m
+[0;32mI (80214) PWM: PWM_signal[1]= 211.46[0m
+[0;32mI (80214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (80214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (80216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (80220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (80223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (80227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (80249) PCNT:  [0m
+ENCODER[1] READING: 25284
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (80713) PWM: control_signal[1]= -413.00[0m
+[0;32mI (80714) PWM: PWM_signal[1]= 211.46[0m
+[0;32mI (80714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (80714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (80716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (80720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (80723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (80727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (81161) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (81213) PWM: control_signal[1]= -413.00[0m
+[0;32mI (81214) PWM: PWM_signal[1]= 211.46[0m
+[0;32mI (81214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (81214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (81216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (81220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (81223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (81227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (81249) PCNT:  [0m
+ENCODER[1] READING: 25284
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (81275) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (81277) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (81395) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (81395) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (81396) BTwriteEvent: Float[0] = 1.00[0m
+[0;32mI (81396) BTwriteEvent: Float[1] = 3.00[0m
+[0;32mI (81398) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (81402) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (81406) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (81409) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (81413) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (81416) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (81422) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (81713) PWM: control_signal[1]= 107.00[0m
+[0;32mI (81714) PWM: PWM_signal[1]= 54.78[0m
+[0;32mI (81714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (81714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (81716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (81720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (81723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (81726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (81813) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (81817) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (81935) BTserver: GATT_WRITE_EVT, handle 42[0m
+[0;32mI (81935) BTwriteEvent: Int[0] = 1[0m
+[0;32mI (81936) BTwriteEvent: Float[0] = 1.50[0m
+[0;32mI (81936) BTwriteEvent: Float[1] = 3.00[0m
+[0;32mI (81938) BTwriteEvent: Float[2] = 0.99[0m
+[0;32mI (81942) BTwriteEvent: Float[3] = 2.50[0m
+[0;32mI (81946) BTwriteEvent: Float[4] = 0.00[0m
+[0;32mI (81949) BTwriteEvent: Float[5] = 2.46[0m
+[0;32mI (81953) BTwriteEvent: Float[6] = -1.39[0m
+[0;32mI (81956) BTwriteEvent: Float[7] = 0.00[0m
+[0;32mI (81962) BTserver: Unhandled GATTS event: 21[0m
+[0;32mI (82163) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (82213) PWM: control_signal[1]= 607.00[0m
+[0;32mI (82214) PWM: PWM_signal[1]= 310.78[0m
+[0;32mI (82214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (82214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (82216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (82220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (82223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (82226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (82249) PCNT:  [0m
+ENCODER[1] READING: 25293
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (82713) PWM: control_signal[1]= 563.00[0m
+[0;32mI (82714) PWM: PWM_signal[1]= 288.26[0m
+[0;32mI (82714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (82714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (82716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (82720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (82723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (82727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (83165) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (83213) PWM: control_signal[1]= 481.00[0m
+[0;32mI (83214) PWM: PWM_signal[1]= 246.27[0m
+[0;32mI (83214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (83214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (83216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (83220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (83223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (83227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (83249) PCNT:  [0m
+ENCODER[1] READING: 28988
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (83713) PWM: control_signal[1]= 388.00[0m
+[0;32mI (83714) PWM: PWM_signal[1]= 198.66[0m
+[0;32mI (83714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (83714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (83716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (83720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (83723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (83727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (84168) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (84213) PWM: control_signal[1]= 291.00[0m
+[0;32mI (84214) PWM: PWM_signal[1]= 148.99[0m
+[0;32mI (84214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (84214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (84216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (84220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (84223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (84227) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (84249) PCNT:  [0m
+ENCODER[1] READING: 34347
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (84713) PWM: control_signal[1]= 207.00[0m
+[0;32mI (84714) PWM: PWM_signal[1]= 105.98[0m
+[0;32mI (84714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (84714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (84716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (84720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (84723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (84727) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (85170) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (85213) PWM: control_signal[1]= 149.00[0m
+[0;32mI (85214) PWM: PWM_signal[1]= 76.29[0m
+[0;32mI (85214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (85214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (85216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (85220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (85223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (85226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (85249) PCNT:  [0m
+ENCODER[1] READING: 38202
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (85713) PWM: control_signal[1]= 119.00[0m
+[0;32mI (85714) PWM: PWM_signal[1]= 60.93[0m
+[0;32mI (85714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (85714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (85716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (85720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (85723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (85726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (86173) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (86213) PWM: control_signal[1]= 110.00[0m
+[0;32mI (86214) PWM: PWM_signal[1]= 56.32[0m
+[0;32mI (86214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (86214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (86216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (86220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (86223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (86226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (86249) PCNT:  [0m
+ENCODER[1] READING: 39212
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (86713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (86714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (86714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (86714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (86716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (86720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (86723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (86726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (87175) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (87213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (87214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (87214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (87214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (87216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (87220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (87223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (87226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (87249) PCNT:  [0m
+ENCODER[1] READING: 39243
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (87713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (87714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (87714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (87714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (87716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (87720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (87723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (87726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (88177) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (88213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (88214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (88214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (88214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (88216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (88220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (88223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (88226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (88249) PCNT:  [0m
+ENCODER[1] READING: 39254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (88713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (88714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (88714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (88714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (88716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (88720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (88723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (88726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (89180) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (89213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (89214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (89214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (89214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (89216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (89220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (89223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (89226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (89249) PCNT:  [0m
+ENCODER[1] READING: 39254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (89713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (89714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (89714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (89714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (89716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (89720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (89723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (89726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (90182) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (90213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (90214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (90214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (90214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (90216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (90220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (90223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (90226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (90249) PCNT:  [0m
+ENCODER[1] READING: 39254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (90713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (90714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (90714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (90714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (90716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (90720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (90723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (90726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (91185) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (91213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (91214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (91214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (91214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (91216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (91220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (91223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (91226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (91249) PCNT:  [0m
+ENCODER[1] READING: 39254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+[0;32mI (91713) PWM: control_signal[1]= 109.00[0m
+[0;32mI (91714) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (91714) PWM: control_signal[2]= 106.00[0m
+[0;32mI (91714) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (91716) PWM: control_signal[3]= 996.72[0m
+[0;32mI (91720) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (91723) PWM: control_signal[4]= 0.00[0m
+[0;32mI (91726) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (92188) BTserver: Unhandled GATTS event: 5[0m
+[0;32mI (92213) PWM: control_signal[1]= 109.00[0m
+[0;32mI (92214) PWM: PWM_signal[1]= 55.81[0m
+[0;32mI (92214) PWM: control_signal[2]= 106.00[0m
+[0;32mI (92214) PWM: PWM_signal[2]= 54.27[0m
+[0;32mI (92216) PWM: control_signal[3]= 996.72[0m
+[0;32mI (92220) PWM: PWM_signal[3]= 510.32[0m
+[0;32mI (92223) PWM: control_signal[4]= 0.00[0m
+[0;32mI (92226) PWM: PWM_signal[4]= 0.00[0m
+[0;32mI (92249) PCNT:  [0m
+ENCODER[1] READING: 39254
+ENCODER[2] READING: 4294964581
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0

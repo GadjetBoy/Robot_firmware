@@ -1,0 +1,699 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec 15 2025 11:24:30[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=215b4h (136628) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=000315dc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031600 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=000367dc vaddr=40080000 size=0983ch ( 38972) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fa74h (522868) map[0m
+[0;32mI (342) esp_image: segment 5: paddr=000bfa9c vaddr=4008983c size=1006ch ( 65644) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (391) cpu_start: Multicore app[0m
+[0;32mI (399) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (400) app_init: Application information:[0m
+[0;32mI (400) app_init: Project name:     control_1.8[0m
+[0;32mI (404) app_init: App version:      v5.4-dirty[0m
+[0;32mI (408) app_init: Compile time:     Dec 15 2025 11:24:05[0m
+[0;32mI (413) app_init: ELF file SHA256:  6915e7c23...[0m
+[0;32mI (417) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (422) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (425) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (429) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (434) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (440) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (445) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (450) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFC7C50 len 000183B0 (96 KiB): DRAM[0m
+[0;32mI (460) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (466) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (471) heap_init: At 400998A8 len 00006758 (25 KiB): IRAM[0m
+[0;32mI (478) spi_flash: detected chip: generic[0m
+[0;32mI (480) spi_flash: flash io: dio[0m
+[0;32mI (484) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (488) main_task: Started on CPU0[0m
+[0;32mI (491) main_task: Calling app_main()[0m
+[0;32mI (493) UART MASTER: decorder initialization begins[0m
+[0;32mI (498) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1006) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (1006) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1007) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1016) PCNT: install pcnt unit1[0m
+[0;32mI (1019) PCNT: set glitch filter for unit1[0m
+[0;32mI (1023) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1027) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1033) PCNT: enable pcnt unit1[0m
+[0;32mI (1036) PCNT: clear pcnt unit1[0m
+[0;32mI (1039) PCNT: start pcnt unit1[0m
+[0;32mI (1042) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1050) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1058) PCNT: install pcnt unit2[0m
+[0;32mI (1061) PCNT: set glitch filter for unit2[0m
+[0;32mI (1065) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1069) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1075) PCNT: enable pcnt unit2[0m
+[0;32mI (1078) PCNT: clear pcnt unit2[0m
+[0;32mI (1081) PCNT: start pcnt unit2[0m
+[0;32mI (1084) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1092) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1101) PCNT: install pcnt unit3[0m
+[0;32mI (1104) PCNT: set glitch filter for unit3[0m
+[0;32mI (1108) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1112) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1118) PCNT: enable pcnt unit3[0m
+[0;32mI (1121) PCNT: clear pcnt unit3[0m
+[0;32mI (1124) PCNT: start pcnt unit3[0m
+[0;32mI (1127) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1135) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1143) PCNT: install pcnt unit4[0m
+[0;32mI (1147) PCNT: set glitch filter for unit4[0m
+[0;32mI (1150) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1154) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1160) PCNT: enable pcnt unit4[0m
+[0;32mI (1163) PCNT: clear pcnt unit4[0m
+[0;32mI (1166) PCNT: start pcnt unit4[0m
+[0;32mI (1169) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1178) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1186) PCNT: install pcnt unit5[0m
+[0;32mI (1189) PCNT: set glitch filter for unit5[0m
+[0;32mI (1193) PCNT: install pcnt channels of unit5[0m
+[0;32mI (1197) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (1203) PCNT: enable pcnt unit5[0m
+[0;32mI (1206) PCNT: clear pcnt unit5[0m
+[0;32mI (1209) PCNT: start pcnt unit5[0m
+[0;32mI (1212) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1220) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1228) PCNT: install pcnt unit6[0m
+[0;32mI (1231) PCNT: set glitch filter for unit6[0m
+[0;32mI (1235) PCNT: install pcnt channels of unit6[0m
+[0;32mI (1239) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (1245) PCNT: enable pcnt unit6[0m
+[0;32mI (1248) PCNT: clear pcnt unit6[0m
+[0;32mI (1251) PCNT: start pcnt unit6[0m
+[0;32mI (1254) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1263) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1271) PCNT: install pcnt unit7[0m
+[0;32mI (1274) PCNT: set glitch filter for unit7[0m
+[0;32mI (1278) PCNT: install pcnt channels of unit7[0m
+[0;32mI (1282) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (1288) PCNT: enable pcnt unit7[0m
+[0;32mI (1291) PCNT: clear pcnt unit7[0m
+[0;32mI (1294) PCNT: start pcnt unit7[0m
+[0;32mI (1297) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1305) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1313) PCNT: install pcnt unit8[0m
+[0;32mI (1316) PCNT: set glitch filter for unit8[0m
+[0;32mI (1320) PCNT: install pcnt channels of unit8[0m
+[0;32mI (1324) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (1330) PCNT: enable pcnt unit8[0m
+[0;32mI (1333) PCNT: clear pcnt unit8[0m
+[0;32mI (1336) PCNT: start pcnt unit8[0m
+[0;32mI (1339) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1343) PCNT: setting up   pcnt Que[0m
+[0;32mI (1346) PCNT: setting up PCNT Read_Tasks[0m
+[0;32mI (1350) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (1366) UART: setting up UART [0m
+[0;32mI (1366) UART: setting up UART MASTER device[0m
+[0;32mI (1366) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1372) uart: queue free spaces: 20[0m
+[0;32mI (1376) UART: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (1380) UART: setting up UART MASTER device Complete[0m
+[0;32mI (1395) PID_CTRL: Starting PID application...[0m
+[0;32mI (1395) PID_CTRL: PID application started successfully[0m
+[0;32mI (1397) CPG_NET: Starting CPG application...[0m
+[0;32mI (1498) CPG_NET: Gait set to IDLE[0m
+[0;32mI (1498) CPG_NET: Base params updated for freq=0.09 Hz[0m
+[1;31mE (1499) SEQ_RUN: Mode change: 255 -> 4[0m
+[0;32mI (1499) CPG_NET: set_gait_Creep START (mutex already held)[0m
+[0;32mI (1503) CPG_NET: Gait set to CREEP (Lateral Seq) at freq=1.00 Hz[0m
+[0;32mI (1698) CPG_NET: CPG timer started at 2500Hz[0m
+
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x40081cb1:0x3ffcd260 0x4009153d:0x3ffcd280 0x4009799d:0x3ffcd2a0 0x40091dda:0x3ffcd3c0 0x400d872a:0x3ffcd400 0x400d8947:0x3ffcd420 0x400d8dfa:0x3ffcd460 0x40091ff5:0x3ffcd4d0
+
+
+
+
+ELF file SHA256: 6915e7c23
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec 15 2025 11:24:30[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=215b4h (136628) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=000315dc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031600 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=000367dc vaddr=40080000 size=0983ch ( 38972) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fa74h (522868) map[0m
+[0;32mI (343) esp_image: segment 5: paddr=000bfa9c vaddr=4008983c size=1006ch ( 65644) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (391) cpu_start: Multicore app[0m
+[0;32mI (400) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (400) app_init: Application information:[0m
+[0;32mI (400) app_init: Project name:     control_1.8[0m
+[0;32mI (404) app_init: App version:      v5.4-dirty[0m
+[0;32mI (408) app_init: Compile time:     Dec 15 2025 11:24:05[0m
+[0;32mI (413) app_init: ELF file SHA256:  6915e7c23...[0m
+[0;32mI (417) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (422) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (425) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (429) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (434) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (440) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (445) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (450) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFC7C50 len 000183B0 (96 KiB): DRAM[0m
+[0;32mI (460) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (466) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (471) heap_init: At 400998A8 len 00006758 (25 KiB): IRAM[0m
+[0;32mI (478) spi_flash: detected chip: generic[0m
+[0;32mI (480) spi_flash: flash io: dio[0m
+[0;32mI (484) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (488) main_task: Started on CPU0[0m
+[0;32mI (491) main_task: Calling app_main()[0m
+[0;32mI (493) UART MASTER: decorder initialization begins[0m
+[0;32mI (498) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1006) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (1006) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1007) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1016) PCNT: install pcnt unit1[0m
+[0;32mI (1019) PCNT: set glitch filter for unit1[0m
+[0;32mI (1023) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1027) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1033) PCNT: enable pcnt unit1[0m
+[0;32mI (1036) PCNT: clear pcnt unit1[0m
+[0;32mI (1039) PCNT: start pcnt unit1[0m
+[0;32mI (1042) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1050) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1058) PCNT: install pcnt unit2[0m
+[0;32mI (1061) PCNT: set glitch filter for unit2[0m
+[0;32mI (1065) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1069) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1075) PCNT: enable pcnt unit2[0m
+[0;32mI (1078) PCNT: clear pcnt unit2[0m
+[0;32mI (1081) PCNT: start pcnt unit2[0m
+[0;32mI (1084) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1092) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1101) PCNT: install pcnt unit3[0m
+[0;32mI (1104) PCNT: set glitch filter for unit3[0m
+[0;32mI (1108) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1112) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1118) PCNT: enable pcnt unit3[0m
+[0;32mI (1121) PCNT: clear pcnt unit3[0m
+[0;32mI (1124) PCNT: start pcnt unit3[0m
+[0;32mI (1127) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1135) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1143) PCNT: install pcnt unit4[0m
+[0;32mI (1147) PCNT: set glitch filter for unit4[0m
+[0;32mI (1150) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1154) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1160) PCNT: enable pcnt unit4[0m
+[0;32mI (1163) PCNT: clear pcnt unit4[0m
+[0;32mI (1166) PCNT: start pcnt unit4[0m
+[0;32mI (1169) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1178) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1186) PCNT: install pcnt unit5[0m
+[0;32mI (1189) PCNT: set glitch filter for unit5[0m
+[0;32mI (1193) PCNT: install pcnt channels of unit5[0m
+[0;32mI (1197) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (1203) PCNT: enable pcnt unit5[0m
+[0;32mI (1206) PCNT: clear pcnt unit5[0m
+[0;32mI (1209) PCNT: start pcnt unit5[0m
+[0;32mI (1212) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1220) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1228) PCNT: install pcnt unit6[0m
+[0;32mI (1231) PCNT: set glitch filter for unit6[0m
+[0;32mI (1235) PCNT: install pcnt channels of unit6[0m
+[0;32mI (1239) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (1245) PCNT: enable pcnt unit6[0m
+[0;32mI (1248) PCNT: clear pcnt unit6[0m
+[0;32mI (1251) PCNT: start pcnt unit6[0m
+[0;32mI (1254) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1263) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1271) PCNT: install pcnt unit7[0m
+[0;32mI (1274) PCNT: set glitch filter for unit7[0m
+[0;32mI (1278) PCNT: install pcnt channels of unit7[0m
+[0;32mI (1282) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (1288) PCNT: enable pcnt unit7[0m
+[0;32mI (1291) PCNT: clear pcnt unit7[0m
+[0;32mI (1294) PCNT: start pcnt unit7[0m
+[0;32mI (1297) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1305) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1313) PCNT: install pcnt unit8[0m
+[0;32mI (1316) PCNT: set glitch filter for unit8[0m
+[0;32mI (1320) PCNT: install pcnt channels of unit8[0m
+[0;32mI (1324) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (1330) PCNT: enable pcnt unit8[0m
+[0;32mI (1333) PCNT: clear pcnt unit8[0m
+[0;32mI (1336) PCNT: start pcnt unit8[0m
+[0;32mI (1339) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1343) PCNT: setting up   pcnt Que[0m
+[0;32mI (1346) PCNT: setting up PCNT Read_Tasks[0m
+[0;32mI (1350) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (1366) UART: setting up UART [0m
+[0;32mI (1366) UART: setting up UART MASTER device[0m
+[0;32mI (1366) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1372) uart: queue free spaces: 20[0m
+[0;32mI (1376) UART: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (1380) UART: setting up UART MASTER device Complete[0m
+[0;32mI (1395) PID_CTRL: Starting PID application...[0m
+[0;32mI (1395) PID_CTRL: PID application started successfully[0m
+[0;32mI (1397) CPG_NET: Starting CPG application...[0m
+[0;32mI (1498) CPG_NET: Gait set to IDLE[0m
+[0;32mI (1498) CPG_NET: Base params updated for freq=0.09 Hz[0m
+[1;31mE (1499) SEQ_RUN: Mode change: 255 -> 4[0m
+[0;32mI (1499) CPG_NET: set_gait_Creep START (mutex already held)[0m
+[0;32mI (1503) CPG_NET: Gait set to CREEP (Lateral Seq) at freq=1.00 Hz[0m
+[0;32mI (1698) CPG_NET: CPG timer started at 2500Hz[0m
+
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x40081cb1:0x3ffcd260 0x4009153d:0x3ffcd280 0x4009799d:0x3ffcd2a0 0x40091dda:0x3ffcd3c0 0x400d872a:0x3ffcd400 0x400d8947:0x3ffcd420 0x400d8dfa:0x3ffcd460 0x40091ff5:0x3ffcd4d0
+
+
+
+
+ELF file SHA256: 6915e7c23
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec 15 2025 11:24:30[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=215b4h (136628) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=000315dc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031600 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=000367dc vaddr=40080000 size=0983ch ( 38972) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fa74h (522868) map[0m
+[0;32mI (343) esp_image: segment 5: paddr=000bfa9c vaddr=4008983c size=1006ch ( 65644) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (391) cpu_start: Multicore app[0m
+[0;32mI (400) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (400) app_init: Application information:[0m
+[0;32mI (400) app_init: Project name:     control_1.8[0m
+[0;32mI (404) app_init: App version:      v5.4-dirty[0m
+[0;32mI (408) app_init: Compile time:     Dec 15 2025 11:24:05[0m
+[0;32mI (413) app_init: ELF file SHA256:  6915e7c23...[0m
+[0;32mI (417) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (422) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (425) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (429) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (434) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (440) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (445) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (450) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFC7C50 len 000183B0 (96 KiB): DRAM[0m
+[0;32mI (460) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (466) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (471) heap_init: At 400998A8 len 00006758 (25 KiB): IRAM[0m
+[0;32mI (478) spi_flash: detected chip: generic[0m
+[0;32mI (480) spi_flash: flash io: dio[0m
+[0;32mI (484) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (488) main_task: Started on CPU0[0m
+[0;32mI (491) main_task: Calling app_main()[0m
+[0;32mI (493) UART MASTER: decorder initialization begins[0m
+[0;32mI (498) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1006) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (1006) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1007) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1016) PCNT: install pcnt unit1[0m
+[0;32mI (1019) PCNT: set glitch filter for unit1[0m
+[0;32mI (1023) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1027) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1033) PCNT: enable pcnt unit1[0m
+[0;32mI (1036) PCNT: clear pcnt unit1[0m
+[0;32mI (1039) PCNT: start pcnt unit1[0m
+[0;32mI (1042) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1050) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1058) PCNT: install pcnt unit2[0m
+[0;32mI (1061) PCNT: set glitch filter for unit2[0m
+[0;32mI (1065) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1069) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1075) PCNT: enable pcnt unit2[0m
+[0;32mI (1078) PCNT: clear pcnt unit2[0m
+[0;32mI (1081) PCNT: start pcnt unit2[0m
+[0;32mI (1084) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1092) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1101) PCNT: install pcnt unit3[0m
+[0;32mI (1104) PCNT: set glitch filter for unit3[0m
+[0;32mI (1108) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1112) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1118) PCNT: enable pcnt unit3[0m
+[0;32mI (1121) PCNT: clear pcnt unit3[0m
+[0;32mI (1124) PCNT: start pcnt unit3[0m
+[0;32mI (1127) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1135) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1143) PCNT: install pcnt unit4[0m
+[0;32mI (1147) PCNT: set glitch filter for unit4[0m
+[0;32mI (1150) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1154) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1160) PCNT: enable pcnt unit4[0m
+[0;32mI (1163) PCNT: clear pcnt unit4[0m
+[0;32mI (1166) PCNT: start pcnt unit4[0m
+[0;32mI (1169) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1178) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1186) PCNT: install pcnt unit5[0m
+[0;32mI (1189) PCNT: set glitch filter for unit5[0m
+[0;32mI (1193) PCNT: install pcnt channels of unit5[0m
+[0;32mI (1197) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (1203) PCNT: enable pcnt unit5[0m
+[0;32mI (1206) PCNT: clear pcnt unit5[0m
+[0;32mI (1209) PCNT: start pcnt unit5[0m
+[0;32mI (1212) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1220) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1228) PCNT: install pcnt unit6[0m
+[0;32mI (1231) PCNT: set glitch filter for unit6[0m
+[0;32mI (1235) PCNT: install pcnt channels of unit6[0m
+[0;32mI (1239) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (1245) PCNT: enable pcnt unit6[0m
+[0;32mI (1248) PCNT: clear pcnt unit6[0m
+[0;32mI (1251) PCNT: start pcnt unit6[0m
+[0;32mI (1254) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1263) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1271) PCNT: install pcnt unit7[0m
+[0;32mI (1274) PCNT: set glitch filter for unit7[0m
+[0;32mI (1278) PCNT: install pcnt channels of unit7[0m
+[0;32mI (1282) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (1288) PCNT: enable pcnt unit7[0m
+[0;32mI (1291) PCNT: clear pcnt unit7[0m
+[0;32mI (1294) PCNT: start pcnt unit7[0m
+[0;32mI (1297) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1305) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1313) PCNT: install pcnt unit8[0m
+[0;32mI (1316) PCNT: set glitch filter for unit8[0m
+[0;32mI (1320) PCNT: install pcnt channels of unit8[0m
+[0;32mI (1324) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (1330) PCNT: enable pcnt unit8[0m
+[0;32mI (1333) PCNT: clear pcnt unit8[0m
+[0;32mI (1336) PCNT: start pcnt unit8[0m
+[0;32mI (1339) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1343) PCNT: setting up   pcnt Que[0m
+[0;32mI (1346) PCNT: setting up PCNT Read_Tasks[0m
+[0;32mI (1350) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (1366) UART: setting up UART [0m
+[0;32mI (1366) UART: setting up UART MASTER device[0m
+[0;32mI (1366) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1372) uart: queue free spaces: 20[0m
+[0;32mI (1376) UART: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (1380) UART: setting up UART MASTER device Complete[0m
+[0;32mI (1395) PID_CTRL: Starting PID application...[0m
+[0;32mI (1395) PID_CTRL: PID application started successfully[0m
+[0;32mI (1397) CPG_NET: Starting CPG application...[0m
+[0;32mI (1498) CPG_NET: Gait set to IDLE[0m
+[0;32mI (1498) CPG_NET: Base params updated for freq=0.09 Hz[0m
+[1;31mE (1499) SEQ_RUN: Mode change: 255 -> 4[0m
+[0;32mI (1499) CPG_NET: set_gait_Creep START (mutex already held)[0m
+[0;32mI (1503) CPG_NET: Gait set to CREEP (Lateral Seq) at freq=1.00 Hz[0m
+[0;32mI (1698) CPG_NET: CPG timer started at 2500Hz[0m
+
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x40081cb1:0x3ffcd260 0x4009153d:0x3ffcd280 0x4009799d:0x3ffcd2a0 0x40091dda:0x3ffcd3c0 0x400d872a:0x3ffcd400 0x400d8947:0x3ffcd420 0x400d8dfa:0x3ffcd460 0x40091ff5:0x3ffcd4d0
+
+
+
+
+ELF file SHA256: 6915e7c23
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec 15 2025 11:24:30[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=215b4h (136628) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=000315dc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031600 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=000367dc vaddr=40080000 size=0983ch ( 38972) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fa74h (522868) map[0m
+[0;32mI (343) esp_image: segment 5: paddr=000bfa9c vaddr=4008983c size=1006ch ( 65644) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (391) cpu_start: Multicore app[0m
+[0;32mI (400) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (400) app_init: Application information:[0m
+[0;32mI (400) app_init: Project name:     control_1.8[0m
+[0;32mI (404) app_init: App version:      v5.4-dirty[0m
+[0;32mI (408) app_init: Compile time:     Dec 15 2025 11:24:05[0m
+[0;32mI (413) app_init: ELF file SHA256:  6915e7c23...[0m
+[0;32mI (417) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (422) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (425) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (429) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (434) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (440) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (445) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (450) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFC7C50 len 000183B0 (96 KiB): DRAM[0m
+[0;32mI (460) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (466) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (471) heap_init: At 400998A8 len 00006758 (25 KiB): IRAM[0m
+[0;32mI (478) spi_flash: detected chip: generic[0m
+[0;32mI (480) spi_flash: flash io: dio[0m
+[0;32mI (484) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (488) main_task: Started on CPU0[0m
+[0;32mI (491) main_task: Calling app_main()[0m
+[0;32mI (493) UART MASTER: decorder initialization begins[0m
+[0;32mI (498) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1006) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (1006) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1007) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1016) PCNT: install pcnt unit1[0m
+[0;32mI (1019) PCNT: set glitch filter for unit1[0m
+[0;32mI (1023) PCNT: install pcnt channels of unit1[0m
+[0;32mI (1027) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1033) PCNT: enable pcnt unit1[0m
+[0;32mI (1036) PCNT: clear pcnt unit1[0m
+[0;32mI (1039) PCNT: start pcnt unit1[0m
+[0;32mI (1042) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1050) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1058) PCNT: install pcnt unit2[0m
+[0;32mI (1061) PCNT: set glitch filter for unit2[0m
+[0;32mI (1065) PCNT: install pcnt channels of unit2[0m
+[0;32mI (1069) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1075) PCNT: enable pcnt unit2[0m
+[0;32mI (1078) PCNT: clear pcnt unit2[0m
+[0;32mI (1081) PCNT: start pcnt unit2[0m
+[0;32mI (1084) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1092) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1101) PCNT: install pcnt unit3[0m
+[0;32mI (1104) PCNT: set glitch filter for unit3[0m
+[0;32mI (1108) PCNT: install pcnt channels of unit3[0m
+[0;32mI (1112) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1118) PCNT: enable pcnt unit3[0m
+[0;32mI (1121) PCNT: clear pcnt unit3[0m
+[0;32mI (1124) PCNT: start pcnt unit3[0m
+[0;32mI (1127) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1135) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1143) PCNT: install pcnt unit4[0m
+[0;32mI (1147) PCNT: set glitch filter for unit4[0m
+[0;32mI (1150) PCNT: install pcnt channels of unit4[0m
+[0;32mI (1154) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1160) PCNT: enable pcnt unit4[0m
+[0;32mI (1163) PCNT: clear pcnt unit4[0m
+[0;32mI (1166) PCNT: start pcnt unit4[0m
+[0;32mI (1169) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1178) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1186) PCNT: install pcnt unit5[0m
+[0;32mI (1189) PCNT: set glitch filter for unit5[0m
+[0;32mI (1193) PCNT: install pcnt channels of unit5[0m
+[0;32mI (1197) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (1203) PCNT: enable pcnt unit5[0m
+[0;32mI (1206) PCNT: clear pcnt unit5[0m
+[0;32mI (1209) PCNT: start pcnt unit5[0m
+[0;32mI (1212) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1220) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1228) PCNT: install pcnt unit6[0m
+[0;32mI (1231) PCNT: set glitch filter for unit6[0m
+[0;32mI (1235) PCNT: install pcnt channels of unit6[0m
+[0;32mI (1239) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (1245) PCNT: enable pcnt unit6[0m
+[0;32mI (1248) PCNT: clear pcnt unit6[0m
+[0;32mI (1251) PCNT: start pcnt unit6[0m
+[0;32mI (1254) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1263) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1271) PCNT: install pcnt unit7[0m
+[0;32mI (1274) PCNT: set glitch filter for unit7[0m
+[0;32mI (1278) PCNT: install pcnt channels of unit7[0m
+[0;32mI (1282) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (1288) PCNT: enable pcnt unit7[0m
+[0;32mI (1291) PCNT: clear pcnt unit7[0m
+[0;32mI (1294) PCNT: start pcnt unit7[0m
+[0;32mI (1297) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1305) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1313) PCNT: install pcnt unit8[0m
+[0;32mI (1316) PCNT: set glitch filter for unit8[0m
+[0;32mI (1320) PCNT: install pcnt channels of unit8[0m
+[0;32mI (1324) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (1330) PCNT: enable pcnt unit8[0m
+[0;32mI (1333) PCNT: clear pcnt unit8[0m
+[0;32mI (1336) PCNT: start pcnt unit8[0m
+[0;32mI (1339) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1343) PCNT: setting up   pcnt Que[0m
+[0;32mI (1346) PCNT: setting up PCNT Read_Tasks[0m
+[0;32mI (1350) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
+[0;32mI (1366) UART: setting up UART [0m
+[0;32mI (1366) UART: setting up UART MASTER device[0m
+[0;32mI (1366) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
+[0;32mI (1372) uart: queue free spaces: 20[0m
+[0;32mI (1376) UART: UART initialized with DMA, 2000000 bps[0m
+[0;32mI (1380) UART: setting up UART MASTER device Complete[0m
+[0;32mI (1395) PID_CTRL: Starting PID application...[0m
+[0;32mI (1395) PID_CTRL: PID application started successfully[0m
+[0;32mI (1397) CPG_NET: Starting CPG application...[0m
+[0;32mI (1498) CPG_NET: Gait set to IDLE[0m
+[0;32mI (1498) CPG_NET: Base params updated for freq=0.09 Hz[0m
+[1;31mE (1499) SEQ_RUN: Mode change: 255 -> 4[0m
+[0;32mI (1499) CPG_NET: set_gait_Creep START (mutex already held)[0m
+[0;32mI (1503) CPG_NET: Gait set to CREEP (Lateral Seq) at freq=1.00 Hz[0m
+[0;32mI (1698) CPG_NET: CPG timer started at 2500Hz[0m
+
+assert failed: xQueueSemaphoreTake queue.c:1709 (( pxQueue ))
+
+
+Backtrace: 0x40081cb1:0x3ffcd260 0x4009153d:0x3ffcd280 0x4009799d:0x3ffcd2a0 0x40091dda:0x3ffcd3c0 0x400d872a:0x3ffcd400 0x400d8947:0x3ffcd420 0x400d8dfa:0x3ffcd460 0x40091ff5:0x3ffcd4d0
+
+
+
+
+ELF file SHA256: 6915e7c23
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec 15 2025 11:24:30[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=215b4h (136628) map[0m
+[0;32mI (137) esp_image: segment 1: paddr=000315dc vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (137) esp_image: segment 2: paddr=00031600 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
+[0;32mI (148) esp_image: segment 3: paddr=000367dc vaddr=40080000 size=0983ch ( 38972) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fa74h (522868) map[0m

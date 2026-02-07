@@ -1,0 +1,4079 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 10 2025 10:53:43[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (46) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (79) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22934h (141620) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0003295c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032980 vaddr=3ffbdb60 size=04d80h ( 19840) load[0m
+[0;32mI (149) esp_image: segment 3: paddr=00037708 vaddr=40080000 size=08910h ( 35088) load[0m
+[0;32mI (163) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=82be4h (535524) map[0m
+[0;32mI (347) esp_image: segment 5: paddr=000c2c0c vaddr=40088910 size=10ca0h ( 68768) load[0m
+[0;32mI (386) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (386) boot: Disabling RNG early entropy source...[0m
+[0;32mI (396) cpu_start: Multicore app[0m
+[0;32mI (405) cpu_start: Pro cpu start user code[0m
+[0;32mI (405) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (405) app_init: Application information:[0m
+[0;32mI (405) app_init: Project name:     control_1.6[0m
+[0;32mI (409) app_init: App version:      v5.4-dirty[0m
+[0;32mI (413) app_init: Compile time:     Nov 10 2025 10:53:14[0m
+[0;32mI (418) app_init: ELF file SHA256:  25a1e7862...[0m
+[0;32mI (423) app_init: ESP-IDF:          v5.4-dirty[0m
+[0;32mI (427) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (431) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (435) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (439) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (445) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (450) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (455) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (460) heap_init: At 3FFC7E38 len 000181C8 (96 KiB): DRAM[0m
+[0;32mI (465) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (471) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (476) heap_init: At 400995B0 len 00006A50 (26 KiB): IRAM[0m
+[0;32mI (483) spi_flash: detected chip: generic[0m
+[0;32mI (485) spi_flash: flash io: dio[0m
+[0;32mI (489) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (493) main_task: Started on CPU0[0m
+[0;32mI (503) main_task: Calling app_main()[0m
+[0;32mI (503) I2C MASTER: setting up I2C MASTER device[0m
+D (503) i2c.common: new bus(0) at 0x3ffb7e6c
+[0;33mW (503) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+D (513) i2c.common: bus clock source frequency: 80000000hz
+[0;32mI (523) I2C MASTER: setting up I2C MASTER device Complete[0m
+[0;32mI (523) I2C MASTER: setting up PCNT Count Print_Tasks[0m
+[0;32mI (533) I2C MASTER: setting up I2C Send_Tasks[0m
+[0;32mI (533) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1043) I2C MASTER: setting up I2C MASTER device finish[0m
+[0;32mI (1043) PCNT: setting up PCNT units and chanels[0m
+[0;32mI (1043) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1043) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1053) PCNT: install pcnt unit1[0m
+D (1053) pcnt: new group (0) at 0x3ffbd278
+D (1063) pcnt: new pcnt unit (0,0) at 0x3ffbd1ac, count range:[-32000,32000]
+[0;32mI (1063) PCNT: set glitch filter for unit1[0m
+[0;32mI (1073) PCNT: install pcnt channels of unit1[0m
+D (1073) pcnt: new pcnt channel(0,0,0) at 0x3ffbd2ec
+D (1083) pcnt: new pcnt channel(0,0,1) at 0x3ffbd300
+[0;32mI (1083) PCNT: set edge and level actions for pcnt channels of unit1[0m
+[0;32mI (1093) PCNT: enable pcnt unit1[0m
+[0;32mI (1093) PCNT: clear pcnt unit1[0m
+[0;32mI (1093) PCNT: start pcnt unit1[0m
+[0;32mI (1103) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1103) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1113) PCNT: install pcnt unit2[0m
+D (1123) pcnt: new pcnt unit (0,1) at 0x3ffbd314, count range:[-32000,32000]
+[0;32mI (1123) PCNT: set glitch filter for unit2[0m
+[0;32mI (1133) PCNT: install pcnt channels of unit2[0m
+D (1133) pcnt: new pcnt channel(0,1,0) at 0x3ffbd3b4
+D (1143) pcnt: new pcnt channel(0,1,1) at 0x3ffbd3c8
+[0;32mI (1143) PCNT: set edge and level actions for pcnt channels of unit2[0m
+[0;32mI (1153) PCNT: enable pcnt unit2[0m
+[0;32mI (1153) PCNT: clear pcnt unit2[0m
+[0;32mI (1153) PCNT: start pcnt unit2[0m
+[0;32mI (1153) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1163) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1173) PCNT: install pcnt unit3[0m
+D (1173) pcnt: new pcnt unit (0,2) at 0x3ffbd3dc, count range:[-32000,32000]
+[0;32mI (1183) PCNT: set glitch filter for unit3[0m
+[0;32mI (1193) PCNT: install pcnt channels of unit3[0m
+D (1193) pcnt: new pcnt channel(0,2,0) at 0x3ffbd47c
+D (1193) pcnt: new pcnt channel(0,2,1) at 0x3ffbd490
+[0;32mI (1203) PCNT: set edge and level actions for pcnt channels of unit3[0m
+[0;32mI (1203) PCNT: enable pcnt unit3[0m
+[0;32mI (1213) PCNT: clear pcnt unit3[0m
+[0;32mI (1213) PCNT: start pcnt unit3[0m
+[0;32mI (1213) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1223) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1233) PCNT: install pcnt unit4[0m
+D (1233) pcnt: new pcnt unit (0,3) at 0x3ffbd4a4, count range:[-32000,32000]
+[0;32mI (1243) PCNT: set glitch filter for unit4[0m
+[0;32mI (1243) PCNT: install pcnt channels of unit4[0m
+D (1253) pcnt: new pcnt channel(0,3,0) at 0x3ffbd544
+D (1253) pcnt: new pcnt channel(0,3,1) at 0x3ffbd558
+[0;32mI (1263) PCNT: set edge and level actions for pcnt channels of unit4[0m
+[0;32mI (1263) PCNT: enable pcnt unit4[0m
+[0;32mI (1273) PCNT: clear pcnt unit4[0m
+[0;32mI (1273) PCNT: start pcnt unit4[0m
+[0;32mI (1273) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1283) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1293) PCNT: install pcnt unit5[0m
+D (1293) pcnt: new pcnt unit (0,4) at 0x3ffbd56c, count range:[-32000,32000]
+[0;32mI (1303) PCNT: set glitch filter for unit5[0m
+[0;32mI (1303) PCNT: install pcnt channels of unit5[0m
+D (1313) pcnt: new pcnt channel(0,4,0) at 0x3ffbd60c
+D (1313) pcnt: new pcnt channel(0,4,1) at 0x3ffbd620
+[0;32mI (1323) PCNT: set edge and level actions for pcnt channels of unit5[0m
+[0;32mI (1323) PCNT: enable pcnt unit5[0m
+[0;32mI (1323) PCNT: clear pcnt unit5[0m
+[0;32mI (1333) PCNT: start pcnt unit5[0m
+[0;32mI (1333) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1343) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1353) PCNT: install pcnt unit6[0m
+D (1353) pcnt: new pcnt unit (0,5) at 0x3ffbd634, count range:[-32000,32000]
+[0;32mI (1363) PCNT: set glitch filter for unit6[0m
+[0;32mI (1363) PCNT: install pcnt channels of unit6[0m
+D (1373) pcnt: new pcnt channel(0,5,0) at 0x3ffbd6d4
+D (1373) pcnt: new pcnt channel(0,5,1) at 0x3ffbd6e8
+[0;32mI (1373) PCNT: set edge and level actions for pcnt channels of unit6[0m
+[0;32mI (1383) PCNT: enable pcnt unit6[0m
+[0;32mI (1383) PCNT: clear pcnt unit6[0m
+[0;32mI (1393) PCNT: start pcnt unit6[0m
+[0;32mI (1393) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1403) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1413) PCNT: install pcnt unit7[0m
+D (1413) pcnt: new pcnt unit (0,6) at 0x3ffbd6fc, count range:[-32000,32000]
+[0;32mI (1423) PCNT: set glitch filter for unit7[0m
+[0;32mI (1423) PCNT: install pcnt channels of unit7[0m
+D (1423) pcnt: new pcnt channel(0,6,0) at 0x3ffbd79c
+D (1433) pcnt: new pcnt channel(0,6,1) at 0x3ffbd7b0
+[0;32mI (1433) PCNT: set edge and level actions for pcnt channels of unit7[0m
+[0;32mI (1443) PCNT: enable pcnt unit7[0m
+[0;32mI (1443) PCNT: clear pcnt unit7[0m
+[0;32mI (1443) PCNT: start pcnt unit7[0m
+[0;32mI (1453) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1463) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1463) PCNT: install pcnt unit8[0m
+D (1473) pcnt: new pcnt unit (0,7) at 0x3ffbd7c4, count range:[-32000,32000]
+[0;32mI (1473) PCNT: set glitch filter for unit8[0m
+[0;32mI (1483) PCNT: install pcnt channels of unit8[0m
+D (1483) pcnt: new pcnt channel(0,7,0) at 0x3ffbd864
+D (1493) pcnt: new pcnt channel(0,7,1) at 0x3ffbd878
+[0;32mI (1493) PCNT: set edge and level actions for pcnt channels of unit8[0m
+[0;32mI (1503) PCNT: enable pcnt unit8[0m
+[0;32mI (1503) PCNT: clear pcnt unit8[0m
+[0;32mI (1503) PCNT: start pcnt unit8[0m
+[0;32mI (1513) PCNT: PCNT unit setiing up completed[0m
+
+[0;32mI (1513) PCNT: setting up   pcnt Que[0m
+I (15I (1533) UART_PID: UART initialized on port 0 at 115200 baud
+[0;32mI (1543) PID: Starting PID application...[0m
+[0;32mI (1543) PID: PID application started successfully[0m
+[0;32mI (1553) CPG: settingup the motor comnads[0m
+[0;32mI (1653) CPG: Initializing CPG network...[0m
+[0;32mI (1653) CPG: Mode change detected: 1[0m
+[0;32mI (1653) CPG: Setting CRAWL gait[0m
+CPG Target[0] : 0.00
+[0;33mW (1853) PID: PID loop took 826 µs[0m
+CPG Target[0] : 28.77
+[0;33mW (1853) PID: PID loop took 641 µs[0m
+CPG Target[0] : 115.07
+[0;33mW (1853) PID: PID loop took 196 µs[0m
+[0;33mW (1853) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+CPG Target[0] : 604.09
+[0;33mW (1873) PID: PID loop took 19668 µs[0m
+CPG Target[0] : 3903.11
+[0;33mW (1883) PID: PID loop took 2233 µs[0m
+CPG Target[0] : 4673.12
+[0;33mW (1883) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 5440.50
+[0;33mW (1893) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 6233.04
+[0;33mW (1893) PID: PID loop took 2225 µs[0m
+CPG Target[0] : 6993.71
+[0;33mW (1903) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 7750.43
+[0;33mW (1903) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 8530.56
+[0;33mW (1913) PID: PID loop took 2240 µs[0m
+CPG Target[0] : 9277.93
+[0;33mW (1913) PID: PID loop took 2240 µs[0m
+CPG Target[0] : 10020.06
+[0;33mW (1923) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 10783.71
+[0;33mW (1933) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 11540.81
+[0;33mW (1933) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 12290.92
+[0;33mW (1943) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 13033.56
+[0;33mW (1943) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 13742.21
+[0;32mI (1953) CPG: settingup the motor comnads complete[0m
+[0;33mW (1953) PID: PID loop took 2330 µs[0m
+[0;32mI (1953) BLE: Setting up BLE unit[0m
+CPG Target[0] : 14468.90
+[0;33mW (1963) PID: PID loop took 5343 µs[0m
+CPG Target[0] : 15110.33
+[0;33mW (1973) PID: PID loop took 2304 µs[0m
+CPG Target[0] : 15719.24
+[0;33mW (1973) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 16420.75
+[0;33mW (1983) PID: PID loop took 2388 µs[0m
+CPG Target[0] : 17087.79
+[0;33mW (1983) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 17745.18
+[0;33mW (1993) PID: PID loop took 2433 µs[0m
+CPG Target[0] : 18392.56
+[0;33mW (1993) PID: PID loop took 2398 µs[0m
+CPG Target[0] : 19052.96
+[0;33mW (2003) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 19701.80
+[0;33mW (2003) PID: PID loop took 2252 µs[0m
+CPG Target[0] : 20338.69
+[0;33mW (2013) PID: PID loop took 2334 µs[0m
+CPG Target[0] : 20963.24
+[0;33mW (2023) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 21553.45
+[0;33mW (2023) PID: PID loop took 2393 µs[0m
+CPG Target[0] : 22152.67
+[0;33mW (2033) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 22738.45
+[0;33mW (2033) PID: PID loop took 2259 µs[0m
+CPG Target[0] : 23290.26
+[0;33mW (2043) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 23828.92
+[0;33mW (2043) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 24373.34
+[0;32mI (2033) BTDM_INIT: BT controller compile version [20b459d][0m
+[0;33mW (2053) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 24902.97
+[0;33mW (2063) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 25399.38
+[0;33mW (2073) PID: PID loop took 2321 µs[0m
+[0;32mI (2073) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:22[0m
+CPG Target[0] : 25846.26
+[0;33mW (2083) PID: PID loop took 7000 µs[0m
+CPG Target[0] : 26108.39
+[0;33mW (2083) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 26585.52
+[0;32mI (2083) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;33mW (2093) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2103) PID: PID loop took 2467 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2103) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2113) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2123) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2123) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2133) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2133) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2143) PID: PID loop took 2304 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2143) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2153) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2153) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2163) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2173) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2173) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2183) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 26785.08
+[0;33mW (2183) PID: PID loop took 2312 µs[0m
+[0;33mW (2183) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+CPG Target[0] : 26834.51
+[0;33mW (2193) PID: PID loop took 9682 µs[0m
+CPG Target[0] : 27046.53
+[0;33mW (2203) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 27475.56
+[0;33mW (2213) PID: PID loop took 2336 µs[0m
+CPG Target[0] : 27599.71
+[0;33mW (2213) PID: PID loop took 1486 µs[0m
+CPG Target[0] : 27599.71
+[0;33mW (2243) PID: PID loop took 185 µs[0m
+CPG Target[0] : 27599.71
+[0;33mW (2243) PID: PID loop took 185 µs[0m
+CPG Target[0] : 27676.61
+[0;33mW (2253) PID: PID loop took 5153 µs[0m
+CPG Target[0] : 27752.97
+[0;33mW (2253) PID: PID loop took 2411 µs[0m
+CPG Target[0] : 27752.97
+[0;33mW (2263) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 28097.30
+[0;33mW (2263) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 28156.01
+[0;33mW (2273) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 28156.01
+[0;33mW (2493) PID: PID loop took 234 µs[0m
+CPG Target[0] : 28156.01
+[0;33mW (2493) PID: PID loop took 183 µs[0m
+CPG Target[0] : 28156.01
+[0;33mW (2493) PID: PID loop took 1578 µs[0m
+CPG Target[0] : 28156.01
+[0;33mW (2503) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 28272.39
+[0;33mW (2503) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 28654.80
+[0;33mW (2513) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 28967.81
+[0;33mW (2513) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 29060.74
+[0;33mW (2523) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 29126.44
+[0;33mW (2533) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 29294.63
+[0;33mW (2533) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 29483.94
+[0;33mW (2543) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 29728.35
+[0;33mW (2543) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 29752.29
+[0;33mW (2553) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 29788.02
+[0;33mW (2553) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 29870.59
+[0;33mW (2563) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 29940.46
+[0;33mW (2563) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 29975.08
+[0;33mW (2573) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 30066.38
+[0;33mW (2583) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 30111.48
+[0;33mW (2583) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 30156.20
+[0;33mW (2593) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 30244.52
+[0;33mW (2593) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 30288.12
+[0;33mW (2603) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 30320.57
+[0;33mW (2603) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 30416.66
+[0;33mW (2613) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 30416.66
+[0;33mW (2613) PID: PID loop took 2222 µs[0m
+CPG Target[0] : 30427.22
+[0;33mW (2623) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 30490.08
+[0;33mW (2633) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 30693.47
+[0;32mI (2633) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;33mW (2633) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 30839.79
+[0;33mW (2643) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
+[0;33mW (2643) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 30971.50
+[0;33mW (2653) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 31107.40
+[0;32mI (2643) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[0;33mW (2663) PID: PID loop took 2323 µs[0m
+[1;31mE (2663) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
+CPG Target[0] : 31330.12
+[0;33mW (2673) PID: PID loop took 7521 µs[0m
+CPG Target[0] : 31379.20
+[0;33mW (2683) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 31395.36
+[0;33mW (2693) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 31419.42
+[0;33mW (2693) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 31459.04
+[0;33mW (2703) PID: PID loop took 2325 µs[0m
+[0;32mI (2683) BLE: Unhandled GATTS event: 12[0m
+CPG Target[0] : 31655.23
+[0;32mI (2703) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
+[0;33mW (2713) PID: PID loop took 5905 µs[0m
+CPG Target[0] : 31821.63
+[0;32mI (2713) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
+[0;33mW (2723) PID: PID loop took 2332 µs[0m
+CPG Target[0] : 31985.89
+[0;32mI (2723) BLE: Unhandled GAP event: 6[0m
+[0;33mW (2733) PID: PID loop took 2344 µs[0m
+CPG Target[0] : 32117.25
+[0;33mW (2743) PID: PID loop took 2297 µs[0m
+CPG Target[0] : 32240.29
+[0;32mI (2733) BLE: TX CCCD Handle: 45[0m
+[0;33mW (2743) PID: PID loop took 2332 µs[0m
+CPG Target[0] : 32365.68
+[0;32mI (2633) BLE: BLE unit setup completed[0m
+[0;33mW (2753) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32471.43
+[0;33mW (2763) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32557.47
+[0;33mW (2773) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 32623.76
+[0;33mW (2773) PID: PID loop took 2288 µs[0m
+CPG Target[0] : 32658.99
+[0;33mW (2783) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32689.68
+[1;31mE (2773) RESET: CPU Reset reason: 1[0m
+[0;33mW (2783) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 32703.60
+[0;32mI (2793) I2C MASTER: decorder initialization complete[0m
+[0;33mW (2793) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 32697.09
+[0;33mW (2803) PID: PID loop took 2302 µs[0m
+CPG Target[0] : 32670.62
+[0;33mW (2813) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 32626.32
+[0;32mI (2803) main_task: Returned from app_main()[0m
+[0;33mW (2813) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 32560.93
+[0;33mW (2823) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 32489.16
+[0;33mW (2833) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32395.06
+[0;33mW (2833) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 32279.40
+[0;33mW (2843) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 32140.23
+[0;33mW (2853) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 31981.55
+[0;33mW (2853) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 31803.47
+[0;33mW (2863) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 31613.48
+[0;33mW (2863) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 31429.61
+[0;33mW (2873) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (2873) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 30366.49
+[0;33mW (2893) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 30069.53
+[0;33mW (2903) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 29743.66
+[0;33mW (2903) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 29437.45
+[0;33mW (2913) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 29077.59
+[0;33mW (2913) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 28727.63
+[0;33mW (2923) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 28348.31
+[0;33mW (2923) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 27938.05
+[0;33mW (2933) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 27510.83
+[0;33mW (2943) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 27066.93
+[0;33mW (2943) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 26623.32
+[0;33mW (2953) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 26216.38
+[0;33mW (2953) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 25762.34
+[0;33mW (2963) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 25258.32
+[0;33mW (2963) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 24738.97
+[0;33mW (2973) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 24223.95
+[0;33mW (2973) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 23675.41
+[0;33mW (2983) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 23112.52
+[0;33mW (2993) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 22535.60
+[0;33mW (2993) PID: PID loop took 2338 µs[0m
+CPG Target[0] : 22051.46
+[0;33mW (3003) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 21493.30
+[0;33mW (3003) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 20879.64
+[0;33mW (3013) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 20253.32
+[0;33mW (3013) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 19614.70
+[0;33mW (3023) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 18987.62
+[0;33mW (3023) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 18326.00
+[0;33mW (3033) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 17653.26
+[0;33mW (3043) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 17043.54
+[0;33mW (3043) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 16375.79
+[0;33mW (3053) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 15698.79
+[0;33mW (3053) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 14987.38
+[0;33mW (3063) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 14266.87
+[0;33mW (3063) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 13537.70
+[0;33mW (3073) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 12826.79
+[0;33mW (3073) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 12081.91
+[0;33mW (3083) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 11329.70
+[0;33mW (3093) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 10679.46
+[0;33mW (3093) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 9997.07
+[0;33mW (3103) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 9227.06
+[0;33mW (3103) PID: PID loop took 2239 µs[0m
+CPG Target[0] : 8479.25
+[0;33mW (3113) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 7726.65
+[0;33mW (3113) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 6941.58
+[0;33mW (3123) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 6180.56
+[0;33mW (3123) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 5387.67
+[0;33mW (3133) PID: PID loop took 2226 µs[0m
+CPG Target[0] : 4733.90
+[0;33mW (3133) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 3963.98
+[0;33mW (3143) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 3220.46
+[0;33mW (3153) PID: PID loop took 2224 µs[0m
+CPG Target[0] : 2446.56
+[0;33mW (3153) PID: PID loop took 2225 µs[0m
+CPG Target[0] : 1671.28
+[0;33mW (3163) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 866.29
+[0;33mW (3163) PID: PID loop took 2132 µs[0m
+CPG Target[0] : 118.33
+[0;33mW (3173) PID: PID loop took 2148 µs[0m
+CPG Target[0] : -658.47
+[0;33mW (3173) PID: PID loop took 2230 µs[0m
+CPG Target[0] : -1463.63
+[0;33mW (3183) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -2153.09
+[0;33mW (3183) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -2870.24
+[0;33mW (3193) PID: PID loop took 2329 µs[0m
+CPG Target[0] : -3671.79
+[0;33mW (3193) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -4471.12
+[0;33mW (3203) PID: PID loop took 2309 µs[0m
+CPG Target[0] : -5267.73
+[0;33mW (3213) PID: PID loop took 2314 µs[0m
+CPG Target[0] : -6032.83
+[0;33mW (3213) PID: PID loop took 2329 µs[0m
+CPG Target[0] : -6822.60
+[0;33mW (3223) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -7608.23
+[0;33mW (3223) PID: PID loop took 2309 µs[0m
+CPG Target[0] : -8250.14
+[0;33mW (3233) PID: PID loop took 2305 µs[0m
+CPG Target[0] : -8999.35
+[0;33mW (3233) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -9743.50
+[0;33mW (3243) PID: PID loop took 2325 µs[0m
+CPG Target[0] : -10509.38
+[0;33mW (3243) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -11268.90
+[0;33mW (3253) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -12021.58
+[0;33mW (3263) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -12793.44
+[0;33mW (3263) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -13530.80
+[0;33mW (3273) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -14156.30
+[0;33mW (3273) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -14826.80
+[0;33mW (3283) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -15565.51
+[0;33mW (3283) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -16269.13
+[0;33mW (3293) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -16962.88
+[0;33mW (3303) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -17646.35
+[0;33mW (3303) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -18319.11
+[0;33mW (3313) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -19004.17
+[0;33mW (3313) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -19630.89
+[0;33mW (3323) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -20223.93
+[0;33mW (3323) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -20806.39
+[0;33mW (3333) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -21421.48
+[0;33mW (3343) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -22044.83
+[0;33mW (3343) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -22633.08
+[0;33mW (3353) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -23207.60
+[0;33mW (3353) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -23768.04
+[0;33mW (3363) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -24256.27
+[0;33mW (3363) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -24770.37
+[0;33mW (3373) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -25288.81
+[0;33mW (3373) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -25791.91
+[0;33mW (3383) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -26279.37
+[0;33mW (3393) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -26767.41
+[0;33mW (3393) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -27222.10
+[0;33mW (3403) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -27598.70
+[0;33mW (3403) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -27992.79
+[0;33mW (3413) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -28400.81
+[0;33mW (3413) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -28805.23
+[0;33mW (3423) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -29177.93
+[0;33mW (3433) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -29532.91
+[0;33mW (3433) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -29869.98
+[0;33mW (3443) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -30188.92
+[0;33mW (3443) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -30499.94
+[0;33mW (3453) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -30752.13
+[0;33mW (3453) PID: PID loop took 2394 µs[0m
+CPG Target[0] : -30998.63
+[0;33mW (3463) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -31245.95
+[0;33mW (3463) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -31482.12
+[0;33mW (3473) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -31690.70
+[0;33mW (3483) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -31880.05
+[0;33mW (3483) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32050.05
+[0;33mW (3493) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -32200.61
+[0;33mW (3493) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32318.53
+[0;33mW (3503) PID: PID loop took 2388 µs[0m
+CPG Target[0] : -32424.58
+[0;33mW (3503) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -32519.82
+[0;33mW (3513) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32595.32
+[0;33mW (3523) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -32651.05
+[0;33mW (3523) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32687.88
+[0;33mW (3533) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -32703.25
+[0;33mW (3533) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -32698.78
+[0;33mW (3543) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -32674.47
+[0;33mW (3543) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -32637.85
+[0;33mW (3553) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32579.26
+[0;33mW (3563) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -32499.09
+[0;33mW (3563) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -32399.20
+[0;33mW (3573) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -32279.64
+[0;33mW (3573) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32135.18
+[0;33mW (3583) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -31975.84
+[0;33mW (3583) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -31797.11
+[0;33mW (3593) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -31613.86
+[0;33mW (3593) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -31406.06
+[0;33mW (3603) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -31180.54
+[0;33mW (3613) PID: PID loop took 2388 µs[0m
+CPG Target[0] : -30928.08
+[0;33mW (3613) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -30656.86
+[0;33mW (3623) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -30367.04
+[0;33mW (3623) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -30058.79
+[0;33mW (3633) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -29720.31
+[0;33mW (3633) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -29425.55
+[0;33mW (3643) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -29091.43
+[0;33mW (3653) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -28714.59
+[0;33mW (3653) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -28320.32
+[0;33mW (3663) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -27893.86
+[0;33mW (3663) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -27464.88
+[0;33mW (3673) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -27019.23
+[0;33mW (3673) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -26557.19
+[0;33mW (3683) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -26061.66
+[0;33mW (3683) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -25638.72
+[0;33mW (3693) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -25167.65
+[0;33mW (3703) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -24645.62
+[0;33mW (3703) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -24108.64
+[0;33mW (3713) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -23537.06
+[0;33mW (3713) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -22970.65
+[0;33mW (3723) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -22390.31
+[0;33mW (3723) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -21796.38
+[0;33mW (3733) PID: PID loop took 2458 µs[0m
+CPG Target[0] : -21276.75
+[0;33mW (3743) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -20680.85
+[0;33mW (3743) PID: PID loop took 2387 µs[0m
+CPG Target[0] : -20050.55
+[0;33mW (3753) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -19408.09
+[0;33mW (3753) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -18753.85
+[0;33mW (3763) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -18064.26
+[0;33mW (3763) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -17387.29
+[0;33mW (3773) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -16724.49
+[0;33mW (3783) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -16077.32
+[0;33mW (3783) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -15421.74
+[0;33mW (3793) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -14681.01
+[0;33mW (3793) PID: PID loop took 2390 µs[0m
+CPG Target[0] : -13956.75
+[0;33mW (3803) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -13224.02
+[0;33mW (3803) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -12483.27
+[0;33mW (3813) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -11734.95
+[0;33mW (3813) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -10952.39
+[0;33mW (3823) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -10244.72
+[0;33mW (3833) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -9504.16
+[0;33mW (3833) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -8785.96
+[0;33mW (3843) PID: PID loop took 2309 µs[0m
+CPG Target[0] : -8007.37
+[0;33mW (3843) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -7251.99
+[0;33mW (3853) PID: PID loop took 2330 µs[0m
+CPG Target[0] : -6464.31
+[0;33mW (3853) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -5672.72
+[0;33mW (3863) PID: PID loop took 2309 µs[0m
+CPG Target[0] : -4877.68
+[0;33mW (3863) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -4193.84
+[0;33mW (3873) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -3479.53
+[0;33mW (3883) PID: PID loop took 2330 µs[0m
+CPG Target[0] : -2677.51
+[0;33mW (3883) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -1873.88
+[0;33mW (3893) PID: PID loop took 2313 µs[0m
+[0;33mW (3893) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+CPG Target[0] : -1069.10
+[0;33mW (3913) PID: PID loop took 19839 µs[0m
+CPG Target[0] : 2122.49
+[0;33mW (3923) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 2868.23
+[0;33mW (3923) PID: PID loop took 2237 µs[0m
+CPG Target[0] : 3641.07
+[0;33mW (3933) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 4440.36
+[0;33mW (3933) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 5208.57
+[0;33mW (3943) PID: PID loop took 2224 µs[0m
+CPG Target[0] : 5973.85
+[0;33mW (3943) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 6763.91
+[0;33mW (3953) PID: PID loop took 2226 µs[0m
+CPG Target[0] : 7521.87
+[0;33mW (3953) PID: PID loop took 2227 µs[0m
+CPG Target[0] : 8219.91
+[0;33mW (3963) PID: PID loop took 2235 µs[0m
+CPG Target[0] : 8913.98
+[0;33mW (3963) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 9631.23
+[0;33mW (3973) PID: PID loop took 2222 µs[0m
+CPG Target[0] : 10370.73
+[0;33mW (3983) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 11131.44
+[0;33mW (3983) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 11885.39
+[0;33mW (3993) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 12632.13
+[0;33mW (3993) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 13344.96
+[0;33mW (4003) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 13998.28
+[0;33mW (4003) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 14644.82
+[0;33mW (4013) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 15360.54
+[0;33mW (4013) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 16066.93
+[0;33mW (4023) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 16738.87
+[0;33mW (4033) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 17425.72
+[0;33mW (4033) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 18102.00
+[0;33mW (4043) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 18767.30
+[0;33mW (4043) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 19328.51
+[0;33mW (4053) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 19972.35
+[0;33mW (4053) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 20559.36
+[0;33mW (4063) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 21179.49
+[0;33mW (4063) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 21765.31
+[0;33mW (4073) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 22359.85
+[0;33mW (4083) PID: PID loop took 2330 µs[0m
+CPG Target[0] : 22940.83
+[0;33mW (4083) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 23507.90
+[0;33mW (4093) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 24041.21
+[0;33mW (4093) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 24522.93
+[0;33mW (4103) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 25011.34
+[0;33mW (4103) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 25522.68
+[0;33mW (4113) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 26018.54
+[0;33mW (4113) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 26481.74
+[0;33mW (4123) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 26946.32
+[0;33mW (4133) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 27394.59
+[0;33mW (4133) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 27826.21
+[0;33mW (4143) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 28182.74
+[0;33mW (4143) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 28582.80
+[0;33mW (4153) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 28938.77
+[0;33mW (4153) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 29305.23
+[0;33mW (4163) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 29653.91
+[0;33mW (4163) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 29973.11
+[0;33mW (4173) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 30286.26
+[0;33mW (4183) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 30581.04
+[0;33mW (4183) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 30818.94
+[0;33mW (4193) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 31061.16
+[0;33mW (4193) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 31295.49
+[0;33mW (4203) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 31519.85
+[0;33mW (4203) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 31725.09
+[0;33mW (4213) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 31911.07
+[0;33mW (4213) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32072.08
+[0;33mW (4223) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 32219.94
+[0;33mW (4233) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 32348.24
+[0;33mW (4233) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 32442.60
+[0;33mW (4243) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 32528.50
+[0;33mW (4243) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 32599.69
+[0;33mW (4253) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 32654.08
+[0;33mW (4253) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32688.66
+[0;33mW (4263) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 32703.41
+[0;33mW (4263) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32698.84
+[0;33mW (4273) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 32674.61
+[0;33mW (4283) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32638.07
+[0;33mW (4283) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 32584.53
+[0;33mW (4293) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32502.67
+[0;33mW (4293) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 32407.45
+[0;33mW (4303) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 32289.38
+[0;33mW (4303) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32151.72
+[0;33mW (4313) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 31994.55
+[0;33mW (4313) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 31824.62
+[0;33mW (4323) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 31644.00
+[0;33mW (4333) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 31438.91
+[0;33mW (4333) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 31224.65
+[0;33mW (4343) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 30975.65
+[0;33mW (4343) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 30717.73
+[0;33mW (4353) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 30431.96
+[0;33mW (4353) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 30127.72
+[0;33mW (4363) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 29805.21
+[0;33mW (4363) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 29477.08
+[0;33mW (4373) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 29171.44
+[0;33mW (4383) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 28825.66
+[0;33mW (4383) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 28436.43
+[0;33mW (4393) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 28029.94
+[0;33mW (4393) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 27621.85
+[0;33mW (4403) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 27182.20
+[0;33mW (4403) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 26726.04
+[0;33mW (4413) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 26322.14
+[0;33mW (4413) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 25871.34
+[0;33mW (4423) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 25388.88
+[0;33mW (4433) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 24873.43
+[0;33mW (4433) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 24342.88
+[0;33mW (4443) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 23797.56
+[0;33mW (4443) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 23258.04
+[0;33mW (4453) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 22684.67
+[0;33mW (4453) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 22203.39
+[0;33mW (4463) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 21626.81
+[0;33mW (4463) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 21038.04
+[0;33mW (4473) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 20414.92
+[0;33mW (4483) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 19779.41
+[0;33mW (4483) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 19131.91
+[0;33mW (4493) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 18472.79
+[0;33mW (4493) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 17826.60
+[0;33mW (4503) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 17145.85
+[0;33mW (4503) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 16578.87
+[0;33mW (4513) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 15904.63
+[0;33mW (4513) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 15221.42
+[0;33mW (4523) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 14503.84
+[0;33mW (4533) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 13777.46
+[0;33mW (4533) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 13042.72
+[0;33mW (4543) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 12300.07
+[0;33mW (4543) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 11576.86
+[0;33mW (4553) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 10819.98
+[0;33mW (4553) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 10165.98
+[0;33mW (4563) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 9452.37
+[0;33mW (4563) PID: PID loop took 2221 µs[0m
+CPG Target[0] : 8706.09
+[0;33mW (4573) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 7954.90
+[0;33mW (4583) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 7171.15
+[0;33mW (4583) PID: PID loop took 2240 µs[0m
+CPG Target[0] : 6411.26
+[0;33mW (4593) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 5647.76
+[0;33mW (4593) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 4852.62
+[0;33mW (4603) PID: PID loop took 2242 µs[0m
+CPG Target[0] : 4111.63
+[0;33mW (4603) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 3397.10
+[0;33mW (4613) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 2652.26
+[0;33mW (4613) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 1877.30
+[0;33mW (4623) PID: PID loop took 2233 µs[0m
+CPG Target[0] : 1101.29
+[0;33mW (4623) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 295.88
+[0;33mW (4633) PID: PID loop took 2139 µs[0m
+CPG Target[0] : -480.93
+[0;33mW (4643) PID: PID loop took 2249 µs[0m
+CPG Target[0] : -1257.48
+[0;33mW (4643) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -2062.03
+[0;33mW (4653) PID: PID loop took 2309 µs[0m
+CPG Target[0] : -2750.67
+[0;33mW (4653) PID: PID loop took 2306 µs[0m
+CPG Target[0] : -3495.30
+[0;33mW (4663) PID: PID loop took 2329 µs[0m
+CPG Target[0] : -4266.64
+[0;33mW (4663) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -5063.99
+[0;33mW (4673) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -5858.26
+[0;33mW (4673) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -6648.87
+[0;33mW (4683) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -7407.44
+[0;33mW (4693) PID: PID loop took 2338 µs[0m
+CPG Target[0] : -8189.68
+[0;33mW (4693) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -8966.96
+[0;33mW (4703) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -9656.37
+[0;33mW (4703) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -10313.81
+[0;33mW (4713) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -11102.07
+[0;33mW (4713) PID: PID loop took 2394 µs[0m
+CPG Target[0] : -11856.29
+[0;33mW (4723) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -12603.33
+[0;33mW (4723) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -13342.71
+[0;33mW (4733) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -14074.01
+[0;33mW (4743) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -14822.41
+[0;33mW (4743) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -15459.87
+[0;33mW (4753) PID: PID loop took 2394 µs[0m
+CPG Target[0] : -16089.84
+[0;33mW (4753) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -16786.16
+[0;33mW (4763) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -17496.62
+[0;33mW (4763) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -18171.77
+[0;33mW (4773) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -18835.90
+[0;33mW (4783) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -19488.61
+[0;33mW (4783) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -20038.67
+[0;33mW (4793) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -20646.81
+[0;33mW (4793) PID: PID loop took 2388 µs[0m
+CPG Target[0] : -21265.17
+[0;33mW (4803) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -21870.62
+[0;33mW (4803) PID: PID loop took 2435 µs[0m
+CPG Target[0] : -22462.81
+[0;33mW (4813) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -23041.38
+[0;33mW (4823) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -23625.87
+[0;33mW (4823) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -24175.62
+[0;33mW (4833) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -24654.08
+[0;33mW (4833) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -25139.09
+[0;33mW (4843) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -25646.70
+[0;33mW (4843) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -26156.03
+[0;33mW (4853) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -26631.64
+[0;33mW (4853) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -27091.10
+[0;33mW (4863) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -27534.12
+[0;33mW (4873) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -27975.35
+[0;33mW (4873) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -28341.11
+[0;33mW (4883) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -28706.96
+[0;33mW (4883) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -29084.15
+[0;33mW (4893) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -29443.69
+[0;33mW (4893) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -29797.24
+[0;33mW (4903) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -30120.19
+[0;33mW (4913) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -30424.87
+[0;33mW (4913) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -30671.33
+[0;33mW (4923) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -30922.90
+[0;33mW (4923) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -31184.41
+[0;33mW (4913) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (4933) PID: PID loop took 2373 µs[0m
+CPG Target[0] : -32025.96
+[0;33mW (4953) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -32179.42
+[0;33mW (4963) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -32295.42
+[0;33mW (4963) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -32404.84
+[0;33mW (4973) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -32503.71
+[0;33mW (4973) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32585.33
+[0;33mW (4983) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -32644.00
+[0;33mW (4993) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32682.87
+[0;33mW (4993) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32701.91
+[0;33mW (5003) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -32701.10
+[0;33mW (5003) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32679.35
+[0;33mW (5013) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -32643.52
+[0;33mW (5013) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -32589.51
+[0;33mW (5023) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -32512.28
+[0;33mW (5023) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -32415.32
+[0;33mW (5033) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32294.17
+[0;33mW (5043) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -32157.25
+[0;33mW (5043) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32000.81
+[0;33mW (5053) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -31824.96
+[0;33mW (5053) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -31644.38
+[0;33mW (5063) PID: PID loop took 2434 µs[0m
+CPG Target[0] : -31447.23
+[0;33mW (5063) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -31216.53
+[0;33mW (5073) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -30966.89
+[0;33mW (5083) PID: PID loop took 2414 µs[0m
+CPG Target[0] : -30698.45
+[0;33mW (5083) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -30400.80
+[0;33mW (5093) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -30094.62
+[0;33mW (5093) PID: PID loop took 2434 µs[0m
+CPG Target[0] : -29817.65
+[0;33mW (5103) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -29465.26
+[0;33mW (5103) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -29133.00
+[0;33mW (5113) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -28744.43
+[0;33mW (5113) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -28351.51
+[0;33mW (5123) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -27941.39
+[0;33mW (5133) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -27514.31
+[0;33mW (5133) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -27070.53
+[0;33mW (5143) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -26643.74
+[0;33mW (5143) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -26168.54
+[0;33mW (5153) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -25713.05
+[0;33mW (5153) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -25207.49
+[0;33mW (5163) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -24667.76
+[0;33mW (5173) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -24131.40
+[0;33mW (5173) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -23580.39
+[0;33mW (5183) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -23015.08
+[0;33mW (5183) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -22435.80
+[0;33mW (5193) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -21907.07
+[0;33mW (5193) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -21367.75
+[0;33mW (5203) PID: PID loop took 2415 µs[0m
+CPG Target[0] : -20729.20
+[0;33mW (5213) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -20099.87
+[0;33mW (5213) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -19458.34
+[0;33mW (5223) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -18781.45
+[0;33mW (5223) PID: PID loop took 2388 µs[0m
+CPG Target[0] : -18116.30
+[0;33mW (5233) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -17440.16
+[0;33mW (5233) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -16852.18
+[0;33mW (5243) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -16206.72
+[0;33mW (5243) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -15476.80
+[0;33mW (5253) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -14762.48
+[0;33mW (5263) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -14039.21
+[0;33mW (5263) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -13307.42
+[0;33mW (5273) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -12540.99
+[0;33mW (5273) PID: PID loop took 2389 µs[0m
+CPG Target[0] : -11793.24
+[0;33mW (5283) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -11038.33
+[0;33mW (5283) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -10358.63
+[0;33mW (5293) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -9646.43
+[0;33mW (5303) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -8873.81
+[0;33mW (5303) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -8095.81
+[0;33mW (5313) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -7312.89
+[0;33mW (5313) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -6525.54
+[0;33mW (5323) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -5762.56
+[0;33mW (5323) PID: PID loop took 2331 µs[0m
+CPG Target[0] : -4967.88
+[0;33mW (5333) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -4312.84
+[0;33mW (5333) PID: PID loop took 2303 µs[0m
+CPG Target[0] : -3541.64
+[0;33mW (5343) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -2768.44
+[0;33mW (5353) PID: PID loop took 2321 µs[0m
+CPG Target[0] : -1964.96
+[0;33mW (5353) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -1160.29
+[0;33mW (5363) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -354.92
+[0;33mW (5363) PID: PID loop took 2237 µs[0m
+CPG Target[0] : 421.82
+[0;33mW (5373) PID: PID loop took 2145 µs[0m
+CPG Target[0] : 1198.25
+[0;33mW (5373) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 1887.87
+[0;33mW (5383) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 2634.00
+[0;33mW (5383) PID: PID loop took 2222 µs[0m
+CPG Target[0] : 3407.37
+[0;33mW (5393) PID: PID loop took 2233 µs[0m
+CPG Target[0] : 4178.83
+[0;33mW (5393) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 4976.37
+[0;33mW (5403) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 5742.58
+[0;33mW (5413) PID: PID loop took 2235 µs[0m
+CPG Target[0] : 6505.56
+[0;33mW (5413) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 7292.91
+[0;33mW (5423) PID: PID loop took 2238 µs[0m
+CPG Target[0] : 7992.17
+[0;33mW (5423) PID: PID loop took 2233 µs[0m
+CPG Target[0] : 8715.31
+[0;33mW (5433) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 9433.88
+[0;33mW (5433) PID: PID loop took 2235 µs[0m
+CPG Target[0] : 10174.87
+[0;33mW (5443) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 10937.23
+[0;33mW (5443) PID: PID loop took 2304 µs[0m
+CPG Target[0] : 11692.96
+[0;33mW (5453) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 12414.98
+[0;33mW (5463) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 13156.35
+[0;33mW (5463) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 13863.68
+[0;33mW (5473) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 14537.43
+[0;33mW (5473) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 15203.58
+[0;33mW (5483) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 15886.92
+[0;33mW (5483) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 16586.11
+[0;33mW (5493) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 17275.23
+[0;33mW (5493) PID: PID loop took 2303 µs[0m
+CPG Target[0] : 17953.87
+[0;33mW (5503) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 18597.97
+[0;33mW (5513) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 19231.58
+[0;33mW (5513) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 19831.47
+[0;33mW (5523) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 20420.99
+[0;33mW (5523) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 21043.90
+[0;33mW (5533) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 21632.48
+[0;33mW (5533) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 22229.96
+[0;33mW (5543) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 22813.96
+[0;33mW (5543) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 23384.13
+[0;33mW (5553) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 23861.56
+[0;33mW (5563) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 24405.11
+[0;33mW (5563) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 24896.59
+[0;33mW (5573) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 25411.30
+[0;33mW (5573) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 25910.59
+[0;33mW (5583) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 26377.18
+[0;33mW (5583) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 26845.32
+[0;33mW (5593) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 27297.20
+[0;33mW (5593) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 27686.68
+[0;33mW (5603) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 28092.25
+[0;33mW (5613) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 28467.83
+[0;33mW (5613) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 28855.64
+[0;33mW (5623) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 29225.98
+[0;33mW (5623) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 29578.60
+[0;33mW (5633) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 29901.64
+[0;33mW (5633) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 30218.81
+[0;33mW (5643) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 30486.52
+[0;33mW (5643) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 30768.84
+[0;33mW (5653) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 31005.13
+[0;33mW (5663) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 31251.97
+[0;33mW (5663) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 31479.85
+[0;33mW (5673) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 31688.63
+[0;33mW (5673) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 31878.18
+[0;33mW (5683) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32042.64
+[0;33mW (5683) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 32178.80
+[0;33mW (5693) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 32303.90
+[0;33mW (5693) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32419.72
+[0;33mW (5703) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 32512.77
+[0;33mW (5713) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 32589.89
+[0;33mW (5713) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32647.23
+[0;33mW (5723) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 32684.77
+[0;33mW (5723) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32702.47
+[0;33mW (5733) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 32702.17
+[0;33mW (5733) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 32685.71
+[0;33mW (5743) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 32648.85
+[0;33mW (5743) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 32592.19
+[0;33mW (5753) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32518.82
+[0;33mW (5763) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 32423.35
+[0;33mW (5763) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 32308.21
+[0;33mW (5773) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 32173.47
+[0;33mW (5773) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 32042.43
+[0;33mW (5783) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 31884.36
+[0;33mW (5783) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 31702.55
+[0;33mW (5793) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 31495.12
+[0;33mW (5793) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 31268.57
+[0;33mW (5803) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 31032.15
+[0;33mW (5813) PID: PID loop took 2332 µs[0m
+CPG Target[0] : 30768.47
+[0;33mW (5813) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 30527.61
+[0;33mW (5823) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 30218.41
+[0;33mW (5823) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 29924.47
+[0;33mW (5833) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 29602.65
+[0;33mW (5833) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 29251.28
+[0;33mW (5843) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 28882.16
+[0;33mW (5843) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 28495.51
+[0;33mW (5853) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 28106.30
+[0;33mW (5863) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 27731.77
+[0;33mW (5863) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 27328.03
+[0;33mW (5873) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 26877.25
+[0;33mW (5873) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 26410.17
+[0;33mW (5883) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 25944.58
+[0;33mW (5883) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 25446.30
+[0;33mW (5893) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 24932.57
+[0;33mW (5893) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 24461.09
+[0;33mW (5903) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 23938.61
+[0;33mW (5913) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 23422.71
+[0;33mW (5913) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 22853.44
+[0;33mW (5923) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 22270.29
+[0;33mW (5923) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 21673.63
+[0;33mW (5933) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 21085.83
+[0;33mW (5933) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 20463.69
+[0;33mW (5943) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 19829.13
+[0;33mW (5943) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 19252.38
+[0;33mW (5953) PID: PID loop took 2291 µs[0m
+CPG Target[0] : 18666.32
+[0;33mW (5963) PID: PID loop took 2335 µs[0m
+CPG Target[0] : 17999.23
+[0;33mW (5953) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (5963) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 15123.83
+[0;33mW (5983) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 14430.85
+[0;33mW (5993) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 13781.93
+[0;33mW (5993) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 13099.98
+[0;33mW (6003) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 12357.93
+[0;33mW (6013) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 11608.37
+[0;33mW (6013) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 10878.91
+[0;33mW (6023) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 10115.96
+[0;33mW (6023) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 9346.86
+[0;33mW (6033) PID: PID loop took 2226 µs[0m
+CPG Target[0] : 8599.86
+[0;33mW (6033) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 7903.85
+[0;33mW (6043) PID: PID loop took 2217 µs[0m
+CPG Target[0] : 7147.88
+[0;33mW (6043) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 6444.31
+[0;33mW (6053) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 5652.62
+[0;33mW (6063) PID: PID loop took 2217 µs[0m
+CPG Target[0] : 4885.95
+[0;33mW (6063) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 4116.52
+[0;33mW (6073) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 3316.15
+[0;33mW (6073) PID: PID loop took 2221 µs[0m
+CPG Target[0] : 2542.45
+[0;33mW (6083) PID: PID loop took 2227 µs[0m
+CPG Target[0] : 1767.32
+[0;33mW (6083) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 1048.70
+[0;33mW (6093) PID: PID loop took 2222 µs[0m
+CPG Target[0] : 329.58
+[0;33mW (6093) PID: PID loop took 2140 µs[0m
+CPG Target[0] : -447.24
+[0;33mW (6103) PID: PID loop took 2224 µs[0m
+CPG Target[0] : -1223.81
+[0;33mW (6103) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -2028.40
+[0;33mW (6113) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -2831.76
+[0;33mW (6123) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -3633.41
+[0;33mW (6123) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -4318.80
+[0;33mW (6133) PID: PID loop took 2323 µs[0m
+CPG Target[0] : -5115.96
+[0;33mW (6133) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -5853.41
+[0;33mW (6143) PID: PID loop took 2304 µs[0m
+CPG Target[0] : -6644.05
+[0;33mW (6143) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -7402.64
+[0;33mW (6153) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -8184.91
+[0;33mW (6153) PID: PID loop took 2331 µs[0m
+CPG Target[0] : -8962.22
+[0;33mW (6163) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -9734.09
+[0;33mW (6173) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -10418.28
+[0;33mW (6173) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -11097.44
+[0;33mW (6183) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -11851.70
+[0;33mW (6183) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -12598.78
+[0;33mW (6193) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -13338.21
+[0;33mW (6193) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -14095.52
+[0;33mW (6203) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -14818.02
+[0;33mW (6213) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -15480.87
+[0;33mW (6213) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -16160.64
+[0;33mW (6223) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -16831.29
+[0;33mW (6223) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -17516.75
+[0;33mW (6233) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -18191.58
+[0;33mW (6233) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -18855.38
+[0;33mW (6243) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -19507.74
+[0;33mW (6243) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -20170.93
+[0;33mW (6253) PID: PID loop took 2390 µs[0m
+CPG Target[0] : -20709.86
+[0;33mW (6263) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -21283.28
+[0;33mW (6263) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -21888.35
+[0;33mW (6273) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -22480.14
+[0;33mW (6273) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -23078.68
+[0;33mW (6283) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -23642.34
+[0;33mW (6283) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -24191.66
+[0;33mW (6293) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -24669.74
+[0;33mW (6303) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -25191.07
+[0;33mW (6303) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -25679.31
+[0;33mW (6313) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -26170.33
+[0;33mW (6313) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -26645.48
+[0;33mW (6323) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -27104.46
+[0;33mW (6323) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -27562.48
+[0;33mW (6333) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -27987.69
+[0;33mW (6343) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -28353.01
+[0;33mW (6343) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -28745.86
+[0;33mW (6353) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -29095.05
+[0;33mW (6353) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -29466.56
+[0;33mW (6363) PID: PID loop took 2390 µs[0m
+CPG Target[0] : -29807.06
+[0;33mW (6363) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -30129.47
+[0;33mW (6373) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -30433.61
+[0;33mW (6373) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -30719.27
+[0;33mW (6383) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -30949.30
+[0;33mW (6393) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -31191.59
+[0;33mW (6393) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -31424.25
+[0;33mW (6403) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -31637.86
+[0;33mW (6403) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -31832.26
+[0;33mW (6413) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32013.24
+[0;33mW (6413) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -32168.21
+[0;33mW (6423) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -32290.09
+[0;33mW (6433) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -32408.05
+[0;33mW (6433) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32503.17
+[0;33mW (6443) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32582.44
+[0;33mW (6443) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -32641.94
+[0;33mW (6453) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -32681.64
+[0;33mW (6453) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -32701.51
+[0;33mW (6463) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32702.19
+[0;33mW (6463) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32683.79
+[0;33mW (6473) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32648.94
+[0;33mW (6483) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -32592.31
+[0;33mW (6483) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -32515.91
+[0;33mW (6493) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32415.98
+[0;33mW (6493) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -32299.47
+[0;33mW (6503) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -32163.37
+[0;33mW (6503) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -32031.17
+[0;33mW (6513) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -31871.84
+[0;33mW (6523) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -31674.46
+[0;33mW (6523) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -31464.33
+[0;33mW (6533) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -31235.10
+[0;33mW (6533) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -30986.92
+[0;33mW (6543) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -30710.05
+[0;33mW (6543) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -30455.33
+[0;33mW (6553) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -30152.55
+[0;33mW (6563) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -29855.02
+[0;33mW (6563) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -29517.13
+[0;33mW (6573) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -29148.30
+[0;33mW (6573) PID: PID loop took 2394 µs[0m
+CPG Target[0] : -28774.18
+[0;33mW (6583) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -28382.60
+[0;33mW (6583) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -27973.80
+[0;33mW (6593) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -27609.88
+[0;33mW (6593) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -27185.77
+[0;33mW (6603) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -26729.75
+[0;33mW (6613) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -26257.51
+[0;33mW (6613) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -25769.34
+[0;33mW (6623) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -25247.25
+[0;33mW (6623) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -24727.57
+[0;33mW (6633) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -24250.88
+[0;33mW (6633) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -23722.89
+[0;33mW (6643) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -23201.80
+[0;33mW (6653) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -22606.27
+[0;33mW (6653) PID: PID loop took 2389 µs[0m
+CPG Target[0] : -22017.32
+[0;33mW (6663) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -21415.01
+[0;33mW (6663) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -20799.70
+[0;33mW (6673) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -20171.77
+[0;33mW (6673) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -19508.51
+[0;33mW (6683) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -18949.99
+[0;33mW (6683) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -18335.40
+[0;33mW (6693) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -17662.82
+[0;33mW (6703) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -16979.51
+[0;33mW (6703) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -16260.95
+[0;33mW (6713) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -15557.12
+[0;33mW (6713) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -14843.85
+[0;33mW (6723) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -14121.57
+[0;33mW (6723) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -13469.42
+[0;33mW (6733) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -12704.79
+[0;33mW (6743) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -12012.21
+[0;33mW (6743) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -11259.35
+[0;33mW (6753) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -10499.65
+[0;33mW (6753) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -9706.10
+[0;33mW (6763) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -8961.60
+[0;33mW (6763) PID: PID loop took 2325 µs[0m
+CPG Target[0] : -8184.18
+[0;33mW (6773) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -7401.80
+[0;33mW (6773) PID: PID loop took 2306 µs[0m
+CPG Target[0] : -6699.43
+[0;33mW (6783) PID: PID loop took 2304 µs[0m
+CPG Target[0] : -5937.25
+[0;33mW (6793) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -5200.12
+[0;33mW (6793) PID: PID loop took 2362 µs[0m
+CPG Target[0] : -4403.27
+[0;33mW (6803) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -3603.74
+[0;33mW (6803) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -2802.02
+[0;33mW (6813) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -2027.32
+[0;33mW (6813) PID: PID loop took 2325 µs[0m
+CPG Target[0] : -1222.72
+[0;33mW (6823) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -417.38
+[0;33mW (6823) PID: PID loop took 2220 µs[0m
+CPG Target[0] : 244.30
+[0;33mW (6833) PID: PID loop took 2157 µs[0m
+CPG Target[0] : 963.32
+[0;33mW (6843) PID: PID loop took 2160 µs[0m
+CPG Target[0] : 1739.33
+[0;33mW (6843) PID: PID loop took 2239 µs[0m
+CPG Target[0] : 2514.38
+[0;33mW (6853) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 3316.63
+[0;33mW (6853) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 4088.33
+[0;33mW (6863) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 4857.73
+[0;33mW (6863) PID: PID loop took 2239 µs[0m
+CPG Target[0] : 5652.74
+[0;33mW (6873) PID: PID loop took 2235 µs[0m
+CPG Target[0] : 6331.47
+[0;33mW (6873) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 7007.38
+[0;33mW (6883) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 7791.97
+[0;33mW (6883) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 8544.07
+[0;33mW (6893) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 9318.92
+[0;33mW (6903) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 10060.76
+[0;33mW (6903) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 10824.07
+[0;33mW (6913) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 11553.90
+[0;33mW (6913) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 12303.88
+[0;33mW (6923) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 12967.21
+[0;33mW (6923) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 13650.42
+[0;33mW (6933) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 14378.19
+[0;33mW (6933) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 15071.71
+[0;33mW (6943) PID: PID loop took 2334 µs[0m
+CPG Target[0] : 15781.93
+[0;33mW (6953) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 16482.57
+[0;33mW (6953) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 17173.22
+[0;33mW (6963) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 17732.77
+[0;33mW (6963) PID: PID loop took 2334 µs[0m
+CPG Target[0] : 18380.34
+[0;33mW (6973) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 19017.55
+[0;33mW (6973) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 19667.03
+[0;33mW (6983) PID: PID loop took 2311 µs[0m
+[0;33mW (6983) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+CPG Target[0] : 20304.57
+[0;33mW (7003) PID: PID loop took 19848 µs[0m
+CPG Target[0] : 22789.81
+[0;33mW (7013) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 23300.08
+[0;33mW (7013) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 23818.80
+[0;33mW (7023) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 24363.49
+[0;33mW (7023) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 24893.39
+[0;33mW (7033) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 25390.07
+[0;33mW (7043) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 25890.02
+[0;33mW (7043) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 26374.26
+[0;33mW (7053) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 26842.51
+[0;33mW (7053) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 27214.99
+[0;33mW (7063) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 27607.21
+[0;33mW (7063) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 28030.62
+[0;33mW (7073) PID: PID loop took 2340 µs[0m
+CPG Target[0] : 28437.03
+[0;33mW (7073) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 28826.19
+[0;33mW (7083) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 29184.92
+[0;33mW (7093) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 29539.56
+[0;33mW (7093) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 29829.28
+[0;33mW (7103) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 30161.61
+[0;33mW (7103) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 30432.35
+[0;33mW (7113) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 30718.10
+[0;33mW (7113) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 30985.20
+[0;33mW (7123) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 31233.51
+[0;33mW (7123) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 31462.86
+[0;33mW (7133) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 31665.95
+[0;33mW (7143) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 31857.68
+[0;33mW (7143) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32006.64
+[0;33mW (7153) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32151.91
+[0;33mW (7153) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 32284.97
+[0;33mW (7163) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 32403.71
+[0;33mW (7163) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 32502.79
+[0;33mW (7173) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 32582.15
+[0;33mW (7173) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32641.73
+[0;33mW (7183) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32680.44
+[0;33mW (7193) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 32699.36
+[0;33mW (7193) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 32703.41
+[0;33mW (7203) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32688.63
+[0;33mW (7203) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32655.60
+[0;33mW (7213) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 32601.88
+[0;33mW (7213) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 32528.39
+[0;33mW (7223) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 32435.15
+[0;33mW (7223) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32322.24
+[0;33mW (7233) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 32209.84
+[0;33mW (7243) PID: PID loop took 2336 µs[0m
+CPG Target[0] : 32066.23
+[0;33mW (7243) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 31910.84
+[0;33mW (7253) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 31724.83
+[0;33mW (7253) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 31527.23
+[0;33mW (7263) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 31303.53
+[0;33mW (7263) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 31060.83
+[0;33mW (7273) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 30799.28
+[0;33mW (7273) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 30529.37
+[0;33mW (7283) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 30274.99
+[0;33mW (7293) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 29984.18
+[0;33mW (7293) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 29653.47
+[0;33mW (7303) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 29304.76
+[0;33mW (7303) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 28951.66
+[0;33mW (7313) PID: PID loop took 2332 µs[0m
+CPG Target[0] : 28568.23
+[0;33mW (7313) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 28167.47
+[0;33mW (7323) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 27749.62
+[0;33mW (7323) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 27378.04
+[0;33mW (7333) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 26978.02
+[0;33mW (7343) PID: PID loop took 2330 µs[0m
+CPG Target[0] : 26514.50
+[0;33mW (7343) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 26034.90
+[0;33mW (7353) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 25539.50
+[0;33mW (7353) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 25047.11
+[0;33mW (7363) PID: PID loop took 2332 µs[0m
+CPG Target[0] : 24521.56
+[0;33mW (7363) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 23981.13
+[0;33mW (7373) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 23426.15
+[0;33mW (7373) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 22939.13
+[0;33mW (7383) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 22420.95
+[0;33mW (7393) PID: PID loop took 2330 µs[0m
+CPG Target[0] : 21827.72
+[0;33mW (7393) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 21221.24
+[0;33mW (7403) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 20601.89
+[0;33mW (7403) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 19992.81
+[0;33mW (7413) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 19349.27
+[0;33mW (7413) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 18693.98
+[0;33mW (7423) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 18147.21
+[0;33mW (7423) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 17495.88
+[0;33mW (7433) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 16810.01
+[0;33mW (7443) PID: PID loop took 2330 µs[0m
+CPG Target[0] : 16113.93
+[0;33mW (7443) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 15408.08
+[0;33mW (7453) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 14692.88
+[0;33mW (7453) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 13994.78
+[0;33mW (7463) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 13262.48
+[0;33mW (7463) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 12628.38
+[0;33mW (7473) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 11854.68
+[0;33mW (7473) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 11181.49
+[0;33mW (7483) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 10421.12
+[0;33mW (7493) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 9654.42
+[0;33mW (7493) PID: PID loop took 2238 µs[0m
+CPG Target[0] : 8909.54
+[0;33mW (7503) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 8131.78
+[0;33mW (7503) PID: PID loop took 2243 µs[0m
+CPG Target[0] : 7377.12
+[0;33mW (7513) PID: PID loop took 2239 µs[0m
+CPG Target[0] : 6618.29
+[0;33mW (7513) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 5940.63
+[0;33mW (7523) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 5175.11
+[0;33mW (7523) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 4435.18
+[0;33mW (7533) PID: PID loop took 2238 µs[0m
+CPG Target[0] : 3635.74
+[0;33mW (7533) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 2862.77
+[0;33mW (7543) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 2088.17
+[0;33mW (7553) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 1283.65
+[0;33mW (7553) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 507.12
+[0;33mW (7563) PID: PID loop took 2160 µs[0m
+CPG Target[0] : -269.69
+[0;33mW (7563) PID: PID loop took 2233 µs[0m
+CPG Target[0] : -931.32
+[0;33mW (7573) PID: PID loop took 2231 µs[0m
+CPG Target[0] : -1678.77
+[0;33mW (7573) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -2482.73
+[0;33mW (7583) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -3256.56
+[0;33mW (7583) PID: PID loop took 2330 µs[0m
+CPG Target[0] : -4057.10
+[0;33mW (7593) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -4855.17
+[0;33mW (7603) PID: PID loop took 2308 µs[0m
+CPG Target[0] : -5650.30
+[0;33mW (7603) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -6413.71
+[0;33mW (7613) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -7173.48
+[0;33mW (7613) PID: PID loop took 2332 µs[0m
+CPG Target[0] : -7873.37
+[0;33mW (7623) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -8597.22
+[0;33mW (7623) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -9371.70
+[0;33mW (7633) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -10113.15
+[0;33mW (7633) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -10903.15
+[0;33mW (7643) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -11659.18
+[0;33mW (7653) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -12408.15
+[0;33mW (7653) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -13149.58
+[0;33mW (7663) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -13804.85
+[0;33mW (7663) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -14556.58
+[0;33mW (7673) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -15222.50
+[0;33mW (7673) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -15930.74
+[0;33mW (7683) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -16629.31
+[0;33mW (7683) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -17317.79
+[0;33mW (7693) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -18019.79
+[0;33mW (7703) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -18686.45
+[0;33mW (7703) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -19341.78
+[0;33mW (7713) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -19894.16
+[0;33mW (7713) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -20482.57
+[0;33mW (7723) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -21104.25
+[0;33mW (7723) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -21713.12
+[0;33mW (7733) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -22308.83
+[0;33mW (7743) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -22891.00
+[0;33mW (7743) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -23479.32
+[0;33mW (7753) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -23954.66
+[0;33mW (7753) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -24514.78
+[0;33mW (7763) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -25003.44
+[0;33mW (7763) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -25515.08
+[0;33mW (7773) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -26028.67
+[0;33mW (7783) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -26508.47
+[0;33mW (7783) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -26972.20
+[0;33mW (7793) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -27419.55
+[0;33mW (7793) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -27850.27
+[0;33mW (7803) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -28235.10
+[0;33mW (7803) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -28605.16
+[0;33mW (7813) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -28986.94
+[0;33mW (7813) PID: PID loop took 2409 µs[0m
+CPG TargeE (7823) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[1;31mE (7823) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (7823) task_wdt: Tasks currently running:[0m
+[1;31mE (7823) task_wdt: CPU 0: cpg_updater[0m
+[1;31mE (7823) task_wdt: CPU 1: pos_loop[0m
+[1;31mE (7823) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400857FE:0x3FFBF860 0x40083B79:0x3FFBF880 0x400D7016:0x3FFD2BF0 0x400D76DB:0x3FFD2C20 0x400D9FDA:0x3FFD2C40 0x4000BD83:0x3FFD2C60 0x4000182A:0x3FFD2C80 0x400D9A0D:0x3FFD2CA0 0x400D9FDA:0x3FFD2CC0 0x4000BD83:0x3FFD2CE0 0x4000117D:0x3FFD2D00 0x400592FE:0x3FFD2D20 0x4005937A:0x3FFD2D40 0x4013944D:0x3FFD2D60 0x4014454F:0x3FFD2D90 0x40143F66:0x3FFD2DB0 0x401394CF:0x3FFD30D0 0x400DB02C:0x3FFD3120 0x40091FD5:0x3FFD31A0
+
+t[0] : -29351.13
+[0;33mW (7893) PID: PID loop took 67162 µs[0m
+CPG Target[0] : -31446.70
+[0;33mW (7893) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -31651.14
+[0;33mW (7903) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -31844.29
+[0;33mW (7903) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -32018.11
+[0;33mW (7913) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32177.66
+[0;33mW (7913) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -32311.83
+[0;33mW (7923) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32426.40
+[0;33mW (7923) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32521.30
+[0;33mW (7933) PID: PID loop took 2414 µs[0m
+CPG Target[0] : -32589.35
+[0;33mW (7943) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32646.85
+[0;33mW (7943) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -32683.54
+[0;33mW (7953) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -32702.12
+[0;33mW (7953) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -32700.84
+[0;33mW (7963) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -32679.73
+[0;33mW (7963) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32636.96
+[0;33mW (7973) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -32575.50
+[0;33mW (7983) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -32507.09
+[0;33mW (7983) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -32416.63
+W (7993) PID: PID loop took 2403 µs
+CPG Target[0] : -32295.72
+[0;33mW (7993) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -32159.04
+[0;33mW (8003) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (8003) PID: PID loop took 2387 µs[0m
+CPG Target[0] : -31418.18
+[0;33mW (8023) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -31176.31
+[0;33mW (8033) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -30942.21
+[0;33mW (8033) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -30672.00
+[0;33mW (8043) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -30383.18
+[0;33mW (8043) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -30064.62
+[0;33mW (8053) PID: PID loop took 2388 µs[0m
+CPG Target[0] : -29738.46
+[0;33mW (8063) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -29394.27
+[0;33mW (8063) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -29032.23
+[0;33mW (8073) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -28680.28
+[0;33mW (8073) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -28313.32
+[0;33mW (8083) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -27901.58
+[0;33mW (8083) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -27472.90
+[0;33mW (8093) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -27027.56
+[0;33mW (8093) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -26549.02
+[0;33mW (8103) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -26070.58
+[0;33mW (8113) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -25647.90
+[0;33mW (8113) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -25121.91
+[0;33mW (8123) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -24636.42
+[0;33mW (8123) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -24079.72
+[0;33mW (8133) PID: PID loop took 2394 µs[0m
+CPG Target[0] : -23527.35
+[0;33mW (8133) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -22960.69
+[0;33mW (8143) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -22380.11
+[0;33mW (8153) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -21785.94
+[0;33mW (8153) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -21244.26
+[0;33mW (8163) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -20670.01
+[0;33mW (8163) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -20039.50
+[0;33mW (8173) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -19396.83
+[0;33mW (8173) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -18718.81
+[0;33mW (8183) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -18052.60
+[0;33mW (8183) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -17375.44
+[0;33mW (8193) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -16687.73
+[0;33mW (8203) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -16065.14
+[0;33mW (8203) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -15384.02
+[0;33mW (8213) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -14668.51
+[0;33mW (8213) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -13944.10
+[0;33mW (8223) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -13211.23
+[0;33mW (8223) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -12470.34
+[0;33mW (8233) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -11695.02
+[0;33mW (8243) PID: PID loop took 2415 µs[0m
+CPG Target[0] : -11020.52
+[0;33mW (8243) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -10313.38
+[0;33mW (8253) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -9545.83
+[0;33mW (8253) PID: PID loop took 2334 µs[0m
+CPG Target[0] : -8772.48
+[0;33mW (8263) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -7993.81
+[0;33mW (8263) PID: PID loop took 2305 µs[0m
+CPG Target[0] : -7210.29
+[0;33mW (8273) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -6450.60
+[0;33mW (8273) PID: PID loop took 2324 µs[0m
+CPG Target[0] : -5772.26
+[0;33mW (8283) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -5062.91
+[0;33mW (8293) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -4237.03
+[0;33mW (8293) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -3437.01
+[0;33mW (8303) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -2663.57
+[0;33mW (8303) PID: PID loop took 2334 µs[0m
+CPG Target[0] : -1859.91
+[0;33mW (8313) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -1055.12
+[0;33mW (8313) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -249.69
+[0;33mW (8323) PID: PID loop took 2221 µs[0m
+CPG Target[0] : 440.73
+[0;33mW (8323) PID: PID loop took 2137 µs[0m
+CPG Target[0] : 1217.15
+[0;33mW (8333) PID: PID loop took 2225 µs[0m
+CPG Target[0] : 1935.46
+[0;33mW (8343) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 2738.85
+[0;33mW (8343) PID: PID loop took 2216 µs[0m
+CPG Target[0] : 3511.99
+[0;33mW (8353) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 4283.16
+[0;33mW (8353) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 5080.33
+[0;33mW (8363) PID: PID loop took 2215 µs[0m
+CPG Target[0] : 5846.13
+[0;33mW (8363) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 6524.09
+[0;33mW (8373) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 7311.34
+[0;33mW (8373) PID: PID loop took 2220 µs[0m
+CPG Target[0] : 8010.51
+[0;33mW (8383) PID: PID loop took 2227 µs[0m
+CPG Target[0] : 8761.25
+[0;33mW (8383) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 9534.58
+[0;33mW (8393) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 10274.81
+[0;33mW (8403) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 11036.33
+[0;33mW (8403) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 11791.16
+[0;33mW (8413) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 12405.86
+[0;33mW (8413) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 13120.98
+[0;33mW (8423) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 13828.69
+[0;33mW (8423) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 14554.37
+[0;33mW (8433) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 15245.78
+[0;33mW (8433) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 15953.70
+[0;33mW (8443) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 16651.95
+[0;33mW (8453) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 17340.09
+[0;33mW (8453) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 17921.58
+[0;33mW (8463) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 18589.86
+[0;33mW (8463) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 19200.32
+[0;33mW (8473) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 19846.50
+[0;33mW (8473) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 20480.64
+[0;33mW (8483) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 21080.37
+[0;33mW (8483) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 21689.75
+[0;33mW (8493) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 22285.97
+[0;33mW (8503) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 22806.90
+[0;33mW (8503) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 23316.80
+[0;33mW (8513) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 23854.82
+[0;33mW (8513) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 24398.55
+[0;33mW (8523) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 24927.48
+[0;33mW (8523) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 25441.29
+[0;33mW (8533) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 25922.13
+[0;33mW (8533) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 26405.34
+[0;33mW (8543) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 26823.24
+[0;33mW (8553) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 27244.12
+[0;33mW (8553) PID: PID loop took 2344 µs[0m
+CPG Target[0] : 27681.43
+[0;33mW (8563) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 28087.21
+[0;33mW (8563) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 28491.27
+[0;33mW (8573) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 28878.05
+[0;33mW (8573) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 29247.35
+[0;33mW (8583) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 29574.39
+[0;33mW (8583) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 29885.97
+[0;33mW (8593) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 30181.91
+[0;33mW (8603) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 30482.95
+[0;33mW (8603) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 30765.49
+[0;33mW (8613) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 31020.27
+[0;33mW (8613) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 31265.99
+[0;33mW (8623) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 31492.74
+[0;33mW (8623) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 31671.90
+[0;33mW (8633) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 31863.06
+[0;33mW (8633) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 32023.26
+[0;33mW (8643) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32177.04
+[0;33mW (8653) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 32311.30
+[0;33mW (8653) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32425.96
+[0;33mW (8663) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32517.88
+[0;33mW (8663) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 32593.83
+[0;33mW (8673) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 32644.94
+[0;33mW (8673) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 32681.33
+[0;33mW (8683) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32701.03
+[0;33mW (8683) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32701.97
+[0;33mW (8693) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32683.06
+[0;33mW (8703) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 32644.33
+[0;33mW (8703) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 32585.78
+[0;33mW (8713) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 32510.61
+[0;33mW (8713) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 32428.38
+[0;33mW (8723) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 32322.99
+[0;33mW (8723) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 32190.58
+[0;33mW (8733) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32044.40
+[0;33mW (8733) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 31873.71
+[0;33mW (8743) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 31683.69
+[0;33mW (8753) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 31474.43
+[0;33mW (8753) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 31246.08
+[0;33mW (8763) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 31035.26
+[0;33mW (8763) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 30771.81
+[0;33mW (8773) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 30510.47
+[0;33mW (8773) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 30211.17
+[0;33mW (8783) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 29905.20
+[0;33mW (8783) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 29570.07
+[0;33mW (8793) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 29217.01
+[0;33mW (8803) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 28846.21
+[0;33mW (8803) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 28457.91
+[0;33mW (8813) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 28126.03
+[0;33mW (8813) PID: PID loop took 2333 µs[0m
+CPG Target[0] : 27721.74
+[0;33mW (8823) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 27301.81
+[0;33mW (8823) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 26850.05
+[0;33mW (8833) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 26399.01
+[0;33mW (8833) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 25915.52
+[0;33mW (8843) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 25416.31
+[0;33mW (8853) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 24901.68
+[0;33mW (8853) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 24467.63
+[0;33mW (8863) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 23964.91
+[0;33mW (8863) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 23409.51
+[0;33mW (8873) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 22839.90
+[0;33mW (8873) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 22256.44
+[0;33mW (8883) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 21681.01
+[0;33mW (8883) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 21071.36
+[0;33mW (8893) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 20448.93
+[0;33mW (8903) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 19836.96
+[0;33mW (8903) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 19237.09
+[0;33mW (8913) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 18650.79
+[0;33mW (8913) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 17983.43
+[0;33mW (8923) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 17305.16
+[0;33mW (8923) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 16616.39
+[0;33mW (8933) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 15942.67
+[0;33mW (8933) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 15234.50
+[0;33mW (8943) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 14517.09
+[0;33mW (8953) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 13895.13
+[0;33mW (8953) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 13135.37
+[0;33mW (8963) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 12446.91
+[0;33mW (8963) PID: PID loop took 2332 µs[0m
+CPG Target[0] : 11698.23
+[0;33mW (8973) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 10942.45
+[0;33mW (8973) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 10180.03
+[0;33mW (8983) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 9438.98
+[0;33mW (8983) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 8692.61
+[0;33mW (8993) PID: PID loop took 2237 µs[0m
+CPG Target[0] : 7997.14
+[0;33mW (9003) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 7297.80
+[0;33mW (9003) PID: PID loop took 2239 µs[0m
+CPG Target[0] : 6510.37
+[0;33mW (9013) PID: PID loop took 2233 µs[0m
+CPG Target[0] : 5747.31
+[0;33mW (9013) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 4981.02
+[0;33mW (9023) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (9023) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 1777.16
+[0;33mW (9043) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 1029.80
+[0;33mW (9053) PID: PID loop took 2242 µs[0m
+CPG Target[0] : 253.12
+[0;33mW (9053) PID: PID loop took 2157 µs[0m
+CPG Target[0] : -523.69
+[0;33mW (9063) PID: PID loop took 2236 µs[0m
+CPG Target[0] : -1300.21
+[0;33mW (9063) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -2104.71
+[0;33mW (9073) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -2907.93
+[0;33mW (9073) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -3709.38
+[0;33mW (9083) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -4366.06
+[0;33mW (9083) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -5106.23
+[0;33mW (9093) PID: PID loop took 2329 µs[0m
+CPG Target[0] : -5900.31
+[0;33mW (9103) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -6690.73
+[0;33mW (9103) PID: PID loop took 2307 µs[0m
+CPG Target[0] : -7477.08
+[0;33mW (9113) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -8231.07
+[0;33mW (9113) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -9008.06
+[0;33mW (9123) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -9779.60
+[0;33mW (9123) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -10463.46
+[0;33mW (9133) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -11142.28
+[0;33mW (9133) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -11896.13
+[0;33mW (9143) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -12642.77
+[0;33mW (9153) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -13407.98
+[0;33mW (9153) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -14138.53
+[0;33mW (9163) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -14860.50
+[0;33mW (9163) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -15573.47
+[0;33mW (9173) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -16202.07
+[0;33mW (9173) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -16896.79
+[0;33mW (9183) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -17532.72
+[0;33mW (9193) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -18207.30
+[0;33mW (9193) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -18870.83
+[0;33mW (9203) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -19545.99
+[0;33mW (9203) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -20185.81
+[0;33mW (9213) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -20813.38
+[0;33mW (9213) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -21363.05
+[0;33mW (9223) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -21966.41
+[0;33mW (9223) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -22535.60
+[0;33mW (9233) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -23112.44
+[0;33mW (9243) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -23675.26
+[0;33mW (9243) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -24223.72
+[0;33mW (9253) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -24757.49
+[0;33mW (9253) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -25294.56
+[0;33mW (9263) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -25797.48
+[0;33mW (9263) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -26216.12
+[0;33mW (9273) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -26673.10
+[0;33mW (9283) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -27115.04
+[0;33mW (9283) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -27572.66
+[0;33mW (9293) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -27997.47
+[0;33mW (9293) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -28405.30
+[0;33mW (9303) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -28795.90
+[0;33mW (9303) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -29182.02
+[0;33mW (9313) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -29536.80
+[0;33mW (9323) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -29826.65
+[0;33mW (9323) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -30125.64
+[0;33mW (9333) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -30430.00
+[0;33mW (9333) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -30725.76
+[0;33mW (9343) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -30992.35
+[0;33mW (9343) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -31240.13
+[0;33mW (9353) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -31468.95
+[0;33mW (9353) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -31678.69
+[0;33mW (9363) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -31862.72
+[0;33mW (9373) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -32028.79
+[0;33mW (9373) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -32176.78
+[0;33mW (9383) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -32311.07
+[0;33mW (9383) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -32429.50
+[0;33mW (9393) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32523.81
+[0;33mW (9393) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32598.38
+[0;33mW (9403) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -32653.18
+[0;33mW (9413) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -32684.38
+[0;33mW (9413) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32702.36
+[0;33mW (9423) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32700.91
+[0;33mW (9423) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32679.92
+[0;33mW (9433) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -32639.10
+[0;33mW (9433) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -32578.47
+[0;33mW (9443) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32494.84
+[0;33mW (9443) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -32394.02
+[0;33mW (9453) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -32291.96
+[0;33mW (9463) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -32165.15
+[0;33mW (9463) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -32009.77
+[0;33mW (9473) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -31828.36
+[0;33mW (9473) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -31633.55
+[0;33mW (9483) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -31419.54
+[0;33mW (9483) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -31186.48
+[0;33mW (9493) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -30925.14
+[0;33mW (9503) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -30693.62
+[0;33mW (9503) PID: PID loop took 2425 µs[0m
+CPG Target[0] : -30395.64
+[0;33mW (9513) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -30111.65
+[0;33mW (9513) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -29788.20
+[0;33mW (9523) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -29434.15
+[0;33mW (9523) PID: PID loop took 2389 µs[0m
+CPG Target[0] : -29074.12
+[0;33mW (9533) PID: PID loop took 2439 µs[0m
+CPG Target[0] : -28696.46
+[0;33mW (9543) PID: PID loop took 2414 µs[0m
+CPG Target[0] : -28301.38
+[0;33mW (9543) PID: PID loop took 2414 µs[0m
+CPG Target[0] : -27889.13
+[0;33mW (9553) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -27506.74
+[0;33mW (9553) PID: PID loop took 2389 µs[0m
+CPG Target[0] : -27094.95
+[0;33mW (9563) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -26635.63
+[0;33mW (9563) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -26160.15
+[0;33mW (9573) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -25668.79
+[0;33mW (9573) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -25143.47
+[0;33mW (9583) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -24620.74
+[0;33mW (9593) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -24083.06
+[0;33mW (9593) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -23530.77
+[0;33mW (9603) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -23005.14
+[0;33mW (9603) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -22467.47
+[0;33mW (9613) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -21875.31
+[0;33mW (9613) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -21269.87
+[0;33mW (9623) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -20651.53
+[0;33mW (9633) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -19997.89
+[0;33mW (9633) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -19354.44
+[0;33mW (9643) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -18793.55
+[0;33mW (9643) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -18128.61
+[0;33mW (9653) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -17476.99
+[0;33mW (9653) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -16766.13
+[0;33mW (9663) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -16069.43
+[0;33mW (9663) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -15362.97
+[0;33mW (9673) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -14647.19
+[0;33mW (9683) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -13896.49
+[0;33mW (9683) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -13163.08
+[0;33mW (9693) PID: PID loop took 2390 µs[0m
+CPG Target[0] : -12501.49
+[0;33mW (9693) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -11807.02
+[0;33mW (9703) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -11052.24
+[0;33mW (9703) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -10263.44
+[0;33mW (9713) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -9495.49
+[0;33mW (9723) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -8721.78
+[0;33mW (9723) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -7970.69
+[0;33mW (9733) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -7299.26
+[0;33mW (9733) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -6568.22
+[0;33mW (9743) PID: PID loop took 2307 µs[0m
+CPG Target[0] : -5777.11
+[0;33mW (9743) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -5010.93
+[0;33mW (9753) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -4213.39
+[0;33mW (9753) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -3413.29
+[0;33mW (9763) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -2611.13
+[0;33mW (9773) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -1922.28
+[0;33mW (9773) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -1117.56
+[0;33mW (9783) PID: PID loop took 2330 µs[0m
+CPG Target[0] : -369.70
+[0;33mW (9783) PID: PID loop took 2235 µs[0m
+CPG Target[0] : 407.03
+[0;33mW (9793) PID: PID loop took 2149 µs[0m
+CPG Target[0] : 1183.48
+[0;33mW (9793) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 1987.97
+[0;33mW (9803) PID: PID loop took 2221 µs[0m
+CPG Target[0] : 2762.61
+[0;33mW (9803) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 3535.69
+[0;33mW (9813) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 4221.23
+[0;33mW (9813) PID: PID loop took 2236 µs[0m
+CPG Target[0] : 4933.32
+[0;33mW (9823) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 5671.37
+[0;33mW (9833) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 6462.87
+[0;33mW (9833) PID: PID loop took 2237 µs[0m
+CPG Target[0] : 7222.39
+[0;33mW (9843) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 7977.84
+[0;33mW (9843) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 8756.51
+[0;33mW (9853) PID: PID loop took 2235 µs[0m
+CPG Target[0] : 9474.81
+[0;33mW (9853) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 10160.82
+[0;33mW (9863) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 10869.05
+[0;33mW (9863) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 11625.39
+[0;33mW (9873) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 12374.68
+[0;33mW (9883) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 13116.46
+[0;33mW (9883) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 13824.22
+[0;33mW (9893) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 14549.96
+[0;33mW (9893) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 15165.00
+[0;33mW (9903) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 15899.14
+[0;33mW (9903) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 16523.74
+[0;33mW (9913) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 17213.78
+[0;33mW (9913) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 17893.38
+[0;33mW (9923) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 18562.13
+[0;33mW (9933) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 19219.62
+[0;33mW (9933) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 19842.59
+[0;33mW (9943) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 20409.44
+[0;33mW (9943) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 20988.49
+[0;33mW (9953) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 21599.80
+[0;33mW (9953) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 22176.87
+[0;33mW (9963) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 22762.09
+[0;33mW (9963) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 23333.51
+[0;33mW (9973) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 23890.78
+[0;33mW (9983) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 24356.91
+[0;33mW (9983) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 24830.92
+[0;33mW (9993) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 25347.54
+[0;33mW (9993) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 25848.79
+[0;33mW (10003) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 26334.36
+[0;33mW (10003) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 26803.95
+[0;33mW (10013) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 27273.19
+[0;33mW (10013) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 27709.41
+[0;33mW (10023) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 28128.80
+[0;33mW (10033) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 28474.71
+[0;33mW (10033) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 28835.12
+[0;33mW (10043) PID: PID loop took 2335 µs[0m
+[0;33mW (10033) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+CPG Target[0] : 29219.34
+[0;33mW (10063) PID: PID loop took 19928 µs[0m
+CPG Target[0] : 30563.82
+[0;33mW (10073) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 30850.72
+[0;33mW (10073) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 31072.98
+[0;33mW (10083) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 31298.12
+[0;33mW (10083) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 31522.27
+[0;33mW (10093) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 31727.29
+[0;33mW (10093) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 31919.33
+[0;33mW (10103) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 32085.04
+[0;33mW (10113) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 32231.29
+[0;33mW (10113) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32357.97
+[0;33mW (10123) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 32454.50
+[0;33mW (10123) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 32541.11
+[0;33mW (10133) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32611.53
+[0;33mW (10133) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 32662.17
+[0;33mW (10143) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 32692.99
+[0;33mW (10153) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 32704.00
+[0;33mW (10153) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 32694.43
+[0;33mW (10163) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 32670.43
+[0;33mW (10163) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 32628.00
+[0;33mW (10173) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 32563.22
+[0;33mW (10173) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 32475.30
+[0;33mW (10183) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32370.35
+[0;33mW (10183) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 32245.76
+[0;33mW (10193) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 32101.60
+[0;33mW (10203) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 31937.96
+[0;33mW (10203) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 31761.81
+[0;33mW (10213) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 31567.75
+[0;33mW (10213) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 31364.04
+[0;33mW (10223) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 31126.30
+[0;33mW (10223) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 30869.68
+[0;33mW (10233) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 30584.15
+[0;33mW (10243) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 30289.58
+[0;33mW (10243) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 29976.63
+[0;33mW (10253) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 29645.48
+[0;33mW (10253) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 29334.62
+[0;33mW (10263) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 28996.26
+[0;33mW (10263) PID: PID loop took 2299 µs[0m
+CPG Target[0] : 28614.92
+[0;33mW (10273) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 28216.21
+[0;33mW (10273) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 27800.39
+[0;33mW (10283) PID: PID loop took 2332 µs[0m
+CPG Target[0] : 27351.93
+[0;33mW (10293) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 26902.04
+[0;33mW (10293) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 26435.83
+[0;33mW (10303) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 26006.01
+[0;33mW (10303) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 25509.68
+[0;33mW (10313) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 25016.42
+[0;33mW (10313) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 24489.98
+[0;33mW (10323) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 23948.68
+[0;33mW (10333) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 23392.85
+[0;33mW (10333) PID: PID loop took 2335 µs[0m
+CPG Target[0] : 22802.21
+[0;33mW (10343) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 22217.86
+[0;33mW (10343) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 21620.02
+[0;33mW (10353) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 21097.12
+[0;33mW (10353) PID: PID loop took 2347 µs[0m
+CPG Target[0] : 20520.05
+[0;33mW (10363) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 19863.75
+[0;33mW (10373) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 19217.80
+[0;33mW (10373) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 18560.19
+[0;33mW (10383) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 17891.32
+[0;33mW (10383) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 17211.59
+[0;33mW (10393) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 16546.24
+[0;33mW (10393) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 15871.56
+[0;33mW (10403) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 15213.40
+[0;33mW (10403) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 14495.72
+[0;33mW (10413) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 13769.24
+[0;33mW (10423) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 13008.02
+[0;33mW (10423) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 12265.00
+[0;33mW (10433) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 11514.55
+[0;33mW (10433) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 10811.43
+[0;33mW (10443) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 10047.91
+[0;33mW (10443) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 9333.46
+[0;33mW (10453) PID: PID loop took 2243 µs[0m
+CPG Target[0] : 8558.60
+[0;33mW (10463) PID: PID loop took 2222 µs[0m
+CPG Target[0] : 7806.49
+[0;33mW (10463) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 7021.87
+[0;33mW (10473) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 6233.00
+[0;33mW (10473) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 5468.71
+[0;33mW (10483) PID: PID loop took 2234 µs[0m
+CPG Target[0] : 4786.74
+[0;33mW (10483) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 4045.55
+[0;33mW (10493) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 3244.98
+[0;33mW (10493) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 2442.44
+[0;33mW (10503) PID: PID loop took 2243 µs[0m
+CPG Target[0] : 1638.42
+[0;33mW (10513) PID: PID loop took 2227 µs[0m
+CPG Target[0] : 862.16
+[0;33mW (10513) PID: PID loop took 2147 µs[0m
+CPG Target[0] : 56.65
+[0;33mW (10523) PID: PID loop took 2056 µs[0m
+CPG Target[0] : -720.13
+[0;33mW (10523) PID: PID loop took 2224 µs[0m
+CPG Target[0] : -1410.27
+[0;33mW (10533) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -2185.92
+[0;33mW (10533) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -2988.98
+[0;33mW (10543) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -3790.24
+[0;33mW (10543) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -4589.19
+[0;33mW (10553) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -5385.35
+[0;33mW (10563) PID: PID loop took 2322 µs[0m
+CPG Target[0] : -6206.45
+[0;33mW (10563) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -6911.02
+[0;33mW (10573) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -7696.15
+[0;33mW (10573) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -8421.04
+[0;33mW (10583) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -9196.75
+[0;33mW (10583) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -9994.27
+[0;33mW (10593) PID: PID loop took 2321 µs[0m
+CPG Target[0] : -10758.13
+[0;33mW (10603) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -11542.38
+[0;33mW (10603) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -12292.47
+[0;33mW (10613) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -12982.31
+[0;33mW (10613) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -13691.50
+[0;33mW (10623) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -14418.79
+[0;33mW (10623) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -15162.82
+[0;33mW (10633) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -15871.85
+[0;33mW (10643) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -16596.04
+[0;33mW (10643) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -17309.43
+[0;33mW (10653) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -17987.54
+[0;33mW (10653) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -18678.36
+[0;33mW (10663) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -19264.15
+[0;33mW (10663) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -19886.34
+[0;33mW (10673) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -20542.11
+[0;33mW (10683) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -21184.51
+[0;33mW (10683) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -21791.69
+[0;33mW (10693) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -22406.61
+[0;33mW (10693) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -22986.50
+[0;33mW (10703) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -23492.48
+[0;33mW (10703) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -24006.65
+[0;33mW (10713) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -24565.31
+[0;33mW (10723) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -25108.05
+[0;33mW (10723) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -25634.46
+[0;33mW (10733) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -26126.89
+[0;33mW (10733) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -26620.20
+[0;33mW (10743) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -27096.18
+[0;33mW (10743) PID: PID loop took 2395 µs[0m
+CPG Target[0] : -27476.77
+[0;33mW (10753) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -27890.28
+[0;33mW (10763) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -28316.89
+[0;33mW (10763) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -28711.30
+[0;33mW (10773) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -29101.43
+[0;33mW (10773) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -29472.62
+[0;33mW (10783) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -29812.81
+[0;33mW (10783) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -30101.27
+[0;33mW (10793) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -30385.82
+[0;33mW (10803) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -30684.44
+[0;33mW (10803) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -30963.09
+[0;33mW (10813) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -31213.01
+[0;33mW (10813) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -31451.89
+[0;33mW (10823) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -31670.30
+[0;33mW (10823) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -31861.62
+[0;33mW (10833) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32021.96
+[0;33mW (10843) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -32170.73
+[0;33mW (10843) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -32305.85
+[0;33mW (10853) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -32425.12
+[0;33mW (10853) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -32523.29
+[0;33mW (10863) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -32597.99
+[0;33mW (10863) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -32654.50
+[0;33mW (10873) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -32689.76
+[0;33mW (10883) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32702.85
+[0;33mW (10883) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -32700.57
+[0;33mW (10893) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32678.99
+[0;33mW (10893) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32635.74
+[0;33mW (10903) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -32571.24
+[0;33mW (10903) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32488.86
+[0;33mW (10913) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32382.74
+[0;33mW (10923) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32274.34
+[0;33mW (10923) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32129.05
+[0;33mW (10933) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -31974.97
+[0;33mW (10933) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -31789.39
+[0;33mW (10943) PID: PID loop took 2388 µs[0m
+CPG Target[0] : -31590.58
+[0;33mW (10943) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -31364.46
+[0;33mW (10953) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -31117.92
+[0;33mW (10963) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -30860.66
+[0;33mW (10963) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -30625.25
+[0;33mW (10973) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -30354.81
+[0;33mW (10973) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -30034.44
+[0;33mW (10983) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -29694.52
+[0;33mW (10983) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -29347.98
+[0;33mW (10993) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -28970.30
+[0;33mW (11003) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -28573.75
+[0;33mW (11003) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -28216.97
+[0;33mW (11013) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -27816.32
+[0;33mW (11013) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -27368.51
+[0;33mW (11023) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -26919.24
+[0;33mW (11023) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -26436.71
+[0;33mW (11033) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -25936.97
+[0;33mW (11043) PID: PID loop took 2387 µs[0m
+CPG Target[0] : -25438.45
+[0;33mW (11043) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -24905.84
+[0;33mW (11053) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -24452.80
+[0;33mW (11053) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -23930.10
+[0;33mW (11063) PID: PID loop took 2418 µs[0m
+CPG Target[0] : -23353.65
+[0;33mW (11063) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (11063) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -20877.62
+[0;33mW (11093) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -20318.95
+[0;33mW (11093) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -19727.52
+[0;33mW (11103) PID: PID loop took 2414 µs[0m
+CPG Target[0] : -19055.69
+[0;33mW (11113) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -18371.45
+[0;33mW (11113) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -17675.26
+[0;33mW (11123) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -16992.15
+[0;33mW (11123) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -16273.78
+[0;33mW (11133) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -15544.81
+[0;33mW (11133) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -14831.38
+[0;33mW (11143) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -14160.84
+[0;33mW (11153) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -13456.67
+[0;33mW (11153) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -12718.41
+[0;33mW (11163) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -11945.65
+[0;33mW (11163) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -11165.12
+[0;33mW (11173) PID: PID loop took 2399 µs[0m
+CPG Target[0] : -10404.60
+[0;33mW (11173) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -9610.27
+[0;33mW (11183) PID: PID loop took 2308 µs[0m
+CPG Target[0] : -8920.46
+[0;33mW (11193) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -8198.49
+[0;33mW (11193) PID: PID loop took 2335 µs[0m
+CPG Target[0] : -7388.17
+[0;33mW (11203) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -6601.23
+[0;33mW (11203) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -5810.27
+[0;33mW (11213) PID: PID loop took 2306 µs[0m
+CPG Target[0] : -5015.80
+[0;33mW (11213) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -4218.28
+[0;33mW (11223) PID: PID loop took 2327 µs[0m
+CPG Target[0] : -3504.03
+[0;33mW (11223) PID: PID loop took 2308 µs[0m
+CPG Target[0] : -2759.41
+[0;33mW (11233) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -1955.92
+[0;33mW (11243) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -1151.24
+[0;33mW (11243) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -345.86
+[0;33mW (11253) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 459.64
+[0;33mW (11253) PID: PID loop took 2156 µs[0m
+CPG Target[0] : 1264.80
+[0;33mW (11263) PID: PID loop took 2224 µs[0m
+CPG Target[0] : 2040.48
+[0;33mW (11263) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 2843.69
+[0;33mW (11273) PID: PID loop took 2237 µs[0m
+CPG Target[0] : 3559.40
+[0;33mW (11283) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 4273.39
+[0;33mW (11283) PID: PID loop took 2222 µs[0m
+CPG Target[0] : 5042.18
+[0;33mW (11293) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 5836.44
+[0;33mW (11293) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 6627.16
+[0;33mW (11303) PID: PID loop took 2227 µs[0m
+CPG Target[0] : 7413.86
+[0;33mW (11303) PID: PID loop took 2237 µs[0m
+CPG Target[0] : 8196.06
+[0;33mW (11313) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 8945.63
+[0;33mW (11313) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 9717.62
+[0;33mW (11323) PID: PID loop took 2238 µs[0m
+CPG Target[0] : 10401.93
+[0;33mW (11333) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 11108.27
+[0;33mW (11333) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 11862.44
+[0;33mW (11343) PID: PID loop took 2337 µs[0m
+CPG Target[0] : 12635.95
+[0;33mW (11343) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 13374.99
+[0;33mW (11353) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 14105.92
+[0;33mW (11353) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 14828.29
+[0;33mW (11363) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 15541.66
+[0;33mW (11363) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 16270.57
+[0;33mW (11373) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 16890.46
+[0;33mW (11383) PID: PID loop took 2301 µs[0m
+CPG Target[0] : 17526.48
+[0;33mW (11383) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 18201.16
+[0;33mW (11393) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 18864.79
+[0;33mW (11393) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 19540.07
+[0;33mW (11403) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 20179.99
+[0;33mW (11403) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 20807.68
+[0;33mW (11413) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 21422.74
+[0;33mW (11423) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 21960.93
+[0;33mW (11423) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 22530.24
+[0;33mW (11433) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 23107.21
+[0;33mW (11433) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 23670.16
+[0;33mW (11443) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 24218.76
+[0;33mW (11443) PID: PID loop took 2333 µs[0m
+CPG Target[0] : 24771.45
+[0;33mW (11453) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 25289.80
+[0;33mW (11453) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 25792.80
+[0;33mW (11463) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 26211.51
+[0;33mW (11473) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 26701.84
+[0;33mW (11473) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 27142.76
+[0;33mW (11483) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 27583.84
+[0;33mW (11483) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 28008.17
+[0;33mW (11493) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 28415.50
+[0;33mW (11493) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 28805.60
+[0;33mW (11503) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 29191.23
+[0;33mW (11513) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 29545.56
+[0;33mW (11513) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 29846.79
+[0;33mW (11523) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 30167.01
+[0;33mW (11523) PID: PID loop took 2330 µs[0m
+CPG Target[0] : 30447.98
+[0;33mW (11533) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 30742.57
+[0;33mW (11533) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 31008.01
+[0;33mW (11543) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 31254.64
+[0;33mW (11553) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 31482.31
+[0;33mW (11553) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 31697.96
+[0;33mW (11563) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 31886.61
+[0;33mW (11563) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 32032.91
+[0;33mW (11573) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 32175.28
+[0;33mW (11573) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32309.78
+[0;33mW (11583) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 32428.41
+[0;33mW (11583) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 32522.93
+[0;33mW (11593) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 32597.71
+[0;33mW (11603) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 32652.71
+[0;33mW (11603) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 32686.04
+[0;33mW (11613) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 32702.82
+[0;33mW (11613) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 32700.62
+[0;33mW (11623) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 32679.13
+[0;33mW (11623) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32637.80
+[0;33mW (11633) PID: PID loop took 2328 µs[0m
+CPG Target[0] : 32574.13
+[0;33mW (11643) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 32492.53
+[0;33mW (11643) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 32391.21
+[0;33mW (11653) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 32284.14
+[0;33mW (11653) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 32150.96
+[0;33mW (11663) PID: PID loop took 2326 µs[0m
+CPG Target[0] : 31993.70
+[0;33mW (11663) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 31817.02
+[0;33mW (11673) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 31621.03
+[0;33mW (11683) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 31405.86
+[0;33mW (11683) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 31171.63
+[0;33mW (11693) PID: PID loop took 2330 µs[0m
+CPG Target[0] : 30937.20
+[0;33mW (11693) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 30666.63
+[0;33mW (11703) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 30398.72
+[0;33mW (11703) PID: PID loop took 2323 µs[0m
+CPG Target[0] : 30092.42
+[0;33mW (11713) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 29767.87
+[0;33mW (11713) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 29412.68
+[0;33mW (11723) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 29051.57
+[0;33mW (11733) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 28672.84
+[0;33mW (11733) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 28334.35
+[0;33mW (11743) PID: PID loop took 2333 µs[0m
+CPG Target[0] : 27938.46
+[0;33mW (11743) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 27511.26
+[0;33mW (11753) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 27067.37
+[0;33mW (11753) PID: PID loop took 2308 µs[0m
+CPG Target[0] : 26607.06
+[0;33mW (11763) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 26130.60
+[0;33mW (11773) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 25620.41
+[0;33mW (11773) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 25185.56
+[0;33mW (11783) PID: PID loop took 2313 µs[0m
+CPG Target[0] : 24701.82
+[0;33mW (11783) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 24166.41
+[0;33mW (11793) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 23616.34
+[0;33mW (11793) PID: PID loop took 2320 µs[0m
+CPG Target[0] : 23031.52
+[0;33mW (11803) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 22452.63
+[0;33mW (11803) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 21860.13
+[0;33mW (11813) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 21319.89
+[0;33mW (11823) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 20702.59
+[0;33mW (11823) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 20095.43
+[0;33mW (11833) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 19453.81
+[0;33mW (11833) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 18800.40
+[0;33mW (11843) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 18135.57
+[0;33mW (11843) PID: PID loop took 2329 µs[0m
+CPG Target[0] : 17435.40
+[0;33mW (11853) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 16748.61
+[0;33mW (11863) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 16151.82
+[0;33mW (11863) PID: PID loop took 2309 µs[0m
+CPG Target[0] : 15497.18
+[0;33mW (11873) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 14783.13
+[0;33mW (11873) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 14034.13
+[0;33mW (11883) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 13302.28
+[0;33mW (11883) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 12562.36
+[0;33mW (11893) PID: PID loop took 2324 µs[0m
+CPG Target[0] : 11814.82
+[0;33mW (11903) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 11060.11
+[0;33mW (11903) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 10380.58
+[0;33mW (11913) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 9668.54
+[0;33mW (11913) PID: PID loop took 2222 µs[0m
+CPG Target[0] : 8896.08
+[0;33mW (11923) PID: PID loop took 2221 µs[0m
+CPG Target[0] : 8146.10
+[0;33mW (11923) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 7363.49
+[0;33mW (11933) PID: PID loop took 2229 µs[0m
+CPG Target[0] : 6576.41
+[0;33mW (11933) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 5785.34
+[0;33mW (11943) PID: PID loop took 2238 µs[0m
+CPG Target[0] : 4990.76
+[0;33mW (11953) PID: PID loop took 2232 µs[0m
+CPG Target[0] : 4335.78
+[0;33mW (11953) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 3593.24
+[0;33mW (11963) PID: PID loop took 2238 µs[0m
+CPG Target[0] : 2791.50
+[0;33mW (11963) PID: PID loop took 2223 µs[0m
+CPG Target[0] : 1988.07
+[0;33mW (11973) PID: PID loop took 2221 µs[0m
+CPG Target[0] : 1212.17
+[0;33mW (11973) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 406.83
+[0;33mW (11983) PID: PID loop took 2156 µs[0m
+CPG Target[0] : -398.76
+[0;33mW (11983) PID: PID loop took 2224 µs[0m
+CPG Target[0] : -1117.85
+[0;33mW (11993) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -1922.57
+[0;33mW (12003) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -2668.77
+[0;33mW (12003) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -3470.81
+[0;33mW (12013) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -4270.73
+[0;33mW (12013) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -5068.07
+[0;33mW (12023) PID: PID loop took 2325 µs[0m
+CPG Target[0] : -5890.62
+[0;33mW (12023) PID: PID loop took 2347 µs[0m
+CPG Target[0] : -6681.09
+[0;33mW (12033) PID: PID loop took 2312 µs[0m
+CPG Target[0] : -7467.49
+[0;33mW (12033) PID: PID loop took 2313 µs[0m
+CPG Target[0] : -8165.83
+[0;33mW (12043) PID: PID loop took 2317 µs[0m
+CPG Target[0] : -8887.90
+[0;33mW (12053) PID: PID loop took 2318 µs[0m
+CPG Target[0] : -9687.80
+[0;33mW (12053) PID: PID loop took 2321 µs[0m
+CPG Target[0] : -10454.13
+[0;33mW (12063) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -11241.14
+[0;33mW (12063) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -11994.08
+[0;33mW (12073) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -12766.23
+[0;33mW (12073) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -13503.88
+[0;33mW (12083) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -14181.51
+[0;33mW (12093) PID: PID loop took 2413 µs[0m
+CPG Target[0] : -14928.57
+[0;33mW (12083) PCNT:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;33mW (12093) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -17766.61
+[0;33mW (12123) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -18461.18
+[0;33mW (12123) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -19143.74
+[0;33mW (12133) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -19699.21
+[0;33mW (12133) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -20313.61
+[0;33mW (12143) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -20960.75
+[0;33mW (12143) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -21572.64
+[0;33mW (12153) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -22192.58
+[0;33mW (12163) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -22798.08
+[0;33mW (12163) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -23368.62
+[0;33mW (12173) PID: PID loop took 2436 µs[0m
+CPG Target[0] : -23944.60
+[0;33mW (12173) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -24409.51
+[0;33mW (12183) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -24900.88
+[0;33mW (12183) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -25433.63
+[0;33mW (12193) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -25949.83
+[0;33mW (12203) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -26432.21
+[0;33mW (12203) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -26914.89
+[0;33mW (12213) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -27364.32
+[0;33mW (12213) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -27812.29
+[0;33mW (12223) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -28242.16
+[0;33mW (12223) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -28597.99
+[0;33mW (12233) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -28966.74
+[0;33mW (12243) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -29344.61
+[0;33mW (12243) PID: PID loop took 2393 µs[0m
+CPG Target[0] : -29691.31
+[0;33mW (12253) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -30031.41
+[0;33mW (12253) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -30351.96
+[0;33mW (12263) PID: PID loop took 2394 µs[0m
+CPG Target[0] : -30642.71
+[0;33mW (12263) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -30886.61
+[0;33mW (12273) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -31133.23
+[0;33mW (12283) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -31370.43
+[0;33mW (12283) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -31596.04
+[0;33mW (12293) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -31801.07
+[0;33mW (12293) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -31979.40
+[0;33mW (12303) PID: PID loop took 2409 µs[0m
+CPG Target[0] : -32143.64
+[0;33mW (12303) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32263.75
+[0;33mW (12313) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32381.67
+[0;33mW (12323) PID: PID loop took 2415 µs[0m
+CPG Target[0] : -32487.98
+[0;33mW (12323) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32570.55
+[0;33mW (12333) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -32635.24
+[0;33mW (12333) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -32678.69
+[0;33mW (12343) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -32700.46
+[0;33mW (12343) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -32702.09
+[0;33mW (12353) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -32687.34
+[0;33mW (12363) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -32653.33
+[0;33mW (12363) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -32596.28
+[0;33mW (12373) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -32518.01
+[0;33mW (12373) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -32422.36
+[0;33mW (12383) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -32302.55
+[0;33mW (12383) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32166.93
+[0;33mW (12393) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -32005.88
+[0;33mW (12403) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -31850.33
+[0;33mW (12403) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -31657.82
+[0;33mW (12413) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -31453.99
+[0;33mW (12413) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -31215.30
+[0;33mW (12423) PID: PID loop took 2389 µs[0m
+CPG Target[0] : -30965.56
+[0;33mW (12423) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -30687.09
+[0;33mW (12433) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -30388.65
+[0;33mW (12443) PID: PID loop took 2394 µs[0m
+CPG Target[0] : -30081.73
+[0;33mW (12443) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -29792.27
+[0;33mW (12453) PID: PID loop took 2396 µs[0m
+CPG Target[0] : -29463.46
+[0;33mW (12453) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -29104.92
+[0;33mW (12463) PID: PID loop took 2414 µs[0m
+CPG Target[0] : -28714.97
+[0;33mW (12463) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -28306.32
+[0;33mW (12473) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -27894.28
+[0;33mW (12483) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -27449.68
+[0;33mW (12483) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -27003.46
+[0;33mW (12493) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -26574.43
+[0;33mW (12493) PID: PID loop took 2408 µs[0m
+CPG Target[0] : -26079.51
+[0;33mW (12503) PID: PID loop took 2390 µs[0m
+CPG Target[0] : -25621.34
+[0;33mW (12503) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -25094.51
+[0;33mW (12513) PID: PID loop took 2400 µs[0m
+CPG Target[0] : -24551.35
+[0;33mW (12523) PID: PID loop took 2397 µs[0m
+CPG Target[0] : -24011.74
+[0;33mW (12523) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -23437.51
+[0;33mW (12533) PID: PID loop took 2407 µs[0m
+CPG Target[0] : -22889.16
+[0;33mW (12533) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -22327.90
+[0;33mW (12543) PID: PID loop took 2406 µs[0m
+CPG Target[0] : -21754.04
+[0;33mW (12543) PID: PID loop took 2410 µs[0m
+CPG Target[0] : -21124.00
+[0;33mW (12553) PID: PID loop took 2401 µs[0m
+CPG Target[0] : -20502.64
+[0;33mW (12563) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -19845.99
+[0;33mW (12563) PID: PID loop took 2414 µs[0m
+CPG Target[0] : -19199.71
+[0;33mW (12573) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -18518.08
+[0;33mW (12573) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -17920.77
+[0;33mW (12583) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -17217.05
+[0;33mW (12593) PID: PID loop took 2402 µs[0m
+CPG Target[0] : -16551.78
+[0;33mW (12593) PID: PID loop took 2405 µs[0m
+CPG Target[0] : -15826.84
+[0;33mW (12603) PID: PID loop took 2398 µs[0m
+CPG Target[0] : -15117.12
+[0;33mW (12603) PID: PID loop took 2436 µs[0m
+CPG Target[0] : -14372.39
+[0;33mW (12613) PID: PID loop took 2403 µs[0m
+CPG Target[0] : -13618.31
+[0;33mW (12613) PID: PID loop took 2392 µs[0m
+CPG Target[0] : -12881.81
+[0;33mW (12623) PID: PID loop took 2404 µs[0m
+CPG Target[0] : -12217.60
+[0;33mW (12633) PID: PID loop took 2412 µs[0m
+CPG Target[0] : -11412.78
+[0;33mW (12633) PID: PID loop took 2391 µs[0m
+CPG Target[0] : -10708.81
+[0;33mW (12643) PID: PID loop took 2411 µs[0m
+CPG Target[0] : -9917.03
+[0;33mW (12643) PID: PID loop took 2306 µs[0m
+CPG Target[0] : -9146.42
+[0;33mW (12653) PID: PID loop took 2315 µs[0m
+CPG Target[0] : -8370.26
+[0;33mW (12653) PID: PID loop took 2325 µs[0m
+CPG Target[0] : -7561.03
+[0;33mW (12663) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -6775.03
+[0;33mW (12663) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -5984.92
+[0;33mW (12673) PID: PID loop took 2304 µs[0m
+CPG Target[0] : -5276.38
+[0;33mW (12683) PID: PID loop took 2316 µs[0m
+CPG Target[0] : -4508.30
+[0;33mW (12683) PID: PID loop took 2329 µs[0m
+CPG Target[0] : -3709.10
+[0;33mW (12693) PID: PID loop took 2319 µs[0m
+CPG Target[0] : -2907.64
+[0;33mW (12693) PID: PID loop took 2310 µs[0m
+CPG Target[0] : -2104.42
+[0;33mW (12703) PID: PID loop took 2311 µs[0m
+CPG Target[0] : -1299.92
+[0;33mW (12703) PID: PID loop took 2320 µs[0m
+CPG Target[0] : -494.63
+[0;33mW (12713) PID: PID loop took 2233 µs[0m
+CPG Target[0] : 310.89
+[0;33mW (12723) PID: PID loop took 2157 µs[0m
+CPG Target[0] : 1116.14
+[0;33mW (12723) PID: PID loop took 2224 µs[0m
+CPG Target[0] : 1805.83
+[0;33mW (12733) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 2523.41
+[0;33mW (12733) PID: PID loop took 2239 µs[0m
+CPG Target[0] : 3325.64
+[0;33mW (12743) PID: PID loop took 2224 µs[0m
+CPG Target[0] : 4125.86
+[0;33mW (12743) PID: PID loop took 2221 µs[0m
+CPG Target[0] : 4895.14
+[0;33mW (12753) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 5690.00
+[0;33mW (12753) PID: PID loop took 2230 µs[0m
+CPG Target[0] : 6481.41
+[0;33mW (12763) PID: PID loop took 2231 µs[0m
+CPG Target[0] : 7184.72
+[0;33mW (12773) PID: PID loop took 2237 µs[0m
+CPG Target[0] : 7968.28
+[0;33mW (12773) PID: PID loop took 2224 µs[0m
+CPG Target[0] : 8663.82
+[0;33mW (12783) PID: PID loop took 2228 µs[0m
+CPG Target[0] : 9437.84
+[0;33mW (12783) PID: PID loop took 2239 µs[0m
+CPG Target[0] : 10206.13
+[0;33mW (12793) PID: PID loop took 2305 µs[0m
+CPG Target[0] : 10968.23
+[0;33mW (12793) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 11723.68
+[0;33mW (12803) PID: PID loop took 2325 µs[0m
+CPG Target[0] : 12498.60
+[0;33mW (12803) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 13239.09
+[0;33mW (12813) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 13893.47
+[0;33mW (12823) PID: PID loop took 2306 E (12823) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (12823) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (12823) task_wdt: Tasks currently running:[0m
+[1;31mE (12823) task_wdt: CPU 0: cpg_updater[0m
+[1;31mE (12823) task_wdt: CPU 1: pos_loop[0m
+[1;31mE (12823) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400857FE:0x3FFBF860 0x40083B79:0x3FFBF880 0x400D701B:0x3FFD2B90 0x400D76DB:0x3FFD2BC0 0x400D9FDA:0x3FFD2BE0 0x4000BD83:0x3FFD2C00 0x4000182A:0x3FFD2C20 0x400D9A0D:0x3FFD2C40 0x400D9FDA:0x3FFD2C60 0x4000BD83:0x3FFD2C80 0x4000117D:0x3FFD2CA0 0x400592FE:0x3FFD2CC0 0x4005937A:0x3FFD2CE0 0x4013944D:0x3FFD2D00 0x4014454F:0x3FFD2D30 0x40143F66:0x3FFD2D50 0x401398DD:0x3FFD3070 0x40151589:0x3FFD30A0 0x40097521:0x3FFD30D0 0x400DB172:0x3FFD3120 0x40091FD5:0x3FFD31A0
+
+µs
+CPG Target[0] : 19443.71
+[0;33mW (12893) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 20085.42
+[0;33mW (12903) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 20648.10
+[0;33mW (12903) PID: PID loop took 2317 µs[0m
+CPG Target[0] : 21266.43
+[0;33mW (12913) PID: PID loop took 2321 µs[0m
+CPG Target[0] : 21829.05
+[0;33mW (12913) PID: PID loop took 2319 µs[0m
+CPG Target[0] : 22443.11
+[0;33mW (12923) PID: PID loop took 2310 µs[0m
+CPG Target[0] : 23022.14
+[0;33mW (12923) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 23587.20
+[0;33mW (12933) PID: PID loop took 2314 µs[0m
+CPG Target[0] : 24137.96
+[0;33mW (12943) PID: PID loop took 2338 µs[0m
+CPG Target[0] : 24692.94
+[0;33mW (12943) PID: PID loop took 2322 µs[0m
+CPG Target[0] : 25213.54
+[0;33mW (12953) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 25647.61
+[0;33mW (12953) PID: PID loop took 2306 µs[0m
+CPG Target[0] : 26104.95
+[0;33mW (12963) PID: PID loop took 2316 µs[0m
+CPG Target[0] : 26582.19
+[0;33mW (12963) PID: PID loop took 2327 µs[0m
+CPG Target[0] : 27059.48
+[0;33mW (12973) PID: PID loop took 2307 µs[0m
+CPG Target[0] : 27503.63
+[0;33mW (12983) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 27931.07
+[0;33mW (12983) PID: PID loop took 2312 µs[0m
+CPG Target[0] : 28341.56
+[0;33mW (12993) PID: PID loop took 2318 µs[0m
+CPG Target[0] : 28734.86
+W (12993) PID: PID loop took 2321 µs
+CPG Target[0] : 29123.84
+[0;33mW (13003) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 29431.46
+[0;33mW (13003) PID: PID loop took 2311 µs[0m
+CPG Target[0] : 29749.91
+[0;33mW (13013) PID: PID loop took 2315 µs[0m
+CPG Target[0] : 30075.45
+[0;33mW (13013) PID: PID loop took 2331 µs[0m
+CPG Target[0] : 30382.73

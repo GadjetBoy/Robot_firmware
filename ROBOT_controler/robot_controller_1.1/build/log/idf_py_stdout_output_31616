@@ -1,0 +1,85 @@
+[1/13] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\ROBOT_controler\robot_controller_1.1\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6560 bytes. 0xaa0 bytes (9%) free.
+[2/13] No install step for 'bootloader'
+[3/13] Completed 'bootloader'
+[4/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/robot_controller_1.1.c.obj
+[5/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/LEDC_unit.c.obj
+[6/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/PCNT_unit.c.obj
+[7/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/PID_unit.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/PID_unit.c: In function 'pid_task':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/PID_unit.c:232:31: warning: passing argument 2 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  232 |         memcpy(pos_target_val,float_val,sizeof(float)*4);
+      |                               ^~~~~~~~~
+In file included from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/robot_controller.h:5,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/PID_unit.c:1:
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:36: note: expected 'const void * restrict' but argument is of type 'volatile float *'
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                                    ^
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/PID_unit.c:233:40: warning: passing argument 2 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  233 |         memcpy(neg_target_val,float_val+4,sizeof(float)*4);
+      |                               ~~~~~~~~~^~
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:36: note: expected 'const void * restrict' but argument is of type 'volatile float *'
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                                    ^
+[8/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/BLE_module.c.obj
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:40:21: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   40 |     .attr_value   = rx_buffer,
+      |                     ^~~~~~~~~
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c: In function 'gatts_profile_a_event_handler':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:351:34: warning: passing argument 1 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  351 |                  memcpy(rx_buffer+recv_len, param->write.value, len);
+      |                         ~~~~~~~~~^~~~~~~~~
+In file included from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/robot_controller.h:5,
+                 from C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:1:
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:18: note: expected 'void * restrict' but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                  ^
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:372:27: warning: passing argument 1 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  372 |                    memcpy(int_val, rx_buffer + 1, NUMBER_OF_INTS);
+      |                           ^~~~~~~
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:18: note: expected 'void * restrict' but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                  ^
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:372:46: warning: passing argument 2 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  372 |                    memcpy(int_val, rx_buffer + 1, NUMBER_OF_INTS);
+      |                                    ~~~~~~~~~~^~~
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:36: note: expected 'const void * restrict' but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                                    ^
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:376:27: warning: passing argument 1 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  376 |                    memcpy(float_val,rx_buffer+NUMBER_OF_INTS+1,NUMBER_OF_FLOATS*sizeof(float));
+      |                           ^~~~~~~~~
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:18: note: expected 'void * restrict' but argument is of type 'volatile float *'
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                  ^
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:376:61: warning: passing argument 2 of 'memcpy' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  376 |                    memcpy(float_val,rx_buffer+NUMBER_OF_INTS+1,NUMBER_OF_FLOATS*sizeof(float));
+      |                                     ~~~~~~~~~~~~~~~~~~~~~~~~^~
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:31:36: note: expected 'const void * restrict' but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+   31 | void *   memcpy (void *__restrict, const void *__restrict, size_t);
+      |                                    ^
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c: In function 'BLE_app_main':
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:616:13: warning: passing argument 1 of 'memset' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  616 |      memset(float_val, 0, sizeof(float_val));
+      |             ^~~~~~~~~
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:33:18: note: expected 'void *' but argument is of type 'volatile float *'
+   33 | void *   memset (void *, int, size_t);
+      |                  ^~~~~~
+C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/main/BLE_module.c:617:13: warning: passing argument 1 of 'memset' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  617 |      memset(int_val, 0, sizeof(int_val));
+      |             ^~~~~~~
+C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/string.h:33:18: note: expected 'void *' but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+   33 | void *   memset (void *, int, size_t);
+      |                  ^~~~~~
+[9/13] Linking C static library esp-idf\main\libmain.a
+[10/13] Generating ld/sections.ld
+[11/13] Linking CXX executable robot_controller_1.1.elf
+[12/13] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/build/robot_controller_1.1.bin
+[13/13] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\ROBOT_controler\robot_controller_1.1\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/ROBOT_controler/robot_controller_1.1/build/robot_controller_1.1.bin"
+robot_controller_1.1.bin binary size 0xbab70 bytes. Smallest app partition is 0x100000 bytes. 0x45490 bytes (27%) free.

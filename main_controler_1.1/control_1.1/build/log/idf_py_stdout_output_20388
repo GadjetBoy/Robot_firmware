@@ -1,0 +1,648 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15716
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (30) boot: ESP-IDF v5.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Sep 21 2025 12:30:22[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v1.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=13e74h ( 81524) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00023e9c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (117) esp_image: segment 2: paddr=00023ec0 vaddr=3ffbdb60 size=04dc8h ( 19912) load[0m
+[0;32mI (128) esp_image: segment 3: paddr=00028c90 vaddr=40080000 size=07388h ( 29576) load[0m
+[0;32mI (140) esp_image: segment 4: paddr=00030020 vaddr=400d0020 size=75790h (481168) map[0m
+[0;32mI (304) esp_image: segment 5: paddr=000a57b8 vaddr=40087388 size=127f4h ( 75764) load[0m
+[0;32mI (347) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (347) boot: Disabling RNG early entropy source...[0m
+[0;32mI (357) cpu_start: Multicore app[0m
+[0;32mI (365) cpu_start: Pro cpu start user code[0m
+[0;32mI (365) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (366) app_init: Application information:[0m
+[0;32mI (366) app_init: Project name:     control_1.1[0m
+[0;32mI (370) app_init: App version:      v5.4[0m
+[0;32mI (373) app_init: Compile time:     Sep 21 2025 12:30:23[0m
+[0;32mI (379) app_init: ELF file SHA256:  f87cf9617...[0m
+[0;32mI (383) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (386) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (390) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (394) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (398) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (405) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (410) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (415) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (420) heap_init: At 3FFC49C0 len 0001B640 (109 KiB): DRAM[0m
+[0;32mI (425) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (431) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 40099B7C len 00006484 (25 KiB): IRAM[0m
+[0;32mI (443) spi_flash: detected chip: generic[0m
+[0;32mI (445) spi_flash: flash io: dio[0m
+[0;32mI (449) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (453) main_task: Started on CPU0[0m
+[0;32mI (456) main_task: Calling app_main()[0m
+[0;32mI (459) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (467) i2c.common: new bus(0) at 0x3ffbd728
+[0;32mI (471) I2C SLAVE: Slave initialization complete and ready to receive data[0m
+[0;32mI (477) I2C SLAVE:  [0m
+ENCODER[1] READING: 0
+ENCODER[2] READING: 0
+ENCODER[3] READING: 0
+ENCODER[4] READING: 0
+ENCODER[5] READING: 0
+ENCODER[6] READING: 0
+ENCODER[7] READING: 0
+ENCODER[8] READING: 0
+[0;32mI (495) I2C SLAVE: .............[0m
+
+[0;32mI (498) I2C SLAVE: Setting up PWM and PID module [0m
+[0;32mI (503) LEDC_PWM_UNIT: setting up LEDC units and chaneels[0m
+[0;32mI (508) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (516) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (524) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (533) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (549) gpio: GPIO[14]߭��z���Ʌ�����Pullup: 1|�U����ݹ� 0| Intr�H([0m
+B���J:���:A%=m�3]| InputEn: 0| _ut�ut�n:(�| Or��;�K��ж�.������� 0|�.'bj�R��pio: GPIO[22]| Inpu�QK��OutputEn: 0| OpenDrain: 0| Pullu�'��Pulldo�n: 4�J����0)
+I���sS	��:��=m�1]| Inpw�Gn� ������n��M�OqenDrXZKB0|e����� 1_4������� 0| Int�:0�C�
+B���J:����"GPIO[19]| InputG�: 0| OutrutEn: 0| O�ًɅ��� 0| Pullu�I (5714) I2C SLAVE: Receiving ..... (notify count: 1)
+
+[0;32mI (5714) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (8757) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (8757) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (10269) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (10270) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (11816) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (11816) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (13347) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (13347) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (14895) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (14895) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (16426) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (16426) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (17294) BLE UNIT: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 47:27:17:6c:d6:67:, link_role 1[0m
+[0;32mI (17383) BLE UNIT: Unhandled event: 21[0m
+[0;32mI (17740) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (17974) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (17975) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (18265) BLE UNIT: update connection params status = 0, conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (18449) BLE UNIT: GATT_WRITE_EVT, handle 45[0m
+[0;33mW (18450) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (18450) BLE UNIT: CCCD Write: 0001[0m
+[0;32mI (18450) BLE UNIT: notify enable[0m
+[0;32mI (18492) BLE UNIT: update connection params status = 0, conn_int = 48,latency = 0, timeout = 400[0m
+[0;32mI (19505) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (19505) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (20902) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (20904) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (20905) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (20906) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (20912) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (20918) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (20924) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (20930) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (20936) BLE UNIT: 00 00 00 00[0m
+[0;33mW (20938) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (21022) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (21025) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (21025) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (21054) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (21054) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (21202) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (21205) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (21205) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (21382) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (21385) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (21385) BLE UNIT: BLE data received complete[0m
+[0;33mW (21386) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (21392) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (21395) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (21400) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (21406) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (21412) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (21418) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (21424) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (22042) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22045) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (22045) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (22046) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (22052) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (22058) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (22064) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (22070) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (22076) BLE UNIT: 00 00 00 00[0m
+[0;33mW (22079) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (22162) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22165) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (22165) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (22282) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22285) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (22285) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (22462) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (22465) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (22465) BLE UNIT: BLE data received complete[0m
+[0;33mW (22466) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (22472) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (22475) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (22480) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (22486) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (22492) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (22498) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (22504) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (22585) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (22585) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (23062) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23064) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (23065) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (23066) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (23072) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (23078) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (23084) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (23090) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (23096) BLE UNIT: 00 00 00 00[0m
+[0;33mW (23098) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (23182) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23185) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (23185) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (23302) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23305) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (23305) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (23422) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (23425) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (23425) BLE UNIT: BLE data received complete[0m
+[0;33mW (23426) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (23432) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (23435) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (23440) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (23446) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (23452) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (23458) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (23464) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (24022) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24024) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (24025) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (24026) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (24032) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (24038) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (24044) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (24050) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (24056) BLE UNIT: 00 00 00 00[0m
+[0;33mW (24058) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (24133) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (24133) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (24202) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24205) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (24205) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (24322) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24325) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (24325) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (24442) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (24445) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (24445) BLE UNIT: BLE data received complete[0m
+[0;33mW (24446) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (24452) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (24455) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (24460) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (24466) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (24472) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (24478) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (24484) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (25042) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25044) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (25045) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (25046) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (25052) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (25058) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (25064) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (25070) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (25076) BLE UNIT: 00 00 00 00[0m
+[0;33mW (25078) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (25162) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25165) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (25165) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (25342) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25345) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (25345) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (25462) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (25465) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (25465) BLE UNIT: BLE data received complete[0m
+[0;33mW (25466) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (25472) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (25475) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (25481) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (25486) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (25492) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (25498) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (25504) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (25664) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (25664) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (26062) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26065) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (26065) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (26066) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (26072) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (26078) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (26084) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (26090) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (26096) BLE UNIT: 00 00 00 00[0m
+[0;33mW (26099) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (26182) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26185) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (26185) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (26302) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26305) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (26305) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (26482) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (26485) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (26485) BLE UNIT: BLE data received complete[0m
+[0;33mW (26486) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (26493) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (26495) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (26501) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (26506) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (26512) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (26518) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (26524) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (27142) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27145) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (27145) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (27146) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (27152) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (27158) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (27164) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (27170) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (27176) BLE UNIT: 00 00 00 00[0m
+[0;33mW (27179) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (27213) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (27213) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (27262) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27265) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (27265) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (27382) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27385) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (27385) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (27502) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (27505) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (27505) BLE UNIT: BLE data received complete[0m
+[0;33mW (27506) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (27513) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (27515) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (27521) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (27526) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (27532) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (27538) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (27544) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (28102) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28105) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (28105) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (28106) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (28112) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (28118) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (28124) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (28130) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (28136) BLE UNIT: 00 00 00 00[0m
+[0;33mW (28139) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (28282) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28285) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (28285) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (28402) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28405) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (28405) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (28522) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (28525) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (28525) BLE UNIT: BLE data received complete[0m
+[0;33mW (28526) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (28533) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (28535) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (28541) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (28546) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (28552) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (28558) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (28564) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (28744) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (28744) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (29182) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29185) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (29185) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (29186) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (29192) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (29198) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (29204) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (29210) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (29216) BLE UNIT: 00 00 00 00[0m
+[0;33mW (29219) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (29302) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29305) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (29305) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (29482) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29485) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (29485) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (29602) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (29605) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (29605) BLE UNIT: BLE data received complete[0m
+[0;33mW (29606) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (29613) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (29615) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (29621) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (29627) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (29633) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (29638) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (29644) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (30202) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30205) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (30205) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (30206) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (30212) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (30218) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (30224) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (30230) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (30236) BLE UNIT: 00 00 00 00[0m
+[0;33mW (30239) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (30292) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (30292) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (30322) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30325) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (30325) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (30442) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30445) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (30445) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (30562) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (30565) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (30565) BLE UNIT: BLE data received complete[0m
+[0;33mW (30566) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (30573) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (30575) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (30581) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (30587) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (30593) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (30598) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (30604) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (31162) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31165) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (31165) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (31166) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (31172) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (31178) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (31184) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (31190) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (31196) BLE UNIT: 00 00 00 00[0m
+[0;33mW (31199) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (31282) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31285) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (31285) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (31402) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31404) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (31405) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (31582) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (31585) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (31585) BLE UNIT: BLE data received complete[0m
+[0;33mW (31587) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (31593) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (31595) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (31601) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (31607) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (31613) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (31619) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (31625) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (31823) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (31823) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (32182) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32185) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (32185) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (32186) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (32192) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (32198) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (32204) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (32210) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (32216) BLE UNIT: 00 00 00 00[0m
+[0;33mW (32219) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (32302) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32305) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (32305) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (32422) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32425) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (32425) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (32602) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (32605) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (32605) BLE UNIT: BLE data received complete[0m
+[0;33mW (32607) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (32613) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (32615) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (32621) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (32627) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (32633) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (32639) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (32645) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (33201) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33204) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (33204) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (33206) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (33212) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (33217) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (33223) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (33229) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (33235) BLE UNIT: 00 00 00 00[0m
+[0;33mW (33238) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (33371) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (33372) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (33382) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33385) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (33385) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (33502) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33505) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (33505) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (33622) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (33625) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (33625) BLE UNIT: BLE data received complete[0m
+[0;33mW (33627) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (33633) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (33635) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (33641) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (33647) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (33653) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (33659) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (33665) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (34221) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34224) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (34224) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (34226) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (34232) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (34237) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (34243) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (34249) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (34255) BLE UNIT: 00 00 00 00[0m
+[0;33mW (34258) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (34342) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34345) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (34345) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (34522) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34525) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (34525) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (34642) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (34645) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (34645) BLE UNIT: BLE data received complete[0m
+[0;33mW (34647) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (34653) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (34655) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (34661) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (34667) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (34673) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (34679) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (34685) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (34902) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (34903) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (35241) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35244) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (35244) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (35246) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (35252) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (35257) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (35263) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (35269) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (35275) BLE UNIT: 00 00 00 00[0m
+[0;33mW (35278) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (35362) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35365) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (35365) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (35482) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35485) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (35485) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (35602) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (35605) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (35605) BLE UNIT: BLE data received complete[0m
+[0;33mW (35607) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (35613) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (35615) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (35621) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (35627) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (35633) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (35639) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (35645) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (36261) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36264) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (36265) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (36266) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (36272) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (36277) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (36283) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (36289) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (36295) BLE UNIT: 00 00 00 00[0m
+[0;33mW (36298) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (36382) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36385) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (36385) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (36451) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (36451) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (36502) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36505) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (36505) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (36622) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (36625) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (36625) BLE UNIT: BLE data received complete[0m
+[0;33mW (36627) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (36633) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (36635) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (36641) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (36647) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (36653) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (36659) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (36665) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (37281) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37284) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (37285) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (37286) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (37292) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (37298) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (37303) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (37309) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (37315) BLE UNIT: 00 00 00 00[0m
+[0;33mW (37318) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (37402) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37405) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (37405) BLE UNIT: BLE data receiving in progress: 40/68[0m
+[0;32mI (37522) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37525) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (37525) BLE UNIT: BLE data receiving in progress: 60/68[0m
+[0;32mI (37642) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (37644) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;32mI (37644) BLE UNIT: BLE data received complete[0m
+[0;33mW (37646) BLE UNIT: Total BLE data received: 68/68[0m
+[1;31mE (37652) BLE UNIT: Invalid packet length: 68[0m
+[1;31mE (37654) BLE UNIT: Queue contained invalid packet - skipping[0m
+[0;32mI (37660) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (37666) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (37672) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (37678) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (37684) BLE UNIT: 00 00 7d 5a[0m
+[0;32mI (37982) I2C SLAVE: Receiving ..... (notify count: 1)[0m
+
+[0;32mI (37982) I2C SLAVE: Data Received - Encoder values updated[0m
+
+[0;32mI (38242) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38244) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (38245) BLE UNIT: start marker recieved: 0xA5[0m
+[1;31mE (38246) BLE UNIT: recieve packet ERROR:recieve buffer reset[0m
+[0;32mI (38252) BLE UNIT: a5 01 00 00 7a 45 00 00 7a c5 00 00 7a 45 00 00[0m
+[0;32mI (38258) BLE UNIT: fa c5 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (38264) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (38270) BLE UNIT: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00[0m
+[0;32mI (38275) BLE UNIT: 00 00 00 00[0m
+[0;33mW (38278) BLE UNIT: BLE data receiving in progress: 20/68[0m
+[0;32mI (38362) BLE UNIT: GATT_WRITE_EVT, handle 42[0m
+[0;33mW (38365) BLE UNIT: BLE data receiving length: 0/68[0m
+[0;33mW (38365) BLE UNIT: BLE data receiving in progress: 40/68[0m
