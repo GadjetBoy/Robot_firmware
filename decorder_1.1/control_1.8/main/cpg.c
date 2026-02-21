@@ -33,16 +33,20 @@ volatile DRAM_ATTR uint8_t current_write_index = 0;
 portMUX_TYPE pid_buffer_swap_mux = portMUX_INITIALIZER_UNLOCKED;
 portMUX_TYPE cpg_mux = portMUX_INITIALIZER_UNLOCKED;
 
-static volatile uint8_t last_mode;
+static volatile uint8_t last_cmd;
 
 // CPG globals
 volatile Oscillator cpg_network[NUM_OSCILLATORS];
 volatile osc_pram CPG_network_pram;
-volatile uint8_t current_mode = CPG_MODE_IDLE;
+volatile uint8_t cmd = CPG_MODE_IDLE;
 volatile CPG_RunMode cpg_run_mode = CPG_MODE_IDLE;
+volatile body_posture_t posture = BODY_POSTURE_NORMAL;
+turning_modes turn_mode = MODE_NORMAL;
 volatile float coupling_weights[NUM_OSCILLATORS][NUM_OSCILLATORS];
 volatile float phase_offsets[NUM_OSCILLATORS][NUM_OSCILLATORS];
+volatile LegOrientation leg_orientation = LEG_ORIENTATION_NORMAL;
 SemaphoreHandle_t cpg_params_mutex;
+volatile bool pivot_turn =false;
 
 static esp_timer_handle_t cpg_timer_handle;
 static TaskHandle_t cpg_task_handle = NULL;
@@ -65,11 +69,30 @@ inline void update_uart_motor_commands(float *new_commands) {
     taskEXIT_CRITICAL(&pid_buffer_swap_mux);
 }
 
-static inline uint8_t get_mode(void) {
+void update_orientation_from_ble(uint8_t cmd)
+{
+    if (cmd == 6)
+        leg_orientation = LEG_ORIENTATION_NORMAL;
+    else if (cmd == 7)
+        leg_orientation = LEG_ORIENTATION_INVERTED;
+}
+
+static inline uint8_t get_commands(void) {
+
     taskENTER_CRITICAL(&ble_mux);
-    current_mode = byte_val[0];
+    cmd = byte_val[0];
     taskEXIT_CRITICAL(&ble_mux);
-    return current_mode;
+
+    update_orientation_from_ble(cmd);
+
+    if(cmd == MODE_PIVOT_TURN){
+        pivot_turn = true;
+    }
+    else{
+       pivot_turn = false; 
+    }
+
+    return cmd;
 }
 
 // ====================== PID Functions ======================
@@ -86,8 +109,8 @@ void update_PID_gain(void) {
 
     if (xSemaphoreTake(pid_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE){
        Update_PID.pos_pid.Kp = pid_ble_params.Kp;
-       Update_PID.pos_pid.Kd = pid_ble_params.Ki;
-       Update_PID.pos_pid.Ki = pid_ble_params.Kd;
+       Update_PID.pos_pid.Ki = pid_ble_params.Ki;
+       Update_PID.pos_pid.Kd = pid_ble_params.Kd;
 
         xSemaphoreGive(pid_params_mutex);
     }
@@ -97,7 +120,7 @@ void update_PID_gain(void) {
             motors[i].pos_pid.Kp = Update_PID.pos_pid.Kp * fminf(1.0f + 0.3f * freq_scale, 2.5f);  // Cap eff Kp<=5
             motors[i].pos_pid.Kd = Update_PID.pos_pid.Kd * (1.0f + 0.6f * freq_scale);  // Milder Kd scale
             motors[i].pos_pid.Ki = fmaxf(Update_PID.pos_pid.Ki * 0.8f, 0.005f);  // FIXED: Floor at 0.005, less reduction
-            motors[i].pos_pid.limMaxInt = 150.0f / freq_scale;  // FIXED: Tighter (200→150) to limit windup             
+            motors[i].pos_pid.limMaxInt = 300.0f / freq_scale;  // FIXED: Tighter (200→150) to limit windup             
     }
 }
 
@@ -188,8 +211,8 @@ void run_position_loop(){
 
         pid_outputs[i] = motors[i].pos_pid.output; // Collect for UART
 
-        if (!motors[i].active || cpg_run_mode == CPG_MODE_STANDBY){
-            if (fabsf((float)motors[i].current_position) <= STOP_THRESHOLD*3){
+        if (!motors[i].active && cpg_run_mode == CPG_MODE_IDLE){
+            if (fabsf((float)motors[i].current_position) <= STOP_THRESHOLD*2){
                 pid_outputs[i] = 0.0f;
             }
         }
@@ -234,12 +257,16 @@ void pid_app_main(void) {
 void motor_set(uint8_t i, float target, bool set) {
     if (i >= NUM_MOTORS) return;
 
+    float signed_target =target;
+
     //Sign flip for right legs (FR/BR: indices 1,3,5,7) for symmetry (forward gait)
     bool is_right_leg = (i == FRK || i == BRK);  // Adjust indices if mapping differs
-    float signed_target = is_right_leg ? -target : target;  // Mirror right for opposite swing
-
+    if(is_right_leg && pivot_turn == false){
+      signed_target = -signed_target ;  // Mirror right for opposite swing
+    }
+    
     bool is_hip = (i == FLH || i == FRH || i == BLH || i == BRH);// Check if it's a hip joint
-    if (last_mode == MODE_CREEP && is_hip) {
+    if (last_cmd == MODE_CREEP && is_hip) {
 
         float hip_offset = cpg_network[i].offset;
 
@@ -249,10 +276,19 @@ void motor_set(uint8_t i, float target, bool set) {
         }
     }
 
+    if ( leg_orientation == LEG_ORIENTATION_INVERTED) {
+     signed_target = -signed_target;
+    }
+
     // Velocity FF (on signed target for correct direction)
     float phase = cpg_network[i].phase;
     float vel_ff = cpg_network[i].amplitude * cpg_network[i].omega * cosf(phase);
     motors[i].target_position = signed_target + (vel_ff * PID_DT * 0.6f);  // Keep your tuned gain
+
+    if(!set){
+      motors[i].target_position = 0;  
+    }
+
     motors[i].active = set;
     motors[i].prev_target = signed_target;
 
@@ -277,15 +313,19 @@ void cpg_update_task(void *arg) {
 
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
-        if (cpg_run_mode == CPG_MODE_IDLE) {   
-            vTaskDelay(pdMS_TO_TICKS(10));
-            run_position_loop();
-            continue;
-        }
-
         start = esp_timer_get_time();
         if (xSemaphoreTake(cpg_params_mutex, pdMS_TO_TICKS(10)) != pdTRUE) {
             ESP_LOGE(TAG_CPG, "CPG mutex timeout!");
+            continue;
+        }
+
+        if (cpg_run_mode == CPG_MODE_IDLE) {   
+            vTaskDelay(pdMS_TO_TICKS(2));
+            for(int i = 0;i<NUM_MOTORS;i++){
+             motor_set((uint8_t)i, 0,false);
+            }
+            xSemaphoreGive(cpg_params_mutex);
+            run_position_loop();
             continue;
         }
 
@@ -362,39 +402,69 @@ void Update_Oscillator_base_parameters(void) {
     ESP_LOGI(TAG_CPG, "Base params updated for freq=%.2f Hz", CPG_frequency);
 }
 
-// Sequence runner (checks mode changes)
+static inline void set_system_idle(){
+     vTaskDelay(pdMS_TO_TICKS(10));
+     set_gait_standby();
+}
 
-void sequence_runner_task(void *arg) {
-    uint8_t mode;
-    last_mode = 255;
+// Sequence runner (checks command changes)
+
+void command_runner_task(void *arg) {
+    uint8_t cmd;
+    last_cmd = 255;
     while (1) {
-        mode = get_mode();
-        if (mode != last_mode) {
-            ESP_LOGE(TAG_SEQ, "Mode change: %d -> %d", last_mode, mode);
+        cmd = get_commands();
+        if (cmd != last_cmd) {
+            ESP_LOGE(TAG_SEQ, "Mode change: %d -> %d", last_cmd, cmd);
             // Take mutex, set gait, release mutex QUICKLY
             if (xSemaphoreTake(cpg_params_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
-                switch (mode) {
+                switch (cmd) {
                     case CPG_MODE_IDLE:
                         set_gait_idle();
+                        //set_gait_creep();
                         break;
                     case CPG_MODE_STANDBY:
                         set_gait_standby();
                         break;
                     case MODE_TURTLE:
-                        set_gait_trot();
+                        set_gait_trot(STRAIGHT,BODY_POSTURE_NORMAL);
                         break;
                     case MODE_CRAWL:
-                        set_gait_crawl();
+                        set_gait_crawl(STRAIGHT,BODY_POSTURE_NORMAL);
                         break;
                     case MODE_CREEP:
-                        set_gait_creep();
+                        set_gait_creep(STRAIGHT,BODY_POSTURE_NORMAL);
+                        break;
+                    case MODE_TROT_LEFT:
+                        set_gait_trot(LEFT,BODY_POSTURE_NORMAL);
+                        break;
+                    case MODE_TROT_RIGHT:
+                        set_gait_trot(RIGHT,BODY_POSTURE_NORMAL);
+                        break;
+                    case MODE_CREEP_LEFT:
+                        set_gait_creep(LEFT,BODY_POSTURE_NORMAL);
+                        break;
+                    case MODE_CREEP_RIGHT:
+                        set_gait_creep(RIGHT,BODY_POSTURE_NORMAL);
+                        break;
+                    case MODE_CRAWL_LEFT:
+                        set_gait_crawl(LEFT,BODY_POSTURE_NORMAL);
+                       break;
+                    case MODE_CRAWL_RIGHT:
+                        set_gait_crawl(RIGHT,BODY_POSTURE_NORMAL);
+                       break;
+                    case LEG_ORIENTATION_INVERTED:
+                        set_system_idle();
+                        break;
+                    case LEG_ORIENTATION_NORMAL:
+                        set_system_idle();
                         break;
                     default:
                         set_gait_idle();
                         break;
                 }
 
-                last_mode = mode;
+                last_cmd = cmd;
                 xSemaphoreGive(cpg_params_mutex);
             } else {
                 ESP_LOGE(TAG_SEQ, "Sequence mutex timeout!");
@@ -434,9 +504,9 @@ void CPG_app_main(void) {
     set_gait_idle(); // Safe start
     Update_Oscillator_base_parameters();
     // Create tasks
-    xTaskCreatePinnedToCore(sequence_runner_task, "seq_runner", 4096, NULL, 15, &seq_task_handle, 1);
+    xTaskCreatePinnedToCore(command_runner_task, "seq_runner", 4096, NULL, 20, &seq_task_handle, 1);
     vTaskDelay(pdMS_TO_TICKS(100));
-    xTaskCreatePinnedToCore(cpg_update_task, "cpg_update", 4096, NULL, 20, &cpg_task_handle, 1);
+    xTaskCreatePinnedToCore(cpg_update_task, "cpg_update", 4096, NULL, 18, &cpg_task_handle, 1);
     vTaskDelay(pdMS_TO_TICKS(100));
     hardware_Timer_setup();
     vTaskDelay(pdMS_TO_TICKS(100));

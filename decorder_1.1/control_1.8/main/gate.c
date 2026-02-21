@@ -1,24 +1,26 @@
 #include "cpg.h"
-#include "gate.h" 
+#include "gate.h"
+
+static inline void set_gait_trot_left(void);
+static inline void set_gait_trot_right(void);
+static inline void set_gait_crawl_left(void);
+static inline void set_gait_crawl_right(void);
+static inline void set_gait_creep_left(void);
+static inline void set_gait_creep_right(void); 
 
 // Gait: IDLE (all off)
 inline void set_gait_idle(void)
 {
     cpg_run_mode = CPG_MODE_IDLE;
 
-    memset((void*)coupling_weights, 0, sizeof(coupling_weights));
-    memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+    //memset((void*)coupling_weights, 0, sizeof(coupling_weights));
+    //memset((void*)phase_offsets, 0, sizeof(phase_offsets));
 
-    for (int i = 0; i < NUM_OSCILLATORS; i++) {
-        cpg_network[i].phase = 0.0f;
-        set_oscillator_params(i, cpg_network[i].omega, 0.0f, 0.0f);
-        
-    }
 }
 
 
 // Gait: TROT (diagonal sync, alias for MODE_TURTLE)
-inline void set_gait_trot(void) {
+inline void set_gait_trot(uint8_t func_mode ,uint8_t posture) {
     ESP_LOGI(TAG_CPG, "set_gait_trot START ");
 
     cpg_run_mode = CPG_MODE_ACTIVE;
@@ -26,10 +28,24 @@ inline void set_gait_trot(void) {
     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
 
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
-    CPG_network_pram.hip_amp = 16352.0f;
-    CPG_network_pram.knee_amp = 32704.0f;
-    CPG_network_pram.hip_offset = 0.0f;
-    CPG_network_pram.knee_offset = 0.0f;
+    CPG_network_pram.hip_amp = 32704.0f;
+    CPG_network_pram.knee_amp = 16352.0f;
+
+    if(posture == BODY_POSTURE_NORMAL){
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 16000.0f;
+    }
+
+    if(posture == BODY_POSTURE_LOW){
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 6000.0f;
+    }
+
+    if(posture == BODY_POSTURE_CROUCH){
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 0.0f;
+    }
+
     CPG_network_pram.KH_offset = 4.0f;
 
     // FIXED: Milder scaling (10-15% max cut at 0.2 Hz; hips slightly more to ease inertia)
@@ -46,18 +62,25 @@ inline void set_gait_trot(void) {
    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp, CPG_network_pram.knee_amp);
    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
 
-    // Set oscillators
-    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
-    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+   if(func_mode == LEFT) set_gait_trot_left();
+   else if(func_mode == RIGHT) set_gait_trot_right();
+   else{
 
-    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
-    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     // Set oscillators
+     float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+     set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+
+     float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+     set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+
+    }
+
 
     // Couplings
     float K_intra_leg = 8.0f;
@@ -94,7 +117,7 @@ inline void set_gait_trot(void) {
 
 // Gait: CRAWL (Creep Gait - 4 Beat Lateral Sequence)
 // Sequence: BR -> FR -> BL -> FL
-inline void set_gait_creep(void) {
+inline void set_gait_creep(uint8_t func_mode,uint8_t posture) {
     ESP_LOGI(TAG_CPG, "set_gait_Creep START");
 
     cpg_run_mode = CPG_MODE_ACTIVE;
@@ -105,10 +128,23 @@ inline void set_gait_creep(void) {
     
     // For creep/crawl, we usually want high hip amplitude (long step) 
     // but moderate knee amplitude (just enough to clear ground).
-    CPG_network_pram.hip_amp = 9000.0f;  
-    CPG_network_pram.knee_amp = 11500.0f; // Slightly lower than trot to reduce impact
-    CPG_network_pram.hip_offset = -6000.0f;
-    CPG_network_pram.knee_offset = 0.0f;
+    CPG_network_pram.hip_amp = 11500.0f; 
+    CPG_network_pram.knee_amp = 9000.0f; // Slightly lower than trot to reduce impact
+
+    if(posture == BODY_POSTURE_NORMAL){
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 16000.0f;
+    }
+
+    if(posture == BODY_POSTURE_LOW){
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 6000.0f;
+    }
+
+    if(posture == BODY_POSTURE_CROUCH){
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 0.0f;
+    }
     
     // KH_offset determines the phase shift between Hip and Knee.
     // 4.0 means 90 degrees (Quarter cycle lag), ensuring the leg lifts as it swings forward.
@@ -125,22 +161,26 @@ inline void set_gait_creep(void) {
     CPG_network_pram.hip_omega_mult = 1.0f;
     CPG_network_pram.knee_omega_mult = 1.0f;
 
-    // Set oscillators
-    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
-    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+    if(func_mode == LEFT) set_gait_creep_left();
+    else if(func_mode == RIGHT) set_gait_creep_right();
+    else{
+      // Set oscillators
+     float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+     set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
 
-    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
-    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+     set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+    }
 
     // ================== COUPLINGS ==================
     float K_intra_leg = 10.0f; // Strong local coupling
-    float K_inter_leg = 5.0f;  // Moderate gait coordination
+    float K_inter_leg = 8.0f;  // Moderate gait coordination
     float knee_lag = -TWO_PI / CPG_network_pram.KH_offset; // Knee lags Hip by 90 deg
 
     // 1. Intra-leg (Hip -> Knee) - Same for all legs
@@ -167,17 +207,26 @@ inline void set_gait_creep(void) {
     
     // Connect Back Legs (BR -> BL is 180 shift)
     coupling_weights[BLH][BRH] = K_inter_leg; phase_offsets[BLH][BRH] = TWO_PI / 2.0f;
-    coupling_weights[BRH][BLH] = K_inter_leg; phase_offsets[BRH][BLH] = TWO_PI / 2.0f;
+    coupling_weights[BRH][BLH] = K_inter_leg; phase_offsets[BRH][BLH] = - (TWO_PI / 2.0f);  // Fixed sign
 
     // Connect Front Legs (FR -> FL is 180 shift)
     coupling_weights[FLH][FRH] = K_inter_leg; phase_offsets[FLH][FRH] = TWO_PI / 2.0f;
-    coupling_weights[FRH][FLH] = K_inter_leg; phase_offsets[FRH][FLH] = TWO_PI / 2.0f;
+    coupling_weights[FRH][FLH] = K_inter_leg; phase_offsets[FRH][FLH] = - (TWO_PI / 2.0f);  // Fixed sign
 
     // Connect Ipsilateral (Same side)
-    // Right side: FR lags BR by 0.25
-    coupling_weights[FRH][BRH] = K_inter_leg; phase_offsets[FRH][BRH] = quarter_cycle;
+
     // Left side: FL lags BL by 0.25 (BL is 0.5, FL is 0.75)
     coupling_weights[FLH][BLH] = K_inter_leg; phase_offsets[FLH][BLH] = quarter_cycle;
+    coupling_weights[BLH][FLH] = K_inter_leg; phase_offsets[BLH][FLH] = -quarter_cycle;  // Added reciprocal
+
+    // FR <-> BL (90° offset: BL lags FR)
+    coupling_weights[BLH][FRH] = K_inter_leg; phase_offsets[BLH][FRH] =  quarter_cycle;  // BL lags FR by 90°
+    coupling_weights[FRH][BLH] = K_inter_leg; phase_offsets[FRH][BLH] = -quarter_cycle;  // FR leads BL by 90°
+
+    // FL <-> BR (90° offset: BR lags FL)
+    coupling_weights[BRH][FLH] = K_inter_leg; phase_offsets[BRH][FLH] =  quarter_cycle;  // BR lags FL by 90°
+    coupling_weights[FLH][BRH] = K_inter_leg; phase_offsets[FLH][BRH] = -quarter_cycle;  // FL leads BR by 90°
+
 
     // ================== SEED PHASES ==================
     // Instantaneously set phases to the ideal distribution to minimize convergence time.
@@ -205,16 +254,33 @@ inline void set_gait_creep(void) {
 }
 
 // Gait: CRAWL (placeholder)
-inline void set_gait_crawl(void) {
+inline void set_gait_crawl(uint8_t func_mode,uint8_t posture) {
     ESP_LOGI(TAG_CPG, "set_gait_crawl START ");
 
     cpg_run_mode = CPG_MODE_ACTIVE;
     memset((void*)coupling_weights, 0, sizeof(coupling_weights));
     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
 
+    set_gait_idle();
+
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
-    CPG_network_pram.hip_amp = 12000.0f;
-    CPG_network_pram.knee_amp = 12000.0f;
+
+
+    if(posture == BODY_POSTURE_NORMAL){
+      CPG_network_pram.hip_amp = 12000.0f;
+      CPG_network_pram.knee_amp = 12000.0f;
+    }
+
+    if(posture == BODY_POSTURE_LOW){
+      CPG_network_pram.hip_amp = 10000.0f;
+      CPG_network_pram.knee_amp = 10000.0f;
+    }
+
+    if(posture == BODY_POSTURE_CROUCH){
+      CPG_network_pram.hip_amp = 8000.0f;
+      CPG_network_pram.knee_amp = 8000.0f;
+    }
+
     CPG_network_pram.hip_offset = 0.0f;
     CPG_network_pram.knee_offset = 0.0f;
     CPG_network_pram.KH_offset = 4.0f;
@@ -233,18 +299,22 @@ inline void set_gait_crawl(void) {
    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp, CPG_network_pram.knee_amp);
    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
 
-    // Set oscillators
-    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
-    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
-    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+   if(func_mode == LEFT) set_gait_crawl_left();
+   else if(func_mode == RIGHT) set_gait_crawl_right();
+   else{
+      // Set oscillators
+     float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+     set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
+     set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp, CPG_network_pram.hip_offset);
 
-    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
-    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
-    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+     set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+     set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp, CPG_network_pram.knee_offset);
+    }
 
     // Couplings
     float K_intra_leg = 8.0f;
@@ -287,7 +357,7 @@ void set_gait_standby(void)
     memset((void*)coupling_weights, 0, sizeof(coupling_weights));
     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
 
-    CPG_network_pram.hip_offset  = -6000.0f;
+    CPG_network_pram.hip_offset  = -16000.0f;
     CPG_network_pram.knee_offset = 0.0f;
 
     for (int i = 0; i < NUM_OSCILLATORS; i++) {
@@ -305,3 +375,179 @@ void set_gait_standby(void)
 
     }
 }
+
+ 
+ //******************************** Turning Gates ****************************************************
+//****************************************************************************************************
+
+//Left-turning trot (symmetric to left)
+
+static inline void set_gait_trot_left(void) {
+    
+    // Apply asymmetry
+    CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp * (1.0f - HIP_TURN_MOD_FACTOR); // Milder for Hips
+    CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp * (1.0f + HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp * (1.0f - 0.5f *KNEE_TURN_MOD_FACTOR);  
+    CPG_network_pram.knee_amp_right = CPG_network_pram.knee_amp * (1.0f + 0.5f *KNEE_TURN_MOD_FACTOR);
+
+    // Recompute max_amp (use the largest)
+    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp_right, CPG_network_pram.knee_amp_right);
+    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
+
+    // Reset oscillators with asymmetric amps
+    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+
+}
+
+// New: Right-turning trot (symmetric to left)
+static inline void set_gait_trot_right(void) {
+    
+    // Reverse asymmetry
+    CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp * (1.0f + 0.5f *HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp * (1.0f - 0.5f *HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp * (1.0f + KNEE_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_right = CPG_network_pram.knee_amp * (1.0f - KNEE_TURN_MOD_FACTOR);
+
+    // Recompute max_amp
+    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp_left, CPG_network_pram.knee_amp_left);
+    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
+
+    // Reset oscillators (similar to left, but with swapped amps)
+    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+
+}
+
+
+//Left-turning gait_creep (symmetric to left) 
+
+static inline void set_gait_creep_left(void) {
+
+    // Apply asymmetry
+    CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp * (1.0f - HIP_TURN_MOD_FACTOR); // Milder for Hips
+    CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp * (1.0f + HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp * (1.0f - 0.5f *KNEE_TURN_MOD_FACTOR);  
+    CPG_network_pram.knee_amp_right = CPG_network_pram.knee_amp * (1.0f + 0.5f *KNEE_TURN_MOD_FACTOR);
+
+    // Recompute max_amp (use the largest)
+    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp_right, CPG_network_pram.knee_amp_right);
+    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
+
+    // Reset oscillators with asymmetric amps
+    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+
+}
+
+//  Right-turning trot (symmetric to left)
+static inline void set_gait_creep_right(void) {
+
+    // Reverse asymmetry
+    CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp * (1.0f + HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp * (1.0f - HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp * (1.0f + 0.5f *KNEE_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_right = CPG_network_pram.knee_amp * (1.0f - 0.5f *KNEE_TURN_MOD_FACTOR);
+
+    // Recompute max_amp
+    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp_left, CPG_network_pram.knee_amp_left);
+    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
+
+    // Reset oscillators (similar to left, but with swapped amps)
+    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+
+}
+
+//Left-turning crawl (symmetric to left)
+
+static inline void set_gait_crawl_left(void) {
+    
+    // Apply asymmetry
+    CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp * (1.0f - HIP_TURN_MOD_FACTOR); // Milder for Hips
+    CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp * (1.0f + HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp * (1.0f - 0.5f *KNEE_TURN_MOD_FACTOR);  
+    CPG_network_pram.knee_amp_right = CPG_network_pram.knee_amp * (1.0f + 0.5f *KNEE_TURN_MOD_FACTOR);
+
+    // Recompute max_amp (use the largest)
+    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp_right, CPG_network_pram.knee_amp_right);
+    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
+
+    // Reset oscillators with asymmetric amps
+    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+
+}
+
+// New: Right-turning trot (symmetric to left)
+static inline void set_gait_crawl_right(void) {
+    
+    // Reverse asymmetry
+    CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp * (1.0f + HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp * (1.0f - HIP_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp * (1.0f + 0.5f *KNEE_TURN_MOD_FACTOR);
+    CPG_network_pram.knee_amp_right = CPG_network_pram.knee_amp * (1.0f - 0.5f *KNEE_TURN_MOD_FACTOR);
+
+    // Recompute max_amp
+    CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp_left, CPG_network_pram.knee_amp_left);
+    if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
+
+    // Reset oscillators (similar to left, but with swapped amps)
+    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+
+    
+}
+
+
+
+
+

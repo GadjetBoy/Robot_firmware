@@ -40,16 +40,29 @@
 #define CPG_frequency       (0.090f)
 #define CPG_creep_frequency (0.20f)
 
+#define KNEE_TURN_MOD_FACTOR 0.0f  // 0% modulation; tune 0.2-0.4 based on robot mass/inertia
+#define HIP_TURN_MOD_FACTOR 0.3f  // 30% modulation; tune 0.2-0.4 based on robot mass/inertia
+
+
 
 // ====================== Motor Indices (for clarity) ======================
-#define FLH 0  // Front-Left Hip
+/*#define FLH 0  // Front-Left Hip
 #define FLK 1  // Front-Left Knee
 #define FRH 2  // Front-Right Hip
 #define FRK 3  // Front-Right Knee
 #define BLH 4  // Back-Left Hip
 #define BLK 5  // Back-Left Knee
 #define BRH 6  // Back-Right Hip
-#define BRK 7  // Back-Right Knee
+#define BRK 7  // Back-Right Knee*/
+
+#define FLH 0  // Front-Left Hip
+#define FLK 3  // Front-Left Knee
+#define FRH 4  // Front-Right Hip
+#define FRK 5  // Front-Right Knee
+#define BLH 2  // Back-Left Hip
+#define BLK 1  // Back-Left Knee
+#define BRH 6  // Back-Right Hip
+#define BRK 7  // Back-Right Knee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
 // ====================== Data Structures ======================
 // PID Controller (position control)
@@ -94,7 +107,7 @@ typedef struct {
 
 // Gait Modes (easy to extend)
 typedef enum {  
-    MODE_CRAWL =2 ,
+    MODE_CRAWL =3 ,
     MODE_TURTLE  ,
     MODE_CREEP   
 } SequenceMode;
@@ -104,6 +117,34 @@ typedef enum {
     CPG_MODE_STANDBY,      // CPG running, zero amplitude, posture hold
     CPG_MODE_ACTIVE        // Normal gait
 } CPG_RunMode;
+
+typedef enum {
+    LEG_ORIENTATION_NORMAL = 6,      // Robot upright
+    LEG_ORIENTATION_INVERTED         // Robot upside down (legs flipped)
+} LegOrientation;
+
+typedef enum {
+    MODE_TROT_LEFT=8,
+    MODE_TROT_RIGHT, 
+    MODE_CREEP_LEFT ,
+    MODE_CREEP_RIGHT,
+    MODE_CRAWL_LEFT,
+    MODE_CRAWL_RIGHT,
+    MODE_PIVOT_TURN,
+    MODE_NORMAL, 
+} turning_modes;
+
+typedef enum {
+    BODY_POSTURE_NORMAL =16,
+    BODY_POSTURE_LOW,
+    BODY_POSTURE_CROUCH
+} body_posture_t;
+
+typedef enum {
+    STRAIGHT = 0,
+    LEFT,
+    RIGHT
+} turn_mode_t;
 
 // CPG Oscillator (per joint)
 typedef struct {
@@ -119,6 +160,10 @@ typedef struct{
     float base_freq;
     float hip_amp;
     float knee_amp;
+    float hip_amp_left;
+    float hip_amp_right;
+    float knee_amp_left;  
+    float knee_amp_right;
     float hip_offset;
     float knee_offset;
     float KH_offset;

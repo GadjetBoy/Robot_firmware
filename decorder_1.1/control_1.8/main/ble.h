@@ -41,7 +41,7 @@ extern "C" {
 #define BLE_QUEUE_LENGTH 10
 
 #define NUMBER_OF_BYTES 1
-#define NUMBER_OF_FLOATS 16
+#define NUMBER_OF_FLOATS 5
 
 /* ---------------------------------------------------------------------------
  * BLE DATA PACKET STRUCTURE
