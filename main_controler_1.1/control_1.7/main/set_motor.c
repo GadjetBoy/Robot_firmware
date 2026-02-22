@@ -88,6 +88,10 @@ void position_loop_task(void *arg) {
             float PID = fabsf(pid_output);
             uint32_t pwm_magnitude = (uint32_t)PID; 
 
+            if(pwm_magnitude <= MIN_DUTY && pwm_magnitude > 0){
+               pwm_magnitude = MIN_DUTY;
+            }
+
             motors[i].pwm = pwm_magnitude;
             motors[i].last_pwm = pwm_magnitude;  // Keep for logging if needed
 
@@ -97,14 +101,14 @@ void position_loop_task(void *arg) {
             pwm_packet.target_pwm_val[i] = (float)motors[i].pwm * (pid_output > 0 ? 1.0f : -1.0f);  // Preserve sign
         }
         // Send full packet ONCE after loop
-        if (xQueueOverwrite(log_queue, &pwm_packet) != pdTRUE) {
+        /*if (xQueueOverwrite(log_queue, &pwm_packet) != pdTRUE) {
             ESP_LOGE(TAG, "Log queue overwrite failed");
-        }
+        }*/
         // Throttled log (every 100 loops ~50ms at 2kHz)
-        if (++log_counter % 200 == 0) {
+        /*if (++log_counter % 200 == 0) {
           float pid_out_log = pwm_packet.target_pwm_val[4];
           ESP_LOGE(TAG, "Applied to motor[4]: pwm=%.0f dir=%d",pid_out_log,motors[4].direction);
-        }
+        }*/
 
     }
 }

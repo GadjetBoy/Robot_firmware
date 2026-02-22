@@ -98,10 +98,10 @@ void uart_receive_task(void *param){
                         }
                       
                         // Debug log every 200 events (reduced overhead)
-                        buf_used = (rx_head + RX_BUFFER_SIZE - rx_tail) % RX_BUFFER_SIZE;
+                       /* buf_used = (rx_head + RX_BUFFER_SIZE - rx_tail) % RX_BUFFER_SIZE;
                         if (++event_count % 200 == 0) {
                             ESP_LOGI(TAG, "Event #%d: Rx %d bytes, buf used %d/%d (%.1f%%)", event_count, len, buf_used, RX_BUFFER_SIZE, (float)buf_used / RX_BUFFER_SIZE * 100);
-                        }
+                        }*/
                       
                         // Optimized batch parsing (up to 10 packets/event)
                         int packets_parsed = 0;
@@ -128,9 +128,9 @@ void uart_receive_task(void *param){
                                 // Update
                                 update_UART_motor_commands(packet_data);
                                 // Log throttled parse success (for debugging)
-                                if (++parse_log_counter % 50 == 0) {
+                               /* if (++parse_log_counter % 50 == 0) {
                                     ESP_LOGI(TAG, "Parsed %d pkts total (latest motor0=%.1f)", parse_log_counter, packet_data[0]);
-                                }
+                                }*/
                                 // Advance tail
                                 rx_tail = (rx_tail + PACKET_SIZE) % RX_BUFFER_SIZE;
                                 packets_parsed++;
