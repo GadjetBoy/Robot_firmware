@@ -38,7 +38,7 @@ static volatile uint8_t last_cmd;
 // CPG globals
 volatile Oscillator cpg_network[NUM_OSCILLATORS];
 volatile osc_pram CPG_network_pram;
-volatile uint8_t cmd = CPG_MODE_IDLE;
+volatile uint8_t cmd = CPG_MODE_STANDBY;
 volatile CPG_RunMode cpg_run_mode = CPG_MODE_IDLE;
 volatile body_posture_t posture = BODY_POSTURE_NORMAL;
 turning_modes turn_mode = MODE_NORMAL;
@@ -85,12 +85,12 @@ static inline uint8_t get_commands(void) {
 
     update_orientation_from_ble(cmd);
 
-    if(cmd == MODE_PIVOT_TURN){
+    /*if(cmd == MODE_PIVOT_TURN){
         pivot_turn = true;
     }
-    else{
+    if(){
        pivot_turn = false; 
-    }
+    }*/
 
     return cmd;
 }
@@ -189,7 +189,7 @@ void run_position_loop(){
     log_counter++;
     
     // Update gains periodically (throttled)
-    if (log_counter % 1 == 0) { // ~0.1s at 2500Hz
+    if (log_counter % 5 == 0) { // ~0.1s at 2500Hz
         update_PID_gain();
         log_counter = 0;
     }
@@ -260,12 +260,12 @@ void motor_set(uint8_t i, float target, bool set) {
     float signed_target =target;
 
     //Sign flip for right legs (FR/BR: indices 1,3,5,7) for symmetry (forward gait)
-    bool is_right_leg = (i == FRK || i == BRK);  // Adjust indices if mapping differs
-    if(is_right_leg && pivot_turn == false){
+    bool is_right_leg = (i == FRH || i == BRH);  // Adjust indices if mapping differs
+    if(is_right_leg ){
       signed_target = -signed_target ;  // Mirror right for opposite swing
     }
     
-    bool is_hip = (i == FLH || i == FRH || i == BLH || i == BRH);// Check if it's a hip joint
+    bool is_hip = (i == FLK || i == FRK || i == BLK || i == BRK);// Check if it's a hip joint
     if (last_cmd == MODE_CREEP && is_hip) {
 
         float hip_offset = cpg_network[i].offset;
@@ -421,37 +421,36 @@ void command_runner_task(void *arg) {
                 switch (cmd) {
                     case CPG_MODE_IDLE:
                         set_gait_idle();
-                        //set_gait_creep();
                         break;
                     case CPG_MODE_STANDBY:
                         set_gait_standby();
                         break;
                     case MODE_TURTLE:
-                        set_gait_trot(STRAIGHT,BODY_POSTURE_NORMAL);
+                        set_gait_trot(STRAIGHT);
                         break;
                     case MODE_CRAWL:
-                        set_gait_crawl(STRAIGHT,BODY_POSTURE_NORMAL);
+                        set_gait_crawl(STRAIGHT);
                         break;
                     case MODE_CREEP:
-                        set_gait_creep(STRAIGHT,BODY_POSTURE_NORMAL);
+                        set_gait_creep(STRAIGHT);
                         break;
                     case MODE_TROT_LEFT:
-                        set_gait_trot(LEFT,BODY_POSTURE_NORMAL);
+                        set_gait_trot(LEFT);
                         break;
                     case MODE_TROT_RIGHT:
-                        set_gait_trot(RIGHT,BODY_POSTURE_NORMAL);
+                        set_gait_trot(RIGHT);
                         break;
                     case MODE_CREEP_LEFT:
-                        set_gait_creep(LEFT,BODY_POSTURE_NORMAL);
+                        set_gait_creep(LEFT);
                         break;
                     case MODE_CREEP_RIGHT:
-                        set_gait_creep(RIGHT,BODY_POSTURE_NORMAL);
+                        set_gait_creep(RIGHT);
                         break;
                     case MODE_CRAWL_LEFT:
-                        set_gait_crawl(LEFT,BODY_POSTURE_NORMAL);
+                        set_gait_crawl(LEFT);
                        break;
                     case MODE_CRAWL_RIGHT:
-                        set_gait_crawl(RIGHT,BODY_POSTURE_NORMAL);
+                        set_gait_crawl(RIGHT);
                        break;
                     case LEG_ORIENTATION_INVERTED:
                         set_system_idle();
@@ -504,9 +503,9 @@ void CPG_app_main(void) {
     set_gait_idle(); // Safe start
     Update_Oscillator_base_parameters();
     // Create tasks
-    xTaskCreatePinnedToCore(command_runner_task, "seq_runner", 4096, NULL, 20, &seq_task_handle, 1);
+    xTaskCreatePinnedToCore(command_runner_task, "seq_runner", 4096, NULL, 18, &seq_task_handle, 1);
     vTaskDelay(pdMS_TO_TICKS(100));
-    xTaskCreatePinnedToCore(cpg_update_task, "cpg_update", 4096, NULL, 18, &cpg_task_handle, 1);
+    xTaskCreatePinnedToCore(cpg_update_task, "cpg_update", 4096, NULL, 15, &cpg_task_handle, 1);
     vTaskDelay(pdMS_TO_TICKS(100));
     hardware_Timer_setup();
     vTaskDelay(pdMS_TO_TICKS(100));

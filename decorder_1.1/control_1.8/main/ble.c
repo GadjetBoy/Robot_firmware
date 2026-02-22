@@ -548,7 +548,7 @@ void BLE_app_main(void) {
                            "recieve_data_task",
                            5120,
                            NULL,
-                           12,
+                           15,
                            &rx_task_handle,
                            0);
     ESP_LOGI(BLE_TAG, "BLE unit setup completed");

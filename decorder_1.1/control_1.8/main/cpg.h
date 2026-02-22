@@ -41,28 +41,28 @@
 #define CPG_creep_frequency (0.20f)
 
 #define KNEE_TURN_MOD_FACTOR 0.0f  // 0% modulation; tune 0.2-0.4 based on robot mass/inertia
-#define HIP_TURN_MOD_FACTOR 0.3f  // 30% modulation; tune 0.2-0.4 based on robot mass/inertia
+#define HIP_TURN_MOD_FACTOR 0.6f  // 30% modulation; tune 0.2-0.4 based on robot mass/inertia
 
 
 
 // ====================== Motor Indices (for clarity) ======================
-/*#define FLH 0  // Front-Left Hip
+#define FLH 0  // Front-Left Hip
 #define FLK 1  // Front-Left Knee
 #define FRH 2  // Front-Right Hip
 #define FRK 3  // Front-Right Knee
 #define BLH 4  // Back-Left Hip
 #define BLK 5  // Back-Left Knee
 #define BRH 6  // Back-Right Hip
-#define BRK 7  // Back-Right Knee*/
+#define BRK 7  // Back-Right Knee
 
-#define FLH 0  // Front-Left Hip
+/*#define FLH   // Front-Left Hip
 #define FLK 3  // Front-Left Knee
 #define FRH 4  // Front-Right Hip
 #define FRK 5  // Front-Right Knee
 #define BLH 2  // Back-Left Hip
 #define BLK 1  // Back-Left Knee
 #define BRH 6  // Back-Right Hip
-#define BRK 7  // Back-Right Knee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+#define BRK 7  // Back-Right Knee  */                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 // ====================== Data Structures ======================
 // PID Controller (position control)

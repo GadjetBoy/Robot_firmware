@@ -63,7 +63,7 @@ void app_main(void){
                             "uart_send_task", 
                              5119, 
                              NULL, 
-                             20, 
+                             18, 
                              &uart_send_task, 
                              0);
 
