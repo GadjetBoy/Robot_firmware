@@ -107,13 +107,14 @@ void PIDController_Init(PIDController *pid) {
 // Dynamic gain update based on frequency (called periodically)
 void update_PID_gain(void) {
 
-    if (xSemaphoreTake(pid_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE){
+    //if (xSemaphoreTake(pid_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE){
+    taskENTER_CRITICAL(&ble_mux);
        Update_PID.pos_pid.Kp = pid_ble_params.Kp;
        Update_PID.pos_pid.Ki = pid_ble_params.Ki;
        Update_PID.pos_pid.Kd = pid_ble_params.Kd;
-
-        xSemaphoreGive(pid_params_mutex);
-    }
+    taskEXIT_CRITICAL(&ble_mux);
+        //xSemaphoreGive(pid_params_mutex);
+    //}
     
     float freq_scale = fminf(CPG_frequency / 0.1f, 2.5f);  // FIXED: Cap at 2.5x (less aggressive than 3.0)
     for (int i = 0; i < NUM_MOTORS; i++) {
@@ -157,7 +158,7 @@ void PIDController_Update(PIDController *pid, float setpoint, int measurement, u
     if (pid->integrator < pid->limMinInt){
         pid->integrator = pid->limMinInt;
     }
-    if(fabs(pid->error)<=STOP_THRESHOLD*10){
+    if(fabs(pid->error)<=STOP_THRESHOLD*5){
       pid->integrator *= 0.9f; // decay
     }
     //calculate PID output
@@ -225,7 +226,7 @@ void run_position_loop(){
 
     xTaskNotifyGive(uart_send_task);
        
-    xQueueOverwrite(encorderQue,current_encoders);
+    xQueueOverwrite(encorderQue,filtered_enc);
     
 }
 
@@ -244,8 +245,8 @@ void pid_app_main(void) {
         motors[i].pos_pid.T = PID_DT;
         motors[i].pos_pid.limMin = -PWM_MAX;
         motors[i].pos_pid.limMax = PWM_MAX;
-        motors[i].pos_pid.limMinInt = -400.0f;
-        motors[i].pos_pid.limMaxInt = 400.0f;
+        motors[i].pos_pid.limMinInt = -500.0f;
+        motors[i].pos_pid.limMaxInt = 500.0f;
         PIDController_Init(&motors[i].pos_pid);
     }
     //xTaskCreatePinnedToCore(position_loop_task, "pos_loop", 5120, NULL, 20, &pid_loop_task,1);
@@ -253,6 +254,14 @@ void pid_app_main(void) {
 }
 
 // ====================== CPG Functions ======================
+
+// Timer ISR (notifies task)
+void IRAM_ATTR cpg_timer_callback(void* arg) {
+    BaseType_t woken = pdFALSE;
+    vTaskNotifyGiveFromISR(cpg_task_handle, &woken);
+    if (woken) portYIELD_FROM_ISR();
+}
+
 // Set motor target with feedforward velocity term
 void motor_set(uint8_t i, float target, bool set) {
     if (i >= NUM_MOTORS) return;
@@ -265,15 +274,15 @@ void motor_set(uint8_t i, float target, bool set) {
       signed_target = -signed_target ;  // Mirror right for opposite swing
     }
     
-    bool is_hip = (i == FLK || i == FRK || i == BLK || i == BRK);// Check if it's a hip joint
-    if (last_cmd == MODE_CREEP && is_hip) {
+    bool is_knee = (i == FLK || i == FRK || i == BLK || i == BRK);// Check if it's a knee joint
+    if (is_knee && (last_cmd == MODE_CREEP || last_cmd == MODE_TURTLE)) {
 
-        float hip_offset = cpg_network[i].offset;
+         float knee_offset = cpg_network[i].offset;
 
-        // Prevent backward pull
-        if (signed_target < hip_offset) {
-            signed_target = hip_offset;
-        }
+         // Prevent backward pull
+         if (signed_target < knee_offset) {
+             signed_target = knee_offset;
+            }
     }
 
     if ( leg_orientation == LEG_ORIENTATION_INVERTED) {
@@ -281,9 +290,14 @@ void motor_set(uint8_t i, float target, bool set) {
     }
 
     // Velocity FF (on signed target for correct direction)
+    float duty = CPG_network_pram.duty_cycle;
     float phase = cpg_network[i].phase;
-    float vel_ff = cpg_network[i].amplitude * cpg_network[i].omega * cosf(phase);
-    motors[i].target_position = signed_target + (vel_ff * PID_DT * 0.6f);  // Keep your tuned gain
+    float alpha = (phase < M_PI) ? (1.0f / (2.0f * (1.0f - duty))) : (1.0f / (2.0f * duty));
+
+    // Correct velocity of a warped sine: v = amp * (omega * alpha) * cos(phase)
+    float vel_ff = cpg_network[i].amplitude * (cpg_network[i].omega * alpha) * cosf(phase);
+    
+    motors[i].target_position = signed_target + (vel_ff * PID_DT * 0.6f);
 
     if(!set){
       motors[i].target_position = 0;  
@@ -297,19 +311,11 @@ void motor_set(uint8_t i, float target, bool set) {
     }
 }
 
-// Timer ISR (notifies task)
-void IRAM_ATTR cpg_timer_callback(void* arg) {
-    BaseType_t woken = pdFALSE;
-    vTaskNotifyGiveFromISR(cpg_task_handle, &woken);
-    if (woken) portYIELD_FROM_ISR();
-}
-
-// CPG update task (runs at 2500Hz)
-void cpg_update_task(void *arg) {
+void cpg_task(void *pvParameters) {
     float d_phi[NUM_OSCILLATORS];
     float phase[NUM_OSCILLATORS];
 
-    while (1) {
+    while(1) {
 
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
@@ -318,6 +324,9 @@ void cpg_update_task(void *arg) {
             ESP_LOGE(TAG_CPG, "CPG mutex timeout!");
             continue;
         }
+
+        // 1. Run the smoothing (alpha = 0.05 is a good start)
+        //smooth_gait_parameters(0.05f); 
 
         if (cpg_run_mode == CPG_MODE_IDLE) {   
             vTaskDelay(pdMS_TO_TICKS(2));
@@ -328,24 +337,61 @@ void cpg_update_task(void *arg) {
             run_position_loop();
             continue;
         }
+        
+        // 2. Update the CPG physics
+        cpg_update(d_phi,phase); 
+
+        xSemaphoreGive(cpg_params_mutex);
+
+        // Trigger PID loop
+        //ESP_LOGE(TAG_CPG, "cpg command position loop");
+        run_position_loop();
+
+        uint64_t elapsed = esp_timer_get_time() - start;
+        if (elapsed > CPG_UPDATE_RATE_US && ENABLE_CPG_DEBUG) {
+            ESP_LOGW(TAG_CPG, "CPG update overrun: %llu us", elapsed);
+        }
+        
+    }
+}
+
+inline void cpg_update(float* d_phi, float* phase){
 
         // 1. Snapshot phases and compute coupling
+
         for (int i = 0; i < NUM_OSCILLATORS; i++) {
-            phase[i] = cpg_network[i].phase;
+           phase[i] = cpg_network[i].phase;
 
-            float coupling_term = 0.0f;
-            for (int j = 0; j < NUM_OSCILLATORS; j++) {
-                if (i == j) continue;
-
-                float sin_term = sinf(phase[j] - phase[i] - phase_offsets[i][j]);
-                float norm_amp = cpg_network[i].amplitude / CPG_network_pram.max_amp;
-
-                coupling_term += coupling_weights[i][j] * norm_amp * sin_term;
+          // --- NEW: Asymmetric Timing Calculation ---
+          float duty = CPG_network_pram.duty_cycle; 
+          if (duty < 0.1f) duty = 0.5f; // Safety floor
+    
+          float alpha; 
+          // If phase is [0, PI], we are in Swing. If [PI, 2PI], we are in Stance.
+          // We scale the frequency so the total period remains constant.
+          if (phase[i] < M_PI) {
+              // Swing Phase speed multiplier
+              alpha = 1.0f / (2.0f * (1.0f - duty));
+            } else {
+                  // Stance Phase speed multiplier
+                  alpha = 1.0f / (2.0f * duty);
             }
-            // Blended omega
-            float damping = 0.1f;
-            d_phi[i] = (1.0f - damping) * cpg_network[i].omega + damping * coupling_term;
+
+          float coupling_term = 0.0f;
+          for (int j = 0; j < NUM_OSCILLATORS; j++) {
+              if (i == j) continue;
+              float sin_term = sinf(phase[j] - phase[i] - phase_offsets[i][j]);
+              float norm_amp = cpg_network[i].amplitude / CPG_network_pram.max_amp;
+
+               coupling_term += coupling_weights[i][j] * norm_amp * sin_term;
+            }
+
+          // Apply the alpha multiplier to the base frequency only
+          float damping = 0.1f;
+          float warped_omega = cpg_network[i].omega * alpha;
+          d_phi[i] = (1.0f - damping) * warped_omega + damping * coupling_term;
         }
+
         // 2. Update phases and outputs
         for (int i = 0; i < NUM_OSCILLATORS; i++) {
 
@@ -362,7 +408,7 @@ void cpg_update_task(void *arg) {
 
             // --- Bias correction (prevent drift) ---
             float target_offset = (i % 2 != 0) ? CPG_network_pram.knee_offset : CPG_network_pram.hip_offset;
-            cpg_network[i].offset += 0.0250f * (target_offset - cpg_network[i].offset) * CPG_DT;
+            cpg_network[i].offset += 0.050f * (target_offset - cpg_network[i].offset) * CPG_DT;
 
             cpg_network[i].output = cpg_network[i].offset +
                                     cpg_network[i].amplitude * sinf(cpg_network[i].phase);
@@ -372,17 +418,36 @@ void cpg_update_task(void *arg) {
                       cpg_network[i].amplitude != 0.0f);
 
         }
-        xSemaphoreGive(cpg_params_mutex);
+}
 
-        // Trigger PID loop
-        //ESP_LOGE(TAG_CPG, "cpg command position loop");
-        run_position_loop();
+void smooth_gait_parameters(float alpha) {
+    // Smooth Amplitudes
+    CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp_left + alpha * (CPG_network_pram.hip_amp_left_target - CPG_network_pram.hip_amp_left);
+    CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp_right + alpha * (CPG_network_pram.hip_amp_right_target - CPG_network_pram.hip_amp_right);
+    
+    CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp_left + alpha * (CPG_network_pram.knee_amp_left_target - CPG_network_pram.knee_amp_left);
+    CPG_network_pram.knee_amp_right = CPG_network_pram.knee_amp_right + alpha * (CPG_network_pram.knee_amp_right_target - CPG_network_pram.knee_amp_right);
 
-        uint64_t elapsed = esp_timer_get_time() - start;
-        if (elapsed > CPG_UPDATE_RATE_US && ENABLE_CPG_DEBUG) {
-            ESP_LOGW(TAG_CPG, "CPG update overrun: %llu us", elapsed);
-        }
-    }
+    // Smooth Duty Cycle (This solves your transition issue!)
+    CPG_network_pram.duty_cycle = CPG_network_pram.duty_cycle + alpha * (CPG_network_pram.duty_cycle_target - CPG_network_pram.duty_cycle);
+
+    // Update the actual oscillators with the "smoothed" current values
+    float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
+    float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
+
+    // Apply to Left Hips
+    set_oscillator_params(FLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    set_oscillator_params(BLH, hip_omega, CPG_network_pram.hip_amp_left, CPG_network_pram.hip_offset);
+    // Apply to Right Hips
+    set_oscillator_params(FRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    set_oscillator_params(BRH, hip_omega, CPG_network_pram.hip_amp_right, CPG_network_pram.hip_offset);
+    
+    // Apply to Left Knees
+    set_oscillator_params(FLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    set_oscillator_params(BLK, knee_omega, CPG_network_pram.knee_amp_left, CPG_network_pram.knee_offset);
+    // Apply to Right Knees
+    set_oscillator_params(FRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
+    set_oscillator_params(BRK, knee_omega, CPG_network_pram.knee_amp_right, CPG_network_pram.knee_offset);
 }
 
 // Set oscillator params (helper)
@@ -420,7 +485,8 @@ void command_runner_task(void *arg) {
             if (xSemaphoreTake(cpg_params_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
                 switch (cmd) {
                     case CPG_MODE_IDLE:
-                        set_gait_idle();
+                        if(last_cmd == 255) set_gait_crawl(STRAIGHT);  
+                        else set_gait_idle();
                         break;
                     case CPG_MODE_STANDBY:
                         set_gait_standby();
@@ -505,7 +571,7 @@ void CPG_app_main(void) {
     // Create tasks
     xTaskCreatePinnedToCore(command_runner_task, "seq_runner", 4096, NULL, 18, &seq_task_handle, 1);
     vTaskDelay(pdMS_TO_TICKS(100));
-    xTaskCreatePinnedToCore(cpg_update_task, "cpg_update", 4096, NULL, 15, &cpg_task_handle, 1);
+    xTaskCreatePinnedToCore(cpg_task, "cpg_update", 4096, NULL, 15, &cpg_task_handle, 1);
     vTaskDelay(pdMS_TO_TICKS(100));
     hardware_Timer_setup();
     vTaskDelay(pdMS_TO_TICKS(100));

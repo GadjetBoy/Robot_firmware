@@ -38,10 +38,10 @@
 #define TWO_PI      (2.0f * 3.1415926535f)
 
 #define CPG_frequency       (0.090f)
-#define CPG_creep_frequency (0.20f)
+#define CPG_creep_frequency (0.080f)
 
 #define KNEE_TURN_MOD_FACTOR 0.0f  // 0% modulation; tune 0.2-0.4 based on robot mass/inertia
-#define HIP_TURN_MOD_FACTOR 0.6f  // 30% modulation; tune 0.2-0.4 based on robot mass/inertia
+#define HIP_TURN_MOD_FACTOR 0.8f  // 30% modulation; tune 0.2-0.4 based on robot mass/inertia
 
 
 
@@ -160,17 +160,36 @@ typedef struct{
     float base_freq;
     float hip_amp;
     float knee_amp;
+
     float hip_amp_left;
     float hip_amp_right;
     float knee_amp_left;  
     float knee_amp_right;
+
     float hip_offset;
     float knee_offset;
     float KH_offset;
     float max_amp;
     float knee_omega_mult; // Default 2.0 (knees 2x hips)
     float hip_omega_mult; // Default 1.0 (base)
+    float duty_cycle;      // 0.5 = symmetric, 0.7 = 70% stance / 30% swing
+
+    float duty_cycle_target;
+    float hip_amp_left_target;
+    float hip_amp_right_target;
+    float knee_amp_left_target; 
+    float knee_amp_right_target;
 } osc_pram;
+
+typedef struct {
+    
+    // Target values (the ones your gait functions set)
+    float hip_amp_l_target, hip_amp_r_target;
+    float knee_amp_l_target, knee_amp_r_target;
+    float duty_cycle_target;
+    
+    // ... rest of your params
+} CPG_Smoothing_t;
 
 // ====================== Globals (Externals) ======================
 // PID/Motor Globals
@@ -210,6 +229,8 @@ void cpg_init_all(void);  // Initialize oscillators and params
 void CPG_app_main(void);  // Entry point: setup CPG tasks/timer
 void Update_Oscillator_base_parameters(void);  // Update params from globals
 void set_oscillator_params(int i, float omega, float amp, float offset);
+void cpg_update(float* d_phi, float* phase);
+void smooth_gait_parameters(float alpha);
 
 // Utility: Safe command update
 void motor_set(uint8_t i, float target, bool set);  // Set motor target

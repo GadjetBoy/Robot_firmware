@@ -399,15 +399,17 @@ void copy_ble_recieve_data_task(void *pvParameters) {
             memcpy((void*)float_val, (const void*)(local_rx_buffer.data + offset), NUMBER_OF_FLOATS * sizeof(float));
             offset += NUMBER_OF_FLOATS * sizeof(float);
 
-            taskEXIT_CRITICAL(&ble_mux);
+            //taskEXIT_CRITICAL(&ble_mux);
 
-            if (xSemaphoreTake(pid_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE) {
+            //if (xSemaphoreTake(pid_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE) {
                  pid_ble_params.Kp = float_val[0];
                  pid_ble_params.Ki = float_val[1];
                  pid_ble_params.Kd = float_val[2];
     
-             xSemaphoreGive(pid_params_mutex);
-            }
+             //xSemaphoreGive(pid_params_mutex);
+            //}
+
+            taskEXIT_CRITICAL(&ble_mux);
 
             // Log data periodically
             log_counter++;
