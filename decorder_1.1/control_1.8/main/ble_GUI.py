@@ -9,15 +9,12 @@ from bleak import BleakScanner, BleakClient
 import sys
 import queue
 import time
-
 # Fix for Windows BLE scanning (MTA threading model)
 if sys.platform == "win32":
     sys.coinit_flags = 0 # Force Multi-Threaded Apartment before imports
-
 # BLE UUIDs (same as your Flutter app)
 SERVICE_UUID = "cb341ded-25f3-244f-11ac-7ebc1a247a86"
 RX_CHAR_UUID = "0000ff02-0000-1000-8000-00805f9b34fb"
-
 # Modern color scheme
 COLORS = {
     "bg_dark": "#121212",
@@ -37,7 +34,6 @@ COLORS = {
     "border": "#404040",
     "hover": "#3d3d3d"
 }
-
 class ModernButton(tk.Button):
     """Custom modern button with hover effects"""
     def __init__(self, parent, **kwargs):
@@ -60,13 +56,10 @@ class ModernButton(tk.Button):
                          **kwargs)
         self.bind("<Enter>", self.on_enter)
         self.bind("<Leave>", self.on_leave)
-
     def on_enter(self, e):
         self.config(bg=self.hover_color)
-
     def on_leave(self, e):
         self.config(bg=self.bg_color)
-
 class RobotController:
     def __init__(self):
         self.root = tk.Tk()
@@ -77,29 +70,33 @@ class RobotController:
         self.device_address = None
         self.client = None
         self.connected = False
-        self.float_values = [0.0] * 16
+        self.float_values = [0.0] * 5
         self.control_byte = 0
         self.control_buttons = {}
-        self.mode_buttons = {} # NEW: for mode selection
+        self.mode_buttons = {} # for mode selection
+        self.orient_buttons = {} # for orientation
+        self.posture_buttons = {} # for body posture
         self.devices = []
         self.ui_queue = queue.Queue()
         self.scanning = False
         self.stop_scan_event = threading.Event()
-        self.float_entries = [None] * 16
+        self.float_entries = [None] * 5
         self.bytes_sent = 0
         self.packets_sent = 0
         self.connection_start_time = None
-        
+        self.current_base = 0
+        self.gait = None
+        self.current_orient = 6
+        self.current_posture = 16
+ 
         # Add these lines:
         self.keep_alive_interval = 1.0 # Send keep-alive every 1 second
         self.keep_alive_running = False
         self.keep_alive_thread = None
-        self.last_packet = None  # Store the last successfully sent packet
-        self.continuous_var = tk.BooleanVar(value=False)
-        self.continuous_interval = 100
-        self.stop_sending_event = threading.Event()
-        self.sending_thread = None
-        
+        self.last_sent_packet = None # NEW: Store last manually sent packet
+        self.last_sent_control_byte = 0 # NEW: Store last control byte
+        self.last_sent_float_values = [0.0] * 5 # NEW: Store last float values
+      
         self.fonts = {
             'title': ('Segoe UI', 16, 'bold'),
             'heading': ('Segoe UI', 12, 'bold'),
@@ -111,26 +108,6 @@ class RobotController:
         self.setup_ui()
         self.root.after(100, self.process_queue)
         self.center_window()
-    
-    def select_mode(self, mode_value, mode_name, silent=False):
-        """Set robot mode and update button highlight"""
-        if not self.connected and not silent:
-            messagebox.showwarning("Not Connected", "Connect to a device first.")
-            return
-        self.control_byte = mode_value
-        # Highlight active button
-        for val, btn in self.mode_buttons.items():
-            if val == mode_value:
-                btn.config(bg=COLORS["success"], fg=COLORS["bg_dark"])
-            else:
-                colors = {0: COLORS["text_muted"], 1: COLORS["primary"],
-                          2: COLORS["secondary"], 3: COLORS["warning"],
-                          4: COLORS["accent"]}
-                btn.config(bg=colors[val], fg=COLORS["text_primary"])
-        if not silent:
-            self.log(f"Mode changed to: {mode_name} ({mode_value})", tag="info")
-            self.send_packet()
-
     def center_window(self):
         self.root.update_idletasks()
         width = self.root.winfo_width()
@@ -138,13 +115,11 @@ class RobotController:
         x = (self.root.winfo_screenwidth() // 2) - (width // 2)
         y = (self.root.winfo_screenheight() // 2) - (height // 2)
         self.root.geometry(f'{width}x{height}+{x}+{y}')
-
     def setup_ui(self):
         # Header
         header_frame = tk.Frame(self.root, bg=COLORS["bg_card"], height=80)
         header_frame.pack(fill=tk.X, padx=0, pady=0)
         header_frame.pack_propagate(False)
-        
         title_frame = tk.Frame(header_frame, bg=COLORS["bg_card"])
         title_frame.pack(side=tk.LEFT, padx=25, pady=20)
         tk.Label(title_frame, text="🤖 Robot BLE Controller Pro",
@@ -153,7 +128,6 @@ class RobotController:
         tk.Label(title_frame, text="v2.0", font=self.fonts['small'],
                  fg=COLORS["text_muted"], bg=COLORS["bg_card"],
                  padx=5).pack(side=tk.LEFT, padx=10)
-        
         self.status_frame = tk.Frame(header_frame, bg=COLORS["bg_card"])
         self.status_frame.pack(side=tk.RIGHT, padx=25, pady=20)
         self.status_indicator = tk.Label(self.status_frame, text="●",
@@ -168,14 +142,11 @@ class RobotController:
                                        font=self.fonts['small'], fg=COLORS["text_muted"],
                                        bg=COLORS["bg_card"])
         self.connection_info.pack(side=tk.LEFT, padx=10)
-
         # Main container + notebook
         main_container = tk.Frame(self.root, bg=COLORS["bg_medium"])
         main_container.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
-        
         self.notebook = ttk.Notebook(main_container)
         self.notebook.pack(fill=tk.BOTH, expand=True)
-        
         style = ttk.Style()
         style.theme_use('clam')
         style.configure('TNotebook', background=COLORS["bg_medium"], borderwidth=0)
@@ -184,70 +155,56 @@ class RobotController:
                         font=self.fonts['body'])
         style.map('TNotebook.Tab', background=[('selected', COLORS["primary"])],
                   foreground=[('selected', COLORS["text_primary"])])
-        
         self.setup_connection_tab()
         self.setup_controls_tab()
         self.setup_log_tab()
-
         # Status bar
         status_bar = tk.Frame(self.root, bg=COLORS["bg_card"], height=30)
         status_bar.pack(fill=tk.X, side=tk.BOTTOM)
         status_bar.pack_propagate(False)
-        
         self.packet_info = tk.Label(status_bar,
-                                   text="Ready | Packet: 68 bytes (1B + 1B + 64B + 2B)",
+                                   text="Ready | Packet: 24 bytes (1B + 1B + 20B + 2B)",
                                    font=self.fonts['small'], fg=COLORS["text_muted"],
                                    bg=COLORS["bg_card"])
         self.packet_info.pack(side=tk.LEFT, padx=15)
-        
         self.bytes_sent_label = tk.Label(status_bar, text="Bytes sent: 0",
                                         font=self.fonts['small'], fg=COLORS["text_muted"],
                                         bg=COLORS["bg_card"])
         self.bytes_sent_label.pack(side=tk.RIGHT, padx=15)
-
     def setup_connection_tab(self):
         connection_tab = tk.Frame(self.notebook, bg=COLORS["bg_medium"])
         self.notebook.add(connection_tab, text="📶 Connection")
-        
         control_frame = tk.LabelFrame(connection_tab, text=" Device Management ",
                                      font=self.fonts['heading'], bg=COLORS["bg_card"],
                                      fg=COLORS["primary_light"], relief=tk.FLAT,
                                      borderwidth=2, padx=20, pady=20)
         control_frame.pack(fill=tk.X, padx=10, pady=10)
-        
         button_grid = tk.Frame(control_frame, bg=COLORS["bg_card"])
         button_grid.pack()
-        
         self.scan_button = ModernButton(button_grid, text="🔍 Scan Devices",
                                        bg_color=COLORS["primary"],
                                        command=self.start_scan_thread, width=15)
         self.scan_button.grid(row=0, column=0, padx=5, pady=5)
-        
         self.stop_btn = ModernButton(button_grid, text="⏹ Stop Scan",
                                     bg_color=COLORS["danger"], command=self.stop_scan,
                                     state='disabled', width=15)
         self.stop_btn.grid(row=0, column=1, padx=5, pady=5)
-        
         self.disconnect_btn = ModernButton(button_grid, text="🔌 Disconnect",
                                           bg_color=COLORS["warning"],
                                           command=self.disconnect_device,
                                           state='disabled', width=15)
         self.disconnect_btn.grid(row=0, column=2, padx=5, pady=5)
-        
         device_frame = tk.LabelFrame(connection_tab, text=" Available Devices ",
                                     font=self.fonts['heading'], bg=COLORS["bg_card"],
                                     fg=COLORS["secondary"], relief=tk.FLAT,
                                     borderwidth=2, padx=20, pady=20)
         device_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        
         listbox_container = tk.Frame(device_frame, bg=COLORS["bg_card"])
         listbox_container.pack(fill=tk.BOTH, expand=True)
-        
         scrollbar = tk.Scrollbar(listbox_container, bg=COLORS["bg_light"],
                                 troughcolor=COLORS["bg_medium"],
                                 activebackground=COLORS["primary"])
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        
         self.device_listbox = tk.Listbox(listbox_container, bg=COLORS["bg_light"],
                                         fg=COLORS["text_primary"], font=self.fonts['mono'],
                                         height=10, selectbackground=COLORS["primary"],
@@ -258,39 +215,32 @@ class RobotController:
         self.device_listbox.bind('<<ListboxSelect>>', self.on_device_select)
         self.device_listbox.config(yscrollcommand=scrollbar.set)
         scrollbar.config(command=self.device_listbox.yview)
-        
         self.connect_button = ModernButton(device_frame,
                                           text="✅ Connect to Selected Device",
                                           bg_color=COLORS["success"],
                                           command=self.connect_selected,
                                           state='disabled')
         self.connect_button.pack(pady=10)
-
     def setup_controls_tab(self):
         controls_tab = tk.Frame(self.notebook, bg=COLORS["bg_medium"])
         self.notebook.add(controls_tab, text="🎮 Controls")
-        
         top_frame = tk.Frame(controls_tab, bg=COLORS["bg_medium"])
         top_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        
-        float_frame = tk.LabelFrame(top_frame, text=" Float Parameters (16 values) ",
+        float_frame = tk.LabelFrame(top_frame, text=" Float Parameters (5 values) ",
                                    font=self.fonts['heading'], bg=COLORS["bg_card"],
                                    fg=COLORS["accent"], relief=tk.FLAT,
                                    borderwidth=2, padx=20, pady=20)
         float_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
-        
-        for i in range(16):
-            row = i % 4
-            col = i // 4
+        for i in range(5):
+            row = i // 3
+            col = i % 3
             frame = tk.Frame(float_frame, bg=COLORS["bg_card"])
             frame.grid(row=row, column=col, padx=10, pady=8, sticky='w')
-            
-            label_bg = self.get_gradient_color(i, 16)
+            label_bg = self.get_gradient_color(i, 5)
             tk.Label(frame, text=f"F{i+1:02d}:", font=self.fonts['body'],
                      fg=COLORS["text_primary"], bg=label_bg,
                      padx=8, pady=3, relief=tk.RAISED,
                      borderwidth=1).pack(side=tk.LEFT)
-            
             entry = tk.Entry(frame, bg=COLORS["bg_light"], fg=COLORS["text_primary"],
                              font=self.fonts['body'], width=12,
                              insertbackground=COLORS["primary_light"],
@@ -299,29 +249,26 @@ class RobotController:
             entry.pack(side=tk.LEFT, padx=5)
             entry.bind("<FocusIn>", lambda e, w=entry: w.config(bg=COLORS["bg_medium"]))
             entry.bind("<FocusOut>", lambda e, w=entry: w.config(bg=COLORS["bg_light"]))
-            
             value_label = tk.Label(frame, text="0.00", font=self.fonts['small'],
                                   fg=COLORS["text_muted"], bg=COLORS["bg_card"], width=6)
             value_label.pack(side=tk.LEFT, padx=5)
             entry.value_label = value_label
             entry.bind("<KeyRelease>", lambda e, idx=i: self.update_value_label(idx))
             self.float_entries[i] = entry
-        
         bottom_frame = tk.Frame(controls_tab, bg=COLORS["bg_medium"])
         bottom_frame.pack(fill=tk.X, padx=10, pady=10)
-        
-        # Left side: Movement + Mode (using grid for reliable vertical stacking)
+                # Left side: Movement + Mode (using grid for reliable vertical stacking)
         left_container = tk.Frame(bottom_frame, bg=COLORS["bg_medium"])
         left_container.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
-        
         # Configure grid weights
         left_container.grid_rowconfigure(0, weight=1)
         left_container.grid_rowconfigure(1, weight=0)
+        left_container.grid_rowconfigure(2, weight=0)
+        left_container.grid_rowconfigure(3, weight=0)
         left_container.grid_columnconfigure(0, weight=1)
-        
         # Robot Movement controls
         control_buttons_frame = tk.LabelFrame(left_container,
-                                             text=" Robot Movement ",
+                                             text=" Robot Direction ",
                                              font=self.fonts['heading'],
                                              bg=COLORS["bg_card"],
                                              fg=COLORS["primary_light"],
@@ -332,10 +279,9 @@ class RobotController:
         control_buttons_frame.grid(row=0, column=0, sticky='nsew', padx=5, pady=(0, 10))
         self.control_frame = control_buttons_frame
         self.show_controls(disabled=True)
-        
         # Robot Mode selection
         mode_frame = tk.LabelFrame(left_container,
-                                   text=" Robot Mode ",
+                                   text=" Robot Gait Mode ",
                                    font=self.fonts['heading'],
                                    bg=COLORS["bg_card"],
                                    fg=COLORS["secondary"],
@@ -344,18 +290,15 @@ class RobotController:
                                    padx=20,
                                    pady=20)
         mode_frame.grid(row=1, column=0, sticky='ew', padx=5, pady=(0, 10))
-        
         mode_grid = tk.Frame(mode_frame, bg=COLORS["bg_card"])
         mode_grid.pack(padx=10, pady=10)
-        
         modes = [
             ("Idle", 0, COLORS["text_muted"]),
             ("Standby", 1, COLORS["primary"]),
-            ("Crawl", 2, COLORS["secondary"]),
-            ("Turtle", 3, COLORS["warning"]),
-            ("Creep", 4, COLORS["accent"])
+            ("Crawl", 3, COLORS["secondary"]),
+            ("Trot", 4, COLORS["warning"]),
+            ("Creep", 5, COLORS["accent"])
         ]
-        
         self.mode_buttons = {}
         for i, (name, value, base_color) in enumerate(modes):
             btn = ModernButton(mode_grid,
@@ -366,44 +309,98 @@ class RobotController:
                                pady=8)
             btn.grid(row=i // 3, column=i % 3, padx=8, pady=6, sticky='ew')
             self.mode_buttons[value] = btn
-        
         for c in range(3):
-            mode_grid.grid_columnconfigure(c, weight=1)
-        
+              mode_grid.grid_columnconfigure(c, weight=1)
         # Default to Idle
         self.select_mode(0, "Idle", silent=True)
-        
+        # Leg Orientation selection
+        orient_frame = tk.LabelFrame(left_container,
+                                     text=" Leg Orientation ",
+                                     font=self.fonts['heading'],
+                                     bg=COLORS["bg_card"],
+                                     fg=COLORS["accent"],
+                                     relief=tk.FLAT,
+                                     borderwidth=2,
+                                     padx=20,
+                                     pady=20)
+        orient_frame.grid(row=2, column=0, sticky='ew', padx=5, pady=(0, 10))
+        orient_grid = tk.Frame(orient_frame, bg=COLORS["bg_card"])
+        orient_grid.pack(padx=10, pady=10)
+        orients = [
+            ("Normal", 6, COLORS["primary"]),
+            ("Inverted", 7, COLORS["danger"])
+        ]
+        self.orient_buttons = {}
+        for i, (name, value, base_color) in enumerate(orients):
+            btn = ModernButton(orient_grid,
+                               text=name,
+                               bg_color=base_color,
+                               command=lambda v=value, n=name: self.select_orient(v, n),
+                               width=12,
+                               pady=8)
+            btn.grid(row=0, column=i, padx=8, pady=6, sticky='ew')
+            self.orient_buttons[value] = btn
+        for c in range(2):
+            orient_grid.grid_columnconfigure(c, weight=1)
+        # Default to Normal
+        self.select_orient(6, "Normal", silent=True)
+        # Body Posture selection
+        posture_frame = tk.LabelFrame(left_container,
+                                      text=" Body Posture ",
+                                      font=self.fonts['heading'],
+                                      bg=COLORS["bg_card"],
+                                      fg=COLORS["warning"],
+                                      relief=tk.FLAT,
+                                      borderwidth=2,
+                                      padx=20,
+                                      pady=20)
+        posture_frame.grid(row=3, column=0, sticky='ew', padx=5, pady=(0, 10))
+        posture_grid = tk.Frame(posture_frame, bg=COLORS["bg_card"])
+        posture_grid.pack(padx=10, pady=10)
+        postures = [
+            ("Normal", 16, COLORS["success"]),
+            ("Low", 17, COLORS["warning"]),
+            ("Crouch", 18, COLORS["danger"])
+        ]
+        self.posture_buttons = {}
+        for i, (name, value, base_color) in enumerate(postures):
+            btn = ModernButton(posture_grid,
+                               text=name,
+                               bg_color=base_color,
+                               command=lambda v=value, n=name: self.select_posture(v, n),
+                               width=12,
+                               pady=8)
+            btn.grid(row=0, column=i, padx=8, pady=6, sticky='ew')
+            self.posture_buttons[value] = btn
+        for c in range(3):
+            posture_grid.grid_columnconfigure(c, weight=1)
+        # Default to Normal
+        self.select_posture(16, "Normal", silent=True)
         # Right side: Presets + Send
         right_frame = tk.Frame(bottom_frame, bg=COLORS["bg_medium"])
         right_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=5)
-        
         presets_frame = tk.LabelFrame(right_frame, text=" Quick Presets ",
                                      font=self.fonts['heading'], bg=COLORS["bg_card"],
                                      fg=COLORS["warning"], relief=tk.FLAT,
                                      borderwidth=2, padx=20, pady=20)
         presets_frame.pack(fill=tk.X, pady=(0, 10))
-        
         presets_grid = tk.Frame(presets_frame, bg=COLORS["bg_card"])
         presets_grid.pack()
-        
         preset_configs = [
             ("Set All Zero", self.set_all_zero, COLORS["text_muted"]),
             ("Test Pattern", self.set_test_pattern, COLORS["primary"]),
             ("Motor Control", self.set_motor_control, COLORS["secondary"]),
             ("PID Values", self.set_pid_values, COLORS["accent"])
         ]
-        
         for i, (text, command, color) in enumerate(preset_configs):
             btn = ModernButton(presets_grid, text=text, bg_color=color,
                                command=command, width=12)
             btn.grid(row=i//2, column=i%2, padx=5, pady=5, sticky='ew')
-        
         send_frame = tk.LabelFrame(right_frame, text=" Send Control ",
                                   font=self.fonts['heading'], bg=COLORS["bg_card"],
                                   fg=COLORS["success"], relief=tk.FLAT,
                                   borderwidth=2, padx=20, pady=20)
         send_frame.pack(fill=tk.X)
-        
         self.send_button = ModernButton(send_frame, text="🚀 SEND PACKET",
                                        bg_color=COLORS["success"],
                                        fg_color=COLORS["bg_dark"],
@@ -412,54 +409,74 @@ class RobotController:
                                        font=('Segoe UI', 11, 'bold'),
                                        padx=30, pady=12)
         self.send_button.pack(pady=5)
-        
         self.packet_status = tk.Label(send_frame, text="Ready to send",
                                      font=self.fonts['body'], fg=COLORS["text_muted"],
                                      bg=COLORS["bg_card"])
         self.packet_status.pack()
-        
-        continuous_frame = tk.Frame(send_frame, bg=COLORS["bg_card"])
-        continuous_frame.pack(pady=10)
-        
-        tk.Checkbutton(continuous_frame,
-                       text="Continuous Send (repeat last packet)",
-                       variable=self.continuous_var,
-                       command=self.toggle_continuous,
-                       bg=COLORS["bg_card"],
-                       fg=COLORS["text_primary"],
-                       selectcolor=COLORS["primary"],
-                       font=self.fonts['body']).pack(side=tk.LEFT, padx=5)
-        
-        tk.Label(continuous_frame,
-                 text="Interval (ms):",
-                 font=self.fonts['body'],
-                 fg=COLORS["text_primary"],
-                 bg=COLORS["bg_card"]).pack(side=tk.LEFT, padx=5)
-        
-        self.interval_entry = tk.Entry(continuous_frame,
-                                       bg=COLORS["bg_light"],
-                                       fg=COLORS["text_primary"],
-                                       font=self.fonts['body'],
-                                       width=6,
-                                       insertbackground=COLORS["primary_light"],
-                                       relief=tk.FLAT,
-                                       borderwidth=1)
-        self.interval_entry.insert(0, "100")
-        self.interval_entry.pack(side=tk.LEFT, padx=5)
-
+    def select_mode(self, mode_value, mode_name, silent=False):
+        """Set robot mode and update button highlight"""
+        if not self.connected and not silent:
+            messagebox.showwarning("Not Connected", "Connect to a device first.")
+            return
+        self.control_byte = mode_value
+        self.current_base = mode_value
+        self.gait = {3: 'crawl', 4: 'trot', 5: 'creep'}.get(mode_value, None)
+        # Highlight active button
+        for val, btn in self.mode_buttons.items():
+            if val == mode_value:
+                btn.config(bg=COLORS["success"], fg=COLORS["bg_dark"])
+            else:
+                colors = {0: COLORS["text_muted"], 1: COLORS["primary"],
+                          3: COLORS["secondary"], 4: COLORS["warning"],
+                          5: COLORS["accent"]}
+                btn.config(bg=colors.get(val, COLORS["primary"]), fg=COLORS["text_primary"])
+        if not silent:
+            self.log(f"Mode changed to: {mode_name} ({mode_value})", tag="info")
+            self.send_packet()
+    def select_orient(self, orient_value, orient_name, silent=False):
+        """Set leg orientation and update button highlight"""
+        if not self.connected and not silent:
+            messagebox.showwarning("Not Connected", "Connect to a device first.")
+            return
+        self.control_byte = orient_value
+        self.current_orient = orient_value
+        # Highlight active button
+        for val, btn in self.orient_buttons.items():
+            if val == orient_value:
+                btn.config(bg=COLORS["success"], fg=COLORS["bg_dark"])
+            else:
+                colors = {6: COLORS["primary"], 7: COLORS["danger"]}
+                btn.config(bg=colors[val], fg=COLORS["text_primary"])
+        if not silent:
+            self.log(f"Orientation changed to: {orient_name} ({orient_value})", tag="info")
+            self.send_packet()
+    def select_posture(self, posture_value, posture_name, silent=False):
+        """Set body posture and update button highlight"""
+        if not self.connected and not silent:
+            messagebox.showwarning("Not Connected", "Connect to a device first.")
+            return
+        self.control_byte = posture_value
+        self.current_posture = posture_value
+        # Highlight active button
+        for val, btn in self.posture_buttons.items():
+            if val == posture_value:
+                btn.config(bg=COLORS["success"], fg=COLORS["bg_dark"])
+            else:
+                colors = {16: COLORS["success"], 17: COLORS["warning"], 18: COLORS["danger"]}
+                btn.config(bg=colors[val], fg=COLORS["text_primary"])
+        if not silent:
+            self.log(f"Posture changed to: {posture_name} ({posture_value})", tag="info")
+            self.send_packet()
     def setup_log_tab(self):
         log_tab = tk.Frame(self.notebook, bg=COLORS["bg_medium"])
         self.notebook.add(log_tab, text="📊 Logs & Stats")
-        
         stats_frame = tk.LabelFrame(log_tab, text=" Connection Statistics ",
                                    font=self.fonts['heading'], bg=COLORS["bg_card"],
                                    fg=COLORS["primary_light"], relief=tk.FLAT,
                                    borderwidth=2, padx=20, pady=20)
         stats_frame.pack(fill=tk.X, padx=10, pady=10)
-        
         stats_grid = tk.Frame(stats_frame, bg=COLORS["bg_card"])
         stats_grid.pack()
-        
         stats_data = [
             ("Connected Device:", "None", "device_label"),
             ("Packets Sent:", "0", "packets_label"),
@@ -468,7 +485,6 @@ class RobotController:
             ("Signal Strength:", "- dBm", "rssi_label"),
             ("Last Update:", "Never", "update_label")
         ]
-        
         self.stats_labels = {}
         for i, (label, value, key) in enumerate(stats_data):
             tk.Label(stats_grid, text=label, font=self.fonts['body'],
@@ -478,31 +494,25 @@ class RobotController:
                                fg=COLORS["text_primary"], bg=COLORS["bg_card"])
             val_lbl.grid(row=i, column=1, sticky='w', pady=3)
             self.stats_labels[key] = val_lbl
-        
         log_frame = tk.LabelFrame(log_tab, text=" Event Log ",
                                  font=self.fonts['heading'], bg=COLORS["bg_card"],
                                  fg=COLORS["accent"], relief=tk.FLAT,
                                  borderwidth=2, padx=20, pady=20)
         log_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        
         log_controls = tk.Frame(log_frame, bg=COLORS["bg_card"])
         log_controls.pack(fill=tk.X, pady=(0, 10))
-        
         ModernButton(log_controls, text="Clear Log", bg_color=COLORS["danger"],
                      command=self.clear_log).pack(side=tk.LEFT, padx=5)
         ModernButton(log_controls, text="Export Log", bg_color=COLORS["primary"],
                      command=self.export_log).pack(side=tk.LEFT, padx=5)
         ModernButton(log_controls, text="Copy to Clipboard", bg_color=COLORS["secondary"],
                      command=self.copy_log).pack(side=tk.LEFT, padx=5)
-        
         log_container = tk.Frame(log_frame, bg=COLORS["bg_card"])
         log_container.pack(fill=tk.BOTH, expand=True)
-        
         scrollbar = tk.Scrollbar(log_container, bg=COLORS["bg_light"],
                                 troughcolor=COLORS["bg_medium"],
                                 activebackground=COLORS["primary"])
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        
         self.log_text = tk.Text(log_container, height=15, bg=COLORS["bg_light"],
                                fg=COLORS["text_primary"], font=self.fonts['mono'],
                                wrap=tk.WORD, borderwidth=0, highlightthickness=0,
@@ -510,12 +520,10 @@ class RobotController:
         self.log_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         self.log_text.config(yscrollcommand=scrollbar.set)
         scrollbar.config(command=self.log_text.yview)
-        
         self.log_text.tag_config("success", foreground=COLORS["success"])
         self.log_text.tag_config("error", foreground=COLORS["danger"])
         self.log_text.tag_config("warning", foreground=COLORS["warning"])
         self.log_text.tag_config("info", foreground=COLORS["primary_light"])
-
     def get_gradient_color(self, index, total):
         r1, g1, b1 = 255, 107, 107
         r2, g2, b2 = 0, 122, 204
@@ -524,7 +532,6 @@ class RobotController:
         g = int(g1 + (g2 - g1) * ratio)
         b = int(b1 + (b2 - b1) * ratio)
         return f'#{r:02x}{g:02x}{b:02x}'
-
     def update_value_label(self, index):
         try:
             value = float(self.float_entries[index].get())
@@ -534,11 +541,9 @@ class RobotController:
             )
         except:
             self.float_entries[index].value_label.config(text="Err", fg=COLORS["danger"])
-
     def clear_log(self):
         self.log_text.delete(1.0, tk.END)
         self.log("Log cleared", tag="info")
-
     def export_log(self):
         try:
             filename = f"robot_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
@@ -547,18 +552,15 @@ class RobotController:
             self.log(f"Log exported to {filename}", tag="success")
         except Exception as e:
             self.log(f"Export failed: {e}", tag="error")
-
     def copy_log(self):
         self.root.clipboard_clear()
         self.root.clipboard_append(self.log_text.get(1.0, tk.END))
         self.log("Log copied to clipboard", tag="info")
-
     def log(self, message, tag="info"):
         timestamp = time.strftime("%H:%M:%S")
         log_entry = f"[{timestamp}] {message}"
         self.ui_queue.put(("log", (log_entry, tag)))
         print(message)
-
     def process_queue(self):
         try:
             while True:
@@ -596,7 +598,6 @@ class RobotController:
             pass
         finally:
             self.root.after(100, self.process_queue)
-
     def start_scan_thread(self):
         if self.scanning:
             return
@@ -612,7 +613,6 @@ class RobotController:
         self.log("Starting BLE device scan...", tag="info")
         scan_thread = threading.Thread(target=self.scan_ble_devices, daemon=True)
         scan_thread.start()
-
     def scan_ble_devices(self):
         try:
             loop = asyncio.new_event_loop()
@@ -620,29 +620,29 @@ class RobotController:
             async def scan():
                 # Use detection_callback to get RSSI in real-time
                 devices_found = []
-               
+             
                 def detection_callback(device, advertisement_data):
                     rssi = advertisement_data.rssi if advertisement_data else -100
                     devices_found.append((device, rssi))
-               
+             
                 scanner = BleakScanner(detection_callback=detection_callback)
                 await scanner.start()
                 await asyncio.sleep(10.0) # Scan for 10 seconds
                 await scanner.stop()
-               
+             
                 # Remove duplicates and keep best RSSI
                 unique_devices = {}
                 for device, rssi in devices_found:
                     if device.address not in unique_devices or rssi > unique_devices[device.address][1]:
                         unique_devices[device.address] = (device, rssi)
-               
+             
                 return [(device, rssi) for device, rssi in unique_devices.values()]
             discovered = loop.run_until_complete(scan())
             loop.close()
             device_strings = []
             # Sort by RSSI (strongest first)
             discovered.sort(key=lambda x: x[1], reverse=True)
-           
+         
             for device, rssi in discovered:
                 name = device.name or "Unknown"
                 display = f"{name[:25]:25} | {device.address} | RSSI: {rssi:3}"
@@ -668,7 +668,6 @@ class RobotController:
             self.ui_queue.put(("enable_button", [self.scan_button, "normal"]))
             self.ui_queue.put(("enable_button", [self.stop_btn, "disabled"]))
             self.scanning = False
-
     def stop_scan(self):
         self.stop_scan_event.set()
         self.scanning = False
@@ -677,12 +676,10 @@ class RobotController:
         self.ui_queue.put(("enable_button", [self.scan_button, "normal"]))
         self.ui_queue.put(("enable_button", [self.stop_btn, "disabled"]))
         self.log("Scan stopped", tag="warning")
-
     def on_device_select(self, event):
         selection = self.device_listbox.curselection()
         if selection:
             self.connect_button.config(state='normal')
-
     def connect_selected(self):
         selection = self.device_listbox.curselection()
         if not selection:
@@ -700,7 +697,6 @@ class RobotController:
             connect_thread = threading.Thread(target=self.connect_device_thread,
                                             args=(device.address, device.name or device.address), daemon=True)
             connect_thread.start()
-
     def connect_device_thread(self, address, name):
         try:
             loop = asyncio.new_event_loop()
@@ -713,23 +709,27 @@ class RobotController:
                 return client
             self.client = loop.run_until_complete(connect())
             loop.close()
-           
+          
             self.connected = True
             # Start connection time updater
             self.root.after(1000, self.update_connection_time)
             # Start signal strength monitoring
             self.root.after(2000, self.monitor_signal_strength)
-          
+         
             # Stop any existing keep-alive thread
             if hasattr(self, 'keep_alive_running') and self.keep_alive_running:
                 self.keep_alive_running = False
                 if hasattr(self, 'keep_alive_thread') and self.keep_alive_thread.is_alive():
                     self.keep_alive_thread.join(timeout=1.0)
-          
-            # Don't start keep-alive thread - we'll use continuous send instead
-            # Keep-alive is disabled to prevent sending zeros
-            self.keep_alive_running = False
-            
+         
+            # Start keep-alive thread
+            self.keep_alive_running = True
+            self.keep_alive_thread = threading.Thread(
+                target=self.keep_alive_loop,
+                daemon=True
+            )
+            self.keep_alive_thread.start()
+            self.log("Keep-alive started (BLE heartbeat active)", tag="info")
             self.connection_start_time = time.time()
             device_name = name or address
             self.ui_queue.put(("update_status", ["Connected!", COLORS["success"]]))
@@ -752,7 +752,6 @@ class RobotController:
             self.ui_queue.put(("enable_button", [self.connect_button, "normal"]))
             self.ui_queue.put(("enable_button", [self.scan_button, "normal"]))
             self.log(f"Connection error: {error_msg}", tag="error")
-
     def disconnect_device(self):
         if not self.connected or not self.client:
             return
@@ -762,13 +761,8 @@ class RobotController:
         self.ui_queue.put(("enable_button", [self.disconnect_btn, "disabled"]))
         disconnect_thread = threading.Thread(target=self.disconnect_device_thread, daemon=True)
         disconnect_thread.start()
-
     def disconnect_device_thread(self):
         try:
-            # Stop continuous sending if active
-            self.stop_sending_event.set()
-            if self.sending_thread:
-                self.sending_thread.join(timeout=2.0)
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             async def disconnect():
@@ -779,7 +773,6 @@ class RobotController:
             self.connected = False
             self.client = None
             self.connection_start_time = None
-            self.last_packet = None  # Clear last packet on disconnect
             self.ui_queue.put(("update_status", ["Disconnected", COLORS["danger"]]))
             self.ui_queue.put(("update_info", "No device connected"))
             self.ui_queue.put(("enable_button", [self.scan_button, "normal"]))
@@ -797,7 +790,6 @@ class RobotController:
             self.root.after(0, self.disable_controls)
             # Reset mode highlight
             self.select_mode(0, "Idle", silent=True)
-
     def enable_controls(self):
         for btn in self.control_buttons.values():
             btn.config(state='normal')
@@ -806,7 +798,6 @@ class RobotController:
         self.send_button.config(state='normal')
         self.control_frame.config(fg=COLORS["primary_light"])
         self.log("Controls enabled", tag="success")
-
     def disable_controls(self):
         for btn in self.control_buttons.values():
             btn.config(state='disabled')
@@ -815,7 +806,6 @@ class RobotController:
         self.send_button.config(state='disabled')
         self.control_frame.config(fg=COLORS["text_muted"])
         self.log("Controls disabled", tag="warning")
-
     def show_controls(self, disabled=False):
         for widget in self.control_frame.winfo_children():
             widget.destroy()
@@ -825,11 +815,11 @@ class RobotController:
         control_grid = tk.Frame(self.control_frame, bg=COLORS["bg_card"])
         control_grid.pack(expand=True)
         controls = [
-            ("▲", "Forward", 1, 0, 1),
-            ("◀", "Left", 3, 1, 0),
-            ("⏹", "Stop", 0, 1, 1),
-            ("▶", "Right", 4, 1, 2),
-            ("▼", "Backward", 2, 2, 1)
+            ("▲", "Forward", 'forward', 0, 1),
+            ("◀", "Left", 'left', 1, 0),
+            ("⏹", "Stop", 'stop', 1, 1),
+            ("▶", "Right", 'right', 1, 2),
+            ("▼", "Backward", 'backward', 2, 1)
         ]
         for symbol, text, value, row, col in controls:
             btn = ModernButton(control_grid, text=f"{symbol}\n{text}",
@@ -842,18 +832,34 @@ class RobotController:
         for i in range(3):
             control_grid.grid_rowconfigure(i, weight=1)
             control_grid.grid_columnconfigure(i, weight=1)
-
-    def control_press(self, value, label_text):
+    def control_press(self, direction, label_text):
         if not self.connected:
             return
-        self.control_byte = value
         btn = self.control_buttons.get(label_text)
         if btn:
             original_bg = btn['bg']
             btn.config(bg=COLORS["warning"])
             self.root.after(300, lambda b=btn, c=original_bg: b.config(bg=c))
-        self.send_packet()
-
+        if direction == 'stop':
+            self.select_mode(0, "Idle")
+        elif direction == 'forward':
+            self.control_byte = self.current_base
+            self.send_packet()
+        elif direction == 'backward':
+            messagebox.showwarning("Not Supported", "Backward movement not implemented.")
+            return
+        elif direction == 'left':
+            if self.gait is None:
+                return
+            turn_map = {'crawl': 12, 'creep': 10, 'trot': 8}
+            self.control_byte = turn_map.get(self.gait, self.current_base)
+            self.send_packet()
+        elif direction == 'right':
+            if self.gait is None:
+                return
+            turn_map = {'crawl': 13, 'creep': 11, 'trot': 9}
+            self.control_byte = turn_map.get(self.gait, self.current_base)
+            self.send_packet()
     def get_float_values(self):
         try:
             for i, entry in enumerate(self.float_entries):
@@ -863,98 +869,29 @@ class RobotController:
         except ValueError as e:
             messagebox.showerror("Input Error", f"Invalid float value at position {i+1}: {e}")
             return False
-
     def set_all_zero(self):
         for entry in self.float_entries:
             entry.delete(0, tk.END)
             entry.insert(0, "0.0")
-        self.log("All 16 floats set to 0.0", tag="info")
-
+        self.log("All 5 floats set to 0.0", tag="info")
     def set_test_pattern(self):
-        test_values = [1.0,2.0,3.0,4.0,0.5,1.5,2.5,3.5,-1.0,-2.0,-3.0,-4.0,0.0,1.0,0.0,1.0]
+        test_values = [1.0,2.0,3.0,4.0,0.5]
         for i, entry in enumerate(self.float_entries):
             entry.delete(0, tk.END)
             entry.insert(0, str(test_values[i]))
-        self.log("Test pattern loaded for 16 floats", tag="info")
-
+        self.log("Test pattern loaded for 5 floats", tag="info")
     def set_motor_control(self):
-        motor_values = [1.5,-1.5,1.0,-1.0,0.8,-0.8,0.5,-0.5,0.3,-0.3,0.2,-0.2,0.1,-0.1,0.0,0.0]
+        motor_values = [1.5,-1.5,1.0,-1.0,0.8]
         for i, entry in enumerate(self.float_entries):
             entry.delete(0, tk.END)
             entry.insert(0, str(motor_values[i]))
         self.log("Motor control values loaded", tag="info")
-
     def set_pid_values(self):
-        pid_values = [1.0,0.1,0.01,0.0,2.0,0.2,0.02,0.0,0.5,0.05,0.005,0.0,1.5,0.15,0.015,0.0]
+        pid_values = [1.0,0.1,0.01,0.0,2.0]
         for i, entry in enumerate(self.float_entries):
             entry.delete(0, tk.END)
             entry.insert(0, str(pid_values[i]))
         self.log("PID values loaded", tag="info")
-
-    def toggle_continuous(self):
-        if self.continuous_var.get():
-            try:
-                self.continuous_interval = int(self.interval_entry.get())
-                if self.continuous_interval <= 0:
-                    raise ValueError("Interval must be positive")
-            except ValueError as e:
-                messagebox.showerror("Invalid Interval", f"Invalid interval value: {e}")
-                self.continuous_var.set(False)
-                return
-            if self.last_packet is None:
-                messagebox.showwarning("No Packet", "No packet has been sent yet. Send a packet first.")
-                self.continuous_var.set(False)
-                return
-            self.stop_sending_event.clear()
-            self.sending_thread = threading.Thread(target=self.continuous_send_thread, daemon=True)
-            self.sending_thread.start()
-            self.log(f"Continuous sending started (repeating last packet) every {self.continuous_interval} ms", tag="success")
-        else:
-            self.stop_sending_event.set()
-            self.log("Continuous sending stopped", tag="warning")
-
-    def continuous_send_thread(self):
-        """Continuous sending loop - repeats the last sent packet"""
-        try:
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            while not self.stop_sending_event.is_set() and self.connected:
-                if self.client and self.last_packet is not None:
-                    async def send():
-                        try:
-                            await asyncio.wait_for(
-                                self.client.write_gatt_char(RX_CHAR_UUID, self.last_packet, response=False),
-                                timeout=2.0
-                            )
-                            return True
-                        except asyncio.TimeoutError:
-                            return False
-                        except Exception as e:
-                            return False
-                    success = loop.run_until_complete(send())
-                    if success:
-                        # Update statistics
-                        self.packets_sent += 1
-                        self.bytes_sent += len(self.last_packet)
-                        self.ui_queue.put(("update_stats", ("packets_label", str(self.packets_sent))))
-                        self.ui_queue.put(("update_stats", ("bytes_label", f"{self.bytes_sent} B")))
-                        self.bytes_sent_label.config(text=f"Bytes sent: {self.bytes_sent}")
-                        self.log("Sent repeated packet", tag="info")
-                    else:
-                        self.log("Continuous send failed - connection may be lost", tag="warning")
-                        break
-                time.sleep(self.continuous_interval / 1000.0)
-            loop.close()
-            if self.stop_sending_event.is_set():
-                self.log("Continuous send stopped normally", tag="info")
-            else:
-                self.ui_queue.put(("update_status", ["Connection lost", COLORS["danger"]]))
-                self.disconnect_device()
-        except Exception as e:
-            self.ui_queue.put(("show_error", f"Continuous send failed: {e}"))
-            self.log(f"Continuous send error: {e}", tag="error")
-            self.continuous_var.set(False)
-
     def send_packet(self):
         if not self.connected or not self.client:
             messagebox.showwarning("Not Connected", "Connect to device first.")
@@ -966,7 +903,6 @@ class RobotController:
         self.ui_queue.put(("packet_sent", ["Building packet...", COLORS["warning"]]))
         send_thread = threading.Thread(target=self.send_packet_thread, args=(packet,), daemon=True)
         send_thread.start()
-
     def send_packet_thread(self, packet):
         try:
             loop = asyncio.new_event_loop()
@@ -975,32 +911,34 @@ class RobotController:
                 # Try up to 3 times with exponential backoff
                 for attempt in range(3):
                     try:
-                        await asyncio.wait_for(
-                            self.client.write_gatt_char(RX_CHAR_UUID, packet, response=False),
-                            timeout=2.0
+                        await self.client.write_gatt_char(
+                            RX_CHAR_UUID,
+                            packet,
+                            response=False
                         )
                         return True
-                    except asyncio.TimeoutError:
-                        if attempt == 2:
-                            raise Exception("Timeout after 3 attempts")
                     except Exception as e:
                         if attempt == 2:
                             raise e
-                    await asyncio.sleep(0.1 * (2 ** attempt)) # Exponential backoff
-              
+                        await asyncio.sleep(0.1 * (2 ** attempt)) # Exponential backoff
+             
                 return False
             success = loop.run_until_complete(send())
             loop.close()
             if success:
-                self.last_packet = packet  # Store last packet for continuous repeat
+                # Store the last sent values for keep-alive
+                self.last_sent_packet = packet
+                self.last_sent_control_byte = self.control_byte
+                self.last_sent_float_values = self.float_values.copy()
+              
                 self.packets_sent += 1
                 self.bytes_sent += len(packet)
                 self.bytes_sent_label.config(text=f"Bytes sent: {self.bytes_sent}")
                 self.ui_queue.put(("update_stats", ("packets_label", str(self.packets_sent))))
                 self.ui_queue.put(("update_stats", ("bytes_label", f"{self.bytes_sent} B")))
-                float_str = ", ".join([f"{f:.2f}" for f in self.float_values[:4]]) + "..."
+                float_str = ", ".join([f"{f:.2f}" for f in self.float_values])
                 self.log(f"✓ {len(packet)}-byte packet sent! Control: {self.control_byte}", tag="success")
-                self.log(f" First 4 floats: [{float_str}]", tag="info")
+                self.log(f" Floats: [{float_str}]", tag="info")
                 self.ui_queue.put(("packet_sent", [f"✓ {len(packet)}-byte packet sent", COLORS["success"]]))
             else:
                 raise Exception("Failed after 3 attempts")
@@ -1011,7 +949,6 @@ class RobotController:
             if "not connected" in str(e).lower() or "disconnected" in str(e).lower():
                 self.ui_queue.put(("update_status", ["Connection lost", COLORS["danger"]]))
                 self.disconnect_device()
-
     def update_connection_time(self):
         """Update the connection time display"""
         if self.connected and self.connection_start_time:
@@ -1021,27 +958,17 @@ class RobotController:
             seconds = int(elapsed % 60)
             time_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
             self.ui_queue.put(("update_stats", ("time_label", time_str)))
-      
+     
         # Schedule next update if connected
         if self.connected:
             self.root.after(1000, self.update_connection_time) # Update every second
-
     def build_packet(self):
         packet = bytearray([0xA5, self.control_byte])
         for f in self.float_values:
             packet.extend(struct.pack('<f', f))
         packet.extend([0xAA, 0x5A])
         return packet
-
     def on_closing(self):
-        # Stop continuous sending
-        self.stop_sending_event.set()
-        if self.sending_thread:
-            self.sending_thread.join(timeout=2.0)
-        # Stop keep-alive
-        self.keep_alive_running = False
-        if self.keep_alive_thread:
-            self.keep_alive_thread.join(timeout=2.0)
         if self.client and self.connected:
             try:
                 loop = asyncio.new_event_loop()
@@ -1051,9 +978,56 @@ class RobotController:
                 self.log("Disconnected on exit", tag="info")
             except Exception as e:
                 self.log(f"Error during disconnect: {e}", tag="error")
-        self.last_packet = None
         self.root.destroy()
-
+    def keep_alive_loop(self):
+        """Continuously send last manual packet to keep BLE connection alive"""
+        while self.keep_alive_running:
+            if self.connected and self.client and hasattr(self.client, 'is_connected') and self.client.is_connected:
+                # Only send keep-alive if we have a manually sent packet to repeat
+                if self.last_sent_packet:
+                    keep_alive_packet = self.last_sent_packet
+                else:
+                    # If no manual packet yet, send idle state (only once)
+                    keep_alive_packet = bytearray([0xA5, 0x00]) # Control byte 0 (Idle)
+                    keep_alive_packet.extend([0] * 20) # All zeros for floats
+                    keep_alive_packet.extend([0xAA, 0x5A])
+                    self.last_sent_packet = keep_alive_packet
+              
+                # Use a separate event loop for keep-alive
+                try:
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                 
+                    async def send_keep_alive():
+                        try:
+                            await asyncio.wait_for(
+                                self.client.write_gatt_char(RX_CHAR_UUID, keep_alive_packet, response=False),
+                                timeout=2.0
+                            )
+                            return True
+                        except asyncio.TimeoutError:
+                            return False
+                        except Exception as e:
+                            return False
+                 
+                    success = loop.run_until_complete(send_keep_alive())
+                    loop.close()
+                 
+                    if not success:
+                        # Try to reconnect if keep-alive fails
+                        if self.connected:
+                            self.ui_queue.put(("update_status", ["Connection lost", COLORS["danger"]]))
+                            self.disconnect_device()
+             
+                except Exception:
+                    pass # Silently fail for keep-alive errors
+            else:
+                # Connection lost, exit keep-alive loop
+                if self.keep_alive_running:
+                    self.keep_alive_running = False
+         
+            # Sleep for interval
+            time.sleep(self.keep_alive_interval)
     def on_disconnected(self, client):
         """Called when device disconnects unexpectedly"""
         if self.connected:
@@ -1064,7 +1038,6 @@ class RobotController:
             self.connected = False
             self.client = None
             self.root.after(0, self.disable_controls)
-
     def monitor_signal_strength(self):
         """Periodically check signal strength and warn if weak"""
         if self.connected and self.client:
@@ -1084,14 +1057,13 @@ class RobotController:
                             self.log(f"Very weak signal: {rssi} dBm", tag="warning")
             except:
                 pass
-      
+     
         # Schedule next check if still connected
         if self.connected:
             self.root.after(5000, self.monitor_signal_strength) # Check every 5 seconds
-   
+  
     def run(self):
         self.root.mainloop()
-
 if __name__ == "__main__":
     app = RobotController()
     app.run()

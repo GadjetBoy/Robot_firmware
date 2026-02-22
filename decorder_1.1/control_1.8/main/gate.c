@@ -111,7 +111,7 @@ inline void set_gait_creep(uint8_t func_mode) {
     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
     
     // 0.75 ensures the "3-legs-down" rule for lateral sequence stability
-    CPG_network_pram.duty_cycle = 0.85f;
+    CPG_network_pram.duty_cycle = 0.750f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_creep_frequency;
    
@@ -151,7 +151,7 @@ inline void set_gait_creep(uint8_t func_mode) {
     float knee_lag = -TWO_PI / CPG_network_pram.KH_offset;
     
     // We want each leg to lag the previous leg by exactly 90 degrees (-quarter_cycle)
-    float offset_90_lag = -TWO_PI / 4.0f; 
+    float offset_90_lag = TWO_PI / 4.0f; 
 
     // 1. Intra-leg (Hip -> Knee) - Unchanged
     coupling_weights[FLK][FLH] = K_intra_leg; phase_offsets[FLK][FLH] = knee_lag;
