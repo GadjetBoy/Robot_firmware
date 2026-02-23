@@ -1,4 +1,5 @@
 #include "set_motor.h"
+#include <math.h>
 
 #define TAG "MOTOR_SET"
 
@@ -79,14 +80,17 @@ void position_loop_task(void *arg) {
 
             float pid_output = current_pwm[i];
 
-            int new_dir = (pid_output > 0) ? 1 : -1;
+            int new_dir;
+            if (pid_output > 0) new_dir = 1;
+            else if (pid_output < 0) new_dir = -1;
+            else new_dir = motors[i].direction;
 
             if (motors[i].direction != new_dir) {
                 motors[i].direction = new_dir;
             }
 
             float PID = fabsf(pid_output);
-            uint32_t pwm_magnitude = (uint32_t)PID; 
+            uint32_t pwm_magnitude = (uint32_t)fminf(PID, PWM_MAX); 
 
             motors[i].pwm = pwm_magnitude;
             motors[i].last_pwm = pwm_magnitude;  // Keep for logging if needed
@@ -138,6 +142,8 @@ void set_motor_app_main(void) {
         motors[i].m_num = i + 1;
         motors[i].pwm_channelA = LEDC_A_CHANNEL[i];
         motors[i].pwm_channelB = LEDC_B_CHANNEL[i];
+        motors[i].direction = 0;
+        motors[i].pwm = 0;
     }
 
     xTaskCreatePinnedToCore(position_loop_task, "pos_loop", 5120, NULL, 20, &pid_loop_task,0);
