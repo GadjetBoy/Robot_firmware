@@ -20,7 +20,7 @@ inline void set_gait_idle(void)
 
 
 // Gait: TROT (diagonal sync, alias for MODE_TURTLE)
-inline void set_gait_trot(uint8_t func_mode) {
+inline void set_gait_trot(uint8_t func_mode,uint8_t posture) {
     cpg_run_mode = CPG_MODE_ACTIVE;
 
     if(func_mode == STRAIGHT){
@@ -32,10 +32,26 @@ inline void set_gait_trot(uint8_t func_mode) {
     CPG_network_pram.duty_cycle = 0.5f; // Symmetric swing/stance
 
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
-    CPG_network_pram.hip_amp = 16352.0f;
-    CPG_network_pram.knee_amp = 32704.0f;
-    CPG_network_pram.hip_offset = 0.0f;
-    CPG_network_pram.knee_offset = -25000.0f;
+
+    if(posture == BODY_POSTURE_NORMAL){
+      CPG_network_pram.hip_amp = 16352.0f;
+      CPG_network_pram.knee_amp = 32704.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = -23000.0f;  
+    }
+    else if(posture == BODY_POSTURE_LOW){
+      CPG_network_pram.hip_amp = 16352.0f;
+      CPG_network_pram.knee_amp = 32704.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = -20000.0f;  
+    }
+    else {
+      CPG_network_pram.hip_amp = 16352.0f;
+      CPG_network_pram.knee_amp = 32704.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 0.0f;  
+    }
+    
     CPG_network_pram.KH_offset = 4.0f;
 
     // FIXED: Milder scaling (10-15% max cut at 0.2 Hz; hips slightly more to ease inertia)
@@ -107,7 +123,7 @@ inline void set_gait_trot(uint8_t func_mode) {
 
 // Sequence: BR -> FR -> BL -> FL
 // Gait: CREEP (Lateral Sequence - 4 Beat)
-inline void set_gait_creep(uint8_t func_mode) {
+inline void set_gait_creep(uint8_t func_mode,uint8_t posture) {
     cpg_run_mode = CPG_MODE_ACTIVE;
 
     if(func_mode == STRAIGHT){
@@ -122,10 +138,25 @@ inline void set_gait_creep(uint8_t func_mode) {
     CPG_network_pram.base_freq = TWO_PI * CPG_creep_frequency;
    
     // Amplitudes for long steps but controlled lift
-    CPG_network_pram.hip_amp = 8000.0f;
-    CPG_network_pram.knee_amp = 20000.0f;
-    CPG_network_pram.hip_offset = 0.0f;
-    CPG_network_pram.knee_offset = -15000.0f;
+
+    if(posture == BODY_POSTURE_NORMAL){
+      CPG_network_pram.hip_amp = 6000.0f;
+      CPG_network_pram.knee_amp = 19000.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = -15000.0f;
+    }
+    else if(posture == BODY_POSTURE_LOW){
+      CPG_network_pram.hip_amp = 6000.0f;
+      CPG_network_pram.knee_amp = 15000.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = -12000.0f;
+    }
+    else {
+      CPG_network_pram.hip_amp = 6000.0f;
+      CPG_network_pram.knee_amp = 15000.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 0.0f; 
+    }
    
     CPG_network_pram.KH_offset = 4.0f;
     CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp, CPG_network_pram.knee_amp);
@@ -200,7 +231,7 @@ inline void set_gait_creep(uint8_t func_mode) {
     //ESP_LOGI(TAG_CPG, "Gait set to CREEP (Lateral Seq) at freq=%.2f Hz", CPG_creep_frequency);
 }
 // Gait: CRAWL (placeholder)
-inline void set_gait_crawl(uint8_t func_mode) {
+inline void set_gait_crawl(uint8_t func_mode ,uint8_t posture ) {
 
     cpg_run_mode = CPG_MODE_ACTIVE;
 
@@ -212,10 +243,26 @@ inline void set_gait_crawl(uint8_t func_mode) {
     CPG_network_pram.duty_cycle = 0.50f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
-    CPG_network_pram.hip_amp = 16000.0f;
-    CPG_network_pram.knee_amp = 16000.0f;
-    CPG_network_pram.hip_offset = 0.0f;
-    CPG_network_pram.knee_offset = 0.0f;
+
+    if(posture == BODY_POSTURE_NORMAL){
+      CPG_network_pram.hip_amp = 16000.0f;
+      CPG_network_pram.knee_amp = 16000.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 0.0f;
+    }
+    else if(posture == BODY_POSTURE_LOW){
+      CPG_network_pram.hip_amp = 12000.0f;
+      CPG_network_pram.knee_amp = 12000.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 0.0f;
+    }
+    else {
+      CPG_network_pram.hip_amp = 9000.0f;
+      CPG_network_pram.knee_amp = 9000.0f;
+      CPG_network_pram.hip_offset = 0.0f;
+      CPG_network_pram.knee_offset = 0.0f;
+    }
+
     CPG_network_pram.KH_offset = 4.0f;
 
     // FIXED: Milder scaling (10-15% max cut at 0.2 Hz; hips slightly more to ease inertia)

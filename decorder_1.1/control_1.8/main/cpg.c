@@ -54,6 +54,9 @@ static TaskHandle_t seq_task_handle = NULL;
 
 static uint64_t start;
 
+// Per-motor homing invert: -1 = flip output sign (fix wrong-direction joints), 1 = normal
+static const int8_t HOMING_INVERT[NUM_MOTORS] = { -1, 1, 1, 1, 1, 1, 1, 1 };  // FLH inverted
+
 //volatile SequenceMode pending_mode = MODE_IDLE;
 //volatile bool mode_change_pending = false;
 
@@ -214,14 +217,20 @@ void run_position_loop(){
 
         pid_outputs[i] = motors[i].pos_pid.output; // Collect for UART
 
+        /* IDLE homing: per-motor polarity invert for wrong-direction joints */
+        if (cpg_run_mode == CPG_MODE_IDLE && HOMING_INVERT[i] < 0) {
+            pid_outputs[i] = -pid_outputs[i];
+        }
+
         float abs_pos = fabsf((float)motors[i].current_position);
 
         /* IDLE homing: when far from target and |output| too small to overcome stiction, apply minimum drive */
         if (abs_pos > STOP_THRESHOLD*2 && cpg_run_mode == CPG_MODE_IDLE) {
             float abs_out = fabsf(pid_outputs[i]);
-            if (abs_out > 0.01f && abs_out < MIN_DUTY) {
+            float min_duty = (abs_pos > 100) ? (MIN_DUTY * 1.5f) : MIN_DUTY;
+            if (abs_out > 0.01f && abs_out < min_duty) {
                 float sign = (pid_outputs[i] >= 0.0f) ? 1.0f : -1.0f;
-                pid_outputs[i] = sign * MIN_DUTY;
+                pid_outputs[i] = sign * min_duty;
             }
         }
 
@@ -503,44 +512,44 @@ void command_runner_task(void *arg) {
             if (xSemaphoreTake(cpg_params_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
                 switch (cmd) {
                     case CPG_MODE_IDLE:
-                        if(last_cmd == 255) set_gait_crawl(STRAIGHT);  
+                        if(last_cmd == 255) set_gait_crawl(STRAIGHT, posture);
                         else set_gait_idle();
                         break;
                     case CPG_MODE_STANDBY:
                         set_gait_standby();
                         break;
                     case MODE_TURTLE:
-                        set_gait_trot(STRAIGHT);
+                        set_gait_trot(STRAIGHT, posture);
                         break;
                     case MODE_CRAWL:
-                        set_gait_crawl(STRAIGHT);
+                        set_gait_crawl(STRAIGHT, posture);
                         break;
                     case MODE_CREEP:
-                        set_gait_creep(STRAIGHT);
+                        set_gait_creep(STRAIGHT, posture);
                         break;
                     case MODE_TROT_LEFT:
-                        set_gait_trot(LEFT);
+                        set_gait_trot(LEFT, posture);
                         break;
                     case MODE_TROT_RIGHT:
-                        set_gait_trot(RIGHT);
+                        set_gait_trot(RIGHT, posture);
                         break;
                     case MODE_CREEP_LEFT:
-                        set_gait_creep(LEFT);
+                        set_gait_creep(LEFT, posture);
                         break;
                     case MODE_CREEP_RIGHT:
-                        set_gait_creep(RIGHT);
+                        set_gait_creep(RIGHT, posture);
                         break;
                     case MODE_CRAWL_LEFT:
-                        set_gait_crawl(LEFT);
-                       break;
+                        set_gait_crawl(LEFT, posture);
+                        break;
                     case MODE_CRAWL_RIGHT:
-                        set_gait_crawl(RIGHT);
+                        set_gait_crawl(RIGHT, posture);
                         break;
                     case MODE_PIVOT_TURN:
-                        set_gait_trot(STRAIGHT);
+                        set_gait_trot(STRAIGHT, posture);
                         break;
                     case MODE_PIVOT_CRAWL:
-                        set_gait_crawl(STRAIGHT);
+                        set_gait_crawl(STRAIGHT, posture);
                         break;
                     case LEG_ORIENTATION_INVERTED:
                         set_system_idle();
@@ -548,12 +557,54 @@ void command_runner_task(void *arg) {
                     case LEG_ORIENTATION_NORMAL:
                         set_system_idle();
                         break;
+                    case BODY_POSTURE_NORMAL:
+                    case BODY_POSTURE_LOW:
+                    case BODY_POSTURE_CROUCH: {
+                        posture = (body_posture_t)cmd;
+                        switch (last_cmd) {
+                            case MODE_TURTLE:
+                            case MODE_PIVOT_TURN:
+                                set_gait_trot(STRAIGHT, posture);
+                                break;
+                            case MODE_TROT_LEFT:
+                                set_gait_trot(LEFT, posture);
+                                break;
+                            case MODE_TROT_RIGHT:
+                                set_gait_trot(RIGHT, posture);
+                                break;
+                            case MODE_CRAWL:
+                            case MODE_PIVOT_CRAWL:
+                                set_gait_crawl(STRAIGHT, posture);
+                                break;
+                            case MODE_CRAWL_LEFT:
+                                set_gait_crawl(LEFT, posture);
+                                break;
+                            case MODE_CRAWL_RIGHT:
+                                set_gait_crawl(RIGHT, posture);
+                                break;
+                            case MODE_CREEP:
+                                set_gait_creep(STRAIGHT, posture);
+                                break;
+                            case MODE_CREEP_LEFT:
+                                set_gait_creep(LEFT, posture);
+                                break;
+                            case MODE_CREEP_RIGHT:
+                                set_gait_creep(RIGHT, posture);
+                                break;
+                            default:
+                                set_gait_crawl(STRAIGHT, posture);
+                                break;
+                        }
+                        break;
+                    }
                     default:
                         set_gait_idle();
                         break;
                 }
 
-                last_cmd = cmd;
+                if (cmd != BODY_POSTURE_NORMAL && cmd != BODY_POSTURE_LOW && cmd != BODY_POSTURE_CROUCH) {
+                    last_cmd = cmd;
+                }
                 xSemaphoreGive(cpg_params_mutex);
             } else {
                 ESP_LOGE(TAG_SEQ, "Sequence mutex timeout!");
