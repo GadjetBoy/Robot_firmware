@@ -88,10 +88,6 @@ void position_loop_task(void *arg) {
             float PID = fabsf(pid_output);
             uint32_t pwm_magnitude = (uint32_t)PID; 
 
-            if(pwm_magnitude <= MIN_DUTY && pwm_magnitude > 0){
-               pwm_magnitude = MIN_DUTY;
-            }
-
             motors[i].pwm = pwm_magnitude;
             motors[i].last_pwm = pwm_magnitude;  // Keep for logging if needed
 
