@@ -12,9 +12,7 @@
 // Motor/PWM Limits (easy to adjust)
 #define NUM_OSCILLATORS         NUM_MOTORS  // One oscillator per motor
 #define PWM_MAX                 1023.0f  // Full-scale PWM duty
-#define PWM_MIN                 400.0f   // Minimum duty to initiate motion
-#define PWM_STOP                0.0f     // Below this: coast/stop
-#define MIN_DUTY                (PWM_MIN * 0.30f)  // 30% of min for safety
+#define MIN_DUTY                (PWM_MAX * 0.50f)  // 30% of min for safety
 #define COUNTS_PER_REV          28       // Encoder resolution per revolution
 #define STOP_THRESHOLD          20       // "Stopped" threshold (ticks)
 #define TOL                     (STOP_THRESHOLD*5)     // Position tolerance (encoder ticks)
@@ -46,23 +44,23 @@
 
 
 // ====================== Motor Indices (for clarity) ======================
-#define FLH 0  // Front-Left Hip
+/*#define FLH 0  // Front-Left Hip
 #define FLK 1  // Front-Left Knee
 #define FRH 2  // Front-Right Hip
 #define FRK 3  // Front-Right Knee
 #define BLH 4  // Back-Left Hip
 #define BLK 5  // Back-Left Knee
 #define BRH 6  // Back-Right Hip
-#define BRK 7  // Back-Right Knee
+#define BRK 7  // Back-Right Knee*/
 
-/*#define FLH   // Front-Left Hip
+#define FLH 0  // Front-Left Hip
 #define FLK 3  // Front-Left Knee
 #define FRH 4  // Front-Right Hip
 #define FRK 5  // Front-Right Knee
 #define BLH 2  // Back-Left Hip
 #define BLK 1  // Back-Left Knee
 #define BRH 6  // Back-Right Hip
-#define BRK 7  // Back-Right Knee  */                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+#define BRK 7  // Back-Right Knee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
 // ====================== Data Structures ======================
 // PID Controller (position control)
