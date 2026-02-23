@@ -12,9 +12,9 @@
 // Motor/PWM Limits (easy to adjust)
 #define NUM_OSCILLATORS         NUM_MOTORS  // One oscillator per motor
 #define PWM_MAX                 1023.0f  // Full-scale PWM duty
-#define PWM_MIN                 900.0f   // Minimum duty to initiate motion
+#define PWM_MIN                 400.0f   // Minimum duty to initiate motion
 #define PWM_STOP                0.0f     // Below this: coast/stop
-#define MIN_DUTY                (PWM_MIN * 1.0f)  // 60% of min for safety
+#define MIN_DUTY                (PWM_MIN * 0.30f)  // 30% of min for safety
 #define COUNTS_PER_REV          28       // Encoder resolution per revolution
 #define STOP_THRESHOLD          20       // "Stopped" threshold (ticks)
 #define TOL                     (STOP_THRESHOLD*5)     // Position tolerance (encoder ticks)

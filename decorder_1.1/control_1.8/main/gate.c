@@ -116,10 +116,10 @@ inline void set_gait_creep(uint8_t func_mode) {
     CPG_network_pram.base_freq = TWO_PI * CPG_creep_frequency;
    
     // Amplitudes for long steps but controlled lift
-    CPG_network_pram.hip_amp = 15000.0f;
-    CPG_network_pram.knee_amp = 12000.0f;
+    CPG_network_pram.hip_amp = 8000.0f;
+    CPG_network_pram.knee_amp = 20000.0f;
     CPG_network_pram.hip_offset = 0.0f;
-    CPG_network_pram.knee_offset = -18000.0f;
+    CPG_network_pram.knee_offset = -15000.0f;
    
     CPG_network_pram.KH_offset = 4.0f;
     CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp, CPG_network_pram.knee_amp);

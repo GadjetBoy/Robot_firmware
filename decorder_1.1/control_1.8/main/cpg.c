@@ -177,9 +177,12 @@ void PIDController_Update(PIDController *pid, float setpoint, int measurement, u
      pid->output = raw_output;
     }
 
-    pid->output = 0.5f * pid->output + 0.5f * pid->lastOutput;
-    
-    
+    /* Lighter smoothing in IDLE when error is large - faster homing */
+    if (cpg_run_mode == CPG_MODE_IDLE && fabsf(pid->error) > STOP_THRESHOLD * 3) {
+        pid->output = 0.9f * pid->output + 0.1f * pid->lastOutput;
+    } else {
+        pid->output = 0.8f * pid->output + 0.2f * pid->lastOutput;
+    }
 }
 
 // ====================== Position Loop ======================
@@ -212,8 +215,19 @@ void run_position_loop(){
 
         pid_outputs[i] = motors[i].pos_pid.output; // Collect for UART
 
+        float abs_pos = fabsf((float)motors[i].current_position);
+
+        /* IDLE homing: when far from target and |output| too small to overcome stiction, apply minimum drive */
+        if (abs_pos > STOP_THRESHOLD*2 && cpg_run_mode == CPG_MODE_IDLE) {
+            float abs_out = fabsf(pid_outputs[i]);
+            if (abs_out > 0.01f && abs_out < MIN_DUTY) {
+                float sign = (pid_outputs[i] >= 0.0f) ? 1.0f : -1.0f;
+                pid_outputs[i] = sign * MIN_DUTY;
+            }
+        }
+
         if (!motors[i].active && cpg_run_mode == CPG_MODE_IDLE){
-            if (fabsf((float)motors[i].current_position) <= STOP_THRESHOLD*2){
+            if (abs_pos <= STOP_THRESHOLD*2){
                 pid_outputs[i] = 0.0f;
             }
         }
@@ -314,6 +328,7 @@ void motor_set(uint8_t i, float target, bool set) {
 void cpg_task(void *pvParameters) {
     float d_phi[NUM_OSCILLATORS];
     float phase[NUM_OSCILLATORS];
+    static bool idle_reset_done = false;
 
     while(1) {
 
@@ -325,19 +340,23 @@ void cpg_task(void *pvParameters) {
             continue;
         }
 
-        // 1. Run the smoothing (alpha = 0.05 is a good start)
-        //smooth_gait_parameters(0.05f); 
-
-        if (cpg_run_mode == CPG_MODE_IDLE) {   
+        if (cpg_run_mode == CPG_MODE_IDLE) {
+            if (!idle_reset_done) {
+                for (int i = 0; i < NUM_MOTORS; i++) {
+                    PIDController_Init(&motors[i].pos_pid);
+                }
+                idle_reset_done = true;
+            }
             vTaskDelay(pdMS_TO_TICKS(2));
             for(int i = 0;i<NUM_MOTORS;i++){
-             motor_set((uint8_t)i, 0,false);
+                motor_set((uint8_t)i, 0, false);
             }
             xSemaphoreGive(cpg_params_mutex);
             run_position_loop();
             continue;
         }
-        
+        idle_reset_done = false;
+
         // 2. Update the CPG physics
         cpg_update(d_phi,phase); 
 
