@@ -21,10 +21,12 @@ inline void set_gait_idle(void)
 
 // Gait: TROT (diagonal sync, alias for MODE_TURTLE)
 inline void set_gait_trot(uint8_t func_mode) {
-
     cpg_run_mode = CPG_MODE_ACTIVE;
-    memset((void*)coupling_weights, 0, sizeof(coupling_weights));
-    memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+
+    if(func_mode == STRAIGHT){
+     memset((void*)coupling_weights, 0, sizeof(coupling_weights));
+     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+    }
 
     // --- NEW: Set Duty Cycle for Trot ---
     CPG_network_pram.duty_cycle = 0.5f; // Symmetric swing/stance
@@ -107,8 +109,12 @@ inline void set_gait_trot(uint8_t func_mode) {
 // Gait: CREEP (Lateral Sequence - 4 Beat)
 inline void set_gait_creep(uint8_t func_mode) {
     cpg_run_mode = CPG_MODE_ACTIVE;
-    memset((void*)coupling_weights, 0, sizeof(coupling_weights));
-    memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+
+    if(func_mode == STRAIGHT){
+     memset((void*)coupling_weights, 0, sizeof(coupling_weights));
+     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+    }
+
     
     // 0.75 ensures the "3-legs-down" rule for lateral sequence stability
     CPG_network_pram.duty_cycle = 0.750f;
@@ -197,8 +203,11 @@ inline void set_gait_creep(uint8_t func_mode) {
 inline void set_gait_crawl(uint8_t func_mode) {
 
     cpg_run_mode = CPG_MODE_ACTIVE;
-    memset((void*)coupling_weights, 0, sizeof(coupling_weights));
-    memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+
+    if(func_mode == STRAIGHT){
+     memset((void*)coupling_weights, 0, sizeof(coupling_weights));
+     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+    }
 
     CPG_network_pram.duty_cycle = 0.50f;
 

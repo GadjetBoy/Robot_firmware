@@ -70,7 +70,8 @@ class RobotController:
         self.device_address = None
         self.client = None
         self.connected = False
-        self.float_values = [0.0] * 5
+        # Default Kp, Ki, Kd, F4, F5
+        self.float_values = [0.25, 1.0, 0.002, 0.0, 0.0]
         self.control_byte = 0
         self.control_buttons = {}
         self.mode_buttons = {} # for mode selection
@@ -224,13 +225,38 @@ class RobotController:
     def setup_controls_tab(self):
         controls_tab = tk.Frame(self.notebook, bg=COLORS["bg_medium"])
         self.notebook.add(controls_tab, text="🎮 Controls")
-        top_frame = tk.Frame(controls_tab, bg=COLORS["bg_medium"])
+        # Scrollable canvas for Controls tab
+        canvas = tk.Canvas(controls_tab, bg=COLORS["bg_medium"], highlightthickness=0)
+        scrollbar = ttk.Scrollbar(controls_tab, orient="vertical", command=canvas.yview)
+        scrollable_frame = tk.Frame(canvas, bg=COLORS["bg_medium"])
+        window_id = canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        scrollable_frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.bind("<Configure>", lambda e: canvas.itemconfig(window_id, width=e.width))
+        canvas.configure(yscrollcommand=scrollbar.set)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        # Mouse wheel scroll (Windows/Mac use delta, Linux uses Button-4/5)
+        def _on_mousewheel(event):
+            if hasattr(event, "delta"):
+                canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+            elif event.num == 4:
+                canvas.yview_scroll(-3, "units")
+            elif event.num == 5:
+                canvas.yview_scroll(3, "units")
+        scrollable_frame.bind("<Enter>", lambda e: canvas.bind_all("<MouseWheel>", _on_mousewheel))
+        scrollable_frame.bind("<Leave>", lambda e: canvas.unbind_all("<MouseWheel>"))
+        for evt in ("<Button-4>", "<Button-5>"):
+            scrollable_frame.bind(evt, _on_mousewheel)
+        # Use scrollable_frame as parent for content
+        top_frame = tk.Frame(scrollable_frame, bg=COLORS["bg_medium"])
         top_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         float_frame = tk.LabelFrame(top_frame, text=" Float Parameters (5 values) ",
                                    font=self.fonts['heading'], bg=COLORS["bg_card"],
                                    fg=COLORS["accent"], relief=tk.FLAT,
                                    borderwidth=2, padx=20, pady=20)
         float_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        # Default Kp, Ki, Kd for F1, F2, F3
+        default_floats = ["0.25", "1.0", "0.002", "0.0", "0.0"]
         for i in range(5):
             row = i // 3
             col = i % 3
@@ -245,17 +271,17 @@ class RobotController:
                              font=self.fonts['body'], width=12,
                              insertbackground=COLORS["primary_light"],
                              relief=tk.FLAT, borderwidth=1)
-            entry.insert(0, "0.0")
+            entry.insert(0, default_floats[i])
             entry.pack(side=tk.LEFT, padx=5)
             entry.bind("<FocusIn>", lambda e, w=entry: w.config(bg=COLORS["bg_medium"]))
             entry.bind("<FocusOut>", lambda e, w=entry: w.config(bg=COLORS["bg_light"]))
-            value_label = tk.Label(frame, text="0.00", font=self.fonts['small'],
+            value_label = tk.Label(frame, text=f"{float(default_floats[i]):.2f}", font=self.fonts['small'],
                                   fg=COLORS["text_muted"], bg=COLORS["bg_card"], width=6)
             value_label.pack(side=tk.LEFT, padx=5)
             entry.value_label = value_label
             entry.bind("<KeyRelease>", lambda e, idx=i: self.update_value_label(idx))
             self.float_entries[i] = entry
-        bottom_frame = tk.Frame(controls_tab, bg=COLORS["bg_medium"])
+        bottom_frame = tk.Frame(scrollable_frame, bg=COLORS["bg_medium"])
         bottom_frame.pack(fill=tk.X, padx=10, pady=10)
                 # Left side: Movement + Mode (using grid for reliable vertical stacking)
         left_container = tk.Frame(bottom_frame, bg=COLORS["bg_medium"])
@@ -265,6 +291,7 @@ class RobotController:
         left_container.grid_rowconfigure(1, weight=0)
         left_container.grid_rowconfigure(2, weight=0)
         left_container.grid_rowconfigure(3, weight=0)
+        left_container.grid_rowconfigure(4, weight=0)
         left_container.grid_columnconfigure(0, weight=1)
         # Robot Movement controls
         control_buttons_frame = tk.LabelFrame(left_container,
@@ -313,6 +340,59 @@ class RobotController:
               mode_grid.grid_columnconfigure(c, weight=1)
         # Default to Idle
         self.select_mode(0, "Idle", silent=True)
+        # Turning Gait Commands (for each gait: Straight, Turn L, Turn R)
+        turn_frame = tk.LabelFrame(left_container,
+                                   text=" Turning Gait Commands ",
+                                   font=self.fonts['heading'],
+                                   bg=COLORS["bg_card"],
+                                   fg=COLORS["warning"],
+                                   relief=tk.FLAT,
+                                   borderwidth=2,
+                                   padx=20,
+                                   pady=20)
+        turn_frame.grid(row=2, column=0, sticky='ew', padx=5, pady=(0, 10))
+        # Trot: Straight(4), Left(8), Right(9)
+        trot_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
+        trot_row.pack(fill=tk.X, pady=4)
+        tk.Label(trot_row, text="Trot:", font=self.fonts['subheading'],
+                 fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
+                 anchor='w').pack(side=tk.LEFT, padx=(0, 5))
+        for label, byte_val in [("Straight", 4), ("Turn L", 8), ("Turn R", 9)]:
+            ModernButton(trot_row, text=label, bg_color=COLORS["warning"],
+                        command=lambda b=byte_val: self.send_turn_cmd(b),
+                        width=8, pady=4).pack(side=tk.LEFT, padx=3)
+        # Creep: Straight(5), Left(10), Right(11)
+        creep_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
+        creep_row.pack(fill=tk.X, pady=4)
+        tk.Label(creep_row, text="Creep:", font=self.fonts['subheading'],
+                 fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
+                 anchor='w').pack(side=tk.LEFT, padx=(0, 5))
+        for label, byte_val in [("Straight", 5), ("Turn L", 10), ("Turn R", 11)]:
+            ModernButton(creep_row, text=label, bg_color=COLORS["accent"],
+                        command=lambda b=byte_val: self.send_turn_cmd(b),
+                        width=8, pady=4).pack(side=tk.LEFT, padx=3)
+        # Crawl: Straight(3), Left(12), Right(13)
+        crawl_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
+        crawl_row.pack(fill=tk.X, pady=4)
+        tk.Label(crawl_row, text="Crawl:", font=self.fonts['subheading'],
+                 fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
+                 anchor='w').pack(side=tk.LEFT, padx=(0, 5))
+        for label, byte_val in [("Straight", 3), ("Turn L", 12), ("Turn R", 13)]:
+            ModernButton(crawl_row, text=label, bg_color=COLORS["secondary"],
+                        command=lambda b=byte_val: self.send_turn_cmd(b),
+                        width=8, pady=4).pack(side=tk.LEFT, padx=3)
+        # Pivot Turn: Trot (14) or Crawl (15)
+        pivot_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
+        pivot_row.pack(fill=tk.X, pady=4)
+        tk.Label(pivot_row, text="Pivot:", font=self.fonts['subheading'],
+                 fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
+                 anchor='w').pack(side=tk.LEFT, padx=(0, 5))
+        ModernButton(pivot_row, text="Pivot Trot", bg_color=COLORS["warning"],
+                     command=lambda: self.send_turn_cmd(14),
+                     width=10, pady=4).pack(side=tk.LEFT, padx=3)
+        ModernButton(pivot_row, text="Pivot Crawl", bg_color=COLORS["secondary"],
+                     command=lambda: self.send_turn_cmd(15),
+                     width=10, pady=4).pack(side=tk.LEFT, padx=3)
         # Leg Orientation selection
         orient_frame = tk.LabelFrame(left_container,
                                      text=" Leg Orientation ",
@@ -323,7 +403,7 @@ class RobotController:
                                      borderwidth=2,
                                      padx=20,
                                      pady=20)
-        orient_frame.grid(row=2, column=0, sticky='ew', padx=5, pady=(0, 10))
+        orient_frame.grid(row=3, column=0, sticky='ew', padx=5, pady=(0, 10))
         orient_grid = tk.Frame(orient_frame, bg=COLORS["bg_card"])
         orient_grid.pack(padx=10, pady=10)
         orients = [
@@ -354,7 +434,7 @@ class RobotController:
                                       borderwidth=2,
                                       padx=20,
                                       pady=20)
-        posture_frame.grid(row=3, column=0, sticky='ew', padx=5, pady=(0, 10))
+        posture_frame.grid(row=4, column=0, sticky='ew', padx=5, pady=(0, 10))
         posture_grid = tk.Frame(posture_frame, bg=COLORS["bg_card"])
         posture_grid.pack(padx=10, pady=10)
         postures = [
@@ -413,6 +493,14 @@ class RobotController:
                                      font=self.fonts['body'], fg=COLORS["text_muted"],
                                      bg=COLORS["bg_card"])
         self.packet_status.pack()
+    def send_turn_cmd(self, control_byte_val):
+        """Send a turning gait command directly (bypasses gait selection)."""
+        if not self.connected:
+            messagebox.showwarning("Not Connected", "Connect to a device first.")
+            return
+        self.control_byte = control_byte_val
+        self.send_packet()
+
     def select_mode(self, mode_value, mode_name, silent=False):
         """Set robot mode and update button highlight"""
         if not self.connected and not silent:
@@ -887,7 +975,7 @@ class RobotController:
             entry.insert(0, str(motor_values[i]))
         self.log("Motor control values loaded", tag="info")
     def set_pid_values(self):
-        pid_values = [1.0,0.1,0.01,0.0,2.0]
+        pid_values = [0.25, 1.0, 0.002, 0.0, 2.0]  # Kp, Ki, Kd, F4, F5
         for i, entry in enumerate(self.float_entries):
             entry.delete(0, tk.END)
             entry.insert(0, str(pid_values[i]))

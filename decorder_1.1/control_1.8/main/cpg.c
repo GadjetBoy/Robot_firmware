@@ -85,12 +85,11 @@ static inline uint8_t get_commands(void) {
 
     update_orientation_from_ble(cmd);
 
-    /*if(cmd == MODE_PIVOT_TURN){
+    if (cmd == MODE_PIVOT_TURN || cmd == MODE_PIVOT_CRAWL) {
         pivot_turn = true;
+    } else {
+        pivot_turn = false;
     }
-    if(){
-       pivot_turn = false; 
-    }*/
 
     return cmd;
 }
@@ -282,10 +281,10 @@ void motor_set(uint8_t i, float target, bool set) {
 
     float signed_target =target;
 
-    //Sign flip for right legs (FR/BR: indices 1,3,5,7) for symmetry (forward gait)
+    // Sign flip for right legs (FRH,BRH) during pivot turn - left/right move opposite
     bool is_right_leg = (i == FRH || i == BRH);  // Adjust indices if mapping differs
-    if(is_right_leg ){
-      signed_target = -signed_target ;  // Mirror right for opposite swing
+    if (is_right_leg && pivot_turn == false) {
+        signed_target = -signed_target;
     }
     
     bool is_knee = (i == FLK || i == FRK || i == BLK || i == BRK);// Check if it's a knee joint
@@ -536,7 +535,13 @@ void command_runner_task(void *arg) {
                        break;
                     case MODE_CRAWL_RIGHT:
                         set_gait_crawl(RIGHT);
-                       break;
+                        break;
+                    case MODE_PIVOT_TURN:
+                        set_gait_trot(STRAIGHT);
+                        break;
+                    case MODE_PIVOT_CRAWL:
+                        set_gait_crawl(STRAIGHT);
+                        break;
                     case LEG_ORIENTATION_INVERTED:
                         set_system_idle();
                         break;
