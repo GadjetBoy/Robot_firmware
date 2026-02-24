@@ -14,7 +14,7 @@ KH_OFFSET = 4.0
 
 # Continuum leg parameters
 D_TENDON = 7.0   # mm, tendon radial distance
-L_MIN, L_MAX = 40.0, 86.0
+L_MIN, L_MAX = 40.0, 86.0 * 2
 L_MID = (L_MIN + L_MAX) / 2
 S_AMP = (L_MAX - L_MIN) / 2  # ~23 mm
 THETA_AMP = 0.4  # Max bend angle (rad) - tune for visible motion
@@ -27,29 +27,36 @@ def normalize_cpg(val, min_out=-20000, max_out=20000):
 
 def hip_knee_to_tendons(hip_out, knee_out, d=D_TENDON):
     """
-    Map hip and knee outputs to tendon lengths l1,l2,l3,l4.
-    Hip: controls bend direction (phi) and amount (theta) - forward/back swing
-    Knee: controls arc length (s) - extend/flex
+    Map FRH (hip) and FRK (knee) CPG outputs to tendon lengths l1,l2,l3,l4.
+    
+    CRITICAL: l1 and l3 NEVER move together - one compresses, other extends (same amount).
+    CRITICAL: l2 and l4 NEVER move together - one compresses, other extends (same amount).
+    
+    CPG outputs are NEVER both positive and negative at once - at each moment
+    hip is either + or -, knee is either + or -.
+    
+    FRH positive: l1 compresses, l3 extends (same amount)
+    FRH negative: l3 compresses, l1 extends (same amount)
+    FRK positive: l2 compresses, l4 extends (same amount)
+    FRK negative: l4 compresses, l2 extends (same amount)
     """
-    # Normalize: hip ~[-16k,16k], knee ~[-23k,0] or [0,32k] depending on offset
-    hip_norm = normalize_cpg(hip_out, -18000, 18000)
-    knee_norm = normalize_cpg(knee_out, -25000, 32000)
+    # Scale: CPG outputs to differential in mm. |dl/2| must stay within [L_MIN,L_MAX] of s.
+    # Knee range ~-53k to +7k is larger than hip ±15k - scale to fit S_AMP.
+    HIP_SCALE = S_AMP / 18000.0   # hip ±15k -> dl_x up to ~55
+    KNEE_SCALE = S_AMP / 55000.0  # knee ±55k -> dl_y up to ~66 (clamped)
     
-    # s: extended (knee+) -> long leg, flexed (knee-) -> short
-    s = L_MID + S_AMP * knee_norm
+    # Hip controls l1,l3 ONLY. dl_x = l3 - l1. Hip + -> dl_x + -> l1 short, l3 long
+    dl_x = hip_out * HIP_SCALE
+    # Knee controls l2,l4 ONLY. dl_y = l4 - l2. Knee + -> dl_y + -> l2 short, l4 long
+    dl_y = knee_out * KNEE_SCALE
     
-    # theta: bend amount from hip swing
-    theta = THETA_AMP * (1 + hip_norm) / 2  # 0 when back, theta_amp when forward
+    # Base arc length (neutral)
+    s = L_MID
     
-    # phi = 0: bend in +x direction (forward)
-    phi = 0.0
-    
-    # From s, theta, phi compute dl_x, dl_y
-    dl_x = 2 * d * theta * np.cos(phi)
-    dl_y = 2 * d * theta * np.sin(phi)
-    
+    # l1,l3: ALWAYS opposite. l1 compresses by dl_x/2, l3 extends by dl_x/2 (when dl_x>0)
     l1 = s - dl_x / 2
     l3 = s + dl_x / 2
+    # l2,l4: ALWAYS opposite
     l2 = s - dl_y / 2
     l4 = s + dl_y / 2
     

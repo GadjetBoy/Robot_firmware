@@ -24,7 +24,7 @@ except ImportError:
 # Parameters
 D = 7.0
 LEG_HALFWIDTH = 6.0
-L_MIN, L_MAX, L_INIT = 40.0, 86.0, 86.0
+L_MIN, L_MAX, L_INIT = 40.0, (86.0)*2, 86.0
 AXIS_LEN = 12.0
 N_SEGMENTS, N_PROFILE = 12, 16
 WAIST_RATIO, PLATE_RATIO = 0.6, 0.95
