@@ -383,6 +383,8 @@ void cpg_task(void *pvParameters) {
 }
 
 inline void cpg_update(float* d_phi, float* phase){
+        float SMOOTH_ALPHA = 0.035f;
+        smooth_gait_parameters(SMOOTH_ALPHA);
 
         // 1. Snapshot phases and compute coupling
 
@@ -427,10 +429,11 @@ inline void cpg_update(float* d_phi, float* phase){
             cpg_network[i].phase = fmodf(cpg_network[i].phase, TWO_PI);
             if (cpg_network[i].phase < 0.0f) cpg_network[i].phase += TWO_PI;
 
-            // --- Amplitude stabilization ---
-            float target_amp = (i % 2 == 0) ? CPG_network_pram.hip_amp:CPG_network_pram.knee_amp;
-            if (fabsf(target_amp - cpg_network[i].amplitude) > 1.0f) {  // Only correct if drifted >1 count
-              cpg_network[i].amplitude += 0.008f * (target_amp - cpg_network[i].amplitude)*CPG_DT; // smooth correction
+            float target_amp = (i % 2 == 0) ?
+                ((i == FLH || i == BLH) ? CPG_network_pram.hip_amp_left : CPG_network_pram.hip_amp_right) :
+                ((i == FLK || i == BLK) ? CPG_network_pram.knee_amp_left : CPG_network_pram.knee_amp_right);
+            if (fabsf(target_amp - cpg_network[i].amplitude) > 1.0f) {
+                cpg_network[i].amplitude += 0.008f * (target_amp - cpg_network[i].amplitude) * CPG_DT;
             }
 
             // --- Bias correction (prevent drift) ---

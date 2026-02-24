@@ -1,13 +1,33 @@
+"""
+Forward Kinematics Simulator - Continuum Leg
+Model: TPU flexible leg with d 7.0 v.1.1
+Visualizes a tubular leg body along the backbone curve.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
+from mpl_toolkits.mplot3d import art3d
 
-# Parameters
-d = 5.50  # Tendon radial distance (mm) - adjust this to your actual value
+# Parameters - TPU flexible leg with d 7.0 v.1.1
+d = 7.0   # Tendon radial distance (mm) - TPU leg v.1.1
+leg_radius = 6.0   # Outer radius of leg body (mm) - match your STL cross-section
+STL_PATH =  r"C:\Users\SAHAN\OneDrive\Documents\solidworks\design 1.1\TPU flexible leg with d 7.0 v.1.1" # set to load STL for radius hint
+if STL_PATH:
+    try:
+        from stl import mesh as stl_mesh
+        _stl = stl_mesh.Mesh.from_file(STL_PATH)
+        _pts = _stl.vectors.reshape(-1, 3)
+        _r = np.sqrt(_pts[:, 0]**2 + _pts[:, 1]**2)
+        leg_radius = float(np.percentile(_r, 95))  # ~outer radius from STL
+        print(f"STL loaded: leg_radius set to {leg_radius:.1f} mm")
+    except Exception:
+        pass  # Use default leg_radius
+
 l_min = 40.0  # Min length for sliders (mm)
 l_max = 86.0  # Max length for sliders (mm)
 l_init = 86.0  # Initial length (mm)
 axis_length = 15.0  # Length of end-effector axes (mm)
+tube_resolution = 12  # Number of segments around tube circumference
 
 # Create figure and 3D axis
 fig = plt.figure()
@@ -24,7 +44,7 @@ ax.set_zlim(0, 100)
 ax.set_xlabel('X (mm)')
 ax.set_ylabel('Y (mm)')
 ax.set_zlabel('Z (mm)')
-ax.set_title('Continuum Leg Simulator')
+ax.set_title('Continuum Leg Simulator - TPU d7.0 v.1.1')
 
 # Sliders for l1, l2, l3, l4
 ax_l1 = plt.axes([0.1, 0.25, 0.8, 0.03])
@@ -36,6 +56,73 @@ sl1 = Slider(ax_l1, 'l1', l_min, l_max, valinit=l_init)
 sl2 = Slider(ax_l2, 'l2', l_min, l_max, valinit=l_init)
 sl3 = Slider(ax_l3, 'l3', l_min, l_max, valinit=l_init)
 sl4 = Slider(ax_l4, 'l4', l_min, l_max, valinit=l_init)
+
+
+def make_tube(ax, x, y, z, radius, n_theta=12):
+    """Create a 3D tubular surface along the backbone curve."""
+    n = len(x)
+    if n < 2:
+        return
+    # Tangent vectors
+    tx = np.diff(x)
+    ty = np.diff(y)
+    tz = np.diff(z)
+    # Pad to same length
+    tangents = np.column_stack([
+        np.concatenate([[tx[0]], tx, [tx[-1]]]),
+        np.concatenate([[ty[0]], ty, [ty[-1]]]),
+        np.concatenate([[tz[0]], tz, [tz[-1]]])
+    ])
+    tangents = tangents / (np.linalg.norm(tangents, axis=1, keepdims=True) + 1e-10)
+    # Reference "up" for first normal
+    ref = np.array([0, 0, 1])
+    normals = np.zeros_like(tangents)
+    normals[0] = ref - np.dot(ref, tangents[0]) * tangents[0]
+    n0_norm = np.linalg.norm(normals[0])
+    if n0_norm > 1e-8:
+        normals[0] /= n0_norm
+    else:
+        normals[0] = np.array([1, 0, 0])
+    # Propagate frame along curve (parallel transport)
+    for i in range(1, n):
+        axis = np.cross(tangents[i - 1], tangents[i])
+        axis_norm = np.linalg.norm(axis)
+        if axis_norm > 1e-8:
+            axis /= axis_norm
+            angle = np.arccos(np.clip(np.dot(tangents[i - 1], tangents[i]), -1, 1))
+            r = np.cos(angle)
+            normals[i] = normals[i - 1] * r + np.cross(axis, normals[i - 1]) * np.sin(angle) + axis * np.dot(axis, normals[i - 1]) * (1 - r)
+        else:
+            normals[i] = normals[i - 1]
+        normals[i] -= np.dot(normals[i], tangents[i]) * tangents[i]
+        n_norm = np.linalg.norm(normals[i])
+        if n_norm > 1e-8:
+            normals[i] /= n_norm
+    binormals = np.cross(tangents, normals)
+    # Circle in normal-binormal plane
+    theta = np.linspace(0, 2 * np.pi, n_theta, endpoint=False)
+    verts = []
+    for i in range(n):
+        circle = radius * (np.outer(np.cos(theta), normals[i]) + np.outer(np.sin(theta), binormals[i]))
+        for j in range(n_theta):
+            verts.append([x[i] + circle[j, 0], y[i] + circle[j, 1], z[i] + circle[j, 2]])
+    verts = np.array(verts)
+    # Build faces for Poly3DCollection
+    faces = []
+    for i in range(n - 1):
+        for j in range(n_theta):
+            j2 = (j + 1) % n_theta
+            idx = i * n_theta
+            faces.append([idx + j, idx + j2, idx + n_theta + j2, idx + n_theta + j])
+    poly = art3d.Poly3DCollection(
+        [verts[f] for f in faces],
+        facecolors=[0.6, 0.75, 0.9, 0.95],
+        edgecolors=None,
+        linewidths=0.3,
+        alpha=0.95
+    )
+    ax.add_collection3d(poly)
+
 
 # Update function
 def update(val):
@@ -52,8 +139,8 @@ def update(val):
     phi = np.arctan2(dl_y, dl_x) if (np.abs(dl_x) > 1e-6 or np.abs(dl_y) > 1e-6) else 0.0
     kappa = theta / s if s > 0 else 0.0
     
-    # Parameterize the backbone curve
-    num_points = 11
+    # Parameterize the backbone curve (more points for smooth tube)
+    num_points = 31
     sigma_arr = np.linspace(0, s, num_points)
     
     if kappa < 1e-6:
@@ -65,9 +152,10 @@ def update(val):
         y = np.sin(phi) * (1 - np.cos(kappa * sigma_arr)) / kappa
         z = np.sin(kappa * sigma_arr) / kappa
     
-    # Clear and replot backbone
+    # Clear and replot - tubular leg body + centerline
     ax.clear()
-    ax.plot(x, y, z, lw=2)
+    make_tube(ax, x, y, z, leg_radius, n_theta=tube_resolution)
+    ax.plot(x, y, z, 'k-', lw=1, alpha=0.5)  # Centerline (backbone)
     
     # Re-set limits and labels
     ax.set_xlim(-50, 50)
