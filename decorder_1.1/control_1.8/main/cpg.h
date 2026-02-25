@@ -150,6 +150,7 @@ typedef struct{
     float base_freq;
     float hip_amp;
     float knee_amp;
+    float damping;
 
     float hip_amp_left;
     float hip_amp_right;

@@ -33,8 +33,9 @@ inline void set_gait_trot(uint8_t func_mode,uint8_t posture) {
      memset((void*)phase_offsets, 0, sizeof(phase_offsets));
     }
 
-    // --- NEW: Set Duty Cycle for Trot ---
+    // Set Duty Cycle for Trot ---
     CPG_network_pram.duty_cycle = 0.5f; // Symmetric swing/stance
+    CPG_network_pram.damping = 0.10f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
 
@@ -132,32 +133,33 @@ inline void set_gait_creep(uint8_t func_mode,uint8_t posture) {
 
     
     // 0.75 ensures the "3-legs-down" rule for lateral sequence stability
-    CPG_network_pram.duty_cycle = 0.750f;
+    CPG_network_pram.duty_cycle = 0.80f;
+    CPG_network_pram.damping = 0.1250f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_creep_frequency;
    
     // Amplitudes for long steps but controlled lift
 
     if(posture == BODY_POSTURE_NORMAL){
-      CPG_network_pram.hip_amp = 6000.0f;
-      CPG_network_pram.knee_amp = 19000.0f;
+      CPG_network_pram.hip_amp = 8000.0f;
+      CPG_network_pram.knee_amp = 17000.0f;
       CPG_network_pram.hip_offset = 0.0f;
       CPG_network_pram.knee_offset = -15000.0f;
     }
     else if(posture == BODY_POSTURE_LOW){
-      CPG_network_pram.hip_amp = 6000.0f;
-      CPG_network_pram.knee_amp = 15000.0f;
+      CPG_network_pram.hip_amp = 8000.0f;
+      CPG_network_pram.knee_amp = 14000.0f;
       CPG_network_pram.hip_offset = 0.0f;
       CPG_network_pram.knee_offset = -12000.0f;
     }
     else {
-      CPG_network_pram.hip_amp = 6000.0f;
-      CPG_network_pram.knee_amp = 15000.0f;
+      CPG_network_pram.hip_amp = 15000.0f;
+      CPG_network_pram.knee_amp = 6000.0f;
       CPG_network_pram.hip_offset = 0.0f;
       CPG_network_pram.knee_offset = 0.0f; 
     }
    
-    CPG_network_pram.KH_offset = 4.0f;
+    CPG_network_pram.KH_offset = 8.0f;
     CPG_network_pram.max_amp = fmaxf(CPG_network_pram.hip_amp, CPG_network_pram.knee_amp);
     if (CPG_network_pram.max_amp < 1e-3f) CPG_network_pram.max_amp = 1.0f;
    
@@ -172,7 +174,9 @@ inline void set_gait_creep(uint8_t func_mode,uint8_t posture) {
       CPG_network_pram.hip_amp_right_target = CPG_network_pram.hip_amp;
       CPG_network_pram.knee_amp_left_target = CPG_network_pram.knee_amp;
       CPG_network_pram.knee_amp_right_target = CPG_network_pram.knee_amp;
+
       CPG_network_pram.duty_cycle_target = CPG_network_pram.duty_cycle;
+      
       CPG_network_pram.hip_amp_left = CPG_network_pram.hip_amp;
       CPG_network_pram.hip_amp_right = CPG_network_pram.hip_amp;
       CPG_network_pram.knee_amp_left = CPG_network_pram.knee_amp;
@@ -180,12 +184,12 @@ inline void set_gait_creep(uint8_t func_mode,uint8_t posture) {
     }
 
     // ================== COUPLINGS ==================
-    float K_intra_leg = 15.0f; // Keep tight hip-knee sync
+    float K_intra_leg = 20.0f; // Keep tight hip-knee sync
     float K_inter_leg = 8.0f;  // Lowered slightly to prevent sudden pulling
     float knee_lag = -TWO_PI / CPG_network_pram.KH_offset;
     
-    // We want each leg to lag the previous leg by exactly 90 degrees (-quarter_cycle)
-    float offset_90_lag = TWO_PI / 4.0f; 
+    // Each leg lags the previous by 90° → correct sequence BR -> FR -> BL -> FL
+    float offset_lag = TWO_PI / 4.0f;
 
     // 1. Intra-leg (Hip -> Knee) - Unchanged
     coupling_weights[FLK][FLH] = K_intra_leg; phase_offsets[FLK][FLH] = knee_lag;
@@ -194,18 +198,13 @@ inline void set_gait_creep(uint8_t func_mode,uint8_t posture) {
     coupling_weights[BRK][BRH] = K_intra_leg; phase_offsets[BRK][BRH] = knee_lag;
 
     // 2. Inter-leg RING (Strict Sequence: BR -> FR -> BL -> FL -> BR)
-    // We strictly link them in a circle. No diagonal or cross-body couplings!
-    
-    // BR drives FR
-    coupling_weights[FRH][BRH] = K_inter_leg; phase_offsets[FRH][BRH] = offset_90_lag;
-    // FR drives BL
-    coupling_weights[BLH][FRH] = K_inter_leg; phase_offsets[BLH][FRH] = offset_90_lag;
-    // BL drives FL
-    coupling_weights[FLH][BLH] = K_inter_leg; phase_offsets[FLH][BLH] = offset_90_lag;
-    // FL drives BR (closes the loop)
-    coupling_weights[BRH][FLH] = K_inter_leg; phase_offsets[BRH][FLH] = offset_90_lag;
+    coupling_weights[FRH][BRH] = K_inter_leg; phase_offsets[FRH][BRH] = offset_lag;
+    coupling_weights[BLH][FRH] = K_inter_leg; phase_offsets[BLH][FRH] = offset_lag;
+    coupling_weights[FLH][BLH] = K_inter_leg; phase_offsets[FLH][BLH] = offset_lag;
+    coupling_weights[BRH][FLH] = K_inter_leg; phase_offsets[BRH][FLH] = offset_lag;
 
     if (s_last_gait_type != GAIT_CREEP) {
+        // BR=0 (swing), FR=270°, BL=180°, FL=90° → sequence BR->FR->BL->FL
         cpg_network[BRH].phase = 0.0f;
         cpg_network[BRK].phase = 0.0f + knee_lag;
         cpg_network[FRH].phase = TWO_PI * 0.75f;
@@ -232,6 +231,7 @@ inline void set_gait_crawl(uint8_t func_mode ,uint8_t posture ) {
     }
 
     CPG_network_pram.duty_cycle = 0.50f;
+    CPG_network_pram.damping = 0.10f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
 

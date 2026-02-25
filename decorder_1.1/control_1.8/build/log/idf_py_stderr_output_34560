@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\__main__.py", line 9, in <module>
+    esptool._main()
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\__init__.py", line 1314, in _main
+    main()
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\__init__.py", line 803, in main
+    esp = esp or get_default_connected_device(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\__init__.py", line 1199, in get_default_connected_device
+    _esp.connect(before, connect_attempts)
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\loader.py", line 730, in connect
+    last_error = self._connect_attempt(reset_strategy, mode)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\loader.py", line 623, in _connect_attempt
+    self.sync()
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\loader.py", line 539, in sync
+    val, _ = self.command(
+             ^^^^^^^^^^^^^
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\loader.py", line 489, in command
+    if byte(data, 0) != 0 and byte(data, 1) == self.ROM_INVALID_RECV_MSG:
+                              ^^^^^^^^^^^^^
+  File "C:\Espressif\python_env\idf5.4_py3.11_env\Lib\site-packages\esptool\util.py", line 13, in byte
+    return bitstr[index]
+           ~~~~~~^^^^^^^
+IndexError: index out of range
+CMake Error at run_serial_tool.cmake:67 (message):
+  
+  C:/Espressif/python_env/idf5.4_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.4/components/esptool_py/esptool/esptool.py;--chip;esp32
+  failed.
+
+
+

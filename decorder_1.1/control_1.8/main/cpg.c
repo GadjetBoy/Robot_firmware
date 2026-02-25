@@ -1,7 +1,8 @@
-#include "pcnt.h"
 #include "cpg.h"
 #include "uart.h"
+#include "pcnt.h"
 #include "ble.h"
+#include "pid.h"
 #include "gate.h"
 
 //============================================================PID==================================================================
@@ -11,7 +12,6 @@
 #define TWO_PI (2.0f * 3.1415926535f)
 
 // Tags for logging (consistent)
-#define TAG_PID "PID_CTRL"
 #define TAG_CPG "CPG_NET"
 #define TAG_MOTOR "MOTOR_CMD"
 #define TAG_SEQ "SEQ_RUN"
@@ -26,7 +26,6 @@
 // ====================== Globals ======================
 // Use non-static for extern compatibility
 DRAM_ATTR Motor motors[NUM_MOTORS];
-volatile DRAM_ATTR Motor Update_PID; 
 
 volatile DRAM_ATTR float motor_cmd_buffer[2][NUM_MOTORS];
 volatile DRAM_ATTR uint8_t current_write_index = 0;
@@ -54,11 +53,78 @@ static TaskHandle_t seq_task_handle = NULL;
 
 static uint64_t start;
 
+float SMOOTH_ALPHA = 0.050f;
+
 // Per-motor homing invert: -1 = flip output sign (fix wrong-direction joints), 1 = normal
-static const int8_t HOMING_INVERT[NUM_MOTORS] = { -1, 1, 1, 1, 1, 1, 1, 1 };  // FLH inverted
+//static const int8_t HOMING_INVERT[NUM_MOTORS] = { 1, 1, 1, 1, 1, 1, 1, 1 };  
 
 //volatile SequenceMode pending_mode = MODE_IDLE;
 //volatile bool mode_change_pending = false;
+
+// ====================== Position Loop ======================
+void run_position_loop(){
+    static int current_encoders[NUM_MOTORS] = {0}; // Local snapshot
+    static int filtered_enc[NUM_MOTORS] = {0}; // IIR filter state
+    static uint32_t log_counter = 0;
+    log_counter++;
+    
+    // Update gains periodically (throttled)
+    if (log_counter % 5 == 0) { // ~0.1s at 2500Hz
+        update_PID_gain();
+        log_counter = 0;
+    }
+    // Read encoders (snapshot)
+    for (int i = 0; i < NUM_ENCODERS; i++) {
+        ESP_ERROR_CHECK(pcnt_unit_get_count(pcnt_unit[i], &current_encoders[i]));
+    }
+    // Filter and update positions
+    for (int i = 0; i < NUM_MOTORS; i++) {
+        filtered_enc[i] = (int)(0.2f * filtered_enc[i] + 0.8f * current_encoders[i]);
+        motors[i].current_position = filtered_enc[i];
+    }
+    // Run PID for each motor and collect outputs
+    float pid_outputs[NUM_MOTORS];
+
+    for (int i = 0; i < NUM_MOTORS; i++) {
+        PIDController_Update(&motors[i].pos_pid, motors[i].target_position,
+                             motors[i].current_position, (uint8_t)i);
+
+        pid_outputs[i] = motors[i].pos_pid.output; // Collect for UART
+
+        /* IDLE homing: per-motor polarity invert for wrong-direction joints 
+        if (cpg_run_mode == CPG_MODE_IDLE && HOMING_INVERT[i] < 0) {
+            pid_outputs[i] = -pid_outputs[i];
+        }*/
+
+        float abs_pos = fabsf((float)motors[i].current_position);
+
+        /* IDLE homing: when far from target and |output| too small to overcome stiction, apply minimum drive */
+        if (abs_pos > STOP_THRESHOLD*2 && cpg_run_mode == CPG_MODE_IDLE) {
+            float abs_out = fabsf(pid_outputs[i]);
+            float min_duty = (abs_pos > 100) ? (MIN_DUTY * 1.5f) : MIN_DUTY;
+            if (abs_out > 0.01f && abs_out < min_duty) {
+                float sign = (pid_outputs[i] >= 0.0f) ? 1.0f : -1.0f;
+                pid_outputs[i] = sign * min_duty;
+            }
+        }
+
+        if (!motors[i].active && cpg_run_mode == CPG_MODE_IDLE){
+            if (abs_pos <= STOP_THRESHOLD*2){
+                pid_outputs[i] = 0.0f;
+            }
+        }
+
+       
+        motors[i].last_enc_val = motors[i].current_position;
+    }
+    // Send PID outputs to UART via double buffer
+    update_uart_motor_commands(pid_outputs);
+
+    xTaskNotifyGive(uart_send_task);
+       
+    xQueueOverwrite(encorderQue,filtered_enc);
+    
+}
 
 // ====================== Utility Functions ======================
 inline void update_uart_motor_commands(float *new_commands) {
@@ -97,184 +163,6 @@ static inline uint8_t get_commands(void) {
     return cmd;
 }
 
-// ====================== PID Functions ======================
-void PIDController_Init(PIDController *pid) {
-    pid->integrator = 0.0f;
-    pid->prevError = 0.0f;
-    pid->differentiator = 0.0f;
-    pid->prevMeasurement = 0.0f;
-    pid->output = 0.0f;
-}
-
-// Dynamic gain update based on frequency (called periodically)
-void update_PID_gain(void) {
-
-    //if (xSemaphoreTake(pid_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE){
-    taskENTER_CRITICAL(&ble_mux);
-       Update_PID.pos_pid.Kp = pid_ble_params.Kp;
-       Update_PID.pos_pid.Ki = pid_ble_params.Ki;
-       Update_PID.pos_pid.Kd = pid_ble_params.Kd;
-    taskEXIT_CRITICAL(&ble_mux);
-        //xSemaphoreGive(pid_params_mutex);
-    //}
-    
-    float freq_scale = fminf(CPG_frequency / 0.1f, 2.5f);  // FIXED: Cap at 2.5x (less aggressive than 3.0)
-    for (int i = 0; i < NUM_MOTORS; i++) {
-            motors[i].pos_pid.Kp = Update_PID.pos_pid.Kp * fminf(1.0f + 0.3f * freq_scale, 2.5f);  // Cap eff Kp<=5
-            motors[i].pos_pid.Kd = Update_PID.pos_pid.Kd * (1.0f + 0.6f * freq_scale);  // Milder Kd scale
-            motors[i].pos_pid.Ki = fmaxf(Update_PID.pos_pid.Ki * 0.8f, 0.005f);  // FIXED: Floor at 0.005, less reduction
-            motors[i].pos_pid.limMaxInt = 300.0f / freq_scale;  // FIXED: Tighter (200→150) to limit windup             
-    }
-}
-
-
-void PIDController_Update(PIDController *pid, float setpoint, int measurement, uint8_t i) {
-   
-    pid->prevError = pid->error;
-    pid->lastOutput = pid->output;
-    pid->prevMeasurement = (float)measurement;
- 
-    pid->error = setpoint - (float)measurement;
-    //ESP_LOGE(TAG, "CPG[%1d] (out: %.2f)",i ,pid->error);
-
-    float abs_error = fabsf(pid->error);
-    float abs_output = fabsf(pid->lastOutput);
-    float kp_scale = 1.0f;
-
-    if (abs_error < STOP_THRESHOLD * 3 || abs_output > PWM_MAX * 0.6f) {  // Near zero or saturated (peak)
-      kp_scale = 0.5f + 0.5f * fminf(abs_error / (STOP_THRESHOLD * 3), abs_output / PWM_MAX); // FIXED: Blend error/output for peak focus
-    }
-    pid->proportional = pid->Kp * kp_scale * pid->error;
-
-    // Derivative (add output blend if needed)
-    float kd_scale = 1.0f;
-    if (abs_output > PWM_MAX * 0.7f) kd_scale = 1.8f;  // FIXED: Higher (1.5→1.8) for low Kd
-    pid->differentiator = pid->Kd * kd_scale * (pid->error - pid->prevError) / pid->T;
-
-    //integral term
-    pid->integrator += pid->Ki *pid->error*pid->T;
-    // Clamp integrator
-    if (pid->integrator > pid->limMaxInt){
-        pid->integrator = pid->limMaxInt;
-    }
-    if (pid->integrator < pid->limMinInt){
-        pid->integrator = pid->limMinInt;
-    }
-    if(fabs(pid->error)<=STOP_THRESHOLD*5){
-      pid->integrator *= 0.9f; // decay
-    }
-    //calculate PID output
-    pid->output = pid->proportional +pid->differentiator+pid->integrator;
-    
-    float raw_output = pid->proportional + pid->differentiator + pid->integrator;
-
-    // Anti-windup: Back-calculate integrator if saturated
-    if (raw_output > pid->limMax) {
-     pid->integrator -= (raw_output - pid->limMax) * pid->Ki * pid->T; // Undo excess
-     pid->output = pid->limMax;
-    } else if (raw_output < pid->limMin) {
-     pid->integrator -= (raw_output - pid->limMin) * pid->Ki * pid->T;
-     pid->output = pid->limMin;
-    } else {
-     pid->output = raw_output;
-    }
-
-    /* Lighter smoothing in IDLE when error is large - faster homing */
-    if (cpg_run_mode == CPG_MODE_IDLE && fabsf(pid->error) > STOP_THRESHOLD * 3) {
-        pid->output = 0.9f * pid->output + 0.1f * pid->lastOutput;
-    } else {
-        pid->output = 0.8f * pid->output + 0.2f * pid->lastOutput;
-    }
-}
-
-// ====================== Position Loop ======================
-void run_position_loop(){
-    static int current_encoders[NUM_MOTORS] = {0}; // Local snapshot
-    static int filtered_enc[NUM_MOTORS] = {0}; // IIR filter state
-    static uint32_t log_counter = 0;
-    log_counter++;
-    
-    // Update gains periodically (throttled)
-    if (log_counter % 5 == 0) { // ~0.1s at 2500Hz
-        update_PID_gain();
-        log_counter = 0;
-    }
-    // Read encoders (snapshot)
-    for (int i = 0; i < NUM_ENCODERS; i++) {
-        ESP_ERROR_CHECK(pcnt_unit_get_count(pcnt_unit[i], &current_encoders[i]));
-    }
-    // Filter and update positions
-    for (int i = 0; i < NUM_MOTORS; i++) {
-        filtered_enc[i] = (int)(0.2f * filtered_enc[i] + 0.8f * current_encoders[i]);
-        motors[i].current_position = filtered_enc[i];
-    }
-    // Run PID for each motor and collect outputs
-    float pid_outputs[NUM_MOTORS];
-
-    for (int i = 0; i < NUM_MOTORS; i++) {
-        PIDController_Update(&motors[i].pos_pid, motors[i].target_position,
-                             motors[i].current_position, (uint8_t)i);
-
-        pid_outputs[i] = motors[i].pos_pid.output; // Collect for UART
-
-        /* IDLE homing: per-motor polarity invert for wrong-direction joints */
-        if (cpg_run_mode == CPG_MODE_IDLE && HOMING_INVERT[i] < 0) {
-            pid_outputs[i] = -pid_outputs[i];
-        }
-
-        float abs_pos = fabsf((float)motors[i].current_position);
-
-        /* IDLE homing: when far from target and |output| too small to overcome stiction, apply minimum drive */
-        if (abs_pos > STOP_THRESHOLD*2 && cpg_run_mode == CPG_MODE_IDLE) {
-            float abs_out = fabsf(pid_outputs[i]);
-            float min_duty = (abs_pos > 100) ? (MIN_DUTY * 1.5f) : MIN_DUTY;
-            if (abs_out > 0.01f && abs_out < min_duty) {
-                float sign = (pid_outputs[i] >= 0.0f) ? 1.0f : -1.0f;
-                pid_outputs[i] = sign * min_duty;
-            }
-        }
-
-        if (!motors[i].active && cpg_run_mode == CPG_MODE_IDLE){
-            if (abs_pos <= STOP_THRESHOLD*2){
-                pid_outputs[i] = 0.0f;
-            }
-        }
-
-       
-        motors[i].last_enc_val = motors[i].current_position;
-    }
-    // Send PID outputs to UART via double buffer
-    update_uart_motor_commands(pid_outputs);
-
-    xTaskNotifyGive(uart_send_task);
-       
-    xQueueOverwrite(encorderQue,filtered_enc);
-    
-}
-
-// ====================== Motor Setup ======================
-void pid_app_main(void) {
-    ESP_LOGI(TAG_PID, "Starting PID application...");
-   
-    for (int i = 0; i < NUM_MOTORS; i++) {
-        motors[i].m_num = i + 1;
-        motors[i].target_position = 0.0f;
-        motors[i].current_position = 0;
-        motors[i].active = false;
-        motors[i].pos_pid.Kp = 2.00f;
-        motors[i].pos_pid.Ki = 0.00f;
-        motors[i].pos_pid.Kd = 0.00f;
-        motors[i].pos_pid.T = PID_DT;
-        motors[i].pos_pid.limMin = -PWM_MAX;
-        motors[i].pos_pid.limMax = PWM_MAX;
-        motors[i].pos_pid.limMinInt = -500.0f;
-        motors[i].pos_pid.limMaxInt = 500.0f;
-        PIDController_Init(&motors[i].pos_pid);
-    }
-    //xTaskCreatePinnedToCore(position_loop_task, "pos_loop", 5120, NULL, 20, &pid_loop_task,1);
-    ESP_LOGI(TAG_PID, "PID application started successfully");
-}
-
 // ====================== CPG Functions ======================
 
 // Timer ISR (notifies task)
@@ -297,7 +185,7 @@ void motor_set(uint8_t i, float target, bool set) {
     }
     
     bool is_knee = (i == FLK || i == FRK || i == BLK || i == BRK);// Check if it's a knee joint
-    if (is_knee && (last_cmd == MODE_CREEP || last_cmd == MODE_TURTLE)) {
+    if (is_knee && (last_cmd == MODE_CREEP ) ){
 
          float knee_offset = cpg_network[i].offset;
 
@@ -383,7 +271,7 @@ void cpg_task(void *pvParameters) {
 }
 
 inline void cpg_update(float* d_phi, float* phase){
-        float SMOOTH_ALPHA = 0.035f;
+
         smooth_gait_parameters(SMOOTH_ALPHA);
 
         // 1. Snapshot phases and compute coupling
@@ -406,6 +294,8 @@ inline void cpg_update(float* d_phi, float* phase){
                   alpha = 1.0f / (2.0f * duty);
             }
 
+          float warped_omega = cpg_network[i].omega * alpha;
+
           float coupling_term = 0.0f;
           for (int j = 0; j < NUM_OSCILLATORS; j++) {
               if (i == j) continue;
@@ -416,8 +306,7 @@ inline void cpg_update(float* d_phi, float* phase){
             }
 
           // Apply the alpha multiplier to the base frequency only
-          float damping = 0.1f;
-          float warped_omega = cpg_network[i].omega * alpha;
+          float damping = CPG_network_pram.damping;
           d_phi[i] = (1.0f - damping) * warped_omega + damping * coupling_term;
         }
 
@@ -460,7 +349,7 @@ void smooth_gait_parameters(float alpha) {
 
     // Smooth Duty Cycle (This solves your transition issue!)
     CPG_network_pram.duty_cycle = CPG_network_pram.duty_cycle + alpha * (CPG_network_pram.duty_cycle_target - CPG_network_pram.duty_cycle);
-
+    
     // Update the actual oscillators with the "smoothed" current values
     float hip_omega = CPG_network_pram.base_freq * CPG_network_pram.hip_omega_mult;
     float knee_omega = CPG_network_pram.base_freq * CPG_network_pram.knee_omega_mult;
@@ -509,8 +398,13 @@ void command_runner_task(void *arg) {
     last_cmd = 255;
     while (1) {
         cmd = get_commands();
-        if (cmd != last_cmd) {
-            ESP_LOGE(TAG_SEQ, "Mode change: %d -> %d", last_cmd, cmd);
+        /* For posture commands: only act when posture actually changed (avoids re-running on repeated BLE sends) */
+        bool is_posture_cmd = (cmd == BODY_POSTURE_NORMAL || cmd == BODY_POSTURE_LOW || cmd == BODY_POSTURE_CROUCH);
+        bool posture_changed = is_posture_cmd && ((body_posture_t)cmd != posture);
+        bool mode_changed = (cmd != last_cmd);
+        bool should_act = is_posture_cmd ? posture_changed : mode_changed;
+        if (should_act) {
+            if (!is_posture_cmd) ESP_LOGE(TAG_SEQ, "Mode change: %d -> %d", last_cmd, cmd);
             // Take mutex, set gait, release mutex QUICKLY
             if (xSemaphoreTake(cpg_params_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
                 switch (cmd) {
@@ -605,6 +499,8 @@ void command_runner_task(void *arg) {
                         break;
                 }
 
+                //smooth_gait_parameters(SMOOTH_ALPHA);
+
                 if (cmd != BODY_POSTURE_NORMAL && cmd != BODY_POSTURE_LOW && cmd != BODY_POSTURE_CROUCH) {
                     last_cmd = cmd;
                 }
@@ -632,6 +528,9 @@ void hardware_Timer_setup(void) {
 
 // CPG app entry
 void CPG_app_main(void) {
+
+    pid_app_main();
+    vTaskDelay(pdMS_TO_TICKS(10));
     ESP_LOGI(TAG_CPG, "Starting CPG application...");
     cpg_params_mutex = xSemaphoreCreateMutex();
     if (!cpg_params_mutex) {

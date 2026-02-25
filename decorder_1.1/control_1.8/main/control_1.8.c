@@ -70,8 +70,6 @@ void app_main(void){
  PCNT_app_main();
  vTaskDelay(pdMS_TO_TICKS(10));
  UART_app_main();
- vTaskDelay(pdMS_TO_TICKS(10));
- pid_app_main();
  vTaskDelay(pdMS_TO_TICKS(2));
  BLE_app_main();
  vTaskDelay(pdMS_TO_TICKS(10));
