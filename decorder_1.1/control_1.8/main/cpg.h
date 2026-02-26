@@ -96,24 +96,25 @@ typedef struct {
 
 // Gait Modes (easy to extend)
 typedef enum {  
-    MODE_CRAWL =3 ,
+    MODE_CRAWL =4 ,
     MODE_TURTLE  ,
     MODE_CREEP   
 } SequenceMode;
 
 typedef enum {
-    CPG_MODE_IDLE = 0,     // CPG stopped, motors off
-    CPG_MODE_STANDBY,      // CPG running, zero amplitude, posture hold
+    CPG_MODE_HOMING = 0,     // CPG stopped, motors off
+    CPG_MODE_STANDBY,
+    CPG_MODE_IDLE,      // CPG running, zero amplitude, posture hold
     CPG_MODE_ACTIVE        // Normal gait
 } CPG_RunMode;
 
 typedef enum {
-    LEG_ORIENTATION_NORMAL = 6,      // Robot upright
+    LEG_ORIENTATION_NORMAL = 7,      // Robot upright
     LEG_ORIENTATION_INVERTED         // Robot upside down (legs flipped)
 } LegOrientation;
 
 typedef enum {
-    MODE_TROT_LEFT=8,
+    MODE_TROT_LEFT=9,
     MODE_TROT_RIGHT, 
     MODE_CREEP_LEFT ,
     MODE_CREEP_RIGHT,
@@ -125,7 +126,7 @@ typedef enum {
 } turning_modes;
 
 typedef enum {
-    BODY_POSTURE_NORMAL =16,
+    BODY_POSTURE_NORMAL =18,
     BODY_POSTURE_LOW,
     BODY_POSTURE_CROUCH
 } body_posture_t;
@@ -170,6 +171,7 @@ typedef struct{
     float hip_amp_right_target;
     float knee_amp_left_target; 
     float knee_amp_right_target;
+    float diagonal_knee_boost;  /* Creep: boost diagonal stance knee when opposite leg swings (>1.0 = active, 1.0 = off) */
 } osc_pram;
 
 typedef struct {

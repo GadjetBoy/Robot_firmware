@@ -3,6 +3,8 @@
 
 #define TAG_PID "PID_CTRL"
 
+#define PID_MAX_I 500.0f
+
 volatile DRAM_ATTR Motor Update_PID ={0}; 
 
 // ====================== PID Functions ======================
@@ -88,7 +90,7 @@ void PIDController_Update(PIDController *pid, float setpoint, int measurement, u
     }
 
     /* Lighter smoothing in IDLE when error is large - faster homing */
-    if (cpg_run_mode == CPG_MODE_IDLE && fabsf(pid->error) > TOL) {
+    if (cpg_run_mode == CPG_MODE_HOMING && fabsf(pid->error) > TOL) {
         pid->output = 0.9f * pid->output + 0.1f * pid->lastOutput;
     } else {
         pid->output = 0.2f * pid->output + 0.8f * pid->lastOutput;
@@ -110,8 +112,8 @@ void pid_app_main(void) {
         motors[i].pos_pid.T = PID_DT;
         motors[i].pos_pid.limMin = -PWM_MAX;
         motors[i].pos_pid.limMax = PWM_MAX;
-        motors[i].pos_pid.limMinInt = -500.0f;
-        motors[i].pos_pid.limMaxInt = 500.0f;
+        motors[i].pos_pid.limMinInt = -PID_MAX_I;
+        motors[i].pos_pid.limMaxInt = PID_MAX_I;
         PIDController_Init(&motors[i].pos_pid);
     }
     //xTaskCreatePinnedToCore(position_loop_task, "pos_loop", 5120, NULL, 20, &pid_loop_task,1);

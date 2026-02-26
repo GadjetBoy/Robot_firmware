@@ -10,6 +10,7 @@
 
 // Math Constants
 #define TWO_PI (2.0f * 3.1415926535f)
+#define CREEP_OFFST_MODI (1000.0f)
 
 // Tags for logging (consistent)
 #define TAG_CPG "CPG_NET"
@@ -86,32 +87,54 @@ void run_position_loop(){
     float pid_outputs[NUM_MOTORS];
 
     for (int i = 0; i < NUM_MOTORS; i++) {
-        PIDController_Update(&motors[i].pos_pid, motors[i].target_position,
-                             motors[i].current_position, (uint8_t)i);
+        /* IDLE: stop all motors (output 0) */
+        if (cpg_run_mode == CPG_MODE_IDLE) {
+            pid_outputs[i] = 0.0f;
+        } 
+        else if (cpg_run_mode == CPG_MODE_HOMING) {
+            /* HOMING: drive to target 0 with min duty to overcome stiction */
+            PIDController_Update(&motors[i].pos_pid, motors[i].target_position,
+                                motors[i].current_position, (uint8_t)i);
 
-        pid_outputs[i] = motors[i].pos_pid.output; // Collect for UART
+            pid_outputs[i] = motors[i].pos_pid.output;
 
-        /* IDLE homing: per-motor polarity invert for wrong-direction joints 
-        if (cpg_run_mode == CPG_MODE_IDLE && HOMING_INVERT[i] < 0) {
-            pid_outputs[i] = -pid_outputs[i];
-        }*/
+            float abs_pos = fabsf((float)motors[i].current_position);
 
-        float abs_pos = fabsf((float)motors[i].current_position);
+            if (abs_pos > STOP_THRESHOLD*2) {
+                float abs_out = fabsf(pid_outputs[i]);
+                float min_duty = (abs_pos > 100) ? (MIN_DUTY * 1.5f) : MIN_DUTY;
 
-        /* IDLE homing: when far from target and |output| too small to overcome stiction, apply minimum drive */
-        if (abs_pos > STOP_THRESHOLD*2 && cpg_run_mode == CPG_MODE_IDLE) {
-            float abs_out = fabsf(pid_outputs[i]);
-            float min_duty = (abs_pos > 100) ? (MIN_DUTY * 1.5f) : MIN_DUTY;
-            if (abs_out > 0.01f && abs_out < min_duty) {
-                float sign = (pid_outputs[i] >= 0.0f) ? 1.0f : -1.0f;
-                pid_outputs[i] = sign * min_duty;
+                if (abs_out > 0.01f && abs_out < min_duty) {
+                    float sign = (pid_outputs[i] >= 0.0f) ? 1.0f : -1.0f;
+                    pid_outputs[i] = sign * min_duty;
+                }
             }
+
+            if (abs_pos <= STOP_THRESHOLD*2) pid_outputs[i] = 0.0f;
+        } 
+        else if (cpg_run_mode == CPG_MODE_STANDBY) {
+            /* STANDBY: hold at target (hip 0, knee -18000) with min duty to overcome stiction */
+            PIDController_Update(&motors[i].pos_pid, motors[i].target_position,
+                                 motors[i].current_position, (uint8_t)i);
+            pid_outputs[i] = motors[i].pos_pid.output;
+            float err = motors[i].target_position - (float)motors[i].current_position;
+            float abs_err = fabsf(err);
+            if (abs_err > TOL) {
+                float abs_out = fabsf(pid_outputs[i]);
+                float min_duty = (abs_err > 200) ? (MIN_DUTY * 2.0f) : MIN_DUTY;
+                if (abs_out > 0.01f && abs_out < min_duty) {
+                    float sign = (pid_outputs[i] >= 0.0f) ? 1.0f : -1.0f;
+                    pid_outputs[i] = sign * min_duty;
+                }
+            }
+            if (abs_err <= TOL) pid_outputs[i] = 0.0f;
         }
-
-        if (!motors[i].active && cpg_run_mode == CPG_MODE_IDLE){
-            if (abs_pos <= STOP_THRESHOLD*2){
-                pid_outputs[i] = 0.0f;
-            }
+        else {
+            PIDController_Update(&motors[i].pos_pid, motors[i].target_position,
+                                 motors[i].current_position, (uint8_t)i);
+            pid_outputs[i] = motors[i].pos_pid.output;
+            float abs_pos = fabsf((float)motors[i].current_position);
+            if (!motors[i].active && abs_pos <= STOP_THRESHOLD*2) pid_outputs[i] = 0.0f;
         }
 
        
@@ -140,9 +163,9 @@ inline void update_uart_motor_commands(float *new_commands) {
 
 void update_orientation_from_ble(uint8_t cmd)
 {
-    if (cmd == 6)
+    if (cmd == LEG_ORIENTATION_NORMAL)
         leg_orientation = LEG_ORIENTATION_NORMAL;
-    else if (cmd == 7)
+    else if (cmd == LEG_ORIENTATION_INVERTED)
         leg_orientation = LEG_ORIENTATION_INVERTED;
 }
 
@@ -184,15 +207,29 @@ void motor_set(uint8_t i, float target, bool set) {
         signed_target = -signed_target;
     }
     
-    bool is_knee = (i == FLK || i == FRK || i == BLK || i == BRK);// Check if it's a knee joint
-    if (is_knee && (last_cmd == MODE_CREEP ) ){
-
-         float knee_offset = cpg_network[i].offset;
-
-         // Prevent backward pull
-         if (signed_target < knee_offset) {
-             signed_target = knee_offset;
-            }
+    /* Creep: Prevent backward pull only on non-diagonal stance knees. Let diagonal stance knee bend more (tilt toward stride triangle). */
+    bool is_knee = (i == FLK || i == FRK || i == BLK || i == BRK);
+    bool is_creep = (last_cmd == MODE_CREEP || last_cmd == MODE_CREEP_LEFT || last_cmd == MODE_CREEP_RIGHT);
+    if (is_knee && is_creep) {
+        /* Find swinging leg (hip phase < π) and diagonal stance knee (allowed to bend more) */
+        int swing_hip = -1;  /* which hip is swinging */
+        if (cpg_network[FLH].phase < M_PI) swing_hip = FLH;
+        else if (cpg_network[FRH].phase < M_PI) swing_hip = FRH;
+        else if (cpg_network[BLH].phase < M_PI) swing_hip = BLH;
+        else if (cpg_network[BRH].phase < M_PI) swing_hip = BRH;
+        int diag_knee = (swing_hip == FLH) ? BRK : (swing_hip == FRH) ? BLK : (swing_hip == BLH) ? FRK : (swing_hip == BRH) ? FLK : -1;
+        int same_leg_hip = (i == FLK) ? FLH : (i == FRK) ? FRH : (i == BLK) ? BLH : BRH;
+        bool is_swing_knee = (same_leg_hip == swing_hip);
+        bool is_diag_stance_knee = (i == diag_knee);
+        /* Only clamp the two non-diagonal stance knees; allow swing + diagonal stance to bend freely */
+        if (!is_swing_knee && !is_diag_stance_knee) {
+            float knee_offset = cpg_network[i].offset;
+            if (signed_target < knee_offset) signed_target = knee_offset;
+        }
+        else {
+            float knee_offset = (cpg_network[i].offset - CREEP_OFFST_MODI);
+            if (signed_target < knee_offset) signed_target = knee_offset;
+        }
     }
 
     if ( leg_orientation == LEG_ORIENTATION_INVERTED) {
@@ -237,6 +274,26 @@ void cpg_task(void *pvParameters) {
         }
 
         if (cpg_run_mode == CPG_MODE_IDLE) {
+            vTaskDelay(pdMS_TO_TICKS(2));
+            for (int i = 0; i < NUM_MOTORS; i++) motor_set((uint8_t)i, 0, false);
+            xSemaphoreGive(cpg_params_mutex);
+            run_position_loop();  /* outputs 0, motors stop */
+            continue;
+        }
+
+        if (cpg_run_mode == CPG_MODE_HOMING) {
+            if (!idle_reset_done) {
+                for (int i = 0; i < NUM_MOTORS; i++) PIDController_Init(&motors[i].pos_pid);
+                idle_reset_done = true;
+            }
+            vTaskDelay(pdMS_TO_TICKS(2));
+            for (int i = 0; i < NUM_MOTORS; i++) motor_set((uint8_t)i, 0, true);  /* active=true: drive to 0 */
+            xSemaphoreGive(cpg_params_mutex);
+            run_position_loop();
+            continue;
+        }
+
+        if (cpg_run_mode == CPG_MODE_STANDBY) {
             if (!idle_reset_done) {
                 for (int i = 0; i < NUM_MOTORS; i++) {
                     PIDController_Init(&motors[i].pos_pid);
@@ -244,13 +301,19 @@ void cpg_task(void *pvParameters) {
                 idle_reset_done = true;
             }
             vTaskDelay(pdMS_TO_TICKS(2));
-            for(int i = 0;i<NUM_MOTORS;i++){
-                motor_set((uint8_t)i, 0, false);
+            CPG_network_pram.hip_offset  = 0.0f;
+            CPG_network_pram.knee_offset = -18000.0f;
+
+            for (int i = 0; i < NUM_OSCILLATORS; i++) {
+              float offset = (i % 2 == 0) ? CPG_network_pram.hip_offset: CPG_network_pram.knee_offset;
+              motor_set((uint8_t)i, offset, true);
             }
+
             xSemaphoreGive(cpg_params_mutex);
             run_position_loop();
             continue;
         }
+
         idle_reset_done = false;
 
         // 2. Update the CPG physics
@@ -329,8 +392,16 @@ inline void cpg_update(float* d_phi, float* phase){
             float target_offset = (i % 2 != 0) ? CPG_network_pram.knee_offset : CPG_network_pram.hip_offset;
             cpg_network[i].offset += 0.050f * (target_offset - cpg_network[i].offset) * CPG_DT;
 
-            cpg_network[i].output = cpg_network[i].offset +
-                                    cpg_network[i].amplitude * sinf(cpg_network[i].phase);
+            /* Creep: boost diagonal stance knee when opposite leg swings → tilt toward stride triangle for stability */
+            float eff_amp = cpg_network[i].amplitude;
+            /*if (CPG_network_pram.diagonal_knee_boost > 1.0f && (i == FLK || i == FRK || i == BLK || i == BRK)) {
+                 Diagonal pairs: FL↔BR, FR↔BL. Knee K boosts when diagonal hip H is in swing [0,π] 
+                int diag_hip = (i == FLK) ? BRH : (i == FRK) ? BLH : (i == BLK) ? FRH : (i == BRK) ? FLH : -1;
+                if (diag_hip >= 0 && cpg_network[diag_hip].phase < M_PI) {
+                    eff_amp *= CPG_network_pram.diagonal_knee_boost;
+                }
+            }*/
+            cpg_network[i].output = cpg_network[i].offset + eff_amp * sinf(cpg_network[i].phase);
 
             //ESP_LOGW(TAG_CPG, "cpg update output");
             motor_set((uint8_t)i, cpg_network[i].output,
@@ -408,12 +479,14 @@ void command_runner_task(void *arg) {
             // Take mutex, set gait, release mutex QUICKLY
             if (xSemaphoreTake(cpg_params_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
                 switch (cmd) {
-                    case CPG_MODE_IDLE:
-                        if(last_cmd == 255) set_gait_crawl(STRAIGHT, posture);
-                        else set_gait_idle();
+                    case CPG_MODE_HOMING:
+                        set_gait_homing();
                         break;
                     case CPG_MODE_STANDBY:
                         set_gait_standby();
+                        break;
+                    case CPG_MODE_IDLE:
+                        set_gait_idle();
                         break;
                     case MODE_TURTLE:
                         set_gait_trot(STRAIGHT, posture);

@@ -87,8 +87,8 @@ class RobotController:
         self.connection_start_time = None
         self.current_base = 0
         self.gait = None
-        self.current_orient = 6
-        self.current_posture = 16
+        self.current_orient = 7   # LEG_ORIENTATION_NORMAL
+        self.current_posture = 18 # BODY_POSTURE_NORMAL
  
         # Add these lines:
         self.keep_alive_interval = 1.0 # Send keep-alive every 1 second
@@ -320,11 +320,12 @@ class RobotController:
         mode_grid = tk.Frame(mode_frame, bg=COLORS["bg_card"])
         mode_grid.pack(padx=10, pady=10)
         modes = [
-            ("Idle", 0, COLORS["text_muted"]),
+            ("Homing", 0, COLORS["warning"]),
             ("Standby", 1, COLORS["primary"]),
-            ("Crawl", 3, COLORS["secondary"]),
-            ("Trot", 4, COLORS["warning"]),
-            ("Creep", 5, COLORS["accent"])
+            ("Idle", 2, COLORS["text_muted"]),
+            ("Crawl", 4, COLORS["secondary"]),
+            ("Trot", 5, COLORS["warning"]),
+            ("Creep", 6, COLORS["accent"])
         ]
         self.mode_buttons = {}
         for i, (name, value, base_color) in enumerate(modes):
@@ -338,8 +339,8 @@ class RobotController:
             self.mode_buttons[value] = btn
         for c in range(3):
               mode_grid.grid_columnconfigure(c, weight=1)
-        # Default to Idle
-        self.select_mode(0, "Idle", silent=True)
+        # Default to Homing
+        self.select_mode(0, "Homing", silent=True)
         # Turning Gait Commands (for each gait: Straight, Turn L, Turn R)
         turn_frame = tk.LabelFrame(left_container,
                                    text=" Turning Gait Commands ",
@@ -351,47 +352,47 @@ class RobotController:
                                    padx=20,
                                    pady=20)
         turn_frame.grid(row=2, column=0, sticky='ew', padx=5, pady=(0, 10))
-        # Trot: Straight(4), Left(8), Right(9)
+        # Trot: Straight(5), Left(9), Right(10)
         trot_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
         trot_row.pack(fill=tk.X, pady=4)
         tk.Label(trot_row, text="Trot:", font=self.fonts['subheading'],
                  fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
                  anchor='w').pack(side=tk.LEFT, padx=(0, 5))
-        for label, byte_val in [("Straight", 4), ("Turn L", 8), ("Turn R", 9)]:
+        for label, byte_val in [("Straight", 5), ("Turn L", 9), ("Turn R", 10)]:
             ModernButton(trot_row, text=label, bg_color=COLORS["warning"],
                         command=lambda b=byte_val: self.send_turn_cmd(b),
                         width=8, pady=4).pack(side=tk.LEFT, padx=3)
-        # Creep: Straight(5), Left(10), Right(11)
+        # Creep: Straight(6), Left(11), Right(12)
         creep_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
         creep_row.pack(fill=tk.X, pady=4)
         tk.Label(creep_row, text="Creep:", font=self.fonts['subheading'],
                  fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
                  anchor='w').pack(side=tk.LEFT, padx=(0, 5))
-        for label, byte_val in [("Straight", 5), ("Turn L", 10), ("Turn R", 11)]:
+        for label, byte_val in [("Straight", 6), ("Turn L", 11), ("Turn R", 12)]:
             ModernButton(creep_row, text=label, bg_color=COLORS["accent"],
                         command=lambda b=byte_val: self.send_turn_cmd(b),
                         width=8, pady=4).pack(side=tk.LEFT, padx=3)
-        # Crawl: Straight(3), Left(12), Right(13)
+        # Crawl: Straight(4), Left(13), Right(14)
         crawl_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
         crawl_row.pack(fill=tk.X, pady=4)
         tk.Label(crawl_row, text="Crawl:", font=self.fonts['subheading'],
                  fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
                  anchor='w').pack(side=tk.LEFT, padx=(0, 5))
-        for label, byte_val in [("Straight", 3), ("Turn L", 12), ("Turn R", 13)]:
+        for label, byte_val in [("Straight", 4), ("Turn L", 13), ("Turn R", 14)]:
             ModernButton(crawl_row, text=label, bg_color=COLORS["secondary"],
                         command=lambda b=byte_val: self.send_turn_cmd(b),
                         width=8, pady=4).pack(side=tk.LEFT, padx=3)
-        # Pivot Turn: Trot (14) or Crawl (15)
+        # Pivot Turn: Trot (15) or Crawl (16)
         pivot_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
         pivot_row.pack(fill=tk.X, pady=4)
         tk.Label(pivot_row, text="Pivot:", font=self.fonts['subheading'],
                  fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
                  anchor='w').pack(side=tk.LEFT, padx=(0, 5))
         ModernButton(pivot_row, text="Pivot Trot", bg_color=COLORS["warning"],
-                     command=lambda: self.send_turn_cmd(14),
+                     command=lambda: self.send_turn_cmd(15),
                      width=10, pady=4).pack(side=tk.LEFT, padx=3)
         ModernButton(pivot_row, text="Pivot Crawl", bg_color=COLORS["secondary"],
-                     command=lambda: self.send_turn_cmd(15),
+                     command=lambda: self.send_turn_cmd(16),
                      width=10, pady=4).pack(side=tk.LEFT, padx=3)
         # Leg Orientation selection
         orient_frame = tk.LabelFrame(left_container,
@@ -407,8 +408,8 @@ class RobotController:
         orient_grid = tk.Frame(orient_frame, bg=COLORS["bg_card"])
         orient_grid.pack(padx=10, pady=10)
         orients = [
-            ("Normal", 6, COLORS["primary"]),
-            ("Inverted", 7, COLORS["danger"])
+            ("Normal", 7, COLORS["primary"]),
+            ("Inverted", 8, COLORS["danger"])
         ]
         self.orient_buttons = {}
         for i, (name, value, base_color) in enumerate(orients):
@@ -423,7 +424,7 @@ class RobotController:
         for c in range(2):
             orient_grid.grid_columnconfigure(c, weight=1)
         # Default to Normal
-        self.select_orient(6, "Normal", silent=True)
+        self.select_orient(7, "Normal", silent=True)
         # Body Posture selection
         posture_frame = tk.LabelFrame(left_container,
                                       text=" Body Posture ",
@@ -438,9 +439,9 @@ class RobotController:
         posture_grid = tk.Frame(posture_frame, bg=COLORS["bg_card"])
         posture_grid.pack(padx=10, pady=10)
         postures = [
-            ("Normal", 16, COLORS["success"]),
-            ("Low", 17, COLORS["warning"]),
-            ("Crouch", 18, COLORS["danger"])
+            ("Normal", 18, COLORS["success"]),
+            ("Low", 19, COLORS["warning"]),
+            ("Crouch", 20, COLORS["danger"])
         ]
         self.posture_buttons = {}
         for i, (name, value, base_color) in enumerate(postures):
@@ -455,7 +456,7 @@ class RobotController:
         for c in range(3):
             posture_grid.grid_columnconfigure(c, weight=1)
         # Default to Normal
-        self.select_posture(16, "Normal", silent=True)
+        self.select_posture(18, "Normal", silent=True)
         # Right side: Presets + Send
         right_frame = tk.Frame(bottom_frame, bg=COLORS["bg_medium"])
         right_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=5)
@@ -508,15 +509,14 @@ class RobotController:
             return
         self.control_byte = mode_value
         self.current_base = mode_value
-        self.gait = {3: 'crawl', 4: 'trot', 5: 'creep'}.get(mode_value, None)
+        self.gait = {4: 'crawl', 5: 'trot', 6: 'creep'}.get(mode_value, None)
         # Highlight active button
         for val, btn in self.mode_buttons.items():
             if val == mode_value:
                 btn.config(bg=COLORS["success"], fg=COLORS["bg_dark"])
             else:
-                colors = {0: COLORS["text_muted"], 1: COLORS["primary"],
-                          3: COLORS["secondary"], 4: COLORS["warning"],
-                          5: COLORS["accent"]}
+                colors = {0: COLORS["warning"], 1: COLORS["primary"], 2: COLORS["text_muted"],
+                          4: COLORS["secondary"], 5: COLORS["warning"], 6: COLORS["accent"]}
                 btn.config(bg=colors.get(val, COLORS["primary"]), fg=COLORS["text_primary"])
         if not silent:
             self.log(f"Mode changed to: {mode_name} ({mode_value})", tag="info")
@@ -533,7 +533,7 @@ class RobotController:
             if val == orient_value:
                 btn.config(bg=COLORS["success"], fg=COLORS["bg_dark"])
             else:
-                colors = {6: COLORS["primary"], 7: COLORS["danger"]}
+                colors = {7: COLORS["primary"], 8: COLORS["danger"]}
                 btn.config(bg=colors[val], fg=COLORS["text_primary"])
         if not silent:
             self.log(f"Orientation changed to: {orient_name} ({orient_value})", tag="info")
@@ -550,7 +550,7 @@ class RobotController:
             if val == posture_value:
                 btn.config(bg=COLORS["success"], fg=COLORS["bg_dark"])
             else:
-                colors = {16: COLORS["success"], 17: COLORS["warning"], 18: COLORS["danger"]}
+                colors = {18: COLORS["success"], 19: COLORS["warning"], 20: COLORS["danger"]}
                 btn.config(bg=colors[val], fg=COLORS["text_primary"])
         if not silent:
             self.log(f"Posture changed to: {posture_name} ({posture_value})", tag="info")
@@ -929,7 +929,7 @@ class RobotController:
             btn.config(bg=COLORS["warning"])
             self.root.after(300, lambda b=btn, c=original_bg: b.config(bg=c))
         if direction == 'stop':
-            self.select_mode(0, "Idle")
+            self.select_mode(2, "Idle")  # CPG_MODE_IDLE: motors stop immediately
         elif direction == 'forward':
             self.control_byte = self.current_base
             self.send_packet()
@@ -939,13 +939,13 @@ class RobotController:
         elif direction == 'left':
             if self.gait is None:
                 return
-            turn_map = {'crawl': 12, 'creep': 10, 'trot': 8}
+            turn_map = {'crawl': 13, 'creep': 11, 'trot': 9}  # MODE_*_LEFT
             self.control_byte = turn_map.get(self.gait, self.current_base)
             self.send_packet()
         elif direction == 'right':
             if self.gait is None:
                 return
-            turn_map = {'crawl': 13, 'creep': 11, 'trot': 9}
+            turn_map = {'crawl': 14, 'creep': 12, 'trot': 10}  # MODE_*_RIGHT
             self.control_byte = turn_map.get(self.gait, self.current_base)
             self.send_packet()
     def get_float_values(self):
@@ -1076,7 +1076,7 @@ class RobotController:
                     keep_alive_packet = self.last_sent_packet
                 else:
                     # If no manual packet yet, send idle state (only once)
-                    keep_alive_packet = bytearray([0xA5, 0x00]) # Control byte 0 (Idle)
+                    keep_alive_packet = bytearray([0xA5, 0x02]) # Control byte 2 (Idle - motors stop)
                     keep_alive_packet.extend([0] * 20) # All zeros for floats
                     keep_alive_packet.extend([0xAA, 0x5A])
                     self.last_sent_packet = keep_alive_packet

@@ -14,11 +14,22 @@ static inline void set_gait_crawl_right(void);
 static inline void set_gait_creep_left(void);
 static inline void set_gait_creep_right(void); 
 
-// Gait: IDLE (all off)
+// Gait: IDLE (motors off, output 0)
 inline void set_gait_idle(void)
 {
     cpg_run_mode = CPG_MODE_IDLE;
     s_last_gait_type = 0xFF;
+    CPG_network_pram.diagonal_knee_boost = 1.0f;
+    memset((void*)coupling_weights, 0, sizeof(coupling_weights));
+    memset((void*)phase_offsets, 0, sizeof(phase_offsets));
+}
+
+// Gait: HOMING (drive all motors to position 0)
+inline void set_gait_homing(void)
+{
+    cpg_run_mode = CPG_MODE_HOMING;
+    s_last_gait_type = 0xFF;
+    CPG_network_pram.diagonal_knee_boost = 1.0f;
     memset((void*)coupling_weights, 0, sizeof(coupling_weights));
     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
 }
@@ -36,6 +47,7 @@ inline void set_gait_trot(uint8_t func_mode,uint8_t posture) {
     // Set Duty Cycle for Trot ---
     CPG_network_pram.duty_cycle = 0.5f; // Symmetric swing/stance
     CPG_network_pram.damping = 0.10f;
+    CPG_network_pram.diagonal_knee_boost = 1.0f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
 
@@ -135,6 +147,8 @@ inline void set_gait_creep(uint8_t func_mode,uint8_t posture) {
     // 0.75 ensures the "3-legs-down" rule for lateral sequence stability
     CPG_network_pram.duty_cycle = 0.80f;
     CPG_network_pram.damping = 0.1250f;
+    /* Boost diagonal stance knee when opposite leg swings: tilts robot toward stride triangle for stability */
+    CPG_network_pram.diagonal_knee_boost = 1.30f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_creep_frequency;
    
@@ -232,6 +246,7 @@ inline void set_gait_crawl(uint8_t func_mode ,uint8_t posture ) {
 
     CPG_network_pram.duty_cycle = 0.50f;
     CPG_network_pram.damping = 0.10f;
+    CPG_network_pram.diagonal_knee_boost = 1.0f;
 
     CPG_network_pram.base_freq = TWO_PI * CPG_frequency;
 
@@ -321,27 +336,11 @@ inline void set_gait_crawl(uint8_t func_mode ,uint8_t posture ) {
 void set_gait_standby(void)
 {
     cpg_run_mode = CPG_MODE_STANDBY;
+    CPG_network_pram.diagonal_knee_boost = 1.0f;
 
     memset((void*)coupling_weights, 0, sizeof(coupling_weights));
     memset((void*)phase_offsets, 0, sizeof(phase_offsets));
 
-    CPG_network_pram.hip_offset  = 0.0f;
-    CPG_network_pram.knee_offset = -18000.0f;
-
-    for (int i = 0; i < NUM_OSCILLATORS; i++) {
-        float offset = (i % 2 == 0)
-            ? CPG_network_pram.hip_offset
-            : CPG_network_pram.knee_offset;
-
-        // KEEP omega, ZERO amplitude
-        set_oscillator_params(
-            i,
-            cpg_network[i].omega,
-            0.0f,
-            offset
-        );
-
-    }
 }
 
  
