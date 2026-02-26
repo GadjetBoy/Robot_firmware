@@ -11,6 +11,8 @@
 // Math Constants
 #define TWO_PI (2.0f * 3.1415926535f)
 #define CREEP_OFFST_MODI (1000.0f)
+#define WALK_OFFST_MODI (800.0f)
+#define GALOP_OFFST_MODI (2000.0f)
 
 // Tags for logging (consistent)
 #define TAG_CPG "CPG_NET"
@@ -195,67 +197,73 @@ void IRAM_ATTR cpg_timer_callback(void* arg) {
     if (woken) portYIELD_FROM_ISR();
 }
 
+// --- motor_set helpers ---
+static int get_swing_hip(void) {
+    if (cpg_network[FLH].phase < M_PI) return FLH;
+    if (cpg_network[FRH].phase < M_PI) return FRH;
+    if (cpg_network[BLH].phase < M_PI) return BLH;
+    if (cpg_network[BRH].phase < M_PI) return BRH;
+    return -1;
+}
+
+static void clamp_knee_creep(uint8_t i, float *target, int swing_hip) {
+    int diag_knee = (swing_hip == FLH) ? BRK : (swing_hip == FRH) ? BLK : (swing_hip == BLH) ? FRK : (swing_hip == BRH) ? FLK : -1;
+    int same_leg_hip = (i == FLK) ? FLH : (i == FRK) ? FRH : (i == BLK) ? BLH : BRH;
+    bool is_swing = (same_leg_hip == swing_hip), is_diag = (i == diag_knee);
+    float lim = (!is_swing && !is_diag) ? cpg_network[i].offset : (cpg_network[i].offset - CREEP_OFFST_MODI);
+    if (*target < lim) *target = lim;
+}
+
+static void clamp_knee_walk_galop(uint8_t i, float *target, int swing_hip) {
+    int same_leg_hip = (i == FLK) ? FLH : (i == FRK) ? FRH : (i == BLK) ? BLH : BRH;
+    bool is_swing = (same_leg_hip == swing_hip);
+    bool is_back_swing = (swing_hip == BLH || swing_hip == BRH);
+    bool is_front_swing = (swing_hip == FLH || swing_hip == FRH);
+    bool is_tilt = (is_back_swing && (i == FLK || i == FRK)) || (is_front_swing && (i == BLK || i == BRK));
+    float lim = (!is_swing && !is_tilt) ? cpg_network[i].offset :
+                (last_cmd == MODE_WALK || last_cmd == MODE_WALK_LEFT || last_cmd == MODE_WALK_RIGHT)
+                    ? (cpg_network[i].offset - WALK_OFFST_MODI) : (cpg_network[i].offset - GALOP_OFFST_MODI);
+    if (*target < lim) *target = lim;
+}
+
 // Set motor target with feedforward velocity term
 void motor_set(uint8_t i, float target, bool set) {
     if (i >= NUM_MOTORS) return;
 
-    float signed_target =target;
+    float signed_target = target;
 
-    // Sign flip for right legs (FRH,BRH) during pivot turn - left/right move opposite
-    bool is_right_leg = (i == FRH || i == BRH);  // Adjust indices if mapping differs
-    if (is_right_leg && pivot_turn == false) {
-        signed_target = -signed_target;
-    }
-    
-    /* Creep: Prevent backward pull only on non-diagonal stance knees. Let diagonal stance knee bend more (tilt toward stride triangle). */
+    /* 1. Pivot: sign flip for right legs when not in pivot mode */
+    if ((i == FRH || i == BRH) && !pivot_turn) signed_target = -signed_target;
+
+    /* 2. Knee tilt clamp (creep/walk/gallop) */
     bool is_knee = (i == FLK || i == FRK || i == BLK || i == BRK);
-    bool is_creep = (last_cmd == MODE_CREEP || last_cmd == MODE_CREEP_LEFT || last_cmd == MODE_CREEP_RIGHT);
-    if (is_knee && is_creep) {
-        /* Find swinging leg (hip phase < π) and diagonal stance knee (allowed to bend more) */
-        int swing_hip = -1;  /* which hip is swinging */
-        if (cpg_network[FLH].phase < M_PI) swing_hip = FLH;
-        else if (cpg_network[FRH].phase < M_PI) swing_hip = FRH;
-        else if (cpg_network[BLH].phase < M_PI) swing_hip = BLH;
-        else if (cpg_network[BRH].phase < M_PI) swing_hip = BRH;
-        int diag_knee = (swing_hip == FLH) ? BRK : (swing_hip == FRH) ? BLK : (swing_hip == BLH) ? FRK : (swing_hip == BRH) ? FLK : -1;
-        int same_leg_hip = (i == FLK) ? FLH : (i == FRK) ? FRH : (i == BLK) ? BLH : BRH;
-        bool is_swing_knee = (same_leg_hip == swing_hip);
-        bool is_diag_stance_knee = (i == diag_knee);
-        /* Only clamp the two non-diagonal stance knees; allow swing + diagonal stance to bend freely */
-        if (!is_swing_knee && !is_diag_stance_knee) {
-            float knee_offset = cpg_network[i].offset;
-            if (signed_target < knee_offset) signed_target = knee_offset;
-        }
-        else {
-            float knee_offset = (cpg_network[i].offset - CREEP_OFFST_MODI);
-            if (signed_target < knee_offset) signed_target = knee_offset;
-        }
+    if (is_knee) {
+        int swing_hip = get_swing_hip();
+        bool is_creep = (last_cmd == MODE_CREEP || last_cmd == MODE_CREEP_LEFT || last_cmd == MODE_CREEP_RIGHT);
+        bool is_walk_galop = (last_cmd == MODE_WALK || last_cmd == MODE_WALK_LEFT || last_cmd == MODE_WALK_RIGHT ||
+                             last_cmd == MODE_GALOP || last_cmd == MODE_GALOP_LEFT || last_cmd == MODE_GALOP_RIGHT);
+        if (is_creep) clamp_knee_creep(i, &signed_target, swing_hip);
+        else if (is_walk_galop) clamp_knee_walk_galop(i, &signed_target, swing_hip);
     }
 
-    if ( leg_orientation == LEG_ORIENTATION_INVERTED) {
-     signed_target = -signed_target;
-    }
+    /* 3. Leg orientation (upside-down invert) */
+    if (leg_orientation == LEG_ORIENTATION_INVERTED) signed_target = -signed_target;
 
-    // Velocity FF (on signed target for correct direction)
+    /* 4. Velocity feedforward + final target */
     float duty = CPG_network_pram.duty_cycle;
     float phase = cpg_network[i].phase;
-    float alpha = (phase < M_PI) ? (1.0f / (2.0f * (1.0f - duty))) : (1.0f / (2.0f * duty));
 
-    // Correct velocity of a warped sine: v = amp * (omega * alpha) * cos(phase)
-    float vel_ff = cpg_network[i].amplitude * (cpg_network[i].omega * alpha) * cosf(phase);
+    float alpha = (phase < M_PI) ? (1.0f / (2.0f * (1.0f - duty))) : (1.0f / (2.0f * duty));
     
+    float vel_ff = cpg_network[i].amplitude * (cpg_network[i].omega * alpha) * cosf(phase);
     motors[i].target_position = signed_target + (vel_ff * PID_DT * 0.6f);
 
-    if(!set){
-      motors[i].target_position = 0;  
-    }
-
+    if (!set) motors[i].target_position = 0;
     motors[i].active = set;
     motors[i].prev_target = signed_target;
 
-    if (ENABLE_MOTOR_DEBUG) {
+    if (ENABLE_MOTOR_DEBUG)
         ESP_LOGI(TAG_MOTOR, "Motor %d target=%.2f (active=%s)", i, target, set ? "true" : "false");
-    }
 }
 
 void cpg_task(void *pvParameters) {
