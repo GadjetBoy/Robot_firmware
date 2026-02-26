@@ -98,7 +98,9 @@ typedef struct {
 typedef enum {  
     MODE_CRAWL =4 ,
     MODE_TURTLE  ,
-    MODE_CREEP   
+    MODE_CREEP,
+    MODE_WALK,
+    MODE_GALOP   
 } SequenceMode;
 
 typedef enum {
@@ -109,24 +111,28 @@ typedef enum {
 } CPG_RunMode;
 
 typedef enum {
-    LEG_ORIENTATION_NORMAL = 7,      // Robot upright
+    LEG_ORIENTATION_NORMAL = 9,      // Robot upright
     LEG_ORIENTATION_INVERTED         // Robot upside down (legs flipped)
 } LegOrientation;
 
 typedef enum {
-    MODE_TROT_LEFT=9,
-    MODE_TROT_RIGHT, 
-    MODE_CREEP_LEFT ,
+    MODE_TROT_LEFT=11,
+    MODE_TROT_RIGHT,
+    MODE_CREEP_LEFT,
     MODE_CREEP_RIGHT,
     MODE_CRAWL_LEFT,
     MODE_CRAWL_RIGHT,
-    MODE_PIVOT_TURN,      // Pivot with Trot gait (14)
-    MODE_PIVOT_CRAWL,     // Pivot with Crawl gait (15)
+    MODE_WALK_LEFT,
+    MODE_WALK_RIGHT,
+    MODE_GALOP_LEFT,
+    MODE_GALOP_RIGHT,
+    MODE_PIVOT_TURN=23,   /* skip 21,22 to avoid overlap with BODY_POSTURE_* */
+    MODE_PIVOT_CRAWL,
     MODE_NORMAL,
 } turning_modes;
 
 typedef enum {
-    BODY_POSTURE_NORMAL =18,
+    BODY_POSTURE_NORMAL = 30,   /* avoid overlap with MODE_* (11-24) */
     BODY_POSTURE_LOW,
     BODY_POSTURE_CROUCH
 } body_posture_t;

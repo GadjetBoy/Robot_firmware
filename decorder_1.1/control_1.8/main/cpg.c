@@ -497,6 +497,12 @@ void command_runner_task(void *arg) {
                     case MODE_CREEP:
                         set_gait_creep(STRAIGHT, posture);
                         break;
+                    case MODE_WALK:
+                        set_gait_walk(STRAIGHT, posture);
+                        break;
+                    case MODE_GALOP:
+                        set_gait_galop(STRAIGHT, posture);
+                        break;
                     case MODE_TROT_LEFT:
                         set_gait_trot(LEFT, posture);
                         break;
@@ -514,6 +520,18 @@ void command_runner_task(void *arg) {
                         break;
                     case MODE_CRAWL_RIGHT:
                         set_gait_crawl(RIGHT, posture);
+                        break;
+                    case MODE_WALK_LEFT:
+                        set_gait_walk(LEFT, posture);
+                        break;
+                    case MODE_WALK_RIGHT:
+                        set_gait_walk(RIGHT, posture);
+                        break;
+                    case MODE_GALOP_LEFT:
+                        set_gait_galop(LEFT, posture);
+                        break;
+                    case MODE_GALOP_RIGHT:
+                        set_gait_galop(RIGHT, posture);
                         break;
                     case MODE_PIVOT_TURN:
                         set_gait_trot(STRAIGHT, posture);
@@ -560,6 +578,24 @@ void command_runner_task(void *arg) {
                                 break;
                             case MODE_CREEP_RIGHT:
                                 set_gait_creep(RIGHT, posture);
+                                break;
+                            case MODE_WALK:
+                                set_gait_walk(STRAIGHT, posture);
+                                break;
+                            case MODE_WALK_LEFT:
+                                set_gait_walk(LEFT, posture);
+                                break;
+                            case MODE_WALK_RIGHT:
+                                set_gait_walk(RIGHT, posture);
+                                break;
+                            case MODE_GALOP:
+                                set_gait_galop(STRAIGHT, posture);
+                                break;
+                            case MODE_GALOP_LEFT:
+                                set_gait_galop(LEFT, posture);
+                                break;
+                            case MODE_GALOP_RIGHT:
+                                set_gait_galop(RIGHT, posture);
                                 break;
                             default:
                                 set_gait_crawl(STRAIGHT, posture);
