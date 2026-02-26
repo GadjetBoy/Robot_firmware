@@ -1,4 +1,44 @@
 #include "ble.h"
+#include "cpg.h"
+
+/* Default PID values when mobile app is used (mobile sends no Kp/Ki/Kd) */
+#define MOBILE_DEFAULT_KP  0.25f
+#define MOBILE_DEFAULT_KI  1.0f
+#define MOBILE_DEFAULT_KD  0.002f
+#define MOBILE_DEFAULT_F4  0.0f
+#define MOBILE_DEFAULT_F5  0.0f
+
+// ============================ MOBILE APP CHAR-TO-BYTE MAPPING ============================
+// Single-char from mobile app -> control byte. Mobile sends one char at a time.
+// Mode: H=Homing, I=Idle, S=Standby, D=Crawl, W=Walk, G=Gallop, T=Trot, C=Creep
+// Orient: N=Normal, E=Inverted  |  Pivot: P=Trot, Q=Crawl
+// Turning: 1/2=Trot L/R, 3/4=Creep L/R, 5/6=Crawl L/R, 7/8=Walk L/R, 9/0=Gallop L/R
+// Posture: U=Normal, L=Low, O=Crouch
+static uint8_t mobile_char_to_byte(char c) {
+    switch (c) {
+        case 'H': case 'h': return CPG_MODE_HOMING;       // Homing
+        case 'I': case 'i': return CPG_MODE_IDLE;         // Idle
+        case 'S': case 's': return CPG_MODE_STANDBY;       // Standby
+        case 'D': case 'd': return MODE_CRAWL;             // Crawl
+        case 'W': case 'w': return MODE_WALK;              // Walk
+        case 'G': case 'g': return MODE_GALOP;            // Gallop
+        case 'T': case 't': return MODE_TURTLE;           // Trot
+        case 'C': case 'c': return MODE_CREEP;            // Creep
+        case 'N': case 'n': return LEG_ORIENTATION_NORMAL;   // Leg normal
+        case 'E': case 'e': return LEG_ORIENTATION_INVERTED;  // Leg inverted
+        case 'P': case 'p': return MODE_PIVOT_TURN;       // Pivot trot
+        case 'Q': case 'q': return MODE_PIVOT_CRAWL;      // Pivot crawl
+        case '1': return MODE_TROT_LEFT;     case '2': return MODE_TROT_RIGHT;
+        case '3': return MODE_CREEP_LEFT;    case '4': return MODE_CREEP_RIGHT;
+        case '5': return MODE_CRAWL_LEFT;    case '6': return MODE_CRAWL_RIGHT;
+        case '7': return MODE_WALK_LEFT;     case '8': return MODE_WALK_RIGHT;
+        case '9': return MODE_GALOP_LEFT;    case '0': return MODE_GALOP_RIGHT;
+        case 'U': case 'u': return BODY_POSTURE_NORMAL;    // Posture normal
+        case 'L': case 'l': return BODY_POSTURE_LOW;       // Posture low
+        case 'O': case 'o': return BODY_POSTURE_CROUCH;    // Posture crouch
+        default: return 0xFF;
+    }
+}
 
 // ============================ GLOBAL VARIABLES ============================
 // Mutex and synchronization
@@ -373,45 +413,58 @@ static void handle_disconnect_evt(esp_ble_gatts_cb_param_t *param) {
     is_connected = false;
 }
 // ============================ DATA PROCESSING TASK ============================
+// Handles both: (1) PC BLE GUI full packets [0xA5, ctrl, floats...], (2) Mobile app single-char commands
 void copy_ble_recieve_data_task(void *pvParameters) {
     uint8_t log_counter = 0;
-    int offset = 0;
     static ble_data_packet_t local_rx_buffer;
 
     while (1) {
-        offset = 0;
-
         if (xQueueReceive(BLE_recieve_queue, &local_rx_buffer, portMAX_DELAY) == pdTRUE) {
             if (!validate_rx_packet(&local_rx_buffer)) {
                 ESP_LOGE(BLE_TAG, "Queue contained invalid packet - skipping");
                 continue;
             }
 
-            // Skip start marker
-            offset += 1;
+            size_t len = local_rx_buffer.length;
+            uint8_t *data = local_rx_buffer.data;
 
-            taskENTER_CRITICAL(&ble_mux);
-            // Copy integers
-            memcpy((void*)byte_val, (const void*)(local_rx_buffer.data + offset), NUMBER_OF_BYTES);
-            offset += NUMBER_OF_BYTES;
+            /* --- Mobile app: single character (or short string) --- */
+            if (len <= 3 && (len == 0 || data[0] != PACKET_START_MARKER)) {
+                char c = (len > 0) ? (char)data[0] : '\0';
+                uint8_t cmd = mobile_char_to_byte(c);
+                if (cmd != 0xFF) {
+                    taskENTER_CRITICAL(&ble_mux);
+                    byte_val[0] = cmd;
+                    /* Mobile app sends no Kp/Ki/Kd - use defaults */
+                    float_val[0] = MOBILE_DEFAULT_KP;
+                    float_val[1] = MOBILE_DEFAULT_KI;
+                    float_val[2] = MOBILE_DEFAULT_KD;
+                    float_val[3] = MOBILE_DEFAULT_F4;
+                    float_val[4] = MOBILE_DEFAULT_F5;
+                    pid_ble_params.Kp = MOBILE_DEFAULT_KP;
+                    pid_ble_params.Ki = MOBILE_DEFAULT_KI;
+                    pid_ble_params.Kd = MOBILE_DEFAULT_KD;
+                    taskEXIT_CRITICAL(&ble_mux);
+                    ESP_LOGI(BLE_TAG, "Mobile cmd: '%c' -> 0x%02X (Kp=%.2f Ki=%.2f Kd=%.3f)", c, cmd, MOBILE_DEFAULT_KP, MOBILE_DEFAULT_KI, MOBILE_DEFAULT_KD);
+                } else if (len > 0) {
+                    ESP_LOGW(BLE_TAG, "Unknown mobile char: '%c' (0x%02X)", c, (unsigned)data[0]);
+                }
+            }
+            /* --- PC BLE GUI: full packet [0xA5, ctrl_byte, 5 floats, 0xAA, 0x5A] --- */
+            else if (len >= 2 && data[0] == PACKET_START_MARKER) {
+                int offset = 1;
+                taskENTER_CRITICAL(&ble_mux);
+                memcpy((void*)byte_val, (const void*)(data + offset), NUMBER_OF_BYTES);
+                offset += NUMBER_OF_BYTES;
+                if (len >= (size_t)(2 + NUMBER_OF_BYTES + NUMBER_OF_FLOATS * (int)sizeof(float))) {
+                    memcpy((void*)float_val, (const void*)(data + offset), NUMBER_OF_FLOATS * sizeof(float));
+                    pid_ble_params.Kp = float_val[0];
+                    pid_ble_params.Ki = float_val[1];
+                    pid_ble_params.Kd = float_val[2];
+                }
+                taskEXIT_CRITICAL(&ble_mux);
+            }
 
-            // Copy floats
-            memcpy((void*)float_val, (const void*)(local_rx_buffer.data + offset), NUMBER_OF_FLOATS * sizeof(float));
-            offset += NUMBER_OF_FLOATS * sizeof(float);
-
-            //taskEXIT_CRITICAL(&ble_mux);
-
-            //if (xSemaphoreTake(pid_params_mutex, pdMS_TO_TICKS(10)) == pdTRUE) {
-                 pid_ble_params.Kp = float_val[0];
-                 pid_ble_params.Ki = float_val[1];
-                 pid_ble_params.Kd = float_val[2];
-    
-             //xSemaphoreGive(pid_params_mutex);
-            //}
-
-            taskEXIT_CRITICAL(&ble_mux);
-
-            // Log data periodically
             log_counter++;
             if (log_counter >= 1) {
                 for (int i = 0; i < NUMBER_OF_BYTES; i++) {
@@ -420,9 +473,7 @@ void copy_ble_recieve_data_task(void *pvParameters) {
                 for (int i = 0; i < 5; i++) {
                     ESP_LOGW(BLE_TAG, "Float[%d] = %.5f", i, float_val[i]);
                 }
-
-                ESP_LOGW(BLE_TAG, "immediate_write executed, length=%d", local_rx_buffer.length);
-
+                ESP_LOGW(BLE_TAG, "BLE rx executed, length=%zu", len);
                 log_counter = 0;
             }
         }
