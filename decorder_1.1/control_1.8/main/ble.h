@@ -26,7 +26,7 @@ extern "C" {
 #define PROFILE_A_APP_ID 0
 #define PROFILE_NUM 1
 #define GATTS_NUM_HANDLE_A 7
-#define DEVICE_NAME "ESP32_BLE_Server"
+#define DEVICE_NAME "TUTLE ROBOT"
 
 // UUID Definitions
 #define GATTS_CHAR_UUID_TX 0xFF01
@@ -35,8 +35,10 @@ extern "C" {
 // Packet configuration
 #define PACKET_START_MARKER 0xA5
 #define PACKET_END_MARKER 0x5A
+#define TELEMETRY_CONFIG_MARKER 0xA6  /* RX: [0xA6, leg_mask] sets which legs to send */
 
 #define SERVER_MAX_DATA_LEN 68
+#define TELEMETRY_TX_MAX_LEN 68       /* 3-byte header + up to 8*(4+4) = 67 bytes for 8 motors */
 #define CLIENT_MAX_PACKET 20
 #define BLE_QUEUE_LENGTH 10
 
@@ -111,6 +113,17 @@ extern PIDParams_t pid_ble_params;
 // ============================ FORWARD DECLARATIONS ============================
 
 void BLE_app_main(void);
+
+/* Telemetry: send motor target_position + encoder over BLE. Call from telemetry task. */
+void BLE_send_telemetry(void);
+
+/* Update telemetry snapshot from motors[] - call from run_position_loop (CPG task). No race. */
+void BLE_update_telemetry_snapshot(void);
+
+/* Leg mask: bit0=FLH, bit1=BLK, bit2=BLH, bit3=FLK, bit4=FRH, bit5=FRK, bit6=BRH, bit7=BRK
+ * 0xFF=all, 0x09=FL, 0x30=FR, 0x06=BL, 0xC0=BR */
+extern volatile uint8_t telemetry_leg_mask;
+extern volatile bool telemetry_enabled;
 
 
 #ifdef __cplusplus

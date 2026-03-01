@@ -48,7 +48,8 @@ volatile float coupling_weights[NUM_OSCILLATORS][NUM_OSCILLATORS];
 volatile float phase_offsets[NUM_OSCILLATORS][NUM_OSCILLATORS];
 volatile LegOrientation leg_orientation = LEG_ORIENTATION_NORMAL;
 SemaphoreHandle_t cpg_params_mutex;
-volatile bool pivot_turn =false;
+volatile bool pivot_turn_cw = false;
+volatile bool pivot_turn_counter_cw = false;
 
 static esp_timer_handle_t cpg_timer_handle;
 static TaskHandle_t cpg_task_handle = NULL;
@@ -148,7 +149,11 @@ void run_position_loop(){
     xTaskNotifyGive(uart_send_task);
        
     xQueueOverwrite(encorderQue,filtered_enc);
-    
+
+    /* Update telemetry snapshot (mutex-protected, no race with telemetry task) */
+    if (telemetry_enabled) {
+        BLE_update_telemetry_snapshot();
+    }
 }
 
 // ====================== Utility Functions ======================
@@ -179,10 +184,15 @@ static inline uint8_t get_commands(void) {
 
     update_orientation_from_ble(cmd);
 
-    if (cmd == MODE_PIVOT_TURN || cmd == MODE_PIVOT_CRAWL) {
-        pivot_turn = true;
+    if (cmd == MODE_PIVOT_TURN_CLOCKWISE || cmd == MODE_PIVOT_CRAWL_CLOCKWISE) {
+        pivot_turn_cw = true;
+        pivot_turn_counter_cw = false;
+    } else if (cmd == MODE_PIVOT_TURN_COUNTER_CLOCKWISE || cmd == MODE_PIVOT_CRAWL_COUNTER_CLOCKWISE) {
+        pivot_turn_cw = false;
+        pivot_turn_counter_cw = true;
     } else {
-        pivot_turn = false;
+        pivot_turn_cw = false;
+        pivot_turn_counter_cw = false;
     }
 
     return cmd;
@@ -232,8 +242,14 @@ void motor_set(uint8_t i, float target, bool set) {
 
     float signed_target = target;
 
-    /* 1. Pivot: sign flip for right legs when not in pivot mode */
-    if ((i == FRH || i == BRH) && !pivot_turn) signed_target = -signed_target;
+    /* 1. Pivot: sign flip for hip motors to achieve CW/CCW rotation */
+    bool is_Right_hip = (i == FRH || i == BRH);
+    bool is_Left_hip = (i == FLH || i == BLH);
+    if (is_Right_hip && pivot_turn_cw) signed_target = signed_target;                /* CW: right legs reverse */
+    if (is_Right_hip && !(pivot_turn_cw)) signed_target = -signed_target;
+    if (is_Left_hip && pivot_turn_counter_cw) signed_target = -signed_target;        /* CCW: left legs reverse */
+    
+   
 
     /* 2. Knee tilt clamp (creep/walk/gallop) */
     bool is_knee = (i == FLK || i == FRK || i == BLK || i == BRK);
@@ -542,9 +558,13 @@ void command_runner_task(void *arg) {
                         set_gait_galop(RIGHT, posture);
                         break;
                     case MODE_PIVOT_TURN:
+                    case MODE_PIVOT_TURN_CLOCKWISE:
+                    case MODE_PIVOT_TURN_COUNTER_CLOCKWISE:
                         set_gait_trot(STRAIGHT, posture);
                         break;
                     case MODE_PIVOT_CRAWL:
+                    case MODE_PIVOT_CRAWL_CLOCKWISE:
+                    case MODE_PIVOT_CRAWL_COUNTER_CLOCKWISE:
                         set_gait_crawl(STRAIGHT, posture);
                         break;
                     case LEG_ORIENTATION_INVERTED:
@@ -560,6 +580,8 @@ void command_runner_task(void *arg) {
                         switch (last_cmd) {
                             case MODE_TURTLE:
                             case MODE_PIVOT_TURN:
+                            case MODE_PIVOT_TURN_CLOCKWISE:
+                            case MODE_PIVOT_TURN_COUNTER_CLOCKWISE:
                                 set_gait_trot(STRAIGHT, posture);
                                 break;
                             case MODE_TROT_LEFT:
@@ -570,6 +592,8 @@ void command_runner_task(void *arg) {
                                 break;
                             case MODE_CRAWL:
                             case MODE_PIVOT_CRAWL:
+                            case MODE_PIVOT_CRAWL_CLOCKWISE:
+                            case MODE_PIVOT_CRAWL_COUNTER_CLOCKWISE:
                                 set_gait_crawl(STRAIGHT, posture);
                                 break;
                             case MODE_CRAWL_LEFT:

@@ -9,12 +9,24 @@ from bleak import BleakScanner, BleakClient
 import sys
 import queue
 import time
+try:
+    from matplotlib.figure import Figure
+    from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+    MATPLOTLIB_AVAILABLE = True
+except ImportError:
+    MATPLOTLIB_AVAILABLE = False
 # Fix for Windows BLE scanning (MTA threading model)
 if sys.platform == "win32":
     sys.coinit_flags = 0 # Force Multi-Threaded Apartment before imports
 # BLE UUIDs (same as your Flutter app)
 SERVICE_UUID = "cb341ded-25f3-244f-11ac-7ebc1a247a86"
 RX_CHAR_UUID = "0000ff02-0000-1000-8000-00805f9b34fb"
+TX_CHAR_UUID = "0000ff01-0000-1000-8000-00805f9b34fb"  # For telemetry (notifications)
+
+# Motor names for display (index order: FLH, BLK, BLH, FLK, FRH, FRK, BRH, BRK)
+MOTOR_NAMES = ["FLH", "BLK", "BLH", "FLK", "FRH", "FRK", "BRH", "BRK"]
+# Leg masks: bit0=FLH, bit1=BLK, bit2=BLH, bit3=FLK, bit4=FRH, bit5=FRK, bit6=BRH, bit7=BRK
+LEG_MASKS = {"All": 0xFF, "FL": 0x09, "FR": 0x30, "BL": 0x06, "BR": 0xC0}
 # Modern color scheme
 COLORS = {
     "bg_dark": "#121212",
@@ -97,6 +109,18 @@ class RobotController:
         self.last_sent_packet = None # NEW: Store last manually sent packet
         self.last_sent_control_byte = 0 # NEW: Store last control byte
         self.last_sent_float_values = [0.0] * 5 # NEW: Store last float values
+        # Telemetry
+        self.telemetry_enabled = False
+        self.telemetry_leg_mask = 0xFF
+        self.telemetry_data = {name: {"target": 0.0, "encoder": 0.0} for name in MOTOR_NAMES}
+        self.telemetry_log = []  # List of dicts for CSV export
+        self.telemetry_logging = False  # When True, append to telemetry_log
+        self.plot_history = []  # [(t, {motor: {target, encoder}}), ...] max 300 points
+        self.plot_history_max = 300
+        self.plot_t0 = None  # First timestamp for relative time axis
+        self.telemetry_rx_count = 0  # Packets received (for status)
+        self.ble_loop = None  # BLE event loop (must stay running for notifications)
+        self.ble_thread = None  # Thread running the BLE loop
       
         self.fonts = {
             'title': ('Segoe UI', 16, 'bold'),
@@ -158,6 +182,7 @@ class RobotController:
                   foreground=[('selected', COLORS["text_primary"])])
         self.setup_connection_tab()
         self.setup_controls_tab()
+        self.setup_telemetry_tab()
         self.setup_log_tab()
         # Status bar
         status_bar = tk.Frame(self.root, bg=COLORS["bg_card"], height=30)
@@ -404,18 +429,24 @@ class RobotController:
             ModernButton(gallop_row, text=label, bg_color=COLORS["danger"],
                         command=lambda b=byte_val: self.send_turn_cmd(b),
                         width=8, pady=4).pack(side=tk.LEFT, padx=3)
-        # Pivot Turn: Trot (23) or Crawl (24)
+        # Pivot Turn: Trot CW(25)/CCW(26), Crawl CW(27)/CCW(28)
         pivot_row = tk.Frame(turn_frame, bg=COLORS["bg_card"])
         pivot_row.pack(fill=tk.X, pady=4)
         tk.Label(pivot_row, text="Pivot:", font=self.fonts['subheading'],
                  fg=COLORS["text_primary"], bg=COLORS["bg_card"], width=6,
                  anchor='w').pack(side=tk.LEFT, padx=(0, 5))
-        ModernButton(pivot_row, text="Pivot Trot", bg_color=COLORS["warning"],
-                     command=lambda: self.send_turn_cmd(23),
-                     width=10, pady=4).pack(side=tk.LEFT, padx=3)
-        ModernButton(pivot_row, text="Pivot Crawl", bg_color=COLORS["secondary"],
-                     command=lambda: self.send_turn_cmd(24),
-                     width=10, pady=4).pack(side=tk.LEFT, padx=3)
+        ModernButton(pivot_row, text="Trot CW", bg_color=COLORS["warning"],
+                     command=lambda: self.send_turn_cmd(25),
+                     width=8, pady=4).pack(side=tk.LEFT, padx=3)
+        ModernButton(pivot_row, text="Trot CCW", bg_color=COLORS["warning"],
+                     command=lambda: self.send_turn_cmd(26),
+                     width=8, pady=4).pack(side=tk.LEFT, padx=3)
+        ModernButton(pivot_row, text="Crawl CW", bg_color=COLORS["secondary"],
+                     command=lambda: self.send_turn_cmd(27),
+                     width=8, pady=4).pack(side=tk.LEFT, padx=3)
+        ModernButton(pivot_row, text="Crawl CCW", bg_color=COLORS["secondary"],
+                     command=lambda: self.send_turn_cmd(28),
+                     width=8, pady=4).pack(side=tk.LEFT, padx=3)
         # Leg Orientation selection
         orient_frame = tk.LabelFrame(left_container,
                                      text=" Leg Orientation ",
@@ -516,6 +547,268 @@ class RobotController:
                                      font=self.fonts['body'], fg=COLORS["text_muted"],
                                      bg=COLORS["bg_card"])
         self.packet_status.pack()
+    def setup_telemetry_tab(self):
+        """Telemetry tab: leg selection, live display, export for Origin"""
+        telemetry_tab = tk.Frame(self.notebook, bg=COLORS["bg_medium"])
+        self.notebook.add(telemetry_tab, text="📊 Telemetry")
+        # Leg selection
+        leg_frame = tk.LabelFrame(telemetry_tab, text=" Leg Selection ",
+                                  font=self.fonts['heading'], bg=COLORS["bg_card"],
+                                  fg=COLORS["primary_light"], relief=tk.FLAT,
+                                  borderwidth=2, padx=20, pady=20)
+        leg_frame.pack(fill=tk.X, padx=10, pady=10)
+        leg_grid = tk.Frame(leg_frame, bg=COLORS["bg_card"])
+        leg_grid.pack()
+        self.leg_vars = {}
+        for i, (label, mask) in enumerate(LEG_MASKS.items()):
+            var = tk.BooleanVar(value=(label == "All"))
+            self.leg_vars[label] = (var, mask)
+            cb = tk.Checkbutton(leg_grid, text=label, variable=var,
+                                font=self.fonts['body'], fg=COLORS["text_primary"],
+                                bg=COLORS["bg_card"], selectcolor=COLORS["bg_light"],
+                                activebackground=COLORS["bg_card"],
+                                command=self.update_telemetry_config)
+            cb.grid(row=0, column=i, padx=15, pady=5, sticky='w')
+        # Enable/Disable + Log toggle + Status
+        ctrl_row = tk.Frame(leg_frame, bg=COLORS["bg_card"])
+        ctrl_row.pack(pady=10)
+        ModernButton(ctrl_row, text="Enable Telemetry", bg_color=COLORS["success"],
+                     command=self.enable_telemetry, width=14).pack(side=tk.LEFT, padx=5)
+        ModernButton(ctrl_row, text="Disable Telemetry", bg_color=COLORS["danger"],
+                     command=self.disable_telemetry, width=14).pack(side=tk.LEFT, padx=5)
+        ModernButton(ctrl_row, text="Re-subscribe TX", bg_color=COLORS["primary"],
+                     command=self.resubscribe_telemetry, width=12).pack(side=tk.LEFT, padx=5)
+        self.telemetry_status_label = tk.Label(ctrl_row, text="Status: Idle", font=self.fonts['body'],
+                                               fg=COLORS["text_muted"], bg=COLORS["bg_card"])
+        self.telemetry_status_label.pack(side=tk.LEFT, padx=15)
+        self.log_telemetry_var = tk.BooleanVar(value=False)
+        tk.Checkbutton(ctrl_row, text="Log for export", variable=self.log_telemetry_var,
+                       font=self.fonts['body'], fg=COLORS["text_primary"],
+                       bg=COLORS["bg_card"],
+                       command=lambda: setattr(self, 'telemetry_logging', self.log_telemetry_var.get())).pack(side=tk.LEFT, padx=15)
+        # Live display
+        disp_frame = tk.LabelFrame(telemetry_tab, text=" Live Motor Data ",
+                                  font=self.fonts['heading'], bg=COLORS["bg_card"],
+                                  fg=COLORS["accent"], relief=tk.FLAT,
+                                  borderwidth=2, padx=20, pady=20)
+        disp_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        self.telemetry_labels = {}
+        for i, name in enumerate(MOTOR_NAMES):
+            row = tk.Frame(disp_frame, bg=COLORS["bg_card"])
+            row.pack(fill=tk.X, pady=2)
+            tk.Label(row, text=f"{name}:", font=self.fonts['mono'], width=5,
+                     fg=COLORS["text_secondary"], bg=COLORS["bg_card"]).pack(side=tk.LEFT)
+            lbl_target = tk.Label(row, text="Target: 0.0", font=self.fonts['mono'],
+                                 fg=COLORS["primary_light"], bg=COLORS["bg_card"], width=18)
+            lbl_target.pack(side=tk.LEFT, padx=5)
+            lbl_enc = tk.Label(row, text="Encoder: 0", font=self.fonts['mono'],
+                               fg=COLORS["secondary"], bg=COLORS["bg_card"], width=18)
+            lbl_enc.pack(side=tk.LEFT, padx=5)
+            self.telemetry_labels[name] = (lbl_target, lbl_enc)
+        # Plot: Target vs Encoder on same graph
+        if MATPLOTLIB_AVAILABLE:
+            plot_frame = tk.LabelFrame(telemetry_tab, text=" Target vs Encoder Plot ",
+                                       font=self.fonts['heading'], bg=COLORS["bg_card"],
+                                       fg=COLORS["primary_light"], relief=tk.FLAT,
+                                       borderwidth=2, padx=20, pady=20)
+            plot_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+            plot_ctrl = tk.Frame(plot_frame, bg=COLORS["bg_card"])
+            plot_ctrl.pack(fill=tk.X, pady=(0, 5))
+            tk.Label(plot_ctrl, text="Motor:", font=self.fonts['body'],
+                     fg=COLORS["text_secondary"], bg=COLORS["bg_card"]).pack(side=tk.LEFT, padx=(0, 5))
+            self.plot_motor_var = tk.StringVar(value=MOTOR_NAMES[0])
+            motor_combo = ttk.Combobox(plot_ctrl, textvariable=self.plot_motor_var,
+                                       values=MOTOR_NAMES, state="readonly", width=8)
+            motor_combo.pack(side=tk.LEFT, padx=5)
+            motor_combo.bind("<<ComboboxSelected>>", lambda e: self.refresh_telemetry_plot())
+            ModernButton(plot_ctrl, text="Clear Plot", bg_color=COLORS["text_muted"],
+                         command=self.clear_telemetry_plot, width=10).pack(side=tk.LEFT, padx=10)
+            self.fig = Figure(figsize=(10, 5), dpi=100, facecolor=COLORS["bg_card"])
+            self.ax = self.fig.add_subplot(111)
+            self.ax.set_facecolor(COLORS["bg_light"])
+            self.ax.tick_params(colors=COLORS["text_primary"])
+            self.ax.xaxis.label.set_color(COLORS["text_primary"])
+            self.ax.yaxis.label.set_color(COLORS["text_primary"])
+            self.ax.spines['bottom'].set_color(COLORS["border"])
+            self.ax.spines['top'].set_color(COLORS["border"])
+            self.ax.spines['left'].set_color(COLORS["border"])
+            self.ax.spines['right'].set_color(COLORS["border"])
+            self.ax.set_xlabel("Time (s)")
+            self.ax.set_ylabel("Position")
+            self.plot_canvas = FigureCanvasTkAgg(self.fig, master=plot_frame)
+            self.plot_canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+            self.plot_canvas.draw()
+        else:
+            tk.Label(telemetry_tab, text="Install matplotlib for plotting: pip install matplotlib",
+                     font=self.fonts['body'], fg=COLORS["warning"], bg=COLORS["bg_medium"]).pack(pady=10)
+        # Export
+        export_row = tk.Frame(telemetry_tab, bg=COLORS["bg_medium"])
+        export_row.pack(fill=tk.X, padx=10, pady=10)
+        ModernButton(export_row, text="Export to CSV (Origin)", bg_color=COLORS["accent"],
+                     command=self.export_telemetry_csv).pack(side=tk.LEFT, padx=5)
+        ModernButton(export_row, text="Clear Log", bg_color=COLORS["text_muted"],
+                     command=self.clear_telemetry_log).pack(side=tk.LEFT, padx=5)
+
+    def update_telemetry_config(self):
+        """Compute leg mask from checkboxes and send to ESP32"""
+        mask = 0
+        for label, (var, m) in self.leg_vars.items():
+            if var.get():
+                mask |= m
+        self.telemetry_leg_mask = mask if mask else 0xFF  # 0 = use all when enabling
+        if self.connected and self.client:
+            self.send_telemetry_config()
+
+    def send_telemetry_config(self):
+        """Send [0xA6, leg_mask] to ESP32"""
+        if not self.connected or not self.client:
+            return
+        packet = bytes([0xA6, self.telemetry_leg_mask])
+        threading.Thread(target=self._send_telemetry_config_thread, args=(packet,), daemon=True).start()
+
+    def _send_telemetry_config_thread(self, packet):
+        try:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(self.client.write_gatt_char(RX_CHAR_UUID, packet, response=False))
+            loop.close()
+        except Exception as e:
+            self.ui_queue.put(("show_error", f"Telemetry config failed: {e}"))
+
+    def enable_telemetry(self):
+        if not self.connected or not self.client:
+            messagebox.showwarning("Not Connected", "Connect to a device first.")
+            return
+        self.update_telemetry_config()
+        self.telemetry_enabled = True
+        if self.telemetry_leg_mask == 0:
+            self.telemetry_leg_mask = 0xFF  # default to all
+        self.send_telemetry_config()
+        self.telemetry_rx_count = 0
+        if hasattr(self, 'telemetry_status_label'):
+            self.telemetry_status_label.config(text="Status: Enabled, waiting for data...", fg=COLORS["warning"])
+        self.log("Telemetry enabled (sent config mask=0x%02X)" % self.telemetry_leg_mask, tag="success")
+
+    def resubscribe_telemetry(self):
+        """Re-subscribe to TX notifications (use if no data appears)"""
+        if not self.connected or not self.client:
+            messagebox.showwarning("Not Connected", "Connect to a device first.")
+            return
+        def _do_subscribe():
+            try:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                loop.run_until_complete(self.client.start_notify(TX_CHAR_UUID, self.on_telemetry_notification))
+                loop.close()
+                self.ui_queue.put(("log", ("[%s] TX notifications re-subscribed" % time.strftime("%H:%M:%S"), "info")))
+            except Exception as e:
+                self.ui_queue.put(("show_error", f"Re-subscribe failed: {e}"))
+        threading.Thread(target=_do_subscribe, daemon=True).start()
+        self.log("Re-subscribing to TX notifications...", tag="info")
+
+    def disable_telemetry(self):
+        packet = bytes([0xA6, 0])  # leg_mask=0 disables
+        if self.connected and self.client:
+            threading.Thread(target=self._send_telemetry_config_thread, args=(packet,), daemon=True).start()
+        self.telemetry_enabled = False
+        self.plot_t0 = None
+        self.plot_history.clear()
+        if hasattr(self, 'telemetry_status_label'):
+            self.telemetry_status_label.config(text="Status: Idle", fg=COLORS["text_muted"])
+        if MATPLOTLIB_AVAILABLE and hasattr(self, 'refresh_telemetry_plot'):
+            self.root.after(0, self.refresh_telemetry_plot)  # Clear plot on next tick
+        self.log("Telemetry disabled", tag="warning")
+
+    def on_telemetry_notification(self, sender, data):
+        """Parse [0xAB, leg_mask, target0, enc0, ...] and update display (called from BLE thread)"""
+        try:
+            if data is None or len(data) < 3 or data[0] != 0xAB:
+                return
+            leg_mask = data[1]
+            offset = 2
+            new_data = {}
+            for i, name in enumerate(MOTOR_NAMES):
+                if not (leg_mask & (1 << i)):
+                    continue
+                if offset + 8 > len(data):
+                    break
+                target = struct.unpack('<f', data[offset:offset+4])[0]
+                enc = struct.unpack('<f', data[offset+4:offset+8])[0]
+                offset += 8
+                new_data[name] = {"target": target, "encoder": enc}
+            self.telemetry_data.update(new_data)
+            if self.telemetry_logging:
+                row = {"time": time.time()}
+                for n, d in self.telemetry_data.items():
+                    row[f"{n}_target"] = d["target"]
+                    row[f"{n}_encoder"] = d["encoder"]
+                self.telemetry_log.append(row)
+            self.telemetry_rx_count += 1
+            self.ui_queue.put(("update_telemetry", dict(self.telemetry_data)))
+        except Exception as e:
+            self.ui_queue.put(("log", ("[%s] Telemetry parse error: %s" % (time.strftime("%H:%M:%S"), str(e)), "error")))
+
+    def export_telemetry_csv(self):
+        """Export telemetry_log to CSV for Origin"""
+        if not self.telemetry_log:
+            messagebox.showinfo("Export", "No telemetry data logged. Enable 'Log for export' and run telemetry.")
+            return
+        try:
+            filename = f"telemetry_{time.strftime('%Y%m%d_%H%M%S')}.csv"
+            with open(filename, 'w') as f:
+                if self.telemetry_log:
+                    headers = list(self.telemetry_log[0].keys())
+                    f.write(",".join(headers) + "\n")
+                    for row in self.telemetry_log:
+                        f.write(",".join(str(row.get(h, "")) for h in headers) + "\n")
+            self.log(f"Exported to {filename}", tag="success")
+            messagebox.showinfo("Export", f"Saved to {filename}")
+        except Exception as e:
+            self.log(f"Export failed: {e}", tag="error")
+            messagebox.showerror("Export Error", str(e))
+
+    def clear_telemetry_log(self):
+        self.telemetry_log.clear()
+        self.log("Telemetry log cleared", tag="info")
+
+    def clear_telemetry_plot(self):
+        """Clear plot history without disabling telemetry"""
+        self.plot_history.clear()
+        self.plot_t0 = None
+        if MATPLOTLIB_AVAILABLE:
+            self.refresh_telemetry_plot()
+        self.log("Plot cleared", tag="info")
+
+    def refresh_telemetry_plot(self):
+        """Redraw plot with target and encoder for selected motor"""
+        if not MATPLOTLIB_AVAILABLE or not hasattr(self, 'ax'):
+            return
+        motor = self.plot_motor_var.get() if hasattr(self, 'plot_motor_var') else MOTOR_NAMES[0]
+        times = []
+        targets = []
+        encoders = []
+        for t, d in self.plot_history:
+            if motor in d:
+                times.append(t - self.plot_t0)
+                targets.append(d[motor]["target"])
+                encoders.append(d[motor]["encoder"])
+        self.ax.clear()
+        self.ax.set_facecolor(COLORS["bg_light"])
+        self.ax.tick_params(colors=COLORS["text_primary"])
+        self.ax.xaxis.label.set_color(COLORS["text_primary"])
+        self.ax.yaxis.label.set_color(COLORS["text_primary"])
+        self.ax.spines['bottom'].set_color(COLORS["border"])
+        self.ax.spines['top'].set_color(COLORS["border"])
+        self.ax.spines['left'].set_color(COLORS["border"])
+        self.ax.spines['right'].set_color(COLORS["border"])
+        self.ax.set_xlabel("Time (s)")
+        self.ax.set_ylabel("Position")
+        if times:
+            self.ax.plot(times, targets, color=COLORS["primary_light"], label=f"{motor} Target", linewidth=1.5)
+            self.ax.plot(times, encoders, color=COLORS["secondary"], label=f"{motor} Encoder", linewidth=1.5)
+            self.ax.legend(loc='upper right', facecolor=COLORS["bg_card"], labelcolor=COLORS["text_primary"])
+        self.plot_canvas.draw_idle()
+
     def send_turn_cmd(self, control_byte_val):
         """Send a turning gait command directly (bypasses gait selection)."""
         if not self.connected:
@@ -705,6 +998,25 @@ class RobotController:
                     key, value = data
                     if key in self.stats_labels:
                         self.stats_labels[key].config(text=value)
+                elif msg_type == "update_telemetry":
+                    # Update telemetry labels, status, and plot on main thread
+                    if hasattr(self, 'telemetry_status_label'):
+                        self.telemetry_status_label.config(
+                            text="Status: Receiving (%d packets)" % getattr(self, 'telemetry_rx_count', 0),
+                            fg=COLORS["success"])
+                    if hasattr(self, 'telemetry_labels') and data:
+                        for name, d in data.items():
+                            if name in self.telemetry_labels:
+                                self.telemetry_labels[name][0].config(text=f"Target: {d['target']:.1f}")
+                                self.telemetry_labels[name][1].config(text=f"Encoder: {d['encoder']:.0f}")
+                        if MATPLOTLIB_AVAILABLE and hasattr(self, 'plot_history'):
+                            t = time.time()
+                            if self.plot_t0 is None:
+                                self.plot_t0 = t
+                            self.plot_history.append((t, dict(data)))
+                            if len(self.plot_history) > self.plot_history_max:
+                                self.plot_history.pop(0)
+                            self.refresh_telemetry_plot()
         except queue.Empty:
             pass
         finally:
@@ -812,33 +1124,30 @@ class RobotController:
         try:
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
+            self.ble_loop = loop
+            self.ble_thread = threading.current_thread()
+
             async def connect():
                 client = BleakClient(address,
-                                    timeout=15.0, # Increased timeout
+                                    timeout=15.0,
                                     disconnected_callback=self.on_disconnected)
                 await client.connect()
+                await client.start_notify(TX_CHAR_UUID, self.on_telemetry_notification)
                 return client
+
             self.client = loop.run_until_complete(connect())
-            loop.close()
-          
             self.connected = True
-            # Start connection time updater
+
             self.root.after(1000, self.update_connection_time)
-            # Start signal strength monitoring
             self.root.after(2000, self.monitor_signal_strength)
-         
-            # Stop any existing keep-alive thread
+
             if hasattr(self, 'keep_alive_running') and self.keep_alive_running:
                 self.keep_alive_running = False
                 if hasattr(self, 'keep_alive_thread') and self.keep_alive_thread.is_alive():
                     self.keep_alive_thread.join(timeout=1.0)
-         
-            # Start keep-alive thread
+
             self.keep_alive_running = True
-            self.keep_alive_thread = threading.Thread(
-                target=self.keep_alive_loop,
-                daemon=True
-            )
+            self.keep_alive_thread = threading.Thread(target=self.keep_alive_loop, daemon=True)
             self.keep_alive_thread.start()
             self.log("Keep-alive started (BLE heartbeat active)", tag="info")
             self.connection_start_time = time.time()
@@ -850,7 +1159,11 @@ class RobotController:
             self.ui_queue.put(("enable_button", [self.connect_button, "disabled"]))
             self.ui_queue.put(("update_stats", ("device_label", device_name)))
             self.log(f"Successfully connected to {address}", tag="success")
+            self.log("TX notifications enabled (telemetry ready)", tag="info")
             self.root.after(0, self.enable_controls)
+
+            # Keep loop running - REQUIRED for BLE notifications to be delivered
+            loop.run_forever()
         except Exception as e:
             self.connected = False
             self.client = None
@@ -874,15 +1187,25 @@ class RobotController:
         disconnect_thread.start()
     def disconnect_device_thread(self):
         try:
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            async def disconnect():
-                if self.client and self.client.is_connected:
-                    await self.client.disconnect()
-            loop.run_until_complete(disconnect())
-            loop.close()
+            if self.ble_loop and self.client:
+                async def disconnect_and_stop():
+                    try:
+                        if self.client and self.client.is_connected:
+                            await self.client.disconnect()
+                    finally:
+                        self.ble_loop.stop()
+
+                future = asyncio.run_coroutine_threadsafe(disconnect_and_stop(), self.ble_loop)
+                future.result(timeout=10)
+            if self.ble_thread and self.ble_thread.is_alive():
+                self.ble_thread.join(timeout=3)
+        except Exception as e:
+            self.ui_queue.put(("log", ("[%s] Disconnect: %s" % (time.strftime("%H:%M:%S"), str(e)), "error")))
+        finally:
             self.connected = False
             self.client = None
+            self.ble_loop = None
+            self.ble_thread = None
             self.connection_start_time = None
             self.ui_queue.put(("update_status", ["Disconnected", COLORS["danger"]]))
             self.ui_queue.put(("update_info", "No device connected"))
@@ -892,14 +1215,7 @@ class RobotController:
             self.ui_queue.put(("update_stats", ("device_label", "None")))
             self.ui_queue.put(("update_stats", ("time_label", "00:00:00")))
             self.log("Disconnected from device", tag="warning")
-        except Exception as e:
-            self.ui_queue.put(("show_error", f"Disconnection error: {e}"))
-            self.log(f"Disconnection error: {e}", tag="error")
-        finally:
-            self.connected = False
-            self.client = None
             self.root.after(0, self.disable_controls)
-            # Reset mode highlight
             self.select_mode(0, "Idle", silent=True)
     def enable_controls(self):
         for btn in self.control_buttons.values():
@@ -1080,12 +1396,15 @@ class RobotController:
         packet.extend([0xAA, 0x5A])
         return packet
     def on_closing(self):
-        if self.client and self.connected:
+        if self.client and self.connected and self.ble_loop:
             try:
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                loop.run_until_complete(self.client.disconnect())
-                loop.close()
+                async def disco():
+                    if self.client and self.client.is_connected:
+                        await self.client.disconnect()
+                asyncio.run_coroutine_threadsafe(disco(), self.ble_loop).result(timeout=5)
+                self.ble_loop.call_soon_threadsafe(self.ble_loop.stop)
+                if self.ble_thread and self.ble_thread.is_alive():
+                    self.ble_thread.join(timeout=3)
                 self.log("Disconnected on exit", tag="info")
             except Exception as e:
                 self.log(f"Error during disconnect: {e}", tag="error")
@@ -1148,6 +1467,8 @@ class RobotController:
             self.ui_queue.put(("enable_button", [self.send_button, "disabled"]))
             self.connected = False
             self.client = None
+            if self.ble_loop and self.ble_loop.is_running():
+                self.ble_loop.call_soon_threadsafe(self.ble_loop.stop)
             self.root.after(0, self.disable_controls)
     def monitor_signal_strength(self):
         """Periodically check signal strength and warn if weak"""

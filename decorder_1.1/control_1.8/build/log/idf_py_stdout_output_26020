@@ -1,542 +1,69 @@
-ets Jun  8 2016 00:22:57
+[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\decorder_1.1\control_1.8\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build/control_1.8.bin"
+control_1.8.bin binary size 0xc2060 bytes. Smallest app partition is 0x100000 bytes. 0x3dfa0 bytes (24%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\Project_Code\decorder_1.1\control_1.8\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6560 bytes. 0xaa0 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.4 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.4_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.4/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Espressif/frameworks/esp-idf-v5.4/Project_Code/decorder_1.1/control_1.8/build -P C:/Espressif/frameworks/esp-idf-v5.4/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM13 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 16MB 0x1000 bootloader/bootloader.bin 0x10000 control_1.8.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM13
+Connecting.......
+Chip is ESP32-D0WD (revision v1.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 5c:01:3b:f1:c0:20
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000d2fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25952 bytes to 16368...
+Writing at 0x00001000... (100 %)
+Wrote 25952 bytes (16368 compressed) at 0x00001000 in 0.7 seconds (effective 285.2 kbit/s)...
+Hash of data verified.
+Compressed 794720 bytes to 460660...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001daf4... (6 %)
+Writing at 0x0002afe4... (10 %)
+Writing at 0x00037115... (13 %)
+Writing at 0x0003cd9a... (17 %)
+Writing at 0x00042ce0... (20 %)
+Writing at 0x000483fd... (24 %)
+Writing at 0x0004ed0c... (27 %)
+Writing at 0x00054861... (31 %)
+Writing at 0x0005a3a1... (34 %)
+Writing at 0x0005ff92... (37 %)
+Writing at 0x00065c68... (41 %)
+Writing at 0x0006c776... (44 %)
+Writing at 0x0007278e... (48 %)
+Writing at 0x00078ad0... (51 %)
+Writing at 0x0007eba8... (55 %)
+Writing at 0x00084a05... (58 %)
+Writing at 0x0008af51... (62 %)
+Writing at 0x00090dca... (65 %)
+Writing at 0x000967f0... (68 %)
+Writing at 0x0009c923... (72 %)
+Writing at 0x000a2c93... (75 %)
+Writing at 0x000a86ea... (79 %)
+Writing at 0x000af881... (82 %)
+Writing at 0x000b8833... (86 %)
+Writing at 0x000bf671... (89 %)
+Writing at 0x000c528c... (93 %)
+Writing at 0x000caeb4... (96 %)
+Writing at 0x000d12ea... (100 %)
+Wrote 794720 bytes (460660 compressed) at 0x00010000 in 11.0 seconds (effective 577.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 413.4 kbit/s)...
+Hash of data verified.
 
-rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
-configsip: 0, SPIWP:0xee
-clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
-mode:DIO, clock div:2
-load:0x3fff0030,len:6276
-load:0x40078000,len:15716
-load:0x40080400,len:4
-ho 8 tail 4 room 4
-load:0x40080404,len:3860
-entry 0x4008063c
-[0;32mI (31) boot: ESP-IDF v5.4-dirty 2nd stage bootloader[0m
-[0;32mI (31) boot: compile time Dec 15 2025 11:24:30[0m
-[0;32mI (31) boot: Multicore bootloader[0m
-[0;32mI (32) boot: chip revision: v1.1[0m
-[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
-[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
-[0;32mI (42) boot.esp32: SPI Flash Size : 16MB[0m
-[0;32mI (46) boot: Enabling RNG early entropy source...[0m
-[0;32mI (51) boot: Partition Table:[0m
-[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
-[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
-[0;32mI (66) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
-[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
-[0;32mI (79) boot: End of partition table[0m
-[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=215b4h (136628) map[0m
-[0;32mI (137) esp_image: segment 1: paddr=000315dc vaddr=3ff80000 size=0001ch (    28) load[0m
-[0;32mI (137) esp_image: segment 2: paddr=00031600 vaddr=3ffbdb60 size=051d4h ( 20948) load[0m
-[0;32mI (148) esp_image: segment 3: paddr=000367dc vaddr=40080000 size=0983ch ( 38972) load[0m
-[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=7fa44h (522820) map[0m
-[0;32mI (342) esp_image: segment 5: paddr=000bfa6c vaddr=4008983c size=1006ch ( 65644) load[0m
-[0;32mI (380) boot: Loaded app from partition at offset 0x10000[0m
-[0;32mI (381) boot: Disabling RNG early entropy source...[0m
-[0;32mI (391) cpu_start: Multicore app[0m
-[0;32mI (399) cpu_start: Pro cpu start user code[0m
-[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (400) app_init: Application information:[0m
-[0;32mI (400) app_init: Project name:     control_1.8[0m
-[0;32mI (404) app_init: App version:      v5.4-dirty[0m
-[0;32mI (408) app_init: Compile time:     Dec 15 2025 11:24:05[0m
-[0;32mI (413) app_init: ELF file SHA256:  7b7379a6c...[0m
-[0;32mI (417) app_init: ESP-IDF:          v5.4-dirty[0m
-[0;32mI (422) efuse_init: Min chip rev:     v0.0[0m
-[0;32mI (425) efuse_init: Max chip rev:     v3.99 [0m
-[0;32mI (429) efuse_init: Chip rev:         v1.1[0m
-[0;32mI (434) heap_init: Initializing. RAM available for dynamic allocation:[0m
-[0;32mI (440) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
-[0;32mI (445) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
-[0;32mI (450) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
-[0;32mI (455) heap_init: At 3FFC7C50 len 000183B0 (96 KiB): DRAM[0m
-[0;32mI (460) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (465) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (471) heap_init: At 400998A8 len 00006758 (25 KiB): IRAM[0m
-[0;32mI (478) spi_flash: detected chip: generic[0m
-[0;32mI (480) spi_flash: flash io: dio[0m
-[0;32mI (484) coexist: coex firmware version: 49a8cdc[0m
-[0;32mI (488) main_task: Started on CPU0[0m
-[0;32mI (491) main_task: Calling app_main()[0m
-[0;32mI (493) UART MASTER: decorder initialization begins[0m
-[0;32mI (498) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1006) PCNT: setting up PCNT units and chanels[0m
-[0;32mI (1006) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1007) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1016) PCNT: install pcnt unit1[0m
-[0;32mI (1019) PCNT: set glitch filter for unit1[0m
-[0;32mI (1023) PCNT: install pcnt channels of unit1[0m
-[0;32mI (1027) PCNT: set edge and level actions for pcnt channels of unit1[0m
-[0;32mI (1033) PCNT: enable pcnt unit1[0m
-[0;32mI (1036) PCNT: clear pcnt unit1[0m
-[0;32mI (1039) PCNT: start pcnt unit1[0m
-[0;32mI (1042) gpio: GPIO[25]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1050) gpio: GPIO[26]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1058) PCNT: install pcnt unit2[0m
-[0;32mI (1061) PCNT: set glitch filter for unit2[0m
-[0;32mI (1065) PCNT: install pcnt channels of unit2[0m
-[0;32mI (1069) PCNT: set edge and level actions for pcnt channels of unit2[0m
-[0;32mI (1075) PCNT: enable pcnt unit2[0m
-[0;32mI (1078) PCNT: clear pcnt unit2[0m
-[0;32mI (1081) PCNT: start pcnt unit2[0m
-[0;32mI (1084) gpio: GPIO[27]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1092) gpio: GPIO[14]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1101) PCNT: install pcnt unit3[0m
-[0;32mI (1104) PCNT: set glitch filter for unit3[0m
-[0;32mI (1108) PCNT: install pcnt channels of unit3[0m
-[0;32mI (1112) PCNT: set edge and level actions for pcnt channels of unit3[0m
-[0;32mI (1118) PCNT: enable pcnt unit3[0m
-[0;32mI (1121) PCNT: clear pcnt unit3[0m
-[0;32mI (1124) PCNT: start pcnt unit3[0m
-[0;32mI (1127) gpio: GPIO[23]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1135) gpio: GPIO[22]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1143) PCNT: install pcnt unit4[0m
-[0;32mI (1146) PCNT: set glitch filter for unit4[0m
-[0;32mI (1150) PCNT: install pcnt channels of unit4[0m
-[0;32mI (1154) PCNT: set edge and level actions for pcnt channels of unit4[0m
-[0;32mI (1160) PCNT: enable pcnt unit4[0m
-[0;32mI (1163) PCNT: clear pcnt unit4[0m
-[0;32mI (1166) PCNT: start pcnt unit4[0m
-[0;32mI (1169) gpio: GPIO[21]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1178) gpio: GPIO[19]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1186) PCNT: install pcnt unit5[0m
-[0;32mI (1189) PCNT: set glitch filter for unit5[0m
-[0;32mI (1193) PCNT: install pcnt channels of unit5[0m
-[0;32mI (1197) PCNT: set edge and level actions for pcnt channels of unit5[0m
-[0;32mI (1203) PCNT: enable pcnt unit5[0m
-[0;32mI (1206) PCNT: clear pcnt unit5[0m
-[0;32mI (1209) PCNT: start pcnt unit5[0m
-[0;32mI (1212) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1220) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1228) PCNT: install pcnt unit6[0m
-[0;32mI (1231) PCNT: set glitch filter for unit6[0m
-[0;32mI (1235) PCNT: install pcnt channels of unit6[0m
-[0;32mI (1239) PCNT: set edge and level actions for pcnt channels of unit6[0m
-[0;32mI (1245) PCNT: enable pcnt unit6[0m
-[0;32mI (1248) PCNT: clear pcnt unit6[0m
-[0;32mI (1251) PCNT: start pcnt unit6[0m
-[0;32mI (1254) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1262) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1271) PCNT: install pcnt unit7[0m
-[0;32mI (1274) PCNT: set glitch filter for unit7[0m
-[0;32mI (1278) PCNT: install pcnt channels of unit7[0m
-[0;32mI (1282) PCNT: set edge and level actions for pcnt channels of unit7[0m
-[0;32mI (1288) PCNT: enable pcnt unit7[0m
-[0;32mI (1291) PCNT: clear pcnt unit7[0m
-[0;32mI (1294) PCNT: start pcnt unit7[0m
-[0;32mI (1297) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1305) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (1313) PCNT: install pcnt unit8[0m
-[0;32mI (1316) PCNT: set glitch filter for unit8[0m
-[0;32mI (1320) PCNT: install pcnt channels of unit8[0m
-[0;32mI (1324) PCNT: set edge and level actions for pcnt channels of unit8[0m
-[0;32mI (1330) PCNT: enable pcnt unit8[0m
-[0;32mI (1333) PCNT: clear pcnt unit8[0m
-[0;32mI (1336) PCNT: start pcnt unit8[0m
-[0;32mI (1339) PCNT: PCNT unit setiing up completed[0m
-
-[0;32mI (1343) PCNT: setting up   pcnt Que[0m
-[0;32mI (1346) PCNT: setting up PCNT Read_Tasks[0m
-[0;32mI (1350) PCNT: PCNT Task Initialization Complete. Tasks running.[0m
-[0;32mI (1366) UART: setting up UART [0m
-[0;32mI (1366) UART: setting up UART MASTER device[0m
-[0;32mI (1366) uart: ESP_INTR_FLAG_IRAM flag not set while CONFIG_UART_ISR_IN_IRAM is enabled, flag updated[0m
-[0;32mI (1372) uart: queue free spaces: 20[0m
-[0;32mI (1376) UART: UART initialized with DMA, 2000000 bps[0m
-[0;32mI (1380) UART: setting up UART MASTER device Complete[0m
-[0;32mI (1395) PID_CTRL: Starting PID application...[0m
-[0;32mI (1395) PID_CTRL: PID application started successfully[0m
-[0;32mI (1397) CPG_NET: Starting CPG application...[0m
-[0;32mI (1498) CPG_NET: Gait set to IDLE[0m
-[0;32mI (1498) CPG_NET: Base params updated for freq=0.09 Hz[0m
-[1;31mE (1499) SEQ_RUN: Mode change: 255 -> 4[0m
-[0;32mI (1499) CPG_NET: set_gait_Creep START (mutex already held)[0m
-[0;32mI (1503) CPG_NET: Gait set to CREEP (Lateral Seq) at freq=1.00 Hz[0m
-[0;32mI (1699) CPG_NET: CPG timer started at 2500Hz[0m
-[0;33mW (1701) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;32mI (1799) CPG_NET: CPG application started[0m
-[0;32mI (1809) BLE: Setting up BLE unit[0m
-[0;32mI (1820) BTDM_INIT: BT controller compile version [20b459d][0m
-[0;32mI (1822) BTDM_INIT: Bluetooth MAC: 5c:01:3b:f1:c0:22[0m
-[0;32mI (1825) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
-[0;33mW (1910) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
-[0;33mW (2209) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;32mI (2285) BLE: REGISTER_APP_EVT, status 0, app_id 0[0m
-[0;33mW (2288) BT_BTM: BTM_BleWriteAdvData, Partial data write into ADV[0m
-[0;32mI (2289) BLE: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
-[1;31mE (2293) BT_BTC: btc_gatts_arg_deep_copy 8, invalid length[0m
-[0;32mI (2298) BLE: Unhandled GATTS event: 12[0m
-[0;32mI (2303) BLE: ADD_RX_CHAR, status 0, attr_handle 42, service_handle 40[0m
-[0;32mI (2311) BLE: ADD_TX_CHAR, status 0, attr_handle 44, service_handle 40[0m
-[0;32mI (2316) BLE: Unhandled GAP event: 6[0m
-[0;32mI (2316) BLE: TX CCCD Handle: 45[0m
-[0;32mI (2318) BLE: BLE unit setup completed[0m
-[1;31mE (2331) RESET: CPU Reset reason: 1[0m
-[0;32mI (2331) UART MASTER: decorder initialization complete[0m
-[0;32mI (2331) main_task: Returned from app_main()[0m
-[0;33mW (2716) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (3222) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (3728) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (4234) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (4740) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (5246) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (5752) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (6258) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (6765) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (7271) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (7777) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (8283) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (8789) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (9295) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (9801) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (10307) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (10813) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (11319) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (11825) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (12331) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (12837) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (13343) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (13849) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (14355) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (14861) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (15367) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (15873) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (16379) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (16885) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (17391) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (17897) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (18403) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (18909) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (19415) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (19921) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (20427) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (20933) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (21439) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
-[0;33mW (21945) PCNT:  [0m
-ENCODER[1] READING: 0
-ENCODER[2] READING: 0
-ENCODER[3] READING: 0
-ENCODER[4] READING: 0
-ENCODER[5] READING: 0
-ENCODER[6] READING: 0
-ENCODER[7] READING: 0
-ENCODER[8] READING: 0
+Leaving...
+Hard resetting via RTS pin...

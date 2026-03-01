@@ -11,7 +11,7 @@
 // ============================ MOBILE APP CHAR-TO-BYTE MAPPING ============================
 // Single-char from mobile app -> control byte. Mobile sends one char at a time.
 // Mode: H=Homing, I=Idle, S=Standby, D=Crawl, W=Walk, G=Gallop, T=Trot, C=Creep
-// Orient: N=Normal, E=Inverted  |  Pivot: P=Trot, Q=Crawl
+// Orient: N=Normal, E=Inverted  |  Pivot: P=Trot CW, X=Trot CCW, Q=Crawl CW, Y=Crawl CCW
 // Turning: 1/2=Trot L/R, 3/4=Creep L/R, 5/6=Crawl L/R, 7/8=Walk L/R, 9/0=Gallop L/R
 // Posture: U=Normal, L=Low, O=Crouch
 static uint8_t mobile_char_to_byte(char c) {
@@ -26,8 +26,10 @@ static uint8_t mobile_char_to_byte(char c) {
         case 'C': case 'c': return MODE_CREEP;            // Creep
         case 'N': case 'n': return LEG_ORIENTATION_NORMAL;   // Leg normal
         case 'E': case 'e': return LEG_ORIENTATION_INVERTED;  // Leg inverted
-        case 'P': case 'p': return MODE_PIVOT_TURN;       // Pivot trot
-        case 'Q': case 'q': return MODE_PIVOT_CRAWL;      // Pivot crawl
+        case 'P': case 'p': return MODE_PIVOT_TURN_CLOCKWISE;       // Pivot trot CW
+        case 'X': case 'x': return MODE_PIVOT_TURN_COUNTER_CLOCKWISE;  // Pivot trot CCW
+        case 'Q': case 'q': return MODE_PIVOT_CRAWL_CLOCKWISE;      // Pivot crawl CW
+        case 'Y': case 'y': return MODE_PIVOT_CRAWL_COUNTER_CLOCKWISE;  // Pivot crawl CCW
         case '1': return MODE_TROT_LEFT;     case '2': return MODE_TROT_RIGHT;
         case '3': return MODE_CREEP_LEFT;    case '4': return MODE_CREEP_RIGHT;
         case '5': return MODE_CRAWL_LEFT;    case '6': return MODE_CRAWL_RIGHT;
@@ -57,8 +59,16 @@ PIDParams_t pid_ble_params;
 // BLE communication
 static QueueHandle_t BLE_recieve_queue;
 static esp_gatt_status_t status;
+
+// Telemetry config (set via RX packet [0xA6, leg_mask])
+volatile uint8_t telemetry_leg_mask = 0xFF;   /* default: all legs */
+volatile bool telemetry_enabled = false;     /* off until GUI enables */
+static float telemetry_snapshot_target[NUM_MOTORS];
+static float telemetry_snapshot_encoder[NUM_MOTORS];
+static SemaphoreHandle_t telemetry_snapshot_mutex = NULL;
 static prepare_type_env_t prepare_write_env;
 TaskHandle_t rx_task_handle;
+static TaskHandle_t telemetry_task_handle = NULL;  /* Suspended until GUI enables telemetry */
 // Declare all helper functions before they're used
 static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
 static void handle_reg_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
@@ -72,6 +82,7 @@ static void handle_cccd_write(esp_ble_gatts_cb_param_t *param);
 static void send_write_response(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
 static void handle_exec_write_evt(esp_ble_gatts_cb_param_t *param);
 static void handle_disconnect_evt(esp_ble_gatts_cb_param_t *param);
+static void ble_telemetry_task(void *pvParameters);
 // Profile instance
 static struct gatts_profile_inst gl_profile_tab[PROFILE_NUM] = {
     [PROFILE_A_APP_ID] = {
@@ -88,7 +99,7 @@ static const uint8_t GATTS_SERVICE_UUID_A[16] = {
 esp_gatt_char_prop_t a_tx_property, a_rx_property;
 // Characteristic values
 esp_attr_value_t gatts_initial_tx_char_val = {
-    .attr_max_len = NUM_MOTORS*sizeof(float),
+    .attr_max_len = TELEMETRY_TX_MAX_LEN,
     .attr_len = 0,
     .attr_value = NULL,
 };
@@ -401,6 +412,51 @@ static inline void send_write_response(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_
 static inline void handle_exec_write_evt(esp_ble_gatts_cb_param_t *param) {
     exec_write_event_env(&prepare_write_env, param);
 }
+/* Update snapshot from motors[] - called by CPG task at end of run_position_loop. Non-blocking. */
+void BLE_update_telemetry_snapshot(void) {
+    if (!telemetry_enabled || telemetry_snapshot_mutex == NULL) return;
+    if (xSemaphoreTake(telemetry_snapshot_mutex, 0) != pdTRUE) return;  /* Skip if telemetry is reading */
+    for (int i = 0; i < NUM_MOTORS; i++) {
+        telemetry_snapshot_target[i] = motors[i].target_position;
+        telemetry_snapshot_encoder[i] = (float)motors[i].current_position;
+    }
+    xSemaphoreGive(telemetry_snapshot_mutex);
+}
+
+/* Send telemetry packet from snapshot (mutex-protected, no race with CPG). */
+void BLE_send_telemetry(void) {
+    if (!telemetry_enabled || telemetry_leg_mask == 0) return;
+    if (gl_profile_tab[PROFILE_A_APP_ID].conn_id == 0) return;
+    if (!gl_profile_tab[PROFILE_A_APP_ID].tx_notifications_enabled) return;
+    if (telemetry_snapshot_mutex == NULL) return;
+
+    uint8_t buf[TELEMETRY_TX_MAX_LEN];
+    int offset = 0;
+    buf[offset++] = 0xAB;  /* telemetry packet marker */
+    buf[offset++] = telemetry_leg_mask;
+
+    if (xSemaphoreTake(telemetry_snapshot_mutex, pdMS_TO_TICKS(5)) != pdTRUE) return;  /* Brief wait, don't block CPG long */
+    for (int i = 0; i < NUM_MOTORS && offset + 8 <= TELEMETRY_TX_MAX_LEN; i++) {
+        if (!(telemetry_leg_mask & (1 << i))) continue;
+        float target = telemetry_snapshot_target[i];
+        float enc = telemetry_snapshot_encoder[i];
+        memcpy(buf + offset, &target, 4);
+        offset += 4;
+        memcpy(buf + offset, &enc, 4);
+        offset += 4;
+    }
+    xSemaphoreGive(telemetry_snapshot_mutex);
+
+    esp_err_t ret = esp_ble_gatts_send_indicate(
+        gl_profile_tab[PROFILE_A_APP_ID].gatts_if,
+        gl_profile_tab[PROFILE_A_APP_ID].conn_id,
+        gl_profile_tab[PROFILE_A_APP_ID].tx_char_handle,
+        offset, buf, false);  /* false = notify (no ack) */
+    if (ret != ESP_OK) {
+        ESP_LOGE(BLE_TAG, "Telemetry send failed: %s", esp_err_to_name(ret));
+    }
+}
+
 static void handle_disconnect_evt(esp_ble_gatts_cb_param_t *param) {
     ESP_LOGI(BLE_TAG, "CLIENT DISCONNECTED, conn_id %d, reason %d",
              param->disconnect.conn_id, param->disconnect.reason);
@@ -449,6 +505,22 @@ void copy_ble_recieve_data_task(void *pvParameters) {
                 } else if (len > 0) {
                     ESP_LOGW(BLE_TAG, "Unknown mobile char: '%c' (0x%02X)", c, (unsigned)data[0]);
                 }
+            }
+            /* --- Telemetry config: [0xA6, leg_mask] - leg_mask=0 disables, else enables with mask --- */
+            else if (len >= 2 && data[0] == TELEMETRY_CONFIG_MARKER) {
+                telemetry_leg_mask = data[1];
+                telemetry_enabled = (telemetry_leg_mask != 0);
+                /* Suspend task when disabled (no CPU use); resume when enabled */
+                if (telemetry_task_handle != NULL) {
+                    if (telemetry_enabled) {
+                        vTaskResume(telemetry_task_handle);
+                    } else {
+                        vTaskSuspend(telemetry_task_handle);
+                    }
+                }
+                ESP_LOGI(BLE_TAG, "Telemetry %s (mask=0x%02X), task %s",
+                         telemetry_enabled ? "ON" : "OFF", telemetry_leg_mask,
+                         telemetry_enabled ? "resumed" : "suspended");
             }
             /* --- PC BLE GUI: full packet [0xA5, ctrl_byte, 5 floats, 0xAA, 0x5A] --- */
             else if (len >= 2 && data[0] == PACKET_START_MARKER) {
@@ -596,6 +668,10 @@ void BLE_app_main(void) {
         ESP_LOGE(BLE_TAG, "Creating queue failed");
         return;
     }
+    telemetry_snapshot_mutex = xSemaphoreCreateMutex();
+    if (telemetry_snapshot_mutex == NULL) {
+        ESP_LOGE(BLE_TAG, "Telemetry mutex create failed");
+    }
     // Create data processing task
     xTaskCreatePinnedToCore(copy_ble_recieve_data_task,
                            "recieve_data_task",
@@ -604,7 +680,28 @@ void BLE_app_main(void) {
                            15,
                            &rx_task_handle,
                            0);
-    ESP_LOGI(BLE_TAG, "BLE unit setup completed");
+    /* Create telemetry task SUSPENDED - only runs when GUI enables telemetry (saves CPU) */
+    xTaskCreatePinnedToCore(ble_telemetry_task,
+                           "ble_telemetry",
+                           2048,
+                           NULL,
+                           10,
+                           &telemetry_task_handle,
+                           0);
+    if (telemetry_task_handle != NULL) {
+        vTaskSuspend(telemetry_task_handle);  /* Start suspended - no runtime until enabled */
+    }
+    ESP_LOGI(BLE_TAG, "BLE unit setup completed (telemetry task suspended until enabled)");
+}
+
+static void ble_telemetry_task(void *pvParameters) {
+    const TickType_t period_ms = 50;  /* 20 Hz */
+    while (1) {
+        vTaskDelay(pdMS_TO_TICKS(period_ms));
+        if (telemetry_enabled) {
+            BLE_send_telemetry();
+        }
+    }
 }
 
 

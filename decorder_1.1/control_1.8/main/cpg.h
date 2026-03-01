@@ -128,8 +128,16 @@ typedef enum {
     MODE_GALOP_RIGHT,
     MODE_PIVOT_TURN=23,   /* skip 21,22 to avoid overlap with BODY_POSTURE_* */
     MODE_PIVOT_CRAWL,
+    MODE_PIVOT_TURN_CLOCKWISE = 25,
+    MODE_PIVOT_TURN_COUNTER_CLOCKWISE,
+    MODE_PIVOT_CRAWL_CLOCKWISE,
+    MODE_PIVOT_CRAWL_COUNTER_CLOCKWISE,
     MODE_NORMAL,
 } turning_modes;
+
+/* Pivot turn direction flags (set by get_commands from BLE) */
+extern volatile bool pivot_turn_cw;
+extern volatile bool pivot_turn_counter_cw;
 
 typedef enum {
     BODY_POSTURE_NORMAL = 30,   /* avoid overlap with MODE_* (11-24) */
