@@ -59,6 +59,8 @@ static uint64_t start;
 
 float SMOOTH_ALPHA = 0.050f;
 
+volatile uint32_t log_counter = 0 ;
+
 // Per-motor homing invert: -1 = flip output sign (fix wrong-direction joints), 1 = normal
 //static const int8_t HOMING_INVERT[NUM_MOTORS] = { 1, 1, 1, 1, 1, 1, 1, 1 };  
 
@@ -69,13 +71,13 @@ float SMOOTH_ALPHA = 0.050f;
 void run_position_loop(){
     static int current_encoders[NUM_MOTORS] = {0}; // Local snapshot
     static int filtered_enc[NUM_MOTORS] = {0}; // IIR filter state
-    static uint32_t log_counter = 0;
-    log_counter++;
+    static uint8_t PID_update_count = 0;
+    PID_update_count++;
     
     // Update gains periodically (throttled)
-    if (log_counter % 5 == 0) { // ~0.1s at 2500Hz
+    if (PID_update_count % 5 == 0) { // ~0.1s at 2500Hz
         update_PID_gain();
-        log_counter = 0;
+        PID_update_count = 0;
     }
     // Read encoders (snapshot)
     for (int i = 0; i < NUM_ENCODERS; i++) {

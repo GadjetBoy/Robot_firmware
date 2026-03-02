@@ -1,5 +1,6 @@
 #include "ble.h"
 #include "cpg.h"
+#include "esp_timer.h"
 
 /* Default PID values when mobile app is used (mobile sends no Kp/Ki/Kd) */
 #define MOBILE_DEFAULT_KP  0.25f
@@ -63,9 +64,16 @@ static esp_gatt_status_t status;
 // Telemetry config (set via RX packet [0xA6, leg_mask])
 volatile uint8_t telemetry_leg_mask = 0xFF;   /* default: all legs */
 volatile bool telemetry_enabled = false;     /* off until GUI enables */
-static float telemetry_snapshot_target[NUM_MOTORS];
-static float telemetry_snapshot_encoder[NUM_MOTORS];
-static SemaphoreHandle_t telemetry_snapshot_mutex = NULL;
+/* Queue-based telemetry: CPG pushes snapshot, sender reads (replaces mutex) */
+typedef struct {
+    float target[NUM_MOTORS];
+    float encoder[NUM_MOTORS];
+} telemetry_snapshot_t;
+#define TELEMETRY_QUEUE_LEN 1
+static QueueHandle_t telemetry_queue = NULL;
+/* Delayed ping after CCCD subscribe: Windows BLE stack needs time before first notification */
+#define CCCD_PING_DELAY_MS 150
+static esp_timer_handle_t cccd_ping_timer = NULL;
 static prepare_type_env_t prepare_write_env;
 TaskHandle_t rx_task_handle;
 static TaskHandle_t telemetry_task_handle = NULL;  /* Suspended until GUI enables telemetry */
@@ -75,10 +83,12 @@ static void handle_reg_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *par
 static void handle_create_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
 static void handle_add_char_evt(esp_ble_gatts_cb_param_t *param);
 static void handle_add_char_descr_evt(esp_ble_gatts_cb_param_t *param);
-static void handle_connect_evt(esp_ble_gatts_cb_param_t *param);
+static void handle_connect_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
+static void handle_read_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
 static void handle_write_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
 static void handle_immediate_write(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
-static void handle_cccd_write(esp_ble_gatts_cb_param_t *param);
+static void handle_cccd_write(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
+static void cccd_ping_timer_cb(void *arg);
 static void send_write_response(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
 static void handle_exec_write_evt(esp_ble_gatts_cb_param_t *param);
 static void handle_disconnect_evt(esp_ble_gatts_cb_param_t *param);
@@ -329,7 +339,27 @@ static void handle_add_char_descr_evt(esp_ble_gatts_cb_param_t *param) {
         ESP_LOGI(BLE_TAG, "TX CCCD Handle: %d", gl_profile_tab[PROFILE_A_APP_ID].tx_descr_handle);
     }
 }
-static void handle_connect_evt(esp_ble_gatts_cb_param_t *param) {
+static void handle_read_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param) {
+    if (!param->read.need_rsp) return;
+    esp_gatt_rsp_t rsp;
+    memset(&rsp, 0, sizeof(rsp));
+    rsp.attr_value.handle = param->read.handle;
+    if (param->read.handle == gl_profile_tab[PROFILE_A_APP_ID].tx_descr_handle) {
+        rsp.attr_value.value[0] = gl_profile_tab[PROFILE_A_APP_ID].tx_cccd_value & 0xFF;
+        rsp.attr_value.value[1] = (gl_profile_tab[PROFILE_A_APP_ID].tx_cccd_value >> 8) & 0xFF;
+        rsp.attr_value.len = 2;
+    } else if (param->read.handle == gl_profile_tab[PROFILE_A_APP_ID].tx_char_handle) {
+        /* TX char read: return minimal telemetry packet or zeros */
+        rsp.attr_value.value[0] = 0xAB;
+        rsp.attr_value.value[1] = telemetry_leg_mask;
+        rsp.attr_value.len = 2;
+    } else {
+        ESP_LOGI("HANDLE READ EVENT", "GATT_READ_EVT, INVALID REQUEST FROM :conn_id %" PRIu16 ", trans_id %" PRIu32 ", handle %" PRIu16,
+                 param->read.conn_id, param->read.trans_id, param->read.handle);
+    }
+    esp_ble_gatts_send_response(gatts_if, param->read.conn_id, param->read.trans_id, ESP_GATT_OK, &rsp);
+}
+static void handle_connect_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param) {
     esp_ble_conn_update_params_t conn_params = {0};
     memcpy(conn_params.bda, param->connect.remote_bda, sizeof(esp_bd_addr_t));
    
@@ -337,12 +367,12 @@ static void handle_connect_evt(esp_ble_gatts_cb_param_t *param) {
     conn_params.max_int = 0x30; // 40ms
     conn_params.min_int = 0x10; // 20ms
     conn_params.timeout = 600; // 4000ms
-    ESP_LOGI(BLE_TAG, "ESP_GATTS_CONNECT_EVT, conn_id %d, remote %02x:%02x:%02x:%02x:%02x:%02x, link_role %d",
-             param->connect.conn_id,
+    ESP_LOGI(BLE_TAG, "ESP_GATTS_CONNECT_EVT, conn_id %d, gatts_if %d, remote %02x:%02x:%02x:%02x:%02x:%02x",
+             param->connect.conn_id, gatts_if,
              param->connect.remote_bda[0], param->connect.remote_bda[1], param->connect.remote_bda[2],
-             param->connect.remote_bda[3], param->connect.remote_bda[4], param->connect.remote_bda[5],
-             param->connect.link_role);
+             param->connect.remote_bda[3], param->connect.remote_bda[4], param->connect.remote_bda[5]);
     gl_profile_tab[PROFILE_A_APP_ID].conn_id = param->connect.conn_id;
+    gl_profile_tab[PROFILE_A_APP_ID].gatts_if = gatts_if;  /* Ensure correct gatts_if for send_indicate */
     esp_ble_gap_update_conn_params(&conn_params);
     is_connected = true;
 }
@@ -357,6 +387,13 @@ static void handle_write_evt(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *p
 }
 static inline void handle_immediate_write(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param) {
     size_t len = param->write.len;
+    /* Keep conn_id and gatts_if fresh from write events */
+    if (param->write.conn_id != 0) {
+        gl_profile_tab[PROFILE_A_APP_ID].conn_id = param->write.conn_id;
+    }
+    if (gatts_if != ESP_GATT_IF_NONE) {
+        gl_profile_tab[PROFILE_A_APP_ID].gatts_if = gatts_if;
+    }
     ESP_LOGI(BLE_TAG, "BLE data receiving length: %zu/%d", len, SERVER_MAX_DATA_LEN);
     if (param->write.handle == gl_profile_tab[PROFILE_A_APP_ID].rx_char_handle) {
         ble_data_packet_t packet;
@@ -371,10 +408,24 @@ static inline void handle_immediate_write(esp_gatt_if_t gatts_if, esp_ble_gatts_
         }
     }
     else if (param->write.handle == gl_profile_tab[PROFILE_A_APP_ID].tx_descr_handle && len == 2) {
-        handle_cccd_write(param);
+        handle_cccd_write(gatts_if, param);
     }
 }
-static void handle_cccd_write(esp_ble_gatts_cb_param_t *param) {
+static void cccd_ping_timer_cb(void *arg) {
+    (void)arg;
+    /* Send after CCCD write response; Windows BLE stack may drop notifications sent too soon */
+    /* Note: conn_id 0 is valid on ESP32 (first connection), use is_connected instead */
+    if (!is_connected) return;
+    if (!gl_profile_tab[PROFILE_A_APP_ID].tx_notifications_enabled) return;
+    uint8_t ping[] = {0xAB, 0xFF, 0, 0, 0, 0, 0, 0, 0, 0};
+    esp_ble_gatts_send_indicate(
+        gl_profile_tab[PROFILE_A_APP_ID].gatts_if,
+        gl_profile_tab[PROFILE_A_APP_ID].conn_id,
+        gl_profile_tab[PROFILE_A_APP_ID].tx_char_handle,
+        sizeof(ping), ping, false);
+}
+
+static void handle_cccd_write(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param) {
     uint16_t cccd_value = param->write.value[1] << 8 | param->write.value[0];
     gl_profile_tab[PROFILE_A_APP_ID].tx_cccd_value = cccd_value;
     ESP_LOGI(BLE_TAG, "CCCD Write: %04x", cccd_value);
@@ -382,6 +433,10 @@ static void handle_cccd_write(esp_ble_gatts_cb_param_t *param) {
         if (a_tx_property & ESP_GATT_CHAR_PROP_BIT_NOTIFY) {
             ESP_LOGI(BLE_TAG, "notify enable");
             gl_profile_tab[PROFILE_A_APP_ID].tx_notifications_enabled = true;
+            /* Delay first notification: Windows BLE stack needs write response before subscription is ready */
+            if (cccd_ping_timer) {
+                esp_timer_start_once(cccd_ping_timer, CCCD_PING_DELAY_MS * 1000);  /* us */
+            }
         }
     } else {
         ESP_LOGI(BLE_TAG, "Notifications disabled");
@@ -412,46 +467,59 @@ static inline void send_write_response(esp_gatt_if_t gatts_if, esp_ble_gatts_cb_
 static inline void handle_exec_write_evt(esp_ble_gatts_cb_param_t *param) {
     exec_write_event_env(&prepare_write_env, param);
 }
-/* Update snapshot from motors[] - called by CPG task at end of run_position_loop. Non-blocking. */
+/* Push snapshot to queue - called by CPG at end of run_position_loop. Non-blocking. */
 void BLE_update_telemetry_snapshot(void) {
-    if (!telemetry_enabled || telemetry_snapshot_mutex == NULL) return;
-    if (xSemaphoreTake(telemetry_snapshot_mutex, 0) != pdTRUE) return;  /* Skip if telemetry is reading */
+    if (!telemetry_enabled || telemetry_queue == NULL) return;
+    telemetry_snapshot_t snap;
     for (int i = 0; i < NUM_MOTORS; i++) {
-        telemetry_snapshot_target[i] = motors[i].target_position;
-        telemetry_snapshot_encoder[i] = (float)motors[i].current_position;
+        snap.target[i] = motors[i].target_position;
+        snap.encoder[i] = (float)motors[i].current_position;
     }
-    xSemaphoreGive(telemetry_snapshot_mutex);
+    xQueueOverwrite(telemetry_queue, &snap);  /* Always succeeds, overwrites latest */
+    /* Rate-limit debug log: print once per second (~2500 Hz CPG -> every 2500th call) */
+    if (++log_counter >= 2500) {
+        log_counter = 0;
+        ESP_LOGW(BLE_TAG, "Data Written to tx queue");
+    }
 }
 
-/* Send telemetry packet from snapshot (mutex-protected, no race with CPG). */
+/* Send telemetry packet - reads from queue (no mutex). */
 void BLE_send_telemetry(void) {
-    if (!telemetry_enabled || telemetry_leg_mask == 0) return;
-    if (gl_profile_tab[PROFILE_A_APP_ID].conn_id == 0) return;
-    if (!gl_profile_tab[PROFILE_A_APP_ID].tx_notifications_enabled) return;
-    if (telemetry_snapshot_mutex == NULL) return;
+    /* conn_id 0 is valid on ESP32 (first connection) - do not check it */
+    if (telemetry_queue == NULL) return;
 
-    uint8_t buf[TELEMETRY_TX_MAX_LEN];
+    telemetry_snapshot_t snap;
+    if (xQueueReceive(telemetry_queue, &snap, 0) != pdTRUE){
+        ESP_LOGE(BLE_TAG, "Telemetry send failed;no data in que");
+        return;
+    } 
+        
+
+    uint8_t notify_data[TELEMETRY_TX_MAX_LEN];
     int offset = 0;
-    buf[offset++] = 0xAB;  /* telemetry packet marker */
-    buf[offset++] = telemetry_leg_mask;
+    notify_data[offset++] = 0xAB; /* telemetry packet marker */
+    notify_data[offset++] = telemetry_leg_mask;
 
-    if (xSemaphoreTake(telemetry_snapshot_mutex, pdMS_TO_TICKS(5)) != pdTRUE) return;  /* Brief wait, don't block CPG long */
-    for (int i = 0; i < NUM_MOTORS && offset + 8 <= TELEMETRY_TX_MAX_LEN; i++) {
+    for (int i = 0; i < NUM_MOTORS ; i++) {
+        // Only pack data for legs requested in the mask
         if (!(telemetry_leg_mask & (1 << i))) continue;
-        float target = telemetry_snapshot_target[i];
-        float enc = telemetry_snapshot_encoder[i];
-        memcpy(buf + offset, &target, 4);
+
+        if (offset + 8 > TELEMETRY_TX_MAX_LEN) break;
+
+        memcpy(notify_data + offset, &snap.target[i], sizeof(float));
         offset += 4;
-        memcpy(buf + offset, &enc, 4);
+        memcpy(notify_data + offset, &snap.encoder[i], sizeof(float));
         offset += 4;
     }
-    xSemaphoreGive(telemetry_snapshot_mutex);
-
+    // Send notification to client
     esp_err_t ret = esp_ble_gatts_send_indicate(
         gl_profile_tab[PROFILE_A_APP_ID].gatts_if,
         gl_profile_tab[PROFILE_A_APP_ID].conn_id,
         gl_profile_tab[PROFILE_A_APP_ID].tx_char_handle,
-        offset, buf, false);  /* false = notify (no ack) */
+        offset,
+        notify_data,
+        false
+    );
     if (ret != ESP_OK) {
         ESP_LOGE(BLE_TAG, "Telemetry send failed: %s", esp_err_to_name(ret));
     }
@@ -462,8 +530,8 @@ static void handle_disconnect_evt(esp_ble_gatts_cb_param_t *param) {
              param->disconnect.conn_id, param->disconnect.reason);
             
     gl_profile_tab[PROFILE_A_APP_ID].conn_id = 0;
-    // Clear queue
     xQueueReset(BLE_recieve_queue);
+    if (telemetry_queue) xQueueReset(telemetry_queue);
     // Restart advertising
     esp_ble_gap_start_advertising(&test_adv_params);
     is_connected = false;
@@ -484,30 +552,8 @@ void copy_ble_recieve_data_task(void *pvParameters) {
             size_t len = local_rx_buffer.length;
             uint8_t *data = local_rx_buffer.data;
 
-            /* --- Mobile app: single character (or short string) --- */
-            if (len <= 3 && (len == 0 || data[0] != PACKET_START_MARKER)) {
-                char c = (len > 0) ? (char)data[0] : '\0';
-                uint8_t cmd = mobile_char_to_byte(c);
-                if (cmd != 0xFF) {
-                    taskENTER_CRITICAL(&ble_mux);
-                    byte_val[0] = cmd;
-                    /* Mobile app sends no Kp/Ki/Kd - use defaults */
-                    float_val[0] = MOBILE_DEFAULT_KP;
-                    float_val[1] = MOBILE_DEFAULT_KI;
-                    float_val[2] = MOBILE_DEFAULT_KD;
-                    float_val[3] = MOBILE_DEFAULT_F4;
-                    float_val[4] = MOBILE_DEFAULT_F5;
-                    pid_ble_params.Kp = MOBILE_DEFAULT_KP;
-                    pid_ble_params.Ki = MOBILE_DEFAULT_KI;
-                    pid_ble_params.Kd = MOBILE_DEFAULT_KD;
-                    taskEXIT_CRITICAL(&ble_mux);
-                    ESP_LOGI(BLE_TAG, "Mobile cmd: '%c' -> 0x%02X (Kp=%.2f Ki=%.2f Kd=%.3f)", c, cmd, MOBILE_DEFAULT_KP, MOBILE_DEFAULT_KI, MOBILE_DEFAULT_KD);
-                } else if (len > 0) {
-                    ESP_LOGW(BLE_TAG, "Unknown mobile char: '%c' (0x%02X)", c, (unsigned)data[0]);
-                }
-            }
-            /* --- Telemetry config: [0xA6, leg_mask] - leg_mask=0 disables, else enables with mask --- */
-            else if (len >= 2 && data[0] == TELEMETRY_CONFIG_MARKER) {
+            /* --- Telemetry config: [0xA6, leg_mask] - MUST check before mobile (0xA6 would be misclassified) --- */
+            if (len >= 2 && data[0] == TELEMETRY_CONFIG_MARKER) {
                 telemetry_leg_mask = data[1];
                 telemetry_enabled = (telemetry_leg_mask != 0);
                 /* Suspend task when disabled (no CPU use); resume when enabled */
@@ -536,17 +582,41 @@ void copy_ble_recieve_data_task(void *pvParameters) {
                 }
                 taskEXIT_CRITICAL(&ble_mux);
             }
+            /* --- Mobile app: single character (or short string) --- */
+            else if (len <= 3 && len > 0) {
+                char c = (char)data[0];
+                uint8_t cmd = mobile_char_to_byte(c);
+                if (cmd != 0xFF) {
+                    taskENTER_CRITICAL(&ble_mux);
+                    byte_val[0] = cmd;
+                    float_val[0] = MOBILE_DEFAULT_KP;
+                    float_val[1] = MOBILE_DEFAULT_KI;
+                    float_val[2] = MOBILE_DEFAULT_KD;
+                    float_val[3] = MOBILE_DEFAULT_F4;
+                    float_val[4] = MOBILE_DEFAULT_F5;
+                    pid_ble_params.Kp = MOBILE_DEFAULT_KP;
+                    pid_ble_params.Ki = MOBILE_DEFAULT_KI;
+                    pid_ble_params.Kd = MOBILE_DEFAULT_KD;
+                    taskEXIT_CRITICAL(&ble_mux);
+                    ESP_LOGI(BLE_TAG, "Mobile cmd: '%c' -> 0x%02X (Kp=%.2f Ki=%.2f Kd=%.3f)", c, cmd, MOBILE_DEFAULT_KP, MOBILE_DEFAULT_KI, MOBILE_DEFAULT_KD);
+                } else {
+                    ESP_LOGW(BLE_TAG, "Unknown mobile char: '%c' (0x%02X)", c, (unsigned)data[0]);
+                }
+            }
 
-            log_counter++;
-            if (log_counter >= 1) {
-                for (int i = 0; i < NUMBER_OF_BYTES; i++) {
-                    ESP_LOGW(BLE_TAG, "Byte[%d] = %u (0x%02X)", i, byte_val[i], byte_val[i]);
+            /* Log control packets only (skip telemetry config to avoid noise) */
+            if (len >= 2 && data[0] != TELEMETRY_CONFIG_MARKER) {
+                log_counter++;
+                if (log_counter >= 1) {
+                    for (int i = 0; i < NUMBER_OF_BYTES; i++) {
+                        ESP_LOGW(BLE_TAG, "Byte[%d] = %u (0x%02X)", i, byte_val[i], byte_val[i]);
+                    }
+                    for (int i = 0; i < 5; i++) {
+                        ESP_LOGW(BLE_TAG, "Float[%d] = %.5f", i, float_val[i]);
+                    }
+                    ESP_LOGW(BLE_TAG, "BLE rx executed, length=%zu", len);
+                    log_counter = 0;
                 }
-                for (int i = 0; i < 5; i++) {
-                    ESP_LOGW(BLE_TAG, "Float[%d] = %.5f", i, float_val[i]);
-                }
-                ESP_LOGW(BLE_TAG, "BLE rx executed, length=%zu", len);
-                log_counter = 0;
             }
         }
 
@@ -575,7 +645,11 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
             break;
            
         case ESP_GATTS_CONNECT_EVT:
-            handle_connect_evt(param);
+            handle_connect_evt(gatts_if, param);
+            break;
+
+        case ESP_GATTS_READ_EVT:
+            handle_read_evt(gatts_if, param);
             break;
            
         case ESP_GATTS_WRITE_EVT:
@@ -592,6 +666,10 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
            
         case ESP_GATTS_RESPONSE_EVT:
             ESP_LOGI(BLE_TAG, "GATT_RESPONSE_EVT: status %d", param->rsp.status);
+            break;
+
+        case ESP_GATTS_CONF_EVT:
+            /* Notification/indication confirmation from client */
             break;
            
         default:
@@ -668,9 +746,19 @@ void BLE_app_main(void) {
         ESP_LOGE(BLE_TAG, "Creating queue failed");
         return;
     }
-    telemetry_snapshot_mutex = xSemaphoreCreateMutex();
-    if (telemetry_snapshot_mutex == NULL) {
-        ESP_LOGE(BLE_TAG, "Telemetry mutex create failed");
+    telemetry_queue = xQueueCreate(TELEMETRY_QUEUE_LEN, sizeof(telemetry_snapshot_t));
+    if (telemetry_queue == NULL) {
+        ESP_LOGE(BLE_TAG, "Telemetry queue create failed");
+    }
+    const esp_timer_create_args_t cccd_ping_args = {
+        .callback = &cccd_ping_timer_cb,
+        .arg = NULL,
+        .dispatch_method = ESP_TIMER_TASK,
+        .name = "cccd_ping",
+        .skip_unhandled_events = true,
+    };
+    if (esp_timer_create(&cccd_ping_args, &cccd_ping_timer) != ESP_OK) {
+        ESP_LOGW(BLE_TAG, "CCCD ping timer create failed");
     }
     // Create data processing task
     xTaskCreatePinnedToCore(copy_ble_recieve_data_task,
@@ -683,15 +771,15 @@ void BLE_app_main(void) {
     /* Create telemetry task SUSPENDED - only runs when GUI enables telemetry (saves CPU) */
     xTaskCreatePinnedToCore(ble_telemetry_task,
                            "ble_telemetry",
-                           2048,
+                           4096,  /* 4KB stack: snap(64) + buf(68) + ESP_LOGI/vprintf need ~1KB */
                            NULL,
-                           10,
+                           14,
                            &telemetry_task_handle,
                            0);
     if (telemetry_task_handle != NULL) {
         vTaskSuspend(telemetry_task_handle);  /* Start suspended - no runtime until enabled */
     }
-    ESP_LOGI(BLE_TAG, "BLE unit setup completed (telemetry task suspended until enabled)");
+    ESP_LOGI(BLE_TAG, "BLE unit setup completed (telemetry queue + task)");
 }
 
 static void ble_telemetry_task(void *pvParameters) {

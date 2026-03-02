@@ -17,14 +17,16 @@ except ImportError:
     MATPLOTLIB_AVAILABLE = False
 # Fix for Windows BLE scanning (MTA threading model)
 if sys.platform == "win32":
-    sys.coinit_flags = 0 # Force Multi-Threaded Apartment before imports
+    sys.coinit_flags = 0  # Force Multi-Threaded Apartment before imports
 # BLE UUIDs (same as your Flutter app)
 SERVICE_UUID = "cb341ded-25f3-244f-11ac-7ebc1a247a86"
 RX_CHAR_UUID = "0000ff02-0000-1000-8000-00805f9b34fb"
 TX_CHAR_UUID = "0000ff01-0000-1000-8000-00805f9b34fb"  # For telemetry (notifications)
 
-# Motor names for display (index order: FLH, BLK, BLH, FLK, FRH, FRK, BRH, BRK)
+# Motor names for BLE data order (bit0=FLH, bit1=BLK, bit2=BLH, bit3=FLK, bit4=FRH, bit5=FRK, bit6=BRH, bit7=BRK)
 MOTOR_NAMES = ["FLH", "BLK", "BLH", "FLK", "FRH", "FRK", "BRH", "BRK"]
+# Display order: hip and knee paired per leg (FLH, FLK, FRH, FRK, BLH, BLK, BRH, BRK)
+DISPLAY_ORDER = ["FLH", "FLK", "FRH", "FRK", "BLH", "BLK", "BRH", "BRK"]
 # Leg masks: bit0=FLH, bit1=BLK, bit2=BLH, bit3=FLK, bit4=FRH, bit5=FRK, bit6=BRH, bit7=BRK
 LEG_MASKS = {"All": 0xFF, "FL": 0x09, "FR": 0x30, "BL": 0x06, "BR": 0xC0}
 # Modern color scheme
@@ -118,6 +120,11 @@ class RobotController:
         self.plot_history = []  # [(t, {motor: {target, encoder}}), ...] max 300 points
         self.plot_history_max = 300
         self.plot_t0 = None  # First timestamp for relative time axis
+        self.plot_popup_window = None
+        self.plot_popup_fig = None
+        self.plot_popup_ax = None
+        self.plot_popup_canvas = None
+        self.plot_popup_motor_var = None
         self.telemetry_rx_count = 0  # Packets received (for status)
         self.ble_loop = None  # BLE event loop (must stay running for notifications)
         self.ble_thread = None  # Thread running the BLE loop
@@ -543,6 +550,18 @@ class RobotController:
                                        font=('Segoe UI', 11, 'bold'),
                                        padx=30, pady=12)
         self.send_button.pack(pady=5)
+        hb_row = tk.Frame(send_frame, bg=COLORS["bg_card"])
+        hb_row.pack(pady=5)
+        self.stop_heartbeat_btn = ModernButton(hb_row, text="⏹ Stop Heartbeat",
+                                              bg_color=COLORS["warning"],
+                                              command=self.stop_heartbeat,
+                                              state='disabled', width=14)
+        self.stop_heartbeat_btn.pack(side=tk.LEFT, padx=5)
+        self.resume_heartbeat_btn = ModernButton(hb_row, text="▶ Resume Heartbeat",
+                                                 bg_color=COLORS["secondary"],
+                                                 command=self.resume_heartbeat,
+                                                 state='disabled', width=14)
+        self.resume_heartbeat_btn.pack(side=tk.LEFT, padx=5)
         self.packet_status = tk.Label(send_frame, text="Ready to send",
                                      font=self.fonts['body'], fg=COLORS["text_muted"],
                                      bg=COLORS["bg_card"])
@@ -593,7 +612,7 @@ class RobotController:
                                   borderwidth=2, padx=20, pady=20)
         disp_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         self.telemetry_labels = {}
-        for i, name in enumerate(MOTOR_NAMES):
+        for i, name in enumerate(DISPLAY_ORDER):
             row = tk.Frame(disp_frame, bg=COLORS["bg_card"])
             row.pack(fill=tk.X, pady=2)
             tk.Label(row, text=f"{name}:", font=self.fonts['mono'], width=5,
@@ -616,13 +635,15 @@ class RobotController:
             plot_ctrl.pack(fill=tk.X, pady=(0, 5))
             tk.Label(plot_ctrl, text="Motor:", font=self.fonts['body'],
                      fg=COLORS["text_secondary"], bg=COLORS["bg_card"]).pack(side=tk.LEFT, padx=(0, 5))
-            self.plot_motor_var = tk.StringVar(value=MOTOR_NAMES[0])
+            self.plot_motor_var = tk.StringVar(value=DISPLAY_ORDER[0])
             motor_combo = ttk.Combobox(plot_ctrl, textvariable=self.plot_motor_var,
-                                       values=MOTOR_NAMES, state="readonly", width=8)
+                                       values=DISPLAY_ORDER, state="readonly", width=8)
             motor_combo.pack(side=tk.LEFT, padx=5)
             motor_combo.bind("<<ComboboxSelected>>", lambda e: self.refresh_telemetry_plot())
             ModernButton(plot_ctrl, text="Clear Plot", bg_color=COLORS["text_muted"],
                          command=self.clear_telemetry_plot, width=10).pack(side=tk.LEFT, padx=10)
+            ModernButton(plot_ctrl, text="Open Plot Window", bg_color=COLORS["primary"],
+                         command=self.open_plot_window, width=14).pack(side=tk.LEFT, padx=10)
             self.fig = Figure(figsize=(10, 5), dpi=100, facecolor=COLORS["bg_card"])
             self.ax = self.fig.add_subplot(111)
             self.ax.set_facecolor(COLORS["bg_light"])
@@ -667,11 +688,14 @@ class RobotController:
         threading.Thread(target=self._send_telemetry_config_thread, args=(packet,), daemon=True).start()
 
     def _send_telemetry_config_thread(self, packet):
+        """Send telemetry config via main BLE loop (client is bound to it)."""
         try:
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            loop.run_until_complete(self.client.write_gatt_char(RX_CHAR_UUID, packet, response=False))
-            loop.close()
+            if not self.ble_loop or not self.client:
+                return
+            async def _write():
+                await self.client.write_gatt_char(RX_CHAR_UUID, packet, response=False)
+            future = asyncio.run_coroutine_threadsafe(_write(), self.ble_loop)
+            future.result(timeout=5)
         except Exception as e:
             self.ui_queue.put(("show_error", f"Telemetry config failed: {e}"))
 
@@ -685,24 +709,26 @@ class RobotController:
             self.telemetry_leg_mask = 0xFF  # default to all
         self.send_telemetry_config()
         self.telemetry_rx_count = 0
+        self._telemetry_debug_logs = 0  # Reset debug log counter
         if hasattr(self, 'telemetry_status_label'):
             self.telemetry_status_label.config(text="Status: Enabled, waiting for data...", fg=COLORS["warning"])
         self.log("Telemetry enabled (sent config mask=0x%02X)" % self.telemetry_leg_mask, tag="success")
 
     def resubscribe_telemetry(self):
         """Re-subscribe to TX notifications (use if no data appears)"""
-        if not self.connected or not self.client:
+        if not self.connected or not self.client or not self.ble_loop:
             messagebox.showwarning("Not Connected", "Connect to a device first.")
             return
         def _do_subscribe():
             try:
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                loop.run_until_complete(self.client.start_notify(TX_CHAR_UUID, self.on_telemetry_notification))
-                loop.close()
+                async def _subscribe():
+                    await self.client.start_notify(TX_CHAR_UUID, self.on_telemetry_notification)
+                future = asyncio.run_coroutine_threadsafe(_subscribe(), self.ble_loop)
+                future.result(timeout=10)
                 self.ui_queue.put(("log", ("[%s] TX notifications re-subscribed" % time.strftime("%H:%M:%S"), "info")))
             except Exception as e:
                 self.ui_queue.put(("show_error", f"Re-subscribe failed: {e}"))
+        self._telemetry_debug_logs = 0  # Reset so we get fresh debug logs
         threading.Thread(target=_do_subscribe, daemon=True).start()
         self.log("Re-subscribing to TX notifications...", tag="info")
 
@@ -722,6 +748,13 @@ class RobotController:
     def on_telemetry_notification(self, sender, data):
         """Parse [0xAB, leg_mask, target0, enc0, ...] and update display (called from BLE thread)"""
         try:
+            # Debug: log first 3 received packets to verify callback is invoked
+            if data and len(data) >= 2:
+                n = getattr(self, '_telemetry_debug_logs', 0)
+                if n < 3:
+                    self._telemetry_debug_logs = n + 1
+                    self.ui_queue.put(("log", ("[%s] Telemetry rx #%d: %d bytes, first=0x%02X" % (
+                        time.strftime("%H:%M:%S"), n + 1, len(data), data[0]), "info")))
             if data is None or len(data) < 3 or data[0] != 0xAB:
                 return
             leg_mask = data[1]
@@ -779,35 +812,82 @@ class RobotController:
             self.refresh_telemetry_plot()
         self.log("Plot cleared", tag="info")
 
+    def open_plot_window(self):
+        """Open a separate resizable window with larger plot"""
+        if not MATPLOTLIB_AVAILABLE:
+            messagebox.showinfo("Plot", "Install matplotlib for plotting.")
+            return
+        if self.plot_popup_window is not None and self.plot_popup_window.winfo_exists():
+            self.plot_popup_window.lift()
+            self.plot_popup_window.focus()
+            return
+        win = tk.Toplevel(self.root)
+        win.title("Target vs Encoder Plot")
+        win.geometry("900x550")
+        win.configure(bg=COLORS["bg_dark"])
+        win.minsize(600, 400)
+        self.plot_popup_window = win
+        ctrl = tk.Frame(win, bg=COLORS["bg_card"])
+        ctrl.pack(fill=tk.X, padx=10, pady=10)
+        tk.Label(ctrl, text="Motor:", font=self.fonts['body'],
+                 fg=COLORS["text_secondary"], bg=COLORS["bg_card"]).pack(side=tk.LEFT, padx=(0, 5))
+        popup_motor_var = tk.StringVar(value=self.plot_motor_var.get() if hasattr(self, 'plot_motor_var') else DISPLAY_ORDER[0])
+        combo = ttk.Combobox(ctrl, textvariable=popup_motor_var, values=DISPLAY_ORDER, state="readonly", width=8)
+        combo.pack(side=tk.LEFT, padx=5)
+        self.plot_popup_motor_var = popup_motor_var
+        self.plot_popup_fig = Figure(figsize=(12, 7), dpi=100, facecolor=COLORS["bg_card"])
+        self.plot_popup_ax = self.plot_popup_fig.add_subplot(111)
+        self.plot_popup_ax.set_facecolor(COLORS["bg_light"])
+        self.plot_popup_canvas = FigureCanvasTkAgg(self.plot_popup_fig, master=win)
+        self.plot_popup_canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
+        def on_motor_change(e=None):
+            self.refresh_telemetry_plot()
+        combo.bind("<<ComboboxSelected>>", on_motor_change)
+        def on_close():
+            self.plot_popup_window = None
+            self.plot_popup_fig = None
+            self.plot_popup_ax = None
+            self.plot_popup_canvas = None
+            self.plot_popup_motor_var = None
+            win.destroy()
+        win.protocol("WM_DELETE_WINDOW", on_close)
+        self.refresh_telemetry_plot()
+
+    def _draw_plot_to_axes(self, ax, motor):
+        """Helper: draw plot data for given motor to given axes"""
+        times, targets, encoders = [], [], []
+        for t, d in self.plot_history:
+            if motor in d and self.plot_t0 is not None:
+                times.append(t - self.plot_t0)
+                targets.append(d[motor]["target"])
+                encoders.append(d[motor]["encoder"])
+        ax.clear()
+        ax.set_facecolor(COLORS["bg_light"])
+        ax.tick_params(colors=COLORS["text_primary"])
+        ax.xaxis.label.set_color(COLORS["text_primary"])
+        ax.yaxis.label.set_color(COLORS["text_primary"])
+        ax.spines['bottom'].set_color(COLORS["border"])
+        ax.spines['top'].set_color(COLORS["border"])
+        ax.spines['left'].set_color(COLORS["border"])
+        ax.spines['right'].set_color(COLORS["border"])
+        ax.set_xlabel("Time (s)")
+        ax.set_ylabel("Position")
+        if times:
+            ax.plot(times, targets, color=COLORS["primary_light"], label=f"{motor} Target", linewidth=1.5)
+            ax.plot(times, encoders, color=COLORS["secondary"], label=f"{motor} Encoder", linewidth=1.5)
+            ax.legend(loc='upper right', facecolor=COLORS["bg_card"], labelcolor=COLORS["text_primary"])
+
     def refresh_telemetry_plot(self):
         """Redraw plot with target and encoder for selected motor"""
         if not MATPLOTLIB_AVAILABLE or not hasattr(self, 'ax'):
             return
-        motor = self.plot_motor_var.get() if hasattr(self, 'plot_motor_var') else MOTOR_NAMES[0]
-        times = []
-        targets = []
-        encoders = []
-        for t, d in self.plot_history:
-            if motor in d:
-                times.append(t - self.plot_t0)
-                targets.append(d[motor]["target"])
-                encoders.append(d[motor]["encoder"])
-        self.ax.clear()
-        self.ax.set_facecolor(COLORS["bg_light"])
-        self.ax.tick_params(colors=COLORS["text_primary"])
-        self.ax.xaxis.label.set_color(COLORS["text_primary"])
-        self.ax.yaxis.label.set_color(COLORS["text_primary"])
-        self.ax.spines['bottom'].set_color(COLORS["border"])
-        self.ax.spines['top'].set_color(COLORS["border"])
-        self.ax.spines['left'].set_color(COLORS["border"])
-        self.ax.spines['right'].set_color(COLORS["border"])
-        self.ax.set_xlabel("Time (s)")
-        self.ax.set_ylabel("Position")
-        if times:
-            self.ax.plot(times, targets, color=COLORS["primary_light"], label=f"{motor} Target", linewidth=1.5)
-            self.ax.plot(times, encoders, color=COLORS["secondary"], label=f"{motor} Encoder", linewidth=1.5)
-            self.ax.legend(loc='upper right', facecolor=COLORS["bg_card"], labelcolor=COLORS["text_primary"])
+        motor = self.plot_motor_var.get() if hasattr(self, 'plot_motor_var') else DISPLAY_ORDER[0]
+        self._draw_plot_to_axes(self.ax, motor)
         self.plot_canvas.draw_idle()
+        if self.plot_popup_ax is not None and self.plot_popup_canvas is not None and hasattr(self, 'plot_popup_motor_var') and self.plot_popup_motor_var:
+            popup_motor = self.plot_popup_motor_var.get()
+            self._draw_plot_to_axes(self.plot_popup_ax, popup_motor)
+            self.plot_popup_canvas.draw_idle()
 
     def send_turn_cmd(self, control_byte_val):
         """Send a turning gait command directly (bypasses gait selection)."""
@@ -1122,6 +1202,12 @@ class RobotController:
             connect_thread.start()
     def connect_device_thread(self, address, name):
         try:
+            if sys.platform == "win32":
+                try:
+                    import ctypes
+                    ctypes.windll.ole32.CoInitializeEx(None, 0)  # COINIT_MULTITHREADED
+                except Exception:
+                    pass
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             self.ble_loop = loop
@@ -1132,6 +1218,13 @@ class RobotController:
                                     timeout=15.0,
                                     disconnected_callback=self.on_disconnected)
                 await client.connect()
+                # Windows workaround: read TX char first to establish path before notifications
+                try:
+                    await asyncio.sleep(0.05)
+                    _ = await client.read_gatt_char(TX_CHAR_UUID)
+                except Exception:
+                    pass
+                await asyncio.sleep(0.1)
                 await client.start_notify(TX_CHAR_UUID, self.on_telemetry_notification)
                 return client
 
@@ -1223,6 +1316,10 @@ class RobotController:
         for entry in self.float_entries:
             entry.config(state='normal')
         self.send_button.config(state='normal')
+        if hasattr(self, 'stop_heartbeat_btn'):
+            self.stop_heartbeat_btn.config(state='normal')
+        if hasattr(self, 'resume_heartbeat_btn'):
+            self.resume_heartbeat_btn.config(state='disabled')  # Heartbeat is running, resume disabled
         self.control_frame.config(fg=COLORS["primary_light"])
         self.log("Controls enabled", tag="success")
     def disable_controls(self):
@@ -1231,6 +1328,10 @@ class RobotController:
         for entry in self.float_entries:
             entry.config(state='disabled')
         self.send_button.config(state='disabled')
+        if hasattr(self, 'stop_heartbeat_btn'):
+            self.stop_heartbeat_btn.config(state='disabled')
+        if hasattr(self, 'resume_heartbeat_btn'):
+            self.resume_heartbeat_btn.config(state='disabled')
         self.control_frame.config(fg=COLORS["text_muted"])
         self.log("Controls disabled", tag="warning")
     def show_controls(self, disabled=False):
@@ -1409,6 +1510,24 @@ class RobotController:
             except Exception as e:
                 self.log(f"Error during disconnect: {e}", tag="error")
         self.root.destroy()
+    def stop_heartbeat(self):
+        """Stop continuous keep-alive data sending"""
+        self.keep_alive_running = False
+        self.ui_queue.put(("enable_button", [self.stop_heartbeat_btn, "disabled"]))
+        self.ui_queue.put(("enable_button", [self.resume_heartbeat_btn, "normal"]))
+        self.log("Heartbeat stopped (continuous send paused)", tag="warning")
+
+    def resume_heartbeat(self):
+        """Resume continuous keep-alive data sending"""
+        if not self.connected or not self.client:
+            return
+        self.keep_alive_running = True
+        self.keep_alive_thread = threading.Thread(target=self.keep_alive_loop, daemon=True)
+        self.keep_alive_thread.start()
+        self.ui_queue.put(("enable_button", [self.stop_heartbeat_btn, "normal"]))
+        self.ui_queue.put(("enable_button", [self.resume_heartbeat_btn, "disabled"]))
+        self.log("Heartbeat resumed", tag="info")
+
     def keep_alive_loop(self):
         """Continuously send last manual packet to keep BLE connection alive"""
         while self.keep_alive_running:

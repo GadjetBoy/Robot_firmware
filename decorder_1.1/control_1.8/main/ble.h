@@ -63,9 +63,9 @@ typedef struct {
 
 struct gatts_profile_inst {
     esp_gatts_cb_t gatts_cb;
-    uint16_t gatts_if;
+    volatile uint16_t gatts_if;  /* Written by GATT cb, read by telemetry task */
     uint16_t app_id;
-    uint16_t conn_id;
+    volatile uint16_t conn_id;   /* Written by GATT cb, read by telemetry task */
     uint16_t service_handle;
     esp_gatt_srvc_id_t service_id;
     
@@ -79,7 +79,7 @@ struct gatts_profile_inst {
     uint16_t tx_descr_handle;
     esp_bt_uuid_t tx_descr_uuid;
     uint16_t tx_cccd_value;
-    bool tx_notifications_enabled;
+    volatile bool tx_notifications_enabled;  /* Written by GATT cb, read by telemetry task */
    
     //charactersitic for recieve
     uint16_t rx_char_handle;
@@ -117,7 +117,7 @@ void BLE_app_main(void);
 /* Telemetry: send motor target_position + encoder over BLE. Call from telemetry task. */
 void BLE_send_telemetry(void);
 
-/* Update telemetry snapshot from motors[] - call from run_position_loop (CPG task). No race. */
+/* Push telemetry snapshot to queue - call from run_position_loop (CPG). */
 void BLE_update_telemetry_snapshot(void);
 
 /* Leg mask: bit0=FLH, bit1=BLK, bit2=BLH, bit3=FLK, bit4=FRH, bit5=FRK, bit6=BRH, bit7=BRK

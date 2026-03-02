@@ -40,6 +40,8 @@
 #define KNEE_TURN_MOD_FACTOR 0.0f  // 0% modulation; tune 0.2-0.4 based on robot mass/inertia
 #define HIP_TURN_MOD_FACTOR 0.8f  // 30% modulation; tune 0.2-0.4 based on robot mass/inertia
 
+#define log_FREQ 100
+extern volatile uint32_t log_counter;
 
 
 // ====================== Motor Indices (for clarity) ======================
